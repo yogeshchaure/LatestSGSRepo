@@ -280,6 +280,9 @@
                                         <f:validator binding="#{row.bindings.Status.validator}"/>
                                     </af:selectOneChoice>
                                 </af:column>
+                                <af:column id="c10" headerText="Accounting Entries">
+                                 <af:link text="Review Accounting Entry" id="l1" inlineStyle="font-weight:bold;"/>
+                                </af:column>
                             </af:table>
                     </af:panelCollection>
                     </af:panelGroupLayout>
