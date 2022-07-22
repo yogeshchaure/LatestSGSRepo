@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelStretchLayout id="psl1">
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+        <f:facet name="bottom"/>
+        <f:facet name="center">
+            <af:panelBox text="Run Intercompany Allocation" id="pb1">
+                <f:facet name="toolbar">
+                    <af:toolbar id="t1">
+                        <af:button id="b1"  text="Schedule" accessKey="S"/>
+                        <af:button id="b2" action="back" immediate="true"  text="Submit" accessKey="C"/>
+                        <af:button  id="b3" action="back" immediate="true" text="Close" accessKey="C"/>
+                    </af:toolbar>
+                </f:facet>
+                <af:outputText value="Allocation Parameters" id="ot1" inlineStyle="font-weight:bold;color:blue;"/>
+                 <af:spacer id="s1" height="20"/>
+                <af:panelFormLayout id="pfl1">
+                    
+                   
+                    <af:selectOneChoice value="#{bindings.CostIdentificationId1.inputValue}"
+                                        label="Cost Identification ID"
+                                        required="#{bindings.CostIdentificationId1.hints.mandatory}"
+                                        shortDesc="#{bindings.CostIdentificationId1.hints.tooltip}" id="soc4">
+                        <f:selectItems value="#{bindings.CostIdentificationId1.items}" id="si4"/>
+                        <f:validator binding="#{bindings.CostIdentificationId1.validator}"/>
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.AllocationRange.inputValue}"
+                                        label="Legal Entity"
+                                        required="#{bindings.AllocationRange.hints.mandatory}"
+                                        shortDesc="#{bindings.AllocationRange.hints.tooltip}" id="soc2">
+                        <f:selectItems value="#{bindings.AllocationRange.items}" id="si2"/>
+                        <f:validator binding="#{bindings.AllocationRange.validator}"/>
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.BusinessUnit.inputValue}"
+                                        label="Business Unit"
+                                        required="#{bindings.BusinessUnit.hints.mandatory}"
+                                        shortDesc="#{bindings.BusinessUnit.hints.tooltip}" id="soc3">
+                        <f:selectItems value="#{bindings.BusinessUnit.items}" id="si3"/>
+                        <f:validator binding="#{bindings.BusinessUnit.validator}"/>
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.OperationUnit.inputValue}"
+                                        label="Operating Unit"
+                                        required="#{bindings.OperationUnit.hints.mandatory}"
+                                        shortDesc="#{bindings.OperationUnit.hints.tooltip}" id="soc7">
+                        <f:selectItems value="#{bindings.OperationUnit.items}" id="si7"/>
+                        <f:validator binding="#{bindings.OperationUnit.validator}"/>
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.AllocationBasis.inputValue}" label="Allocation Basis"
+                                        required="#{bindings.AllocationBasis.hints.mandatory}"
+                                        shortDesc="#{bindings.AllocationBasis.hints.tooltip}" id="soc1">
+                        <f:selectItems value="#{bindings.AllocationBasis.items}" id="si1"/>
+                        <f:validator binding="#{bindings.AllocationBasis.validator}"/>
+                    </af:selectOneChoice>
+                    <af:panelLabelAndMessage label="Transaction Data" id="plam1">
+                        <af:panelGroupLayout id="pgl1" layout="horizontal">
+                            <af:inputDate value="#{bindings.FromDate.inputValue}" label="From"
+                                          required="#{bindings.FromDate.hints.mandatory}"  contentStyle="width:100px;"
+                                          columns="#{bindings.FromDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.FromDate.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.FromDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.FromDate.format}"/>
+                            </af:inputDate>
+                            <af:inputDate value="#{bindings.ToDate.inputValue}" label="To"
+                                          required="#{bindings.ToDate.hints.mandatory}" contentStyle="width:100px;"
+                                          columns="#{bindings.ToDate.hints.displayWidth}"
+                                          shortDesc="#{bindings.ToDate.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.ToDate.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.ToDate.format}"/>
+                            </af:inputDate>
+                        </af:panelGroupLayout>
+                    </af:panelLabelAndMessage>
+                    <af:selectOneChoice value="#{bindings.SourceSystem.inputValue}"
+                                        label="Source System" visible="false"
+                                        required="#{bindings.SourceSystem.hints.mandatory}"
+                                        shortDesc="#{bindings.SourceSystem.hints.tooltip}" id="soc5">
+                        <f:selectItems value="#{bindings.SourceSystem.items}" id="si5"/>
+                        <f:validator binding="#{bindings.SourceSystem.validator}"/>
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.TransationSource.inputValue}"
+                                        label="Transation Source" visible="false"
+                                        required="#{bindings.TransationSource.hints.mandatory}"
+                                        shortDesc="#{bindings.TransationSource.hints.tooltip}" id="soc6">
+                        <f:selectItems value="#{bindings.TransationSource.items}" id="si6"/>
+                        <f:validator binding="#{bindings.TransationSource.validator}"/>
+                    </af:selectOneChoice>
+                </af:panelFormLayout>
+            </af:panelBox>
+        </f:facet>
+    </af:panelStretchLayout>
+</ui:composition>

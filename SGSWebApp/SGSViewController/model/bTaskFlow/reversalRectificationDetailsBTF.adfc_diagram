@@ -1,0 +1,39 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">editReversalRectificationDetails</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">270.36914</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>editReversalRectificationDetails&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">209.69531</property>
+      <property
+         name="page">/jsff/editReversalRectificationDetails.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn4">
+      <property
+         name="activityId">backToTransBAlloc</property>
+      <property
+         name="x">624.35645</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>backToTransBAlloc&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  backToTransBAlloc&lt;/p></property>
+      <property
+         name="y">222.5918</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+</SDM>

@@ -1,0 +1,54 @@
+//Groovy Scripts for com.sgs.model.view.RunAllocationEngineVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="CostIdentificationLOV", name="pType")
+def pType_CostIdentificationLOV_BindVariable_BoundParameter()
+{
+'COSTRULEID'
+}
+
+
+@AccessorParameterExpression(accessorName="AllocationRangeLOV", name="pType")
+def pType_AllocationRangeLOV_BindVariable_BoundParameter()
+{
+'LEGAL_ENTITY'
+}
+
+
+@AccessorParameterExpression(accessorName="AllocationBasisLOV", name="pType")
+def pType_AllocationBasisLOV_BindVariable_BoundParameter()
+{
+'ALLOCATION_BASIC'
+}
+
+
+@AccessorParameterExpression(accessorName="BusinessUnitLOV", name="pType")
+def pType_BusinessUnitLOV_BindVariable_BoundParameter()
+{
+'bUSINESS_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="SourceSystemLOV", name="pType")
+def pType_SourceSystemLOV_BindVariable_BoundParameter()
+{
+'SOURCE_SYS'
+}
+
+
+@AccessorParameterExpression(accessorName="TransationSourceLOV", name="pType")
+def pType_TransationSourceLOV_BindVariable_BoundParameter()
+{
+'TRANS_SOURCE'
+}
+
+
+@AccessorParameterExpression(accessorName="OUList", name="pType")
+def pType_OUList_BindVariable_BoundParameter()
+{
+'OPR_UNIT'
+}
+

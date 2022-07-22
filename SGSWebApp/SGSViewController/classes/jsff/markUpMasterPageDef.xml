@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="markUpMasterPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MarkUpRateMsterVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="MarkUpRateMsterVO1Iterator"/>
+    <searchRegion Criteria="MarkUpRateMsterVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="MarkUpRateMsterVO1Iterator" id="MarkUpRateMsterVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MarkUpRateMsterVO1Iterator" id="MarkUpRateMsterVO1">
+      <nodeDefinition DefName="com.sgs.model.view.MarkUpRateMsterVO" Name="MarkUpRateMsterVO10">
+        <AttrNames>
+          <Item Value="Geography"/>
+          <Item Value="ServiceCategory"/>
+          <Item Value="MarkupRate"/>
+          <Item Value="EffectiveRom"/>
+          <Item Value="EffectiveTill"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="MarkUpRateMsterVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MarkUpRateMsterVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="SGSAppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

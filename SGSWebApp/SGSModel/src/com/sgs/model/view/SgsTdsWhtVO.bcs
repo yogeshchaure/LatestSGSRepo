@@ -1,0 +1,54 @@
+//Groovy Scripts for com.sgs.model.view.SgsTdsWhtVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="ServiceProviderLOV", name="pType")
+def pType_ServiceProviderLOV_BindVariable_BoundParameter()
+{
+'SERVICE_PROVIDER'
+}
+
+
+@AccessorParameterExpression(accessorName="PointOfDeductionLOV", name="pType")
+def pType_PointOfDeductionLOV_BindVariable_BoundParameter()
+{
+'POINT_OF_DECUCTION'
+}
+
+
+@AccessorParameterExpression(accessorName="TaxBaseLOV", name="pType")
+def pType_TaxBaseLOV_BindVariable_BoundParameter()
+{
+'TAX_BASE'
+}
+
+
+@AccessorParameterExpression(accessorName="SectionApplicabilityLOV", name="pType")
+def pType_SectionApplicabilityLOV_BindVariable_BoundParameter()
+{
+'SECTION_APPLICABILITY'
+}
+
+
+@AccessorParameterExpression(accessorName="ServiceReceiverLOV", name="pType")
+def pType_ServiceReceiverLOV_BindVariable_BoundParameter()
+{
+'GEO'
+}
+
+
+@AccessorParameterExpression(accessorName="IsPANTRCAvailableLOV", name="pType")
+def pType_IsPANTRCAvailableLOV_BindVariable_BoundParameter()
+{
+'PAN_TRC'
+}
+
+
+@AccessorParameterExpression(accessorName="CurrencyLOV", name="pType")
+def pType_CurrencyLOV_BindVariable_BoundParameter()
+{
+'CURRENCY'
+}
+

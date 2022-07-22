@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="withholdingTaxDeductedTaxPageDef" Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsTdsWhtVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsTdsWhtVOIterator"/>
+    <searchRegion Criteria="SgsTdsWhtVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SgsTdsWhtVOIterator" id="SgsTdsWhtVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SgsTdsWhtVOIterator" id="SgsTdsWhtVO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsTdsWhtVO" Name="SgsTdsWhtVO0">
+        <AttrNames>
+          <Item Value="TdsWhtId"/>
+          <Item Value="TaxCode"/>
+          <Item Value="ServiceReceiver"/>
+          <Item Value="ServiceProvider"/>
+          <Item Value="CummulativeThresholdLimit"/>
+          <Item Value="Currency"/>
+          <Item Value="EffectiveFrom"/>
+          <Item Value="EffectiveTo"/>
+          <Item Value="GlAccounts"/>
+          <Item Value="IsPanTrcAvailable"/>
+          <Item Value="PointOfDeduction"/>
+          <Item Value="RateOfTax"/>
+          <Item Value="RecoveryRate"/>
+          <Item Value="SectionApplicability"/>
+          <Item Value="TaxBase"/>
+          <Item Value="ThresholdLimit"/>
+          <Item Value="ValidityPeriodFrom"/>
+          <Item Value="ValidityPeriodTo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsTdsWhtVOIterator" id="CreateInsert" InstanceName="SGSAppModuleDataControl.SgsTdsWhtVO"
+            DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

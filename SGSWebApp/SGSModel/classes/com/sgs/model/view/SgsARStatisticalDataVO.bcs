@@ -1,0 +1,33 @@
+//Groovy Scripts for com.sgs.model.view.SgsARStatisticalDataVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="SgsStatisticalDataLOV", name="pType")
+def pType_SgsStatisticalDataLOV_BindVariable_BoundParameter()
+{
+'STS_DATA_CAT'
+}
+
+
+@AccessorParameterExpression(accessorName="SgsMonthLOV", name="pType")
+def pType_SgsMonthLOV_BindVariable_BoundParameter()
+{
+'Month'
+}
+
+
+@AccessorParameterExpression(accessorName="SgsBusinessUnitLOV", name="pType")
+def pType_SgsBusinessUnitLOV_BindVariable_BoundParameter()
+{
+'BS_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="OUList", name="pType")
+def pType_OUList_BindVariable_BoundParameter()
+{
+'OPR_UNIT'
+}
+

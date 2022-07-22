@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout layout="vertical" id="pgl1">
+    <af:panelHeader text="Mark-Up Rate Master" id="ph1">
+      <af:query id="qryId1" headerText="Search" disclosed="true" saveQueryMode="hidden" rows="2" maxColumns="2"
+                value="#{bindings.MarkUpRateMsterVOCriteriaQuery.queryDescriptor}"
+                model="#{bindings.MarkUpRateMsterVOCriteriaQuery.queryModel}"
+                queryListener="#{bindings.MarkUpRateMsterVOCriteriaQuery.processQuery}"
+                queryOperationListener="#{bindings.MarkUpRateMsterVOCriteriaQuery.processQueryOperation}"
+                resultComponentId="::pc1:t1"/>
+    </af:panelHeader>
+    <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+      <f:facet name="menus">
+      
+      </f:facet>
+      <f:facet name="toolbar">
+        <af:toolbar id="t2">
+          <af:button actionListener="#{bindings.CreateInsert.execute}" text="Create"
+                      id="b1"/>
+          <af:button actionListener="#{bindings.Delete.execute}" text="Discard" 
+                     id="b2"/>
+          <af:button actionListener="#{bindings.Commit.execute}" text="Save"
+                     id="b3"/>
+        </af:toolbar>
+      </f:facet>
+      <f:facet name="statusbar"/>
+      <af:table value="#{bindings.MarkUpRateMsterVO1.collectionModel}" var="row"
+                rows="#{bindings.MarkUpRateMsterVO1.rangeSize}" styleClass="AFStretchWidth"
+                emptyText="#{bindings.MarkUpRateMsterVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                rowBandingInterval="0" selectedRowKeys="#{bindings.MarkUpRateMsterVO1.collectionModel.selectedRow}"
+                selectionListener="#{bindings.MarkUpRateMsterVO1.collectionModel.makeCurrent}" rowSelection="single"
+                fetchSize="#{bindings.MarkUpRateMsterVO1.rangeSize}" id="t1" partialTriggers="::b1 ::b2"
+                columnStretching="column:c2">
+        <af:column headerText="#{bindings.MarkUpRateMsterVO1.hints.Geography.label}" id="c1">
+          <af:selectOneChoice value="#{row.bindings.Geography.inputValue}" label="#{row.bindings.Geography.label}"
+                              required="#{bindings.MarkUpRateMsterVO1.hints.Geography.mandatory}"
+                              shortDesc="#{bindings.MarkUpRateMsterVO1.hints.Geography.tooltip}" id="soc1">
+            <f:selectItems value="#{row.bindings.Geography.items}" id="si1"/>
+            <f:validator binding="#{row.bindings.Geography.validator}"/>
+          </af:selectOneChoice>
+        </af:column>
+        <af:column headerText="#{bindings.MarkUpRateMsterVO1.hints.ServiceCategory.label}" id="c2">
+          <af:selectOneChoice value="#{row.bindings.ServiceCategory.inputValue}"
+                              label="#{row.bindings.ServiceCategory.label}"
+                              required="#{bindings.MarkUpRateMsterVO1.hints.ServiceCategory.mandatory}"
+                              shortDesc="#{bindings.MarkUpRateMsterVO1.hints.ServiceCategory.tooltip}" id="soc2">
+            <f:selectItems value="#{row.bindings.ServiceCategory.items}" id="si2"/>
+            <f:validator binding="#{row.bindings.ServiceCategory.validator}"/>
+          </af:selectOneChoice>
+        </af:column>
+        <af:column headerText="#{bindings.MarkUpRateMsterVO1.hints.MarkupRate.label}" id="c3">
+          <af:inputText value="#{row.bindings.MarkupRate.inputValue}"
+                        label="#{bindings.MarkUpRateMsterVO1.hints.MarkupRate.label}"
+                        required="#{bindings.MarkUpRateMsterVO1.hints.MarkupRate.mandatory}"
+                        columns="#{bindings.MarkUpRateMsterVO1.hints.MarkupRate.displayWidth}"
+                        maximumLength="#{bindings.MarkUpRateMsterVO1.hints.MarkupRate.precision}"
+                        shortDesc="#{bindings.MarkUpRateMsterVO1.hints.MarkupRate.tooltip}" id="it1">
+            <f:validator binding="#{row.bindings.MarkupRate.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column headerText="Effective From" id="c4">
+          <af:inputDate value="#{row.bindings.EffectiveRom.inputValue}"
+                        label="#{bindings.MarkUpRateMsterVO1.hints.EffectiveRom.label}"
+                        required="#{bindings.MarkUpRateMsterVO1.hints.EffectiveRom.mandatory}"
+                        columns="#{bindings.MarkUpRateMsterVO1.hints.EffectiveRom.displayWidth}"
+                        shortDesc="#{bindings.MarkUpRateMsterVO1.hints.EffectiveRom.tooltip}" id="id1">
+            <f:validator binding="#{row.bindings.EffectiveRom.validator}"/>
+            <af:convertDateTime pattern="#{bindings.MarkUpRateMsterVO1.hints.EffectiveRom.format}"/>
+          </af:inputDate>
+        </af:column>
+        <af:column headerText="#{bindings.MarkUpRateMsterVO1.hints.EffectiveTill.label}" id="c5">
+          <af:inputDate value="#{row.bindings.EffectiveTill.inputValue}"
+                        label="#{bindings.MarkUpRateMsterVO1.hints.EffectiveTill.label}"
+                        required="#{bindings.MarkUpRateMsterVO1.hints.EffectiveTill.mandatory}"
+                        columns="#{bindings.MarkUpRateMsterVO1.hints.EffectiveTill.displayWidth}"
+                        shortDesc="#{bindings.MarkUpRateMsterVO1.hints.EffectiveTill.tooltip}" id="id2">
+            <f:validator binding="#{row.bindings.EffectiveTill.validator}"/>
+            <af:convertDateTime pattern="#{bindings.MarkUpRateMsterVO1.hints.EffectiveTill.format}"/>
+          </af:inputDate>
+        </af:column>
+      </af:table>
+    </af:panelCollection>
+  </af:panelGroupLayout>
+</ui:composition>

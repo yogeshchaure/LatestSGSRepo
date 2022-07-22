@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="withholdingTaxDeductedTaxFormPageDef" Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsTdsWhtVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsTdsWhtVOIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="TaxCode">
+      <AttrNames>
+        <Item Value="TaxCode"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsTdsWhtVOIterator" StaticList="false" Uses="LOV_ServiceReceiver" id="ServiceReceiver"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsTdsWhtVOIterator" StaticList="false" Uses="LOV_ServiceProvider" id="ServiceProvider"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsTdsWhtVOIterator" StaticList="false" Uses="LOV_PointOfDeduction" id="PointOfDeduction"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsTdsWhtVOIterator" StaticList="false" Uses="LOV_TaxBase" id="TaxBase" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsTdsWhtVOIterator" StaticList="false" Uses="LOV_SectionApplicability"
+          id="SectionApplicability" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsTdsWhtVOIterator" StaticList="false" Uses="LOV_IsPanTrcAvailable" id="IsPanTrcAvailable"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="ValidityPeriodFrom">
+      <AttrNames>
+        <Item Value="ValidityPeriodFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="ValidityPeriodTo">
+      <AttrNames>
+        <Item Value="ValidityPeriodTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="GlAccounts">
+      <AttrNames>
+        <Item Value="GlAccounts"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="RateOfTax">
+      <AttrNames>
+        <Item Value="RateOfTax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="RecoveryRate">
+      <AttrNames>
+        <Item Value="RecoveryRate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsTdsWhtVOIterator" StaticList="false" Uses="LOV_Currency" id="Currency" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="ThresholdLimit">
+      <AttrNames>
+        <Item Value="ThresholdLimit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="CummulativeThresholdLimit">
+      <AttrNames>
+        <Item Value="CummulativeThresholdLimit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="EffectiveTo">
+      <AttrNames>
+        <Item Value="EffectiveTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="EffectiveFrom">
+      <AttrNames>
+        <Item Value="EffectiveFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="UpdatedBy">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="UpdatedDate">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="TdsWhtId">
+      <AttrNames>
+        <Item Value="TdsWhtId"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Rollback" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+  </bindings>
+</pageDefinition>

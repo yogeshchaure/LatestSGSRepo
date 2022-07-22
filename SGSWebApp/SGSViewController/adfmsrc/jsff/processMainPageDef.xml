@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="processMainPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="runAllocationEngineBTF1" taskFlowId="/bTaskFlow/runAllocationEngineBTF.xml#runAllocationEngineBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="runIntercompanyExtractionBTF1"
+              taskFlowId="/bTaskFlow/runIntercompanyExtractionBTF.xml#runIntercompanyExtractionBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

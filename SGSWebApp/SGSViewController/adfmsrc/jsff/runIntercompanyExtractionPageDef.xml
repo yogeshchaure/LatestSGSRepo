@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="runIntercompanyExtractionPageDef" Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsRunIntercompanyExtractionVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsRunIntercompanyExtractionVOIterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="SgsRunIntercompanyExtractionVOIterator" StaticList="false" Uses="LOV_CostIdentificationId"
+          id="CostIdentificationId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsRunIntercompanyExtractionVOIterator" StaticList="false" Uses="LOV_Geography" id="Geography"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsRunIntercompanyExtractionVOIterator" StaticList="false" Uses="LOV_LegalEntity"
+          id="LegalEntity" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsRunIntercompanyExtractionVOIterator" StaticList="false" Uses="LOV_BusinessUnit"
+          id="BusinessUnit" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsRunIntercompanyExtractionVOIterator" StaticList="false" Uses="LOV_JobCode" id="JobCode"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsRunIntercompanyExtractionVOIterator" id="TransactionDataFrom">
+      <AttrNames>
+        <Item Value="TransactionDataFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsRunIntercompanyExtractionVOIterator" id="TransactionDataTo">
+      <AttrNames>
+        <Item Value="TransactionDataTo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsRunIntercompanyExtractionVOIterator" StaticList="false" Uses="LOV_SourceSystem"
+          id="SourceSystem" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsRunIntercompanyExtractionVOIterator" StaticList="false" Uses="LOV_TransactionSource"
+          id="TransactionSource" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsRunIntercompanyExtractionVOIterator" StaticList="false" Uses="LOV_OperationUnit"
+          id="OperationUnit" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

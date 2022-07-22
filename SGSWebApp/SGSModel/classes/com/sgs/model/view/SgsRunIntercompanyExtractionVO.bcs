@@ -1,0 +1,61 @@
+//Groovy Scripts for com.sgs.model.view.SgsRunIntercompanyExtractionVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="CostIdentificationLOV", name="pType")
+def pType_CostIdentificationLOV_BindVariable_BoundParameter()
+{
+'COSTRULEID'
+}
+
+
+@AccessorParameterExpression(accessorName="GeographyLOV", name="pType")
+def pType_GeographyLOV_BindVariable_BoundParameter()
+{
+'GEO'
+}
+
+
+@AccessorParameterExpression(accessorName="LegalEntityLOV", name="pType")
+def pType_LegalEntityLOV_BindVariable_BoundParameter()
+{
+'LEGAL_ENTITY'
+}
+
+
+@AccessorParameterExpression(accessorName="BusinessUnitLOV", name="pType")
+def pType_BusinessUnitLOV_BindVariable_BoundParameter()
+{
+'bUSINESS_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="JobCodeLOV", name="pType")
+def pType_JobCodeLOV_BindVariable_BoundParameter()
+{
+'JOBCODE'
+}
+
+
+@AccessorParameterExpression(accessorName="SourceSystemLOV", name="pType")
+def pType_SourceSystemLOV_BindVariable_BoundParameter()
+{
+'SOURCE_SYS'
+}
+
+
+@AccessorParameterExpression(accessorName="TransactionSourceLOV", name="pType")
+def pType_TransactionSourceLOV_BindVariable_BoundParameter()
+{
+'TRANS_SOURCE'
+}
+
+
+@AccessorParameterExpression(accessorName="OUList", name="pType")
+def pType_OUList_BindVariable_BoundParameter()
+{
+'OPR_UNIT'
+}
+

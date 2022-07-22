@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="transactionalDataPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="transBCostAllocationMainBTF1"
+              taskFlowId="/bTaskFlow/transBCostAllocationMainBTF.xml#transBCostAllocationMainBTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="approveallocatedICoTransactionBTF1"
+              taskFlowId="/bTaskFlow/approveallocatedICoTransactionBTF.xml#approveallocatedICoTransactionBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="StatisticalBTF1" taskFlowId="/bTaskFlow/StatisticalBTF.xml#StatisticalBTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="statisticalARDataBTF1" taskFlowId="/bTaskFlow/statisticalARDataBTF.xml#statisticalARDataBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

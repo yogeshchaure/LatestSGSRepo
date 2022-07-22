@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="runAllocationEnginePageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RunAllocationEngineVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="RunAllocationEngineVOIterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="RunAllocationEngineVOIterator" StaticList="false" Uses="LOV_AllocationRange"
+          id="AllocationRange" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="RunAllocationEngineVOIterator" StaticList="false" Uses="LOV_AllocationBasis"
+          id="AllocationBasis" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="RunAllocationEngineVOIterator" StaticList="false" Uses="LOV_BusinessUnit" id="BusinessUnit"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="RunAllocationEngineVOIterator" id="FromDate">
+      <AttrNames>
+        <Item Value="TransactionDataFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RunAllocationEngineVOIterator" id="ToDate">
+      <AttrNames>
+        <Item Value="TransactionDataTo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="RunAllocationEngineVOIterator" StaticList="false" Uses="LOV_SourceSystem" id="SourceSystem"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="RunAllocationEngineVOIterator" StaticList="false" Uses="LOV_TransationSource"
+          id="TransationSource" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <listOfValues Uses="LOV_CostIdentificationId12" StaticList="false" IterBinding="RunAllocationEngineVOIterator"
+                  id="CostIdentificationId"/>
+    <listOfValues Uses="LOV_TransationSource" StaticList="false" IterBinding="RunAllocationEngineVOIterator"
+                  id="TransationSource1"/>
+    <list IterBinding="RunAllocationEngineVOIterator" StaticList="false" Uses="LOV_CostIdentificationId12"
+          id="CostIdentificationId1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="RunAllocationEngineVOIterator" StaticList="false" Uses="LOV_OperationUnit" id="OperationUnit"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

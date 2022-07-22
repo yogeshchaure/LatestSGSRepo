@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="statisticalDataPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsStatisticalDataVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsStatisticalDataVO1Iterator"/>
+    <searchRegion Criteria="SgsStatisticalDataVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" Binds="SgsStatisticalDataVO1Iterator"
+                  id="SgsStatisticalDataVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SgsStatisticalDataVO1Iterator" id="SgsStatisticalDataVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsStatisticalDataVO" Name="SgsStatisticalDataVO10">
+        <AttrNames>
+          <Item Value="LineId"/>
+          <Item Value="Month"/>
+          <Item Value="StatisticalDataCategory"/>
+          <Item Value="BusinessUnit"/>
+          <Item Value="JobCode"/>
+          <Item Value="OperationalUnit"/>
+          <Item Value="UnitOfMeasure"/>
+          <Item Value="DataStatus"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="Status"/>
+          <Item Value="StatisticalData"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsStatisticalDataVO1Iterator" id="Delete"
+            InstanceName="SGSAppModuleDataControl.SgsStatisticalDataVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

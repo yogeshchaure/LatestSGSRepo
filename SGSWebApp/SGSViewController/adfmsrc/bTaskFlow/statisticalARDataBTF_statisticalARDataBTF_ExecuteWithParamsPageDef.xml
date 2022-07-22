@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="statisticalARDataBTF_statisticalARDataBTF_ExecuteWithParamsPageDef" Package="bTaskFlow"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="SgsARStatisticalDataVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsARStatisticalDataVO1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="SgsARStatisticalDataVO1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="p_status" NDValue="'Submitted for Approval'" NDType="java.lang.String"/>
+      <NamedData NDName="bstsCateg" NDType="java.lang.String"/>
+      <NamedData NDName="bMonth" NDType="java.lang.String"/>
+      <NamedData NDName="bBunit" NDType="java.lang.String"/>
+    </action>
+  </bindings>
+</pageDefinition>

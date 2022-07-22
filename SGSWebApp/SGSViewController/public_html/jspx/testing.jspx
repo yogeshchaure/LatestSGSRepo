@@ -1,0 +1,370 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="testing" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:table value="#{bindings.SgsRevAllocatedDataVO.collectionModel}" var="row"
+                          rows="#{bindings.SgsRevAllocatedDataVO.rangeSize}"
+                          emptyText="#{bindings.SgsRevAllocatedDataVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" fetchSize="#{bindings.SgsRevAllocatedDataVO.rangeSize}" id="t1">
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.AccountingTreatment.label}" id="c1">
+                        <af:selectOneChoice value="#{row.bindings.AccountingTreatment.inputValue}"
+                                            label="#{row.bindings.AccountingTreatment.label}"
+                                            required="#{bindings.SgsRevAllocatedDataVO.hints.AccountingTreatment.mandatory}"
+                                            shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.AccountingTreatment.tooltip}"
+                                            id="soc1">
+                            <f:selectItems value="#{row.bindings.AccountingTreatment.items}" id="si1"/>
+                            <f:validator binding="#{row.bindings.AccountingTreatment.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.AllocationId.label}" id="c2">
+                        <af:inputText value="#{row.bindings.AllocationId.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.AllocationId.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.AllocationId.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.AllocationId.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.AllocationId.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.AllocationId.tooltip}" id="it1">
+                            <f:validator binding="#{row.bindings.AllocationId.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.AllocationRuleId.label}" id="c3">
+                        <af:selectOneChoice value="#{row.bindings.AllocationRuleId.inputValue}"
+                                            label="#{row.bindings.AllocationRuleId.label}"
+                                            required="#{bindings.SgsRevAllocatedDataVO.hints.AllocationRuleId.mandatory}"
+                                            shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.AllocationRuleId.tooltip}"
+                                            id="soc2">
+                            <f:selectItems value="#{row.bindings.AllocationRuleId.items}" id="si2"/>
+                            <f:validator binding="#{row.bindings.AllocationRuleId.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.Amount.label}" id="c4">
+                        <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.Amount.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.Amount.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.Amount.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.Amount.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.Amount.tooltip}" id="it2">
+                            <f:validator binding="#{row.bindings.Amount.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.SgsRevAllocatedDataVO.hints.Amount.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.CostIdentificationId.label}" id="c5">
+                        <af:selectOneChoice value="#{row.bindings.CostIdentificationId.inputValue}"
+                                            label="#{row.bindings.CostIdentificationId.label}"
+                                            required="#{bindings.SgsRevAllocatedDataVO.hints.CostIdentificationId.mandatory}"
+                                            shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.CostIdentificationId.tooltip}"
+                                            id="soc3">
+                            <f:selectItems value="#{row.bindings.CostIdentificationId.items}" id="si3"/>
+                            <f:validator binding="#{row.bindings.CostIdentificationId.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.CreatedBy.label}" id="c6">
+                        <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.CreatedBy.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.CreatedBy.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.CreatedBy.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.CreatedBy.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.CreatedBy.tooltip}" id="it3">
+                            <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.CreatedDate.label}" id="c7">
+                        <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.CreatedDate.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.CreatedDate.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.CreatedDate.displayWidth}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.CreatedDate.tooltip}" id="id1">
+                            <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.SgsRevAllocatedDataVO.hints.CreatedDate.format}"/>
+                        </af:inputDate>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpAmount.label}" id="c8">
+                        <af:inputText value="#{row.bindings.MarkUpAmount.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpAmount.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpAmount.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpAmount.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpAmount.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpAmount.tooltip}" id="it4">
+                            <f:validator binding="#{row.bindings.MarkUpAmount.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpRage.label}" id="c9">
+                        <af:inputText value="#{row.bindings.MarkUpRage.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpRage.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpRage.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpRage.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpRage.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpRage.tooltip}" id="it5">
+                            <f:validator binding="#{row.bindings.MarkUpRage.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.RadId.label}" id="c10">
+                        <af:inputText value="#{row.bindings.RadId.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.RadId.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.RadId.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.RadId.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.RadId.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.RadId.tooltip}" id="it6">
+                            <f:validator binding="#{row.bindings.RadId.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.SgsRevAllocatedDataVO.hints.RadId.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.SelectInd.label}" id="c11">
+                        <af:inputText value="#{row.bindings.SelectInd.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.SelectInd.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.SelectInd.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.SelectInd.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.SelectInd.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SelectInd.tooltip}" id="it7">
+                            <f:validator binding="#{row.bindings.SelectInd.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.ServiceCategory.label}" id="c12">
+                        <af:selectOneChoice value="#{row.bindings.ServiceCategory.inputValue}"
+                                            label="#{row.bindings.ServiceCategory.label}"
+                                            required="#{bindings.SgsRevAllocatedDataVO.hints.ServiceCategory.mandatory}"
+                                            shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.ServiceCategory.tooltip}"
+                                            id="soc4">
+                            <f:selectItems value="#{row.bindings.ServiceCategory.items}" id="si4"/>
+                            <f:validator binding="#{row.bindings.ServiceCategory.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.SourceAmount.label}" id="c13">
+                        <af:inputText value="#{row.bindings.SourceAmount.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.SourceAmount.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.SourceAmount.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.SourceAmount.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.SourceAmount.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SourceAmount.tooltip}" id="it8">
+                            <f:validator binding="#{row.bindings.SourceAmount.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.SgsRevAllocatedDataVO.hints.SourceAmount.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.SourceBu.label}" id="c14">
+                        <af:inputText value="#{row.bindings.SourceBu.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.SourceBu.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.SourceBu.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.SourceBu.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.SourceBu.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SourceBu.tooltip}" id="it9">
+                            <f:validator binding="#{row.bindings.SourceBu.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.SourceOu.label}" id="c15">
+                        <af:selectOneChoice value="#{row.bindings.SourceOu.inputValue}"
+                                            label="#{row.bindings.SourceOu.label}"
+                                            required="#{bindings.SgsRevAllocatedDataVO.hints.SourceOu.mandatory}"
+                                            shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SourceOu.tooltip}"
+                                            id="soc5">
+                            <f:selectItems value="#{row.bindings.SourceOu.items}" id="si5"/>
+                            <f:validator binding="#{row.bindings.SourceOu.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.SourceGlAccount.label}" id="c16">
+                        <af:inputText value="#{row.bindings.SourceGlAccount.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.SourceGlAccount.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.SourceGlAccount.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.SourceGlAccount.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.SourceGlAccount.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SourceGlAccount.tooltip}"
+                                      id="it10">
+                            <f:validator binding="#{row.bindings.SourceGlAccount.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.SgsRevAllocatedDataVO.hints.SourceGlAccount.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.SourceJobCode.label}" id="c17">
+                        <af:inputText value="#{row.bindings.SourceJobCode.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.SourceJobCode.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.SourceJobCode.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.SourceJobCode.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.SourceJobCode.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SourceJobCode.tooltip}"
+                                      id="it11">
+                            <f:validator binding="#{row.bindings.SourceJobCode.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.SgsRevAllocatedDataVO.hints.SourceJobCode.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.Status.label}" id="c18">
+                        <af:selectOneChoice value="#{row.bindings.Status.inputValue}"
+                                            label="#{row.bindings.Status.label}"
+                                            required="#{bindings.SgsRevAllocatedDataVO.hints.Status.mandatory}"
+                                            shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.Status.tooltip}"
+                                            id="soc6">
+                            <f:selectItems value="#{row.bindings.Status.items}" id="si6"/>
+                            <f:validator binding="#{row.bindings.Status.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.TargetAccount.label}" id="c19">
+                        <af:inputText value="#{row.bindings.TargetAccount.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.TargetAccount.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.TargetAccount.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.TargetAccount.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.TargetAccount.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TargetAccount.tooltip}"
+                                      id="it12">
+                            <f:validator binding="#{row.bindings.TargetAccount.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.SgsRevAllocatedDataVO.hints.TargetAccount.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.TargetBu.label}" id="c20">
+                        <af:inputText value="#{row.bindings.TargetBu.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.TargetBu.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.TargetBu.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.TargetBu.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.TargetBu.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TargetBu.tooltip}" id="it13">
+                            <f:validator binding="#{row.bindings.TargetBu.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.TargetOu.label}" id="c21">
+                        <af:selectOneChoice value="#{row.bindings.TargetOu.inputValue}"
+                                            label="#{row.bindings.TargetOu.label}"
+                                            required="#{bindings.SgsRevAllocatedDataVO.hints.TargetOu.mandatory}"
+                                            shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TargetOu.tooltip}"
+                                            id="soc7">
+                            <f:selectItems value="#{row.bindings.TargetOu.items}" id="si7"/>
+                            <f:validator binding="#{row.bindings.TargetOu.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.TargetJobCode.label}" id="c22">
+                        <af:inputText value="#{row.bindings.TargetJobCode.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.TargetJobCode.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.TargetJobCode.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.TargetJobCode.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.TargetJobCode.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TargetJobCode.tooltip}"
+                                      id="it14">
+                            <f:validator binding="#{row.bindings.TargetJobCode.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.SgsRevAllocatedDataVO.hints.TargetJobCode.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.TargetTransaction.label}" id="c23">
+                        <af:inputText value="#{row.bindings.TargetTransaction.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.TargetTransaction.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.TargetTransaction.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.TargetTransaction.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.TargetTransaction.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TargetTransaction.tooltip}"
+                                      id="it15">
+                            <f:validator binding="#{row.bindings.TargetTransaction.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount.label}" id="c24">
+                        <af:inputText value="#{row.bindings.TotalAmount.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount.tooltip}" id="it16">
+                            <f:validator binding="#{row.bindings.TotalAmount.validator}"/>
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount.format}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.TpaApplicability.label}" id="c25">
+                        <af:selectOneChoice value="#{row.bindings.TpaApplicability.inputValue}"
+                                            label="#{row.bindings.TpaApplicability.label}"
+                                            required="#{bindings.SgsRevAllocatedDataVO.hints.TpaApplicability.mandatory}"
+                                            shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TpaApplicability.tooltip}"
+                                            id="soc8">
+                            <f:selectItems value="#{row.bindings.TpaApplicability.items}" id="si8"/>
+                            <f:validator binding="#{row.bindings.TpaApplicability.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.TransactionCategory.label}" id="c26">
+                        <af:selectOneChoice value="#{row.bindings.TransactionCategory.inputValue}"
+                                            label="#{row.bindings.TransactionCategory.label}"
+                                            required="#{bindings.SgsRevAllocatedDataVO.hints.TransactionCategory.mandatory}"
+                                            shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TransactionCategory.tooltip}"
+                                            id="soc9">
+                            <f:selectItems value="#{row.bindings.TransactionCategory.items}" id="si9"/>
+                            <f:validator binding="#{row.bindings.TransactionCategory.validator}"/>
+                        </af:selectOneChoice>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedBy.label}" id="c27">
+                        <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedBy.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedBy.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedBy.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedBy.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedBy.tooltip}" id="it17">
+                            <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedDate.label}" id="c28">
+                        <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedDate.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedDate.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedDate.displayWidth}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedDate.tooltip}" id="id2">
+                            <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.SgsRevAllocatedDataVO.hints.UpdatedDate.format}"/>
+                        </af:inputDate>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.WhtRate.label}" id="c29">
+                        <af:inputText value="#{row.bindings.WhtRate.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.WhtRate.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.WhtRate.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.WhtRate.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.WhtRate.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.WhtRate.tooltip}" id="it18">
+                            <f:validator binding="#{row.bindings.WhtRate.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.WhtAmount.label}" id="c30">
+                        <af:inputText value="#{row.bindings.WhtAmount.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.WhtAmount.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.WhtAmount.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.WhtAmount.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.WhtAmount.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.WhtAmount.tooltip}" id="it19">
+                            <f:validator binding="#{row.bindings.WhtAmount.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.GstRate.label}" id="c31">
+                        <af:inputText value="#{row.bindings.GstRate.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.GstRate.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.GstRate.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.GstRate.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.GstRate.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.GstRate.tooltip}" id="it20">
+                            <f:validator binding="#{row.bindings.GstRate.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.GstAmount.label}" id="c32">
+                        <af:inputText value="#{row.bindings.GstAmount.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.GstAmount.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.GstAmount.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.GstAmount.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.GstAmount.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.GstAmount.tooltip}" id="it21">
+                            <f:validator binding="#{row.bindings.GstAmount.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.ConsolidatedInvAmount.label}"
+                               id="c33">
+                        <af:inputText value="#{row.bindings.ConsolidatedInvAmount.inputValue}"
+                                      label="#{bindings.SgsRevAllocatedDataVO.hints.ConsolidatedInvAmount.label}"
+                                      required="#{bindings.SgsRevAllocatedDataVO.hints.ConsolidatedInvAmount.mandatory}"
+                                      columns="#{bindings.SgsRevAllocatedDataVO.hints.ConsolidatedInvAmount.displayWidth}"
+                                      maximumLength="#{bindings.SgsRevAllocatedDataVO.hints.ConsolidatedInvAmount.precision}"
+                                      shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.ConsolidatedInvAmount.tooltip}"
+                                      id="it22">
+                            <f:validator binding="#{row.bindings.ConsolidatedInvAmount.validator}"/>
+                        </af:inputText>
+                    </af:column>
+                </af:table>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

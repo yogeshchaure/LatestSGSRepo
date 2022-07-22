@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="runAllocationEngineBTF_runAllocationEngineBTF_CreateInsertPageDef" Package="bTaskFlow"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="RunAllocationEngineVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="RunAllocationEngineVOIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="RunAllocationEngineVOIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelGroupLayout id="pgl1" layout="vertical">
+       <af:panelGroupLayout id="pgl2" >
+         <af:spacer id="s5" width="20"/>
+        <af:outputText value="Add: Withholding Tax (WHT) / Tax Deducted at Source (TDS) Tax Rule" id="ot1" inlineStyle="font-weight:bold;font-size:15px;"/>
+         <af:spacer id="s1" width="800" />
+           
+           <!--<af:button actionListener="#{bindings.Commit.execute}"
+                       id="b1" action="back"
+                   disabled="#{(!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=Update'])}"
+                       text="Save" accessKey="S"/>
+			 <af:spacer id="s4" width="3"/>
+            <af:button actionListener="#{bindings.Rollback.execute}" immediate="true" id="b2" action="back"
+                        text="Cancel" accessKey="C"/>-->
+           
+        </af:panelGroupLayout>
+        <af:panelBox text="Withholding Tax (WHT) / Tax Deducted at Source (TDS)" id="pb1">
+          <f:facet name="toolbar">
+          <af:toolbar id="t1">
+            <af:button actionListener="#{bindings.Commit.execute}"
+                       id="b1" action="back"
+                   disabled="#{(!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=Update'])}"
+                       text="Save" accessKey="S"/>
+            <af:button actionListener="#{bindings.Rollback.execute}" immediate="true" id="b2" action="back"
+                        text="Cancel" accessKey="C">
+            
+            </af:button>
+           
+          </af:toolbar>
+          </f:facet>
+          <af:panelFormLayout id="pfl1" rows="10">
+            <af:inputText value="#{bindings.TdsWhtId.inputValue}" label="#{bindings.TdsWhtId.hints.label}"
+                          required="#{bindings.TdsWhtId.hints.mandatory}" visible="false"
+                          columns="#{bindings.TdsWhtId.hints.displayWidth}"
+                          maximumLength="#{bindings.TdsWhtId.hints.precision}"
+                          shortDesc="#{bindings.TdsWhtId.hints.tooltip}" id="it8">
+              <f:validator binding="#{bindings.TdsWhtId.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.TaxCode.inputValue}" label="Tax Code"
+                          required="#{bindings.TaxCode.hints.mandatory}"
+                          columns="#{bindings.TaxCode.hints.displayWidth}"
+                          maximumLength="#{bindings.TaxCode.hints.precision}"
+                          shortDesc="#{bindings.TaxCode.hints.tooltip}" id="it1">
+              <f:validator binding="#{bindings.TaxCode.validator}"/>
+            </af:inputText>
+            <af:selectOneChoice value="#{bindings.ServiceReceiver.inputValue}" label="Service Receiver"
+                                required="#{bindings.ServiceReceiver.hints.mandatory}"
+                                shortDesc="#{bindings.ServiceReceiver.hints.tooltip}" id="soc4">
+              <f:selectItems value="#{bindings.ServiceReceiver.items}" id="si3"/>
+              <f:validator binding="#{bindings.ServiceReceiver.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.ServiceProvider.inputValue}" label="Service Provider"
+                                required="#{bindings.ServiceProvider.hints.mandatory}"
+                                shortDesc="#{bindings.ServiceProvider.hints.tooltip}" id="soc6">
+              <f:selectItems value="#{bindings.ServiceProvider.items}" id="si6"/>
+              <f:validator binding="#{bindings.ServiceProvider.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.PointOfDeduction.inputValue}"
+                                label="Point of Deduction"
+                                required="#{bindings.PointOfDeduction.hints.mandatory}"
+                                shortDesc="#{bindings.PointOfDeduction.hints.tooltip}" id="soc1">
+              <f:selectItems value="#{bindings.PointOfDeduction.items}" id="si4"/>
+              <f:validator binding="#{bindings.PointOfDeduction.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.TaxBase.inputValue}" label="Tax Base"
+                                required="#{bindings.TaxBase.hints.mandatory}"
+                                shortDesc="#{bindings.TaxBase.hints.tooltip}" id="soc5">
+              <f:selectItems value="#{bindings.TaxBase.items}" id="si5"/>
+              <f:validator binding="#{bindings.TaxBase.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.SectionApplicability.inputValue}"
+                                label="Section Applicability"
+                                required="#{bindings.SectionApplicability.hints.mandatory}"
+                                shortDesc="#{bindings.SectionApplicability.hints.tooltip}" id="soc2">
+              <f:selectItems value="#{bindings.SectionApplicability.items}" id="si2"/>
+              <f:validator binding="#{bindings.SectionApplicability.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.IsPanTrcAvailable.inputValue}"
+                                label="Tax Identification Number"
+                                required="#{bindings.IsPanTrcAvailable.hints.mandatory}"
+                                shortDesc="#{bindings.IsPanTrcAvailable.hints.tooltip}" id="soc7">
+              <f:selectItems value="#{bindings.IsPanTrcAvailable.items}" id="si7"/>
+              <f:validator binding="#{bindings.IsPanTrcAvailable.validator}"/>
+            </af:selectOneChoice>
+            <af:panelLabelAndMessage label="Validity Period" id="plam1">
+              <af:panelGroupLayout id="pgl13" layout="horizontal">
+                <af:inputDate value="#{bindings.ValidityPeriodFrom.inputValue}" simple="true"
+                              label="#{bindings.ValidityPeriodFrom.hints.label}" contentStyle="width:126px;"
+                              required="#{bindings.ValidityPeriodFrom.hints.mandatory}"
+                              columns="#{bindings.ValidityPeriodFrom.hints.displayWidth}"
+                              shortDesc="#{bindings.ValidityPeriodFrom.hints.tooltip}" id="id1">
+                  <f:validator binding="#{bindings.ValidityPeriodFrom.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.ValidityPeriodFrom.format}"/>
+                </af:inputDate>
+                <af:spacer id="s3" width="3"/>
+                <af:inputDate value="#{bindings.ValidityPeriodTo.inputValue}" simple="true"
+                              label="#{bindings.ValidityPeriodTo.hints.label}"
+                              required="#{bindings.ValidityPeriodTo.hints.mandatory}" contentStyle="width:126px;"
+                              columns="#{bindings.ValidityPeriodTo.hints.displayWidth}"
+                              shortDesc="#{bindings.ValidityPeriodTo.hints.tooltip}" id="id2">
+                  <f:validator binding="#{bindings.ValidityPeriodTo.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.ValidityPeriodTo.format}"/>
+                </af:inputDate>
+              </af:panelGroupLayout>
+            </af:panelLabelAndMessage>
+            <af:inputText value="#{bindings.GlAccounts.inputValue}" label="GL Accounts"
+                          required="#{bindings.GlAccounts.hints.mandatory}"
+                          columns="#{bindings.GlAccounts.hints.displayWidth}"
+                          maximumLength="#{bindings.GlAccounts.hints.precision}"
+                          shortDesc="#{bindings.GlAccounts.hints.tooltip}" id="it2">
+              <f:validator binding="#{bindings.GlAccounts.validator}"/>
+            </af:inputText>
+             <af:panelLabelAndMessage label="Rate of Tax" id="plam12">
+              <af:panelGroupLayout id="pgl4" layout="horizontal">
+              <af:inputText value="#{bindings.RateOfTax.inputValue}" label="Rate of Tax"
+                          required="#{bindings.RateOfTax.hints.mandatory}" simple="true"
+                          columns="#{bindings.RateOfTax.hints.displayWidth}"
+                          maximumLength="#{bindings.RateOfTax.hints.precision}"
+                          shortDesc="#{bindings.RateOfTax.hints.tooltip}" id="it3">
+              <f:validator binding="#{bindings.RateOfTax.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.RateOfTax.format}"/>
+            </af:inputText>
+                <af:spacer id="s111" width="2"/>
+                <af:outputText value="%" id="ot3"/>
+              </af:panelGroupLayout>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="Recovery Rate (Foreign Tax Credit)" id="plam2">
+              <af:panelGroupLayout id="pgl3" layout="horizontal">
+            <af:inputText value="#{bindings.RecoveryRate.inputValue}" label="Recovery Rate (Foreign Tax Credit)"
+                          required="#{bindings.RecoveryRate.hints.mandatory}" simple="true"
+                          columns="#{bindings.RecoveryRate.hints.displayWidth}"
+                          maximumLength="#{bindings.RecoveryRate.hints.precision}"
+                          shortDesc="#{bindings.RecoveryRate.hints.tooltip}" id="it4">
+              <f:validator binding="#{bindings.RecoveryRate.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.RecoveryRate.format}"/>
+            </af:inputText>
+             <af:spacer id="s2" width="2"/>
+                <af:outputText value="%" id="ot2"/>
+            </af:panelGroupLayout>
+            </af:panelLabelAndMessage>
+            <af:selectOneChoice value="#{bindings.Currency.inputValue}" label="Currency"
+                                required="#{bindings.Currency.hints.mandatory}"
+                                shortDesc="#{bindings.Currency.hints.tooltip}" id="soc3">
+              <f:selectItems value="#{bindings.Currency.items}" id="si1"/>
+              <f:validator binding="#{bindings.Currency.validator}"/>
+            </af:selectOneChoice>
+            <af:inputText value="#{bindings.ThresholdLimit.inputValue}" label="Threshold Limit"
+                          required="#{bindings.ThresholdLimit.hints.mandatory}"
+                          columns="#{bindings.ThresholdLimit.hints.displayWidth}"
+                          maximumLength="#{bindings.ThresholdLimit.hints.precision}"
+                          shortDesc="#{bindings.ThresholdLimit.hints.tooltip}" id="it5">
+              <f:validator binding="#{bindings.ThresholdLimit.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.ThresholdLimit.format}" type="currency"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.CummulativeThresholdLimit.inputValue}"
+                          label="Cummulative Threshold Limit"
+                          required="#{bindings.CummulativeThresholdLimit.hints.mandatory}"
+                          columns="#{bindings.CummulativeThresholdLimit.hints.displayWidth}"
+                          maximumLength="#{bindings.CummulativeThresholdLimit.hints.precision}"
+                          shortDesc="#{bindings.CummulativeThresholdLimit.hints.tooltip}" id="it6">
+              <f:validator binding="#{bindings.CummulativeThresholdLimit.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.CummulativeThresholdLimit.format}"
+                                type="currency"/>
+            </af:inputText>
+             <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="Effective From"
+                          required="#{bindings.EffectiveFrom.hints.mandatory}"
+                          columns="#{bindings.EffectiveFrom.hints.displayWidth}"
+                          shortDesc="#{bindings.EffectiveFrom.hints.tooltip}" id="id4">
+              <f:validator binding="#{bindings.EffectiveFrom.validator}"/>
+              <af:convertDateTime pattern="#{bindings.EffectiveFrom.format}"/>
+            </af:inputDate>
+            <af:inputDate value="#{bindings.EffectiveTo.inputValue}" label="Effective To"
+                          required="#{bindings.EffectiveTo.hints.mandatory}"
+                          columns="#{bindings.EffectiveTo.hints.displayWidth}"
+                          shortDesc="#{bindings.EffectiveTo.hints.tooltip}" id="id3">
+              <f:validator binding="#{bindings.EffectiveTo.validator}"/>
+              <af:convertDateTime pattern="#{bindings.EffectiveTo.format}"/>
+            </af:inputDate>
+           
+            <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="Updated By"
+                          required="#{bindings.UpdatedBy.hints.mandatory}" readOnly="true"
+                          columns="#{bindings.UpdatedBy.hints.displayWidth}"
+                          maximumLength="#{bindings.UpdatedBy.hints.precision}"
+                          shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="it7">
+              <f:validator binding="#{bindings.UpdatedBy.validator}"/>
+            </af:inputText>
+            <af:inputDate value="#{bindings.UpdatedDate.inputValue}" label="Updated Date"
+                          required="#{bindings.UpdatedDate.hints.mandatory}" readOnly="true"
+                          columns="#{bindings.UpdatedDate.hints.displayWidth}"
+                          shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="id5">
+              <f:validator binding="#{bindings.UpdatedDate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
+            </af:inputDate>
+          </af:panelFormLayout>
+        </af:panelBox>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

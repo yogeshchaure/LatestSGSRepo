@@ -1,0 +1,19 @@
+//Groovy Scripts for com.sgs.model.view.MarkUpRateMsterVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="SgsListVO1", name="pType")
+def pType_SgsListVO1_BindVariable_BoundParameter()
+{
+'GEO'
+}
+
+
+@AccessorParameterExpression(accessorName="SgsListVO2", name="pType")
+def pType_SgsListVO2_BindVariable_BoundParameter()
+{
+'SERVICE_CATEGORY'
+}
+
