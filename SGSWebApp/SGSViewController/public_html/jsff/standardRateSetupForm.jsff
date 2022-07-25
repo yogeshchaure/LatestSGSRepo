@@ -61,6 +61,22 @@
                         <f:validator binding="#{bindings.StandardCost.validator}"/>
                         <af:convertNumber groupingUsed="false" pattern="#{bindings.StandardCost.format}"/>
                     </af:inputText>
+                    <af:inputText value="#{bindings.DepartmentCostCenter.inputValue}"
+                                  label="Department/Cost center"
+                                  required="#{bindings.DepartmentCostCenter.hints.mandatory}"
+                                  columns="#{bindings.DepartmentCostCenter.hints.displayWidth}"
+                                  maximumLength="#{bindings.DepartmentCostCenter.hints.precision}"
+                                  shortDesc="#{bindings.DepartmentCostCenter.hints.tooltip}" id="it6">
+                        <f:validator binding="#{bindings.DepartmentCostCenter.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.Currency.inputValue}" label="Currency"
+                                  required="#{bindings.Currency.hints.mandatory}"
+                                  columns="#{bindings.Currency.hints.displayWidth}"
+                                  maximumLength="#{bindings.Currency.hints.precision}"
+                                  shortDesc="#{bindings.Currency.hints.tooltip}" id="it5">
+                        <f:validator binding="#{bindings.Currency.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Currency.format}"/>
+                    </af:inputText>
                     <af:inputDate value="#{bindings.EffectiveStartDate.inputValue}" label="Effective Start Date"
                                   required="#{bindings.EffectiveStartDate.hints.mandatory}"
                                   columns="#{bindings.EffectiveStartDate.hints.displayWidth}"

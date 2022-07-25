@@ -122,6 +122,22 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="nettingApplicatibilityLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsTpaMasterVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_LeServiceProvider"
     ListVOName="LegalEntityList"
@@ -202,6 +218,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="OperationUnit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_NETTINGAPPLICATIBILITY"
+    ListVOName="nettingApplicatibilityLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="NETTINGAPPLICATIBILITY"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -338,6 +372,20 @@
     EntityUsage="SgsTpaMaster"
     AliasName="UPDATED_BY"
     IsUpdateable="false"/>
+  <ViewAttribute
+    Name="NETTINGAPPLICATIBILITY"
+    PrecisionRule="true"
+    EntityAttrName="NETTINGAPPLICATIBILITY"
+    EntityUsage="SgsTpaMaster"
+    AliasName="NETTING_APPLICATIBILITY"
+    LOVName="LOV_NETTINGAPPLICATIBILITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsTpaMasterVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsTpaMasterVO"

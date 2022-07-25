@@ -55,5 +55,15 @@
     <action IterBinding="SgsStandarardRateVO1Iterator" id="Delete"
             InstanceName="SGSAppModuleDataControl.SgsStandarardRateVO1" DataControl="SGSAppModuleDataControl"
             RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="Currency">
+      <AttrNames>
+        <Item Value="Currency"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="DepartmentCostCenter">
+      <AttrNames>
+        <Item Value="DepartmentCostCenter"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

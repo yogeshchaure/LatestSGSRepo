@@ -154,6 +154,18 @@
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="NETTINGAPPLICATIBILITY"
+    Precision="5"
+    ColumnName="NETTING_APPLICATIBILITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TPA_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PKSGSTPAMASTER"
     PrimaryKey="true">

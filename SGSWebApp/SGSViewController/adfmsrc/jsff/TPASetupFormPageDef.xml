@@ -48,5 +48,7 @@
             DataControl="SGSAppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <list IterBinding="SgsTpaMasterVO1Iterator" StaticList="false" Uses="LOV_OperationUnit" id="OperationUnit"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsTpaMasterVO1Iterator" StaticList="false" Uses="LOV_NETTINGAPPLICATIBILITY"
+          id="NETTINGAPPLICATIBILITY" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

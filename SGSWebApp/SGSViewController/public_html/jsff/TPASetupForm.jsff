@@ -7,7 +7,7 @@
         <f:facet name="top"/>
         <f:facet name="bottom"/>
         <f:facet name="center">
-            <af:panelBox text="TPA Mater Form" id="pb1">
+            <af:panelBox text="TPA Master" id="pb1">
                 <f:facet name="toolbar">
                     <af:toolbar id="t1">
                         <af:button id="b1" action="back" actionListener="#{bindings.Commit.execute}"
@@ -20,7 +20,7 @@
                                    immediate="true" text="Cancel" accessKey="C"/>
                     </af:toolbar>
                 </f:facet>
-                <af:panelFormLayout id="pfl1" rows="5">
+                <af:panelFormLayout id="pfl1" rows="6">
                     <af:inputText value="#{bindings.TpaId.inputValue}" label="TPA ID"
                                   required="#{bindings.TpaId.hints.mandatory}"
                                   columns="#{bindings.TpaId.hints.displayWidth}"
@@ -62,6 +62,13 @@
                         <f:selectItems value="#{bindings.OperationUnit.items}" id="si5"/>
                         <f:validator binding="#{bindings.OperationUnit.validator}"/>
                     </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.NETTINGAPPLICATIBILITY.inputValue}"
+                                        label="Netting Applicatibility"
+                                        required="#{bindings.NETTINGAPPLICATIBILITY.hints.mandatory}"
+                                        shortDesc="#{bindings.NETTINGAPPLICATIBILITY.hints.tooltip}" id="soc6">
+                        <f:selectItems value="#{bindings.NETTINGAPPLICATIBILITY.items}" id="si6"/>
+                        <f:validator binding="#{bindings.NETTINGAPPLICATIBILITY.validator}"/>
+                    </af:selectOneChoice>
                     <af:inputDate value="#{bindings.EffectiveStartDate.inputValue}"
                                   label="#{bindings.EffectiveStartDate.hints.label}"
                                   required="#{bindings.EffectiveStartDate.hints.mandatory}"
@@ -92,6 +99,7 @@
                                   shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="it2">
                         <f:validator binding="#{bindings.UpdatedBy.validator}"/>
                     </af:inputText>
+                    
                 </af:panelFormLayout>
             </af:panelBox>
         </f:facet>

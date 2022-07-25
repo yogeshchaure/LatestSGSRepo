@@ -883,6 +883,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="ALLOCATIONBASIS"
+    PrecisionRule="true"
+    EntityAttrName="ALLOCATIONBASIS"
+    EntityUsage="SgsTransBCostAllocation"
+    AliasName="ALLOCATION_BASIS"/>
   <ViewCriteria
     Name="SgsTransBCostAllocationVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsTransBCostAllocationVO"

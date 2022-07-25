@@ -151,6 +151,27 @@
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="Currency"
+    Precision="10"
+    Scale="2"
+    ColumnName="Currency"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="SGS_STANDARARD_RATE"/>
+  <Attribute
+    Name="DepartmentCostCenter"
+    Precision="50"
+    ColumnName="Department_CostCenter"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_STANDARARD_RATE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PKSGSSTANDARARDRATE"
     PrimaryKey="true">

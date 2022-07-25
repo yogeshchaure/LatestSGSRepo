@@ -70,9 +70,19 @@
             rendered="#{pageFlowScope.pStatus eq 'Rectified Transaction'}">
               <af:link text="#{bindings.RectificationId.inputValue}" id="l2"/>
             </af:panelLabelAndMessage>
+            
           </af:panelFormLayout>
         <af:spacer id="s11" width="25"/>
         <af:outputText value="(Applicable in case rectified)" id="ot13"/>
+        <af:panelFormLayout id="pf41" rows="4">
+        <af:inputText value="#{bindings.ALLOCATIONBASIS.inputValue}" label="Allocation Basis"
+                          required="#{bindings.ALLOCATIONBASIS.hints.mandatory}"
+                          columns="#{bindings.ALLOCATIONBASIS.hints.displayWidth}"
+                          maximumLength="#{bindings.ALLOCATIONBASIS.hints.precision}"
+                          shortDesc="#{bindings.ALLOCATIONBASIS.hints.tooltip}" id="it1">
+              <f:validator binding="#{bindings.ALLOCATIONBASIS.validator}"/>
+            </af:inputText>
+            </af:panelFormLayout>
         <af:panelBox text="Chart Fields" id="pb2">
           <f:facet name="toolbar"/>
           <af:panelFormLayout id="pfl2" rows="5">
