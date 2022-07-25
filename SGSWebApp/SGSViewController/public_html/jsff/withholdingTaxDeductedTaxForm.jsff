@@ -158,7 +158,7 @@
                           maximumLength="#{bindings.ThresholdLimit.hints.precision}"
                           shortDesc="#{bindings.ThresholdLimit.hints.tooltip}" id="it5">
               <f:validator binding="#{bindings.ThresholdLimit.validator}"/>
-              <af:convertNumber groupingUsed="false" pattern="#{bindings.ThresholdLimit.format}" type="currency"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.ThresholdLimit.format}" />
             </af:inputText>
             <af:inputText value="#{bindings.CummulativeThresholdLimit.inputValue}"
                           label="Cummulative Threshold Limit"
@@ -168,7 +168,7 @@
                           shortDesc="#{bindings.CummulativeThresholdLimit.hints.tooltip}" id="it6">
               <f:validator binding="#{bindings.CummulativeThresholdLimit.validator}"/>
               <af:convertNumber groupingUsed="false" pattern="#{bindings.CummulativeThresholdLimit.format}"
-                                type="currency"/>
+                               />
             </af:inputText>
              <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="Effective From"
                           required="#{bindings.EffectiveFrom.hints.mandatory}"

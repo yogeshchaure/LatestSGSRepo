@@ -437,6 +437,18 @@
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="ALLOCATIONBASIS"
+    Precision="50"
+    ColumnName="ALLOCATION_BASIS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PKSGSTRANSBCOSTALLOCATION"
     PrimaryKey="true">

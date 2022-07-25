@@ -29,13 +29,13 @@
               rowBandingInterval="0" selectedRowKeys="#{bindings.SgsStatisticalDataVO1.collectionModel.selectedRow}"
               selectionListener="#{bindings.SgsStatisticalDataVO1.collectionModel.makeCurrent}" rowSelection="single"
               fetchSize="#{bindings.SgsStatisticalDataVO1.rangeSize}" id="resId1">
-              <af:column id="c2" align="center" headerText="Select">
-                <af:selectBooleanCheckbox id="sbc1"/>
-              </af:column>
-      <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.LineId.label}" id="resId1c1">
-                       <af:link text="#{row.LineId}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
-      </af:column>
-      <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.Month.label}" id="resId1c2">
+        <af:column id="c2" align="center" headerText="Select">
+          <af:selectBooleanCheckbox id="sbc1"/>
+        </af:column>
+        <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.LineId.label}" id="resId1c1">
+          <af:link text="#{row.LineId}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
+        </af:column>
+        <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.Month.label}" id="resId1c2" rendered="false">
           <af:inputDate value="#{row.bindings.Month.inputValue}"
                         required="#{bindings.SgsStatisticalDataVO1.hints.Month.mandatory}"
                         columns="#{bindings.SgsStatisticalDataVO1.hints.Month.displayWidth}"
@@ -44,33 +44,55 @@
             <af:convertDateTime pattern="#{bindings.SgsStatisticalDataVO1.hints.Month.format}"/>
           </af:inputDate>
         </af:column>
-      <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.StatisticalDataCategory.label}" id="resId1c3">
-        <af:selectOneChoice value="#{row.bindings.StatisticalDataCategory.inputValue}"
-                            label="#{row.bindings.StatisticalDataCategory.label}"
-                            required="#{bindings.SgsStatisticalDataVO1.hints.StatisticalDataCategory.mandatory}"
-                            shortDesc="#{bindings.SgsStatisticalDataVO1.hints.StatisticalDataCategory.tooltip}"
-                            readOnly="true" id="soc2">
-          <f:selectItems value="#{row.bindings.StatisticalDataCategory.items}" id="si2"/>
-          <f:validator binding="#{row.bindings.StatisticalDataCategory.validator}"/>
-        </af:selectOneChoice>
-      </af:column>
-      <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.BusinessUnit.label}" id="resId1c4">
-        <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}" label="#{row.bindings.BusinessUnit.label}"
-                            required="#{bindings.SgsStatisticalDataVO1.hints.BusinessUnit.mandatory}"
-                            shortDesc="#{bindings.SgsStatisticalDataVO1.hints.BusinessUnit.tooltip}" readOnly="true"
-                            id="soc3">
-          <f:selectItems value="#{row.bindings.BusinessUnit.items}" id="si3"/>
-          <f:validator binding="#{row.bindings.BusinessUnit.validator}"/>
-        </af:selectOneChoice>
-      </af:column>
-      <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.JobCode.label}" id="resId1c5">
-        <af:outputText value="#{row.JobCode}" shortDesc="#{bindings.SgsStatisticalDataVO1.hints.JobCode.tooltip}"
-                       id="ot2"/>
-      </af:column>
-      <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.OperationalUnit.label}" id="resId1c6">
-        <af:outputText value="#{row.OperationalUnit}"
-                       shortDesc="#{bindings.SgsStatisticalDataVO1.hints.OperationalUnit.tooltip}" id="ot3"/>
-      </af:column>
+        <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.StatisticalDataCategory.label}" id="resId1c3">
+          <af:selectOneChoice value="#{row.bindings.StatisticalDataCategory.inputValue}"
+                              label="#{row.bindings.StatisticalDataCategory.label}"
+                              required="#{bindings.SgsStatisticalDataVO1.hints.StatisticalDataCategory.mandatory}"
+                              shortDesc="#{bindings.SgsStatisticalDataVO1.hints.StatisticalDataCategory.tooltip}"
+                               id="soc2">
+            <f:selectItems value="#{row.bindings.StatisticalDataCategory.items}" id="si2"/>
+            <f:validator binding="#{row.bindings.StatisticalDataCategory.validator}"/>
+          </af:selectOneChoice>
+        </af:column>
+        <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.BusinessUnit.label}" id="resId1c4">
+          <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}" label="#{row.bindings.BusinessUnit.label}"
+                              required="#{bindings.SgsStatisticalDataVO1.hints.BusinessUnit.mandatory}"
+                              shortDesc="#{bindings.SgsStatisticalDataVO1.hints.BusinessUnit.tooltip}" 
+                              id="soc3">
+            <f:selectItems value="#{row.bindings.BusinessUnit.items}" id="si3"/>
+            <f:validator binding="#{row.bindings.BusinessUnit.validator}"/>
+          </af:selectOneChoice>
+        </af:column>
+        <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.JobCode.label}" id="resId1c5">
+          <af:inputText value="#{row.bindings.JobCode.inputValue}"
+                        label="#{bindings.SgsStatisticalDataVO1.hints.JobCode.label}"
+                        required="#{bindings.SgsStatisticalDataVO1.hints.JobCode.mandatory}"
+                        columns="#{bindings.SgsStatisticalDataVO1.hints.JobCode.displayWidth}"
+                        maximumLength="#{bindings.SgsStatisticalDataVO1.hints.JobCode.precision}"
+                        shortDesc="#{bindings.SgsStatisticalDataVO1.hints.JobCode.tooltip}" id="it2">
+            <f:validator binding="#{row.bindings.JobCode.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column headerText="Operating Unit" id="resId1c6">
+          <af:inputText value="#{row.bindings.OperationalUnit.inputValue}"
+                        label="#{bindings.SgsStatisticalDataVO1.hints.OperationalUnit.label}"
+                        required="#{bindings.SgsStatisticalDataVO1.hints.OperationalUnit.mandatory}"
+                        columns="#{bindings.SgsStatisticalDataVO1.hints.OperationalUnit.displayWidth}"
+                        maximumLength="#{bindings.SgsStatisticalDataVO1.hints.OperationalUnit.precision}"
+                        shortDesc="#{bindings.SgsStatisticalDataVO1.hints.OperationalUnit.tooltip}" id="it5">
+            <f:validator binding="#{row.bindings.OperationalUnit.validator}"/>
+          </af:inputText>
+        </af:column>
+         <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.DepartmentId.label}" id="resId1c10">
+          <af:inputText value="#{row.bindings.DepartmentId.inputValue}"
+                        label="#{bindings.SgsStatisticalDataVO1.hints.DepartmentId.label}"
+                        required="#{bindings.SgsStatisticalDataVO1.hints.DepartmentId.mandatory}"
+                        columns="#{bindings.SgsStatisticalDataVO1.hints.DepartmentId.displayWidth}"
+                        maximumLength="#{bindings.SgsStatisticalDataVO1.hints.DepartmentId.precision}"
+                        shortDesc="#{bindings.SgsStatisticalDataVO1.hints.DepartmentId.tooltip}" id="it4">
+            <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
+          </af:inputText>
+        </af:column>
         <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.StatisticalData.label}" id="c1">
           <af:inputText value="#{row.bindings.StatisticalData.inputValue}" simple="true"
                         required="#{bindings.SgsStatisticalDataVO1.hints.StatisticalData.mandatory}"
@@ -81,27 +103,30 @@
           </af:inputText>
         </af:column>
         <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.UnitOfMeasure.label}" id="resId1c8">
-        <af:outputText value="#{row.UnitOfMeasure}"
-                       shortDesc="#{bindings.SgsStatisticalDataVO1.hints.UnitOfMeasure.tooltip}" id="ot5"/>
-      </af:column>
-      <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.DataStatus.label}" id="resId1c9">
-        <af:outputText value="#{row.DataStatus}" shortDesc="#{bindings.SgsStatisticalDataVO1.hints.DataStatus.tooltip}"
-                       id="ot6"/>
-      </af:column>
-      <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.DepartmentId.label}" id="resId1c10">
-        <af:outputText value="#{row.DepartmentId}"
-                       shortDesc="#{bindings.SgsStatisticalDataVO1.hints.DepartmentId.tooltip}" id="ot7"/>
-      </af:column>
-      <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.Status.label}" id="resId1c11">
-        <af:selectOneChoice value="#{row.bindings.Status.inputValue}" label="#{row.bindings.Status.label}"
-                            required="#{bindings.SgsStatisticalDataVO1.hints.Status.mandatory}"
-                            shortDesc="#{bindings.SgsStatisticalDataVO1.hints.Status.tooltip}" readOnly="true"
-                            id="soc4">
-          <f:selectItems value="#{row.bindings.Status.items}" id="si4"/>
-          <f:validator binding="#{row.bindings.Status.validator}"/>
-        </af:selectOneChoice>
-      </af:column>
-    </af:table>
+          <af:inputText value="#{row.bindings.UnitOfMeasure.inputValue}"
+                        label="#{bindings.SgsStatisticalDataVO1.hints.UnitOfMeasure.label}"
+                        required="#{bindings.SgsStatisticalDataVO1.hints.UnitOfMeasure.mandatory}"
+                        columns="#{bindings.SgsStatisticalDataVO1.hints.UnitOfMeasure.displayWidth}"
+                        maximumLength="#{bindings.SgsStatisticalDataVO1.hints.UnitOfMeasure.precision}"
+                        shortDesc="#{bindings.SgsStatisticalDataVO1.hints.UnitOfMeasure.tooltip}" id="it3">
+            <f:validator binding="#{row.bindings.UnitOfMeasure.validator}"/>
+          </af:inputText>
+        </af:column>
+        <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.DataStatus.label}" id="resId1c9" rendered="false">
+          <af:outputText value="#{row.DataStatus}"
+                         shortDesc="#{bindings.SgsStatisticalDataVO1.hints.DataStatus.tooltip}" id="ot6"/>
+        </af:column>
+       
+        <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.Status.label}" id="resId1c11">
+          <af:selectOneChoice value="#{row.bindings.Status.inputValue}" label="#{row.bindings.Status.label}"
+                              required="#{bindings.SgsStatisticalDataVO1.hints.Status.mandatory}"
+                              shortDesc="#{bindings.SgsStatisticalDataVO1.hints.Status.tooltip}" readOnly="true"
+                              id="soc4">
+            <f:selectItems value="#{row.bindings.Status.items}" id="si4"/>
+            <f:validator binding="#{row.bindings.Status.validator}"/>
+          </af:selectOneChoice>
+        </af:column>
+      </af:table>
     </af:panelCollection>
   </af:panelGroupLayout>
 </ui:composition>

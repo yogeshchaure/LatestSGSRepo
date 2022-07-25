@@ -31,3 +31,10 @@ def pType_BUList_BindVariable_BoundParameter()
 'BS_UNIT'
 }
 
+
+@AccessorParameterExpression(accessorName="nettingApplicatibilityLOV", name="pType")
+def pType_nettingApplicatibilityLOV_BindVariable_BoundParameter()
+{
+'YES_NO'
+}
+

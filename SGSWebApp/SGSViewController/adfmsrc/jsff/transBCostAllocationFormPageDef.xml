@@ -215,5 +215,10 @@
         <Item Value="Status"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="ALLOCATIONBASIS">
+      <AttrNames>
+        <Item Value="ALLOCATIONBASIS"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

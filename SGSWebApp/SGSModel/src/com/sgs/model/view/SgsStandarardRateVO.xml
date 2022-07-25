@@ -263,6 +263,18 @@
     EntityUsage="SgsStandarardRate"
     AliasName="UPDATED_BY"
     IsUpdateable="false"/>
+  <ViewAttribute
+    Name="DepartmentCostCenter"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentCostCenter"
+    EntityUsage="SgsStandarardRate"
+    AliasName="Department_CostCenter"/>
+  <ViewAttribute
+    Name="Currency"
+    PrecisionRule="true"
+    EntityAttrName="Currency"
+    EntityUsage="SgsStandarardRate"
+    AliasName="Currency"/>
   <ViewCriteria
     Name="SgsStandarardRateVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsStandarardRateVO"

@@ -14,17 +14,17 @@
     <tree IterBinding="SgsStatisticalDataVO1Iterator" id="SgsStatisticalDataVO1">
       <nodeDefinition DefName="com.sgs.model.view.SgsStatisticalDataVO" Name="SgsStatisticalDataVO10">
         <AttrNames>
-          <Item Value="LineId"/>
           <Item Value="Month"/>
           <Item Value="StatisticalDataCategory"/>
           <Item Value="BusinessUnit"/>
           <Item Value="JobCode"/>
           <Item Value="OperationalUnit"/>
+          <Item Value="StatisticalData"/>
           <Item Value="UnitOfMeasure"/>
           <Item Value="DataStatus"/>
           <Item Value="DepartmentId"/>
           <Item Value="Status"/>
-          <Item Value="StatisticalData"/>
+          <Item Value="LineId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

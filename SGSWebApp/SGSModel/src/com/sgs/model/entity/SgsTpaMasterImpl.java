@@ -33,9 +33,9 @@ public class SgsTpaMasterImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
-        OperationUnit;
+        OperationUnit,
+        NETTINGAPPLICATIBILITY;
         private static AttributesEnum[] vals = null;
-        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -73,11 +73,19 @@ public class SgsTpaMasterImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int OPERATIONUNIT = AttributesEnum.OperationUnit.index();
+    public static final int NETTINGAPPLICATIBILITY = AttributesEnum.NETTINGAPPLICATIBILITY.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public SgsTpaMasterImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTpaMaster");
     }
 
     /**
@@ -257,6 +265,23 @@ public class SgsTpaMasterImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for NETTINGAPPLICATIBILITY, using the alias name NETTINGAPPLICATIBILITY.
+     * @return the value of NETTINGAPPLICATIBILITY
+     */
+    public String getNETTINGAPPLICATIBILITY() {
+        return (String) getAttributeInternal(NETTINGAPPLICATIBILITY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for NETTINGAPPLICATIBILITY.
+     * @param value value to set the NETTINGAPPLICATIBILITY
+     */
+    public void setNETTINGAPPLICATIBILITY(String value) {
+        setAttributeInternal(NETTINGAPPLICATIBILITY, value);
+    }
+
+
+    /**
      * @param tpamId key constituent
 
      * @return a Key object based on given key constituents.
@@ -264,14 +289,6 @@ public class SgsTpaMasterImpl extends EntityImpl {
     public static Key createPrimaryKey(Integer tpamId) {
         return new Key(new Object[] { tpamId });
     }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTpaMaster");
-    }
-
 
     /**
      * Add attribute defaulting logic in this method.

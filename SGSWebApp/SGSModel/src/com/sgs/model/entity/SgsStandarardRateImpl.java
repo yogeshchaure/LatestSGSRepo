@@ -35,7 +35,9 @@ public class SgsStandarardRateImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        Currency,
+        DepartmentCostCenter;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -58,6 +60,8 @@ public class SgsStandarardRateImpl extends EntityImpl {
             return vals;
         }
     }
+    private static final ADFLogger LOG = ADFLogger.createADFLogger(SgsStandarardRateImpl.class);
+
     public static final int STANDARDRATEID = AttributesEnum.StandardRateId.index();
     public static final int EXPENSETYPE = AttributesEnum.ExpenseType.index();
     public static final int SUBEXPENSETYPE = AttributesEnum.SubExpenseType.index();
@@ -71,12 +75,20 @@ public class SgsStandarardRateImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
-    private static final ADFLogger LOG = ADFLogger.createADFLogger(SgsStandarardRateImpl.class);
+    public static final int CURRENCY = AttributesEnum.Currency.index();
+    public static final int DEPARTMENTCOSTCENTER = AttributesEnum.DepartmentCostCenter.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public SgsStandarardRateImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsStandarardRate");
     }
 
     /**
@@ -231,13 +243,6 @@ public class SgsStandarardRateImpl extends EntityImpl {
         return (Date) getAttributeInternal(CREATEDDATE);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for CreatedDate.
-     * @param value value to set the CreatedDate
-     */
-    public void setCreatedDate(Date value) {
-        setAttributeInternal(CREATEDDATE, value);
-    }
 
     /**
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
@@ -247,13 +252,6 @@ public class SgsStandarardRateImpl extends EntityImpl {
         return (String) getAttributeInternal(CREATEDBY);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for CreatedBy.
-     * @param value value to set the CreatedBy
-     */
-    public void setCreatedBy(String value) {
-        setAttributeInternal(CREATEDBY, value);
-    }
 
     /**
      * Gets the attribute value for UpdatedDate, using the alias name UpdatedDate.
@@ -263,13 +261,6 @@ public class SgsStandarardRateImpl extends EntityImpl {
         return (Date) getAttributeInternal(UPDATEDDATE);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for UpdatedDate.
-     * @param value value to set the UpdatedDate
-     */
-    public void setUpdatedDate(Date value) {
-        setAttributeInternal(UPDATEDDATE, value);
-    }
 
     /**
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
@@ -279,13 +270,39 @@ public class SgsStandarardRateImpl extends EntityImpl {
         return (String) getAttributeInternal(UPDATEDBY);
     }
 
+
     /**
-     * Sets <code>value</code> as the attribute value for UpdatedBy.
-     * @param value value to set the UpdatedBy
+     * Gets the attribute value for Currency, using the alias name Currency.
+     * @return the value of Currency
      */
-    public void setUpdatedBy(String value) {
-        setAttributeInternal(UPDATEDBY, value);
+    public BigDecimal getCurrency() {
+        return (BigDecimal) getAttributeInternal(CURRENCY);
     }
+
+    /**
+     * Sets <code>value</code> as the attribute value for Currency.
+     * @param value value to set the Currency
+     */
+    public void setCurrency(BigDecimal value) {
+        setAttributeInternal(CURRENCY, value);
+    }
+
+    /**
+     * Gets the attribute value for DepartmentCostCenter, using the alias name DepartmentCostCenter.
+     * @return the value of DepartmentCostCenter
+     */
+    public String getDepartmentCostCenter() {
+        return (String) getAttributeInternal(DEPARTMENTCOSTCENTER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DepartmentCostCenter.
+     * @param value value to set the DepartmentCostCenter
+     */
+    public void setDepartmentCostCenter(String value) {
+        setAttributeInternal(DEPARTMENTCOSTCENTER, value);
+    }
+
 
     /**
      * @param standardRateId key constituent
@@ -294,13 +311,6 @@ public class SgsStandarardRateImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(Integer standardRateId) {
         return new Key(new Object[] { standardRateId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsStandarardRate");
     }
 
     /**
