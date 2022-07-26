@@ -10,7 +10,7 @@
       <af:panelGroupLayout id="pgl1" layout="vertical">
         <af:panelBox text="Value Added Tax" id="pb1">
           <f:facet name="toolbar">
-          <af:toolbar id="t1">
+          <af:toolbar id="t1"> 
               <af:button actionListener="#{bindings.Commit.execute}"
                        id="b1" action="back"
                    disabled="#{(!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=Update'])}"
