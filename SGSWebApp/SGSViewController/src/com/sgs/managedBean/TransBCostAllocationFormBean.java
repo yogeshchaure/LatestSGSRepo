@@ -5,6 +5,7 @@ import javax.faces.event.ActionEvent;
 import oracle.adf.view.rich.component.rich.RichPopup;
 
 public class TransBCostAllocationFormBean {
+    private RichPopup holdDetailPopup;
     private RichPopup revRecDetailPopup;
 
     public TransBCostAllocationFormBean() {
@@ -25,5 +26,20 @@ public class TransBCostAllocationFormBean {
 
     public void closeRectificationDetails(ActionEvent actionEvent) {
         getRevRecDetailPopup().hide();
+    }
+
+    public void setHoldDetailPopup(RichPopup holdDetailPopup) {
+        this.holdDetailPopup = holdDetailPopup;
+    }
+
+    public RichPopup getHoldDetailPopup() {
+        return holdDetailPopup;
+    }
+    public void saveHoldReleaseDetails(ActionEvent actionEvent) {
+        getHoldDetailPopup().hide();
+    }
+
+    public void closeHoldReleaseDetails(ActionEvent actionEvent) {
+        getHoldDetailPopup().hide();
     }
 }

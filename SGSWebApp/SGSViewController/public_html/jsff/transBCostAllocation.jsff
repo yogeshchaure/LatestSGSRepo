@@ -5,7 +5,22 @@
     <f:facet name="start"/>
     <f:facet name="end"/>
     <f:facet name="top"/>
-    <f:facet name="bottom"/>
+    <f:facet name="bottom">
+     <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+               binding="#{pageFlowScope.TransBCostAllocationBean.holdDetailPopup}">
+          <af:dialog id="d1" contentWidth="500" contentHeight="300" type="none">
+            <f:facet name="buttonBar">
+              <af:button text="Save" id="b8"
+                         actionListener="#{pageFlowScope.TransBCostAllocationBean.saveHoldReleaseDetails}"/>
+            <af:button text="Close" id="b9"
+                         actionListener="#{pageFlowScope.TransBCostAllocationBean.closeHoldReleaseDetails}"/>
+            </f:facet>
+             <af:spacer id="s2" width="170"/>
+                <af:outputText value="Hold / Release Details" id="ot1" inlineStyle="font-weight:bold;font-size:15px;"/>
+            <af:region value="#{bindings.holdReleaseDetailBTF1.regionModel}" id="r1"/>
+          </af:dialog>
+        </af:popup>
+    </f:facet>
     <f:facet name="center">
       <af:panelBox text="Review IC Transaction before Cost Allocation" id="pb1">
         <f:facet name="toolbar"/>
@@ -35,7 +50,9 @@
                                        disabled="#{securityContext.userName == 'SUPER'?false:true}"
                                        id="b2" shortDesc="Delete Business Unit" icon="/resources/icons/delete.png"
                                        action="#{pageFlowScope.TransBCostAllocationBean.deleteTransBCostAllocation}"/>
-                  <af:button text="Hold/Release" id="b4" />
+                  <af:button text="Hold/Release" id="b4" >
+                  <af:showPopupBehavior popupId="::p1"/>
+                </af:button>
                 <af:button text="Action On Other Receivables" id="b3" />
               <af:button text="Submit for Allocation" id="b6" />
                 <af:button text="Approval" id="b5" disabled="true"/>
@@ -169,12 +186,15 @@
               <af:column headerText="#{bindings.SgsTransBCostAllocationView1.hints.TrasactionStatus.label}" id="c5" visible="false">
                 <af:outputText value="#{row.TrasactionStatus}"
                                shortDesc="#{bindings.SgsTransBCostAllocationView1.hints.TrasactionStatus.tooltip}"
-                               id="ot1"/>
+                               id="ot5"/>
               </af:column>
             </af:table>
           </af:panelCollection>
+          
         </af:panelGroupLayout>
+       
       </af:panelBox>
+       
     </f:facet>
   </af:panelStretchLayout>
 </ui:composition>

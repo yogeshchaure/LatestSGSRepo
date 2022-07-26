@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsHoldReleaseDetailsVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.sgs.model.view.SgsHoldReleaseDetailsVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="HoldReleaseReasonLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsHoldReleaseDetailsVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_HoldReason"
+    ListVOName="HoldReleaseReasonLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="HoldReason"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SgsHoldReleaseDetails"
+    Entity="com.sgs.model.entity.SgsHoldReleaseDetails"/>
+  <ViewAttribute
+    Name="ActionTaken"
+    PrecisionRule="true"
+    EntityAttrName="ActionTaken"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="ACTION_TAKEN"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="CREATED_BY"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="DueDate"
+    PrecisionRule="true"
+    EntityAttrName="DueDate"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="DUE_DATE"/>
+  <ViewAttribute
+    Name="HoldReason"
+    PrecisionRule="true"
+    EntityAttrName="HoldReason"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="HOLD_REASON"
+    LOVName="LOV_HoldReason">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="HoldRemarks"
+    PrecisionRule="true"
+    EntityAttrName="HoldRemarks"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="HOLD_REMARKS"/>
+  <ViewAttribute
+    Name="HrdId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="HrdId"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="HRD_ID"/>
+  <ViewAttribute
+    Name="ReleaseAction"
+    PrecisionRule="true"
+    EntityAttrName="ReleaseAction"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="RELEASE_ACTION"/>
+  <ViewAttribute
+    Name="ReleaseRemarks"
+    PrecisionRule="true"
+    EntityAttrName="ReleaseRemarks"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="RELEASE_REMARKS"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="UPDATED_BY"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="SgsHoldReleaseDetails"
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sgs.model.SGSModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

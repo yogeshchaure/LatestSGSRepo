@@ -767,5 +767,13 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsTdsWhtVO() {
         return (ViewObjectImpl) findViewObject("SgsTdsWhtVO");
     }
+
+    /**
+     * Container's getter for SgsHoldReleaseDetailsVO1.
+     * @return SgsHoldReleaseDetailsVO1
+     */
+    public ViewObjectImpl getSgsHoldReleaseDetailsVO() {
+        return (ViewObjectImpl) findViewObject("SgsHoldReleaseDetailsVO");
+    }
 }
 

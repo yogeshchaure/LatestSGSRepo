@@ -183,6 +183,9 @@
   <ViewUsage
     Name="SgsTdsWhtVO"
     ViewObjectName="com.sgs.model.view.SgsTdsWhtVO"/>
+  <ViewUsage
+    Name="SgsHoldReleaseDetailsVO"
+    ViewObjectName="com.sgs.model.view.SgsHoldReleaseDetailsVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

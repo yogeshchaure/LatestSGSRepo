@@ -20,6 +20,7 @@
                                                    inlineStyle="min-height:500px;"
                                                    icon="/resources/icons/Review.png">
                                     <af:region value="#{bindings.transBCostAllocationMainBTF1.regionModel}" id="r1"/>
+                                     
                                 </af:showDetailItem>
                                 <!--<af:showDetailItem id="sdi7" text="Approve I/Co Transaction (Before Allocation)"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
