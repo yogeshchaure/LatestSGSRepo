@@ -634,7 +634,7 @@
                             </permission>
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
-                                <name>/bTaskFlow/vatInquiryFormBTF.xml#vatInquiryFormBTF</name>
+                                <name>/bTaskFlow/holdReleaseDetailBTF.xml#holdReleaseDetailBTF</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>
@@ -1338,6 +1338,16 @@
                                 <name>com.sgs.model.entity.SgsVatInquiry</name>
                                 <actions>delete,update</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsHoldReleaseDetails</name>
+                                <actions>delete,update</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/holdReleaseDetailBTF.xml#holdReleaseDetailBTF</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -1755,6 +1765,16 @@
                                 <class>oracle.adf.share.security.authorization.EntityPermission</class>
                                 <name>com.sgs.model.entity.SgsVatInquiry</name>
                                 <actions>delete,update</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsHoldReleaseDetails</name>
+                                <actions>delete,update</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/holdReleaseDetailBTF.xml#holdReleaseDetailBTF</name>
+                                <actions>view</actions>
                             </permission>
                         </permissions>
                     </grant>

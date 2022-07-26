@@ -77,6 +77,7 @@
         <page path="/jspx/testing.jspx" usageId="com_sgs_view_testingPageDef"/>
         <page path="/jsff/vatInquiry.jsff" usageId="com_sgs_view_vatInquiryPageDef"/>
         <page path="/jsff/vatInquiryForm.jsff" usageId="com_sgs_view_vatInquiryFormPageDef"/>
+        <page path="/jsff/holdReleaseDetailForm.jsff" usageId="com_sgs_view_holdReleaseDetailFormPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -150,6 +151,7 @@
         <page id="com_sgs_view_testingPageDef" path="jspx.testingPageDef"/>
         <page id="com_sgs_view_vatInquiryPageDef" path="jsff.vatInquiryPageDef"/>
         <page id="com_sgs_view_vatInquiryFormPageDef" path="jsff.vatInquiryFormPageDef"/>
+        <page id="com_sgs_view_holdReleaseDetailFormPageDef" path="jsff.holdReleaseDetailFormPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

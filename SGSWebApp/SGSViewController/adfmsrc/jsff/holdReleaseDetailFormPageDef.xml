@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="holdReleaseDetailFormPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsHoldReleaseDetailsVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsHoldReleaseDetailsVOIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="ActionTaken">
+      <AttrNames>
+        <Item Value="ActionTaken"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsHoldReleaseDetailsVOIterator" StaticList="false" Uses="LOV_HoldReason" id="HoldReason"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="DueDate">
+      <AttrNames>
+        <Item Value="DueDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="HoldRemarks">
+      <AttrNames>
+        <Item Value="HoldRemarks"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

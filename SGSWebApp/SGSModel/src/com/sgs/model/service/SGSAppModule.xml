@@ -186,6 +186,11 @@
   <ViewUsage
     Name="SgsVatInquiryVO1"
     ViewObjectName="com.sgs.model.view.SgsVatInquiryVO"/>
+    
+  <ViewUsage
+    Name="SgsHoldReleaseDetailsVO"
+    ViewObjectName="com.sgs.model.view.SgsHoldReleaseDetailsVO"/>
+    
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
