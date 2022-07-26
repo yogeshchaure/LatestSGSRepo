@@ -82,26 +82,26 @@
             <f:validator binding="#{bindings.EffectiveEndDate.validator}"/>
             <af:convertDateTime pattern="#{bindings.EffectiveEndDate.format}"/>
           </af:inputDate>
-          <af:inputText value="#{bindings.AlternateBu.inputValue}" label="Alternate Business Unit"
+          <!--<af:inputText value="#{bindings.AlternateBu.inputValue}" label="Alternate Business Unit"
                         required="#{bindings.AlternateBu.hints.mandatory}"
                         columns="#{bindings.AlternateBu.hints.displayWidth}"
                         maximumLength="#{bindings.AlternateBu.hints.precision}"
                         shortDesc="#{bindings.AlternateBu.hints.tooltip}" id="it2">
             <f:validator binding="#{bindings.AlternateBu.validator}"/>
-          </af:inputText>
+          </af:inputText>-->
           <af:selectOneChoice value="#{bindings.Currency1.inputValue}" label="#{bindings.Currency1.label}"
                               required="#{bindings.Currency1.hints.mandatory}"
                               shortDesc="#{bindings.Currency1.hints.tooltip}" id="soc8">
             <f:selectItems value="#{bindings.Currency1.items}" id="si8"/>
             <f:validator binding="#{bindings.Currency1.validator}"/>
           </af:selectOneChoice>
-          <af:selectOneChoice value="#{bindings.NettingApplicability.inputValue}"
+          <!--<af:selectOneChoice value="#{bindings.NettingApplicability.inputValue}"
                               label="#{bindings.NettingApplicability.label}"
                               required="#{bindings.NettingApplicability.hints.mandatory}"
                               shortDesc="#{bindings.NettingApplicability.hints.tooltip}" id="soc6">
             <f:selectItems value="#{bindings.NettingApplicability.items}" id="si6"/>
             <f:validator binding="#{bindings.NettingApplicability.validator}"/>
-          </af:selectOneChoice>
+          </af:selectOneChoice>-->
           <af:selectOneChoice value="#{bindings.SubLedgerApplicability.inputValue}"
                               label="#{bindings.SubLedgerApplicability.label}"
                               required="#{bindings.SubLedgerApplicability.hints.mandatory}"

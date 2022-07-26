@@ -30,7 +30,7 @@
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                                    inlineStyle="min-height:500px;"
                                                    icon="/resources/icons/Allocation Rule.png">
-                                    <af:region value="#{bindings.allocationRuleSetupBTF1.regionModel}" id="r3"/>
+                                    <!--<af:region value="#{bindings.allocationRuleSetupBTF1.regionModel}" id="r3"/>-->
                                 </af:showDetailItem>
                                 <af:showDetailItem id="sdi2" text="Standard Rate Setup"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"

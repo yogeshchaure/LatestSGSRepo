@@ -98,6 +98,54 @@
         </DesignTime>
     </Attribute>
     <Attribute
+        Name="ALLOCATIONBASIS"
+        Precision="80"
+        ColumnName="ALLOCATION_BASIS"
+        SQLType="VARCHAR"
+        Type="java.lang.String"
+        ColumnType="VARCHAR"
+        TableName="SGS_COST_IDENTIFICATION_RULE">
+        <DesignTime>
+            <Attr Name="_DisplaySize" Value="80"/>
+        </DesignTime>
+    </Attribute>
+    <Attribute
+        Name="OFFSETACCOUNT"
+        Precision="80"
+        ColumnName="OFFSET_ACCOUNT"
+        SQLType="VARCHAR"
+        Type="java.lang.String"
+        ColumnType="VARCHAR"
+        TableName="SGS_COST_IDENTIFICATION_RULE">
+        <DesignTime>
+            <Attr Name="_DisplaySize" Value="80"/>
+        </DesignTime>
+    </Attribute>
+    <Attribute
+        Name="TARGETACCOUNT"
+        Precision="80"
+        ColumnName="TARGET_ACCOUNT"
+        SQLType="VARCHAR"
+        Type="java.lang.String"
+        ColumnType="VARCHAR"
+        TableName="SGS_COST_IDENTIFICATION_RULE">
+        <DesignTime>
+            <Attr Name="_DisplaySize" Value="80"/>
+        </DesignTime>
+    </Attribute>
+    <Attribute
+        Name="OFFSETJOBCODE"
+        Precision="80"
+        ColumnName="OFFSET_JOB_CODE"
+        SQLType="VARCHAR"
+        Type="java.lang.String"
+        ColumnType="VARCHAR"
+        TableName="SGS_COST_IDENTIFICATION_RULE">
+        <DesignTime>
+            <Attr Name="_DisplaySize" Value="80"/>
+        </DesignTime>
+    </Attribute>
+    <Attribute
       Name="EffectiveFrom"
       ColumnName="EFFECTIVE_FROM"
       SQLType="DATE"
@@ -155,7 +203,6 @@
             <Attr Name="_DisplaySize" Value="10"/>
         </DesignTime>
     </Attribute>
-    
     <Key
       Name="PKSGSCOSTIDENTIFICATIONRULE"
       PrimaryKey="true">

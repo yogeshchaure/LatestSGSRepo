@@ -29,6 +29,10 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
         JobCode,
         AccountTratment,
         ServiceCategory,
+        ALLOCATIONBASIS,
+        OFFSETACCOUNT,
+        TARGETACCOUNT,
+        OFFSETJOBCODE,
         EffectiveFrom,
         EffectiveTo,
         CreatedDate,
@@ -67,6 +71,10 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
     public static final int JOBCODE = AttributesEnum.JobCode.index();
     public static final int ACCOUNTTRATMENT = AttributesEnum.AccountTratment.index();
     public static final int SERVICECATEGORY = AttributesEnum.ServiceCategory.index();
+    public static final int ALLOCATIONBASIS = AttributesEnum.ALLOCATIONBASIS.index();
+    public static final int OFFSETACCOUNT = AttributesEnum.OFFSETACCOUNT.index();
+    public static final int TARGETACCOUNT = AttributesEnum.TARGETACCOUNT.index();
+    public static final int OFFSETJOBCODE = AttributesEnum.OFFSETJOBCODE.index();
     public static final int EFFECTIVEFROM = AttributesEnum.EffectiveFrom.index();
     public static final int EFFECTIVETO = AttributesEnum.EffectiveTo.index();
     public static final int CREATEDDATE = AttributesEnum.CreatedDate.index();
@@ -79,6 +87,14 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
      */
     public SgsCostIdentificationRuleImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsCostIdentificationRule");
+    }
+
 
     /**
      * Gets the attribute value for CirId, using the alias name CirId.
@@ -232,13 +248,6 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
         return (Date) getAttributeInternal(CREATEDDATE);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for CreatedDate.
-     * @param value value to set the CreatedDate
-     */
-    public void setCreatedDate(Date value) {
-        setAttributeInternal(CREATEDDATE, value);
-    }
 
     /**
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
@@ -248,13 +257,6 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
         return (String) getAttributeInternal(CREATEDBY);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for CreatedBy.
-     * @param value value to set the CreatedBy
-     */
-    public void setCreatedBy(String value) {
-        setAttributeInternal(CREATEDBY, value);
-    }
 
     /**
      * Gets the attribute value for UpdatedDate, using the alias name UpdatedDate.
@@ -264,13 +266,6 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
         return (Date) getAttributeInternal(UPDATEDDATE);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for UpdatedDate.
-     * @param value value to set the UpdatedDate
-     */
-    public void setUpdatedDate(Date value) {
-        setAttributeInternal(UPDATEDDATE, value);
-    }
 
     /**
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
@@ -280,13 +275,6 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
         return (String) getAttributeInternal(UPDATEDBY);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for UpdatedBy.
-     * @param value value to set the UpdatedBy
-     */
-    public void setUpdatedBy(String value) {
-        setAttributeInternal(UPDATEDBY, value);
-    }
 
     /**
      * @param cirId key constituent
@@ -298,10 +286,67 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
     }
 
     /**
-     * @return the definition object for this instance class.
+     * Gets the attribute value for ALLOCATIONBASIS, using the alias name ALLOCATIONBASIS.
+     * @return the value of ALLOCATIONBASIS
      */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsCostIdentificationRule");
+    public String getALLOCATIONBASIS() {
+        return (String) getAttributeInternal(ALLOCATIONBASIS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ALLOCATIONBASIS.
+     * @param value value to set the ALLOCATIONBASIS
+     */
+    public void setALLOCATIONBASIS(String value) {
+        setAttributeInternal(ALLOCATIONBASIS, value);
+    }
+
+    /**
+     * Gets the attribute value for OFFSETACCOUNT, using the alias name OFFSETACCOUNT.
+     * @return the value of OFFSETACCOUNT
+     */
+    public String getOFFSETACCOUNT() {
+        return (String) getAttributeInternal(OFFSETACCOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for OFFSETACCOUNT.
+     * @param value value to set the OFFSETACCOUNT
+     */
+    public void setOFFSETACCOUNT(String value) {
+        setAttributeInternal(OFFSETACCOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for OFFSETJOBCODE, using the alias name OFFSETJOBCODE.
+     * @return the value of OFFSETJOBCODE
+     */
+    public String getOFFSETJOBCODE() {
+        return (String) getAttributeInternal(OFFSETJOBCODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for OFFSETJOBCODE.
+     * @param value value to set the OFFSETJOBCODE
+     */
+    public void setOFFSETJOBCODE(String value) {
+        setAttributeInternal(OFFSETJOBCODE, value);
+    }
+
+    /**
+     * Gets the attribute value for TARGETACCOUNT, using the alias name TARGETACCOUNT.
+     * @return the value of TARGETACCOUNT
+     */
+    public String getTARGETACCOUNT() {
+        return (String) getAttributeInternal(TARGETACCOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TARGETACCOUNT.
+     * @param value value to set the TARGETACCOUNT
+     */
+    public void setTARGETACCOUNT(String value) {
+        setAttributeInternal(TARGETACCOUNT, value);
     }
 
 
