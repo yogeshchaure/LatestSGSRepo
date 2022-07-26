@@ -25,7 +25,7 @@
                        accessKey="C"/>
           </af:toolbar>
           </f:facet>
-          <af:panelFormLayout id="pfl1" rows="5">
+          <af:panelFormLayout id="pfl1" rows="7">
             <af:selectOneChoice value="#{bindings.RuleId.inputValue}" label="Cost Identification ID"
                                 required="#{bindings.RuleId.hints.mandatory}"
                                 shortDesc="#{bindings.RuleId.hints.tooltip}" id="soc1">
@@ -61,6 +61,30 @@
                                 shortDesc="#{bindings.ServiceCategory.hints.tooltip}" id="soc5" readOnly="true">
               <f:selectItems value="#{bindings.ServiceCategory.items}" id="si5"/>
               <f:validator binding="#{bindings.ServiceCategory.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.ALLOCATIONBASIS.inputValue}" label="#{bindings.ALLOCATIONBASIS.label}"
+                                required="#{bindings.ALLOCATIONBASIS.hints.mandatory}"
+                                shortDesc="#{bindings.ALLOCATIONBASIS.hints.tooltip}" id="soc6">
+              <f:selectItems value="#{bindings.ALLOCATIONBASIS.items}" id="si6"/>
+              <f:validator binding="#{bindings.ALLOCATIONBASIS.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.OFFSETACCOUNT.inputValue}" label="#{bindings.OFFSETACCOUNT.label}"
+                                required="#{bindings.OFFSETACCOUNT.hints.mandatory}"
+                                shortDesc="#{bindings.OFFSETACCOUNT.hints.tooltip}" id="soc7">
+              <f:selectItems value="#{bindings.OFFSETACCOUNT.items}" id="si7"/>
+              <f:validator binding="#{bindings.OFFSETACCOUNT.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.TARGETACCOUNT.inputValue}" label="#{bindings.TARGETACCOUNT.label}"
+                                required="#{bindings.TARGETACCOUNT.hints.mandatory}"
+                                shortDesc="#{bindings.TARGETACCOUNT.hints.tooltip}" id="soc8">
+              <f:selectItems value="#{bindings.TARGETACCOUNT.items}" id="si8"/>
+              <f:validator binding="#{bindings.TARGETACCOUNT.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.OFFSETJOBCODE.inputValue}" label="#{bindings.OFFSETJOBCODE.label}"
+                                required="#{bindings.OFFSETJOBCODE.hints.mandatory}"
+                                shortDesc="#{bindings.OFFSETJOBCODE.hints.tooltip}" id="soc9">
+              <f:selectItems value="#{bindings.OFFSETJOBCODE.items}" id="si9"/>
+              <f:validator binding="#{bindings.OFFSETJOBCODE.validator}"/>
             </af:selectOneChoice>
             <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="Effective From"
                           required="#{bindings.EffectiveFrom.hints.mandatory}"

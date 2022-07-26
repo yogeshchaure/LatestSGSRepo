@@ -58,3 +58,31 @@ def pType_JobCodeList_BindVariable_BoundParameter()
 'JOBCODE'
 }
 
+
+@AccessorParameterExpression(accessorName="AllocationBasisLOV", name="pType")
+def pType_AllocationBasisLOV_BindVariable_BoundParameter()
+{
+'ALLOCATION_BASIS'
+}
+
+
+@AccessorParameterExpression(accessorName="OffsetAccountLOV", name="pType")
+def pType_OffsetAccountLOV_BindVariable_BoundParameter()
+{
+'OFFSET_ACC'
+}
+
+
+@AccessorParameterExpression(accessorName="TargetAccountLOV", name="pType")
+def pType_TargetAccountLOV_BindVariable_BoundParameter()
+{
+'TARGET_ACC'
+}
+
+
+@AccessorParameterExpression(accessorName="OffetJobCodeLOV", name="pType")
+def pType_OffetJobCodeLOV_BindVariable_BoundParameter()
+{
+'JOBCODE'
+}
+

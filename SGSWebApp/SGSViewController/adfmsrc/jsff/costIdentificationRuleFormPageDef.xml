@@ -44,5 +44,13 @@
     <action IterBinding="SgsCostIdentificationRuleView1Iterator" id="Delete"
             InstanceName="SGSAppModuleDataControl.SgsCostIdentificationRuleView1" DataControl="SGSAppModuleDataControl"
             RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_ALLOCATIONBASIS"
+          id="ALLOCATIONBASIS" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_OFFSETACCOUNT"
+          id="OFFSETACCOUNT" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_TARGETACCOUNT"
+          id="TARGETACCOUNT" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_OFFSETJOBCODE"
+          id="OFFSETJOBCODE" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
