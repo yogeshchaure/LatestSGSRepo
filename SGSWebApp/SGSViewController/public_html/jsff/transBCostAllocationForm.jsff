@@ -19,7 +19,9 @@
             <af:showPopupBehavior popupId="p1"/>
           </af:button>
           <af:spacer id="s37" width="10"/>
-           <af:button text="Hold/Release" id="b14" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}"/>
+           <af:button text="Hold/Release" id="b14" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}">
+           <af:showPopupBehavior popupId="p2"/>
+           </af:button>
             <af:spacer id="s34" width="10"/>
                 <af:button text="Action On Other Receivables" id="b13" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}"/>
         <af:button id="b12" action="back" immediate="true" text="Approve" accessKey="C" rendered="#{pageFlowScope.pStatus eq 'Pending Approval for Rectification'}"/>
@@ -352,7 +354,7 @@
           </af:panelFormLayout>
         </af:panelBox>
       </af:panelBox>
-       <af:panelBox id="pb15" text="Rectification Entry Details" disclosed="false">
+       <af:panelBox id="pb15" text="Rectification Entry Details" disclosed="false" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}">
           <f:facet name="toolbar"/>
           <af:panelGroupLayout id="pf1l5" >
             <af:table value="#{bindings.RectificationEntryDetailsVO.collectionModel}" var="row"
@@ -471,6 +473,77 @@
             </af:panelLabelAndMessage>
           </af:panelFormLayout>
         </af:panelBox>
+          <af:panelBox id="pb7" text="Hold Details" disclosed="false" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}">
+          <f:facet name="toolbar"/>
+         
+          <af:panelGroupLayout id="pgl3" layout="horizontal">
+         
+           
+            <af:panelBox text="Hold Details" id="pb8" showDisclosure="false" >
+              <f:facet name="toolbar"/>
+            <af:panelFormLayout id="pfl8">
+              <f:facet name="footer"/>
+              <af:spacer id="s6"  width="400"/>
+              <af:panelLabelAndMessage label="Created On" id="plam10">
+                <af:outputText value="#{bindings.CreatedDate2.inputValue}"
+                               shortDesc="#{bindings.CreatedDate2.hints.tooltip}" id="ot11">
+                  <af:convertDateTime pattern="#{bindings.CreatedDate2.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+               
+              <af:panelLabelAndMessage label="Created By" id="plam9">
+                <af:outputText value="#{bindings.CreatedBy2.inputValue}"
+                               shortDesc="#{bindings.CreatedBy2.hints.tooltip}" id="ot10"/>
+              </af:panelLabelAndMessage>
+                
+              <af:panelLabelAndMessage label="Hold Reason" id="plam11">
+                <af:outputText value="#{bindings.HoldReason.inputValue}"
+                               shortDesc="#{bindings.HoldReason.hints.tooltip}" id="ot12"/>
+              </af:panelLabelAndMessage>
+               
+              <af:panelLabelAndMessage label="Due Date" id="plam12">
+                <af:outputText value="#{bindings.DueDate.inputValue}" shortDesc="#{bindings.DueDate.hints.tooltip}"
+                               id="ot14">
+                  <af:convertDateTime pattern="#{bindings.DueDate.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              
+              <af:panelLabelAndMessage label="Hold Remarks" id="plam13">
+                <af:outputText value="#{bindings.HoldRemarks.inputValue}"
+                               shortDesc="#{bindings.HoldRemarks.hints.tooltip}" id="ot15"/>
+              </af:panelLabelAndMessage>
+              </af:panelFormLayout>
+            </af:panelBox>
+           <af:panelBox text="Release Details" id="pb9" showDisclosure="false" >
+              <f:facet name="toolbar"/>
+            <af:panelFormLayout id="pfl9">
+              <f:facet name="footer"/>
+              <af:spacer id="s7"  width="400"/>
+              <af:panelLabelAndMessage label="Released On" id="plam7">
+                <af:outputText value="#{bindings.UpdatedDate2.inputValue}"
+                               shortDesc="#{bindings.UpdatedDate2.hints.tooltip}" id="ot8">
+                  <af:convertDateTime pattern="#{bindings.UpdatedDate2.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Release By" id="plam14">
+                <af:outputText value="#{bindings.UpdatedBy2.inputValue}"
+                               shortDesc="#{bindings.UpdatedBy2.hints.tooltip}" id="ot16"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Release Action" id="plam8">
+                <af:outputText value="#{bindings.ReleaseAction.inputValue}"
+                               shortDesc="#{bindings.ReleaseAction.hints.tooltip}" id="ot9"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Release Remarks" id="plam15">
+                <af:outputText value="#{bindings.ReleaseRemarks.inputValue}"
+                               shortDesc="#{bindings.ReleaseRemarks.hints.tooltip}" id="ot17"/>
+              </af:panelLabelAndMessage>
+            <af:spacer id="s8"  height="15"/>
+              </af:panelFormLayout>
+            </af:panelBox>
+         
+          </af:panelGroupLayout>
+         
+        </af:panelBox>
         <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
                   binding="#{pageFlowScope.transBCostAllocationFormBean.revRecDetailPopup}">
           <af:dialog id="d1" contentWidth="1000" contentHeight="300" type="none">
@@ -481,6 +554,20 @@
                          actionListener="#{pageFlowScope.transBCostAllocationFormBean.closeRectificationDetails}"/>
             </f:facet>
             <af:region value="#{bindings.reversalRectificationDetailsBTF1.regionModel}" id="r1"/>
+          </af:dialog>
+        </af:popup>
+         <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
+               binding="#{pageFlowScope.transBCostAllocationFormBean.holdDetailPopup}">
+          <af:dialog id="d2" contentWidth="500" contentHeight="300" type="none">
+            <f:facet name="buttonBar">
+              <af:button text="Save" id="b8"
+                         actionListener="#{pageFlowScope.transBCostAllocationFormBean.saveHoldReleaseDetails}"/>
+            <af:button text="Close" id="b9"
+                         actionListener="#{pageFlowScope.transBCostAllocationFormBean.closeHoldReleaseDetails}"/>
+            </f:facet>
+             <af:spacer id="s2" width="170"/>
+                <af:outputText value="Hold / Release Details" id="ot2" inlineStyle="font-weight:bold;font-size:15px;"/>
+            <af:region value="#{bindings.holdReleaseDetailBTF1.regionModel}" id="r2"/>
           </af:dialog>
         </af:popup>
       </af:panelGroupLayout>

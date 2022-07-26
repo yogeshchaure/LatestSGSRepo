@@ -11,6 +11,10 @@
     <taskFlow id="reversalRectificationDetailsBTF1"
               taskFlowId="/bTaskFlow/reversalRectificationDetailsBTF.xml#reversalRectificationDetailsBTF"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="holdReleaseDetailBTF1" taskFlowId="/bTaskFlow/holdReleaseDetailBTF.xml#holdReleaseDetailBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="SgsHoldReleaseDetailsVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsHoldReleaseDetailsVOIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="ApprovalRequestType">
@@ -218,6 +222,51 @@
     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="ALLOCATIONBASIS">
       <AttrNames>
         <Item Value="ALLOCATIONBASIS"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="CreatedBy2">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="CreatedDate2">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="HoldReason">
+      <AttrNames>
+        <Item Value="HoldReason"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="DueDate">
+      <AttrNames>
+        <Item Value="DueDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="HoldRemarks">
+      <AttrNames>
+        <Item Value="HoldRemarks"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="UpdatedDate2">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="UpdatedBy2">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="ReleaseAction">
+      <AttrNames>
+        <Item Value="ReleaseAction"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="ReleaseRemarks">
+      <AttrNames>
+        <Item Value="ReleaseRemarks"/>
       </AttrNames>
     </attributeValues>
   </bindings>

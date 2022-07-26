@@ -1,0 +1,12 @@
+//Groovy Scripts for com.sgs.model.view.SgsHoldReleaseDetailsVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="HoldReleaseReasonLOV", name="pType")
+def pType_HoldReleaseReasonLOV_BindVariable_BoundParameter()
+{
+'HOLD_RELEASE'
+}
+

@@ -1,11 +1,16 @@
 package com.sgs.managedBean;
 
+import javax.faces.event.ActionEvent;
+
 import oracle.adf.model.BindingContext;
+
+import oracle.adf.view.rich.component.rich.RichPopup;
 
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 
 public class TransBCostAllocationBean {
+    private RichPopup holdDetailPopup;
     public TransBCostAllocationBean() {
     }
 
@@ -24,5 +29,20 @@ public class TransBCostAllocationBean {
             return null;
         }
         return null;
+    }
+    public void saveHoldReleaseDetails(ActionEvent actionEvent) {
+        getHoldDetailPopup().hide();
+    }
+
+    public void closeHoldReleaseDetails(ActionEvent actionEvent) {
+        getHoldDetailPopup().hide();
+    }
+
+    public void setHoldDetailPopup(RichPopup holdDetailPopup) {
+        this.holdDetailPopup = holdDetailPopup;
+    }
+
+    public RichPopup getHoldDetailPopup() {
+        return holdDetailPopup;
     }
 }

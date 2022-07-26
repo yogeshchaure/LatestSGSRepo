@@ -9,6 +9,8 @@
     <searchRegion Criteria="SgsTransBCostAllocationVOCriteria"
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="SgsTransBCostAllocationView1Iterator" id="SgsTransBCostAllocationVOCriteriaQuery"/>
+    <taskFlow id="holdReleaseDetailBTF1" taskFlowId="/bTaskFlow/holdReleaseDetailBTF.xml#holdReleaseDetailBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <tree IterBinding="SgsTransBCostAllocationView1Iterator" id="SgsTransBCostAllocationView1">
