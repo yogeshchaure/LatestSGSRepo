@@ -41,9 +41,9 @@ public class SgsBusinessUnitMasterImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         GstRegNum,
-        Opration_Unit;
+        Opration_Unit,
+        ThresholdApplicability;
         private static AttributesEnum[] vals = null;
-        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -89,6 +89,7 @@ public class SgsBusinessUnitMasterImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int GSTREGNUM = AttributesEnum.GstRegNum.index();
     public static final int OPRATION_UNIT = AttributesEnum.Opration_Unit.index();
+    public static final int THRESHOLDAPPLICABILITY = AttributesEnum.ThresholdApplicability.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -430,6 +431,22 @@ public class SgsBusinessUnitMasterImpl extends EntityImpl {
      */
     public void setOpration_Unit(String value) {
         setAttributeInternal(OPRATION_UNIT, value);
+    }
+
+    /**
+     * Gets the attribute value for ThresholdApplicability, using the alias name ThresholdApplicability.
+     * @return the value of ThresholdApplicability
+     */
+    public String getThresholdApplicability() {
+        return (String) getAttributeInternal(THRESHOLDAPPLICABILITY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ThresholdApplicability.
+     * @param value value to set the ThresholdApplicability
+     */
+    public void setThresholdApplicability(String value) {
+        setAttributeInternal(THRESHOLDAPPLICABILITY, value);
     }
 
     /**
