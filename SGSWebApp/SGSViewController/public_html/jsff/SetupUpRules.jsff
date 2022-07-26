@@ -28,8 +28,8 @@
                                 </af:showDetailItem>
                                 <af:showDetailItem id="sdi1" text="Allocation Rule Setup"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                   inlineStyle="min-height:500px;"
-                                                   icon="/resources/icons/Allocation Rule.png">
+                                                   inlineStyle="min-height:500px;" 
+                                                   icon="/resources/icons/Allocation Rule.png" visible="false">
                                     <!--<af:region value="#{bindings.allocationRuleSetupBTF1.regionModel}" id="r3"/>-->
                                 </af:showDetailItem>
                                 <af:showDetailItem id="sdi2" text="Standard Rate Setup"
@@ -64,7 +64,8 @@
                                 </af:showDetailItem>
                                 <af:showDetailItem id="sdi10" text="Global Settings Set-Up"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                   inlineStyle="min-height:500px;" icon="/resources/icons/globalSetting.png"></af:showDetailItem>
+                                                   inlineStyle="min-height:500px;" icon="/resources/icons/globalSetting.png"
+                                                   visible="false"></af:showDetailItem>
 
                             </af:panelSpringboard>
                         </f:facet>

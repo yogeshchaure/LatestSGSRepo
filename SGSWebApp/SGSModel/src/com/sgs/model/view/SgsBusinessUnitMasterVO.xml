@@ -367,6 +367,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_ThresholdApplicability"
+    ListVOName="YesNoList"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ThresholdApplicability"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SgsBusinessUnitMaster"
     Entity="com.sgs.model.entity.SgsBusinessUnitMaster"/>
@@ -510,6 +528,22 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ThresholdApplicability"
+    PrecisionRule="true"
+    EntityAttrName="ThresholdApplicability"
+    EntityUsage="SgsBusinessUnitMaster"
+    AliasName="Threshold_Applicability"
+    LOVName="LOV_ThresholdApplicability">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.ThresholdApplicability_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

@@ -89,14 +89,6 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
     }
 
     /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsCostIdentificationRule");
-    }
-
-
-    /**
      * Gets the attribute value for CirId, using the alias name CirId.
      * @return the value of CirId
      */
@@ -209,6 +201,70 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for ALLOCATIONBASIS, using the alias name ALLOCATIONBASIS.
+     * @return the value of ALLOCATIONBASIS
+     */
+    public String getALLOCATIONBASIS() {
+        return (String) getAttributeInternal(ALLOCATIONBASIS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ALLOCATIONBASIS.
+     * @param value value to set the ALLOCATIONBASIS
+     */
+    public void setALLOCATIONBASIS(String value) {
+        setAttributeInternal(ALLOCATIONBASIS, value);
+    }
+
+    /**
+     * Gets the attribute value for OFFSETACCOUNT, using the alias name OFFSETACCOUNT.
+     * @return the value of OFFSETACCOUNT
+     */
+    public String getOFFSETACCOUNT() {
+        return (String) getAttributeInternal(OFFSETACCOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for OFFSETACCOUNT.
+     * @param value value to set the OFFSETACCOUNT
+     */
+    public void setOFFSETACCOUNT(String value) {
+        setAttributeInternal(OFFSETACCOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for TARGETACCOUNT, using the alias name TARGETACCOUNT.
+     * @return the value of TARGETACCOUNT
+     */
+    public String getTARGETACCOUNT() {
+        return (String) getAttributeInternal(TARGETACCOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TARGETACCOUNT.
+     * @param value value to set the TARGETACCOUNT
+     */
+    public void setTARGETACCOUNT(String value) {
+        setAttributeInternal(TARGETACCOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for OFFSETJOBCODE, using the alias name OFFSETJOBCODE.
+     * @return the value of OFFSETJOBCODE
+     */
+    public String getOFFSETJOBCODE() {
+        return (String) getAttributeInternal(OFFSETJOBCODE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for OFFSETJOBCODE.
+     * @param value value to set the OFFSETJOBCODE
+     */
+    public void setOFFSETJOBCODE(String value) {
+        setAttributeInternal(OFFSETJOBCODE, value);
+    }
+
+    /**
      * Gets the attribute value for EffectiveFrom, using the alias name EffectiveFrom.
      * @return the value of EffectiveFrom
      */
@@ -248,7 +304,6 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
         return (Date) getAttributeInternal(CREATEDDATE);
     }
 
-
     /**
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
@@ -256,7 +311,6 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
     public String getCreatedBy() {
         return (String) getAttributeInternal(CREATEDBY);
     }
-
 
     /**
      * Gets the attribute value for UpdatedDate, using the alias name UpdatedDate.
@@ -266,7 +320,6 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
         return (Date) getAttributeInternal(UPDATEDDATE);
     }
 
-
     /**
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
@@ -274,7 +327,6 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
     public String getUpdatedBy() {
         return (String) getAttributeInternal(UPDATEDBY);
     }
-
 
     /**
      * @param cirId key constituent
@@ -286,67 +338,10 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
     }
 
     /**
-     * Gets the attribute value for ALLOCATIONBASIS, using the alias name ALLOCATIONBASIS.
-     * @return the value of ALLOCATIONBASIS
+     * @return the definition object for this instance class.
      */
-    public String getALLOCATIONBASIS() {
-        return (String) getAttributeInternal(ALLOCATIONBASIS);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for ALLOCATIONBASIS.
-     * @param value value to set the ALLOCATIONBASIS
-     */
-    public void setALLOCATIONBASIS(String value) {
-        setAttributeInternal(ALLOCATIONBASIS, value);
-    }
-
-    /**
-     * Gets the attribute value for OFFSETACCOUNT, using the alias name OFFSETACCOUNT.
-     * @return the value of OFFSETACCOUNT
-     */
-    public String getOFFSETACCOUNT() {
-        return (String) getAttributeInternal(OFFSETACCOUNT);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for OFFSETACCOUNT.
-     * @param value value to set the OFFSETACCOUNT
-     */
-    public void setOFFSETACCOUNT(String value) {
-        setAttributeInternal(OFFSETACCOUNT, value);
-    }
-
-    /**
-     * Gets the attribute value for OFFSETJOBCODE, using the alias name OFFSETJOBCODE.
-     * @return the value of OFFSETJOBCODE
-     */
-    public String getOFFSETJOBCODE() {
-        return (String) getAttributeInternal(OFFSETJOBCODE);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for OFFSETJOBCODE.
-     * @param value value to set the OFFSETJOBCODE
-     */
-    public void setOFFSETJOBCODE(String value) {
-        setAttributeInternal(OFFSETJOBCODE, value);
-    }
-
-    /**
-     * Gets the attribute value for TARGETACCOUNT, using the alias name TARGETACCOUNT.
-     * @return the value of TARGETACCOUNT
-     */
-    public String getTARGETACCOUNT() {
-        return (String) getAttributeInternal(TARGETACCOUNT);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for TARGETACCOUNT.
-     * @param value value to set the TARGETACCOUNT
-     */
-    public void setTARGETACCOUNT(String value) {
-        setAttributeInternal(TARGETACCOUNT, value);
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsCostIdentificationRule");
     }
 
 

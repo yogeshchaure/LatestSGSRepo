@@ -109,6 +109,13 @@
             <f:selectItems value="#{bindings.SubLedgerApplicability.items}" id="si7"/>
             <f:validator binding="#{bindings.SubLedgerApplicability.validator}"/>
           </af:selectOneChoice>
+          <af:selectOneChoice value="#{bindings.ThresholdApplicability.inputValue}"
+                              label="#{bindings.ThresholdApplicability.label}"
+                              required="#{bindings.ThresholdApplicability.hints.mandatory}"
+                              shortDesc="#{bindings.ThresholdApplicability.hints.tooltip}" id="soc6">
+            <f:selectItems value="#{bindings.ThresholdApplicability.items}" id="si6"/>
+            <f:validator binding="#{bindings.ThresholdApplicability.validator}"/>
+          </af:selectOneChoice>
           <af:inputText value="#{bindings.ICoSupplierName.inputValue}" label="I/Co Supplier Name"
                         required="#{bindings.ICoSupplierName.hints.mandatory}"
                         columns="#{bindings.ICoSupplierName.hints.displayWidth}"
