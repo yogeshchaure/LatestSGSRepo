@@ -629,6 +629,11 @@
                             </permission>
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/vatInquiryBTF.xml#vatInquiryBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/bTaskFlow/holdReleaseDetailBTF.xml#holdReleaseDetailBTF</name>
                                 <actions>view</actions>
                             </permission>
@@ -1319,6 +1324,21 @@
                                 <actions>view</actions>
                             </permission>
                             <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/vatInquiryBTF.xml#vatInquiryBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/vatInquiryFormBTF.xml#vatInquiryFormBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsVatInquiry</name>
+                                <actions>delete,update</actions>
+                            </permission>
+                            <permission>
                                 <class>oracle.adf.share.security.authorization.EntityPermission</class>
                                 <name>com.sgs.model.entity.SgsHoldReleaseDetails</name>
                                 <actions>delete,update</actions>
@@ -1730,6 +1750,21 @@
                                 <class>oracle.adf.share.security.authorization.RegionPermission</class>
                                 <name>jspx.testingPageDef</name>
                                 <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/vatInquiryBTF.xml#vatInquiryBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/vatInquiryFormBTF.xml#vatInquiryFormBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsVatInquiry</name>
+                                <actions>delete,update</actions>
                             </permission>
                             <permission>
                                 <class>oracle.adf.share.security.authorization.EntityPermission</class>

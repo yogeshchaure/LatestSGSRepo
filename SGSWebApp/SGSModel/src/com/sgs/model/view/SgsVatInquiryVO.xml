@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsVatInquiryVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.sgs.model.view.SgsVatInquiryVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="bVatID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="bServP"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="bServR"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="bEndDate"
+    Kind="viewcriteria"
+    Type="java.sql.Date"/>
+  <ViewAccessor
+    Name="VATIDLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsVatInquiryVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="ServiceProviderLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsVatInquiryVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="ServiceReceiverLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsVatInquiryVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="RcmLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsVatInquiryVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="ExemptSupplyLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsVatInquiryVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="SgsListVO1"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_VatId"
+    ListVOName="VATIDLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="VatId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ServiceProvider"
+    ListVOName="ServiceProviderLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ServiceProvider"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ServiceReceiver"
+    ListVOName="ServiceReceiverLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ServiceReceiver"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Rcm"
+    ListVOName="RcmLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Rcm"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ExemptSupply"
+    ListVOName="ExemptSupplyLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ExemptSupply"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemServiceCategory"
+    ListVOName="SgsListVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemServiceCategory"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SgsVatInquiry"
+    Entity="com.sgs.model.entity.SgsVatInquiry"/>
+  <ViewAttribute
+    Name="VatNum"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="VatNum"
+    EntityUsage="SgsVatInquiry"
+    AliasName="VAT_NUM">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="4.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VatId"
+    PrecisionRule="true"
+    EntityAttrName="VatId"
+    EntityUsage="SgsVatInquiry"
+    AliasName="VAT_ID"
+    LOVName="LOV_VatId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <FIELDORDER
+          Value="0.0"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsVatInquiryVO.VatId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ServiceProvider"
+    PrecisionRule="true"
+    EntityAttrName="ServiceProvider"
+    EntityUsage="SgsVatInquiry"
+    AliasName="SERVICE_PROVIDER"
+    LOVName="LOV_ServiceProvider">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <FIELDORDER
+          Value="1.0"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsVatInquiryVO.ServiceProvider_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ServiceReceiver"
+    PrecisionRule="true"
+    EntityAttrName="ServiceReceiver"
+    EntityUsage="SgsVatInquiry"
+    AliasName="SERVICE_RECEIVER"
+    LOVName="LOV_ServiceReceiver">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <FIELDORDER
+          Value="2.0"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsVatInquiryVO.ServiceReceiver_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Rcm"
+    PrecisionRule="true"
+    EntityAttrName="Rcm"
+    EntityUsage="SgsVatInquiry"
+    AliasName="RCM"
+    LOVName="LOV_Rcm">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <FIELDORDER
+          Value="5.0"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsVatInquiryVO.Rcm_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ExemptSupply"
+    PrecisionRule="true"
+    EntityAttrName="ExemptSupply"
+    EntityUsage="SgsVatInquiry"
+    AliasName="EXEMPT_SUPPLY"
+    LOVName="LOV_ExemptSupply">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <FIELDORDER
+          Value="6.0"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsVatInquiryVO.ExemptSupply_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemServiceCategory"
+    PrecisionRule="true"
+    EntityAttrName="ItemServiceCategory"
+    EntityUsage="SgsVatInquiry"
+    AliasName="ITEM_SERVICE_CATEGORY"
+    LOVName="LOV_ItemServiceCategory">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <FIELDORDER
+          Value="7.0"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsVatInquiryVO.ItemServiceCategory_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RateOfTax"
+    PrecisionRule="true"
+    EntityAttrName="RateOfTax"
+    EntityUsage="SgsVatInquiry"
+    AliasName="RATE_OF_TAX">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="8.0"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsVatInquiryVO.RateOfTax_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GlAccountCodes"
+    PrecisionRule="true"
+    EntityAttrName="GlAccountCodes"
+    EntityUsage="SgsVatInquiry"
+    AliasName="GL_ACCOUNT_CODES">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="9.0"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsVatInquiryVO.GlAccountCodes_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EffectiveFrom"
+    PrecisionRule="true"
+    EntityAttrName="EffectiveFrom"
+    EntityUsage="SgsVatInquiry"
+    AliasName="EFFECTIVE_FROM">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="10.0"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsVatInquiryVO.EffectiveFrom_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EffectiveTo"
+    PrecisionRule="true"
+    EntityAttrName="EffectiveTo"
+    EntityUsage="SgsVatInquiry"
+    AliasName="EFFECTIVE_TO">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="3.0"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsVatInquiryVO.EffectiveTo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="SgsVatInquiry"
+    AliasName="CREATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="11.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="SgsVatInquiry"
+    AliasName="CREATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="12.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="SgsVatInquiry"
+    AliasName="UPDATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="13.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="SgsVatInquiry"
+    AliasName="UPDATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="14.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="SgsVatInquiryVOCriteria"
+    ViewObjectName="com.sgs.model.view.SgsVatInquiryVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="SgsVatInquiryVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="VatId"
+        ViewAttribute="VatId"
+        Operator="="
+        Conjunction="AND"
+        Value=":bVatID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ServiceProvider"
+        ViewAttribute="ServiceProvider"
+        Operator="="
+        Conjunction="AND"
+        Value=":bServP"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ServiceReceiver"
+        ViewAttribute="ServiceReceiver"
+        Operator="="
+        Conjunction="AND"
+        Value=":bServR"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="EffectiveTo"
+        ViewAttribute="EffectiveTo"
+        Operator="="
+        Conjunction="AND"
+        Value=":bEndDate"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sgs.model.SGSModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

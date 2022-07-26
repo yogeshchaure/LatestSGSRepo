@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="vatInquiryFormPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsVatInquiryVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsVatInquiryVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="SGSAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="SGSAppModuleDataControl"/>
+    <action IterBinding="SgsVatInquiryVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_VatId" id="VatId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_ServiceProvider" id="ServiceProvider"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_ServiceReceiver" id="ServiceReceiver"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_Rcm" id="Rcm" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_ExemptSupply" id="ExemptSupply"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_ItemServiceCategory"
+          id="ItemServiceCategory" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="RateOfTax">
+      <AttrNames>
+        <Item Value="RateOfTax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="GlAccountCodes">
+      <AttrNames>
+        <Item Value="GlAccountCodes"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="EffectiveFrom">
+      <AttrNames>
+        <Item Value="EffectiveFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="EffectiveTo">
+      <AttrNames>
+        <Item Value="EffectiveTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="UpdatedBy">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="UpdatedDate">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>
