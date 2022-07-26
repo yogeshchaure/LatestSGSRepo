@@ -183,6 +183,9 @@
   <ViewUsage
     Name="SgsTdsWhtVO"
     ViewObjectName="com.sgs.model.view.SgsTdsWhtVO"/>
+  <ViewUsage
+    Name="SgsVatInquiryVO1"
+    ViewObjectName="com.sgs.model.view.SgsVatInquiryVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

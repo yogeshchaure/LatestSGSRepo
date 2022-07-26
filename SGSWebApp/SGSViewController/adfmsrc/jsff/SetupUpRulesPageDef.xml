@@ -20,6 +20,8 @@
     <taskFlow id="withholdingTaxDeductedTaxMainBTF1"
               taskFlowId="/bTaskFlow/withholdingTaxDeductedTaxMainBTF.xml#withholdingTaxDeductedTaxMainBTF"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="vatInquiryBTF1" taskFlowId="/bTaskFlow/vatInquiryBTF.xml#vatInquiryBTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings/>
 </pageDefinition>

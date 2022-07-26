@@ -1,0 +1,40 @@
+//Groovy Scripts for com.sgs.model.view.SgsVatInquiryVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="ExemptSupplyLOV", name="pType")
+def pType_ExemptSupplyLOV_BindVariable_BoundParameter()
+{
+'YES_NO'
+}
+
+
+@AccessorParameterExpression(accessorName="RcmLOV", name="pType")
+def pType_RcmLOV_BindVariable_BoundParameter()
+{
+'YES_NO'
+}
+
+
+@AccessorParameterExpression(accessorName="ServiceProviderLOV", name="pType")
+def pType_ServiceProviderLOV_BindVariable_BoundParameter()
+{
+'SERVICE_P'
+}
+
+
+@AccessorParameterExpression(accessorName="ServiceReceiverLOV", name="pType")
+def pType_ServiceReceiverLOV_BindVariable_BoundParameter()
+{
+'SERVICE_P'
+}
+
+
+@AccessorParameterExpression(accessorName="VATIDLOV", name="pType")
+def pType_VATIDLOV_BindVariable_BoundParameter()
+{
+'VAT_ID'
+}
+

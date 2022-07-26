@@ -75,6 +75,8 @@
         <page path="/jsff/withholdingTaxDeductedTaxForm.jsff"
               usageId="com_sgs_view_withholdingTaxDeductedTaxFormPageDef"/>
         <page path="/jspx/testing.jspx" usageId="com_sgs_view_testingPageDef"/>
+        <page path="/jsff/vatInquiry.jsff" usageId="com_sgs_view_vatInquiryPageDef"/>
+        <page path="/jsff/vatInquiryForm.jsff" usageId="com_sgs_view_vatInquiryFormPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -146,6 +148,8 @@
         <page id="com_sgs_view_withholdingTaxDeductedTaxPageDef" path="jsff.withholdingTaxDeductedTaxPageDef"/>
         <page id="com_sgs_view_withholdingTaxDeductedTaxFormPageDef" path="jsff.withholdingTaxDeductedTaxFormPageDef"/>
         <page id="com_sgs_view_testingPageDef" path="jspx.testingPageDef"/>
+        <page id="com_sgs_view_vatInquiryPageDef" path="jsff.vatInquiryPageDef"/>
+        <page id="com_sgs_view_vatInquiryFormPageDef" path="jsff.vatInquiryFormPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"
