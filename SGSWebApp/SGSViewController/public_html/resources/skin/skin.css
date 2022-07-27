@@ -97,10 +97,14 @@ af|commandButton {
    font-size: 11px;
 }
 
-.af_panelSpringboard.p_AFStrip .af_panelSpringboard_item.p_AFSelected {
-        background-color: #05cebe0f;
-}
+
 
 .af_panelSpringboard_items {
     height: 127px;
 }
+
+.listSize af|selectOneChoice::content {
+    width: 70px;
+    /*min-width: 266px;*/
+}
+

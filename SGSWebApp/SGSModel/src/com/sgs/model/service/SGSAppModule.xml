@@ -190,7 +190,9 @@
   <ViewUsage
     Name="SgsHoldReleaseDetailsVO"
     ViewObjectName="com.sgs.model.view.SgsHoldReleaseDetailsVO"/>
-    
+  <ViewUsage
+    Name="SgsOtherReceivablesDetailsVO"
+    ViewObjectName="com.sgs.model.view.SgsOtherReceivablesDetailsVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
