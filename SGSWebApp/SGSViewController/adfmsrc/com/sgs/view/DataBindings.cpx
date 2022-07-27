@@ -78,6 +78,7 @@
         <page path="/jsff/vatInquiry.jsff" usageId="com_sgs_view_vatInquiryPageDef"/>
         <page path="/jsff/vatInquiryForm.jsff" usageId="com_sgs_view_vatInquiryFormPageDef"/>
         <page path="/jsff/holdReleaseDetailForm.jsff" usageId="com_sgs_view_holdReleaseDetailFormPageDef"/>
+        <page path="/jsff/otherReceivablesDetails.jsff" usageId="com_sgs_view_otherReceivablesDetailsPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -152,6 +153,7 @@
         <page id="com_sgs_view_vatInquiryPageDef" path="jsff.vatInquiryPageDef"/>
         <page id="com_sgs_view_vatInquiryFormPageDef" path="jsff.vatInquiryFormPageDef"/>
         <page id="com_sgs_view_holdReleaseDetailFormPageDef" path="jsff.holdReleaseDetailFormPageDef"/>
+        <page id="com_sgs_view_otherReceivablesDetailsPageDef" path="jsff.otherReceivablesDetailsPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

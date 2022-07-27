@@ -23,7 +23,9 @@
            <af:showPopupBehavior popupId="p2"/>
            </af:button>
             <af:spacer id="s34" width="10"/>
-                <af:button text="Action On Other Receivables" id="b13" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}"/>
+                <af:button text="Action On Other Receivables" id="b13" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}">
+                 <af:showPopupBehavior popupId="p3"/>
+                </af:button>
         <af:button id="b12" action="back" immediate="true" text="Approve" accessKey="C" rendered="#{pageFlowScope.pStatus eq 'Pending Approval for Rectification'}"/>
          <af:spacer id="s3" width="10"/>
          <af:button  id="b3"  immediate="true" text="Submit for Allocation" accessKey="C"/>       
@@ -544,6 +546,79 @@
           </af:panelGroupLayout>
          
         </af:panelBox>
+         <af:panelBox id="pb10" text="Other Receivables Details" disclosed="false" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}">
+          <f:facet name="toolbar"/>
+          <af:panelGroupLayout id="pgl4" >
+            <af:table value="#{bindings.SgsOtherReceivablesDetailsVO.collectionModel}" var="row"
+                      rows="#{bindings.SgsOtherReceivablesDetailsVO.rangeSize}"
+                      emptyText="#{bindings.SgsOtherReceivablesDetailsVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.SgsOtherReceivablesDetailsVO.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.SgsOtherReceivablesDetailsVO.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.SgsOtherReceivablesDetailsVO.rangeSize}" id="t3"
+                       styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5"
+                      columnSelection="multiple" columnStretching="column:c18">
+              <af:column headerText="Extraction ID" id="c10">
+                <af:link text="#{row.ExtractionId}" id="l3" inlineStyle="font-weight:bold;"/>
+                <!--<af:outputText value="#{row.ExtractionId}"
+                               shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.ExtractionId.tooltip}"
+                               id="ot18"/>-->
+              </af:column>
+              <af:column headerText="Legal Entity" id="c11" width="420">
+                <af:outputText value="#{row.LegalEntity}"
+                               shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.LegalEntity.tooltip}"
+                               id="ot19"/>
+              </af:column>
+              <af:column headerText="Business Unit" id="c12">
+                <af:outputText value="#{row.BusinessUnit}"
+                               shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.BusinessUnit.tooltip}"
+                               id="ot20"/>
+              </af:column>
+              <af:column headerText="Operating Unit" id="c13">
+                <af:outputText value="#{row.OPERATINGUNIT}"
+                               shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.OPERATINGUNIT.tooltip}"
+                               id="ot21"/>
+              </af:column>
+              <af:column headerText="Department ID" id="c14">
+                <af:outputText value="#{row.DepartmentId}"
+                               shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.DepartmentId.tooltip}"
+                               id="ot22"/>
+              </af:column>
+              <af:column headerText="GL Account" id="c15">
+                <af:outputText value="#{row.GlAccount}"
+                               shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.GlAccount.tooltip}" id="ot23"/>
+              </af:column>
+              <af:column headerText="Affiliate" id="c16">
+                <af:outputText value="#{row.AffiliateAccount}"
+                               shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.AffiliateAccount.tooltip}"
+                               id="ot24"/>
+              </af:column>
+              <af:column headerText="Job Code" id="c17">
+                <af:outputText value="#{row.JobCode}"
+                               shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.JobCode.tooltip}" id="ot25"/>
+              </af:column>
+              <af:column headerText="Amount" id="c18" >
+                <af:outputText value="#{row.Amount}"
+                               shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.Amount.tooltip}" id="ot26">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.SgsOtherReceivablesDetailsVO.hints.Amount.format}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+          </af:panelGroupLayout>
+          <af:panelFormLayout id="pfl10">
+            <f:facet name="footer"/>
+          <!-- data-->
+          <af:panelLabelAndMessage label="Reclassed By" id="plam16">
+                <af:outputText value="#{bindings.UpdatedBy3.inputValue}"
+                               shortDesc="#{bindings.UpdatedBy3.hints.tooltip}" id="ot27"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Reclass Date" id="plam17">
+                <af:outputText value="#{bindings.UpdatedDate3.inputValue}"
+                               shortDesc="#{bindings.UpdatedDate3.hints.tooltip}" id="ot28"/>
+              </af:panelLabelAndMessage>
+          </af:panelFormLayout>
+        </af:panelBox>
         <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
                   binding="#{pageFlowScope.transBCostAllocationFormBean.revRecDetailPopup}">
           <af:dialog id="d1" contentWidth="1000" contentHeight="300" type="none">
@@ -568,6 +643,20 @@
              <af:spacer id="s2" width="170"/>
                 <af:outputText value="Hold / Release Details" id="ot2" inlineStyle="font-weight:bold;font-size:15px;"/>
             <af:region value="#{bindings.holdReleaseDetailBTF1.regionModel}" id="r2"/>
+          </af:dialog>
+        </af:popup>
+         <af:popup childCreation="deferred" autoCancel="disabled" id="p3"
+               binding="#{pageFlowScope.transBCostAllocationFormBean.otherReceivablePopup}">
+          <af:dialog id="d3" contentWidth="550" contentHeight="300" type="none">
+            <f:facet name="buttonBar">
+              <af:button text="Reclass" id="b5"
+                        actionListener="#{pageFlowScope.transBCostAllocationFormBean.saveOtherReceivableDetails}"/>
+            <af:button text="Close" id="b7"
+                         actionListener="#{pageFlowScope.transBCostAllocationFormBean.closeOtherReceivableDetails}"/>
+            </f:facet>
+             <af:spacer id="s9" width="300"/>
+                <af:outputText value="Action on Other Receivables" id="ot18" inlineStyle="font-weight:bold;font-size:15px;"/>
+            <af:region value="#{bindings.otherReceivablesDetailsBTF1.regionModel}" id="r3"/>
           </af:dialog>
         </af:popup>
       </af:panelGroupLayout>

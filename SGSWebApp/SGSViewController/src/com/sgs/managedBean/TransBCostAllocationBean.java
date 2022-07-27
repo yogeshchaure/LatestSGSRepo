@@ -11,6 +11,7 @@ import oracle.binding.OperationBinding;
 
 public class TransBCostAllocationBean {
     private RichPopup holdDetailPopup;
+   private RichPopup otherReceivablePopup;
     public TransBCostAllocationBean() {
     }
 
@@ -44,5 +45,20 @@ public class TransBCostAllocationBean {
 
     public RichPopup getHoldDetailPopup() {
         return holdDetailPopup;
+    }
+
+    public void setOtherReceivablePopup(RichPopup otherReceivablePopup) {
+        this.otherReceivablePopup = otherReceivablePopup;
+    }
+
+    public RichPopup getOtherReceivablePopup() {
+        return otherReceivablePopup;
+    }
+    public void saveOtherReceivableDetails(ActionEvent actionEvent) {
+        getOtherReceivablePopup().hide();
+    }
+
+    public void closeOtherReceivableDetails(ActionEvent actionEvent) {
+        getOtherReceivablePopup().hide();
     }
 }

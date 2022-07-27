@@ -7,6 +7,7 @@ import oracle.adf.view.rich.component.rich.RichPopup;
 public class TransBCostAllocationFormBean {
     private RichPopup holdDetailPopup;
     private RichPopup revRecDetailPopup;
+    private RichPopup otherReceivablePopup;
 
     public TransBCostAllocationFormBean() {
         super();
@@ -41,5 +42,21 @@ public class TransBCostAllocationFormBean {
 
     public void closeHoldReleaseDetails(ActionEvent actionEvent) {
         getHoldDetailPopup().hide();
+    }
+    
+    public void saveOtherReceivableDetails(ActionEvent actionEvent) {
+        getOtherReceivablePopup().hide();
+    }
+
+    public void closeOtherReceivableDetails(ActionEvent actionEvent) {
+        getOtherReceivablePopup().hide();
+    }
+
+    public void setOtherReceivablePopup(RichPopup otherReceivablePopup) {
+        this.otherReceivablePopup = otherReceivablePopup;
+    }
+
+    public RichPopup getOtherReceivablePopup() {
+        return otherReceivablePopup;
     }
 }

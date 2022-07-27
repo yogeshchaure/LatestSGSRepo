@@ -1,0 +1,33 @@
+//Groovy Scripts for com.sgs.model.view.SgsOtherReceivablesDetailsVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="BusinessUnitLOV", name="pType")
+def pType_BusinessUnitLOV_BindVariable_BoundParameter()
+{
+'BS_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="GLAccountLOV", name="pType")
+def pType_GLAccountLOV_BindVariable_BoundParameter()
+{
+'O_GL_ACCOUNT'
+}
+
+
+@AccessorParameterExpression(accessorName="JobCodeLOV", name="pType")
+def pType_JobCodeLOV_BindVariable_BoundParameter()
+{
+'O_JOB_CODE'
+}
+
+
+@AccessorParameterExpression(accessorName="AffiliateAccountLOV", name="pType")
+def pType_AffiliateAccountLOV_BindVariable_BoundParameter()
+{
+'O_AFFILIATE_ACCOUNT'
+}
+

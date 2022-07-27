@@ -15,6 +15,11 @@
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <iterator Binds="SgsHoldReleaseDetailsVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsHoldReleaseDetailsVOIterator"/>
+    <iterator Binds="SgsOtherReceivablesDetailsVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsOtherReceivablesDetailsVOIterator"/>
+    <taskFlow id="otherReceivablesDetailsBTF1"
+              taskFlowId="/bTaskFlow/otherReceivablesDetailsBTF.xml#otherReceivablesDetailsBTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="ApprovalRequestType">
@@ -267,6 +272,31 @@
     <attributeValues IterBinding="SgsHoldReleaseDetailsVOIterator" id="ReleaseRemarks">
       <AttrNames>
         <Item Value="ReleaseRemarks"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SgsOtherReceivablesDetailsVOIterator" id="SgsOtherReceivablesDetailsVO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsOtherReceivablesDetailsVO" Name="SgsOtherReceivablesDetailsVO0">
+        <AttrNames>
+          <Item Value="ExtractionId"/>
+          <Item Value="LegalEntity"/>
+          <Item Value="BusinessUnit"/>
+          <Item Value="OPERATINGUNIT"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="GlAccount"/>
+          <Item Value="AffiliateAccount"/>
+          <Item Value="JobCode"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="SgsOtherReceivablesDetailsVOIterator" id="UpdatedBy3">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsOtherReceivablesDetailsVOIterator" id="UpdatedDate3">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
       </AttrNames>
     </attributeValues>
   </bindings>

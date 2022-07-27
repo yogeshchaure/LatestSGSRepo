@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsOtherReceivablesDetailsVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.sgs.model.view.SgsOtherReceivablesDetailsVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="BusinessUnitLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsOtherReceivablesDetailsVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="GLAccountLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsOtherReceivablesDetailsVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="JobCodeLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsOtherReceivablesDetailsVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="AffiliateAccountLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsOtherReceivablesDetailsVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_BusinessUnitList"
+    ListVOName="BusinessUnitLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BusinessUnitList"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GlAccountList"
+    ListVOName="GLAccountLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlAccountList"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobCodeList"
+    ListVOName="JobCodeLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobCodeList"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_AffiliateAccountList"
+    ListVOName="AffiliateAccountLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AffiliateAccountList"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SgsOtherReceivablesDetails"
+    Entity="com.sgs.model.entity.SgsOtherReceivablesDetails"/>
+  <ViewAttribute
+    Name="AffiliateAccount"
+    PrecisionRule="true"
+    EntityAttrName="AffiliateAccount"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="AFFILIATE_ACCOUNT"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="BusinessUnit"
+    PrecisionRule="true"
+    EntityAttrName="BusinessUnit"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="BUSINESS_UNIT"/>
+  <ViewAttribute
+    Name="CostIdentificationId"
+    PrecisionRule="true"
+    EntityAttrName="CostIdentificationId"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="COST_IDENTIFICATION_ID"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="CREATED_BY"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="DepartmentId"
+    PrecisionRule="true"
+    EntityAttrName="DepartmentId"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="DEPARTMENT_ID"/>
+  <ViewAttribute
+    Name="ExtractionId"
+    PrecisionRule="true"
+    EntityAttrName="ExtractionId"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="EXTRACTION_ID"/>
+  <ViewAttribute
+    Name="GlAccount"
+    PrecisionRule="true"
+    EntityAttrName="GlAccount"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="GL_ACCOUNT"/>
+  <ViewAttribute
+    Name="JobCode"
+    PrecisionRule="true"
+    EntityAttrName="JobCode"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="JOB_CODE"/>
+  <ViewAttribute
+    Name="LegalEntity"
+    PrecisionRule="true"
+    EntityAttrName="LegalEntity"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="LEGAL_ENTITY"/>
+  <ViewAttribute
+    Name="OrdId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="OrdId"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="ORD_ID"/>
+  <ViewAttribute
+    Name="Period"
+    PrecisionRule="true"
+    EntityAttrName="Period"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="period"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="UPDATED_BY"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="OPERATINGUNIT"
+    PrecisionRule="true"
+    EntityAttrName="OPERATINGUNIT"
+    EntityUsage="SgsOtherReceivablesDetails"
+    AliasName="OPERATING_UNIT"/>
+  <ViewAttribute
+    Name="BusinessUnitList"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_BusinessUnitList">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="GlAccountList"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_GlAccountList">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="JobCodeList"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_JobCodeList">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AffiliateAccountList"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="VIEW_ATTR"
+    SQLType="VARCHAR"
+    LOVName="LOV_AffiliateAccountList">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sgs.model.SGSModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
