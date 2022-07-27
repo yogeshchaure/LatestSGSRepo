@@ -23,7 +23,7 @@
         </af:popup>
          <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
                binding="#{pageFlowScope.TransBCostAllocationBean.otherReceivablePopup}">
-          <af:dialog id="d3" contentWidth="550" contentHeight="300" type="none">
+          <af:dialog id="d3" contentWidth="900" contentHeight="300" type="none">
             <f:facet name="buttonBar">
               <af:button text="Reclass" id="b5"
                         actionListener="#{pageFlowScope.TransBCostAllocationBean.saveOtherReceivableDetails}"/>

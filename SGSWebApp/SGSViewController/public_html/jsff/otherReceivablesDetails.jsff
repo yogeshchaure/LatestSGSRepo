@@ -38,7 +38,7 @@
                               rowSelection="single" fetchSize="#{bindings.SgsOtherReceivablesDetailsVO.rangeSize}"
                               id="t2" styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5"
                               columnSelection="multiple" columnStretching="column:c18">
-                        <af:column headerText="#{bindings.SgsOtherReceivablesDetailsVO.hints.ExtractionId.label}"
+                        <af:column headerText="Extraction ID"
                                    id="c1">
                             <af:outputText value="#{row.ExtractionId}"
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.ExtractionId.tooltip}"
@@ -46,18 +46,18 @@
                                             <f:facet name="footer">
                                             </f:facet>
                         </af:column>
-                        <af:column headerText="#{bindings.SgsOtherReceivablesDetailsVO.hints.Period.label}" id="c2">
+                        <af:column headerText="Period" id="c2">
                             <af:outputText value="#{row.Period}"
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.Period.tooltip}"
                                            id="ot2"/>
                         </af:column>
-                        <af:column headerText="#{bindings.SgsOtherReceivablesDetailsVO.hints.CostIdentificationId.label}"
+                        <af:column headerText="Cost Identification ID" width="150"
                                    id="c3">
                             <af:outputText value="#{row.CostIdentificationId}"
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.CostIdentificationId.tooltip}"
                                            id="ot3"/>
                         </af:column>
-                        <af:column headerText="#{bindings.SgsOtherReceivablesDetailsVO.hints.BusinessUnit.label}"
+                        <af:column headerText="Business Unit"
                                    id="c4">
                             <af:outputText value="#{row.BusinessUnit}"
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.BusinessUnit.tooltip}"
@@ -72,7 +72,7 @@
                                 </af:selectOneChoice>
                             </f:facet>
                         </af:column>
-                        <af:column headerText="#{bindings.SgsOtherReceivablesDetailsVO.hints.GlAccount.label}" id="c5">
+                        <af:column headerText="GL Account" id="c5">
                             <af:outputText value="#{row.GlAccount}"
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.GlAccount.tooltip}"
                                            id="ot5"/>
@@ -86,7 +86,7 @@
                                 </af:selectOneChoice>
                             </f:facet>
                         </af:column>
-                        <af:column headerText="#{bindings.SgsOtherReceivablesDetailsVO.hints.JobCode.label}" id="c6">
+                        <af:column headerText="Job Code" id="c6">
                             <af:outputText value="#{row.JobCode}"
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.JobCode.tooltip}"
                                            id="ot6"/>
@@ -100,7 +100,7 @@
                                 </af:selectOneChoice>
                             </f:facet>
                         </af:column>
-                        <af:column headerText="#{bindings.SgsOtherReceivablesDetailsVO.hints.AffiliateAccount.label}"
+                        <af:column headerText="Affiliate Account"
                                    id="c7">
                             <af:outputText value="#{row.AffiliateAccount}"
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.AffiliateAccount.tooltip}"
