@@ -27,13 +27,19 @@
           </af:toolbar>
           </f:facet>
           <af:panelGroupLayout id="pgl2" layout="vertical">
-            <af:panelFormLayout id="pfl1" rows="6">
-              <af:selectOneChoice value="#{bindings.VatId.inputValue}" label="#{bindings.VatId.label}"
+            <af:panelFormLayout id="pfl1" rows="7">
+              <af:inputText value="#{bindings.VatId.inputValue}" label="#{bindings.VatId.hints.label}"
+                            required="#{bindings.VatId.hints.mandatory}" columns="#{bindings.VatId.hints.displayWidth}"
+                            maximumLength="#{bindings.VatId.hints.precision}"
+                            shortDesc="#{bindings.VatId.hints.tooltip}" id="it4">
+                <f:validator binding="#{bindings.VatId.validator}"/>
+              </af:inputText>
+              <!--<af:inputText value="#{bindings.VatId.inputValue}" label="#{bindings.VatId.label}"
                                   required="#{bindings.VatId.hints.mandatory}"
                                   shortDesc="#{bindings.VatId.hints.tooltip}" id="soc1">
-                <f:selectItems value="#{bindings.VatId.items}" id="si1"/>
+                --><!--<f:selectItems value="#{bindings.VatId.items}" id="si1"/>--><!--
                 <f:validator binding="#{bindings.VatId.validator}"/>
-              </af:selectOneChoice>
+              </af:inputText>-->
               <af:selectOneChoice value="#{bindings.ServiceProvider.inputValue}"
                                   label="#{bindings.ServiceProvider.label}"
                                   required="#{bindings.ServiceProvider.hints.mandatory}"
@@ -63,10 +69,17 @@
               <af:selectOneChoice value="#{bindings.ItemServiceCategory.inputValue}"
                                   label="#{bindings.ItemServiceCategory.label}"
                                   required="#{bindings.ItemServiceCategory.hints.mandatory}"
-                                  shortDesc="#{bindings.ItemServiceCategory.hints.tooltip}" id="soc6">
-                <f:selectItems value="#{bindings.ItemServiceCategory.items}" id="si6"/>
+                                  shortDesc="#{bindings.ItemServiceCategory.hints.tooltip}" id="soc1">
+                <f:selectItems value="#{bindings.ItemServiceCategory.items}" id="si1"/>
                 <f:validator binding="#{bindings.ItemServiceCategory.validator}"/>
               </af:selectOneChoice>
+              <!--<af:selectOneChoice value="#{bindings.ItemServiceCategory.inputValue}"
+                                  label="#{bindings.ItemServiceCategory.label}"
+                                  required="#{bindings.ItemServiceCategory.hints.mandatory}"
+                                  shortDesc="#{bindings.ItemServiceCategory.hints.tooltip}" id="soc6">
+                --><!--<f:selectItems value="#{bindings.ItemServiceCategory.items}" id="si6"/>--><!--
+                <f:validator binding="#{bindings.ItemServiceCategory.validator}"/>
+              </af:selectOneChoice>-->
               <af:inputText value="#{bindings.RateOfTax.inputValue}" label="#{bindings.RateOfTax.hints.label}"
                             required="#{bindings.RateOfTax.hints.mandatory}"
                             columns="#{bindings.RateOfTax.hints.displayWidth}"
@@ -74,11 +87,18 @@
                             shortDesc="#{bindings.RateOfTax.hints.tooltip}" id="it1">
                 <f:validator binding="#{bindings.RateOfTax.validator}"/>
               </af:inputText>
-              <af:inputText value="#{bindings.GlAccountCodes.inputValue}" label="#{bindings.GlAccountCodes.hints.label}"
+              <af:inputText value="#{bindings.GlAccountCodes.inputValue}" label="Input GL Code"
                             required="#{bindings.GlAccountCodes.hints.mandatory}"
                             columns="#{bindings.GlAccountCodes.hints.displayWidth}"
                             maximumLength="#{bindings.GlAccountCodes.hints.precision}"
                             shortDesc="#{bindings.GlAccountCodes.hints.tooltip}" id="it2">
+                <f:validator binding="#{bindings.GlAccountCodes.validator}"/>
+              </af:inputText>
+               <af:inputText value="#{bindings.GlAccountCodes.inputValue}" label="Output GL Code"
+                            required="#{bindings.GlAccountCodes.hints.mandatory}"
+                            columns="#{bindings.GlAccountCodes.hints.displayWidth}"
+                            maximumLength="#{bindings.GlAccountCodes.hints.precision}"
+                            shortDesc="#{bindings.GlAccountCodes.hints.tooltip}" id="it5">
                 <f:validator binding="#{bindings.GlAccountCodes.validator}"/>
               </af:inputText>
               <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="#{bindings.EffectiveFrom.hints.label}"
@@ -96,14 +116,14 @@
                 <af:convertDateTime pattern="#{bindings.EffectiveTo.format}"/>
               </af:inputDate>
               <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="#{bindings.UpdatedBy.hints.label}"
-                            required="#{bindings.UpdatedBy.hints.mandatory}"
+                            required="#{bindings.UpdatedBy.hints.mandatory}" readOnly="true"
                             columns="#{bindings.UpdatedBy.hints.displayWidth}"
                             maximumLength="#{bindings.UpdatedBy.hints.precision}"
                             shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="it3">
                 <f:validator binding="#{bindings.UpdatedBy.validator}"/>
               </af:inputText>
               <af:inputDate value="#{bindings.UpdatedDate.inputValue}" label="#{bindings.UpdatedDate.hints.label}"
-                            required="#{bindings.UpdatedDate.hints.mandatory}"
+                            required="#{bindings.UpdatedDate.hints.mandatory}" readOnly="true"
                             columns="#{bindings.UpdatedDate.hints.displayWidth}"
                             shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="id3">
                 <f:validator binding="#{bindings.UpdatedDate.validator}"/>
