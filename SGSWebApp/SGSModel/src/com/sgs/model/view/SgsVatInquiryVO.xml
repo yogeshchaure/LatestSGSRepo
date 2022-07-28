@@ -116,10 +116,6 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
-  <ViewAccessor
-    Name="SgsListVO1"
-    ViewObjectName="com.sgs.model.view.SgsListVO"
-    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_VatId"
     ListVOName="VATIDLOV"
@@ -200,24 +196,6 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="ExemptSupply"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Discription"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_ItemServiceCategory"
-    ListVOName="SgsListVO1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ItemServiceCategory"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -340,12 +318,9 @@
     PrecisionRule="true"
     EntityAttrName="ItemServiceCategory"
     EntityUsage="SgsVatInquiry"
-    AliasName="ITEM_SERVICE_CATEGORY"
-    LOVName="LOV_ItemServiceCategory">
+    AliasName="ITEM_SERVICE_CATEGORY">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="7.0"/>
         <LABEL

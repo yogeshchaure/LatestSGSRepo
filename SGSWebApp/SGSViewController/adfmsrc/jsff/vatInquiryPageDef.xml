@@ -17,6 +17,7 @@
           <Item Value="ServiceProvider"/>
           <Item Value="ServiceReceiver"/>
           <Item Value="EffectiveTo"/>
+          <Item Value="EffectiveFrom"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

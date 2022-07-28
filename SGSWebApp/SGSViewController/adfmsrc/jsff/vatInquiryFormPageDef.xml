@@ -12,8 +12,6 @@
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
             DataControl="SGSAppModuleDataControl"/>
     <action IterBinding="SgsVatInquiryVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_VatId" id="VatId" DTSupportsMRU="false"
-          SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_ServiceProvider" id="ServiceProvider"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_ServiceReceiver" id="ServiceReceiver"
@@ -22,8 +20,6 @@
           SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_ExemptSupply" id="ExemptSupply"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_ItemServiceCategory"
-          id="ItemServiceCategory" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="RateOfTax">
       <AttrNames>
         <Item Value="RateOfTax"/>
@@ -54,5 +50,19 @@
         <Item Value="UpdatedDate"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="VatId">
+      <AttrNames>
+        <Item Value="VatId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsVatInquiryVO1Iterator" id="ItemServiceCategory" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject" StaticList="true">
+      <AttrNames>
+        <Item Value="ItemServiceCategory"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="NULL"/>
+      </ValueList>
+    </list>
   </bindings>
 </pageDefinition>
