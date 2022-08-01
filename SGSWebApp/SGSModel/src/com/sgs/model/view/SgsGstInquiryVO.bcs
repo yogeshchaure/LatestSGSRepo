@@ -52,3 +52,10 @@ def pType_TypeOfSupplyLOV_BindVariable_BoundParameter()
 'TYPE_OF_SUPPLY'
 }
 
+
+@AccessorParameterExpression(accessorName="YesNoList", name="pType")
+def pType_YesNoList_BindVariable_BoundParameter()
+{
+'YES_NO'
+}
+

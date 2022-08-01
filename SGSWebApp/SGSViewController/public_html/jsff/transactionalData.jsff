@@ -37,9 +37,14 @@
                             <af:region value="#{bindings.approveallocatedICoTransactionBTF1.regionModel}" id="r2"/>
                         </af:showDetailItem>
                         <af:showDetailItem id="sdi4" text="Netting of I/Co Vouchers / Invoices"
-                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                   inlineStyle="min-height:500px;" icon="/resources/icons/approveGreen.png">
-                                    <af:region value="#{bindings.nettingICVInvoicesBTF1.regionModel}" id="r5"/>
+                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                           inlineStyle="min-height:500px;" icon="/resources/icons/nettingVoucher.png">
+                            <af:region value="#{bindings.nettingICVInvoicesBTF1.regionModel}" id="r5"/>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="sdi5" text="Settlement of Vouchers"
+                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                           inlineStyle="min-height:500px;"
+                                           icon="/resources/icons/settlementVoucher.png">
                         </af:showDetailItem>
                     </af:panelSpringboard>
                 </f:facet>
