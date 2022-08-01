@@ -642,6 +642,16 @@
                                 <name>/bTaskFlow/otherReceivablesDetailsBTF.xml#otherReceivablesDetailsBTF</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/nettingICVInvoicesBTF.xml#nettingICVInvoicesBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/nettingICVInvoicesFormBTF.xml#nettingICVInvoicesFormBTF</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -1363,6 +1373,21 @@
                                 <name>/bTaskFlow/otherReceivablesDetailsBTF.xml#otherReceivablesDetailsBTF</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsNicvi</name>
+                                <actions>delete,update</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/nettingICVInvoicesBTF.xml#nettingICVInvoicesBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/nettingICVInvoicesFormBTF.xml#nettingICVInvoicesFormBTF</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -1799,6 +1824,21 @@
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/bTaskFlow/otherReceivablesDetailsBTF.xml#otherReceivablesDetailsBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsNicvi</name>
+                                <actions>delete,update</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/nettingICVInvoicesBTF.xml#nettingICVInvoicesBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/nettingICVInvoicesFormBTF.xml#nettingICVInvoicesFormBTF</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>

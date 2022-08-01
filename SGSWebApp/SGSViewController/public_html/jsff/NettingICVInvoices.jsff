@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelStretchLayout id="psl1">
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+        <f:facet name="bottom"/>
+        <f:facet name="center">
+            <af:panelBox text="Netting of Inter-Company Vouchers and Invoices" id="pb1">
+                <f:facet name="toolbar"/>
+                <af:panelGroupLayout id="pgl1" layout="vertical">
+                    <af:panelGroupLayout layout="vertical" id="pgl2">
+                        <af:panelHeader text="" id="ph1">
+                            <af:query id="qryId1" headerText="Search" disclosed="true"
+                                      value="#{bindings.SgsNicviVOCriteriaQuery.queryDescriptor}"
+                                      model="#{bindings.SgsNicviVOCriteriaQuery.queryModel}"
+                                      queryListener="#{bindings.SgsNicviVOCriteriaQuery.processQuery}"
+                                      queryOperationListener="#{bindings.SgsNicviVOCriteriaQuery.processQueryOperation}"
+                                      resultComponentId="::pc1:resId1" saveQueryMode="hidden" rows="3" maxColumns="2"/>
+                        </af:panelHeader>
+                        <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar">
+                                <af:toolbar id="t1">
+                                    <af:button text="Approve" id="b3"/>
+                                </af:toolbar>
+                            </f:facet>
+                            <f:facet name="statusbar"/>
+                            <af:table value="#{bindings.SgsNicviVO.collectionModel}" var="row"
+                                      rows="#{bindings.SgsNicviVO.rangeSize}"
+                                      emptyText="#{bindings.SgsNicviVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.SgsNicviVO.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.SgsNicviVO.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.SgsNicviVO.rangeSize}" id="resId1"
+                                      styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5">
+                                <af:column headerText="" id="c13"
+                                           width="80" align="center">
+                                    <af:selectBooleanCheckbox  labelStyle="color:#336699"
+                                                              label="" id="sbc2"/>
+                                    <f:facet name="header">
+                                        <af:selectBooleanCheckbox 
+                                                                  label="" id="sbc1"
+                                                                  labelStyle="color:#336699" autoSubmit="true">
+                                          
+                                        </af:selectBooleanCheckbox>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="Netting ID" id="resId1c1">
+                                    <af:link text="#{row.NettingId}" id="l1" action="edit"/>
+                                    <!--<af:outputText value="#{row.NettingId}"
+                                               shortDesc="#{bindings.SgsNicviVO.hints.NettingId.tooltip}" id="ot1"/>-->
+                                </af:column>
+                                <af:column headerText="From" id="resId1c2">
+                                    <af:outputText value="#{row.NettingFrom}"
+                                                   shortDesc="#{bindings.SgsNicviVO.hints.NettingFrom.tooltip}"
+                                                   id="ot2">
+                                        <af:convertDateTime pattern="#{bindings.SgsNicviVO.hints.NettingFrom.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="To" id="resId1c3">
+                                    <af:outputText value="#{row.NettingTo}"
+                                                   shortDesc="#{bindings.SgsNicviVO.hints.NettingTo.tooltip}" id="ot3">
+                                        <af:convertDateTime pattern="#{bindings.SgsNicviVO.hints.NettingTo.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column id="c1" headerText="Payables (I/Co Customer)" align="center">
+                                    <af:column headerText="Legal Entity" id="resId1c4">
+                                        <af:outputText value="#{row.PLegalEntity}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.PLegalEntity.tooltip}"
+                                                       id="ot4"/>
+                                    </af:column>
+                                    <af:column headerText="Business Unit" id="resId1c5">
+                                        <af:selectOneChoice value="#{row.bindings.PBusinessUnit.inputValue}"
+                                                            label="#{row.bindings.PBusinessUnit.label}"
+                                                            required="#{bindings.SgsNicviVO.hints.PBusinessUnit.mandatory}"
+                                                            shortDesc="#{bindings.SgsNicviVO.hints.PBusinessUnit.tooltip}"
+                                                            readOnly="true" id="soc1">
+                                            <f:selectItems value="#{row.bindings.PBusinessUnit.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.PBusinessUnit.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="Operating Unit" id="resId1c6">
+                                        <af:outputText value="#{row.POperatingUnit}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.POperatingUnit.tooltip}"
+                                                       id="ot5"/>
+                                    </af:column>
+                                    <af:column headerText="Accounts Payable" id="resId1c7">
+                                        <af:outputText value="#{row.PAccountsPayable}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.PAccountsPayable.tooltip}"
+                                                       id="ot6">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.SgsNicviVO.hints.PAccountsPayable.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                </af:column>
+                                <af:column id="c2" headerText="Receivables (I/Co Supplier)" align="center">
+                                    <af:column headerText="Legal Entity" id="resId1c8">
+                                        <af:outputText value="#{row.RLegalEntity}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.RLegalEntity.tooltip}"
+                                                       id="ot7"/>
+                                    </af:column>
+                                    <af:column headerText="Affiliate Business Unit" id="resId1c9">
+                                        <af:selectOneChoice value="#{row.bindings.RAffiliateBusinessUnit.inputValue}"
+                                                            label="#{row.bindings.RAffiliateBusinessUnit.label}"
+                                                            required="#{bindings.SgsNicviVO.hints.RAffiliateBusinessUnit.mandatory}"
+                                                            shortDesc="#{bindings.SgsNicviVO.hints.RAffiliateBusinessUnit.tooltip}"
+                                                            readOnly="true" id="soc2">
+                                            <f:selectItems value="#{row.bindings.RAffiliateBusinessUnit.items}"
+                                                           id="si2"/>
+                                            <f:validator binding="#{row.bindings.RAffiliateBusinessUnit.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="Operating Unit" id="resId1c10">
+                                        <af:outputText value="#{row.ROperatingUnit}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.ROperatingUnit.tooltip}"
+                                                       id="ot8"/>
+                                    </af:column>
+                                    <af:column headerText="Accounts Receivable" id="resId1c11">
+                                        <af:outputText value="#{row.RAccountsReceivable}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.RAccountsReceivable.tooltip}"
+                                                       id="ot9">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.SgsNicviVO.hints.RAccountsReceivable.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                </af:column>
+                                <af:column headerText="Allowable Netting Limit" id="resId1c12">
+                                    <af:outputText value="#{row.AllowableNettingLimit}"
+                                                   shortDesc="#{bindings.SgsNicviVO.hints.AllowableNettingLimit.tooltip}"
+                                                   id="ot10">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.SgsNicviVO.hints.AllowableNettingLimit.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="Amount Netted Off" id="resId1c13">
+                                    <af:outputText value="#{row.AmountNettedOff}"
+                                                   shortDesc="#{bindings.SgsNicviVO.hints.AmountNettedOff.tooltip}"
+                                                   id="ot11"/>
+                                </af:column>
+                                <af:column headerText="Status" id="resId1c14">
+                                    <af:selectOneChoice value="#{row.bindings.Status.inputValue}"
+                                                        label="#{row.bindings.Status.label}"
+                                                        required="#{bindings.SgsNicviVO.hints.Status.mandatory}"
+                                                        shortDesc="#{bindings.SgsNicviVO.hints.Status.tooltip}"
+                                                        readOnly="true" id="soc3">
+                                        <f:selectItems value="#{row.bindings.Status.items}" id="si3"/>
+                                        <f:validator binding="#{row.bindings.Status.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                            </af:table>
+                        </af:panelCollection>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelBox>
+        </f:facet>
+    </af:panelStretchLayout>
+</ui:composition>

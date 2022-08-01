@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="NettingICVInvoicesPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsNicviVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsNicviVOIterator"/>
+    <searchRegion Criteria="SgsNicviVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SgsNicviVOIterator" id="SgsNicviVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SgsNicviVOIterator" id="SgsNicviVO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsNicviVO" Name="SgsNicviVO0">
+        <AttrNames>
+          <Item Value="NettingId"/>
+          <Item Value="NettingFrom"/>
+          <Item Value="NettingTo"/>
+          <Item Value="PLegalEntity"/>
+          <Item Value="PBusinessUnit"/>
+          <Item Value="POperatingUnit"/>
+          <Item Value="PAccountsPayable"/>
+          <Item Value="RLegalEntity"/>
+          <Item Value="RAffiliateBusinessUnit"/>
+          <Item Value="ROperatingUnit"/>
+          <Item Value="RAccountsReceivable"/>
+          <Item Value="AllowableNettingLimit"/>
+          <Item Value="AmountNettedOff"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
