@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelGroupLayout id="pgl1">
+       
+        <af:panelGroupLayout id="pgl2" >
+         <af:spacer id="s5" width="20"/>
+        <af:outputText value="Netting Transactions" id="ot1" inlineStyle="font-weight:bold;font-size:15px;"/>
+         <af:spacer id="s1" width="700" />
+        
+        <af:button id="b1"  text="Rectification" accessKey="S" >
+          
+          </af:button>
+        
+        </af:panelGroupLayout>
+      <af:panelBox text="Transaction Entries" id="pb1">
+        <f:facet name="toolbar">
+        <af:toolbar id="t1">
+           
+          </af:toolbar>
+        </f:facet>
+        <af:panelFormLayout id="pfl1" rows="5">
+            <af:panelLabelAndMessage label="Netting ID" id="plam1">
+              <af:outputText value="#{bindings.NettingId.inputValue}" shortDesc="#{bindings.NettingId.hints.tooltip}"
+                             id="ot2"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="Netting Allowable Limit" id="plam2">
+              <af:outputText value="#{bindings.AllowableNettingLimit.inputValue}"
+                             shortDesc="#{bindings.AllowableNettingLimit.hints.tooltip}" id="ot3">
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.AllowableNettingLimit.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="From" id="plam3">
+              <af:outputText value="#{bindings.NettingFrom.inputValue}"
+                             shortDesc="#{bindings.NettingFrom.hints.tooltip}" id="ot4">
+                <af:convertDateTime pattern="#{bindings.NettingFrom.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="To" id="plam4">
+              <af:outputText value="#{bindings.NettingTo.inputValue}" shortDesc="#{bindings.NettingTo.hints.tooltip}"
+                             id="ot5">
+                <af:convertDateTime pattern="#{bindings.NettingTo.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="Status" id="plam5">
+              <af:outputText value="#{bindings.Status.inputValue}" shortDesc="#{bindings.Status.hints.tooltip}"
+                             id="ot6"/>
+            </af:panelLabelAndMessage>
+          </af:panelFormLayout>
+     
+        
+         
+              <af:panelBox text="" id="pb3" showDisclosure="false" >
+                <f:facet name="toolbar">
+                    <af:toolbar id="t2">
+                        
+                    </af:toolbar>
+                </f:facet>
+                <af:spacer id="s2" width="550"/>
+                <af:outputText value="Sutherland Global Services Inc" id="ot10" inlineStyle="font-weight:bold;font-size:14px;"/>
+                 
+                <af:separator id="s3"/>
+                <af:panelFormLayout id="pfl3">
+                   <af:panelLabelAndMessage label="Business Unit" id="plam6">
+                <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
+                               shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot7"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Operating Unit" id="plam7">
+                <af:outputText value="#{bindings.POperatingUnit.inputValue}"
+                               shortDesc="#{bindings.POperatingUnit.hints.tooltip}" id="ot8"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="I/Co Supplier" id="plam8">
+                <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
+                               shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot9"/>
+              </af:panelLabelAndMessage>
+                </af:panelFormLayout>
+            </af:panelBox>
+        <af:panelBox text="" id="pb2" showDisclosure="false" >
+                <f:facet name="toolbar">
+                    <af:toolbar id="t3">
+                        
+                    </af:toolbar>
+                </f:facet>
+                <af:spacer id="s4" width="550"/>
+                <af:outputText value="Sutherland Global Services Philippines Inc" id="ot11" inlineStyle="font-weight:bold;font-size:14px;"/>
+                 
+                <af:separator id="s6"/>
+                <af:panelFormLayout id="pfl2">
+                  <af:panelLabelAndMessage label="Business Unit" id="plam9">
+                <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
+                               shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot12"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="Operating Unit" id="plam10">
+                <af:outputText value="#{bindings.ROperatingUnit.inputValue}"
+                               shortDesc="#{bindings.ROperatingUnit.hints.tooltip}" id="ot13"/>
+              </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="I/Co Customer" id="plam11">
+                <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
+                               shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot14"/>
+              </af:panelLabelAndMessage>
+            </af:panelFormLayout>
+            </af:panelBox>
+       
+        
+      </af:panelBox>
+     
+        
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

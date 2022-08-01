@@ -81,6 +81,8 @@
         <page path="/jsff/otherReceivablesDetails.jsff" usageId="com_sgs_view_otherReceivablesDetailsPageDef"/>
         <page path="/jsff/gstInquiry.jsff" usageId="com_sgs_view_gstInquiryPageDef"/>
         <page path="/jsff/gstInquiryForm.jsff" usageId="com_sgs_view_gstInquiryFormPageDef"/>
+        <page path="/jsff/NettingICVInvoices.jsff" usageId="com_sgs_view_NettingICVInvoicesPageDef"/>
+        <page path="/jsff/NettingICVInvoicesForm.jsff" usageId="com_sgs_view_NettingICVInvoicesFormPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -158,6 +160,8 @@
         <page id="com_sgs_view_otherReceivablesDetailsPageDef" path="jsff.otherReceivablesDetailsPageDef"/>
         <page id="com_sgs_view_gstInquiryPageDef" path="jsff.gstInquiryPageDef"/>
         <page id="com_sgs_view_gstInquiryFormPageDef" path="jsff.gstInquiryFormPageDef"/>
+        <page id="com_sgs_view_NettingICVInvoicesPageDef" path="jsff.NettingICVInvoicesPageDef"/>
+        <page id="com_sgs_view_NettingICVInvoicesFormPageDef" path="jsff.NettingICVInvoicesFormPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

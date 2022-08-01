@@ -7,33 +7,27 @@
         <f:facet name="top"/>
         <f:facet name="bottom"/>
         <f:facet name="center">
-            <af:panelDashboard id="pd1" rowHeight="650px" columns="1">
-                <af:panelGroupLayout id="pgl5" layout="scroll" halign="center" valign="middle">
-                    <af:decorativeBox id="db1" topHeight="1px" inlineStyle="margin-left:3px;margin-right:3px;"
-                                      styleClass="decorativeBoxNoframeBorder">
-                        <f:facet name="top"/>
-                        <f:facet name="center">
-                            <af:panelSpringboard id="ps1" displayMode="grid"
-                                                 inlineStyle="background-color:white; min-height:100%;">
-                                <af:showDetailItem text="Access for Transactional/Setup Screens" id="sdi6"
-                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                   inlineStyle="min-height:500px;"
-                                                   icon="/resources/icons/fingerprint.png"></af:showDetailItem>
-                                <af:showDetailItem id="sdi7" text="Access for Set-Up Screens"
-                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                   inlineStyle="min-height:500px;" icon="/resources/icons/checked.png"></af:showDetailItem>
-                                <af:showDetailItem id="sdi1" text="Data Access for BU's"
-                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                   inlineStyle="min-height:500px;" icon="/resources/icons/BU.png"></af:showDetailItem>
-                                <af:showDetailItem id="sdi11" text="User Access Masters"
-                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                   inlineStyle="min-height:500px;"
-                                                   icon="/resources/icons/useraccess.png"></af:showDetailItem>
-                            </af:panelSpringboard>
-                        </f:facet>
-                    </af:decorativeBox>
-                </af:panelGroupLayout>
-            </af:panelDashboard>
+            <af:decorativeBox id="db1" topHeight="1px" inlineStyle="margin-left:3px;margin-right:3px;"
+                              styleClass="decorativeBoxNoframeBorder">
+                <f:facet name="top"/>
+                <f:facet name="center">
+                    <af:panelSpringboard id="ps1" displayMode="grid"
+                                         inlineStyle="background-color:white; min-height:100%;">
+                        <af:showDetailItem text="Access for Transactional/Setup Screens" id="sdi6"
+                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                           inlineStyle="min-height:500px;" icon="/resources/icons/fingerprint.png"/>
+                        <af:showDetailItem id="sdi7" text="Access for Set-Up Screens"
+                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                           inlineStyle="min-height:500px;" icon="/resources/icons/checked.png"/>
+                        <af:showDetailItem id="sdi1" text="Data Access for BU's"
+                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                           inlineStyle="min-height:500px;" icon="/resources/icons/BU.png"/>
+                        <af:showDetailItem id="sdi11" text="User Access Masters"
+                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                           inlineStyle="min-height:500px;" icon="/resources/icons/useraccess.png"/>
+                    </af:panelSpringboard>
+                </f:facet>
+            </af:decorativeBox>
         </f:facet>
     </af:panelStretchLayout>
 </ui:composition>

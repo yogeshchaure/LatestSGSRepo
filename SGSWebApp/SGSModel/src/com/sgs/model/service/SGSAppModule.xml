@@ -196,6 +196,9 @@
   <ViewUsage
     Name="SgsGstInquiryVO1"
     ViewObjectName="com.sgs.model.view.SgsGstInquiryVO"/>
+  <ViewUsage
+    Name="SgsNicviVO"
+    ViewObjectName="com.sgs.model.view.SgsNicviVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

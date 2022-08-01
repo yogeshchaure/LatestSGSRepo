@@ -797,6 +797,14 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
      */
     public ViewObjectImpl getSgsGstInquiryVO1() {
         return (ViewObjectImpl) findViewObject("SgsGstInquiryVO1");
+      }
+      
+    /**
+     * Container's getter for SgsNicviVO1.
+     * @return SgsNicviVO1
+     */
+    public ViewObjectImpl getSgsNicviVO() {
+        return (ViewObjectImpl) findViewObject("SgsNicviVO");
     }
 }
 
