@@ -52,97 +52,85 @@
                 </f:facet>
                 <f:facet name="bottom"/>
                 <f:facet name="center">
-                    <af:panelDashboard id="pd1" rowHeight="650px" columns="1">
-                        <af:panelGroupLayout id="pgl5" layout="scroll" halign="center" valign="middle">
-                            <af:decorativeBox id="db1" topHeight="1px" inlineStyle="margin-left:3px;margin-right:3px;"
-                                              styleClass="decorativeBoxNoframeBorder">
-                                <f:facet name="top"/>
-                                <f:facet name="center">
-                                    <af:panelSpringboard id="ps1" displayMode="grid"
-                                                         inlineStyle="background-color:white; min-height:100%;">
-                                        <af:showDetailItem id="sdi4" text="Business Unit" immediate="true"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonBU;action=View']}"
-                                                           icon="/resources/icons/BU.png"
-                                                           inlineStyle="min-height:500px;">
-                                            <af:region value="#{bindings.businessUnitBTF1.regionModel}" id="r4"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem id="sdi5" text="Customers" immediate="true"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonCust;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/Cust.png">
-                                            <af:region value="#{bindings.customersBTF1.regionModel}" id="r3"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem id="tab3" text="Services" immediate="true"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonService;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/Services.png">
-                                            <af:region value="#{bindings.servicesBTF1.regionModel}" id="r7"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem id="tab4" text="Suppliers" immediate="true"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonSupplier;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/Suppliers.png">
-                                            <af:region value="#{bindings.suppliersBTF1.regionModel}" id="r6"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem id="tab5" text="Projects" immediate="true"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonProject;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/Project.png">
-                                            <af:region value="#{bindings.projectsBTF1.regionModel}" id="r5"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem text="Contracts" id="sdi1" immediate="true"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonContract;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/Contract.png">
-                                            <af:region value="#{bindings.contractsBTF1.regionModel}" id="r2"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem id="sdi3" text="Paybales"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonAPInv;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/Paybales.png">
-                                            <af:region value="#{bindings.apInvoiceBTF1.regionModel}" id="r9"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem text="Receivables" id="sdi2"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonARInv;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/Receivables.png">
-                                            <af:region value="#{bindings.arInvMainBTF1.regionModel}" id="r1"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem text="Set-Up" id="sdi9"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/SetUpMain.png">
-                                            <af:region value="#{bindings.setUpRulesBTF1.regionModel}" id="r10"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem id="sdi8" text="Transactional Data"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/TransactionalData.png">
-                                            <af:region value="#{bindings.transactionalDataBTF1.regionModel}" id="r11"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem text="Process" id="sdi6"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/process.png">
-                                            <af:region value="#{bindings.processMainBTF1.regionModel}" id="r8"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem id="sdi10" text="Security"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/security.png">
-                                            <af:region value="#{bindings.securityMainBTF1.regionModel}" id="r13"/>
-                                        </af:showDetailItem>
-                                        <af:showDetailItem id="sdi7" text="Reports"
-                                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                           inlineStyle="min-height:500px;"
-                                                           icon="/resources/icons/CalculaterReport.png">
-                                            <af:region value="#{bindings.reportMainBTF1.regionModel}" id="r12"/>
-                                        </af:showDetailItem>
-                                    </af:panelSpringboard>
-                                </f:facet>
-                            </af:decorativeBox>
-                        </af:panelGroupLayout>
-                    </af:panelDashboard>
+                    <af:decorativeBox id="db1" topHeight="1px" inlineStyle="margin-left:3px;margin-right:3px;"
+                                      styleClass="decorativeBoxNoframeBorder">
+                        <f:facet name="top"/>
+                        <f:facet name="center">
+                            <af:panelSpringboard id="ps1" displayMode="grid"
+                                                 inlineStyle="background-color:white; min-height:100%;">
+                                <af:showDetailItem id="sdi4" text="Business Unit" immediate="true"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonBU;action=View']}"
+                                                   icon="/resources/icons/BU.png" inlineStyle="min-height:500px;">
+                                    <af:region value="#{bindings.businessUnitBTF1.regionModel}" id="r4"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="sdi5" text="Customers" immediate="true"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonCust;action=View']}"
+                                                   inlineStyle="min-height:500px;" icon="/resources/icons/Cust.png">
+                                    <af:region value="#{bindings.customersBTF1.regionModel}" id="r3"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab3" text="Services" immediate="true"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonService;action=View']}"
+                                                   inlineStyle="min-height:500px;" icon="/resources/icons/Services.png">
+                                    <af:region value="#{bindings.servicesBTF1.regionModel}" id="r7"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab4" text="Suppliers" immediate="true"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonSupplier;action=View']}"
+                                                   inlineStyle="min-height:500px;"
+                                                   icon="/resources/icons/Suppliers.png">
+                                    <af:region value="#{bindings.suppliersBTF1.regionModel}" id="r6"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="tab5" text="Projects" immediate="true"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonProject;action=View']}"
+                                                   inlineStyle="min-height:500px;" icon="/resources/icons/Project.png">
+                                    <af:region value="#{bindings.projectsBTF1.regionModel}" id="r5"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Contracts" id="sdi1" immediate="true"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonContract;action=View']}"
+                                                   inlineStyle="min-height:500px;" icon="/resources/icons/Contract.png">
+                                    <af:region value="#{bindings.contractsBTF1.regionModel}" id="r2"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="sdi3" text="Paybales"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonAPInv;action=View']}"
+                                                   inlineStyle="min-height:500px;" icon="/resources/icons/Paybales.png">
+                                    <af:region value="#{bindings.apInvoiceBTF1.regionModel}" id="r9"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Receivables" id="sdi2"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonARInv;action=View']}"
+                                                   inlineStyle="min-height:500px;"
+                                                   icon="/resources/icons/Receivables.png">
+                                    <af:region value="#{bindings.arInvMainBTF1.regionModel}" id="r1"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Set-Up" id="sdi9"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                                   inlineStyle="min-height:500px;"
+                                                   icon="/resources/icons/SetUpMain.png">
+                                    <af:region value="#{bindings.setUpRulesBTF1.regionModel}" id="r10"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="sdi8" text="Transactional Data"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                                   inlineStyle="min-height:500px;"
+                                                   icon="/resources/icons/TransactionalData.png">
+                                    <af:region value="#{bindings.transactionalDataBTF1.regionModel}" id="r11"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem text="Process" id="sdi6"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                                   inlineStyle="min-height:500px;" icon="/resources/icons/process.png">
+                                    <af:region value="#{bindings.processMainBTF1.regionModel}" id="r8"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="sdi10" text="Security"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                                   inlineStyle="min-height:500px;" icon="/resources/icons/security.png">
+                                    <af:region value="#{bindings.securityMainBTF1.regionModel}" id="r13"/>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="sdi7" text="Reports"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                                   inlineStyle="min-height:500px;"
+                                                   icon="/resources/icons/CalculaterReport.png">
+                                    <af:region value="#{bindings.reportMainBTF1.regionModel}" id="r12"/>
+                                </af:showDetailItem>
+                            </af:panelSpringboard>
+                        </f:facet>
+                    </af:decorativeBox>
                 </f:facet>
             </af:panelStretchLayout>
         </af:form>
