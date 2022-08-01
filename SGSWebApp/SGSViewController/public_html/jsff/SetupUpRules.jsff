@@ -52,7 +52,9 @@
                                 </af:showDetailItem>
                                 <af:showDetailItem id="sdi3" text="GST Setup"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                                   inlineStyle="min-height:500px;" icon="/resources/icons/TaxLogo.png"></af:showDetailItem>
+                                                   inlineStyle="min-height:500px;" icon="/resources/icons/TaxLogo.png">
+                                    <af:region value="#{bindings.gstInquiryBTF1.regionModel}" id="r8"/>
+                                </af:showDetailItem>
                                 <af:showDetailItem id="sdi8" text="Value Added Tax (VAT) Set-Up"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                                    inlineStyle="min-height:500px;" icon="/resources/icons/VATTAX.png">

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="gstInquiryPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsGstInquiryVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsGstInquiryVO1Iterator"/>
+    <searchRegion Criteria="SgsGstInquiryVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SgsGstInquiryVO1Iterator" id="SgsGstInquiryVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SgsGstInquiryVO1Iterator" id="SgsGstInquiryVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsGstInquiryVO" Name="SgsGstInquiryVO10">
+        <AttrNames>
+          <Item Value="GstId"/>
+          <Item Value="ServiceProvider"/>
+          <Item Value="PlaceOfsupply"/>
+          <Item Value="TypeOfsupply"/>
+          <Item Value="EffectiveTo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsGstInquiryVO1Iterator" id="CreateInsert"
+            InstanceName="SGSAppModuleDataControl.SgsGstInquiryVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SgsGstInquiryVO1Iterator" id="Delete" InstanceName="SGSAppModuleDataControl.SgsGstInquiryVO1"
+            DataControl="SGSAppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

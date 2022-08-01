@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="gstInquiryFormPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsGstInquiryVO1" RangeSize="10" DataControl="SGSAppModuleDataControl"
+              id="SgsGstInquiryVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="CgstPayable">
+      <AttrNames>
+        <Item Value="CgstPayable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="CgstReceivable">
+      <AttrNames>
+        <Item Value="CgstReceivable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="EffectiveFrom">
+      <AttrNames>
+        <Item Value="EffectiveFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="EffectiveTo">
+      <AttrNames>
+        <Item Value="EffectiveTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="ExemptSupply">
+      <AttrNames>
+        <Item Value="ExemptSupply"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="GstId">
+      <AttrNames>
+        <Item Value="GstId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="HsnCode">
+      <AttrNames>
+        <Item Value="HsnCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="IdenticalGstReg">
+      <AttrNames>
+        <Item Value="IdenticalGstReg"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="PlaceOfsupply">
+      <AttrNames>
+        <Item Value="PlaceOfsupply"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="IgstPayable">
+      <AttrNames>
+        <Item Value="IgstPayable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="IgstReceivable">
+      <AttrNames>
+        <Item Value="IgstReceivable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="ItemServiceCategory">
+      <AttrNames>
+        <Item Value="ItemServiceCategory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="RateOfTax">
+      <AttrNames>
+        <Item Value="RateOfTax"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="ServiceProvider">
+      <AttrNames>
+        <Item Value="ServiceProvider"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="SgstPayable">
+      <AttrNames>
+        <Item Value="SgstPayable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="SgstReceivable">
+      <AttrNames>
+        <Item Value="SgstReceivable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="TypeOfservice">
+      <AttrNames>
+        <Item Value="TypeOfservice"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="TypeOfsupply">
+      <AttrNames>
+        <Item Value="TypeOfsupply"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="UpdatedBy">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="UpdatedDate">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="Rcm">
+      <AttrNames>
+        <Item Value="Rcm"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_ServiceProvider" id="ServiceProvider1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_PlaceOfsupply" id="PlaceOfsupply1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_TypeOfservice" id="TypeOfservice1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_Rcm" id="Rcm1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_ExemptSupply" id="ExemptSupply1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_HsnCode" id="HsnCode1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

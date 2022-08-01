@@ -642,6 +642,16 @@
                                 <name>/bTaskFlow/otherReceivablesDetailsBTF.xml#otherReceivablesDetailsBTF</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryBTF.xml#gstInquiryBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryFormBTF.xml#gstInquiryFormBTF</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -1363,6 +1373,21 @@
                                 <name>/bTaskFlow/otherReceivablesDetailsBTF.xml#otherReceivablesDetailsBTF</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryBTF.xml#gstInquiryBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryFormBTF.xml#gstInquiryFormBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsGstInquiry</name>
+                                <actions>delete,update</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -1800,6 +1825,21 @@
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/bTaskFlow/otherReceivablesDetailsBTF.xml#otherReceivablesDetailsBTF</name>
                                 <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryBTF.xml#gstInquiryBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryFormBTF.xml#gstInquiryFormBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsGstInquiry</name>
+                                <actions>delete,update</actions>
                             </permission>
                         </permissions>
                     </grant>
