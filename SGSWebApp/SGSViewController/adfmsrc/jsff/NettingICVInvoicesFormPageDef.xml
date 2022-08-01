@@ -5,6 +5,9 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="SgsNicviVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsNicviVOIterator"/>
+    <iterator Binds="SgsIncVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsIncVOIterator"/>
+    <iterator Binds="SgsPhilippinesIncVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsPhilippinesIncVOIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsNicviVOIterator" id="NettingId">
@@ -50,6 +53,42 @@
     <attributeValues IterBinding="SgsNicviVOIterator" id="ROperatingUnit">
       <AttrNames>
         <Item Value="ROperatingUnit"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SgsIncVOIterator" id="SgsIncVO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsIncVO" Name="SgsIncVO0">
+        <AttrNames>
+          <Item Value="Period"/>
+          <Item Value="PeoplesoftVoucherNo"/>
+          <Item Value="VourcherAmount"/>
+          <Item Value="WhtTds"/>
+          <Item Value="AmountAvailableForNetting"/>
+          <Item Value="AmountNetting"/>
+          <Item Value="PartialFullNetting"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SgsPhilippinesIncVOIterator" id="SgsPhilippinesIncVO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsPhilippinesIncVO" Name="SgsPhilippinesIncVO0">
+        <AttrNames>
+          <Item Value="Period"/>
+          <Item Value="PeoplesoftVoucherNo"/>
+          <Item Value="VourcherAmount"/>
+          <Item Value="WhtTds"/>
+          <Item Value="AmountAvailableForNetting"/>
+          <Item Value="AmountNetting"/>
+          <Item Value="PartialFullNetting"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="UpdatedBy">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="UpdatedDate">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
       </AttrNames>
     </attributeValues>
   </bindings>

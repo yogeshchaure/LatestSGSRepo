@@ -1,117 +1,283 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelStretchLayout id="psl1">
-    <f:facet name="start"/>
-    <f:facet name="end"/>
-    <f:facet name="top"/>
-    <f:facet name="bottom"/>
-    <f:facet name="center">
-      <af:panelGroupLayout id="pgl1">
-       
-        <af:panelGroupLayout id="pgl2" >
-         <af:spacer id="s5" width="20"/>
-        <af:outputText value="Netting Transactions" id="ot1" inlineStyle="font-weight:bold;font-size:15px;"/>
-         <af:spacer id="s1" width="700" />
-        
-        <af:button id="b1"  text="Rectification" accessKey="S" >
-          
-          </af:button>
-        
-        </af:panelGroupLayout>
-      <af:panelBox text="Transaction Entries" id="pb1">
-        <f:facet name="toolbar">
-        <af:toolbar id="t1">
-           
-          </af:toolbar>
+    <af:panelStretchLayout id="psl1">
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+        <f:facet name="bottom"/>
+        <f:facet name="center">
+            <af:panelGroupLayout id="pgl1">
+                <af:panelGroupLayout id="pgl2">
+                    <af:spacer id="s5" width="20"/>
+                    <af:outputText value="Netting of Inter-Company Vouchers and Invoices" id="ot1"
+                                   inlineStyle="font-weight:bold;font-size:15px;"/>
+                   
+                </af:panelGroupLayout>
+                <af:panelBox text="Netting Transactions" id="pb1">
+                    <f:facet name="toolbar">
+                        <af:toolbar id="t1">
+                        <af:button id="b1" text="Submit For Netting" accessKey="S"></af:button>
+                            <af:spacer id="s1" width="5"/>
+                            <af:button id="b2" text="Close" accessKey="S" action="back"></af:button>
+                        </af:toolbar>
+                    </f:facet>
+                    <af:panelFormLayout id="pfl1" rows="5">
+                        <af:panelLabelAndMessage label="Netting ID" id="plam1">
+                            <af:outputText value="#{bindings.NettingId.inputValue}"
+                                           shortDesc="#{bindings.NettingId.hints.tooltip}" id="ot2"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="Netting Allowable Limit" id="plam2">
+                            <af:outputText value="#{bindings.AllowableNettingLimit.inputValue}"
+                                           shortDesc="#{bindings.AllowableNettingLimit.hints.tooltip}" id="ot3">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.AllowableNettingLimit.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="From" id="plam3">
+                            <af:outputText value="#{bindings.NettingFrom.inputValue}"
+                                           shortDesc="#{bindings.NettingFrom.hints.tooltip}" id="ot4">
+                                <af:convertDateTime pattern="#{bindings.NettingFrom.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="To" id="plam4">
+                            <af:outputText value="#{bindings.NettingTo.inputValue}"
+                                           shortDesc="#{bindings.NettingTo.hints.tooltip}" id="ot5">
+                                <af:convertDateTime pattern="#{bindings.NettingTo.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="Status" id="plam5">
+                            <af:outputText value="#{bindings.Status.inputValue}"
+                                           shortDesc="#{bindings.Status.hints.tooltip}" id="ot6"/>
+                        </af:panelLabelAndMessage>
+                    </af:panelFormLayout>
+                    <af:panelBox text="" id="pb3" showDisclosure="false">
+                        <f:facet name="toolbar">
+                            <af:toolbar id="t2"></af:toolbar>
+                        </f:facet>
+                        <af:spacer id="s2" width="550"/>
+                        <af:outputText value="Sutherland Global Services Inc" id="ot10"
+                                       inlineStyle="font-weight:bold;font-size:14px;"/>
+                        <af:separator id="s3"/>
+                        <af:panelFormLayout id="pfl3">
+                            <af:panelLabelAndMessage label="Business Unit" id="plam6">
+                                <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
+                                               shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot7"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Operating Unit" id="plam7">
+                                <af:outputText value="#{bindings.POperatingUnit.inputValue}"
+                                               shortDesc="#{bindings.POperatingUnit.hints.tooltip}" id="ot8"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="I/Co Supplier" id="plam8">
+                                <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
+                                               shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot9"/>
+                            </af:panelLabelAndMessage>
+                            <af:spacer id="s11" height="20"/>
+                        </af:panelFormLayout>
+                        <af:panelGroupLayout id="pgl5">
+                            <af:table value="#{bindings.SgsIncVO.collectionModel}" var="row"
+                                      rows="#{bindings.SgsIncVO.rangeSize}"
+                                      emptyText="#{bindings.SgsIncVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.SgsIncVO.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.SgsIncVO.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.SgsIncVO.rangeSize}" id="t4"
+                                      styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5"
+                                      columnSelection="multiple" columnStretching="last">
+                                <af:column headerText="" id="c13" width="80" align="center">
+                                    <af:selectBooleanCheckbox labelStyle="color:#336699" label="" id="sbc2"/>
+                                    <f:facet name="header">
+                                        <af:selectBooleanCheckbox label="" id="sbc1" labelStyle="color:#336699"
+                                                                  autoSubmit="true"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="Period" id="c1">
+                                    <af:outputText value="#{row.Period}"
+                                                   shortDesc="#{bindings.SgsIncVO.hints.Period.tooltip}" id="ot15">
+                                        <af:convertDateTime pattern="#{bindings.SgsIncVO.hints.Period.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="PeopleSoft Voucher NO" id="c2" width="200">
+                                    <af:outputText value="#{row.PeoplesoftVoucherNo}"
+                                                   shortDesc="#{bindings.SgsIncVO.hints.PeoplesoftVoucherNo.tooltip}"
+                                                   id="ot16"/>
+                                </af:column>
+                                <af:column headerText="Vourcher Amount" id="c3" width="200">
+                                    <af:outputText value="#{row.VourcherAmount}"
+                                                   shortDesc="#{bindings.SgsIncVO.hints.VourcherAmount.tooltip}"
+                                                   id="ot17">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.SgsIncVO.hints.VourcherAmount.format}"/>
+                                    </af:outputText>
+                                    <f:facet name="footer">
+                                        <af:outputText value="10,00,000.00" id="ot22"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="WHT / TDS" id="c4">
+                                    <af:outputText value="#{row.WhtTds}"
+                                                   shortDesc="#{bindings.SgsIncVO.hints.WhtTds.tooltip}" id="ot18">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.SgsIncVO.hints.WhtTds.format}"/>
+                                    </af:outputText>
+                                    <f:facet name="footer">
+                                        <af:outputText value="50,000.00" id="ot23"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="Amount available for Netting" id="c5" width="300">
+                                    <af:outputText value="#{row.AmountAvailableForNetting}"
+                                                   shortDesc="#{bindings.SgsIncVO.hints.AmountAvailableForNetting.tooltip}"
+                                                   id="ot19">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.SgsIncVO.hints.AmountAvailableForNetting.format}"/>
+                                    </af:outputText>
+                                    <f:facet name="footer">
+                                        <af:outputText value="9,50,000.00" id="ot24"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="Amount Netting" id="c6">
+                                    <af:outputText value="#{row.AmountNetting}"
+                                                   shortDesc="#{bindings.SgsIncVO.hints.AmountNetting.tooltip}"
+                                                   id="ot20"/>
+                                    <f:facet name="footer">
+                                        <af:outputText value="0.00" id="ot25"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="Partial / Full Netting" id="c7" width="200">
+                                    <af:outputText value="#{row.PartialFullNetting}"
+                                                   shortDesc="#{bindings.SgsIncVO.hints.PartialFullNetting.tooltip}"
+                                                   id="ot21"/>
+                                </af:column>
+                            </af:table>
+                            <af:spacer id="s10" height="20"/>
+                        </af:panelGroupLayout>
+                        <af:panelLabelAndMessage label="Account Payables Balance" id="plam12">
+                            <af:outputText value="-" id="ot26"/>
+                        </af:panelLabelAndMessage>
+                    </af:panelBox>
+                    <af:panelBox text="" id="pb2" showDisclosure="false">
+                        <f:facet name="toolbar">
+                            <af:toolbar id="t3"></af:toolbar>
+                        </f:facet>
+                        <af:spacer id="s4" width="550"/>
+                        <af:outputText value="Sutherland Global Services Philippines Inc" id="ot11"
+                                       inlineStyle="font-weight:bold;font-size:14px;"/>
+                        <af:separator id="s6"/>
+                        <af:panelFormLayout id="pfl2">
+                            <af:panelLabelAndMessage label="Business Unit" id="plam9">
+                                <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
+                                               shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot12"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Operating Unit" id="plam10">
+                                <af:outputText value="#{bindings.ROperatingUnit.inputValue}"
+                                               shortDesc="#{bindings.ROperatingUnit.hints.tooltip}" id="ot13"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="I/Co Customer" id="plam11">
+                                <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
+                                               shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot14"/>
+                            </af:panelLabelAndMessage>
+                             <af:spacer id="s7" height="20"/>
+                        </af:panelFormLayout>
+                        <af:panelGroupLayout id="pgl4">
+                            <af:table value="#{bindings.SgsPhilippinesIncVO.collectionModel}" var="row"
+                                      rows="#{bindings.SgsPhilippinesIncVO.rangeSize}"
+                                      emptyText="#{bindings.SgsPhilippinesIncVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.SgsPhilippinesIncVO.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.SgsPhilippinesIncVO.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.SgsPhilippinesIncVO.rangeSize}"
+                                      id="t5" styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5"
+                                      columnSelection="multiple" columnStretching="last">
+                               <af:column headerText="" id="c16" width="80" align="center">
+                                    <af:selectBooleanCheckbox labelStyle="color:#336699" label="" id="sbc3"/>
+                                    <f:facet name="header">
+                                        <af:selectBooleanCheckbox label="" id="sbc4" labelStyle="color:#336699"
+                                                                  autoSubmit="true"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="Period" id="c8">
+                                    <af:outputText value="#{row.Period}"
+                                                   shortDesc="#{bindings.SgsPhilippinesIncVO.hints.Period.tooltip}"
+                                                   id="ot27">
+                                        <af:convertDateTime pattern="#{bindings.SgsPhilippinesIncVO.hints.Period.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="PeopleSoft Voucher NO" id="c9" width="200">
+                                    <af:outputText value="#{row.PeoplesoftVoucherNo}"
+                                                   shortDesc="#{bindings.SgsPhilippinesIncVO.hints.PeoplesoftVoucherNo.tooltip}"
+                                                   id="ot28"/>
+                                </af:column>
+                                <af:column headerText="Invoice Amount" id="c10" width="200">
+                                    <af:outputText value="#{row.VourcherAmount}"
+                                                   shortDesc="#{bindings.SgsPhilippinesIncVO.hints.VourcherAmount.tooltip}"
+                                                   id="ot29">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.SgsPhilippinesIncVO.hints.VourcherAmount.format}"/>
+                                    </af:outputText>
+                                    <f:facet name="footer">
+                                        <af:outputText value="8,00,000.00" id="ot34"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="WHT / TDS" id="c11">
+                                    <af:outputText value="#{row.WhtTds}"
+                                                   shortDesc="#{bindings.SgsPhilippinesIncVO.hints.WhtTds.tooltip}"
+                                                   id="ot30">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.SgsPhilippinesIncVO.hints.WhtTds.format}"/>
+                                    </af:outputText>
+                                    <f:facet name="footer">
+                                        <af:outputText value="40,000.00" id="ot35"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="Amount available for Netting" id="c12" width="300">
+                                    <af:outputText value="#{row.AmountAvailableForNetting}"
+                                                   shortDesc="#{bindings.SgsPhilippinesIncVO.hints.AmountAvailableForNetting.tooltip}"
+                                                   id="ot31">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.SgsPhilippinesIncVO.hints.AmountAvailableForNetting.format}"/>
+                                    </af:outputText>
+                                    <f:facet name="footer">
+                                        <af:outputText value="7,60,000.00" id="ot36"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="Amount Netting" id="c15">
+                                    <af:outputText value="#{row.AmountNetting}"
+                                                   shortDesc="#{bindings.SgsPhilippinesIncVO.hints.AmountNetting.tooltip}"
+                                                   id="ot32"/>
+                                    <f:facet name="footer">
+                                        <af:outputText value="0.00" id="ot37"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="Partial / Full Netting" id="c14" width="200">
+                                    <af:outputText value="#{row.PartialFullNetting}"
+                                                   shortDesc="#{bindings.SgsPhilippinesIncVO.hints.PartialFullNetting.tooltip}"
+                                                   id="ot33"/>
+                                </af:column>
+                            </af:table>
+                             <af:spacer id="s8" height="20"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="pgl3">
+                            <af:spacer id="s9" height="20"/>
+                            <af:panelLabelAndMessage label="Account Payables Balance" id="plam13">
+                                <af:outputText value="-" id="ot38"/>
+                            </af:panelLabelAndMessage>
+                        </af:panelGroupLayout>
+                    </af:panelBox>
+                    <af:panelGroupLayout id="pgl6">
+                        <af:spacer id="s12" height="30"/>
+                        <af:panelLabelAndMessage label="Submitted By" id="plam14">
+                            <af:outputText value="#{bindings.UpdatedBy.inputValue}"
+                                           shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="ot39"/>
+                        </af:panelLabelAndMessage>
+                        <af:spacer id="s13" height="5"/>
+                        <af:panelLabelAndMessage label="Submitted Date" id="plam15">
+                            <af:outputText value="#{bindings.UpdatedDate.inputValue}"
+                                           shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="ot40">
+                                <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                    </af:panelGroupLayout>
+                </af:panelBox>
+            </af:panelGroupLayout>
         </f:facet>
-        <af:panelFormLayout id="pfl1" rows="5">
-            <af:panelLabelAndMessage label="Netting ID" id="plam1">
-              <af:outputText value="#{bindings.NettingId.inputValue}" shortDesc="#{bindings.NettingId.hints.tooltip}"
-                             id="ot2"/>
-            </af:panelLabelAndMessage>
-            <af:panelLabelAndMessage label="Netting Allowable Limit" id="plam2">
-              <af:outputText value="#{bindings.AllowableNettingLimit.inputValue}"
-                             shortDesc="#{bindings.AllowableNettingLimit.hints.tooltip}" id="ot3">
-                <af:convertNumber groupingUsed="false" pattern="#{bindings.AllowableNettingLimit.format}"/>
-              </af:outputText>
-            </af:panelLabelAndMessage>
-            <af:panelLabelAndMessage label="From" id="plam3">
-              <af:outputText value="#{bindings.NettingFrom.inputValue}"
-                             shortDesc="#{bindings.NettingFrom.hints.tooltip}" id="ot4">
-                <af:convertDateTime pattern="#{bindings.NettingFrom.format}"/>
-              </af:outputText>
-            </af:panelLabelAndMessage>
-            <af:panelLabelAndMessage label="To" id="plam4">
-              <af:outputText value="#{bindings.NettingTo.inputValue}" shortDesc="#{bindings.NettingTo.hints.tooltip}"
-                             id="ot5">
-                <af:convertDateTime pattern="#{bindings.NettingTo.format}"/>
-              </af:outputText>
-            </af:panelLabelAndMessage>
-            <af:panelLabelAndMessage label="Status" id="plam5">
-              <af:outputText value="#{bindings.Status.inputValue}" shortDesc="#{bindings.Status.hints.tooltip}"
-                             id="ot6"/>
-            </af:panelLabelAndMessage>
-          </af:panelFormLayout>
-     
-        
-         
-              <af:panelBox text="" id="pb3" showDisclosure="false" >
-                <f:facet name="toolbar">
-                    <af:toolbar id="t2">
-                        
-                    </af:toolbar>
-                </f:facet>
-                <af:spacer id="s2" width="550"/>
-                <af:outputText value="Sutherland Global Services Inc" id="ot10" inlineStyle="font-weight:bold;font-size:14px;"/>
-                 
-                <af:separator id="s3"/>
-                <af:panelFormLayout id="pfl3">
-                   <af:panelLabelAndMessage label="Business Unit" id="plam6">
-                <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
-                               shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot7"/>
-              </af:panelLabelAndMessage>
-              <af:panelLabelAndMessage label="Operating Unit" id="plam7">
-                <af:outputText value="#{bindings.POperatingUnit.inputValue}"
-                               shortDesc="#{bindings.POperatingUnit.hints.tooltip}" id="ot8"/>
-              </af:panelLabelAndMessage>
-              <af:panelLabelAndMessage label="I/Co Supplier" id="plam8">
-                <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
-                               shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot9"/>
-              </af:panelLabelAndMessage>
-                </af:panelFormLayout>
-            </af:panelBox>
-        <af:panelBox text="" id="pb2" showDisclosure="false" >
-                <f:facet name="toolbar">
-                    <af:toolbar id="t3">
-                        
-                    </af:toolbar>
-                </f:facet>
-                <af:spacer id="s4" width="550"/>
-                <af:outputText value="Sutherland Global Services Philippines Inc" id="ot11" inlineStyle="font-weight:bold;font-size:14px;"/>
-                 
-                <af:separator id="s6"/>
-                <af:panelFormLayout id="pfl2">
-                  <af:panelLabelAndMessage label="Business Unit" id="plam9">
-                <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
-                               shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot12"/>
-              </af:panelLabelAndMessage>
-              <af:panelLabelAndMessage label="Operating Unit" id="plam10">
-                <af:outputText value="#{bindings.ROperatingUnit.inputValue}"
-                               shortDesc="#{bindings.ROperatingUnit.hints.tooltip}" id="ot13"/>
-              </af:panelLabelAndMessage>
-                <af:panelLabelAndMessage label="I/Co Customer" id="plam11">
-                <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
-                               shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot14"/>
-              </af:panelLabelAndMessage>
-            </af:panelFormLayout>
-            </af:panelBox>
-       
-        
-      </af:panelBox>
-     
-        
-      </af:panelGroupLayout>
-    </f:facet>
-  </af:panelStretchLayout>
+    </af:panelStretchLayout>
 </ui:composition>
