@@ -199,6 +199,12 @@
   <ViewUsage
     Name="SgsNicviVO"
     ViewObjectName="com.sgs.model.view.SgsNicviVO"/>
+  <ViewUsage
+    Name="SgsIncVO"
+    ViewObjectName="com.sgs.model.view.SgsIncVO"/>
+  <ViewUsage
+    Name="SgsPhilippinesIncVO"
+    ViewObjectName="com.sgs.model.view.SgsPhilippinesIncVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
