@@ -79,6 +79,8 @@
         <page path="/jsff/vatInquiryForm.jsff" usageId="com_sgs_view_vatInquiryFormPageDef"/>
         <page path="/jsff/holdReleaseDetailForm.jsff" usageId="com_sgs_view_holdReleaseDetailFormPageDef"/>
         <page path="/jsff/otherReceivablesDetails.jsff" usageId="com_sgs_view_otherReceivablesDetailsPageDef"/>
+        <page path="/jsff/NettingICVInvoices.jsff" usageId="com_sgs_view_NettingICVInvoicesPageDef"/>
+        <page path="/jsff/NettingICVInvoicesForm.jsff" usageId="com_sgs_view_NettingICVInvoicesFormPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -154,6 +156,8 @@
         <page id="com_sgs_view_vatInquiryFormPageDef" path="jsff.vatInquiryFormPageDef"/>
         <page id="com_sgs_view_holdReleaseDetailFormPageDef" path="jsff.holdReleaseDetailFormPageDef"/>
         <page id="com_sgs_view_otherReceivablesDetailsPageDef" path="jsff.otherReceivablesDetailsPageDef"/>
+        <page id="com_sgs_view_NettingICVInvoicesPageDef" path="jsff.NettingICVInvoicesPageDef"/>
+        <page id="com_sgs_view_NettingICVInvoicesFormPageDef" path="jsff.NettingICVInvoicesFormPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

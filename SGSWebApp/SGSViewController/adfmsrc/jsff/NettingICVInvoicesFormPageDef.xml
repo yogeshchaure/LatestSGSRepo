@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="NettingICVInvoicesFormPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsNicviVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsNicviVOIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="NettingId">
+      <AttrNames>
+        <Item Value="NettingId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="AllowableNettingLimit">
+      <AttrNames>
+        <Item Value="AllowableNettingLimit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="NettingFrom">
+      <AttrNames>
+        <Item Value="NettingFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="NettingTo">
+      <AttrNames>
+        <Item Value="NettingTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="Status">
+      <AttrNames>
+        <Item Value="Status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="PBusinessUnit">
+      <AttrNames>
+        <Item Value="PBusinessUnit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="POperatingUnit">
+      <AttrNames>
+        <Item Value="POperatingUnit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="RAffiliateBusinessUnit">
+      <AttrNames>
+        <Item Value="RAffiliateBusinessUnit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="ROperatingUnit">
+      <AttrNames>
+        <Item Value="ROperatingUnit"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

@@ -14,6 +14,8 @@
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <taskFlow id="statisticalARDataBTF1" taskFlowId="/bTaskFlow/statisticalARDataBTF.xml#statisticalARDataBTF"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="nettingICVInvoicesBTF1" taskFlowId="/bTaskFlow/nettingICVInvoicesBTF.xml#nettingICVInvoicesBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings/>
 </pageDefinition>
