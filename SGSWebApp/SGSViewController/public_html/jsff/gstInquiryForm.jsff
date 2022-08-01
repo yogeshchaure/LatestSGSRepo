@@ -27,7 +27,8 @@
           </af:toolbar>
           </f:facet>
           <af:panelGroupLayout id="pgl2" layout="vertical">
-            <af:panelFormLayout id="pfl1" rows="10">
+            <af:panelFormLayout id="pfl1" rows="12">
+              <af:outputText value="outputText1" id="ot3" visible="false"/>
               <af:inputText value="#{bindings.GstId.inputValue}" label="#{bindings.GstId.hints.label}"
                             required="#{bindings.GstId.hints.mandatory}" columns="#{bindings.GstId.hints.displayWidth}"
                             maximumLength="#{bindings.GstId.hints.precision}"
@@ -131,6 +132,7 @@
                             shortDesc="#{bindings.ItemServiceCategory.hints.tooltip}" id="it3">
                 <f:validator binding="#{bindings.ItemServiceCategory.validator}"/>
               </af:inputText>
+              <af:outputText value="outputText1" id="ot4" visible="false"/>
               <af:outputText value="Input GST GL Accounts" id="ot1" inlineStyle="font-size:large; color:Black;"/>
               <af:inputText value="#{bindings.IgstReceivable.inputValue}"
                               label="#{bindings.IgstReceivable.hints.label}"
