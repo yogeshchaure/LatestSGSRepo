@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">NettingICVInvoices</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">497.02344</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>NettingICVInvoices&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">231.94238</property>
+      <property
+         name="page">/jsff/NettingICVInvoices.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>nettingICVInvoicesFormBTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">nettingICVInvoicesFormBTF</property>
+      <property
+         name="x">746.3574</property>
+      <property
+         name="y">225.14941</property>
+      <property
+         name="documentReference">/bTaskFlow/nettingICVInvoicesFormBTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">nettingICVInvoicesFormBTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">edit</property>
+      <property
+         name="sdm:polyPoints">R50,538.02344,231.5918,705.3574,224.79883,L50</property>
+   </ControlFlowCase>
+</SDM>
