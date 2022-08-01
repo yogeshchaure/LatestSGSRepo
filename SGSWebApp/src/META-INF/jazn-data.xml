@@ -644,10 +644,20 @@
                             </permission>
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
-                                <name>/bTaskFlow/nettingICVInvoicesBTF.xml#nettingICVInvoicesBTF</name>
+                                <name>/bTaskFlow/gstInquiryBTF.xml#gstInquiryBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                        <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                              <name>/bTaskFlow/nettingICVInvoicesBTF.xml#nettingICVInvoicesBTF</name>
                                 <actions>view</actions>
                             </permission>
                             <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryFormBTF.xml#gstInquiryFormBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                                 <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/bTaskFlow/nettingICVInvoicesFormBTF.xml#nettingICVInvoicesFormBTF</name>
                                 <actions>view</actions>
@@ -1374,7 +1384,22 @@
                                 <actions>view</actions>
                             </permission>
                             <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryBTF.xml#gstInquiryBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryFormBTF.xml#gstInquiryFormBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
                                 <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsGstInquiry</name>
+                                <actions>delete,update</actions>
+                            </permission>
+                            <permission>    
+				<class>oracle.adf.share.security.authorization.EntityPermission</class>
                                 <name>com.sgs.model.entity.SgsNicvi</name>
                                 <actions>delete,update</actions>
                             </permission>
@@ -1825,6 +1850,21 @@
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/bTaskFlow/otherReceivablesDetailsBTF.xml#otherReceivablesDetailsBTF</name>
                                 <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryBTF.xml#gstInquiryBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/gstInquiryFormBTF.xml#gstInquiryFormBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsGstInquiry</name>
+                                <actions>delete,update</actions>
                             </permission>
                             <permission>
                                 <class>oracle.adf.share.security.authorization.EntityPermission</class>

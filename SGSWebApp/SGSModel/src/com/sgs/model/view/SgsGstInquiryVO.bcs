@@ -1,0 +1,54 @@
+//Groovy Scripts for com.sgs.model.view.SgsGstInquiryVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="TypeofServiceLOV", name="pType")
+def pType_TypeofServiceLOV_BindVariable_BoundParameter()
+{
+'TYPE_OF_SERVICE'
+}
+
+
+@AccessorParameterExpression(accessorName="ServiceProviderLOV", name="pType")
+def pType_ServiceProviderLOV_BindVariable_BoundParameter()
+{
+'SERVICE_G'
+}
+
+
+@AccessorParameterExpression(accessorName="RCMLOV", name="pType")
+def pType_RCMLOV_BindVariable_BoundParameter()
+{
+'YES_NO'
+}
+
+
+@AccessorParameterExpression(accessorName="ExemptSupplyLOV", name="pType")
+def pType_ExemptSupplyLOV_BindVariable_BoundParameter()
+{
+'YES_NO'
+}
+
+
+@AccessorParameterExpression(accessorName="HSNCodeLOV", name="pType")
+def pType_HSNCodeLOV_BindVariable_BoundParameter()
+{
+'HSN_CODE'
+}
+
+
+@AccessorParameterExpression(accessorName="GSTIDLOV", name="pType")
+def pType_GSTIDLOV_BindVariable_BoundParameter()
+{
+'GST_ID'
+}
+
+
+@AccessorParameterExpression(accessorName="TypeOfSupplyLOV", name="pType")
+def pType_TypeOfSupplyLOV_BindVariable_BoundParameter()
+{
+'TYPE_OF_SUPPLY'
+}
+
