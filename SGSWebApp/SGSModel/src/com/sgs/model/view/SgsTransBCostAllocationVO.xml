@@ -643,6 +643,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="20.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.GlDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.GlDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -656,6 +660,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="21.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.TransactionDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.TransactionDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -808,6 +816,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="31.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.ExtractedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.ExtractedDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -838,6 +850,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="33.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.CreatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.CreatedDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -866,6 +882,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="35.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.UpdatedDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

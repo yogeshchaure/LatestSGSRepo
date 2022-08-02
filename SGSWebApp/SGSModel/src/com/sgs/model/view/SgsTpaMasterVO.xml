@@ -337,20 +337,47 @@
     PrecisionRule="true"
     EntityAttrName="EffectiveStartDate"
     EntityUsage="SgsTpaMaster"
-    AliasName="EFFECTIVE_START_DATE"/>
+    AliasName="EFFECTIVE_START_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTpaMasterVO.EffectiveStartDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTpaMasterVO.EffectiveStartDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EffectiveEndDate"
     PrecisionRule="true"
     EntityAttrName="EffectiveEndDate"
     EntityUsage="SgsTpaMaster"
-    AliasName="EFFECTIVE_END_DATE"/>
+    AliasName="EFFECTIVE_END_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTpaMasterVO.EffectiveEndDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTpaMasterVO.EffectiveEndDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="SgsTpaMaster"
     AliasName="CREATED_DATE"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTpaMasterVO.CreatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTpaMasterVO.CreatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -364,7 +391,16 @@
     EntityAttrName="UpdatedDate"
     EntityUsage="SgsTpaMaster"
     AliasName="UPDATED_DATE"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTpaMasterVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTpaMasterVO.UpdatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

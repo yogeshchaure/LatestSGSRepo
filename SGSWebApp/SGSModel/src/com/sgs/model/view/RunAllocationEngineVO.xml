@@ -344,7 +344,16 @@
     EntityAttrName="CreatedDate"
     EntityUsage="RunAllocationEngine"
     AliasName="CREATED_DATE"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.RunAllocationEngineVO.CreatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.RunAllocationEngineVO.CreatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RaeId"
     IsNotNull="true"
@@ -371,13 +380,31 @@
     PrecisionRule="true"
     EntityAttrName="TransactionDataFrom"
     EntityUsage="RunAllocationEngine"
-    AliasName="TRANSACTION_DATA_FROM"/>
+    AliasName="TRANSACTION_DATA_FROM">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.RunAllocationEngineVO.TransactionDataFrom_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.RunAllocationEngineVO.TransactionDataFrom_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TransactionDataTo"
     PrecisionRule="true"
     EntityAttrName="TransactionDataTo"
     EntityUsage="RunAllocationEngine"
-    AliasName="TRANSACTION_DATA_TO"/>
+    AliasName="TRANSACTION_DATA_TO">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.RunAllocationEngineVO.TransactionDataTo_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.RunAllocationEngineVO.TransactionDataTo_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TransationSource"
     PrecisionRule="true"
@@ -405,7 +432,16 @@
     EntityAttrName="UpdatedDate"
     EntityUsage="RunAllocationEngine"
     AliasName="UPDATED_DATE"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.RunAllocationEngineVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.RunAllocationEngineVO.UpdatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.sgs.model.SGSModelBundle"/>

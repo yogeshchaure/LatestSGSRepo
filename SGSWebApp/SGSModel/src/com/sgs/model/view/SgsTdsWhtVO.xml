@@ -318,7 +318,16 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="SgsTdsWht"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTdsWhtVO.CreatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTdsWhtVO.CreatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CummulativeThresholdLimit"
     PrecisionRule="true"
@@ -344,13 +353,31 @@
     PrecisionRule="true"
     EntityAttrName="EffectiveFrom"
     EntityUsage="SgsTdsWht"
-    AliasName="EFFECTIVE_FROM"/>
+    AliasName="EFFECTIVE_FROM">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTdsWhtVO.EffectiveFrom_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTdsWhtVO.EffectiveFrom_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EffectiveTo"
     PrecisionRule="true"
     EntityAttrName="EffectiveTo"
     EntityUsage="SgsTdsWht"
-    AliasName="EFFECTIVE_TO"/>
+    AliasName="EFFECTIVE_TO">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTdsWhtVO.EffectiveTo_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTdsWhtVO.EffectiveTo_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="GlAccounts"
     PrecisionRule="true"
@@ -485,19 +512,46 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="SgsTdsWht"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTdsWhtVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTdsWhtVO.UpdatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ValidityPeriodFrom"
     PrecisionRule="true"
     EntityAttrName="ValidityPeriodFrom"
     EntityUsage="SgsTdsWht"
-    AliasName="VALIDITY_PERIOD_FROM"/>
+    AliasName="VALIDITY_PERIOD_FROM">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTdsWhtVO.ValidityPeriodFrom_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTdsWhtVO.ValidityPeriodFrom_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ValidityPeriodTo"
     PrecisionRule="true"
     EntityAttrName="ValidityPeriodTo"
     EntityUsage="SgsTdsWht"
-    AliasName="VALIDITY_PERIOD_TO"/>
+    AliasName="VALIDITY_PERIOD_TO">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsTdsWhtVO.ValidityPeriodTo_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsTdsWhtVO.ValidityPeriodTo_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsTdsWhtVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsTdsWhtVO"
