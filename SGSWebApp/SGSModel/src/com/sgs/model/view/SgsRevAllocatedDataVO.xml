@@ -521,6 +521,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="10.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsRevAllocatedDataVO.CreatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsRevAllocatedDataVO.CreatedDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -813,6 +817,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="25.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsRevAllocatedDataVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsRevAllocatedDataVO.UpdatedDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

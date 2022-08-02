@@ -47,7 +47,16 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="SgsPhilippinesInc"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsPhilippinesIncVO.CreatedDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsPhilippinesIncVO.CreatedDate_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="NettingId"
     PrecisionRule="true"
@@ -71,7 +80,16 @@
     PrecisionRule="true"
     EntityAttrName="Period"
     EntityUsage="SgsPhilippinesInc"
-    AliasName="PERIOD"/>
+    AliasName="PERIOD">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsPhilippinesIncVO.Period_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsPhilippinesIncVO.Period_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PhiIncId"
     IsNotNull="true"
@@ -92,7 +110,16 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="SgsPhilippinesInc"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsPhilippinesIncVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsPhilippinesIncVO.UpdatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="VourcherAmount"
     PrecisionRule="true"

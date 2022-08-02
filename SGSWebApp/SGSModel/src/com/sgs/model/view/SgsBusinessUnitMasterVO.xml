@@ -490,13 +490,31 @@
     PrecisionRule="true"
     EntityAttrName="EffectiveStartDate"
     EntityUsage="SgsBusinessUnitMaster"
-    AliasName="EFFECTIVE_START_DATE"/>
+    AliasName="EFFECTIVE_START_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.EffectiveStartDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.EffectiveStartDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EffectiveEndDate"
     PrecisionRule="true"
     EntityAttrName="EffectiveEndDate"
     EntityUsage="SgsBusinessUnitMaster"
-    AliasName="EFFECTIVE_END_DATE"/>
+    AliasName="EFFECTIVE_END_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.EffectiveEndDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.EffectiveEndDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="AlternateBu"
     PrecisionRule="true"
@@ -585,7 +603,16 @@
     EntityAttrName="CreatedDate"
     EntityUsage="SgsBusinessUnitMaster"
     AliasName="CREATED_DATE"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.CreatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.CreatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -599,7 +626,16 @@
     EntityAttrName="UpdatedDate"
     EntityUsage="SgsBusinessUnitMaster"
     AliasName="UPDATED_DATE"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.UpdatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

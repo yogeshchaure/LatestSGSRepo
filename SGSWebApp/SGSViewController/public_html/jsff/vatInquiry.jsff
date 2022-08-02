@@ -10,26 +10,14 @@
     <f:facet name="center">
       <af:panelGroupLayout id="pgl1" layout="vertical">
         <af:panelBox text="VAT Inquiry" id="pb1">
-          <f:facet name="toolbar"/>
           <af:panelGroupLayout id="pgl2" layout="vertical">
-            <af:panelHeader text=" " id="ph2">
-              <af:panelGroupLayout layout="vertical" id="pgl3">
-                <af:panelHeader text="" id="ph1">
-                  <af:query id="qryId1" headerText="Search" disclosed="true" saveQueryMode="hidden" rows="2" maxColumns="2"
-                            value="#{bindings.SgsVatInquiryVOCriteriaQuery.queryDescriptor}"
-                            model="#{bindings.SgsVatInquiryVOCriteriaQuery.queryModel}"
-                            queryListener="#{bindings.SgsVatInquiryVOCriteriaQuery.processQuery}"
-                            queryOperationListener="#{bindings.SgsVatInquiryVOCriteriaQuery.processQueryOperation}"
-                            resultComponentId="::pc1:resId1"/>
-                </af:panelHeader>
-              
-              </af:panelGroupLayout>
-              <!--<af:query id="qryId1" headerText="Search" disclosed="true"
-                        value="#{bindings.SgsCostIdentificationRuleVOCriteriaQuery.queryDescriptor}"
-                        model="#{bindings.SgsCostIdentificationRuleVOCriteriaQuery.queryModel}"
-                        queryListener="#{bindings.SgsCostIdentificationRuleVOCriteriaQuery.processQuery}"
-                        queryOperationListener="#{bindings.SgsCostIdentificationRuleVOCriteriaQuery.processQueryOperation}"
-                        resultComponentId="::pc1:resId1" saveQueryMode="hidden" rows="2" maxColumns="2"/>-->
+            <af:panelHeader text="" id="ph1">
+              <af:query id="qryId1" headerText="Search" disclosed="true" saveQueryMode="hidden" rows="2" maxColumns="2"
+                        value="#{bindings.SgsVatInquiryVOCriteriaQuery.queryDescriptor}"
+                        model="#{bindings.SgsVatInquiryVOCriteriaQuery.queryModel}"
+                        queryListener="#{bindings.SgsVatInquiryVOCriteriaQuery.processQuery}"
+                        queryOperationListener="#{bindings.SgsVatInquiryVOCriteriaQuery.processQueryOperation}"
+                        resultComponentId="::pc1:resId1"/>
             </af:panelHeader>
             <af:panelCollection id="pc1" styleClass="AFStretchWidth">
               <f:facet name="menus"/>
@@ -55,11 +43,11 @@
                 <af:table value="#{bindings.SgsVatInquiryVO1.collectionModel}" var="row"
                           rows="#{bindings.SgsVatInquiryVO1.rangeSize}" styleClass="AFStretchWidth"
                           emptyText="#{bindings.SgsVatInquiryVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0" partialTriggers="::b1" columnStretching="last"
+                          rowBandingInterval="0" partialTriggers="::b1" 
                           selectedRowKeys="#{bindings.SgsVatInquiryVO1.collectionModel.selectedRow}"
                           selectionListener="#{bindings.SgsVatInquiryVO1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.SgsVatInquiryVO1.rangeSize}" id="resId1">
-                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.VatId.label}" id="resId1c1" width="100%">
+                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.VatId.label}" id="resId1c1" width="25%">
                   <af:link text="#{row.VatId}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
                     <!--<af:selectOneChoice value="#{row.bindings.VatId.inputValue}" label="#{row.bindings.VatId.label}"
                                         required="#{bindings.SgsVatInquiryVO1.hints.VatId.mandatory}"
@@ -69,7 +57,7 @@
                       <f:validator binding="#{row.bindings.VatId.validator}"/>
                     </af:selectOneChoice>-->
                   </af:column>
-                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.ServiceProvider.label}" width="100%" id="resId1c2">
+                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.ServiceProvider.label}" width="25%" id="resId1c2">
                     <af:selectOneChoice value="#{row.bindings.ServiceProvider.inputValue}"
                                         label="#{row.bindings.ServiceProvider.label}"
                                         required="#{bindings.SgsVatInquiryVO1.hints.ServiceProvider.mandatory}"
@@ -79,7 +67,8 @@
                       <f:validator binding="#{row.bindings.ServiceProvider.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.ServiceReceiver.label}" id="resId1c3" width="100%">
+                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.ServiceReceiver.label}" id="resId1c3"
+                             width="25%">
                     <af:selectOneChoice value="#{row.bindings.ServiceReceiver.inputValue}"
                                         label="#{row.bindings.ServiceReceiver.label}"
                                         required="#{bindings.SgsVatInquiryVO1.hints.ServiceReceiver.mandatory}"
@@ -89,7 +78,8 @@
                       <f:validator binding="#{row.bindings.ServiceReceiver.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.label}" id="resId1c4">
+                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.label}" id="resId1c4"
+                             width="25%">
                     <af:outputText value="#{row.EffectiveTo}"
                                    shortDesc="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.tooltip}" id="ot1">
                       <af:convertDateTime pattern="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.format}"/>

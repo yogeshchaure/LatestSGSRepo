@@ -370,6 +370,10 @@
           Value="10.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsVatInquiryVO.EffectiveFrom_LABEL"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsVatInquiryVO.EffectiveFrom_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsVatInquiryVO.EffectiveFrom_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -385,6 +389,10 @@
           Value="3.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsVatInquiryVO.EffectiveTo_LABEL"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsVatInquiryVO.EffectiveTo_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsVatInquiryVO.EffectiveTo_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -398,6 +406,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="11.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsVatInquiryVO.CreatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsVatInquiryVO.CreatedDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -424,6 +436,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="13.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsVatInquiryVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsVatInquiryVO.UpdatedDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
