@@ -16,6 +16,8 @@
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <taskFlow id="nettingICVInvoicesBTF1" taskFlowId="/bTaskFlow/nettingICVInvoicesBTF.xml#nettingICVInvoicesBTF"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="settlementVouchersBTF1" taskFlowId="/bTaskFlow/settlementVouchersBTF.xml#settlementVouchersBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings/>
 </pageDefinition>

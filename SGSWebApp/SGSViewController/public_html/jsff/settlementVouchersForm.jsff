@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom">
+    <!--<af:toolbar id="t1" inlineStyle=""> 
+            <af:button actionListener="#{bindings.Commit.execute}"
+                       id="b1" action="back"
+                   disabled="#{(!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=Update'])}"
+                       text="Apply Cash" accessKey="S"/>
+            <af:button actionListener="#{bindings.Rollback.execute}" immediate="true" id="b2" action="back"
+                       rendered="#{pageFlowScope.paddEdit == 'EDIT'}" text="Close" accessKey="C">
+              <af:resetActionListener/>
+            </af:button>
+           
+              --><!--<af:button actionListener="#{bindings.Delete.execute}" disabled="#{!bindings.Delete.enabled}"
+                       id="b3" action="back"
+                       rendered="#{pageFlowScope.paddEdit == 'ADD'}" immediate="true" text="Cancel"
+                       accessKey="C"/>--><!--
+          </af:toolbar>-->
+    </f:facet>
+    <f:facet name="center">
+      <af:panelGroupLayout id="pgl1" layout="vertical">
+        <af:panelBox text="Create Payment" id="pb1">
+          <f:facet name="toolbar">
+          
+          </f:facet>
+          <af:panelGroupLayout id="pgl2" layout="vertical">
+            <af:panelFormLayout id="pfl1">
+              <af:panelLabelAndMessage label="#{bindings.PaymentId.hints.label}" id="plam1">
+                <af:outputText value="#{bindings.PaymentId.inputValue}" shortDesc="#{bindings.PaymentId.hints.tooltip}"
+                               id="ot1"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.BusinessUnit.hints.label}" id="plam2">
+                <af:outputText value="#{bindings.BusinessUnit.inputValue}"
+                               shortDesc="#{bindings.BusinessUnit.hints.tooltip}" id="ot2"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.DBankAccount.hints.label}" id="plam3">
+                <af:outputText value="#{bindings.DBankAccount.inputValue}"
+                               shortDesc="#{bindings.DBankAccount.hints.tooltip}" id="ot3">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.DBankAccount.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              <af:selectOneChoice value="#{bindings.BusinessUnit1.inputValue}" label="#{bindings.BusinessUnit1.label}"
+                                  required="#{bindings.BusinessUnit1.hints.mandatory}"
+                                  shortDesc="#{bindings.BusinessUnit1.hints.tooltip}" id="soc1">
+                <f:selectItems value="#{bindings.BusinessUnit1.items}" id="si1"/>
+                <f:validator binding="#{bindings.BusinessUnit1.validator}"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.PaymentMethod.inputValue}" label="#{bindings.PaymentMethod.label}"
+                                  required="#{bindings.PaymentMethod.hints.mandatory}"
+                                  shortDesc="#{bindings.PaymentMethod.hints.tooltip}" id="soc2">
+                <f:selectItems value="#{bindings.PaymentMethod.items}" id="si2"/>
+                <f:validator binding="#{bindings.PaymentMethod.validator}"/>
+              </af:selectOneChoice>
+              <af:inputText value="#{bindings.ChequeRefNumber.inputValue}"
+                            label="#{bindings.ChequeRefNumber.hints.label}"
+                            required="#{bindings.ChequeRefNumber.hints.mandatory}"
+                            columns="#{bindings.ChequeRefNumber.hints.displayWidth}"
+                            maximumLength="#{bindings.ChequeRefNumber.hints.precision}"
+                            shortDesc="#{bindings.ChequeRefNumber.hints.tooltip}" id="it1">
+                <f:validator binding="#{bindings.ChequeRefNumber.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.ChequeRefNumber.format}"/>
+              </af:inputText>
+              <af:panelLabelAndMessage label="#{bindings.IcoSupplier.hints.label}" id="plam4">
+                <af:outputText value="#{bindings.IcoSupplier.inputValue}"
+                               shortDesc="#{bindings.IcoSupplier.hints.tooltip}" id="ot4"/>
+              </af:panelLabelAndMessage>
+              <af:panelLabelAndMessage label="#{bindings.RBankAccount.hints.label}" id="plam5">
+                <af:outputText value="#{bindings.RBankAccount.inputValue}"
+                               shortDesc="#{bindings.RBankAccount.hints.tooltip}" id="ot5">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.RBankAccount.format}"/>
+                </af:outputText>
+              </af:panelLabelAndMessage>
+              <af:inputDate value="#{bindings.TransactionDate.inputValue}"
+                            label="#{bindings.TransactionDate.hints.label}"
+                            required="#{bindings.TransactionDate.hints.mandatory}"
+                            columns="#{bindings.TransactionDate.hints.displayWidth}"
+                            shortDesc="#{bindings.TransactionDate.hints.tooltip}" id="id1">
+                <f:validator binding="#{bindings.TransactionDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.TransactionDate.format}"/>
+              </af:inputDate>
+              <af:inputText value="#{bindings.InvoiceNum.inputValue}" label="#{bindings.InvoiceNum.hints.label}"
+                            required="#{bindings.InvoiceNum.hints.mandatory}"
+                            columns="#{bindings.InvoiceNum.hints.displayWidth}"
+                            maximumLength="#{bindings.InvoiceNum.hints.precision}"
+                            shortDesc="#{bindings.InvoiceNum.hints.tooltip}" id="it2">
+                <f:validator binding="#{bindings.InvoiceNum.validator}"/>
+              </af:inputText>
+            </af:panelFormLayout>
+          </af:panelGroupLayout>
+        </af:panelBox>
+          <af:panelBox text="Voucher and Invoices to be Settled" id="pb2">
+          <f:facet name="toolbar">
+          
+          </f:facet>
+        <af:table value="#{bindings.SgsStlmntInetrCompVouchVO1.collectionModel}" var="row"
+                  rows="#{bindings.SgsStlmntInetrCompVouchVO1.rangeSize}"
+                  emptyText="#{bindings.SgsStlmntInetrCompVouchVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  rowBandingInterval="0"
+                  selectedRowKeys="#{bindings.SgsStlmntInetrCompVouchVO1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.SgsStlmntInetrCompVouchVO1.collectionModel.makeCurrent}"
+                  rowSelection="single" fetchSize="#{bindings.SgsStlmntInetrCompVouchVO1.rangeSize}" id="t2">
+          <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherId.label}" id="c1">
+            <af:outputText value="#{row.VoucherId}"
+                           shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherId.tooltip}" id="ot6">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherId.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherNum.label}" id="c2">
+            <af:outputText value="#{row.VoucherNum}"
+                           shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherNum.tooltip}" id="ot7"/>
+          </af:column>
+          <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.InvoiceNum.label}" id="c3">
+            <af:outputText value="#{row.InvoiceNum}"
+                           shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.InvoiceNum.tooltip}" id="ot8"/>
+          </af:column>
+          <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.PaymentAmount.label}" id="c4">
+            <af:outputText value="#{row.PaymentAmount}"
+                           shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.PaymentAmount.tooltip}" id="ot9"/>
+          </af:column>
+        </af:table>
+        </af:panelBox>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

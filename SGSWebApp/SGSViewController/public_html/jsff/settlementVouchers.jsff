@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
+    <af:panelStretchLayout id="psl1">
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+        <f:facet name="bottom"/>
+        <f:facet name="center">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+              binding="#{pageFlowScope.SettlementVouchersBean.voucherPopup}">
+           <af:dialog id="d1" contentWidth="500" contentHeight="500" type="none">
+            <f:facet name="buttonBar">
+              <af:button text="Apply cash" id="b8"
+                         actionListener="#{pageFlowScope.SettlementVouchersBean.saveDetails}"/>
+            <af:button text="Close" id="b9"
+                         actionListener="#{pageFlowScope.SettlementVouchersBean.closeDetails}"/>
+            </f:facet>
+             <af:spacer id="s2" width="170"/>
+                <af:outputText value="" id="ot1" inlineStyle="font-weight:bold;font-size:15px;"/>
+                        <af:region value="#{bindings.settlementVouchersFormBTF1.regionModel}" id="r1"/>
+                    </af:dialog>
+        </af:popup>
+                <af:panelBox text="Settlement of Inter-Company Vouchers" id="pb1">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout layout="vertical" id="pgl3">
+                        <af:panelHeader text="" id="ph1">
+                            <af:query id="qryId1" headerText="Search" disclosed="true" saveQueryMode="hidden" rows="2" maxColumns="2"
+                                      value="#{bindings.SgsStlmntInetrCompVouchVOCriteriaQuery.queryDescriptor}"
+                                      model="#{bindings.SgsStlmntInetrCompVouchVOCriteriaQuery.queryModel}"
+                                      queryListener="#{bindings.SgsStlmntInetrCompVouchVOCriteriaQuery.processQuery}"
+                                      queryOperationListener="#{bindings.SgsStlmntInetrCompVouchVOCriteriaQuery.processQueryOperation}"
+                                      resultComponentId="::pc1:resId2"/>
+                        </af:panelHeader>
+                    </af:panelGroupLayout>
+                    <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar">
+                            <af:toolbar id="t1">
+                                <!--<af:button id="b7" icon="/resources/icons/microsoft-excel.png" shortDesc="Export to Excel"
+                                       disabled="#{bindings.SgsCostIdentificationRuleView1.estimatedRowCount &lt;= 0}">
+                                <af:exportCollectionActionListener type="excelHTML" exportedId="resId1"
+                                                                   filename="CostIdentificationRule.xls"/>
+                            </af:button>-->
+                                <af:button id="b1" text="Mark for Payment" shortDesc="Mark for Payment"/>
+                                <af:button id="b2" text="Create for Payment" action="EDIT" shortDesc="Crate for Payment">
+                                 <af:showPopupBehavior popupId="::p1"/>
+                                </af:button>
+                            </af:toolbar>
+                        </f:facet>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.SgsStlmntInetrCompVouchVO1.collectionModel}" var="row"
+                                  rows="#{bindings.SgsStlmntInetrCompVouchVO1.rangeSize}"
+                                  emptyText="#{bindings.SgsStlmntInetrCompVouchVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0" 
+                                  selectedRowKeys="#{bindings.SgsStlmntInetrCompVouchVO1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.SgsStlmntInetrCompVouchVO1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.SgsStlmntInetrCompVouchVO1.rangeSize}"
+                                  id="resId2">
+                                   <af:column id="c2" align="center" headerText="Select">
+          <af:selectBooleanCheckbox id="sbc1"/>
+        </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.Period.label}"
+                                       id="resId2c1">
+                                <af:outputText value="#{row.Period}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.Period.tooltip}"
+                                               id="ot2"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.AccountingDate.label}"
+                                       id="resId2c2">
+                                <af:outputText value="#{row.AccountingDate}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.AccountingDate.tooltip}"
+                                               id="ot3">
+                                    <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompVouchVO1.hints.AccountingDate.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherNum.label}"
+                                       id="resId2c3">
+                                <af:outputText value="#{row.VoucherNum}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherNum.tooltip}"
+                                               id="ot4"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.LegalEntity.label}"
+                                       id="resId2c4">
+                                <af:outputText value="#{row.LegalEntity}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.LegalEntity.tooltip}"
+                                               id="ot5"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.BusinessUnit.label}"
+                                       id="resId2c5">
+                                <af:outputText value="#{row.BusinessUnit}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.BusinessUnit.tooltip}"
+                                               id="ot6"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.InvoiceAmount.label}"
+                                       id="resId2c6">
+                                <af:outputText value="#{row.InvoiceAmount}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.InvoiceAmount.tooltip}"
+                                               id="ot7"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.WhTds.label}"
+                                       id="resId2c7">
+                                <af:outputText value="#{row.WhTds}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.WhTds.tooltip}"
+                                               id="ot8"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.PaymentAmount.label}"
+                                       id="resId2c8">
+                                <af:outputText value="#{row.PaymentAmount}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.PaymentAmount.tooltip}"
+                                               id="ot9"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.IcoSupplier.label}"
+                                       id="resId2c9">
+                                <af:outputText value="#{row.IcoSupplier}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.IcoSupplier.tooltip}"
+                                               id="ot10"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.CBusinessUnit.label}"
+                                       id="resId2c10">
+                                <af:outputText value="#{row.CBusinessUnit}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.CBusinessUnit.tooltip}"
+                                               id="ot11"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.SettlementCategory.label}"
+                                       id="resId2c11">
+                                <af:outputText value="#{row.SettlementCategory}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.SettlementCategory.tooltip}"
+                                               id="ot12"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.PaymentId.label}"
+                                       id="resId2c12">
+                                <af:outputText value="#{row.PaymentId}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.PaymentId.tooltip}"
+                                               id="ot13"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.ChequeRefNumber.label}"
+                                       id="resId2c13">
+                                <af:outputText value="#{row.ChequeRefNumber}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.ChequeRefNumber.tooltip}"
+                                               id="ot14">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsStlmntInetrCompVouchVO1.hints.ChequeRefNumber.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.Status.label}"
+                                       id="resId2c14" width="200%">
+                                <af:outputText value="#{row.Status}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.Status.tooltip}"
+                                               id="ot15"/>
+                            </af:column>
+                        </af:table>
+                      
+                    </af:panelCollection>
+                </af:panelBox>
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:panelStretchLayout>
+</ui:composition>

@@ -822,5 +822,13 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsPhilippinesIncVO() {
         return (ViewObjectImpl) findViewObject("SgsPhilippinesIncVO");
     }
+
+    /**
+     * Container's getter for SgsStlmntInetrCompVouchVO1.
+     * @return SgsStlmntInetrCompVouchVO1
+     */
+    public ViewObjectImpl getSgsStlmntInetrCompVouchVO1() {
+        return (ViewObjectImpl) findViewObject("SgsStlmntInetrCompVouchVO1");
+    }
 }
 

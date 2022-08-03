@@ -45,6 +45,7 @@
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;"
                                            icon="/resources/icons/settlementVoucher.png">
+                            <af:region value="#{bindings.settlementVouchersBTF1.regionModel}" id="r6"/>
                         </af:showDetailItem>
                     </af:panelSpringboard>
                 </f:facet>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="settlementVouchersFormPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsStlmntInetrCompVouchVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsStlmntInetrCompVouchVO1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="PaymentId">
+      <AttrNames>
+        <Item Value="PaymentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="BusinessUnit">
+      <AttrNames>
+        <Item Value="BusinessUnit"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="DBankAccount">
+      <AttrNames>
+        <Item Value="DBankAccount"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsStlmntInetrCompVouchVO1Iterator" StaticList="false" Uses="LOV_BusinessUnit"
+          id="BusinessUnit1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsStlmntInetrCompVouchVO1Iterator" StaticList="false" Uses="LOV_PaymentMethod"
+          id="PaymentMethod" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="ChequeRefNumber">
+      <AttrNames>
+        <Item Value="ChequeRefNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="IcoSupplier">
+      <AttrNames>
+        <Item Value="IcoSupplier"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="RBankAccount">
+      <AttrNames>
+        <Item Value="RBankAccount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="TransactionDate">
+      <AttrNames>
+        <Item Value="TransactionDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="InvoiceNum">
+      <AttrNames>
+        <Item Value="InvoiceNum"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="SgsStlmntInetrCompVouchVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsStlmntInetrCompVouchVO" Name="SgsStlmntInetrCompVouchVO10">
+        <AttrNames>
+          <Item Value="VoucherId"/>
+          <Item Value="VoucherNum"/>
+          <Item Value="InvoiceNum"/>
+          <Item Value="PaymentAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+  </bindings>
+</pageDefinition>

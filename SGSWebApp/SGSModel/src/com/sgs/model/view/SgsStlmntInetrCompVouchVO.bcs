@@ -1,0 +1,54 @@
+//Groovy Scripts for com.sgs.model.view.SgsStlmntInetrCompVouchVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="BusinessUnitLOV", name="pType")
+def pType_BusinessUnitLOV_BindVariable_BoundParameter()
+{
+'BS_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="PeriodLOV", name="pType")
+def pType_PeriodLOV_BindVariable_BoundParameter()
+{
+'PERIOD'
+}
+
+
+@AccessorParameterExpression(accessorName="SettlementCatLOV", name="pType")
+def pType_SettlementCatLOV_BindVariable_BoundParameter()
+{
+'STLMNT_CAT'
+}
+
+
+@AccessorParameterExpression(accessorName="PaymentIDLOV", name="pType")
+def pType_PaymentIDLOV_BindVariable_BoundParameter()
+{
+'PAYMENT_ID'
+}
+
+
+@AccessorParameterExpression(accessorName="StatusLOV", name="pType")
+def pType_StatusLOV_BindVariable_BoundParameter()
+{
+'STATUS_V'
+}
+
+
+@AccessorParameterExpression(accessorName="PaymentCurrencyLOV", name="pType")
+def pType_PaymentCurrencyLOV_BindVariable_BoundParameter()
+{
+'PAYMENT_CUR'
+}
+
+
+@AccessorParameterExpression(accessorName="PaymentMethodLOV", name="pType")
+def pType_PaymentMethodLOV_BindVariable_BoundParameter()
+{
+'PAYMENT_METHOD'
+}
+
