@@ -18,6 +18,8 @@
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <taskFlow id="settlementVouchersBTF1" taskFlowId="/bTaskFlow/settlementVouchersBTF.xml#settlementVouchersBTF"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="settlementICoInvoices1" taskFlowId="/bTaskFlow/settlementICoInvoices.xml#settlementICoInvoices"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings/>
 </pageDefinition>

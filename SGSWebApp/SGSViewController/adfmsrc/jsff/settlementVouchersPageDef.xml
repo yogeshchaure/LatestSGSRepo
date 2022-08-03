@@ -35,6 +35,7 @@
           <Item Value="PaymentId"/>
           <Item Value="ChequeRefNumber"/>
           <Item Value="Status"/>
+          <Item Value="RefToAR"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

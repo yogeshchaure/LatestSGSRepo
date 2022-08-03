@@ -664,6 +664,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="RefToAR"
+    PrecisionRule="true"
+    EntityAttrName="RefToAR"
+    EntityUsage="SgsStlmntInetrCompVouch"
+    AliasName="REF_TO_A_R"/>
   <ViewCriteria
     Name="SgsStlmntInetrCompVouchVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsStlmntInetrCompVouchVO"

@@ -22,10 +22,20 @@
                             <af:button id="b2" text="Close" accessKey="S" action="back"></af:button>
                         </af:toolbar>
                     </f:facet>
-                    <af:panelFormLayout id="pfl1" rows="5">
+                    <af:panelFormLayout id="pfl1" rows="3">
                         <af:panelLabelAndMessage label="Netting ID" id="plam1">
                             <af:outputText value="#{bindings.NettingId.inputValue}"
                                            shortDesc="#{bindings.NettingId.hints.tooltip}" id="ot2"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="From" id="plam3">
+                            <af:outputText value="#{bindings.NettingFrom.inputValue}"
+                                           shortDesc="#{bindings.NettingFrom.hints.tooltip}" id="ot4">
+                                <af:convertDateTime pattern="#{bindings.NettingFrom.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="Status" id="plam5">
+                            <af:outputText value="#{bindings.Status.inputValue}"
+                                           shortDesc="#{bindings.Status.hints.tooltip}" id="ot6"/>
                         </af:panelLabelAndMessage>
                         <af:panelLabelAndMessage label="Netting Allowable Limit" id="plam2">
                             <af:outputText value="#{bindings.AllowableNettingLimit.inputValue}"
@@ -34,21 +44,11 @@
                                                   pattern="#{bindings.AllowableNettingLimit.format}"/>
                             </af:outputText>
                         </af:panelLabelAndMessage>
-                        <af:panelLabelAndMessage label="From" id="plam3">
-                            <af:outputText value="#{bindings.NettingFrom.inputValue}"
-                                           shortDesc="#{bindings.NettingFrom.hints.tooltip}" id="ot4">
-                                <af:convertDateTime pattern="#{bindings.NettingFrom.format}"/>
-                            </af:outputText>
-                        </af:panelLabelAndMessage>
                         <af:panelLabelAndMessage label="To" id="plam4">
                             <af:outputText value="#{bindings.NettingTo.inputValue}"
                                            shortDesc="#{bindings.NettingTo.hints.tooltip}" id="ot5">
                                 <af:convertDateTime pattern="#{bindings.NettingTo.format}"/>
                             </af:outputText>
-                        </af:panelLabelAndMessage>
-                        <af:panelLabelAndMessage label="Status" id="plam5">
-                            <af:outputText value="#{bindings.Status.inputValue}"
-                                           shortDesc="#{bindings.Status.hints.tooltip}" id="ot6"/>
                         </af:panelLabelAndMessage>
                     </af:panelFormLayout>
                     <af:panelBox text="" id="pb3" showDisclosure="false">
@@ -59,18 +59,18 @@
                         <af:outputText value="Sutherland Global Services Inc" id="ot10"
                                        inlineStyle="font-weight:bold;font-size:14px;"/>
                         <af:separator id="s3"/>
-                        <af:panelFormLayout id="pfl3">
+                        <af:panelFormLayout id="pfl3" rows="2">
                             <af:panelLabelAndMessage label="Business Unit" id="plam6">
                                 <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
                                                shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot7"/>
                             </af:panelLabelAndMessage>
-                            <af:panelLabelAndMessage label="Operating Unit" id="plam7">
-                                <af:outputText value="#{bindings.POperatingUnit.inputValue}"
-                                               shortDesc="#{bindings.POperatingUnit.hints.tooltip}" id="ot8"/>
-                            </af:panelLabelAndMessage>
                             <af:panelLabelAndMessage label="I/Co Supplier" id="plam8">
                                 <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
                                                shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot9"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Operating Unit" id="plam7">
+                                <af:outputText value="#{bindings.POperatingUnit.inputValue}"
+                                               shortDesc="#{bindings.POperatingUnit.hints.tooltip}" id="ot8"/>
                             </af:panelLabelAndMessage>
                             <af:spacer id="s11" height="20"/>
                         </af:panelFormLayout>
@@ -163,20 +163,20 @@
                         <af:outputText value="Sutherland Global Services Philippines Inc" id="ot11"
                                        inlineStyle="font-weight:bold;font-size:14px;"/>
                         <af:separator id="s6"/>
-                        <af:panelFormLayout id="pfl2">
+                        <af:panelFormLayout id="pfl2" rows="2">
                             <af:panelLabelAndMessage label="Business Unit" id="plam9">
                                 <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
                                                shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot12"/>
-                            </af:panelLabelAndMessage>
-                            <af:panelLabelAndMessage label="Operating Unit" id="plam10">
-                                <af:outputText value="#{bindings.ROperatingUnit.inputValue}"
-                                               shortDesc="#{bindings.ROperatingUnit.hints.tooltip}" id="ot13"/>
                             </af:panelLabelAndMessage>
                             <af:panelLabelAndMessage label="I/Co Customer" id="plam11">
                                 <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
                                                shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot14"/>
                             </af:panelLabelAndMessage>
-                             <af:spacer id="s7" height="20"/>
+                            <af:panelLabelAndMessage label="Operating Unit" id="plam10">
+                                <af:outputText value="#{bindings.ROperatingUnit.inputValue}"
+                                               shortDesc="#{bindings.ROperatingUnit.hints.tooltip}" id="ot13"/>
+                            </af:panelLabelAndMessage>
+                            <af:spacer id="s7" height="20"/>
                         </af:panelFormLayout>
                         <af:panelGroupLayout id="pgl4">
                             <af:table value="#{bindings.SgsPhilippinesIncVO.collectionModel}" var="row"
@@ -264,32 +264,29 @@
                             </af:panelLabelAndMessage>
                         </af:panelGroupLayout>
                     </af:panelBox>
-                    <af:panelGroupLayout id="pgl6">
-                        <af:spacer id="s12" height="30"/>
-                        <af:panelLabelAndMessage label="Submitted By" id="plam14">
-                            <af:outputText value="#{bindings.UpdatedBy.inputValue}"
-                                           shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="ot39"/>
-                        </af:panelLabelAndMessage>
-                        <af:spacer id="s13" height="5"/>
-                        <af:panelLabelAndMessage label="Submitted Date" id="plam15">
-                            <af:outputText value="#{bindings.UpdatedDate.inputValue}"
-                                           shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="ot40">
-                                <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
-                            </af:outputText>
-                        </af:panelLabelAndMessage>
-                        <af:spacer id="s15" height="5"/>
+                    <af:panelFormLayout id="pfl4" rows="2">
+                        <f:facet name="footer"/>
                         <af:panelLabelAndMessage label="Approved By" id="plam16">
                             <af:outputText value="#{bindings.UpdatedBy.inputValue}"
                                            shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="ot43"/>
                         </af:panelLabelAndMessage>
-                        <af:spacer id="s14" height="5"/>
+                        <af:panelLabelAndMessage label="Submitted By" id="plam14">
+                            <af:outputText value="#{bindings.UpdatedBy.inputValue}"
+                                           shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="ot39"/>
+                        </af:panelLabelAndMessage>
                         <af:panelLabelAndMessage label="Approve Date" id="plam17">
                             <af:outputText value="#{bindings.UpdatedDate.inputValue}"
                                            shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="ot44">
                                 <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
                             </af:outputText>
                         </af:panelLabelAndMessage>
-                    </af:panelGroupLayout>
+                        <af:panelLabelAndMessage label="Submitted Date" id="plam15">
+                            <af:outputText value="#{bindings.UpdatedDate.inputValue}"
+                                           shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="ot40">
+                                <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                    </af:panelFormLayout>
                 </af:panelBox>
             </af:panelGroupLayout>
         </f:facet>
