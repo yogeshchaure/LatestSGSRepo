@@ -205,6 +205,9 @@
   <ViewUsage
     Name="SgsPhilippinesIncVO"
     ViewObjectName="com.sgs.model.view.SgsPhilippinesIncVO"/>
+  <ViewUsage
+    Name="SgsStlmntInetrCompVouchVO1"
+    ViewObjectName="com.sgs.model.view.SgsStlmntInetrCompVouchVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

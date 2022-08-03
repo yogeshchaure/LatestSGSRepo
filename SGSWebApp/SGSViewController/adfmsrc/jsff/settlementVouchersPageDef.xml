@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="settlementVouchersPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsStlmntInetrCompVouchVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsStlmntInetrCompVouchVO1Iterator"/>
+    <searchRegion Criteria="SgsStlmntInetrCompVouchVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SgsStlmntInetrCompVouchVO1Iterator" id="SgsStlmntInetrCompVouchVOCriteriaQuery"/>
+    <taskFlow id="settlementVouchersFormBTF1"
+              taskFlowId="/bTaskFlow/settlementVouchersFormBTF.xml#settlementVouchersFormBTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="paddEdit" value="EDIT"/>
+      </parameters>
+    </taskFlow>
+  </executables>
+  <bindings>
+    <tree IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="SgsStlmntInetrCompVouchVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsStlmntInetrCompVouchVO" Name="SgsStlmntInetrCompVouchVO10">
+        <AttrNames>
+          <Item Value="Period"/>
+          <Item Value="AccountingDate"/>
+          <Item Value="VoucherNum"/>
+          <Item Value="LegalEntity"/>
+          <Item Value="BusinessUnit"/>
+          <Item Value="InvoiceAmount"/>
+          <Item Value="WhTds"/>
+          <Item Value="PaymentAmount"/>
+          <Item Value="IcoSupplier"/>
+          <Item Value="CBusinessUnit"/>
+          <Item Value="SettlementCategory"/>
+          <Item Value="PaymentId"/>
+          <Item Value="ChequeRefNumber"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
