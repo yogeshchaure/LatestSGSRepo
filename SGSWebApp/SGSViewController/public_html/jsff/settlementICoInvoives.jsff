@@ -1,0 +1,170 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelStretchLayout id="psl1">
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+        <f:facet name="bottom"/>
+        <f:facet name="center">
+            <af:panelBox text="Settlement of Inter-Company Invoices" id="pb1">
+                <f:facet name="toolbar"/>
+                <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text=" " id="ph1">
+                        <af:query id="qryId1" headerText="Search" disclosed="true"
+                                  value="#{bindings.SgsSettlementICoInvoiceVOCriteriaQuery.queryDescriptor}"
+                                  model="#{bindings.SgsSettlementICoInvoiceVOCriteriaQuery.queryModel}"
+                                  queryListener="#{bindings.SgsSettlementICoInvoiceVOCriteriaQuery.processQuery}"
+                                  queryOperationListener="#{bindings.SgsSettlementICoInvoiceVOCriteriaQuery.processQueryOperation}"
+                                  resultComponentId="::pc1:resId1" saveQueryMode="hidden" rows="3" maxColumns="2"/>
+                    </af:panelHeader>
+                    <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.SgsSettlementICoInvoiceVO1.collectionModel}" var="row"
+                                  rows="#{bindings.SgsSettlementICoInvoiceVO1.rangeSize}"
+                                  emptyText="#{bindings.SgsSettlementICoInvoiceVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0" fetchSize="#{bindings.SgsSettlementICoInvoiceVO1.rangeSize}"
+                                  id="resId1" styleClass="AFStretchWidth">
+                            <af:column headerText="" id="c13" width="80" align="center">
+                                <af:selectBooleanCheckbox labelStyle="color:#336699" label="" id="sbc2"/>
+                                <f:facet name="header">
+                                    <af:outputText value="Select All" id="ot42"/>
+                                    <af:selectBooleanCheckbox label="" id="sbc1" labelStyle="color:#336699"
+                                                              autoSubmit="true"></af:selectBooleanCheckbox>
+                                </f:facet>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.Period.label}"
+                                       id="resId1c1">
+                                <af:selectOneChoice value="#{row.bindings.Period.inputValue}"
+                                                    label="#{row.bindings.Period.label}"
+                                                    required="#{bindings.SgsSettlementICoInvoiceVO1.hints.Period.mandatory}"
+                                                    shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.Period.tooltip}"
+                                                    readOnly="true" id="soc1">
+                                    <f:selectItems value="#{row.bindings.Period.items}" id="si1"/>
+                                    <f:validator binding="#{row.bindings.Period.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.AccountingDate.label}"
+                                       id="resId1c2">
+                                <af:outputText value="#{row.AccountingDate}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.AccountingDate.tooltip}"
+                                               id="ot1">
+                                    <af:convertDateTime pattern="#{bindings.SgsSettlementICoInvoiceVO1.hints.AccountingDate.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.InvoiceNum.label}"
+                                       id="resId1c3">
+                                <af:outputText value="#{row.InvoiceNum}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.InvoiceNum.tooltip}"
+                                               id="ot2"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.LegalEntity.label}"
+                                       id="resId1c4">
+                                <af:outputText value="#{row.LegalEntity}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.LegalEntity.tooltip}"
+                                               id="ot3"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.BusinessUnit.label}"
+                                       id="resId1c5">
+                                <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
+                                                    label="#{row.bindings.BusinessUnit.label}"
+                                                    required="#{bindings.SgsSettlementICoInvoiceVO1.hints.BusinessUnit.mandatory}"
+                                                    shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.BusinessUnit.tooltip}"
+                                                    readOnly="true" id="soc2">
+                                    <f:selectItems value="#{row.bindings.BusinessUnit.items}" id="si2"/>
+                                    <f:validator binding="#{row.bindings.BusinessUnit.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.CBusinessUnit.label}"
+                                       id="resId1c6">
+                                <af:outputText value="#{row.CBusinessUnit}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.CBusinessUnit.tooltip}"
+                                               id="ot4"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.ICoCustomer.label}"
+                                       id="resId1c7">
+                                <af:outputText value="#{row.ICoCustomer}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.ICoCustomer.tooltip}"
+                                               id="ot5"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.InvoiceAmount.label}"
+                                       id="resId1c8">
+                                <af:outputText value="#{row.InvoiceAmount}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.InvoiceAmount.tooltip}"
+                                               id="ot6"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.WhTds.label}"
+                                       id="resId1c9">
+                                <af:outputText value="#{row.WhTds}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.WhTds.tooltip}"
+                                               id="ot7"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.CollectionAmount.label}"
+                                       id="resId1c10">
+                                <af:outputText value="#{row.CollectionAmount}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.CollectionAmount.tooltip}"
+                                               id="ot8"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.TaxCredClaim.label}"
+                                       id="resId1c11">
+                                <af:outputText value="#{row.TaxCredClaim}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.TaxCredClaim.tooltip}"
+                                               id="ot9"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.SettlementCategory.label}"
+                                       id="resId1c12">
+                                <af:selectOneChoice value="#{row.bindings.SettlementCategory.inputValue}"
+                                                    label="#{row.bindings.SettlementCategory.label}"
+                                                    required="#{bindings.SgsSettlementICoInvoiceVO1.hints.SettlementCategory.mandatory}"
+                                                    shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.SettlementCategory.tooltip}"
+                                                    readOnly="true" id="soc3">
+                                    <f:selectItems value="#{row.bindings.SettlementCategory.items}" id="si3"/>
+                                    <f:validator binding="#{row.bindings.SettlementCategory.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.DepositeId.label}"
+                                       id="resId1c13">
+                                <af:selectOneChoice value="#{row.bindings.DepositeId.inputValue}"
+                                                    label="#{row.bindings.DepositeId.label}"
+                                                    required="#{bindings.SgsSettlementICoInvoiceVO1.hints.DepositeId.mandatory}"
+                                                    shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.DepositeId.tooltip}"
+                                                    readOnly="true" id="soc4">
+                                    <f:selectItems value="#{row.bindings.DepositeId.items}" id="si4"/>
+                                    <f:validator binding="#{row.bindings.DepositeId.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.ChequeRefNumber.label}"
+                                       id="resId1c14">
+                                <af:outputText value="#{row.ChequeRefNumber}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.ChequeRefNumber.tooltip}"
+                                               id="ot10">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsSettlementICoInvoiceVO1.hints.ChequeRefNumber.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.RefToAP.label}"
+                                       id="resId1c15">
+                                <af:outputText value="#{row.RefToAP}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.RefToAP.tooltip}"
+                                               id="ot11"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.Status.label}"
+                                       id="resId1c16">
+                                <af:selectOneChoice value="#{row.bindings.Status.inputValue}"
+                                                    label="#{row.bindings.Status.label}"
+                                                    required="#{bindings.SgsSettlementICoInvoiceVO1.hints.Status.mandatory}"
+                                                    shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.Status.tooltip}"
+                                                    readOnly="true" id="soc5">
+                                    <f:selectItems value="#{row.bindings.Status.items}" id="si5"/>
+                                    <f:validator binding="#{row.bindings.Status.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                        </af:table>
+                    </af:panelCollection>
+                </af:panelGroupLayout>
+            </af:panelBox>
+        </f:facet>
+    </af:panelStretchLayout>
+</ui:composition>
