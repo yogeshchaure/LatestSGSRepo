@@ -79,6 +79,7 @@ af|commandButton {
 .af_panelSpringboard_item-text {
     height: 60px;
     font-size: 11px;
+    
 }
 
 .qLetPartSearch af|query::info{
@@ -108,3 +109,6 @@ af|commandButton {
     /*min-width: 266px;*/
 }
 
+.af_panelSpringboard.p_AFStrip .af_panelSpringboard_item.p_AFSelected {
+background-color: #05cebe0f;
+}

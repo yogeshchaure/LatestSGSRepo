@@ -38,14 +38,24 @@
                         </af:showDetailItem>
                         <af:showDetailItem id="sdi4" text="Netting of I/Co Vouchers / Invoices"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                           inlineStyle="min-height:500px;" icon="/resources/icons/nettingVoucher.png">
+                                           inlineStyle="min-height:500px;" icon="/resources/icons/canceldoc.png">
                             <af:region value="#{bindings.nettingICVInvoicesBTF1.regionModel}" id="r5"/>
                         </af:showDetailItem>
-                        <af:showDetailItem id="sdi5" text="Settlement of Vouchers"
+                        <af:showDetailItem id="sdi8" text="Fixed Assets Transactions"
+                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                           inlineStyle="min-height:500px;" icon="/resources/icons/fixed-asset1.png">
+                        </af:showDetailItem>
+                        <af:showDetailItem id="sdi5" text="Settlement of I/Co Vouchers"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;"
                                            icon="/resources/icons/settlementVoucher.png">
                             <af:region value="#{bindings.settlementVouchersBTF1.regionModel}" id="r6"/>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="sdi7" text="Settlement of I/Co Invoices"
+                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                           inlineStyle="min-height:500px;"
+                                           icon="/resources/icons/settlement.png">
+                            <af:region value="#{bindings.settlementICoInvoices1.regionModel}" id="r7"/>
                         </af:showDetailItem>
                     </af:panelSpringboard>
                 </f:facet>

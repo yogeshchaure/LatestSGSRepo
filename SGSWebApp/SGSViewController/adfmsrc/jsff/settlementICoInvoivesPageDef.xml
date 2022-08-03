@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="settlementICoInvoivesPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsSettlementICoInvoiceVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsSettlementICoInvoiceVO1Iterator"/>
+    <searchRegion Criteria="SgsSettlementICoInvoiceVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SgsSettlementICoInvoiceVO1Iterator" id="SgsSettlementICoInvoiceVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SgsSettlementICoInvoiceVO1Iterator" id="SgsSettlementICoInvoiceVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsSettlementICoInvoiceVO" Name="SgsSettlementICoInvoiceVO10">
+        <AttrNames>
+          <Item Value="Period"/>
+          <Item Value="AccountingDate"/>
+          <Item Value="InvoiceNum"/>
+          <Item Value="LegalEntity"/>
+          <Item Value="BusinessUnit"/>
+          <Item Value="CBusinessUnit"/>
+          <Item Value="ICoCustomer"/>
+          <Item Value="InvoiceAmount"/>
+          <Item Value="WhTds"/>
+          <Item Value="CollectionAmount"/>
+          <Item Value="TaxCredClaim"/>
+          <Item Value="SettlementCategory"/>
+          <Item Value="DepositeId"/>
+          <Item Value="ChequeRefNumber"/>
+          <Item Value="RefToAP"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -284,6 +284,18 @@
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="RefToAR"
+    Precision="80"
+    ColumnName="REF_TO_A_R"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_STLMNT_INETR_COMP_VOUCH">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PKSGSSTLMNTINETRCOMPVOUCH"
     PrimaryKey="true">

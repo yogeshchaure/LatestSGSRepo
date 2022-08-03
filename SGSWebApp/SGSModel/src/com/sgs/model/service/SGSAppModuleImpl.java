@@ -830,5 +830,13 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsStlmntInetrCompVouchVO1() {
         return (ViewObjectImpl) findViewObject("SgsStlmntInetrCompVouchVO1");
     }
+
+    /**
+     * Container's getter for SgsSettlementICoInvoiceVO1.
+     * @return SgsSettlementICoInvoiceVO1
+     */
+    public ViewObjectImpl getSgsSettlementICoInvoiceVO1() {
+        return (ViewObjectImpl) findViewObject("SgsSettlementICoInvoiceVO1");
+    }
 }
 

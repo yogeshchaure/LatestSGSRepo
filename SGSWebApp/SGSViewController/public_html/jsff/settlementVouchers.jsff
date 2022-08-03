@@ -75,7 +75,7 @@
                                     <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompVouchVO1.hints.AccountingDate.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherNum.label}"
+                            <af:column headerText="PeopleSoft Voucher Num"
                                        id="resId2c3">
                                 <af:outputText value="#{row.VoucherNum}"
                                                shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherNum.tooltip}"
@@ -92,6 +92,18 @@
                                 <af:outputText value="#{row.BusinessUnit}"
                                                shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.BusinessUnit.tooltip}"
                                                id="ot6"/>
+                            </af:column>
+                            <af:column headerText="Payer Business Unit"
+                                       id="resId2c10">
+                                <af:outputText value="#{row.CBusinessUnit}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.CBusinessUnit.tooltip}"
+                                               id="ot11"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.IcoSupplier.label}"
+                                       id="resId2c9">
+                                <af:outputText value="#{row.IcoSupplier}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.IcoSupplier.tooltip}"
+                                               id="ot10"/>
                             </af:column>
                             <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.InvoiceAmount.label}"
                                        id="resId2c6">
@@ -110,18 +122,6 @@
                                 <af:outputText value="#{row.PaymentAmount}"
                                                shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.PaymentAmount.tooltip}"
                                                id="ot9"/>
-                            </af:column>
-                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.IcoSupplier.label}"
-                                       id="resId2c9">
-                                <af:outputText value="#{row.IcoSupplier}"
-                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.IcoSupplier.tooltip}"
-                                               id="ot10"/>
-                            </af:column>
-                            <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.CBusinessUnit.label}"
-                                       id="resId2c10">
-                                <af:outputText value="#{row.CBusinessUnit}"
-                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.CBusinessUnit.tooltip}"
-                                               id="ot11"/>
                             </af:column>
                             <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.SettlementCategory.label}"
                                        id="resId2c11">
@@ -143,6 +143,11 @@
                                     <af:convertNumber groupingUsed="false"
                                                       pattern="#{bindings.SgsStlmntInetrCompVouchVO1.hints.ChequeRefNumber.format}"/>
                                 </af:outputText>
+                            </af:column>
+                            <af:column headerText="Reference to AR Invoice" id="c1">
+                                <af:outputText value="#{row.RefToAR}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.RefToAR.tooltip}"
+                                               id="ot16"/>
                             </af:column>
                             <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.Status.label}"
                                        id="resId2c14" width="200%">

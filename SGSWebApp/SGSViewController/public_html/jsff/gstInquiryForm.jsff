@@ -158,60 +158,67 @@
               <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
             </af:inputDate>
           </af:panelFormLayout>
-          <af:panelBox text="Input GST GL Accounts" id="pb2">
-            <f:facet name="toolbar"/>
-            <af:panelFormLayout id="pfl2" rows="2">
-              <f:facet name="footer"/>
-              <af:inputText value="#{bindings.IgstReceivable.inputValue}" label="#{bindings.IgstReceivable.hints.label}"
-                            required="#{bindings.IgstReceivable.hints.mandatory}"
-                            columns="#{bindings.IgstReceivable.hints.displayWidth}"
-                            maximumLength="#{bindings.IgstReceivable.hints.precision}"
-                            shortDesc="#{bindings.IgstReceivable.hints.tooltip}" id="it4">
-                <f:validator binding="#{bindings.IgstReceivable.validator}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.CgstReceivable.inputValue}" label="#{bindings.CgstReceivable.hints.label}"
-                            required="#{bindings.CgstReceivable.hints.mandatory}"
-                            columns="#{bindings.CgstReceivable.hints.displayWidth}"
-                            maximumLength="#{bindings.CgstReceivable.hints.precision}"
-                            shortDesc="#{bindings.CgstReceivable.hints.tooltip}" id="it5">
-                <f:validator binding="#{bindings.CgstReceivable.validator}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.SgstReceivable.inputValue}" label="#{bindings.SgstReceivable.hints.label}"
-                            required="#{bindings.SgstReceivable.hints.mandatory}"
-                            columns="#{bindings.SgstReceivable.hints.displayWidth}"
-                            maximumLength="#{bindings.SgstReceivable.hints.precision}"
-                            shortDesc="#{bindings.SgstReceivable.hints.tooltip}" id="it6">
-                <f:validator binding="#{bindings.SgstReceivable.validator}"/>
-              </af:inputText>
-            </af:panelFormLayout>
-          </af:panelBox>
-          <af:panelBox text="Output GST GL Accounts" id="pb3">
-            <f:facet name="toolbar"/>
-            <af:panelFormLayout id="pfl3" rows="2">
-              <f:facet name="footer"/>
-              <af:inputText value="#{bindings.IgstPayable.inputValue}" label="#{bindings.IgstPayable.hints.label}"
-                            required="#{bindings.IgstPayable.hints.mandatory}"
-                            columns="#{bindings.IgstPayable.hints.displayWidth}"
-                            maximumLength="#{bindings.IgstPayable.hints.precision}"
-                            shortDesc="#{bindings.IgstPayable.hints.tooltip}" id="it8">
-                <f:validator binding="#{bindings.IgstPayable.validator}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.CgstPayable.inputValue}" label="#{bindings.CgstPayable.hints.label}"
-                            required="#{bindings.CgstPayable.hints.mandatory}"
-                            columns="#{bindings.CgstPayable.hints.displayWidth}"
-                            maximumLength="#{bindings.CgstPayable.hints.precision}"
-                            shortDesc="#{bindings.CgstPayable.hints.tooltip}" id="it7">
-                <f:validator binding="#{bindings.CgstPayable.validator}"/>
-              </af:inputText>
-              <af:inputText value="#{bindings.SgstPayable.inputValue}" label="#{bindings.SgstPayable.hints.label}"
-                            required="#{bindings.SgstPayable.hints.mandatory}"
-                            columns="#{bindings.SgstPayable.hints.displayWidth}"
-                            maximumLength="#{bindings.SgstPayable.hints.precision}"
-                            shortDesc="#{bindings.SgstPayable.hints.tooltip}" id="it9">
-                <f:validator binding="#{bindings.SgstPayable.validator}"/>
-              </af:inputText>
-            </af:panelFormLayout>
-          </af:panelBox>
+          <af:panelGroupLayout id="pgl2" layout="horizontal">
+            <af:spacer id="s1" height="30" width="30"/>
+            <af:panelBox text="Output GST GL Accounts" id="pb3" showDisclosure="false">
+              <f:facet name="toolbar"/>
+              <af:panelFormLayout id="pfl3">
+                <f:facet name="footer"/>
+                <af:inputText value="#{bindings.IgstPayable.inputValue}" label="#{bindings.IgstPayable.hints.label}"
+                              required="#{bindings.IgstPayable.hints.mandatory}"
+                              columns="#{bindings.IgstPayable.hints.displayWidth}"
+                              maximumLength="#{bindings.IgstPayable.hints.precision}"
+                              shortDesc="#{bindings.IgstPayable.hints.tooltip}" id="it8">
+                  <f:validator binding="#{bindings.IgstPayable.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.CgstPayable.inputValue}" label="#{bindings.CgstPayable.hints.label}"
+                              required="#{bindings.CgstPayable.hints.mandatory}"
+                              columns="#{bindings.CgstPayable.hints.displayWidth}"
+                              maximumLength="#{bindings.CgstPayable.hints.precision}"
+                              shortDesc="#{bindings.CgstPayable.hints.tooltip}" id="it7">
+                  <f:validator binding="#{bindings.CgstPayable.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.SgstPayable.inputValue}" label="#{bindings.SgstPayable.hints.label}"
+                              required="#{bindings.SgstPayable.hints.mandatory}"
+                              columns="#{bindings.SgstPayable.hints.displayWidth}"
+                              maximumLength="#{bindings.SgstPayable.hints.precision}"
+                              shortDesc="#{bindings.SgstPayable.hints.tooltip}" id="it9">
+                  <f:validator binding="#{bindings.SgstPayable.validator}"/>
+                </af:inputText>
+              </af:panelFormLayout>
+            </af:panelBox>
+            <af:spacer id="s2" height="20" width="20"/>
+            <af:panelBox text="Input GST GL Accounts" id="pb2" showDisclosure="false">
+              <f:facet name="toolbar"/>
+              <af:panelFormLayout id="pfl2">
+                <f:facet name="footer"/>
+                <af:inputText value="#{bindings.IgstReceivable.inputValue}"
+                              label="#{bindings.IgstReceivable.hints.label}"
+                              required="#{bindings.IgstReceivable.hints.mandatory}"
+                              columns="#{bindings.IgstReceivable.hints.displayWidth}"
+                              maximumLength="#{bindings.IgstReceivable.hints.precision}"
+                              shortDesc="#{bindings.IgstReceivable.hints.tooltip}" id="it4">
+                  <f:validator binding="#{bindings.IgstReceivable.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.CgstReceivable.inputValue}"
+                              label="#{bindings.CgstReceivable.hints.label}"
+                              required="#{bindings.CgstReceivable.hints.mandatory}"
+                              columns="#{bindings.CgstReceivable.hints.displayWidth}"
+                              maximumLength="#{bindings.CgstReceivable.hints.precision}"
+                              shortDesc="#{bindings.CgstReceivable.hints.tooltip}" id="it5">
+                  <f:validator binding="#{bindings.CgstReceivable.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.SgstReceivable.inputValue}"
+                              label="#{bindings.SgstReceivable.hints.label}"
+                              required="#{bindings.SgstReceivable.hints.mandatory}"
+                              columns="#{bindings.SgstReceivable.hints.displayWidth}"
+                              maximumLength="#{bindings.SgstReceivable.hints.precision}"
+                              shortDesc="#{bindings.SgstReceivable.hints.tooltip}" id="it6">
+                  <f:validator binding="#{bindings.SgstReceivable.validator}"/>
+                </af:inputText>
+              </af:panelFormLayout>
+            </af:panelBox>
+          </af:panelGroupLayout>
         </af:panelBox>
       </af:panelGroupLayout>
     </f:facet>

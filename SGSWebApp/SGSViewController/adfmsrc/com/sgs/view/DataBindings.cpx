@@ -85,6 +85,7 @@
         <page path="/jsff/NettingICVInvoicesForm.jsff" usageId="com_sgs_view_NettingICVInvoicesFormPageDef"/>
         <page path="/jsff/settlementVouchers.jsff" usageId="com_sgs_view_settlementVouchersPageDef"/>
         <page path="/jsff/settlementVouchersForm.jsff" usageId="com_sgs_view_settlementVouchersFormPageDef"/>
+        <page path="/jsff/settlementICoInvoives.jsff" usageId="com_sgs_view_settlementICoInvoivesPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -166,6 +167,7 @@
         <page id="com_sgs_view_NettingICVInvoicesFormPageDef" path="jsff.NettingICVInvoicesFormPageDef"/>
         <page id="com_sgs_view_settlementVouchersPageDef" path="jsff.settlementVouchersPageDef"/>
         <page id="com_sgs_view_settlementVouchersFormPageDef" path="jsff.settlementVouchersFormPageDef"/>
+        <page id="com_sgs_view_settlementICoInvoivesPageDef" path="jsff.settlementICoInvoivesPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

@@ -208,6 +208,9 @@
   <ViewUsage
     Name="SgsStlmntInetrCompVouchVO1"
     ViewObjectName="com.sgs.model.view.SgsStlmntInetrCompVouchVO"/>
+  <ViewUsage
+    Name="SgsSettlementICoInvoiceVO1"
+    ViewObjectName="com.sgs.model.view.SgsSettlementICoInvoiceVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
