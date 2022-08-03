@@ -40,6 +40,7 @@
                                     <af:selectBooleanCheckbox  labelStyle="color:#336699"
                                                               label="" id="sbc2"/>
                                     <f:facet name="header">
+                                     <af:outputText value="Select All" id="ot42"/>
                                         <af:selectBooleanCheckbox 
                                                                   label="" id="sbc1"
                                                                   labelStyle="color:#336699" autoSubmit="true">

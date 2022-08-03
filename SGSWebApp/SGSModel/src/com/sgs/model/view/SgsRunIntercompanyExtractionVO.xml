@@ -350,7 +350,16 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="SgsRunIntercompanyExtraction"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsRunIntercompanyExtractionVO.CreatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsRunIntercompanyExtractionVO.CreatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Geography"
     PrecisionRule="true"
@@ -418,13 +427,31 @@
     PrecisionRule="true"
     EntityAttrName="TransactionDataFrom"
     EntityUsage="SgsRunIntercompanyExtraction"
-    AliasName="TRANSACTION_DATA_FROM"/>
+    AliasName="TRANSACTION_DATA_FROM">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsRunIntercompanyExtractionVO.TransactionDataFrom_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsRunIntercompanyExtractionVO.TransactionDataFrom_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TransactionDataTo"
     PrecisionRule="true"
     EntityAttrName="TransactionDataTo"
     EntityUsage="SgsRunIntercompanyExtraction"
-    AliasName="TRANSACTION_DATA_TO"/>
+    AliasName="TRANSACTION_DATA_TO">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsRunIntercompanyExtractionVO.TransactionDataTo_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsRunIntercompanyExtractionVO.TransactionDataTo_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TransactionSource"
     PrecisionRule="true"
@@ -452,7 +479,16 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="SgsRunIntercompanyExtraction"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsRunIntercompanyExtractionVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsRunIntercompanyExtractionVO.UpdatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.sgs.model.SGSModelBundle"/>

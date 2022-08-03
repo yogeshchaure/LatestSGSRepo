@@ -87,6 +87,7 @@
                                 <af:column headerText="" id="c13" width="80" align="center">
                                     <af:selectBooleanCheckbox labelStyle="color:#336699" label="" id="sbc2"/>
                                     <f:facet name="header">
+                                        <af:outputText value="Select All" id="ot41"/>
                                         <af:selectBooleanCheckbox label="" id="sbc1" labelStyle="color:#336699"
                                                                   autoSubmit="true"/>
                                     </f:facet>
@@ -97,7 +98,7 @@
                                         <af:convertDateTime pattern="#{bindings.SgsIncVO.hints.Period.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="PeopleSoft Voucher NO" id="c2" width="200">
+                                <af:column headerText="PeopleSoft Voucher Num" id="c2" width="200">
                                     <af:outputText value="#{row.PeoplesoftVoucherNo}"
                                                    shortDesc="#{bindings.SgsIncVO.hints.PeoplesoftVoucherNo.tooltip}"
                                                    id="ot16"/>
@@ -190,6 +191,7 @@
                                <af:column headerText="" id="c16" width="80" align="center">
                                     <af:selectBooleanCheckbox labelStyle="color:#336699" label="" id="sbc3"/>
                                     <f:facet name="header">
+                                    <af:outputText value="Select All" id="ot42"/>
                                         <af:selectBooleanCheckbox label="" id="sbc4" labelStyle="color:#336699"
                                                                   autoSubmit="true"/>
                                     </f:facet>
@@ -198,10 +200,10 @@
                                     <af:outputText value="#{row.Period}"
                                                    shortDesc="#{bindings.SgsPhilippinesIncVO.hints.Period.tooltip}"
                                                    id="ot27">
-                                        <af:convertDateTime pattern="#{bindings.SgsPhilippinesIncVO.hints.Period.format}"/>
+                                       <af:convertDateTime pattern="#{bindings.SgsPhilippinesIncVO.hints.Period.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="PeopleSoft Voucher NO" id="c9" width="200">
+                                <af:column headerText="PeopleSoft Voucher Num" id="c9" width="200">
                                     <af:outputText value="#{row.PeoplesoftVoucherNo}"
                                                    shortDesc="#{bindings.SgsPhilippinesIncVO.hints.PeoplesoftVoucherNo.tooltip}"
                                                    id="ot28"/>
@@ -272,6 +274,18 @@
                         <af:panelLabelAndMessage label="Submitted Date" id="plam15">
                             <af:outputText value="#{bindings.UpdatedDate.inputValue}"
                                            shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="ot40">
+                                <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
+                            </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:spacer id="s15" height="5"/>
+                        <af:panelLabelAndMessage label="Approved By" id="plam16">
+                            <af:outputText value="#{bindings.UpdatedBy.inputValue}"
+                                           shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="ot43"/>
+                        </af:panelLabelAndMessage>
+                        <af:spacer id="s14" height="5"/>
+                        <af:panelLabelAndMessage label="Approve Date" id="plam17">
+                            <af:outputText value="#{bindings.UpdatedDate.inputValue}"
+                                           shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="ot44">
                                 <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
                             </af:outputText>
                         </af:panelLabelAndMessage>
