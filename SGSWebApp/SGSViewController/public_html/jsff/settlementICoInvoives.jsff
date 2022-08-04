@@ -35,7 +35,7 @@
                                                               autoSubmit="true"></af:selectBooleanCheckbox>
                                 </f:facet>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.Period.label}"
+                            <af:column headerText="Period"
                                        id="resId1c1">
                                 <af:selectOneChoice value="#{row.bindings.Period.inputValue}"
                                                     label="#{row.bindings.Period.label}"
@@ -46,7 +46,7 @@
                                     <f:validator binding="#{row.bindings.Period.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.AccountingDate.label}"
+                            <af:column headerText="Accounting Data"
                                        id="resId1c2">
                                 <af:outputText value="#{row.AccountingDate}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.AccountingDate.tooltip}"
@@ -54,19 +54,19 @@
                                     <af:convertDateTime pattern="#{bindings.SgsSettlementICoInvoiceVO1.hints.AccountingDate.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.InvoiceNum.label}"
+                            <af:column headerText="PeopleSoft Invoice Number"
                                        id="resId1c3">
                                 <af:outputText value="#{row.InvoiceNum}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.InvoiceNum.tooltip}"
                                                id="ot2"/>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.LegalEntity.label}"
+                            <af:column headerText="Legal Entity"
                                        id="resId1c4">
                                 <af:outputText value="#{row.LegalEntity}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.LegalEntity.tooltip}"
                                                id="ot3"/>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.BusinessUnit.label}"
+                            <af:column headerText="Business Unit"
                                        id="resId1c5">
                                 <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
                                                     label="#{row.bindings.BusinessUnit.label}"
@@ -77,43 +77,43 @@
                                     <f:validator binding="#{row.bindings.BusinessUnit.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.CBusinessUnit.label}"
+                            <af:column headerText="Collection Business Unit"
                                        id="resId1c6">
                                 <af:outputText value="#{row.CBusinessUnit}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.CBusinessUnit.tooltip}"
                                                id="ot4"/>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.ICoCustomer.label}"
+                            <af:column headerText="I/Co Customer"
                                        id="resId1c7">
                                 <af:outputText value="#{row.ICoCustomer}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.ICoCustomer.tooltip}"
                                                id="ot5"/>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.InvoiceAmount.label}"
+                            <af:column headerText="Invoice Amount"
                                        id="resId1c8">
                                 <af:outputText value="#{row.InvoiceAmount}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.InvoiceAmount.tooltip}"
                                                id="ot6"/>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.WhTds.label}"
+                            <af:column headerText="WHT/TDS"
                                        id="resId1c9">
                                 <af:outputText value="#{row.WhTds}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.WhTds.tooltip}"
                                                id="ot7"/>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.CollectionAmount.label}"
+                            <af:column headerText="Collection Amount"
                                        id="resId1c10">
                                 <af:outputText value="#{row.CollectionAmount}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.CollectionAmount.tooltip}"
                                                id="ot8"/>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.TaxCredClaim.label}"
+                            <af:column headerText="Tax Credit Claim(%)"
                                        id="resId1c11">
                                 <af:outputText value="#{row.TaxCredClaim}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.TaxCredClaim.tooltip}"
                                                id="ot9"/>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.SettlementCategory.label}"
+                            <af:column headerText="Settlement Category"
                                        id="resId1c12">
                                 <af:selectOneChoice value="#{row.bindings.SettlementCategory.inputValue}"
                                                     label="#{row.bindings.SettlementCategory.label}"
@@ -124,7 +124,7 @@
                                     <f:validator binding="#{row.bindings.SettlementCategory.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.DepositeId.label}"
+                            <af:column headerText="Deposite ID"
                                        id="resId1c13">
                                 <af:selectOneChoice value="#{row.bindings.DepositeId.inputValue}"
                                                     label="#{row.bindings.DepositeId.label}"
@@ -135,7 +135,7 @@
                                     <f:validator binding="#{row.bindings.DepositeId.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.ChequeRefNumber.label}"
+                            <af:column headerText="Bank /Cheque Reference Number"
                                        id="resId1c14">
                                 <af:outputText value="#{row.ChequeRefNumber}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.ChequeRefNumber.tooltip}"
@@ -144,13 +144,14 @@
                                                       pattern="#{bindings.SgsSettlementICoInvoiceVO1.hints.ChequeRefNumber.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.RefToAP.label}"
+                            <af:column headerText="Reference to AP Voucher"
                                        id="resId1c15">
-                                <af:outputText value="#{row.RefToAP}"
+                                <af:link text="#{row.RefToAP}" id="l1" inlineStyle="font-weight:bold;"/>
+                                <!--<af:outputText value="#{row.RefToAP}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.RefToAP.tooltip}"
-                                               id="ot11"/>
+                                               id="ot11"/>-->
                             </af:column>
-                            <af:column headerText="#{bindings.SgsSettlementICoInvoiceVO1.hints.Status.label}"
+                            <af:column headerText="Status"
                                        id="resId1c16">
                                 <af:selectOneChoice value="#{row.bindings.Status.inputValue}"
                                                     label="#{row.bindings.Status.label}"

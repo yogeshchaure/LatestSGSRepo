@@ -34,7 +34,8 @@
                                       selectedRowKeys="#{bindings.SgsNicviVO.collectionModel.selectedRow}"
                                       selectionListener="#{bindings.SgsNicviVO.collectionModel.makeCurrent}"
                                       rowSelection="single" fetchSize="#{bindings.SgsNicviVO.rangeSize}" id="resId1"
-                                      styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5">
+                                      styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5"
+                                      columnStretching="column:resId1c1">
                                 <af:column headerText="" id="c13"
                                            width="80" align="center">
                                     <af:selectBooleanCheckbox  labelStyle="color:#336699"
@@ -49,7 +50,7 @@
                                     </f:facet>
                                 </af:column>
                                 <af:column headerText="Netting ID" id="resId1c1">
-                                    <af:link text="#{row.NettingId}" id="l1" action="edit"/>
+                                    <af:link text="#{row.NettingId}" id="l1" action="edit" inlineStyle="font-weight:bold;"/>
                                     <!--<af:outputText value="#{row.NettingId}"
                                                shortDesc="#{bindings.SgsNicviVO.hints.NettingId.tooltip}" id="ot1"/>-->
                                 </af:column>
