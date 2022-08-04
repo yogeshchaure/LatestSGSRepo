@@ -86,6 +86,7 @@
         <page path="/jsff/settlementVouchers.jsff" usageId="com_sgs_view_settlementVouchersPageDef"/>
         <page path="/jsff/settlementVouchersForm.jsff" usageId="com_sgs_view_settlementVouchersFormPageDef"/>
         <page path="/jsff/settlementICoInvoives.jsff" usageId="com_sgs_view_settlementICoInvoivesPageDef"/>
+        <page path="/jsff/FixedAssets.jsff" usageId="com_sgs_view_FixedAssetsPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -168,6 +169,7 @@
         <page id="com_sgs_view_settlementVouchersPageDef" path="jsff.settlementVouchersPageDef"/>
         <page id="com_sgs_view_settlementVouchersFormPageDef" path="jsff.settlementVouchersFormPageDef"/>
         <page id="com_sgs_view_settlementICoInvoivesPageDef" path="jsff.settlementICoInvoivesPageDef"/>
+        <page id="com_sgs_view_FixedAssetsPageDef" path="jsff.FixedAssetsPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

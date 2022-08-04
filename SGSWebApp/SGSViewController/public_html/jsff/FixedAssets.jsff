@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelStretchLayout id="psl1">
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+        <f:facet name="bottom"/>
+        <f:facet name="center">
+            <af:panelBox text="Fixed Assets Transactions" id="pb1">
+                <f:facet name="toolbar"/>
+                <af:panelGroupLayout id="pgl1" layout="vertical">
+                    <af:panelGroupLayout layout="vertical" id="pgl2">
+                        <af:panelHeader text="" id="ph1">
+                            <af:query id="qryId1" headerText="Search" disclosed="true"
+                                      value="#{bindings.SgsFixedAssetsTxnVOCriteriaQuery.queryDescriptor}"
+                                      model="#{bindings.SgsFixedAssetsTxnVOCriteriaQuery.queryModel}"
+                                      queryListener="#{bindings.SgsFixedAssetsTxnVOCriteriaQuery.processQuery}"
+                                      queryOperationListener="#{bindings.SgsFixedAssetsTxnVOCriteriaQuery.processQueryOperation}"
+                                      resultComponentId="::pc1:resId1" saveQueryMode="hidden" rows="2" maxColumns="2"/>
+                        </af:panelHeader>
+                                           <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                            <f:facet name="menus"/>
+                            <f:facet name="toolbar">
+                                <af:toolbar id="t1">
+                                    <af:button text="Confirm for Invoicing" id="b3"/>
+                                </af:toolbar>
+                            </f:facet>
+                            <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.SgsFixedAssetsTxnVO.collectionModel}" var="row"
+                                  rows="#{bindings.SgsFixedAssetsTxnVO.rangeSize}"
+                                  emptyText="#{bindings.SgsFixedAssetsTxnVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.SgsFixedAssetsTxnVO.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.SgsFixedAssetsTxnVO.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.SgsFixedAssetsTxnVO.rangeSize}"
+                                  id="resId1" styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5">
+                            <af:column headerText="" id="c13"
+                                           width="80" align="center">
+                                    <af:selectBooleanCheckbox  labelStyle="color:#336699"
+                                                              label="" id="sbc2"/>
+                                    <f:facet name="header">
+                                     <af:outputText value="Select All" id="ot42"/>
+                                        <af:selectBooleanCheckbox 
+                                                                  label="" id="sbc1"
+                                                                  labelStyle="color:#336699" autoSubmit="true">
+                                          
+                                        </af:selectBooleanCheckbox>
+                                    </f:facet>
+                                </af:column>
+                            <af:column headerText="Transfer Date"
+                                       id="resId1c1">
+                                <af:outputText value="#{row.TransferDate}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.TransferDate.tooltip}"
+                                               id="ot1">
+                                    <af:convertDateTime pattern="#{bindings.SgsFixedAssetsTxnVO.hints.TransferDate.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Transaction Category"
+                                       id="resId1c2">
+                                <af:selectOneChoice value="#{row.bindings.TransactionCategory.inputValue}"
+                                                    label="#{row.bindings.TransactionCategory.label}"
+                                                    required="#{bindings.SgsFixedAssetsTxnVO.hints.TransactionCategory.mandatory}"
+                                                    shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.TransactionCategory.tooltip}"
+                                                    readOnly="true" id="soc1"
+                                                     >
+                                    <f:selectItems value="#{row.bindings.TransactionCategory.items}" id="si1"/>
+                                    <f:validator binding="#{row.bindings.TransactionCategory.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="PeopleSoft Asset No"
+                                       id="resId1c3">
+                                <af:outputText value="#{row.PeoplesoftAssetNo}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.PeoplesoftAssetNo.tooltip}"
+                                               id="ot2"/>
+                            </af:column>
+                            <af:column headerText="Asset Description"
+                                       id="resId1c4">
+                                <af:outputText value="#{row.AssetDescription}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.AssetDescription.tooltip}"
+                                               id="ot3"/>
+                            </af:column>
+                            <af:column headerText="PeopleSoft Transaction ID"
+                                       id="resId1c5">
+                                <af:outputText value="#{row.PeoplesoftTransactionId}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.PeoplesoftTransactionId.tooltip}"
+                                               id="ot4">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsFixedAssetsTxnVO.hints.PeoplesoftTransactionId.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Legal Entity"
+                                       id="resId1c6">
+                                <af:outputText value="#{row.LegalEntity}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.LegalEntity.tooltip}"
+                                               id="ot5"/>
+                            </af:column>
+                            <af:column headerText="Business Unit"
+                                       id="resId1c7">
+                                <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
+                                                    label="#{row.bindings.BusinessUnit.label}"
+                                                    required="#{bindings.SgsFixedAssetsTxnVO.hints.BusinessUnit.mandatory}"
+                                                    shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.BusinessUnit.tooltip}"
+                                                    readOnly="true" id="soc2">
+                                    <f:selectItems value="#{row.bindings.BusinessUnit.items}" id="si2"/>
+                                    <f:validator binding="#{row.bindings.BusinessUnit.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Operating Unit"
+                                       id="resId1c8">
+                                <af:outputText value="#{row.OperatingUnit}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.OperatingUnit.tooltip}"
+                                               id="ot6"/>
+                            </af:column>
+                            <af:column headerText="Affiliate Business Unit"
+                                       id="resId1c9">
+                                <af:outputText value="#{row.AffiliateBusinessUnit}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.AffiliateBusinessUnit.tooltip}"
+                                               id="ot7"/>
+                            </af:column>
+                             <af:column headerText="Affiliate Operating Unit"
+                                       id="c1">
+                                <af:outputText value="#{row.AffiliateOperatingUnit}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.AffiliateBusinessUnit.tooltip}"
+                                               id="ot18"/>
+                            </af:column>
+                            <af:column headerText="Job Code" id="resId1c10">
+                                <af:outputText value="#{row.JobCode}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.JobCode.tooltip}"
+                                               id="ot8">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsFixedAssetsTxnVO.hints.JobCode.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Transaction Currency"
+                                       id="resId1c11">
+                                <af:outputText value="#{row.TransactionCurrency}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.TransactionCurrency.tooltip}"
+                                               id="ot9"/>
+                            </af:column>
+                            <af:column headerText="Original Cost"
+                                       id="resId1c12">
+                                <af:outputText value="#{row.OriginalCost}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.OriginalCost.tooltip}"
+                                               id="ot10">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsFixedAssetsTxnVO.hints.OriginalCost.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Depreciation / Amortization Amount"
+                                       id="resId1c13">
+                                <af:outputText value="#{row.DepreciationAmortizationamount}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.DepreciationAmortizationamount.tooltip}"
+                                               id="ot11">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsFixedAssetsTxnVO.hints.DepreciationAmortizationamount.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Net Book Value"
+                                       id="resId1c14">
+                                <af:outputText value="#{row.NetBookValue}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.NetBookValue.tooltip}"
+                                               id="ot12">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsFixedAssetsTxnVO.hints.NetBookValue.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="GST" id="resId1c15">
+                                <af:outputText value="#{row.Gst}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.Gst.tooltip}" id="ot13">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsFixedAssetsTxnVO.hints.Gst.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="VAT" id="resId1c16">
+                                <af:outputText value="#{row.Vat}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.Vat.tooltip}" id="ot14">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsFixedAssetsTxnVO.hints.Vat.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Transfer Value"
+                                       id="resId1c17">
+                                <af:outputText value="#{row.TransferValue}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.TransferValue.tooltip}"
+                                               id="ot15">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsFixedAssetsTxnVO.hints.TransferValue.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Invoicing Currency"
+                                       id="resId1c18">
+                                <af:outputText value="#{row.InvoicingCurrency}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.InvoicingCurrency.tooltip}"
+                                               id="ot16"/>
+                            </af:column>
+                            <af:column headerText="Invoice Value"
+                                       id="resId1c19">
+                                <af:outputText value="#{row.InvoiceValue}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.InvoiceValue.tooltip}"
+                                               id="ot17">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsFixedAssetsTxnVO.hints.InvoiceValue.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Status" id="resId1c20">
+                                <af:selectOneChoice value="#{row.bindings.Status.inputValue}"
+                                                    label="#{row.bindings.Status.label}"
+                                                    required="#{bindings.SgsFixedAssetsTxnVO.hints.Status.mandatory}"
+                                                    shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.Status.tooltip}"
+                                                    readOnly="true" id="soc3">
+                                    <f:selectItems value="#{row.bindings.Status.items}" id="si3"/>
+                                    <f:validator binding="#{row.bindings.Status.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Accounting Entry"
+                                       id="resId1c21">
+                                  <af:link text="#{row.AccountingEntry}" id="l1" action="edit"/>
+                                <!--<af:outputText value="#{row.AccountingEntry}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.AccountingEntry.tooltip}"
+                                               id="ot18"/>-->
+                            </af:column>
+                        </af:table>
+                        </af:panelCollection>
+                    </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelBox>
+        </f:facet>
+    </af:panelStretchLayout>
+</ui:composition>

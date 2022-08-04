@@ -211,6 +211,9 @@
   <ViewUsage
     Name="SgsSettlementICoInvoiceVO1"
     ViewObjectName="com.sgs.model.view.SgsSettlementICoInvoiceVO"/>
+  <ViewUsage
+    Name="SgsFixedAssetsTxnVO"
+    ViewObjectName="com.sgs.model.view.SgsFixedAssetsTxnVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

@@ -44,6 +44,7 @@
                         <af:showDetailItem id="sdi8" text="Fixed Assets Transactions"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;" icon="/resources/icons/fixed-asset1.png">
+                            <af:region value="#{bindings.fixedAssetsBTF1.regionModel}" id="r8"/>
                         </af:showDetailItem>
                         <af:showDetailItem id="sdi5" text="Settlement of I/Co Vouchers"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="FixedAssetsPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsFixedAssetsTxnVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsFixedAssetsTxnVOIterator"/>
+    <searchRegion Criteria="SgsFixedAssetsTxnVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SgsFixedAssetsTxnVOIterator" id="SgsFixedAssetsTxnVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SgsFixedAssetsTxnVOIterator" id="SgsFixedAssetsTxnVO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsFixedAssetsTxnVO" Name="SgsFixedAssetsTxnVO0">
+        <AttrNames>
+          <Item Value="TransferDate"/>
+          <Item Value="TransactionCategory"/>
+          <Item Value="PeoplesoftAssetNo"/>
+          <Item Value="AssetDescription"/>
+          <Item Value="PeoplesoftTransactionId"/>
+          <Item Value="LegalEntity"/>
+          <Item Value="BusinessUnit"/>
+          <Item Value="OperatingUnit"/>
+          <Item Value="AffiliateBusinessUnit"/>
+          <Item Value="JobCode"/>
+          <Item Value="TransactionCurrency"/>
+          <Item Value="OriginalCost"/>
+          <Item Value="DepreciationAmortizationamount"/>
+          <Item Value="NetBookValue"/>
+          <Item Value="Gst"/>
+          <Item Value="Vat"/>
+          <Item Value="TransferValue"/>
+          <Item Value="InvoicingCurrency"/>
+          <Item Value="InvoiceValue"/>
+          <Item Value="Status"/>
+          <Item Value="AccountingEntry"/>
+           <Item Value="AffiliateOperatingUnit"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
