@@ -1,0 +1,26 @@
+//Groovy Scripts for com.sgs.model.view.SgsFixedAssetsTxnVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="StatusLOV", name="pType")
+def pType_StatusLOV_BindVariable_BoundParameter()
+{
+'FAS_STATUS'
+}
+
+
+@AccessorParameterExpression(accessorName="TransactionCategoryLOV", name="pType")
+def pType_TransactionCategoryLOV_BindVariable_BoundParameter()
+{
+'FAS_TRANS_CAT'
+}
+
+
+@AccessorParameterExpression(accessorName="BusinessUnitLOV", name="pType")
+def pType_BusinessUnitLOV_BindVariable_BoundParameter()
+{
+'bUSINESS_UNIT'
+}
+

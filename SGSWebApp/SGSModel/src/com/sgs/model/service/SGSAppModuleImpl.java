@@ -838,5 +838,13 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsSettlementICoInvoiceVO1() {
         return (ViewObjectImpl) findViewObject("SgsSettlementICoInvoiceVO1");
     }
+
+    /**
+     * Container's getter for SgsFixedAssetsTxnVO1.
+     * @return SgsFixedAssetsTxnVO1
+     */
+    public ViewObjectImpl getSgsFixedAssetsTxnVO() {
+        return (ViewObjectImpl) findViewObject("SgsFixedAssetsTxnVO");
+    }
 }
 
