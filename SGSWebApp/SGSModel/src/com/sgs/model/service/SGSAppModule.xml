@@ -217,6 +217,9 @@
   <ViewUsage
     Name="SgsIdenCombinationVO1"
     ViewObjectName="com.sgs.model.view.SgsIdenCombinationVO"/>
+  <ViewUsage
+    Name="SgsIsdVO"
+    ViewObjectName="com.sgs.model.view.SgsIsdVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
