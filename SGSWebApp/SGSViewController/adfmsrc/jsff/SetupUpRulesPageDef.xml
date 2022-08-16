@@ -24,6 +24,8 @@
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <taskFlow id="gstInquiryBTF1" taskFlowId="/bTaskFlow/gstInquiryBTF.xml#gstInquiryBTF" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="isdBTF1" taskFlowId="/bTaskFlow/isdBTF.xml#isdBTF" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings/>
 </pageDefinition>

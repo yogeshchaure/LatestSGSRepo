@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="IsdPagePageDef" Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsIsdVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsIsdVOIterator"/>
+    <searchRegion Criteria="SgsIsdVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SgsIsdVOIterator" id="SgsIsdVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SgsIsdVOIterator" id="SgsIsdVO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsIsdVO" Name="SgsIsdVO0">
+        <AttrNames>
+          <Item Value="IsdInvoiceNo"/>
+          <Item Value="ServiceProvider"/>
+          <Item Value="ServiceReceiver"/>
+          <Item Value="TypeOfSupply"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsIsdVOIterator" id="CreateInsert" InstanceName="SGSAppModuleDataControl.SgsIsdVO"
+            DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

@@ -64,10 +64,18 @@
                                     <af:region value="#{bindings.withholdingTaxDeductedTaxMainBTF1.regionModel}"
                                                id="r7"/>
                                 </af:showDetailItem>
-                                <af:showDetailItem id="sdi10" text="Global Settings Set-Up"
+                                 <af:showDetailItem id="sdi10" text="Global Settings Set-Up"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                                    inlineStyle="min-height:500px;"
-                                                   icon="/resources/icons/globalSetting.png" visible="false"/>
+                                                   icon="/resources/icons/globalSetting.png"  visible="false">
+                          
+                        </af:showDetailItem>
+                                <af:showDetailItem id="sdi2" text="ISD Inquiry"
+                                                   rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                                   inlineStyle="min-height:500px;"
+                                                   icon="/resources/icons/globalSetting.png" >
+                            <af:region value="#{bindings.isdBTF1.regionModel}" id="r4"/>
+                        </af:showDetailItem>
                             </af:panelSpringboard>
                         </f:facet>
                     </af:decorativeBox>
