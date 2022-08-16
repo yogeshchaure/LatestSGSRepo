@@ -26,7 +26,7 @@
                        accessKey="C"/>-->
           </af:toolbar>
           </f:facet>
-          <af:panelFormLayout id="pfl1" rows="7">
+          <af:panelFormLayout id="pfl1" rows="8">
             <af:inputText value="#{bindings.GstId.inputValue}" label="#{bindings.GstId.hints.label}"
                           required="#{bindings.GstId.hints.mandatory}" columns="#{bindings.GstId.hints.displayWidth}"
                           maximumLength="#{bindings.GstId.hints.precision}" shortDesc="#{bindings.GstId.hints.tooltip}"
@@ -83,6 +83,9 @@
               <f:selectItems value="#{bindings.Rcm1.items}" id="si4"/>
               <f:validator binding="#{bindings.Rcm1.validator}"/>
             </af:selectOneChoice>
+            <af:selectBooleanCheckbox value="Y" label="Recoverable"
+                                       id="sbc1" selected="true"/>
+                                      
             <af:selectOneChoice value="#{bindings.ExemptSupply1.inputValue}" label="#{bindings.ExemptSupply1.label}"
                                 required="#{bindings.ExemptSupply1.hints.mandatory}"
                                 shortDesc="#{bindings.ExemptSupply1.hints.tooltip}" id="soc5">

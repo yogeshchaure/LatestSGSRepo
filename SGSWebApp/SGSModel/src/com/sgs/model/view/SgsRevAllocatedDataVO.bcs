@@ -66,3 +66,10 @@ def pType_TargetTransList_BindVariable_BoundParameter()
 'TARGET_TRANS'
 }
 
+
+@AccessorParameterExpression(accessorName="InvoiceTypeList", name="pType")
+def pType_InvoiceTypeList_BindVariable_BoundParameter()
+{
+'INVC_TYPE'
+}
+

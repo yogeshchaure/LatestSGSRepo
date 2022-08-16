@@ -30,12 +30,12 @@
                                                    icon="/resources/icons/Allocation Rule.png" visible="false">
                                     <!--<af:region value="#{bindings.allocationRuleSetupBTF1.regionModel}" id="r3"/>-->
                                 </af:showDetailItem>
-                                <af:showDetailItem id="sdi2" text="Standard Rate Setup"
+                                <!--<af:showDetailItem id="sdi2" text="Standard Rate Setup"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                                    inlineStyle="min-height:500px;"
                                                    icon="/resources/icons/Standard_rate.png">
                                     <af:region value="#{bindings.standardRateSetupBTF1.regionModel}" id="r4"/>
-                                </af:showDetailItem>
+                                </af:showDetailItem>-->
                                 <af:showDetailItem id="sdi5" text="Transfer Pricing Agreement Setup"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                                    inlineStyle="min-height:500px;"

@@ -275,6 +275,15 @@
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="Recoverable"
+    Precision="80"
+    ColumnName="Recoverable"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="SGS_GST_INQUIRY"
+    DefaultValue="Y"/>
   <Key
     Name="PKSGSGSTINQUIRY"
     PrimaryKey="true">

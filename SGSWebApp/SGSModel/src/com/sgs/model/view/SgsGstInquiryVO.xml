@@ -643,6 +643,13 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="Recoverable"
+    PrecisionRule="true"
+    EntityAttrName="Recoverable"
+    EntityUsage="SgsGstInquiry"
+    AliasName="Recoverable"
+    IsSelected="false"/>
+  <ViewAttribute
     Name="TypeOfsupply"
     PrecisionRule="true"
     EntityAttrName="TypeOfsupply"

@@ -107,6 +107,17 @@
                                         <f:validator binding="#{row.bindings.TargetTransaction.validator}"/>
                                     </af:selectOneChoice>
                                 </af:column>
+                                <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.InvoiceType.label}"
+                                           id="c11">
+                                    <af:selectOneChoice value="#{row.bindings.InvoiceType.inputValue}"
+                                                        label="#{row.bindings.InvoiceType.label}"
+                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.InvoiceType.mandatory}"
+                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.InvoiceType.tooltip}"
+                                                        id="soc11" readOnly="true">
+                                        <f:selectItems value="#{row.bindings.InvoiceType.items}" id="si11"/>
+                                        <f:validator binding="#{row.bindings.InvoiceType.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
                                 <af:column headerText="Source GL Account"
                                            id="resId1c15">
                                     <af:outputText value="#{row.SourceGlAccount}"

@@ -51,8 +51,10 @@ public class SgsRevAllocatedDataImpl extends EntityImpl {
         WhtRate,
         SourceOu,
         TargetOu,
-        TOTALAMOUNTAT;
+        TotalAmount_At,
+        INVOICETYPE;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -109,7 +111,8 @@ public class SgsRevAllocatedDataImpl extends EntityImpl {
     public static final int WHTRATE = AttributesEnum.WhtRate.index();
     public static final int SOURCEOU = AttributesEnum.SourceOu.index();
     public static final int TARGETOU = AttributesEnum.TargetOu.index();
-    public static final int TOTALAMOUNTAT = AttributesEnum.TOTALAMOUNTAT.index();
+    public static final int TOTALAMOUNT_AT = AttributesEnum.TotalAmount_At.index();
+    public static final int INVOICETYPE = AttributesEnum.INVOICETYPE.index();
 
     /**
      * This is the default constructor (do not remove).

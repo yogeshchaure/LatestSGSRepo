@@ -6,6 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="SgsCostIdentificationRuleView1" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsCostIdentificationRuleView1Iterator"/>
+    <iterator Binds="SgsIdenCombinationVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsIdenCombinationVO1Iterator"/>
   </executables>
   <bindings>
     <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_RuleId" id="RuleId"
@@ -52,5 +54,29 @@
           id="TARGETACCOUNT" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_OFFSETJOBCODE"
           id="OFFSETJOBCODE" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsCostIdentificationRuleView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsCostIdentificationRuleView1Iterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SgsIdenCombinationVO1Iterator" id="SgsIdenCombinationVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsIdenCombinationVO" Name="SgsIdenCombinationVO10">
+        <AttrNames>
+          <Item Value="GlCode"/>
+          <Item Value="JobCode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsIdenCombinationVO1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="SgsIdenCombinationVO1Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_DataSource"
+          id="DataSource" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
