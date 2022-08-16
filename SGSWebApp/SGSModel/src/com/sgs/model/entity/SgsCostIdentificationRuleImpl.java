@@ -38,7 +38,8 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        DataSource;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -81,6 +82,7 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int DATASOURCE = AttributesEnum.DataSource.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -326,6 +328,22 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
      */
     public String getUpdatedBy() {
         return (String) getAttributeInternal(UPDATEDBY);
+    }
+
+    /**
+     * Gets the attribute value for DataSource, using the alias name DataSource.
+     * @return the value of DataSource
+     */
+    public String getDataSource() {
+        return (String) getAttributeInternal(DATASOURCE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DataSource.
+     * @param value value to set the DataSource
+     */
+    public void setDataSource(String value) {
+        setAttributeInternal(DATASOURCE, value);
     }
 
     /**

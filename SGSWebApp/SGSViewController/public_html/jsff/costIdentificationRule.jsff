@@ -129,7 +129,17 @@
                     <af:convertDateTime pattern="#{bindings.SgsCostIdentificationRuleView1.hints.EffectiveTo.format}"/>
                   </af:outputText>
                 </af:column>
-                <af:column headerText="Created Date" id="c10">
+                <af:column headerText="#{bindings.SgsCostIdentificationRuleView1.hints.ALLOCATIONBASIS.label}" id="c10">
+                  <af:selectOneChoice value="#{row.bindings.ALLOCATIONBASIS.inputValue}"
+                                      label="Allocation Basis"
+                                      required="#{bindings.SgsCostIdentificationRuleView1.hints.ALLOCATIONBASIS.mandatory}"
+                                      shortDesc="#{bindings.SgsCostIdentificationRuleView1.hints.ALLOCATIONBASIS.tooltip}"
+                                      readOnly="true" id="soc1">
+                    <f:selectItems value="#{row.bindings.ALLOCATIONBASIS.items}" id="si1"/>
+                    <f:validator binding="#{row.bindings.ALLOCATIONBASIS.validator}"/>
+                  </af:selectOneChoice>
+                </af:column>
+                <!--<af:column headerText="Created Date" id="c10">
                   <af:outputText value="#{row.CreatedDate}"
                                  shortDesc="#{bindings.SgsCostIdentificationRuleView1.hints.CreatedDate.tooltip}"
                                  id="ot5">
@@ -152,7 +162,7 @@
                   <af:outputText value="#{row.UpdatedBy}"
                                  shortDesc="#{bindings.SgsCostIdentificationRuleView1.hints.UpdatedBy.tooltip}"
                                  id="ot8"/>
-                </af:column>
+                </af:column>-->
               </af:table>
             </af:panelCollection>
           </af:panelGroupLayout>

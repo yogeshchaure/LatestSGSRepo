@@ -27,6 +27,7 @@
           <Item Value="CreatedBy"/>
           <Item Value="UpdatedDate"/>
           <Item Value="UpdatedBy"/>
+          <Item Value="ALLOCATIONBASIS"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

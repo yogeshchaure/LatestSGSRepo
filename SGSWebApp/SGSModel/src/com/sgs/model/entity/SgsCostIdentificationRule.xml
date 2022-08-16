@@ -203,6 +203,18 @@
             <Attr Name="_DisplaySize" Value="10"/>
         </DesignTime>
     </Attribute>
+    <Attribute
+        Name="DataSource"
+        Precision="80"
+        ColumnName="DATA_SOURCE"
+        SQLType="VARCHAR"
+        Type="java.lang.String"
+        ColumnType="VARCHAR"
+        TableName="SGS_COST_IDENTIFICATION_RULE">
+        <DesignTime>
+            <Attr Name="_DisplaySize" Value="80"/>
+        </DesignTime>
+    </Attribute>
     <Key
       Name="PKSGSCOSTIDENTIFICATIONRULE"
       PrimaryKey="true">

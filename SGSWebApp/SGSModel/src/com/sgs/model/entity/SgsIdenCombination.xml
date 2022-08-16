@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsIdenCombination"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="SGS_IDEN_COMBINATION"
+  AliasName="SgsIdenCombination"
+  BindingStyle="JDBC"
+  RowClass="com.sgs.model.entity.SgsIdenCombinationImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="IdenCombId"
+    IsNotNull="true"
+    ColumnName="IDEN_COMB_ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="SGS_IDEN_COMBINATION"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="GlCode"
+    Precision="80"
+    ColumnName="GL_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_IDEN_COMBINATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="JobCode"
+    Precision="80"
+    ColumnName="JOB_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_IDEN_COMBINATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CIId"
+    ColumnName="C_I_ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="SGS_IDEN_COMBINATION"/>
+  <Attribute
+    Name="EffectiveFrom"
+    ColumnName="EFFECTIVE_FROM"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_IDEN_COMBINATION"/>
+  <Attribute
+    Name="EffectiveTo"
+    ColumnName="EFFECTIVE_TO"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_IDEN_COMBINATION"/>
+  <Attribute
+    Name="CreatedDate"
+    IsUpdateable="while_insert"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_IDEN_COMBINATION"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="CreatedBy"
+    IsUpdateable="while_insert"
+    Precision="80"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_IDEN_COMBINATION"
+    HistoryColumn="DateHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_IDEN_COMBINATION"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="UpdatedBy"
+    Precision="80"
+    ColumnName="UPDATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_IDEN_COMBINATION"
+    HistoryColumn="UserHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="PKSGSIDENCOMBINATION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_SGS_IDEN_COMBINATION"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sgs.model.entity.SgsIdenCombination.IdenCombId"/>
+    </AttrArray>
+  </Key>
+</Entity>

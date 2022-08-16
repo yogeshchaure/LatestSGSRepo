@@ -214,6 +214,9 @@
   <ViewUsage
     Name="SgsFixedAssetsTxnVO"
     ViewObjectName="com.sgs.model.view.SgsFixedAssetsTxnVO"/>
+  <ViewUsage
+    Name="SgsIdenCombinationVO1"
+    ViewObjectName="com.sgs.model.view.SgsIdenCombinationVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

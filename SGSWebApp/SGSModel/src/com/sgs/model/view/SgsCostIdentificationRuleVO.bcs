@@ -86,3 +86,10 @@ def pType_OffetJobCodeLOV_BindVariable_BoundParameter()
 'JOBCODE'
 }
 
+
+@AccessorParameterExpression(accessorName="DataSourceList", name="pType")
+def pType_DataSourceList_BindVariable_BoundParameter()
+{
+'DATASOURCE'
+}
+

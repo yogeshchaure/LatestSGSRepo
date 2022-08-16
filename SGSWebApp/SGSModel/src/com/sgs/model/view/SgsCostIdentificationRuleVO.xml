@@ -26,28 +26,6 @@
     </Properties>
   </Variable>
   <Variable
-    Name="bGLCode"
-    Kind="viewcriteria"
-    Type="java.lang.String">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.bGLCode_LABEL"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Variable>
-  <Variable
-    Name="bJobCode"
-    Kind="viewcriteria"
-    Type="java.lang.String">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.bJobCode_LABEL"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Variable>
-  <Variable
     Name="bEffectiveDate"
     Kind="viewcriteria"
     Type="java.sql.Date">
@@ -55,6 +33,17 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.bEffectiveDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="bAllocBasis"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.bAllocBasis_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Variable>
@@ -180,6 +169,22 @@
   </ViewAccessor>
   <ViewAccessor
     Name="OffetJobCodeLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsCostIdentificationRuleVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="DataSourceList"
     ViewObjectName="com.sgs.model.view.SgsListVO"
     RowLevelBinds="true">
     <ViewCriteriaUsage
@@ -346,6 +351,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="OFFSETJOBCODE"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DataSource"
+    ListVOName="DataSourceList"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DataSource"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -538,6 +561,20 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="DataSource"
+    PrecisionRule="true"
+    EntityAttrName="DataSource"
+    EntityUsage="SgsCostIdentificationRule"
+    AliasName="DATA_SOURCE"
+    LOVName="LOV_DataSource">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
@@ -618,11 +655,11 @@
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem
-        Name="JobCode"
-        ViewAttribute="JobCode"
+        Name="ALLOCATIONBASIS"
+        ViewAttribute="ALLOCATIONBASIS"
         Operator="="
         Conjunction="AND"
-        Value=":bJobCode"
+        Value=":bAllocBasis"
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem

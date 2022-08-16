@@ -22,6 +22,8 @@
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <taskFlow id="fixedAssetsBTF1" taskFlowId="/bTaskFlow/fixedAssetsBTF.xml#fixedAssetsBTF" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <taskFlow id="standardRateSetupBTF1" taskFlowId="/bTaskFlow/standardRateSetupBTF.xml#standardRateSetupBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings/>
 </pageDefinition>
