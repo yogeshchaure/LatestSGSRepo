@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelGroupLayout id="pgl1" layout="vertical">
+        <af:panelBox text="Input Service Distributor" id="pb1">
+          <f:facet name="toolbar">
+          <af:toolbar id="t1"> 
+              <af:button actionListener="#{bindings.Commit.execute}"
+                       id="b1" action="back"
+                   disabled="#{(!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=Update'])}"
+                       text="Save and Close" accessKey="S"/>
+            <af:button actionListener="#{bindings.Rollback.execute}" immediate="true" id="b2" action="back"
+                        text="Cancel" accessKey="C">
+              <af:resetActionListener/>
+            </af:button>
+           
+              <!--<af:button actionListener="#{bindings.Delete.execute}" disabled="#{!bindings.Delete.enabled}"
+                       id="b3" action="back"
+                       rendered="#{pageFlowScope.paddEdit == 'ADD'}" immediate="true" text="Cancel"
+                       accessKey="C"/>-->
+          </af:toolbar>
+          </f:facet>
+          <af:panelGroupLayout id="pgl2" layout="horizontal">
+            <af:panelFormLayout id="pfl1" rows="7">
+              <af:selectOneChoice value="#{bindings.IsdInvoiceNo.inputValue}" label="ISD Invoice No."
+                                  required="#{bindings.IsdInvoiceNo.hints.mandatory}"
+                                  shortDesc="#{bindings.IsdInvoiceNo.hints.tooltip}" id="soc1">
+                <f:selectItems value="#{bindings.IsdInvoiceNo.items}" id="si1"/>
+                <f:validator binding="#{bindings.IsdInvoiceNo.validator}"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.ServiceProvider.inputValue}"
+                                  label="Service Provider"
+                                  required="#{bindings.ServiceProvider.hints.mandatory}"
+                                  shortDesc="#{bindings.ServiceProvider.hints.tooltip}" id="soc2">
+                <f:selectItems value="#{bindings.ServiceProvider.items}" id="si2"/>
+                <f:validator binding="#{bindings.ServiceProvider.validator}"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.ServiceReceiver.inputValue}"
+                                  label="Service Receiver"
+                                  required="#{bindings.ServiceReceiver.hints.mandatory}"
+                                  shortDesc="#{bindings.ServiceReceiver.hints.tooltip}" id="soc3">
+                <f:selectItems value="#{bindings.ServiceReceiver.items}" id="si3"/>
+                <f:validator binding="#{bindings.ServiceReceiver.validator}"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.TypeOfSupply.inputValue}" label="Type of Supply"
+                                  required="#{bindings.TypeOfSupply.hints.mandatory}"
+                                  shortDesc="#{bindings.TypeOfSupply.hints.tooltip}" id="soc4">
+                <f:selectItems value="#{bindings.TypeOfSupply.items}" id="si4"/>
+                <f:validator binding="#{bindings.TypeOfSupply.validator}"/>
+              </af:selectOneChoice>
+             <!--<af:spacer id="s8"  height="50"/>-->
+            </af:panelFormLayout>
+             <af:panelBox text="" id="pb9" showDisclosure="false" >
+              <f:facet name="toolbar"/>
+            <af:panelFormLayout id="pfl9">
+              <f:facet name="footer"/>
+                <af:panelGroupLayout id="pgl3">
+                  <af:spacer id="s7" width="20"/>
+                   <af:outputText value="Input GST GL Accounts" id="ot1" inlineStyle="font-weight:bold;font-size:12px;"/>
+                     <af:spacer id="s1" height="10"/>
+                </af:panelGroupLayout>
+               
+                <!--<af:spacer id="s7"  width="400"/>-->
+              <af:inputText value="#{bindings.IgStReceivable.inputValue}" label="IGST Receivable"
+                            required="#{bindings.IgStReceivable.hints.mandatory}"
+                            columns="#{bindings.IgStReceivable.hints.displayWidth}"
+                            maximumLength="#{bindings.IgStReceivable.hints.precision}"
+                            shortDesc="#{bindings.IgStReceivable.hints.tooltip}" id="it1">
+                <f:validator binding="#{bindings.IgStReceivable.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.CgStReceivable.inputValue}" label="CGST Receivable"
+                            required="#{bindings.CgStReceivable.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.CgStReceivable.hints.displayWidth}"
+                            maximumLength="#{bindings.CgStReceivable.hints.precision}"
+                            shortDesc="#{bindings.CgStReceivable.hints.tooltip}" id="it2">
+                <f:validator binding="#{bindings.CgStReceivable.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.SgStReceivable.inputValue}" label="SGST Receivable"
+                            required="#{bindings.SgStReceivable.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.SgStReceivable.hints.displayWidth}"
+                            maximumLength="#{bindings.SgStReceivable.hints.precision}"
+                            shortDesc="#{bindings.SgStReceivable.hints.tooltip}" id="it3">
+                <f:validator binding="#{bindings.SgStReceivable.validator}"/>
+              </af:inputText>
+           
+              </af:panelFormLayout>
+            </af:panelBox>
+           
+            
+          </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl4" layout="horizontal">
+            <af:spacer id="s2"  width="460"/>
+             
+              <af:panelFormLayout id="pfl2">
+                <f:facet name="footer"/>
+                <af:panelLabelAndMessage label="Updated By" id="plam1">
+                  <af:outputText value="#{bindings.UpdatedBy.inputValue}"
+                                 shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="ot2"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="Updated Date" id="plam2">
+              <af:outputText value="#{bindings.UpdatedDate.inputValue}"
+                             shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="ot3">
+                <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+              </af:panelFormLayout>            
+            </af:panelGroupLayout>
+            <af:spacer id="s3"  height="30"/>
+          <af:outputText value="Note: All transactions for which gst is been applied are picked up for ISD Allocation." id="ot4"/>
+        </af:panelBox>
+       
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

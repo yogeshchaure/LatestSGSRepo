@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelStretchLayout id="psl1">
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+        <f:facet name="bottom"/>
+        <f:facet name="center">
+            <af:panelBox text="ISD Inquiry" id="pb1">
+                <f:facet name="toolbar"/>
+                <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text="" id="ph1">
+                        <af:query id="qryId1" headerText="Search" disclosed="true"
+                                  value="#{bindings.SgsIsdVOCriteriaQuery.queryDescriptor}"
+                                  model="#{bindings.SgsIsdVOCriteriaQuery.queryModel}"
+                                  queryListener="#{bindings.SgsIsdVOCriteriaQuery.processQuery}"
+                                  queryOperationListener="#{bindings.SgsIsdVOCriteriaQuery.processQueryOperation}"
+                                  resultComponentId="::pc1:resId1" saveQueryMode="hidden" rows="3" maxColumns="2"/>
+                    </af:panelHeader>
+                     <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar">
+                            <af:toolbar id="t1">
+                                
+                                <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                           disabled="#{!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=Update']}"
+                                           id="b1" action="ADD" icon="/resources/icons/plus.png"
+                                           shortDesc="Create/Add Cost Identification Rule"/>
+                              
+                            </af:toolbar>
+                        </f:facet>
+                        <f:facet name="statusbar"/>
+                    <af:table value="#{bindings.SgsIsdVO.collectionModel}" var="row"
+                              rows="#{bindings.SgsIsdVO.rangeSize}"
+                              emptyText="#{bindings.SgsIsdVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0" selectedRowKeys="#{bindings.SgsIsdVO.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.SgsIsdVO.collectionModel.makeCurrent}" rowSelection="single"
+                              fetchSize="#{bindings.SgsIsdVO.rangeSize}" id="resId1"  styleClass="AFStretchWidth"
+                              columnStretching="last">
+                        <af:column headerText="ISD Invoice No." id="resId1c1" width="150">
+                            <!--<af:selectOneChoice value="#{row.bindings.IsdInvoiceNo.inputValue}"
+                                                label="#{row.bindings.IsdInvoiceNo.label}"
+                                                required="#{bindings.SgsIsdVO.hints.IsdInvoiceNo.mandatory}"
+                                                shortDesc="#{bindings.SgsIsdVO.hints.IsdInvoiceNo.tooltip}"
+                                                readOnly="true" id="soc1">
+                                <f:selectItems value="#{row.bindings.IsdInvoiceNo.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.IsdInvoiceNo.validator}"/>
+                            </af:selectOneChoice>-->
+                             <af:link text="#{row.IsdInvoiceNo}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
+                        </af:column>
+                        <af:column headerText="Service Provider" id="resId1c2" width="150">
+                            <af:selectOneChoice value="#{row.bindings.ServiceProvider.inputValue}"
+                                                label="#{row.bindings.ServiceProvider.label}"
+                                                required="#{bindings.SgsIsdVO.hints.ServiceProvider.mandatory}"
+                                                shortDesc="#{bindings.SgsIsdVO.hints.ServiceProvider.tooltip}"
+                                                readOnly="true" id="soc2">
+                                <f:selectItems value="#{row.bindings.ServiceProvider.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.ServiceProvider.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="Service Receiver" id="resId1c3" width="150">
+                            <af:selectOneChoice value="#{row.bindings.ServiceReceiver.inputValue}"
+                                                label="#{row.bindings.ServiceReceiver.label}"
+                                                required="#{bindings.SgsIsdVO.hints.ServiceReceiver.mandatory}"
+                                                shortDesc="#{bindings.SgsIsdVO.hints.ServiceReceiver.tooltip}"
+                                                readOnly="true" id="soc3">
+                                <f:selectItems value="#{row.bindings.ServiceReceiver.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.ServiceReceiver.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="Type of Supply" id="resId1c4">
+                            <af:selectOneChoice value="#{row.bindings.TypeOfSupply.inputValue}"
+                                                label="#{row.bindings.TypeOfSupply.label}"
+                                                required="#{bindings.SgsIsdVO.hints.TypeOfSupply.mandatory}"
+                                                shortDesc="#{bindings.SgsIsdVO.hints.TypeOfSupply.tooltip}"
+                                                readOnly="true" id="soc4">
+                                <f:selectItems value="#{row.bindings.TypeOfSupply.items}" id="si4"/>
+                                <f:validator binding="#{row.bindings.TypeOfSupply.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                    </af:table>
+                    </af:panelCollection>
+                </af:panelGroupLayout>
+            </af:panelBox>
+        </f:facet>
+    </af:panelStretchLayout>
+</ui:composition>

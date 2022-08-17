@@ -1,0 +1,33 @@
+//Groovy Scripts for com.sgs.model.view.SgsIsdVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="TypeOfSupplyLOV", name="pType")
+def pType_TypeOfSupplyLOV_BindVariable_BoundParameter()
+{
+'TYPE_OF_SUPPLY'
+}
+
+
+@AccessorParameterExpression(accessorName="ServiceProviderLOV", name="pType")
+def pType_ServiceProviderLOV_BindVariable_BoundParameter()
+{
+'SERVICE_P1'
+}
+
+
+@AccessorParameterExpression(accessorName="ServiceReceiverLOV", name="pType")
+def pType_ServiceReceiverLOV_BindVariable_BoundParameter()
+{
+'SERVICE_RECEIVER'
+}
+
+
+@AccessorParameterExpression(accessorName="IsdIdLOV", name="pType")
+def pType_IsdIdLOV_BindVariable_BoundParameter()
+{
+'ISD_ID'
+}
+

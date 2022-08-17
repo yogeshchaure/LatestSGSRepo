@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="IsdFormPageDef" Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsIsdVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsIsdVOIterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="SgsIsdVOIterator" StaticList="false" Uses="LOV_IsdInvoiceNo" id="IsdInvoiceNo"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsIsdVOIterator" StaticList="false" Uses="LOV_ServiceProvider" id="ServiceProvider"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsIsdVOIterator" StaticList="false" Uses="LOV_ServiceReceiver" id="ServiceReceiver"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsIsdVOIterator" StaticList="false" Uses="LOV_TypeOfSupply" id="TypeOfSupply"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsIsdVOIterator" id="IgStReceivable">
+      <AttrNames>
+        <Item Value="IgStReceivable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsIsdVOIterator" id="CgStReceivable">
+      <AttrNames>
+        <Item Value="CgStReceivable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsIsdVOIterator" id="SgStReceivable">
+      <AttrNames>
+        <Item Value="SgStReceivable"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
+    <attributeValues IterBinding="SgsIsdVOIterator" id="UpdatedBy">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsIsdVOIterator" id="UpdatedDate">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

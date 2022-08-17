@@ -854,5 +854,13 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsIdenCombinationVO1() {
         return (ViewObjectImpl) findViewObject("SgsIdenCombinationVO1");
     }
+
+    /**
+     * Container's getter for SgsIsdVO1.
+     * @return SgsIsdVO1
+     */
+    public ViewObjectImpl getSgsIsdVO() {
+        return (ViewObjectImpl) findViewObject("SgsIsdVO");
+    }
 }
 
