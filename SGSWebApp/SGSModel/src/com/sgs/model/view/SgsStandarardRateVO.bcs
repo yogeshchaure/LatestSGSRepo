@@ -24,3 +24,38 @@ def pType_GLAccountList_BindVariable_BoundParameter()
 'GL_ACC'
 }
 
+
+@AccessorParameterExpression(accessorName="GeoList", name="pType")
+def pType_GeoList_BindVariable_BoundParameter()
+{
+'GEO'
+}
+
+
+@AccessorParameterExpression(accessorName="CurrencyList", name="pType")
+def pType_CurrencyList_BindVariable_BoundParameter()
+{
+'CURRENCY'
+}
+
+
+@AccessorParameterExpression(accessorName="DepartmentList", name="pType")
+def pType_DepartmentList_BindVariable_BoundParameter()
+{
+'DEPARTMENT'
+}
+
+
+@AccessorParameterExpression(accessorName="EmpGradeList", name="pType")
+def pType_EmpGradeList_BindVariable_BoundParameter()
+{
+'EMP_GRADE'
+}
+
+
+@AccessorParameterExpression(accessorName="UnitOfMeasureList", name="pType")
+def pType_UnitOfMeasureList_BindVariable_BoundParameter()
+{
+'UOM'
+}
+

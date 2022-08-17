@@ -42,8 +42,8 @@
                                   rows="#{bindings.SgsStandarardRateVO1.rangeSize}"
                                   emptyText="#{bindings.SgsStandarardRateVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                   rowBandingInterval="0" fetchSize="#{bindings.SgsStandarardRateVO1.rangeSize}"
-                                  id="resId1" styleClass="AFStretchWidth" columnStretching="column:resId1c1">
-                            <af:column headerText="Expense Type" id="resId1c1">
+                                  id="resId1" styleClass="AFStretchWidth">
+                            <af:column headerText="Expense Type" id="resId1c1" width="10%">
                                 <!--<af:selectOneChoice value="#{row.bindings.ExpenseType.inputValue}"
                                                     label="#{row.bindings.ExpenseType.label}"
                                                     required="#{bindings.SgsStandarardRateVO1.hints.ExpenseType.mandatory}"
@@ -57,7 +57,7 @@
                                                id="ot6"/>-->
                                 <af:link text="#{row.ExpenseType}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
                             </af:column>
-                            <af:column headerText="Sub-ExpenseType" id="resId1c2">
+                            <af:column headerText="Sub-ExpenseType" id="resId1c2" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.SubExpenseType.inputValue}"
                                                     label="#{row.bindings.SubExpenseType.label}"
                                                     required="#{bindings.SgsStandarardRateVO1.hints.SubExpenseType.mandatory}"
@@ -67,7 +67,7 @@
                                     <f:validator binding="#{row.bindings.SubExpenseType.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="GL Account" id="resId1c3">
+                            <af:column headerText="GL Account" id="resId1c3" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.GlAccount.inputValue}"
                                                     label="#{row.bindings.GlAccount.label}"
                                                     required="#{bindings.SgsStandarardRateVO1.hints.GlAccount.mandatory}"
@@ -77,17 +77,39 @@
                                     <f:validator binding="#{row.bindings.GlAccount.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Geography" id="resId1c4">
-                                <af:outputText value="#{row.SrGeography}"
-                                               shortDesc="#{bindings.SgsStandarardRateVO1.hints.SrGeography.tooltip}"
-                                               id="ot1"/>
+                            <af:column headerText="Geography" id="c2" width="10%">
+                                <af:selectOneChoice value="#{row.bindings.SrGeography.inputValue}"
+                                                    label="#{row.bindings.SrGeography.label}"
+                                                    required="#{bindings.SgsStandarardRateVO1.hints.SrGeography.mandatory}"
+                                                    shortDesc="#{bindings.SgsStandarardRateVO1.hints.SrGeography.tooltip}"
+                                                    id="soc4" readOnly="true">
+                                    <f:selectItems value="#{row.bindings.SrGeography.items}" id="si4"/>
+                                    <f:validator binding="#{row.bindings.SrGeography.validator}"/>
+                                </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Organizational Level" id="resId1c5">
-                                <af:outputText value="#{row.EmployeeGradeLevel}"
-                                               shortDesc="#{bindings.SgsStandarardRateVO1.hints.EmployeeGradeLevel.tooltip}"
-                                               id="ot2"/>
+                            <af:column headerText="#{bindings.SgsStandarardRateVO1.hints.DepartmentCostCenter.label}"
+                                       id="c1" width="10%">
+                                <af:selectOneChoice value="#{row.bindings.DepartmentCostCenter.inputValue}"
+                                                    label="#{row.bindings.DepartmentCostCenter.label}"
+                                                    required="#{bindings.SgsStandarardRateVO1.hints.DepartmentCostCenter.mandatory}"
+                                                    shortDesc="#{bindings.SgsStandarardRateVO1.hints.DepartmentCostCenter.tooltip}"
+                                                    id="soc1" readOnly="true">
+                                    <f:selectItems value="#{row.bindings.DepartmentCostCenter.items}" id="si1"/>
+                                    <f:validator binding="#{row.bindings.DepartmentCostCenter.validator}"/>
+                                </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Amount" id="resId1c6">
+                            <af:column headerText="Organizational Level"
+                                       id="c3" width="10%">
+                                <af:selectOneChoice value="#{row.bindings.EmployeeGradeLevel.inputValue}"
+                                                    label="#{row.bindings.EmployeeGradeLevel.label}"
+                                                    required="#{bindings.SgsStandarardRateVO1.hints.EmployeeGradeLevel.mandatory}"
+                                                    shortDesc="#{bindings.SgsStandarardRateVO1.hints.EmployeeGradeLevel.tooltip}"
+                                                    id="soc5" readOnly="true">
+                                    <f:selectItems value="#{row.bindings.EmployeeGradeLevel.items}" id="si5"/>
+                                    <f:validator binding="#{row.bindings.EmployeeGradeLevel.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Amount" id="resId1c6" width="10%">
                                 <af:outputText value="#{row.StandardCost}"
                                                shortDesc="#{bindings.SgsStandarardRateVO1.hints.StandardCost.tooltip}"
                                                id="ot3">
@@ -95,14 +117,14 @@
                                                       pattern="#{bindings.SgsStandarardRateVO1.hints.StandardCost.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="Effective Start Date" id="resId1c7">
+                            <af:column headerText="Effective Start Date" id="resId1c7" width="10%">
                                 <af:outputText value="#{row.EffectiveStartDate}"
                                                shortDesc="#{bindings.SgsStandarardRateVO1.hints.EffectiveStartDate.tooltip}"
                                                id="ot4">
                                     <af:convertDateTime pattern="#{bindings.SgsStandarardRateVO1.hints.EffectiveStartDate.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="Effective End Date" id="resId1c8">
+                            <af:column headerText="Effective End Date" id="resId1c8" width="10%">
                                 <af:outputText value="#{row.EffectiveEndDate}"
                                                shortDesc="#{bindings.SgsStandarardRateVO1.hints.EffectiveEndDate.tooltip}"
                                                id="ot5">

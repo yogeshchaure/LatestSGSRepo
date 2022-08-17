@@ -7,7 +7,7 @@ import oracle.jbo.script.annotation.AccessorParameterExpression;
 @AccessorParameterExpression(accessorName="BSUnitLOV", name="pType")
 def pType_BSUnitLOV_BindVariable_BoundParameter()
 {
-'BS_UNIT'
+'bUSINESS_UNIT'
 }
 
 
@@ -29,5 +29,40 @@ def pType_StatisticalDataCatgLOV_BindVariable_BoundParameter()
 def pType_StatusLOV_BindVariable_BoundParameter()
 {
 'TRANS_STAUS'
+}
+
+
+@AccessorParameterExpression(accessorName="DeptIDList", name="pType")
+def pType_DeptIDList_BindVariable_BoundParameter()
+{
+'DEPT_ID'
+}
+
+
+@AccessorParameterExpression(accessorName="OperatingUnitList", name="pType")
+def pType_OperatingUnitList_BindVariable_BoundParameter()
+{
+'OPR_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="JobCodelist", name="pType")
+def pType_JobCodelist_BindVariable_BoundParameter()
+{
+'JOB_CODE'
+}
+
+
+@AccessorParameterExpression(accessorName="CurrencyList", name="pType")
+def pType_CurrencyList_BindVariable_BoundParameter()
+{
+'CURRENCY'
+}
+
+
+@AccessorParameterExpression(accessorName="MeasureList", name="pType")
+def pType_MeasureList_BindVariable_BoundParameter()
+{
+'MEASURE'
 }
 

@@ -25,11 +25,17 @@
           <Item Value="DepartmentId"/>
           <Item Value="Status"/>
           <Item Value="LineId"/>
+          <Item Value="EmployeeId"/>
+          <Item Value="Department"/>
+          <Item Value="Currency"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="UpdatedDate"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
     <action IterBinding="SgsStatisticalDataVO1Iterator" id="Delete"
             InstanceName="SGSAppModuleDataControl.SgsStatisticalDataVO1" DataControl="SGSAppModuleDataControl"
             RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="SGSAppModuleDataControl"/>
   </bindings>
 </pageDefinition>

@@ -6,14 +6,13 @@
   Name="SgsStandarardRateVO"
   Version="12.2.1.22.48"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="JDBC"
-  CustomQuery="false"
-  SelectAllAttributes="false"
+  CustomQuery="true"
   PageIterMode="Full"
   AccessMode="DEFAULT">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
   <Variable
     Name="bExpenseType"
     Kind="viewcriteria"
@@ -99,6 +98,86 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="GeoList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsStandarardRateVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="CurrencyList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsStandarardRateVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="DepartmentList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsStandarardRateVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="EmpGradeList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsStandarardRateVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="UnitOfMeasureList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsStandarardRateVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_ExpenseType"
     ListVOName="ExpenseTypeList"
@@ -153,6 +232,114 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_SrGeography"
+    ListVOName="GeoList"
+    NullValueFlag="start"
+    NullValueId="LOV_SrGeography_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SrGeography"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EmployeeGradeLevel"
+    ListVOName="EmpGradeList"
+    NullValueFlag="start"
+    NullValueId="LOV_EmployeeGradeLevel_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmployeeGradeLevel"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Currency"
+    ListVOName="CurrencyList"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Currency"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentCostCenter"
+    ListVOName="DepartmentList"
+    NullValueFlag="start"
+    NullValueId="LOV_DepartmentCostCenter_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentCostCenter"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UnitOfMeasure"
+    ListVOName="UnitOfMeasureList"
+    NullValueFlag="start"
+    NullValueId="LOV_UnitOfMeasure_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UnitOfMeasure"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT SgsStandarardRate.STANDARD_RATE_ID,   
+       SgsStandarardRate.EXPENSE_TYPE,   
+       SgsStandarardRate.SUB_EXPENSE_TYPE,   
+       SgsStandarardRate.GL_ACCOUNT,   
+       SgsStandarardRate.SR_GEOGRAPHY,   
+       SgsStandarardRate.EMPLOYEE_GRADE_LEVEL,   
+       SgsStandarardRate.STANDARD_COST,   
+       SgsStandarardRate.EFFECTIVE_START_DATE,   
+       SgsStandarardRate.EFFECTIVE_END_DATE,   
+       SgsStandarardRate.CREATED_DATE,   
+       SgsStandarardRate.CREATED_BY,   
+       SgsStandarardRate.UPDATED_DATE,   
+       SgsStandarardRate.UPDATED_BY,   
+       SgsStandarardRate.Department_CostCenter,   
+       SgsStandarardRate.Currency,   
+       SgsStandarardRate.UNIT_OF_MEASURE  
+FROM  SGS_STANDARARD_RATE SgsStandarardRate 
+order by STANDARD_RATE_ID]]></SQLQuery>
   <EntityUsage
     Name="SgsStandarardRate"
     Entity="com.sgs.model.entity.SgsStandarardRate"/>
@@ -169,7 +356,8 @@
     EntityAttrName="ExpenseType"
     EntityUsage="SgsStandarardRate"
     AliasName="EXPENSE_TYPE"
-    LOVName="LOV_ExpenseType">
+    LOVName="LOV_ExpenseType"
+    PrimaryKey="true">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -210,13 +398,29 @@
     PrecisionRule="true"
     EntityAttrName="SrGeography"
     EntityUsage="SgsStandarardRate"
-    AliasName="SR_GEOGRAPHY"/>
+    AliasName="SR_GEOGRAPHY"
+    LOVName="LOV_SrGeography">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EmployeeGradeLevel"
     PrecisionRule="true"
     EntityAttrName="EmployeeGradeLevel"
     EntityUsage="SgsStandarardRate"
-    AliasName="EMPLOYEE_GRADE_LEVEL"/>
+    AliasName="EMPLOYEE_GRADE_LEVEL"
+    LOVName="LOV_EmployeeGradeLevel">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StandardCost"
     PrecisionRule="true"
@@ -304,13 +508,43 @@
     PrecisionRule="true"
     EntityAttrName="DepartmentCostCenter"
     EntityUsage="SgsStandarardRate"
-    AliasName="Department_CostCenter"/>
+    AliasName="Department_CostCenter"
+    LOVName="LOV_DepartmentCostCenter">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Currency"
     PrecisionRule="true"
     EntityAttrName="Currency"
     EntityUsage="SgsStandarardRate"
-    AliasName="Currency"/>
+    AliasName="Currency"
+    LOVName="LOV_Currency">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="UnitOfMeasure"
+    PrecisionRule="true"
+    EntityAttrName="UnitOfMeasure"
+    EntityUsage="SgsStandarardRate"
+    AliasName="UNIT_OF_MEASURE"
+    LOVName="LOV_UnitOfMeasure">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsStandarardRateVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsStandarardRateVO"
@@ -347,19 +581,19 @@
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem
+        Name="SubExpenseType"
+        ViewAttribute="SubExpenseType"
+        Operator="="
+        Conjunction="AND"
+        Value=":bSubExpenseType"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
         Name="GlAccount"
         ViewAttribute="GlAccount"
         Operator="="
         Conjunction="AND"
         Value=":bGLAcc"
-        IsBindVarValue="true"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="SrGeography"
-        ViewAttribute="SrGeography"
-        Operator="="
-        Conjunction="AND"
-        Value=":bSubExpenseType"
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem
@@ -376,4 +610,8 @@
     <PropertiesBundle
       PropertiesFile="com.sgs.model.SGSModelBundle"/>
   </ResourceBundle>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="StandardRateId"/>
+    <Item Value="ExpenseType"/>
+  </AttrArray>
 </ViewObject>

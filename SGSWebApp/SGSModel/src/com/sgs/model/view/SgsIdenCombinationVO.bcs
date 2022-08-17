@@ -7,13 +7,13 @@ import oracle.jbo.script.annotation.AccessorParameterExpression;
 @AccessorParameterExpression(accessorName="GLCodeList", name="pType")
 def pType_GLCodeList_BindVariable_BoundParameter()
 {
-'GLCODE'
+'GL_ACC'
 }
 
 
 @AccessorParameterExpression(accessorName="JobCodeList", name="pType")
 def pType_JobCodeList_BindVariable_BoundParameter()
 {
-'JOBCODE'
+'JOB_CODE'
 }
 

@@ -47,6 +47,17 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
+  <Variable
+    Name="bDataSource"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.bDataSource_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <ViewAccessor
     Name="CostRuleList"
     ViewObjectName="com.sgs.model.view.SgsListVO"
@@ -199,6 +210,22 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="ServiceCategoryList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsCostIdentificationRuleVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_RuleId"
     ListVOName="CostRuleList"
@@ -255,7 +282,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_ServiceCategory"
-    ListVOName="ServiceList"
+    ListVOName="ServiceCategoryList"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -264,10 +291,10 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="ServicesId"/>
+      <Item Value="Name"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ServiceName"/>
+      <Item Value="Discription"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -668,6 +695,14 @@
         Operator="ONORBEFORE"
         Conjunction="AND"
         Value=":bEffectiveDate"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DataSource"
+        ViewAttribute="DataSource"
+        Operator="="
+        Conjunction="AND"
+        Value=":bDataSource"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>

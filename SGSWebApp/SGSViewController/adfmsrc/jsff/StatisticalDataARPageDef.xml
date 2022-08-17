@@ -23,10 +23,15 @@
           <Item Value="UnitOfMeasure"/>
           <Item Value="DataStatus"/>
           <Item Value="Status"/>
-          <Item Value="StatisticalData"/>
           <Item Value="Month"/>
+          <Item Value="Currency"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="EmployeeId"/>
+          <Item Value="StatisticalData"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="SGSAppModuleDataControl"/>
   </bindings>
 </pageDefinition>
