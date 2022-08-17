@@ -47,7 +47,7 @@
               </af:selectOneChoice>
               <af:selectOneChoice value="#{bindings.ServiceCategory.inputValue}" label="Service Category"
                                   required="#{bindings.ServiceCategory.hints.mandatory}"
-                                  shortDesc="#{bindings.ServiceCategory.hints.tooltip}" id="soc5" readOnly="true">
+                                  shortDesc="#{bindings.ServiceCategory.hints.tooltip}" id="soc5" readOnly="false">
                 <f:selectItems value="#{bindings.ServiceCategory.items}" id="si5"/>
                 <f:validator binding="#{bindings.ServiceCategory.validator}"/>
               </af:selectOneChoice>

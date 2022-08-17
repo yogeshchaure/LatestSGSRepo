@@ -13,11 +13,6 @@
                 <f:facet name="center">
                     <af:panelSpringboard id="ps1" displayMode="grid"
                                          inlineStyle="background-color:white; min-height:100%;">
-                        <af:showDetailItem text="Process I/Co Transactions (Before Allocation)" id="sdi6"
-                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
-                                           inlineStyle="min-height:500px;" icon="/resources/icons/Review.png">
-                            <af:region value="#{bindings.transBCostAllocationMainBTF1.regionModel}" id="r1"/>
-                        </af:showDetailItem>
                         <af:showDetailItem id="sdi2" text="Standard Rate Setup"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;" icon="/resources/icons/Standard_rate.png">
@@ -35,6 +30,11 @@
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;" icon="/resources/icons/reportChecked.png">
                             <af:region value="#{bindings.statisticalARDataBTF1.regionModel}" id="r4"/>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Process I/Co Transactions (Before Allocation)" id="sdi6"
+                                           rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                           inlineStyle="min-height:500px;" icon="/resources/icons/Review.png">
+                            <af:region value="#{bindings.transBCostAllocationMainBTF1.regionModel}" id="r1"/>
                         </af:showDetailItem>
                         <af:showDetailItem id="sdi3" text="Approve Allocated I/Co Transaction"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"

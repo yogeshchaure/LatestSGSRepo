@@ -20,7 +20,7 @@
                                    immediate="true" text="Cancel" accessKey="C"/>
                     </af:toolbar>
                 </f:facet>
-                <af:panelFormLayout id="pfl1" rows="5">
+                <af:panelFormLayout id="pfl1" rows="7">
                     <af:selectOneChoice value="#{bindings.ExpenseType.inputValue}" label="Expense Type"
                                         required="#{bindings.ExpenseType.hints.mandatory}"
                                         shortDesc="#{bindings.ExpenseType.hints.tooltip}" id="soc1">
@@ -39,43 +39,46 @@
                         <f:selectItems value="#{bindings.GlAccount.items}" id="si3"/>
                         <f:validator binding="#{bindings.GlAccount.validator}"/>
                     </af:selectOneChoice>
-                    <af:inputText value="#{bindings.SrGeography.inputValue}" label="Geography"
-                                  required="#{bindings.SrGeography.hints.mandatory}"
-                                  columns="#{bindings.SrGeography.hints.displayWidth}"
-                                  maximumLength="#{bindings.SrGeography.hints.precision}"
-                                  shortDesc="#{bindings.SrGeography.hints.tooltip}" id="it1">
+                    <af:selectOneChoice value="#{bindings.SrGeography.inputValue}" label="Geography"
+                                        required="#{bindings.SrGeography.hints.mandatory}"
+                                        shortDesc="#{bindings.SrGeography.hints.tooltip}" id="soc4">
+                        <f:selectItems value="#{bindings.SrGeography.items}" id="si4"/>
                         <f:validator binding="#{bindings.SrGeography.validator}"/>
-                    </af:inputText>
-                    <af:inputText value="#{bindings.EmployeeGradeLevel.inputValue}" label="Employee Grade/Level"
-                                  required="#{bindings.EmployeeGradeLevel.hints.mandatory}"
-                                  columns="#{bindings.EmployeeGradeLevel.hints.displayWidth}"
-                                  maximumLength="#{bindings.EmployeeGradeLevel.hints.precision}"
-                                  shortDesc="#{bindings.EmployeeGradeLevel.hints.tooltip}" id="it2">
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.DepartmentCostCenter.inputValue}"
+                                        label="Department"
+                                        required="#{bindings.DepartmentCostCenter.hints.mandatory}"
+                                        shortDesc="#{bindings.DepartmentCostCenter.hints.tooltip}" id="soc5">
+                        <f:selectItems value="#{bindings.DepartmentCostCenter.items}" id="si5"/>
+                        <f:validator binding="#{bindings.DepartmentCostCenter.validator}"/>
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.EmployeeGradeLevel.inputValue}"
+                                        label="Employee Grade Level"
+                                        required="#{bindings.EmployeeGradeLevel.hints.mandatory}"
+                                        shortDesc="#{bindings.EmployeeGradeLevel.hints.tooltip}" id="soc6">
+                        <f:selectItems value="#{bindings.EmployeeGradeLevel.items}" id="si6"/>
                         <f:validator binding="#{bindings.EmployeeGradeLevel.validator}"/>
-                    </af:inputText>
-                    <af:inputText value="#{bindings.StandardCost.inputValue}" label="Standard Cost (Per User Month)"
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.Currency.inputValue}" label="#{bindings.Currency.label}"
+                                        required="#{bindings.Currency.hints.mandatory}"
+                                        shortDesc="#{bindings.Currency.hints.tooltip}" id="soc7">
+                        <f:selectItems value="#{bindings.Currency.items}" id="si7"/>
+                        <f:validator binding="#{bindings.Currency.validator}"/>
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.UnitOfMeasure.inputValue}"
+                                        label="Unit of Measure"
+                                        required="#{bindings.UnitOfMeasure.hints.mandatory}"
+                                        shortDesc="#{bindings.UnitOfMeasure.hints.tooltip}" id="soc8">
+                        <f:selectItems value="#{bindings.UnitOfMeasure.items}" id="si8"/>
+                        <f:validator binding="#{bindings.UnitOfMeasure.validator}"/>
+                    </af:selectOneChoice>
+                    <af:inputText value="#{bindings.StandardCost.inputValue}" label="Standard Cost"
                                   required="#{bindings.StandardCost.hints.mandatory}"
                                   columns="#{bindings.StandardCost.hints.displayWidth}"
                                   maximumLength="#{bindings.StandardCost.hints.precision}"
                                   shortDesc="#{bindings.StandardCost.hints.tooltip}" id="it3">
                         <f:validator binding="#{bindings.StandardCost.validator}"/>
                         <af:convertNumber groupingUsed="false" pattern="#{bindings.StandardCost.format}"/>
-                    </af:inputText>
-                    <af:inputText value="#{bindings.DepartmentCostCenter.inputValue}"
-                                  label="Department/Cost center"
-                                  required="#{bindings.DepartmentCostCenter.hints.mandatory}"
-                                  columns="#{bindings.DepartmentCostCenter.hints.displayWidth}"
-                                  maximumLength="#{bindings.DepartmentCostCenter.hints.precision}"
-                                  shortDesc="#{bindings.DepartmentCostCenter.hints.tooltip}" id="it6">
-                        <f:validator binding="#{bindings.DepartmentCostCenter.validator}"/>
-                    </af:inputText>
-                    <af:inputText value="#{bindings.Currency.inputValue}" label="Currency"
-                                  required="#{bindings.Currency.hints.mandatory}"
-                                  columns="#{bindings.Currency.hints.displayWidth}"
-                                  maximumLength="#{bindings.Currency.hints.precision}"
-                                  shortDesc="#{bindings.Currency.hints.tooltip}" id="it5">
-                        <f:validator binding="#{bindings.Currency.validator}"/>
-                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Currency.format}"/>
                     </af:inputText>
                     <af:inputDate value="#{bindings.EffectiveStartDate.inputValue}" label="Effective Start Date"
                                   required="#{bindings.EffectiveStartDate.hints.mandatory}"

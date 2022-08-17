@@ -21,7 +21,7 @@ def pType_SgsMonthLOV_BindVariable_BoundParameter()
 @AccessorParameterExpression(accessorName="SgsBusinessUnitLOV", name="pType")
 def pType_SgsBusinessUnitLOV_BindVariable_BoundParameter()
 {
-'BS_UNIT'
+'bUSINESS_UNIT'
 }
 
 

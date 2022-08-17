@@ -117,7 +117,7 @@
     Name="LOV_BusinessUnit"
     ListVOName="SgsBusinessUnitLOV"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueId="LOV_BusinessUnit_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="BusinessUnit"/>
@@ -135,7 +135,7 @@
     Name="LOV_OperationalUnit"
     ListVOName="OUList"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueId="LOV_OperationalUnit_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="OperationalUnit"/>
@@ -149,23 +149,26 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <SQLQuery><![CDATA[SELECT SgsStatisticalData.BUSINESS_UNIT,      
-       SgsStatisticalData.CREATED_BY,      
-       SgsStatisticalData.CREATED_DATE,      
-       SgsStatisticalData.DATA_STATUS,      
-       SgsStatisticalData.DEPARTMENT_ID,      
-       SgsStatisticalData.JOB_CODE,      
-       SgsStatisticalData.LINE_ID,      
-       SgsStatisticalData.MONTH,      
-       SgsStatisticalData.OPERATIONAL_UNIT,      
-       SgsStatisticalData.SGS_STAT_ID,           
-       SgsStatisticalData.STATISTICAL_DATA_CATEGORY,      
-       SgsStatisticalData.STATUS,      
-       SgsStatisticalData.UNIT_OF_MEASURE,      
-       SgsStatisticalData.UPDATED_BY,      
-       SgsStatisticalData.UPDATED_DATE   ,
-       SgsStatisticalData.STATISTICAL_DATA
-FROM  SGS_STATISTICAL_DATA SgsStatisticalData   
+  <SQLQuery><![CDATA[SELECT SgsStatisticalData.BUSINESS_UNIT,         
+       SgsStatisticalData.CREATED_BY,         
+       SgsStatisticalData.CREATED_DATE,         
+       SgsStatisticalData.DATA_STATUS,         
+       SgsStatisticalData.DEPARTMENT_ID,         
+       SgsStatisticalData.JOB_CODE,         
+       SgsStatisticalData.LINE_ID,         
+       SgsStatisticalData.MONTH,         
+       SgsStatisticalData.OPERATIONAL_UNIT,         
+       SgsStatisticalData.SGS_STAT_ID,              
+       SgsStatisticalData.STATISTICAL_DATA_CATEGORY,         
+       SgsStatisticalData.STATUS,         
+       SgsStatisticalData.UNIT_OF_MEASURE,         
+       SgsStatisticalData.UPDATED_BY,         
+       SgsStatisticalData.UPDATED_DATE   ,   
+       SgsStatisticalData.STATISTICAL_DATA, 
+       SgsStatisticalData.EMPLOYEE_ID,   
+       SgsStatisticalData.DEPARTMENT,   
+       SgsStatisticalData.CURRENCY   
+FROM  SGS_STATISTICAL_DATA SgsStatisticalData      
 where SgsStatisticalData.STATUS = 'Submitted for Approval']]></SQLQuery>
   <EntityUsage
     Name="SgsStatisticalData"
@@ -181,10 +184,10 @@ where SgsStatisticalData.STATUS = 'Submitted for Approval']]></SQLQuery>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="1.0"/>
-        <CONTROLTYPE
-          Value="choice"/>
         <LABEL
           ResId="com.sgs.model.view.SgsARStatisticalDataVO.BusinessUnit_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -391,6 +394,24 @@ where SgsStatisticalData.STATUS = 'Submitted for Approval']]></SQLQuery>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="EmployeeId"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="SgsStatisticalData"
+    AliasName="EMPLOYEE_ID"/>
+  <ViewAttribute
+    Name="Department"
+    PrecisionRule="true"
+    EntityAttrName="Department"
+    EntityUsage="SgsStatisticalData"
+    AliasName="DEPARTMENT"/>
+  <ViewAttribute
+    Name="Currency"
+    PrecisionRule="true"
+    EntityAttrName="Currency"
+    EntityUsage="SgsStatisticalData"
+    AliasName="CURRENCY"/>
   <ViewAttribute
     Name="StatisticalData"
     PrecisionRule="true"

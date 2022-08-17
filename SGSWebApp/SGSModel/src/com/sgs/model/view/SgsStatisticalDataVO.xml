@@ -25,7 +25,10 @@
        SgsStatisticalData.CREATED_BY, 
        SgsStatisticalData.UPDATED_BY, 
        SgsStatisticalData.UPDATED_DATE, 
-       SgsStatisticalData.STATISTICAL_DATA"
+       SgsStatisticalData.STATISTICAL_DATA, 
+       SgsStatisticalData.CURRENCY, 
+       SgsStatisticalData.DEPARTMENT, 
+       SgsStatisticalData.EMPLOYEE_ID"
   FromList="SGS_STATISTICAL_DATA SgsStatisticalData">
   <Properties>
     <SchemaBasedProperties>
@@ -141,6 +144,86 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="DeptIDList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsStatisticalDataVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="OperatingUnitList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsStatisticalDataVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="JobCodelist"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsStatisticalDataVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="CurrencyList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsStatisticalDataVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="MeasureList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsStatisticalDataVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_StatisticalDataCategory"
     ListVOName="StatisticalDataCatgLOV"
@@ -185,6 +268,96 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="Status"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OperationalUnit"
+    ListVOName="OperatingUnitList"
+    NullValueFlag="start"
+    NullValueId="LOV_OperationalUnit_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OperationalUnit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Department"
+    ListVOName="DeptIDList"
+    NullValueFlag="start"
+    NullValueId="LOV_Department_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Department"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Currency"
+    ListVOName="CurrencyList"
+    NullValueFlag="start"
+    NullValueId="LOV_Currency_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Currency"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UnitOfMeasure"
+    ListVOName="MeasureList"
+    NullValueFlag="start"
+    NullValueId="LOV_UnitOfMeasure_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UnitOfMeasure"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobCode"
+    ListVOName="JobCodelist"
+    NullValueFlag="start"
+    NullValueId="LOV_JobCode_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobCode"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -253,12 +426,12 @@
     LOVName="LOV_StatisticalDataCategory">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="1.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsStatisticalDataVO.StatisticalDataCategory_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -285,13 +458,16 @@
     PrecisionRule="true"
     EntityAttrName="JobCode"
     EntityUsage="SgsStatisticalData"
-    AliasName="JOB_CODE">
+    AliasName="JOB_CODE"
+    LOVName="LOV_JobCode">
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="6.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsStatisticalDataVO.JobCode_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -300,13 +476,16 @@
     PrecisionRule="true"
     EntityAttrName="OperationalUnit"
     EntityUsage="SgsStatisticalData"
-    AliasName="OPERATIONAL_UNIT">
+    AliasName="OPERATIONAL_UNIT"
+    LOVName="LOV_OperationalUnit">
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="7.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsStatisticalDataVO.OperationalUnit_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -315,13 +494,16 @@
     PrecisionRule="true"
     EntityAttrName="UnitOfMeasure"
     EntityUsage="SgsStatisticalData"
-    AliasName="UNIT_OF_MEASURE">
+    AliasName="UNIT_OF_MEASURE"
+    LOVName="LOV_UnitOfMeasure">
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="9.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsStatisticalDataVO.UnitOfMeasure_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -437,6 +619,40 @@
     EntityAttrName="StatisticalData"
     EntityUsage="SgsStatisticalData"
     AliasName="STATISTICAL_DATA"/>
+  <ViewAttribute
+    Name="Currency"
+    PrecisionRule="true"
+    EntityAttrName="Currency"
+    EntityUsage="SgsStatisticalData"
+    AliasName="CURRENCY"
+    LOVName="LOV_Currency">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Department"
+    PrecisionRule="true"
+    EntityAttrName="Department"
+    EntityUsage="SgsStatisticalData"
+    AliasName="DEPARTMENT"
+    LOVName="LOV_Department">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EmployeeId"
+    PrecisionRule="true"
+    EntityAttrName="EmployeeId"
+    EntityUsage="SgsStatisticalData"
+    AliasName="EMPLOYEE_ID"/>
   <ViewCriteria
     Name="SgsStatisticalDataVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsStatisticalDataVO"

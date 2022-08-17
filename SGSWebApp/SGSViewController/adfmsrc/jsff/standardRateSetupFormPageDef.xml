@@ -14,16 +14,6 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_GlAccount" id="GlAccount"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="SrGeography">
-      <AttrNames>
-        <Item Value="SrGeography"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="EmployeeGradeLevel">
-      <AttrNames>
-        <Item Value="EmployeeGradeLevel"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="StandardCost">
       <AttrNames>
         <Item Value="StandardCost"/>
@@ -55,15 +45,15 @@
     <action IterBinding="SgsStandarardRateVO1Iterator" id="Delete"
             InstanceName="SGSAppModuleDataControl.SgsStandarardRateVO1" DataControl="SGSAppModuleDataControl"
             RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="Currency">
-      <AttrNames>
-        <Item Value="Currency"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="DepartmentCostCenter">
-      <AttrNames>
-        <Item Value="DepartmentCostCenter"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_SrGeography" id="SrGeography"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_DepartmentCostCenter"
+          id="DepartmentCostCenter" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_EmployeeGradeLevel"
+          id="EmployeeGradeLevel" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_Currency" id="Currency"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_UnitOfMeasure" id="UnitOfMeasure"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

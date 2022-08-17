@@ -62,7 +62,7 @@ def pType_JobCodeList_BindVariable_BoundParameter()
 @AccessorParameterExpression(accessorName="AllocationBasisLOV", name="pType")
 def pType_AllocationBasisLOV_BindVariable_BoundParameter()
 {
-'ALLOCATION_BASIS'
+'ALLOCATION_BASIC'
 }
 
 
@@ -91,5 +91,12 @@ def pType_OffetJobCodeLOV_BindVariable_BoundParameter()
 def pType_DataSourceList_BindVariable_BoundParameter()
 {
 'DATASOURCE'
+}
+
+
+@AccessorParameterExpression(accessorName="ServiceCategoryList", name="pType")
+def pType_ServiceCategoryList_BindVariable_BoundParameter()
+{
+'SER_CAT'
 }
 

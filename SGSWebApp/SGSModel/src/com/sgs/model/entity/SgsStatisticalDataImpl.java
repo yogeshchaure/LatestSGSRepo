@@ -32,7 +32,10 @@ public class SgsStatisticalDataImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
-        StatisticalData;
+        StatisticalData,
+        CURRENCY,
+        DEPARTMENT,
+        EMPLOYEEID;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -55,6 +58,7 @@ public class SgsStatisticalDataImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int SGSSTATID = AttributesEnum.SgsStatId.index();
     public static final int LINEID = AttributesEnum.LineId.index();
     public static final int MONTH = AttributesEnum.Month.index();
@@ -71,11 +75,21 @@ public class SgsStatisticalDataImpl extends EntityImpl {
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int STATISTICALDATA = AttributesEnum.StatisticalData.index();
+    public static final int CURRENCY = AttributesEnum.CURRENCY.index();
+    public static final int DEPARTMENT = AttributesEnum.DEPARTMENT.index();
+    public static final int EMPLOYEEID = AttributesEnum.EMPLOYEEID.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public SgsStatisticalDataImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsStatisticalData");
     }
 
     /**
@@ -335,19 +349,61 @@ public class SgsStatisticalDataImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CURRENCY, using the alias name CURRENCY.
+     * @return the value of CURRENCY
+     */
+    public String getCURRENCY() {
+        return (String) getAttributeInternal(CURRENCY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CURRENCY.
+     * @param value value to set the CURRENCY
+     */
+    public void setCURRENCY(String value) {
+        setAttributeInternal(CURRENCY, value);
+    }
+
+    /**
+     * Gets the attribute value for DEPARTMENT, using the alias name DEPARTMENT.
+     * @return the value of DEPARTMENT
+     */
+    public String getDEPARTMENT() {
+        return (String) getAttributeInternal(DEPARTMENT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DEPARTMENT.
+     * @param value value to set the DEPARTMENT
+     */
+    public void setDEPARTMENT(String value) {
+        setAttributeInternal(DEPARTMENT, value);
+    }
+
+    /**
+     * Gets the attribute value for EMPLOYEEID, using the alias name EMPLOYEEID.
+     * @return the value of EMPLOYEEID
+     */
+    public String getEMPLOYEEID() {
+        return (String) getAttributeInternal(EMPLOYEEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EMPLOYEEID.
+     * @param value value to set the EMPLOYEEID
+     */
+    public void setEMPLOYEEID(String value) {
+        setAttributeInternal(EMPLOYEEID, value);
+    }
+
+
+    /**
      * @param sgsStatId key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(Integer sgsStatId) {
         return new Key(new Object[] { sgsStatId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsStatisticalData");
     }
 
     /**

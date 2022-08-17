@@ -37,7 +37,8 @@ public class SgsStandarardRateImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         Currency,
-        DepartmentCostCenter;
+        DepartmentCostCenter,
+        UnitOfMeasure;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -62,6 +63,7 @@ public class SgsStandarardRateImpl extends EntityImpl {
     }
     private static final ADFLogger LOG = ADFLogger.createADFLogger(SgsStandarardRateImpl.class);
 
+
     public static final int STANDARDRATEID = AttributesEnum.StandardRateId.index();
     public static final int EXPENSETYPE = AttributesEnum.ExpenseType.index();
     public static final int SUBEXPENSETYPE = AttributesEnum.SubExpenseType.index();
@@ -77,18 +79,12 @@ public class SgsStandarardRateImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int CURRENCY = AttributesEnum.Currency.index();
     public static final int DEPARTMENTCOSTCENTER = AttributesEnum.DepartmentCostCenter.index();
+    public static final int UNITOFMEASURE = AttributesEnum.UnitOfMeasure.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public SgsStandarardRateImpl() {
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsStandarardRate");
     }
 
     /**
@@ -243,7 +239,6 @@ public class SgsStandarardRateImpl extends EntityImpl {
         return (Date) getAttributeInternal(CREATEDDATE);
     }
 
-
     /**
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
      * @return the value of CreatedBy
@@ -251,7 +246,6 @@ public class SgsStandarardRateImpl extends EntityImpl {
     public String getCreatedBy() {
         return (String) getAttributeInternal(CREATEDBY);
     }
-
 
     /**
      * Gets the attribute value for UpdatedDate, using the alias name UpdatedDate.
@@ -261,7 +255,6 @@ public class SgsStandarardRateImpl extends EntityImpl {
         return (Date) getAttributeInternal(UPDATEDDATE);
     }
 
-
     /**
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
      * @return the value of UpdatedBy
@@ -270,20 +263,19 @@ public class SgsStandarardRateImpl extends EntityImpl {
         return (String) getAttributeInternal(UPDATEDBY);
     }
 
-
     /**
      * Gets the attribute value for Currency, using the alias name Currency.
      * @return the value of Currency
      */
-    public BigDecimal getCurrency() {
-        return (BigDecimal) getAttributeInternal(CURRENCY);
+    public String getCurrency() {
+        return (String) getAttributeInternal(CURRENCY);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for Currency.
      * @param value value to set the Currency
      */
-    public void setCurrency(BigDecimal value) {
+    public void setCurrency(String value) {
         setAttributeInternal(CURRENCY, value);
     }
 
@@ -303,6 +295,21 @@ public class SgsStandarardRateImpl extends EntityImpl {
         setAttributeInternal(DEPARTMENTCOSTCENTER, value);
     }
 
+    /**
+     * Gets the attribute value for UnitOfMeasure, using the alias name UnitOfMeasure.
+     * @return the value of UnitOfMeasure
+     */
+    public String getUnitOfMeasure() {
+        return (String) getAttributeInternal(UNITOFMEASURE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for UnitOfMeasure.
+     * @param value value to set the UnitOfMeasure
+     */
+    public void setUnitOfMeasure(String value) {
+        setAttributeInternal(UNITOFMEASURE, value);
+    }
 
     /**
      * @param standardRateId key constituent
@@ -312,6 +319,14 @@ public class SgsStandarardRateImpl extends EntityImpl {
     public static Key createPrimaryKey(Integer standardRateId) {
         return new Key(new Object[] { standardRateId });
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsStandarardRate");
+    }
+
 
     /**
      * Add attribute defaulting logic in this method.
