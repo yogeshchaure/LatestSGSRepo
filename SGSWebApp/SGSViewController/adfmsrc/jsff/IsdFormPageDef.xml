@@ -42,5 +42,10 @@
         <Item Value="UpdatedDate"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="SgsIsdVOIterator" id="IsdInvoiceNo1">
+      <AttrNames>
+        <Item Value="IsdInvoiceNo"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

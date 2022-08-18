@@ -36,9 +36,10 @@
     Name="BuId"
     ColumnName="BU_ID"
     SQLType="INTEGER"
-    Type="java.lang.Integer"
-    ColumnType="INT"
-    TableName="SGS_TRANS_B_COST_ALLOCATION"/>
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION"
+    Precision="80"/>
   <Attribute
     Name="ApprovalRequestType"
     Precision="80"

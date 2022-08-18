@@ -14,7 +14,7 @@ def pType_TypeOfSupplyLOV_BindVariable_BoundParameter()
 @AccessorParameterExpression(accessorName="ServiceProviderLOV", name="pType")
 def pType_ServiceProviderLOV_BindVariable_BoundParameter()
 {
-'SERVICE_P1'
+'SERVICE_P'
 }
 
 
@@ -22,12 +22,5 @@ def pType_ServiceProviderLOV_BindVariable_BoundParameter()
 def pType_ServiceReceiverLOV_BindVariable_BoundParameter()
 {
 'SERVICE_RECEIVER'
-}
-
-
-@AccessorParameterExpression(accessorName="IsdIdLOV", name="pType")
-def pType_IsdIdLOV_BindVariable_BoundParameter()
-{
-'ISD_ID'
 }
 

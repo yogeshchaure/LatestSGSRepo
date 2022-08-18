@@ -31,13 +31,6 @@
                                   shortDesc="#{bindings.ActionTaken.hints.tooltip}" id="it1">
                         <f:validator binding="#{bindings.ActionTaken.validator}"/>
                     </af:inputText>
-                    <af:inputDate value="#{bindings.CreatedDate.inputValue}" label="Created On"
-                                  required="#{bindings.CreatedDate.hints.mandatory}" readOnly="true"
-                                  columns="#{bindings.CreatedDate.hints.displayWidth}"
-                                  shortDesc="#{bindings.CreatedDate.hints.tooltip}" id="id1">
-                        <f:validator binding="#{bindings.CreatedDate.validator}"/>
-                        <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>
-                    </af:inputDate>
                     <af:inputText value="#{bindings.CreatedBy.inputValue}" label="Created By"
                                   required="#{bindings.CreatedBy.hints.mandatory}" readOnly="true"
                                   columns="#{bindings.CreatedBy.hints.displayWidth}"
@@ -45,6 +38,13 @@
                                   shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it2">
                         <f:validator binding="#{bindings.CreatedBy.validator}"/>
                     </af:inputText>
+                    <af:inputDate value="#{bindings.CreatedDate.inputValue}" label="Created On"
+                                  required="#{bindings.CreatedDate.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.CreatedDate.hints.displayWidth}"
+                                  shortDesc="#{bindings.CreatedDate.hints.tooltip}" id="id1">
+                        <f:validator binding="#{bindings.CreatedDate.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>
+                    </af:inputDate>
                     <af:selectOneChoice value="#{bindings.HoldReason.inputValue}" label="Hold / Release Reason"
                                         required="#{bindings.HoldReason.hints.mandatory}" 
                                         shortDesc="#{bindings.HoldReason.hints.tooltip}" id="soc1">

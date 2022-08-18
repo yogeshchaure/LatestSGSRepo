@@ -36,9 +36,8 @@
                               emptyText="#{bindings.SgsIsdVO.viewable ? 'No data to display.' : 'Access Denied.'}"
                               rowBandingInterval="0" selectedRowKeys="#{bindings.SgsIsdVO.collectionModel.selectedRow}"
                               selectionListener="#{bindings.SgsIsdVO.collectionModel.makeCurrent}" rowSelection="single"
-                              fetchSize="#{bindings.SgsIsdVO.rangeSize}" id="resId1"  styleClass="AFStretchWidth"
-                              columnStretching="last">
-                        <af:column headerText="ISD Invoice No." id="resId1c1" width="150">
+                              fetchSize="#{bindings.SgsIsdVO.rangeSize}" id="resId1"  styleClass="AFStretchWidth">
+                        <af:column headerText="ISD ID" id="resId1c1" width="20%">
                             <!--<af:selectOneChoice value="#{row.bindings.IsdInvoiceNo.inputValue}"
                                                 label="#{row.bindings.IsdInvoiceNo.label}"
                                                 required="#{bindings.SgsIsdVO.hints.IsdInvoiceNo.mandatory}"
@@ -49,7 +48,7 @@
                             </af:selectOneChoice>-->
                              <af:link text="#{row.IsdInvoiceNo}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
                         </af:column>
-                        <af:column headerText="Service Provider" id="resId1c2" width="150">
+                        <af:column headerText="Service Provider" id="resId1c2" width="20%">
                             <af:selectOneChoice value="#{row.bindings.ServiceProvider.inputValue}"
                                                 label="#{row.bindings.ServiceProvider.label}"
                                                 required="#{bindings.SgsIsdVO.hints.ServiceProvider.mandatory}"
@@ -59,7 +58,7 @@
                                 <f:validator binding="#{row.bindings.ServiceProvider.validator}"/>
                             </af:selectOneChoice>
                         </af:column>
-                        <af:column headerText="Service Receiver" id="resId1c3" width="150">
+                        <af:column headerText="Service Receiver" id="resId1c3" width="20%">
                             <af:selectOneChoice value="#{row.bindings.ServiceReceiver.inputValue}"
                                                 label="#{row.bindings.ServiceReceiver.label}"
                                                 required="#{bindings.SgsIsdVO.hints.ServiceReceiver.mandatory}"
@@ -69,7 +68,7 @@
                                 <f:validator binding="#{row.bindings.ServiceReceiver.validator}"/>
                             </af:selectOneChoice>
                         </af:column>
-                        <af:column headerText="Type of Supply" id="resId1c4">
+                        <af:column headerText="Type of Supply" id="resId1c4" width="20%">
                             <af:selectOneChoice value="#{row.bindings.TypeOfSupply.inputValue}"
                                                 label="#{row.bindings.TypeOfSupply.label}"
                                                 required="#{bindings.SgsIsdVO.hints.TypeOfSupply.mandatory}"

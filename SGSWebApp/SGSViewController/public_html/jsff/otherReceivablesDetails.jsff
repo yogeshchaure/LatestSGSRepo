@@ -100,7 +100,7 @@
                                 </af:selectOneChoice>
                             </f:facet>
                         </af:column>
-                        <af:column headerText="Affiliate Account"
+                        <af:column headerText="Currency"
                                    id="c7">
                             <af:outputText value="#{row.AffiliateAccount}"
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.AffiliateAccount.tooltip}"

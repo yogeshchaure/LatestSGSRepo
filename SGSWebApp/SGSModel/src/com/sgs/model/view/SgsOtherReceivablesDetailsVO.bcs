@@ -7,27 +7,27 @@ import oracle.jbo.script.annotation.AccessorParameterExpression;
 @AccessorParameterExpression(accessorName="BusinessUnitLOV", name="pType")
 def pType_BusinessUnitLOV_BindVariable_BoundParameter()
 {
-'BS_UNIT'
+'bUSINESS_UNIT'
 }
 
 
 @AccessorParameterExpression(accessorName="GLAccountLOV", name="pType")
 def pType_GLAccountLOV_BindVariable_BoundParameter()
 {
-'O_GL_ACCOUNT'
+'GL_ACC'
 }
 
 
 @AccessorParameterExpression(accessorName="JobCodeLOV", name="pType")
 def pType_JobCodeLOV_BindVariable_BoundParameter()
 {
-'O_JOB_CODE'
+'JOB_CODE'
 }
 
 
 @AccessorParameterExpression(accessorName="AffiliateAccountLOV", name="pType")
 def pType_AffiliateAccountLOV_BindVariable_BoundParameter()
 {
-'O_AFFILIATE_ACCOUNT'
+'CURRENCY'
 }
 

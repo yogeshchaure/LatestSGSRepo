@@ -101,15 +101,10 @@
                                 <f:validator binding="#{row.bindings.JobCode.validator}"/>
                             </af:selectOneChoice>
                         </af:column>
-                        <af:column headerText="Affiliate Unit" id="c8">
-                            <af:selectOneChoice value="#{row.bindings.AffiliateUnit.inputValue}"
-                                                label="#{row.bindings.AffiliateUnit.label}"
-                                                required="#{bindings.RectificationEntryDetailsVO.hints.AffiliateUnit.mandatory}"
-                                                shortDesc="#{bindings.RectificationEntryDetailsVO.hints.AffiliateUnit.tooltip}"
-                                                id="soc6">
-                                <f:selectItems value="#{row.bindings.AffiliateUnit.items}" id="si6"/>
-                                <f:validator binding="#{row.bindings.AffiliateUnit.validator}"/>
-                            </af:selectOneChoice>
+                        <af:column headerText="Currency" id="c8">
+                            <af:outputText value="#{row.AffiliateUnit}"
+                                           shortDesc="#{bindings.RectificationEntryDetailsVO.hints.AffiliateUnit.tooltip}"
+                                           id="ot4"/>
                         </af:column>
                         <af:column headerText="Amount" id="c9">
                             <af:inputText value="#{row.bindings.Amount.inputValue}"
