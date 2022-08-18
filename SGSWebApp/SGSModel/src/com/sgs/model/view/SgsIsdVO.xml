@@ -65,22 +65,6 @@
     </Properties>
   </Variable>
   <ViewAccessor
-    Name="IsdIdLOV"
-    ViewObjectName="com.sgs.model.view.SgsListVO"
-    RowLevelBinds="true">
-    <ViewCriteriaUsage
-      Name="SgsListVOCriteria"
-      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
-    <ParameterMap>
-      <PIMap Variable="pType">
-        <TransientExpression
-          Name="ExpressionScript"
-          trustMode="untrusted"
-          CodeSourceName="SgsIsdVO"/>
-      </PIMap>
-    </ParameterMap>
-  </ViewAccessor>
-  <ViewAccessor
     Name="ServiceProviderLOV"
     ViewObjectName="com.sgs.model.view.SgsListVO"
     RowLevelBinds="true">
@@ -128,24 +112,12 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
-  <ListBinding
-    Name="LOV_IsdInvoiceNo"
-    ListVOName="IsdIdLOV"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="IsdInvoiceNo"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Discription"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
+  <ViewAccessor
+    Name="SGSAppModule_SgsIsdVO1"
+    ViewObjectName="com.sgs.model.view.SgsIsdVO"
+    AMUsageName="SGSAppModule"
+    ViewInstanceName="SgsIsdVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ServiceProvider"
     ListVOName="ServiceProviderLOV"
@@ -197,6 +169,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IsdInvoiceNo"
+    ListVOName="SGSAppModule_SgsIsdVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IsdInvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="IsdInvoiceNo"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="IsdInvoiceNo"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -315,7 +305,8 @@
   <ViewCriteria
     Name="SgsIsdVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsIsdVO"
-    Conjunction="AND">
+    Conjunction="AND"
+    Mode="3">
     <Properties Name="_Props">
       <CustomProperties>
         <Property

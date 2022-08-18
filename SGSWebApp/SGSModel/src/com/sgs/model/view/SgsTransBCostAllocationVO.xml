@@ -15,28 +15,6 @@
   PageIterMode="Full"
   AccessMode="DEFAULT">
   <Variable
-    Name="bSourceSystem"
-    Kind="viewcriteria"
-    Type="java.lang.String">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.bSourceSystem_LABEL"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Variable>
-  <Variable
-    Name="bTransSource"
-    Kind="viewcriteria"
-    Type="java.lang.String">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.bTransSource_LABEL"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Variable>
-  <Variable
     Name="bExtractedBy"
     Kind="viewcriteria"
     Type="java.lang.String">
@@ -77,6 +55,28 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.sgs.model.view.SgsTransBCostAllocationVO.bServices_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="bGLAcc"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.bGLAcc_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="bJobCode"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.bJobCode_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Variable>
@@ -204,9 +204,57 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="BUList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsTransBCostAllocationVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="GLCodeList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsTransBCostAllocationVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="OUList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsTransBCostAllocationVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_BuId"
-    ListVOName="BusinessUnitList"
+    ListVOName="BUList"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -215,11 +263,10 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="BuId"/>
+      <Item Value="Name"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="BuName"/>
-      <Item Value="BuDesc"/>
+      <Item Value="Discription"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -317,7 +364,7 @@
     Name="LOV_ServiceCategory"
     ListVOName="NewServiceList"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueId="LOV_ServiceCategory_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="ServiceCategory"/>
@@ -357,6 +404,42 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="TransactionCategory"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_GlAccount"
+    ListVOName="GLCodeList"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GlAccount"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OprationalUnit"
+    ListVOName="OUList"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OprationalUnit"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -409,10 +492,10 @@
     LOVName="LOV_BuId">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="2.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -489,11 +572,14 @@
     PrecisionRule="true"
     EntityAttrName="GlAccount"
     EntityUsage="SgsTransBCostAllocation"
-    AliasName="GL_ACCOUNT">
+    AliasName="GL_ACCOUNT"
+    LOVName="LOV_GlAccount">
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="8.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -502,11 +588,14 @@
     PrecisionRule="true"
     EntityAttrName="OprationalUnit"
     EntityUsage="SgsTransBCostAllocation"
-    AliasName="OPRATIONAL_UNIT">
+    AliasName="OPRATIONAL_UNIT"
+    LOVName="LOV_OprationalUnit">
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="9.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -770,10 +859,10 @@
     LOVName="LOV_ServiceCategory">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="16.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -941,6 +1030,22 @@
         Operator="="
         Conjunction="AND"
         Value=":bCostRule"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="JobCode"
+        ViewAttribute="JobCode"
+        Operator="="
+        Conjunction="AND"
+        Value=":bJobCode"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="GlAccount"
+        ViewAttribute="GlAccount"
+        Operator="="
+        Conjunction="AND"
+        Value=":bGLAcc"
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem

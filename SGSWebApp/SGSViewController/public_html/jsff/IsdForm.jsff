@@ -28,9 +28,16 @@
           </f:facet>
           <af:panelGroupLayout id="pgl2" layout="horizontal">
             <af:panelFormLayout id="pfl1" rows="7">
+              <af:inputText value="#{bindings.IsdInvoiceNo1.inputValue}" label="ISD ID"
+                            required="#{bindings.IsdInvoiceNo1.hints.mandatory}"
+                            columns="#{bindings.IsdInvoiceNo1.hints.displayWidth}"
+                            maximumLength="#{bindings.IsdInvoiceNo1.hints.precision}"
+                            shortDesc="#{bindings.IsdInvoiceNo1.hints.tooltip}" id="it4">
+                <f:validator binding="#{bindings.IsdInvoiceNo1.validator}"/>
+              </af:inputText>
               <af:selectOneChoice value="#{bindings.IsdInvoiceNo.inputValue}" label="ISD Invoice No."
                                   required="#{bindings.IsdInvoiceNo.hints.mandatory}"
-                                  shortDesc="#{bindings.IsdInvoiceNo.hints.tooltip}" id="soc1">
+                                  shortDesc="#{bindings.IsdInvoiceNo.hints.tooltip}" id="soc1" rendered="false">
                 <f:selectItems value="#{bindings.IsdInvoiceNo.items}" id="si1"/>
                 <f:validator binding="#{bindings.IsdInvoiceNo.validator}"/>
               </af:selectOneChoice>
@@ -75,14 +82,14 @@
                 <f:validator binding="#{bindings.IgStReceivable.validator}"/>
               </af:inputText>
               <af:inputText value="#{bindings.CgStReceivable.inputValue}" label="CGST Receivable"
-                            required="#{bindings.CgStReceivable.hints.mandatory}" readOnly="true"
+                            required="#{bindings.CgStReceivable.hints.mandatory}"
                             columns="#{bindings.CgStReceivable.hints.displayWidth}"
                             maximumLength="#{bindings.CgStReceivable.hints.precision}"
                             shortDesc="#{bindings.CgStReceivable.hints.tooltip}" id="it2">
                 <f:validator binding="#{bindings.CgStReceivable.validator}"/>
               </af:inputText>
               <af:inputText value="#{bindings.SgStReceivable.inputValue}" label="SGST Receivable"
-                            required="#{bindings.SgStReceivable.hints.mandatory}" readOnly="true"
+                            required="#{bindings.SgStReceivable.hints.mandatory}"
                             columns="#{bindings.SgStReceivable.hints.displayWidth}"
                             maximumLength="#{bindings.SgStReceivable.hints.precision}"
                             shortDesc="#{bindings.SgStReceivable.hints.tooltip}" id="it3">
@@ -112,7 +119,6 @@
               </af:panelFormLayout>            
             </af:panelGroupLayout>
             <af:spacer id="s3"  height="30"/>
-          <af:outputText value="Note: All transactions for which gst is been applied are picked up for ISD Allocation." id="ot4"/>
         </af:panelBox>
        
       </af:panelGroupLayout>

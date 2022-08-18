@@ -137,13 +137,6 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
     }
 
     /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTransBCostAllocation");
-    }
-
-    /**
      * Gets the attribute value for TbcaId, using the alias name TbcaId.
      * @return the value of TbcaId
      */
@@ -179,15 +172,15 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
      * Gets the attribute value for BuId, using the alias name BuId.
      * @return the value of BuId
      */
-    public Integer getBuId() {
-        return (Integer) getAttributeInternal(BUID);
+    public String getBuId() {
+        return (String) getAttributeInternal(BUID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for BuId.
      * @param value value to set the BuId
      */
-    public void setBuId(Integer value) {
+    public void setBuId(String value) {
         setAttributeInternal(BUID, value);
     }
 
@@ -735,7 +728,6 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
         setAttributeInternal(ALLOCATIONBASIS, value);
     }
 
-
     /**
      * @param tbcaId key constituent
 
@@ -744,6 +736,14 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
     public static Key createPrimaryKey(Integer tbcaId) {
         return new Key(new Object[] { tbcaId });
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTransBCostAllocation");
+    }
+
 
     /**
      * Add attribute defaulting logic in this method.
