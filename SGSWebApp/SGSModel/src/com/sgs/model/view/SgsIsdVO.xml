@@ -118,6 +118,10 @@
     AMUsageName="SGSAppModule"
     ViewInstanceName="SgsIsdVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="SgsIsdInvoiceNoLOV"
+    ViewObjectName="com.sgs.model.view.SgsIsdInvoiceNoLOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ServiceProvider"
     ListVOName="ServiceProviderLOV"
@@ -174,7 +178,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_IsdInvoiceNo"
-    ListVOName="SGSAppModule_SgsIsdVO1"
+    ListVOName="SgsIsdInvoiceNoLOV"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -183,10 +187,10 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="IsdInvoiceNo"/>
+      <Item Value="ISDINVOICENO"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="IsdInvoiceNo"/>
+      <Item Value="ISDINVOICENO"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

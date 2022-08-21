@@ -4,46 +4,48 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="SgsRevAllocatedDataVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
-              id="SgsRevAllocatedDataVOIterator"/>
-    <searchRegion Criteria="SgsRevAllocatedDataVOCriteria"
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" Binds="SgsRevAllocatedDataVOIterator"
-                  id="SgsRevAllocatedDataVOCriteriaQuery"/>
+    <iterator Binds="SgsRevAllocatedDtVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsRevAllocatedDtVOIterator"/>
+    <searchRegion Criteria="SgsRevAllocatedDtVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SgsRevAllocatedDtVOIterator" id="SgsRevAllocatedDtVOCriteriaQuery"/>
   </executables>
   <bindings>
-    <tree IterBinding="SgsRevAllocatedDataVOIterator" id="SgsRevAllocatedDataVO">
-      <nodeDefinition DefName="com.sgs.model.view.SgsRevAllocatedDataVO" Name="SgsRevAllocatedDataVO0">
+    <tree IterBinding="SgsRevAllocatedDtVOIterator" id="SgsRevAllocatedDtVO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsRevAllocatedDtVO" Name="SgsRevAllocatedDtVO0">
         <AttrNames>
-          <Item Value="SelectInd"/>
+          <Item Value="Period"/>
           <Item Value="AllocationId"/>
           <Item Value="CostIdentificationId"/>
           <Item Value="TpaApplicability"/>
-          <Item Value="AllocationRuleId"/>
           <Item Value="TransactionCategory"/>
+          <Item Value="TransactionType"/>
           <Item Value="SourceGlAccount"/>
-          <Item Value="SourceBu"/>
+          <Item Value="SourceOu"/>
           <Item Value="SourceJobCode"/>
+          <Item Value="SourceDepartmentId"/>
+          <Item Value="Currency"/>
           <Item Value="SourceAmount"/>
-          <Item Value="TargetAccount"/>
-          <Item Value="TargetBu"/>
+          <Item Value="TargetGlAccount"/>
+          <Item Value="TargetOu"/>
           <Item Value="TargetJobCode"/>
+          <Item Value="TargetDepartmentId"/>
+          <Item Value="TargetGlAccountDr"/>
+          <Item Value="OffsetGlAccountCr"/>
           <Item Value="ServiceCategory"/>
           <Item Value="AccountingTreatment"/>
-          <Item Value="MarkUpRage"/>
+          <Item Value="MarketUpRate"/>
+          <Item Value="TargetCurrency"/>
           <Item Value="Amount"/>
-          <Item Value="MarkUpAmount"/>
-          <Item Value="TotalAmount"/>
-          <Item Value="TargetTransaction"/>
-          <Item Value="Status"/>
-          <Item Value="SourceOu"/>
-          <Item Value="TargetOu"/>
-          <Item Value="WhtRate"/>
-          <Item Value="WhtAmount"/>
+          <Item Value="MarketUpAmount"/>
+          <Item Value="BaseAmountBeforeTax"/>
           <Item Value="GstRate"/>
           <Item Value="GstAmount"/>
-          <Item Value="ConsolidatedInvAmount"/>
-          <Item Value="TotalAmount_At"/>
-          <Item Value="InvoiceType"/>
+          <Item Value="TotalAmountAfterTax"/>
+          <Item Value="WhtRate"/>
+          <Item Value="WhtAmount"/>
+          <Item Value="TransactionStatus"/>
+          <Item Value="PaymentStatus"/>
+          <Item Value="PaidAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

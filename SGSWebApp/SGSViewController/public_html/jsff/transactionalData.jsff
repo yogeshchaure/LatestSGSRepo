@@ -36,7 +36,7 @@
                                            inlineStyle="min-height:500px;" icon="/resources/icons/Review.png">
                             <af:region value="#{bindings.transBCostAllocationMainBTF1.regionModel}" id="r1"/>
                         </af:showDetailItem>
-                        <af:showDetailItem id="sdi3" text="Approve Allocated I/Co Transaction"
+                        <af:showDetailItem id="sdi3" text="Intercompany Dashboard"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;" icon="/resources/icons/approveGreen.png">
                             <af:region value="#{bindings.approveallocatedICoTransactionBTF1.regionModel}" id="r2"/>

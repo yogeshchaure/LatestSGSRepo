@@ -220,6 +220,9 @@
   <ViewUsage
     Name="SgsIsdVO"
     ViewObjectName="com.sgs.model.view.SgsIsdVO"/>
+  <ViewUsage
+    Name="SgsRevAllocatedDtVO"
+    ViewObjectName="com.sgs.model.view.SgsRevAllocatedDtVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
@@ -400,4 +403,8 @@
     SrcViewUsageName="com.sgs.model.service.SGSAppModule.SgsArReceiptVO1"
     DstViewUsageName="com.sgs.model.service.SGSAppModule.SgsArReceiptDtlVO2"
     Reversed="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sgs.model.SGSModelBundle"/>
+  </ResourceBundle>
 </AppModule>
