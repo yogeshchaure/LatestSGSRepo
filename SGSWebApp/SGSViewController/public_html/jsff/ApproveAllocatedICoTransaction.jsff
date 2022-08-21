@@ -9,294 +9,295 @@
         <f:facet name="center">
             <af:panelBox text="Review of Allocated Data" id="pb1">
                 <f:facet name="toolbar"/>
-                <af:panelGroupLayout id="pgl1" layout="vertical">
-                    <af:panelGroupLayout layout="vertical" id="pgl2">
-                       
-                        <af:panelHeader text="" id="ph1">
-                            <af:query id="qryId1" headerText="Search" disclosed="true" styleClass="qLetPartSearch"
-                                      value="#{bindings.SgsRevAllocatedDataVOCriteriaQuery.queryDescriptor}"
-                                      model="#{bindings.SgsRevAllocatedDataVOCriteriaQuery.queryModel}"
-                                      queryListener="#{bindings.SgsRevAllocatedDataVOCriteriaQuery.processQuery}"
-                                      queryOperationListener="#{bindings.SgsRevAllocatedDataVOCriteriaQuery.processQueryOperation}"
-                                      resultComponentId="::pc1:resId1" saveQueryMode="hidden" rows="3" maxColumns="2"/>
-                        </af:panelHeader>
-                         <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelHeader text="" id="ph1">
+                        <af:query id="qryId1" headerText="Search" disclosed="true"
+                                  value="#{bindings.SgsRevAllocatedDtVOCriteriaQuery.queryDescriptor}"
+                                  model="#{bindings.SgsRevAllocatedDtVOCriteriaQuery.queryModel}"
+                                  queryListener="#{bindings.SgsRevAllocatedDtVOCriteriaQuery.processQuery}"
+                                  queryOperationListener="#{bindings.SgsRevAllocatedDtVOCriteriaQuery.processQueryOperation}"
+                                  resultComponentId="::pc1:resId1" saveQueryMode="hidden" rows="4" maxColumns="2"/>
+                    </af:panelHeader>
+                     <af:panelCollection id="pc1" styleClass="AFStretchWidth">
                         <f:facet name="menus"/>
                         <f:facet name="toolbar">
                             <af:toolbar id="t1">
                                 
                                 <af:button text="Approve" id="b3"/>
                                 <af:button text="Reject" id="b4"/>
+                                  <af:button text="Reverse" id="b1"/>
                                </af:toolbar>
                         </f:facet>
                         <f:facet name="statusbar"/>
-                        <af:table value="#{bindings.SgsRevAllocatedDataVO.collectionModel}" var="row"
-                                  rows="#{bindings.SgsRevAllocatedDataVO.rangeSize}"
-                                  emptyText="#{bindings.SgsRevAllocatedDataVO.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                  rowBandingInterval="0"
-                                  selectedRowKeys="#{bindings.SgsRevAllocatedDataVO.collectionModel.selectedRow}"
-                                  selectionListener="#{bindings.SgsRevAllocatedDataVO.collectionModel.makeCurrent}"
-                                  rowSelection="single" fetchSize="#{bindings.SgsRevAllocatedDataVO.rangeSize}"
-                                  id="resId1" styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5">
-                                   <af:column id="c2" align="center" headerText="Select">
+                    <af:table value="#{bindings.SgsRevAllocatedDtVO.collectionModel}" var="row"
+                              rows="#{bindings.SgsRevAllocatedDtVO.rangeSize}"
+                              emptyText="#{bindings.SgsRevAllocatedDtVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.SgsRevAllocatedDtVO.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.SgsRevAllocatedDtVO.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.SgsRevAllocatedDtVO.rangeSize}" id="resId1"
+                              styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5">
+                       <af:column id="c2" align="center" headerText="Select">
                 <af:selectBooleanCheckbox id="sbc1"/>
               </af:column>
-                                <!--<af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.SelectInd.label}"
-                                           id="resId1c11">
-                                    <af:outputText value="#{row.SelectInd}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SelectInd.tooltip}"
-                                                   id="ot8"/>
-                                </af:column>-->
-                                <af:column headerText="Allocation ID(Auto Generated)"
-                                           id="resId1c2">
-                                    <af:outputText value="#{row.AllocationId}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.AllocationId.tooltip}"
-                                                   id="ot1"/>
-                                </af:column>
-                                <af:column headerText="Cost Identification ID"
-                                           id="resId1c5">
-                                    <af:selectOneChoice value="#{row.bindings.CostIdentificationId.inputValue}"
-                                                        label="#{row.bindings.CostIdentificationId.label}"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.CostIdentificationId.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.CostIdentificationId.tooltip}"
-                                                        readOnly="true" id="soc3">
-                                        <f:selectItems value="#{row.bindings.CostIdentificationId.items}" id="si3"/>
-                                        <f:validator binding="#{row.bindings.CostIdentificationId.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="TPA Applicability"
-                                           id="resId1c23">
-                                    <af:selectOneChoice value="#{row.bindings.TpaApplicability.inputValue}"
-                                                        label="#{row.bindings.TpaApplicability.label}"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.TpaApplicability.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TpaApplicability.tooltip}"
-                                                        readOnly="true" id="soc6">
-                                        <f:selectItems value="#{row.bindings.TpaApplicability.items}" id="si6"/>
-                                        <f:validator binding="#{row.bindings.TpaApplicability.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="Allocation Rule ID"
-                                           id="resId1c3">
-                                    <af:selectOneChoice value="#{row.bindings.AllocationRuleId.inputValue}"
-                                                        label="#{row.bindings.AllocationRuleId.label}"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.AllocationRuleId.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.AllocationRuleId.tooltip}"
-                                                        readOnly="true" id="soc2">
-                                        <f:selectItems value="#{row.bindings.AllocationRuleId.items}" id="si2"/>
-                                        <f:validator binding="#{row.bindings.AllocationRuleId.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="Transaction Category"
-                                           id="resId1c24">
-                                    <af:selectOneChoice value="#{row.bindings.TransactionCategory.inputValue}"
-                                                        label="#{row.bindings.TransactionCategory.label}"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.TransactionCategory.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TransactionCategory.tooltip}"
-                                                        readOnly="true" id="soc7">
-                                        <f:selectItems value="#{row.bindings.TransactionCategory.items}" id="si7"/>
-                                        <f:validator binding="#{row.bindings.TransactionCategory.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="Target Transaction" id="resId1c21">
-                                    <af:selectOneChoice value="#{row.bindings.TargetTransaction.inputValue}"
-                                                        label="#{row.bindings.TargetTransaction.label}"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.TargetTransaction.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TargetTransaction.tooltip}"
-                                                        id="soc10" readOnly="true">
-                                        <f:selectItems value="#{row.bindings.TargetTransaction.items}" id="si10"/>
-                                        <f:validator binding="#{row.bindings.TargetTransaction.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.InvoiceType.label}"
-                                           id="c11">
-                                    <af:selectOneChoice value="#{row.bindings.InvoiceType.inputValue}"
-                                                        label="#{row.bindings.InvoiceType.label}"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.InvoiceType.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.InvoiceType.tooltip}"
-                                                        id="soc11" readOnly="true">
-                                        <f:selectItems value="#{row.bindings.InvoiceType.items}" id="si11"/>
-                                        <f:validator binding="#{row.bindings.InvoiceType.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="Source GL Account"
-                                           id="resId1c15">
-                                    <af:outputText value="#{row.SourceGlAccount}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SourceGlAccount.tooltip}"
-                                                   id="ot11">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.SgsRevAllocatedDataVO.hints.SourceGlAccount.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="Source BU"
-                                           id="resId1c14">
-                                    <af:outputText value="#{row.SourceBu}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SourceBu.tooltip}"
-                                                   id="ot10"/>
-                                </af:column>
-                                <af:column headerText="Source OU" id="c1">
-                                    <af:selectOneChoice value="#{row.bindings.SourceOu.inputValue}"
-                                                        label="#{row.bindings.SourceOu.label}" readOnly="true"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.SourceOu.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SourceOu.tooltip}"
-                                                        id="soc8">
-                                        <f:selectItems value="#{row.bindings.SourceOu.items}" id="si8"/>
-                                        <f:validator binding="#{row.bindings.SourceOu.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="Source Job Code"
-                                           id="resId1c16">
-                                    <af:outputText value="#{row.SourceJobCode}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SourceJobCode.tooltip}"
-                                                   id="ot12">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.SgsRevAllocatedDataVO.hints.SourceJobCode.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="Source Amount"
-                                           id="resId1c13">
-                                    <af:outputText value="#{row.SourceAmount}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.SourceAmount.tooltip}"
-                                                   id="ot9">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.SgsRevAllocatedDataVO.hints.SourceAmount.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="Target Account"
-                                           id="resId1c18">
-                                    <af:outputText value="#{row.TargetAccount}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TargetAccount.tooltip}"
-                                                   id="ot13">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.SgsRevAllocatedDataVO.hints.TargetAccount.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="Target BU"
-                                           id="resId1c19">
-                                    <af:outputText value="#{row.TargetBu}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TargetBu.tooltip}"
-                                                   id="ot14"/>
-                                </af:column>
-                                <af:column headerText="Target OU" id="c3">
-                                    <af:selectOneChoice value="#{row.bindings.TargetOu.inputValue}"
-                                                        label="#{row.bindings.TargetOu.label}" readOnly="true"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.TargetOu.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TargetOu.tooltip}"
-                                                        id="soc9">
-                                        <f:selectItems value="#{row.bindings.TargetOu.items}" id="si9"/>
-                                        <f:validator binding="#{row.bindings.TargetOu.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="Target Job Code"
-                                           id="resId1c20">
-                                    <af:outputText value="#{row.TargetJobCode}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TargetJobCode.tooltip}"
-                                                   id="ot15">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.SgsRevAllocatedDataVO.hints.TargetJobCode.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="Service Category"
-                                           id="resId1c12">
-                                    <af:selectOneChoice value="#{row.bindings.ServiceCategory.inputValue}"
-                                                        label="#{row.bindings.ServiceCategory.label}"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.ServiceCategory.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.ServiceCategory.tooltip}"
-                                                        readOnly="true" id="soc4">
-                                        <f:selectItems value="#{row.bindings.ServiceCategory.items}" id="si4"/>
-                                        <f:validator binding="#{row.bindings.ServiceCategory.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="Accounting Treatment"
-                                           id="resId1c1">
-                                    <af:selectOneChoice value="#{row.bindings.AccountingTreatment.inputValue}"
-                                                        label="#{row.bindings.AccountingTreatment.label}"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.AccountingTreatment.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.AccountingTreatment.tooltip}"
-                                                        readOnly="true" id="soc1">
-                                        <f:selectItems value="#{row.bindings.AccountingTreatment.items}" id="si1"/>
-                                        <f:validator binding="#{row.bindings.AccountingTreatment.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="Mark-Up Rate(%)"
-                                           id="resId1c9">
-                                    <af:outputText value="#{row.MarkUpRage}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpRage.tooltip}"
-                                                   id="ot6"/>
-                                </af:column>
-                                <af:column headerText="Amount"
-                                           id="resId1c4">
-                                    <af:outputText value="#{row.Amount}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.Amount.tooltip}"
-                                                   id="ot2">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.SgsRevAllocatedDataVO.hints.Amount.format}"
-                                                          type="currency" 
-                                                          minFractionDigits="2" maxFractionDigits="2"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="Mark-Up Amount"
-                                           id="resId1c8">
-                                    <af:outputText value="#{row.MarkUpAmount}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.MarkUpAmount.tooltip}"
-                                                   id="ot5"/>
-                                </af:column>
-                                <af:column headerText="Base Amount (Before Tax)"
-                                           id="resId1c22">
-                                    <af:outputText value="#{row.TotalAmount}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount.tooltip}"
-                                                   id="ot17">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="GST Rate" id="c6">
-                                    <af:outputText value="#{row.GstRate}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.GstRate.tooltip}"
-                                                   id="ot7"/>
-                                </af:column>
-                                <af:column headerText="GST Amount" id="c7">
-                                    <af:outputText value="#{row.GstAmount}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.GstAmount.tooltip}"
-                                                   id="ot8"/>
-                                </af:column>
-                                <af:column headerText="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount_At.label}"
-                                           id="c9">
-                                    <af:outputText value="#{row.TotalAmount_At}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.TotalAmount_At.tooltip}"
-                                                   id="ot16"/>
-                                </af:column>
-                                <af:column headerText="Consolidated Inv. Amount (Yearly)" id="c8">
-                                    <af:outputText value="#{row.ConsolidatedInvAmount}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.ConsolidatedInvAmount.tooltip}"
-                                                   id="ot18"/>
-                                </af:column>
-                                <af:column headerText="WHT Rate" id="c4">
-                                    <af:outputText value="#{row.WhtRate}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.WhtRate.tooltip}"
-                                                   id="ot3"/>
-                                </af:column>
-                                <af:column headerText="WHT Amount" id="c5">
-                                    <af:outputText value="#{row.WhtAmount}"
-                                                   shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.WhtAmount.tooltip}"
-                                                   id="ot4"/>
-                                </af:column>
-                                <af:column headerText="Status"
-                                           id="resId1c17">
-                                    <af:selectOneChoice value="#{row.bindings.Status.inputValue}"
-                                                        label="#{row.bindings.Status.label}"
-                                                        required="#{bindings.SgsRevAllocatedDataVO.hints.Status.mandatory}"
-                                                        shortDesc="#{bindings.SgsRevAllocatedDataVO.hints.Status.tooltip}"
-                                                        readOnly="true" id="soc5">
-                                        <f:selectItems value="#{row.bindings.Status.items}" id="si5"/>
-                                        <f:validator binding="#{row.bindings.Status.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column id="c10" headerText="Accounting Entries">
+                        <af:column headerText="Period" id="resId1c1">
+                            <af:outputText value="#{row.Period}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.Period.tooltip}" id="ot1">
+                                <af:convertDateTime pattern="#{bindings.SgsRevAllocatedDtVO.hints.Period.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="Allocation ID" id="resId1c2">
+                            <af:outputText value="#{row.AllocationId}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.AllocationId.tooltip}"
+                                           id="ot2"/>
+                        </af:column>
+                        <af:column headerText="Cost identification ID"
+                                   id="resId1c3">
+                            <af:selectOneChoice value="#{row.bindings.CostIdentificationId.inputValue}"
+                                                label="#{row.bindings.CostIdentificationId.label}"
+                                                required="#{bindings.SgsRevAllocatedDtVO.hints.CostIdentificationId.mandatory}"
+                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.CostIdentificationId.tooltip}"
+                                                readOnly="true" id="soc1">
+                                <f:selectItems value="#{row.bindings.CostIdentificationId.items}" id="si1"/>
+                                <f:validator binding="#{row.bindings.CostIdentificationId.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="TPA applicability"
+                                   id="resId1c4">
+                            <af:selectOneChoice value="#{row.bindings.TpaApplicability.inputValue}"
+                                                label="#{row.bindings.TpaApplicability.label}"
+                                                required="#{bindings.SgsRevAllocatedDtVO.hints.TpaApplicability.mandatory}"
+                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TpaApplicability.tooltip}"
+                                                readOnly="true" id="soc2">
+                                <f:selectItems value="#{row.bindings.TpaApplicability.items}" id="si2"/>
+                                <f:validator binding="#{row.bindings.TpaApplicability.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="Transaction Category"
+                                   id="resId1c5">
+                            <af:selectOneChoice value="#{row.bindings.TransactionCategory.inputValue}"
+                                                label="#{row.bindings.TransactionCategory.label}"
+                                                required="#{bindings.SgsRevAllocatedDtVO.hints.TransactionCategory.mandatory}"
+                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TransactionCategory.tooltip}"
+                                                readOnly="true" id="soc3">
+                                <f:selectItems value="#{row.bindings.TransactionCategory.items}" id="si3"/>
+                                <f:validator binding="#{row.bindings.TransactionCategory.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="Transaction type"
+                                   id="resId1c6">
+                            <af:selectOneChoice value="#{row.bindings.TransactionType.inputValue}"
+                                                label="#{row.bindings.TransactionType.label}"
+                                                required="#{bindings.SgsRevAllocatedDtVO.hints.TransactionType.mandatory}"
+                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TransactionType.tooltip}"
+                                                readOnly="true" id="soc4">
+                                <f:selectItems value="#{row.bindings.TransactionType.items}" id="si4"/>
+                                <f:validator binding="#{row.bindings.TransactionType.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="Source GL Account"
+                                   id="resId1c7">
+                            <af:outputText value="#{row.SourceGlAccount}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceGlAccount.tooltip}"
+                                           id="ot3"/>
+                        </af:column>
+                        <af:column headerText="Source OU" id="resId1c8">
+                            <af:outputText value="#{row.SourceOu}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceOu.tooltip}" id="ot4"/>
+                        </af:column>
+                        <af:column headerText="Source Job Code" id="resId1c9">
+                            <af:outputText value="#{row.SourceJobCode}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceJobCode.tooltip}"
+                                           id="ot5"/>
+                        </af:column>
+                        <af:column headerText="Source Department ID"
+                                   id="resId1c10">
+                            <af:outputText value="#{row.SourceDepartmentId}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceDepartmentId.tooltip}"
+                                           id="ot6"/>
+                        </af:column>
+                        <af:column headerText="Currency" id="resId1c11">
+                            <af:outputText value="#{row.Currency}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.Currency.tooltip}" id="ot7"/>
+                        </af:column>
+                        <af:column headerText="Source amount" id="resId1c12">
+                            <af:outputText value="#{row.SourceAmount}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceAmount.tooltip}"
+                                           id="ot8">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.SourceAmount.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="Target GL Account"
+                                   id="resId1c13">
+                            <af:outputText value="#{row.TargetGlAccount}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetGlAccount.tooltip}"
+                                           id="ot9"/>
+                        </af:column>
+                        <af:column headerText="Target OU" id="resId1c14">
+                            <af:outputText value="#{row.TargetOu}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetOu.tooltip}"
+                                           id="ot10"/>
+                        </af:column>
+                        <af:column headerText="Target Job Code"
+                                   id="resId1c15">
+                            <af:outputText value="#{row.TargetJobCode}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetJobCode.tooltip}"
+                                           id="ot11"/>
+                        </af:column>
+                        <af:column headerText="Target Department ID"
+                                   id="resId1c16">
+                            <af:outputText value="#{row.TargetDepartmentId}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetDepartmentId.tooltip}"
+                                           id="ot12"/>
+                        </af:column>
+                        <af:column headerText="Target GL Account (Dr.)"
+                                   id="resId1c17">
+                            <af:outputText value="#{row.TargetGlAccountDr}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetGlAccountDr.tooltip}"
+                                           id="ot13"/>
+                        </af:column>
+                        <af:column headerText="Offset GL Account (Cr.)"
+                                   id="resId1c18">
+                            <af:outputText value="#{row.OffsetGlAccountCr}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.OffsetGlAccountCr.tooltip}"
+                                           id="ot14"/>
+                        </af:column>
+                        <af:column headerText="Service Category"
+                                   id="resId1c19">
+                            <af:selectOneChoice value="#{row.bindings.ServiceCategory.inputValue}"
+                                                label="#{row.bindings.ServiceCategory.label}"
+                                                required="#{bindings.SgsRevAllocatedDtVO.hints.ServiceCategory.mandatory}"
+                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.ServiceCategory.tooltip}"
+                                                readOnly="true" id="soc5">
+                                <f:selectItems value="#{row.bindings.ServiceCategory.items}" id="si5"/>
+                                <f:validator binding="#{row.bindings.ServiceCategory.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="Accounting Treatment"
+                                   id="resId1c20">
+                            <af:selectOneChoice value="#{row.bindings.AccountingTreatment.inputValue}"
+                                                label="#{row.bindings.AccountingTreatment.label}"
+                                                required="#{bindings.SgsRevAllocatedDtVO.hints.AccountingTreatment.mandatory}"
+                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.AccountingTreatment.tooltip}"
+                                                readOnly="true" id="soc6">
+                                <f:selectItems value="#{row.bindings.AccountingTreatment.items}" id="si6"/>
+                                <f:validator binding="#{row.bindings.AccountingTreatment.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="Market-up rate (%)" id="resId1c21">
+                            <af:outputText value="#{row.MarketUpRate}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpRate.tooltip}"
+                                           id="ot15">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpRate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="Target Currency"
+                                   id="resId1c22">
+                            <af:outputText value="#{row.TargetCurrency}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetCurrency.tooltip}"
+                                           id="ot16"/>
+                        </af:column>
+                        <af:column headerText="Amount" id="resId1c23">
+                            <af:outputText value="#{row.Amount}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.Amount.tooltip}" id="ot17">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.Amount.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="Market-up amount"
+                                   id="resId1c24">
+                            <af:outputText value="#{row.MarketUpAmount}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpAmount.tooltip}"
+                                           id="ot18">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpAmount.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="Base Amount (before tax)"
+                                   id="resId1c25">
+                            <af:outputText value="#{row.BaseAmountBeforeTax}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.BaseAmountBeforeTax.tooltip}"
+                                           id="ot19">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.BaseAmountBeforeTax.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="GST rate" id="resId1c26">
+                            <af:outputText value="#{row.GstRate}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.GstRate.tooltip}" id="ot20">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.GstRate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="GST Amount" id="resId1c27">
+                            <af:outputText value="#{row.GstAmount}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.GstAmount.tooltip}"
+                                           id="ot21">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.GstAmount.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="Total Amount (after tax)"
+                                   id="resId1c28">
+                            <af:outputText value="#{row.TotalAmountAfterTax}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TotalAmountAfterTax.tooltip}"
+                                           id="ot22">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.TotalAmountAfterTax.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="WHT rate" id="resId1c29">
+                            <af:outputText value="#{row.WhtRate}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.WhtRate.tooltip}" id="ot23">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.WhtRate.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="WHT amount" id="resId1c30">
+                            <af:outputText value="#{row.WhtAmount}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.WhtAmount.tooltip}"
+                                           id="ot24">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.WhtAmount.format}"/>
+                            </af:outputText>
+                        </af:column>
+                        <af:column headerText="Transaction Status"
+                                   id="resId1c31">
+                            <af:selectOneChoice value="#{row.bindings.TransactionStatus.inputValue}"
+                                                label="#{row.bindings.TransactionStatus.label}"
+                                                required="#{bindings.SgsRevAllocatedDtVO.hints.TransactionStatus.mandatory}"
+                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TransactionStatus.tooltip}"
+                                                readOnly="true" id="soc7">
+                                <f:selectItems value="#{row.bindings.TransactionStatus.items}" id="si7"/>
+                                <f:validator binding="#{row.bindings.TransactionStatus.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="Payment Status"
+                                   id="resId1c32">
+                            <af:selectOneChoice value="#{row.bindings.PaymentStatus.inputValue}"
+                                                label="#{row.bindings.PaymentStatus.label}"
+                                                required="#{bindings.SgsRevAllocatedDtVO.hints.PaymentStatus.mandatory}"
+                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.PaymentStatus.tooltip}"
+                                                readOnly="true" id="soc8">
+                                <f:selectItems value="#{row.bindings.PaymentStatus.items}" id="si8"/>
+                                <f:validator binding="#{row.bindings.PaymentStatus.validator}"/>
+                            </af:selectOneChoice>
+                        </af:column>
+                        <af:column headerText="Paid Amount" id="resId1c33">
+                            <af:outputText value="#{row.PaidAmount}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.PaidAmount.tooltip}"
+                                           id="ot25">
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.PaidAmount.format}"/>
+                            </af:outputText>
+                        </af:column>
+                         <af:column id="c10" headerText="Accounting Entries">
                                  <af:link text="Review Accounting Entry" id="l1" inlineStyle="font-weight:bold;"/>
                                 </af:column>
-                            </af:table>
+                    </af:table>
                     </af:panelCollection>
-                    </af:panelGroupLayout>
                 </af:panelGroupLayout>
             </af:panelBox>
         </f:facet>

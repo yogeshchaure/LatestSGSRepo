@@ -862,5 +862,13 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsIsdVO() {
         return (ViewObjectImpl) findViewObject("SgsIsdVO");
     }
+
+    /**
+     * Container's getter for SgsRevAllocatedDtVO1.
+     * @return SgsRevAllocatedDtVO1
+     */
+    public ViewObjectImpl getSgsRevAllocatedDtVO() {
+        return (ViewObjectImpl) findViewObject("SgsRevAllocatedDtVO");
+    }
 }
 
