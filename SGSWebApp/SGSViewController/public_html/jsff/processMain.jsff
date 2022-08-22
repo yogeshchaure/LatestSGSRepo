@@ -12,7 +12,7 @@
                 <f:facet name="top"/>
                 <f:facet name="center">
                     <af:panelSpringboard id="ps1" displayMode="grid"
-                                         inlineStyle="background-color:white; min-height:100%;">
+                                        inlineStyle="background-color:#f2f9ff; min-height:100%;">
                         <af:showDetailItem text="Import I/Co Transactions From PeopleSoft" id="sdi6"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;" icon="/resources/icons/ProcessEngin.png">

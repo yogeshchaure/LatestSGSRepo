@@ -4,7 +4,7 @@
     <af:document title="Login" id="d1">
         <% response.addHeader("X-FRAME-OPTIONS", "SAMEORIGIN"); %>
         <af:panelBox id="pb2" showHeader="never" showDisclosure="false"
-                     inlineStyle="background-color:white;min-height: 700px;">
+                     inlineStyle="background-color:white;min-height: 700px;" background="light">
             <f:facet name="toolbar"/>
             <af:panelGridLayout id="pgl1">
                 <af:gridRow marginTop="5px" height="auto" id="gr1">
