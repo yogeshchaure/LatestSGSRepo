@@ -56,6 +56,7 @@ af|toolbar::separator {
 
 af|panelBox {
     margin: 10px; 
+    background-color: white;
 }
 
 af|panelBox::content {
@@ -110,5 +111,15 @@ af|commandButton {
 }
 
 .af_panelSpringboard.p_AFStrip .af_panelSpringboard_item.p_AFSelected {
-background-color: #05cebe0f;
+background-color: White;
 }
+
+.af_document {
+    background-image: url("../images/backgroudblue.PNG");
+}
+
+.af_decorativeBox_frame {
+background-color: #f2f9ff;
+border: 1px solid #D6DFE6;
+}
+
