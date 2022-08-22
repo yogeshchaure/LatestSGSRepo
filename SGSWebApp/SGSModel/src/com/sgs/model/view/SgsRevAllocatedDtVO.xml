@@ -587,10 +587,10 @@
     LOVName="LOV_PaymentStatus">
     <Properties>
       <SchemaBasedProperties>
-        <FIELDORDER
-          Value="13.0"/>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="29.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -603,7 +603,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="14.0"/>
+          Value="13.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -617,7 +617,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="15.0"/>
+          Value="14.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -633,7 +633,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="16.0"/>
+          Value="15.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -646,7 +646,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="17.0"/>
+          Value="16.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -659,7 +659,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="18.0"/>
+          Value="17.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -672,7 +672,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="19.0"/>
+          Value="18.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -685,7 +685,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="20.0"/>
+          Value="19.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -698,7 +698,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="21.0"/>
+          Value="20.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -711,7 +711,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="22.0"/>
+          Value="21.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -724,7 +724,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="23.0"/>
+          Value="22.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -737,7 +737,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="24.0"/>
+          Value="23.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -750,7 +750,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="25.0"/>
+          Value="24.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -763,7 +763,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="26.0"/>
+          Value="25.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -776,7 +776,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="27.0"/>
+          Value="26.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -789,7 +789,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="28.0"/>
+          Value="27.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -805,7 +805,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="29.0"/>
+          Value="28.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -818,10 +818,10 @@
     LOVName="LOV_TransactionCategory">
     <Properties>
       <SchemaBasedProperties>
-        <FIELDORDER
-          Value="30.0"/>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="30.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -837,7 +837,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="32.0"/>
+          Value="33.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -850,10 +850,10 @@
     LOVName="LOV_TransactionType">
     <Properties>
       <SchemaBasedProperties>
-        <FIELDORDER
-          Value="33.0"/>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="32.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -911,6 +911,18 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="SOURCEBU"
+    PrecisionRule="true"
+    EntityAttrName="SOURCEBU"
+    EntityUsage="SgsRevAllocatedDt"
+    AliasName="SOURCE_BU"/>
+  <ViewAttribute
+    Name="TARGETBU"
+    PrecisionRule="true"
+    EntityAttrName="TARGETBU"
+    EntityUsage="SgsRevAllocatedDt"
+    AliasName="TARGET_BU"/>
   <ViewCriteria
     Name="SgsRevAllocatedDtVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsRevAllocatedDtVO"
