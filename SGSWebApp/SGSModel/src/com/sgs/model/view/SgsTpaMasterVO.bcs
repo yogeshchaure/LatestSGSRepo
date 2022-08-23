@@ -28,12 +28,19 @@ def pType_OUList_BindVariable_BoundParameter()
 @AccessorParameterExpression(accessorName="BUList", name="pType")
 def pType_BUList_BindVariable_BoundParameter()
 {
-'BS_UNIT'
+'O_AFFILIATE_ACCOUNT'
 }
 
 
 @AccessorParameterExpression(accessorName="nettingApplicatibilityLOV", name="pType")
 def pType_nettingApplicatibilityLOV_BindVariable_BoundParameter()
+{
+'YES_NO'
+}
+
+
+@AccessorParameterExpression(accessorName="BDCommissionApplicabilityLOV", name="pType")
+def pType_BDCommissionApplicabilityLOV_BindVariable_BoundParameter()
 {
 'YES_NO'
 }
