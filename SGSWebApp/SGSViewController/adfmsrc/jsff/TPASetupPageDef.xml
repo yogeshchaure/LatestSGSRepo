@@ -19,6 +19,9 @@
           <Item Value="PassThroughBu"/>
           <Item Value="EffectiveEndDate"/>
           <Item Value="OperationUnit"/>
+           <Item Value="NETTINGAPPLICATIBILITY"/>
+            <Item Value="BDCOMMISSIONAPPLICABILITY"/>
+             <Item Value="BDCOMMISSIONRATE"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

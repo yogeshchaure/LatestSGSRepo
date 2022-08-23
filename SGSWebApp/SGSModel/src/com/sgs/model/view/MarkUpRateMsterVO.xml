@@ -19,7 +19,8 @@
        MarkUpRateMaster.CREATED_DATE, 
        MarkUpRateMaster.CREATED_BY, 
        MarkUpRateMaster.UPDATED_DATE, 
-       MarkUpRateMaster.UPDATED_BY"
+       MarkUpRateMaster.UPDATED_BY, 
+       MarkUpRateMaster.MARK_UP_RATE_ID"
   FromList="SGS_MARKUP_RATE_MASTER MarkUpRateMaster">
   <Properties>
     <SchemaBasedProperties>
@@ -247,6 +248,12 @@
     EntityUsage="MarkUpRateMaster"
     AliasName="UPDATED_BY"
     IsUpdateable="false"/>
+  <ViewAttribute
+    Name="MARKUPRATEID"
+    PrecisionRule="true"
+    EntityAttrName="MARKUPRATEID"
+    EntityUsage="MarkUpRateMaster"
+    AliasName="MARK_UP_RATE_ID"/>
   <ViewCriteria
     Name="MarkUpRateMsterVOCriteria"
     ViewObjectName="com.sgs.model.view.MarkUpRateMsterVO"

@@ -58,6 +58,17 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
+  <Variable
+    Name="bNettingApplicability"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsTpaMasterVO.bNettingApplicability_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <ViewAccessor
     Name="LegalEntityList"
     ViewObjectName="com.sgs.model.view.SgsListVO"
@@ -124,6 +135,26 @@
   </ViewAccessor>
   <ViewAccessor
     Name="nettingApplicatibilityLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsTpaMasterVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="TpaIdLOV"
+    ViewObjectName="com.sgs.model.view.TpaIdLOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="BDCommissionApplicabilityLOV"
     ViewObjectName="com.sgs.model.view.SgsListVO"
     RowLevelBinds="true">
     <ViewCriteriaUsage
@@ -246,6 +277,42 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_TpaId"
+    ListVOName="TpaIdLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TpaId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TPAID"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="TPAID"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BDCOMMISSIONAPPLICABILITY"
+    ListVOName="BDCommissionApplicabilityLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BDCOMMISSIONAPPLICABILITY"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SgsTpaMaster"
     Entity="com.sgs.model.entity.SgsTpaMaster"/>
@@ -255,13 +322,30 @@
     PrecisionRule="true"
     EntityAttrName="TpamId"
     EntityUsage="SgsTpaMaster"
-    AliasName="TPAM_ID"/>
+    AliasName="TPAM_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="0.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TpaId"
     PrecisionRule="true"
     EntityAttrName="TpaId"
     EntityUsage="SgsTpaMaster"
-    AliasName="TPA_ID"/>
+    AliasName="TPA_ID"
+    LOVName="LOV_TpaId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <FIELDORDER
+          Value="1.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LeServiceProvider"
     PrecisionRule="true"
@@ -273,6 +357,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="2.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -287,6 +373,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="3.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -301,6 +389,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="4.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -315,6 +405,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="5.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -329,6 +421,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="6.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -344,6 +438,8 @@
           ResId="com.sgs.model.view.SgsTpaMasterVO.EffectiveStartDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTpaMasterVO.EffectiveStartDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="7.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -359,6 +455,8 @@
           ResId="com.sgs.model.view.SgsTpaMasterVO.EffectiveEndDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTpaMasterVO.EffectiveEndDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="9.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -375,6 +473,8 @@
           ResId="com.sgs.model.view.SgsTpaMasterVO.CreatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTpaMasterVO.CreatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="10.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -384,7 +484,14 @@
     EntityAttrName="CreatedBy"
     EntityUsage="SgsTpaMaster"
     AliasName="CREATED_BY"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="11.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
@@ -398,6 +505,8 @@
           ResId="com.sgs.model.view.SgsTpaMasterVO.UpdatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTpaMasterVO.UpdatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="12.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -407,7 +516,14 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="SgsTpaMaster"
     AliasName="UPDATED_BY"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="13.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="NETTINGAPPLICATIBILITY"
     PrecisionRule="true"
@@ -419,6 +535,37 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="8.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BDCOMMISSIONAPPLICABILITY"
+    PrecisionRule="true"
+    EntityAttrName="BDCOMMISSIONAPPLICABILITY"
+    EntityUsage="SgsTpaMaster"
+    AliasName="BD_COMMISSION_APPLICABILITY"
+    LOVName="LOV_BDCOMMISSIONAPPLICABILITY">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <FIELDORDER
+          Value="14.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BDCOMMISSIONRATE"
+    PrecisionRule="true"
+    EntityAttrName="BDCOMMISSIONRATE"
+    EntityUsage="SgsTpaMaster"
+    AliasName="BD_COMMISSION_RATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="15.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -452,7 +599,7 @@
       <ViewCriteriaItem
         Name="TpaId"
         ViewAttribute="TpaId"
-        Operator="CONTAINS"
+        Operator="="
         Conjunction="AND"
         Value=":bTPAId"
         IsBindVarValue="true"
@@ -479,6 +626,14 @@
         Operator="="
         Conjunction="AND"
         Value=":pEffEndDtae"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="NETTINGAPPLICATIBILITY"
+        ViewAttribute="NETTINGAPPLICATIBILITY"
+        Operator="="
+        Conjunction="AND"
+        Value=":bNettingApplicability"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>

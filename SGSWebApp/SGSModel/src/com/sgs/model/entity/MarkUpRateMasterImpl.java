@@ -30,7 +30,8 @@ public class MarkUpRateMasterImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        MARKUPRATEID;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -54,6 +55,7 @@ public class MarkUpRateMasterImpl extends EntityImpl {
         }
     }
     private static final ADFLogger LOG = ADFLogger.createADFLogger(SgsAccPayInvoicesImpl.class);
+
     public static final int RATEID = AttributesEnum.RateId.index();
     public static final int GEOGRAPHY = AttributesEnum.Geography.index();
     public static final int SERVICECATEGORY = AttributesEnum.ServiceCategory.index();
@@ -64,11 +66,19 @@ public class MarkUpRateMasterImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int MARKUPRATEID = AttributesEnum.MARKUPRATEID.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public MarkUpRateMasterImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.MarkUpRateMaster");
     }
 
     /**
@@ -175,13 +185,6 @@ public class MarkUpRateMasterImpl extends EntityImpl {
         return (Date) getAttributeInternal(CREATEDDATE);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for CreatedDate.
-     * @param value value to set the CreatedDate
-     */
-    public void setCreatedDate(Date value) {
-        setAttributeInternal(CREATEDDATE, value);
-    }
 
     /**
      * Gets the attribute value for CreatedBy, using the alias name CreatedBy.
@@ -191,13 +194,6 @@ public class MarkUpRateMasterImpl extends EntityImpl {
         return (String) getAttributeInternal(CREATEDBY);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for CreatedBy.
-     * @param value value to set the CreatedBy
-     */
-    public void setCreatedBy(String value) {
-        setAttributeInternal(CREATEDBY, value);
-    }
 
     /**
      * Gets the attribute value for UpdatedDate, using the alias name UpdatedDate.
@@ -207,13 +203,6 @@ public class MarkUpRateMasterImpl extends EntityImpl {
         return (Date) getAttributeInternal(UPDATEDDATE);
     }
 
-    /**
-     * Sets <code>value</code> as the attribute value for UpdatedDate.
-     * @param value value to set the UpdatedDate
-     */
-    public void setUpdatedDate(Date value) {
-        setAttributeInternal(UPDATEDDATE, value);
-    }
 
     /**
      * Gets the attribute value for UpdatedBy, using the alias name UpdatedBy.
@@ -223,13 +212,23 @@ public class MarkUpRateMasterImpl extends EntityImpl {
         return (String) getAttributeInternal(UPDATEDBY);
     }
 
+
     /**
-     * Sets <code>value</code> as the attribute value for UpdatedBy.
-     * @param value value to set the UpdatedBy
+     * Gets the attribute value for MARKUPRATEID, using the alias name MARKUPRATEID.
+     * @return the value of MARKUPRATEID
      */
-    public void setUpdatedBy(String value) {
-        setAttributeInternal(UPDATEDBY, value);
+    public String getMARKUPRATEID() {
+        return (String) getAttributeInternal(MARKUPRATEID);
     }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MARKUPRATEID.
+     * @param value value to set the MARKUPRATEID
+     */
+    public void setMARKUPRATEID(String value) {
+        setAttributeInternal(MARKUPRATEID, value);
+    }
+
 
     /**
      * @param rateId key constituent
@@ -238,13 +237,6 @@ public class MarkUpRateMasterImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(Integer rateId) {
         return new Key(new Object[] { rateId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.MarkUpRateMaster");
     }
 
     /**
