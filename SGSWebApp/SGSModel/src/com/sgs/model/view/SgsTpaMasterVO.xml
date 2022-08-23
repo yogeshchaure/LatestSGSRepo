@@ -13,7 +13,11 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full"
-  AccessMode="DEFAULT">
+  AccessMode="DEFAULT"
+  ComponentClass="com.sgs.model.view.SgsTpaMasterVOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll"/>
+  </DesignTime>
   <Variable
     Name="bTPAId"
     Kind="viewcriteria"
@@ -169,6 +173,22 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="ServiceReceiverLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsTpaMasterVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_LeServiceProvider"
     ListVOName="LegalEntityList"
@@ -189,7 +209,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_LeServiceReceiver"
-    ListVOName="LegalEntityList"
+    ListVOName="ServiceReceiverLOV"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -371,10 +391,10 @@
     LOVName="LOV_LeServiceReceiver">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="3.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

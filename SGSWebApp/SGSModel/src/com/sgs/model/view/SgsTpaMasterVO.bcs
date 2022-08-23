@@ -45,3 +45,10 @@ def pType_BDCommissionApplicabilityLOV_BindVariable_BoundParameter()
 'YES_NO'
 }
 
+
+@AccessorParameterExpression(accessorName="ServiceReceiverLOV", name="pType")
+def pType_ServiceReceiverLOV_BindVariable_BoundParameter()
+{
+'SERVICE_RECIEVER'
+}
+

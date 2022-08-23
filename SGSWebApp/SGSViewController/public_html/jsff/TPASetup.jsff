@@ -46,7 +46,9 @@
                             <af:column headerText="TPA ID" id="resId1c1">
                                 <!--<af:outputText value="#{row.TpaId}"
                                                shortDesc="#{bindings.SgsTpaMasterVO1.hints.TpaId.tooltip}" id="ot1"/>-->
-                                <af:link text="#{row.TpaId}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
+                                <af:link text="#{row.TpaId}" id="l1" action="EDIT" inlineStyle="font-weight:bold;">
+                                    <af:setPropertyListener from="#{row.TpamId}" to="#{pageFlowScope.ID}" type="action"/>
+                                </af:link>
                             </af:column>
                             <af:column headerText="Legal Entity (Service Provider)" id="resId1c2">
                                 <af:selectOneChoice value="#{row.bindings.LeServiceProvider.inputValue}"
