@@ -59,11 +59,11 @@
               <f:selectItems value="#{bindings.PlaceOfsupply1.items}" id="si2"/>
               <f:validator binding="#{bindings.PlaceOfsupply1.validator}"/>
             </af:selectOneChoice>
-            <af:selectOneChoice value="#{bindings.TypeOfservice1.inputValue}" label="#{bindings.TypeOfservice1.label}"
-                                required="#{bindings.TypeOfservice1.hints.mandatory}"
-                                shortDesc="#{bindings.TypeOfservice1.hints.tooltip}" id="soc3">
-              <f:selectItems value="#{bindings.TypeOfservice1.items}" id="si3"/>
-              <f:validator binding="#{bindings.TypeOfservice1.validator}"/>
+            <af:selectOneChoice value="#{bindings.TypeOfsupply.inputValue}" label="Type of Supply"
+                                required="#{bindings.TypeOfsupply.hints.mandatory}"
+                                shortDesc="#{bindings.TypeOfsupply.hints.tooltip}" id="soc3">
+              <f:selectItems value="#{bindings.TypeOfsupply.items}" id="si3"/>
+              <f:validator binding="#{bindings.TypeOfsupply.validator}"/>
             </af:selectOneChoice>
             <!--<af:selectOneChoice value="#{bindings.TypeOfservice.inputValue}" label="#{bindings.TypeOfservice.label}"
                                   required="#{bindings.TypeOfservice.hints.mandatory}"
@@ -83,8 +83,10 @@
               <f:selectItems value="#{bindings.Rcm1.items}" id="si4"/>
               <f:validator binding="#{bindings.Rcm1.validator}"/>
             </af:selectOneChoice>
+            <af:selectBooleanCheckbox value="#{bindings.Recoverable.inputValue}" label="#{bindings.Recoverable.label}"
+                                      shortDesc="#{bindings.Recoverable.hints.tooltip}" id="sbc2" selected="true"/>
             <af:selectBooleanCheckbox value="Y" label="Recoverable"
-                                       id="sbc1" selected="true"/>
+                                       id="sbc1" selected="true" rendered="false"/>
                                       
             <af:selectOneChoice value="#{bindings.ExemptSupply1.inputValue}" label="#{bindings.ExemptSupply1.label}"
                                 required="#{bindings.ExemptSupply1.hints.mandatory}"
@@ -98,13 +100,20 @@
                 <f:selectItems value="#{bindings.ExemptSupply.items}" id="si6"/>
                 <f:validator binding="#{bindings.ExemptSupply.validator}"/>
               </af:selectOneChoice>-->
-            <af:inputText value="#{bindings.IdenticalGstReg.inputValue}" label="#{bindings.IdenticalGstReg.hints.label}"
+            <!--<af:inputText value="#{bindings.IdenticalGstReg.inputValue}" label="#{bindings.IdenticalGstReg.hints.label}"
                           required="#{bindings.IdenticalGstReg.hints.mandatory}"
                           columns="#{bindings.IdenticalGstReg.hints.displayWidth}"
                           maximumLength="#{bindings.IdenticalGstReg.hints.precision}"
                           shortDesc="#{bindings.IdenticalGstReg.hints.tooltip}" id="it1">
               <f:validator binding="#{bindings.IdenticalGstReg.validator}"/>
-            </af:inputText>
+            </af:inputText>-->
+            <af:selectOneChoice value="#{bindings.IdenticalGstReg1.inputValue}"
+                                label="#{bindings.IdenticalGstReg1.label}"
+                                required="#{bindings.IdenticalGstReg1.hints.mandatory}"
+                                shortDesc="#{bindings.IdenticalGstReg1.hints.tooltip}" id="soc8">
+              <f:selectItems value="#{bindings.IdenticalGstReg1.items}" id="si8"/>
+              <f:validator binding="#{bindings.IdenticalGstReg1.validator}"/>
+            </af:selectOneChoice>
             <af:inputText value="#{bindings.RateOfTax.inputValue}" label="#{bindings.RateOfTax.hints.label}"
                           required="#{bindings.RateOfTax.hints.mandatory}"
                           columns="#{bindings.RateOfTax.hints.displayWidth}"
@@ -124,14 +133,21 @@
               <f:selectItems value="#{bindings.HsnCode1.items}" id="si6"/>
               <f:validator binding="#{bindings.HsnCode1.validator}"/>
             </af:selectOneChoice>
-            <af:inputText value="#{bindings.ItemServiceCategory.inputValue}"
+            <!--<af:inputText value="#{bindings.ItemServiceCategory.inputValue}"
                           label="#{bindings.ItemServiceCategory.hints.label}"
                           required="#{bindings.ItemServiceCategory.hints.mandatory}"
                           columns="#{bindings.ItemServiceCategory.hints.displayWidth}"
                           maximumLength="#{bindings.ItemServiceCategory.hints.precision}"
                           shortDesc="#{bindings.ItemServiceCategory.hints.tooltip}" id="it3">
               <f:validator binding="#{bindings.ItemServiceCategory.validator}"/>
-            </af:inputText>
+            </af:inputText>-->
+            <af:selectOneChoice value="#{bindings.ItemServiceCategory1.inputValue}"
+                                label="#{bindings.ItemServiceCategory1.label}"
+                                required="#{bindings.ItemServiceCategory1.hints.mandatory}"
+                                shortDesc="#{bindings.ItemServiceCategory1.hints.tooltip}" id="soc7">
+              <f:selectItems value="#{bindings.ItemServiceCategory1.items}" id="si7"/>
+              <f:validator binding="#{bindings.ItemServiceCategory1.validator}"/>
+            </af:selectOneChoice>
             <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="#{bindings.EffectiveFrom.hints.label}"
                           required="#{bindings.EffectiveFrom.hints.mandatory}"
                           columns="#{bindings.EffectiveFrom.hints.displayWidth}"

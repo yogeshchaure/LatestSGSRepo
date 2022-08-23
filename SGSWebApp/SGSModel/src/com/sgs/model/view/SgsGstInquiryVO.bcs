@@ -59,3 +59,24 @@ def pType_YesNoList_BindVariable_BoundParameter()
 'YES_NO'
 }
 
+
+@AccessorParameterExpression(accessorName="PlaceOfSupplyLOV", name="pType")
+def pType_PlaceOfSupplyLOV_BindVariable_BoundParameter()
+{
+'PLACE_OF_SUPPLY'
+}
+
+
+@AccessorParameterExpression(accessorName="ItemServiceCategoryLOV", name="pType")
+def pType_ItemServiceCategoryLOV_BindVariable_BoundParameter()
+{
+'ITEM_SERVICE_CATEGORY'
+}
+
+
+@AccessorParameterExpression(accessorName="IdenticalGSTRegNoLOV", name="pType")
+def pType_IdenticalGSTRegNoLOV_BindVariable_BoundParameter()
+{
+'YES_NO'
+}
+

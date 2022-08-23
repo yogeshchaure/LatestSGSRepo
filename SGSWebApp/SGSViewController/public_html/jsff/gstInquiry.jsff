@@ -74,10 +74,32 @@
                            <f:validator binding="#{row.bindings.PlaceOfsupply.validator}"/>
                         </af:selectOneChoice>
                      </af:column>
-                     <af:column headerText="#{bindings.SgsGstInquiryVO1.hints.TypeOfsupply.label}" id="resId1c4">
-                        <af:outputText value="#{row.TypeOfsupply}"
-                                       shortDesc="#{bindings.SgsGstInquiryVO1.hints.TypeOfsupply.tooltip}" id="ot1"/>
+                     <af:column headerText="Type of Supply" id="resId1c4">
+                         <af:selectOneChoice value="#{row.bindings.TypeOfsupply.inputValue}"
+                                            label="#{row.bindings.TypeOfsupply.label}"
+                                            required="#{bindings.SgsGstInquiryVO1.hints.TypeOfsupply.mandatory}"
+                                            shortDesc="#{bindings.SgsGstInquiryVO1.hints.TypeOfsupply.tooltip}"
+                                            readOnly="true" id="soc4">
+                           <f:selectItems value="#{row.bindings.TypeOfsupply.items}" id="si4"/>
+                           <f:validator binding="#{row.bindings.TypeOfsupply.validator}"/>
+                        </af:selectOneChoice>
                      </af:column>
+                     <af:column headerText="Exempt Supply" id="c1">
+                        <af:selectOneChoice value="#{row.bindings.ExemptSupply.inputValue}"
+                                            label="#{row.bindings.ExemptSupply.label}"
+                                            required="#{bindings.SgsGstInquiryVO1.hints.ExemptSupply.mandatory}"
+                                            shortDesc="#{bindings.SgsGstInquiryVO1.hints.ExemptSupply.tooltip}"
+                                            readOnly="true" id="soc1">
+                           <f:selectItems value="#{row.bindings.ExemptSupply.items}" id="si1"/>
+                           <f:validator binding="#{row.bindings.ExemptSupply.validator}"/>
+                        </af:selectOneChoice>
+                     </af:column>
+                      <af:column headerText="Rate of Tax"
+                                   id="resId1c7">
+                            <af:outputText value="#{row.RATEOFTAX1}"
+                                           shortDesc="#{bindings.SgsGstInquiryVO1.hints.RATEOFTAX1.tooltip}"
+                                           id="ot3"/>
+                        </af:column>
                      <af:column headerText="#{bindings.SgsGstInquiryVO1.hints.EffectiveTo.label}" id="resId1c5">
                         <af:outputText value="#{row.EffectiveTo}"
                                        shortDesc="#{bindings.SgsGstInquiryVO1.hints.EffectiveTo.tooltip}" id="ot2">

@@ -18,6 +18,9 @@
           <Item Value="PlaceOfsupply"/>
           <Item Value="TypeOfsupply"/>
           <Item Value="EffectiveTo"/>
+           <Item Value="ExemptSupply"/>
+            <Item Value="RATEOFTAX1"/> 
+             <Item Value="TypeOfservice"/> 
         </AttrNames>
       </nodeDefinition>
     </tree>
