@@ -168,6 +168,54 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="PlaceOfSupplyLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsGstInquiryVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="ItemServiceCategoryLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsGstInquiryVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="IdenticalGSTRegNoLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsGstInquiryVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_ServiceProvider"
     ListVOName="ServiceProviderLOV"
@@ -188,7 +236,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_PlaceOfsupply"
-    ListVOName="ServiceProviderLOV"
+    ListVOName="PlaceOfSupplyLOV"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -198,6 +246,9 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -293,6 +344,42 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IdenticalGstReg"
+    ListVOName="IdenticalGSTRegNoLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IdenticalGstReg"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemServiceCategory"
+    ListVOName="ItemServiceCategoryLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemServiceCategory"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -470,13 +557,16 @@
     PrecisionRule="true"
     EntityAttrName="IdenticalGstReg"
     EntityUsage="SgsGstInquiry"
-    AliasName="IDENTICAL_GST_REG">
+    AliasName="IDENTICAL_GST_REG"
+    LOVName="LOV_IdenticalGstReg">
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="13.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsGstInquiryVO.IdenticalGstReg_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -515,13 +605,16 @@
     PrecisionRule="true"
     EntityAttrName="ItemServiceCategory"
     EntityUsage="SgsGstInquiry"
-    AliasName="ITEM_SERVICE_CATEGORY">
+    AliasName="ITEM_SERVICE_CATEGORY"
+    LOVName="LOV_ItemServiceCategory">
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="16.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsGstInquiryVO.ItemServiceCategory_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -534,12 +627,12 @@
     LOVName="LOV_PlaceOfsupply">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="2.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsGstInquiryVO.PlaceOfsupply_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -701,6 +794,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="RATEOFTAX1"
+    PrecisionRule="true"
+    EntityAttrName="RATEOFTAX1"
+    EntityUsage="SgsGstInquiry"
+    AliasName="RATE_OF_TAX1"/>
   <ViewCriteria
     Name="SgsGstInquiryVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsGstInquiryVO"
