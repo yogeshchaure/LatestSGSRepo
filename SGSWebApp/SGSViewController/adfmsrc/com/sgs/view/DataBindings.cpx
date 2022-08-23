@@ -89,6 +89,8 @@
         <page path="/jsff/FixedAssets.jsff" usageId="com_sgs_view_FixedAssetsPageDef"/>
         <page path="/jsff/IsdPage.jsff" usageId="com_sgs_view_IsdPagePageDef"/>
         <page path="/jsff/IsdForm.jsff" usageId="com_sgs_view_IsdFormPageDef"/>
+        <page path="/bTaskFlow/TPASetupBTF.xml#TPASetupBTF@SetCurrentRowWithKeyValue"
+              usageId="com_sgs_view_TPASetupBTF_TPASetupBTF_SetCurrentRowWithKeyValuePageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -174,6 +176,8 @@
         <page id="com_sgs_view_FixedAssetsPageDef" path="jsff.FixedAssetsPageDef"/>
         <page id="com_sgs_view_IsdPagePageDef" path="jsff.IsdPagePageDef"/>
         <page id="com_sgs_view_IsdFormPageDef" path="jsff.IsdFormPageDef"/>
+        <page id="com_sgs_view_TPASetupBTF_TPASetupBTF_SetCurrentRowWithKeyValuePageDef"
+              path="bTaskFlow.TPASetupBTF_TPASetupBTF_SetCurrentRowWithKeyValuePageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"
