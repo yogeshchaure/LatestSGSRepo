@@ -114,13 +114,18 @@
               <f:selectItems value="#{bindings.IdenticalGstReg1.items}" id="si8"/>
               <f:validator binding="#{bindings.IdenticalGstReg1.validator}"/>
             </af:selectOneChoice>
+             <af:panelLabelAndMessage label="Rate of Tax" id="plam1">
+                    <af:panelGroupLayout id="pgl2" layout="horizontal">
             <af:inputText value="#{bindings.RateOfTax.inputValue}" label="#{bindings.RateOfTax.hints.label}"
-                          required="#{bindings.RateOfTax.hints.mandatory}"
+                          required="#{bindings.RateOfTax.hints.mandatory}" simple="true"
                           columns="#{bindings.RateOfTax.hints.displayWidth}"
                           maximumLength="#{bindings.RateOfTax.hints.precision}"
                           shortDesc="#{bindings.RateOfTax.hints.tooltip}" id="it2">
               <f:validator binding="#{bindings.RateOfTax.validator}"/>
             </af:inputText>
+             <af:outputText value="%" id="ot1"/>
+                </af:panelGroupLayout>
+            </af:panelLabelAndMessage>
             <!--<af:selectOneChoice value="#{bindings.HsnCode.inputValue}" label="#{bindings.HsnCode.label}"
                                   required="#{bindings.HsnCode.hints.mandatory}"
                                   shortDesc="#{bindings.HsnCode.hints.tooltip}" id="soc7">

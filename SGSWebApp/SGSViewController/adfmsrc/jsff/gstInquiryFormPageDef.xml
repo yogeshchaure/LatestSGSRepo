@@ -132,7 +132,7 @@
           id="ItemServiceCategory1" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_IdenticalGstReg" id="IdenticalGstReg1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_TypeOfservice" id="TypeOfsupply"
+    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_TypeOfsupply" id="TypeOfsupply"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <button IterBinding="SgsGstInquiryVO1Iterator" id="Recoverable" DTSupportsMRU="false" StaticList="true">
       <AttrNames>
