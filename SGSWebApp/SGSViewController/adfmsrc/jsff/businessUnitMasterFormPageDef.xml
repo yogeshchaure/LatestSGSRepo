@@ -35,7 +35,7 @@
     </attributeValues>
     <attributeValues IterBinding="SgsBusinessUnitMasterVO1Iterator" id="AlternateBu">
       <AttrNames>
-        <Item Value="AlternateBu"/>
+        <Item Value="AlternateBuDepartment"/>
       </AttrNames>
     </attributeValues>
     <list IterBinding="SgsBusinessUnitMasterVO1Iterator" StaticList="false" Uses="LOV_NettingApplicability"
@@ -79,5 +79,11 @@
     </attributeValues>
     <list IterBinding="SgsBusinessUnitMasterVO1Iterator" StaticList="false" Uses="LOV_ThresholdApplicability"
           id="ThresholdApplicability" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsBusinessUnitMasterVO1Iterator" StaticList="false" Uses="LOV_AlternateBuDepartment"
+          id="AlternateBuDepartment" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsBusinessUnitMasterVO1Iterator" StaticList="false" Uses="LOV_CollBU" id="CollBU"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsBusinessUnitMasterVO1Iterator" StaticList="false" Uses="LOV_PayingBU" id="PayingBU"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

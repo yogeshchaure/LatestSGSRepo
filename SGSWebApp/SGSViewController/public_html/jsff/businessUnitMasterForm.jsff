@@ -23,7 +23,7 @@
                        accessKey="C"/>
           </af:toolbar>
         </f:facet>
-        <af:panelFormLayout id="pfl1" rows="9">
+        <af:panelFormLayout id="pfl1" rows="10">
           <af:inputText value="#{bindings.BuName.inputValue}" label="Business Unit"
                         required="#{bindings.BuName.hints.mandatory}" columns="#{bindings.BuName.hints.displayWidth}"
                         maximumLength="#{bindings.BuName.hints.precision}" shortDesc="#{bindings.BuName.hints.tooltip}"
@@ -35,6 +35,13 @@
                               shortDesc="#{bindings.Opration_Unit.hints.tooltip}" id="soc9">
             <f:selectItems value="#{bindings.Opration_Unit.items}" id="si9"/>
             <f:validator binding="#{bindings.Opration_Unit.validator}"/>
+          </af:selectOneChoice>
+          <af:selectOneChoice value="#{bindings.AlternateBuDepartment.inputValue}"
+                              label="Department"
+                              required="#{bindings.AlternateBuDepartment.hints.mandatory}"
+                              shortDesc="#{bindings.AlternateBuDepartment.hints.tooltip}" id="soc10">
+            <f:selectItems value="#{bindings.AlternateBuDepartment.items}" id="si10"/>
+            <f:validator binding="#{bindings.AlternateBuDepartment.validator}"/>
           </af:selectOneChoice>
           <af:selectOneChoice value="#{bindings.LeagalEntity.inputValue}" label="Legal Entity"
                               required="#{bindings.LeagalEntity.hints.mandatory}"
@@ -54,6 +61,13 @@
             <f:selectItems value="#{bindings.BuZone.items}" id="si3"/>
             <f:validator binding="#{bindings.BuZone.validator}"/>
           </af:selectOneChoice>
+          <af:inputText value="#{bindings.GstRegNum.inputValue}" label="GST Registration Number"
+                        required="#{bindings.GstRegNum.hints.mandatory}"
+                        columns="#{bindings.GstRegNum.hints.displayWidth}"
+                        maximumLength="#{bindings.GstRegNum.hints.precision}"
+                        shortDesc="#{bindings.GstRegNum.hints.tooltip}" id="it3">
+            <f:validator binding="#{bindings.GstRegNum.validator}"/>
+          </af:inputText>
           <af:selectOneChoice value="#{bindings.BusinessControllers.inputValue}"
                               label="#{bindings.BusinessControllers.label}"
                               required="#{bindings.BusinessControllers.hints.mandatory}"
@@ -130,13 +144,18 @@
                         shortDesc="#{bindings.ICoCustomerName.hints.tooltip}" id="it5">
             <f:validator binding="#{bindings.ICoCustomerName.validator}"/>
           </af:inputText>
-          <af:inputText value="#{bindings.GstRegNum.inputValue}" label="GST Registration Number"
-                        required="#{bindings.GstRegNum.hints.mandatory}"
-                        columns="#{bindings.GstRegNum.hints.displayWidth}"
-                        maximumLength="#{bindings.GstRegNum.hints.precision}"
-                        shortDesc="#{bindings.GstRegNum.hints.tooltip}" id="it3">
-            <f:validator binding="#{bindings.GstRegNum.validator}"/>
-          </af:inputText>
+          <af:selectOneChoice value="#{bindings.CollBU.inputValue}" label="Collection Business Unit"
+                              required="#{bindings.CollBU.hints.mandatory}" shortDesc="#{bindings.CollBU.hints.tooltip}"
+                              id="soc11">
+            <f:selectItems value="#{bindings.CollBU.items}" id="si11"/>
+            <f:validator binding="#{bindings.CollBU.validator}"/>
+          </af:selectOneChoice>
+          <af:selectOneChoice value="#{bindings.PayingBU.inputValue}" label="Paying Business Unit"
+                              required="#{bindings.PayingBU.hints.mandatory}"
+                              shortDesc="#{bindings.PayingBU.hints.tooltip}" id="soc12">
+            <f:selectItems value="#{bindings.PayingBU.items}" id="si12"/>
+            <f:validator binding="#{bindings.PayingBU.validator}"/>
+          </af:selectOneChoice>
           <af:inputDate value="#{bindings.UpdatedDate.inputValue}" label="#{bindings.UpdatedDate.hints.label}"
                         required="#{bindings.UpdatedDate.hints.mandatory}"
                         columns="#{bindings.UpdatedDate.hints.displayWidth}"

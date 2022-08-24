@@ -357,7 +357,7 @@
           </af:panelFormLayout>
         </af:panelBox>
       </af:panelBox>
-       <af:panelBox id="pb15" text="Rectification Entry Details" disclosed="false" rendered="#{pageFlowScope.pStatus eq 'Unprocessed' || pageFlowScope.pStatus eq 'Rectification - Pending Approval'}">
+       <af:panelBox id="pb15" text="Rectification Entry Details" disclosed="false" rendered="true">
           <f:facet name="toolbar"/>
           <af:panelGroupLayout id="pf1l5" >
             <af:table value="#{bindings.RectificationEntryDetailsVO.collectionModel}" var="row"
@@ -479,7 +479,7 @@
             </af:panelLabelAndMessage>
           </af:panelFormLayout>
         </af:panelBox>
-          <af:panelBox id="pb7" text="Hold Details" disclosed="false" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}">
+          <af:panelBox id="pb7" text="Hold Details" disclosed="false" rendered="true">
           <f:facet name="toolbar"/>
          
           <af:panelGroupLayout id="pgl3" layout="horizontal">
@@ -549,7 +549,7 @@
           </af:panelGroupLayout>
          
         </af:panelBox>
-         <af:panelBox id="pb10" text="Other Receivables Details" disclosed="false" rendered="#{pageFlowScope.pStatus eq 'Pending for Submission'}">
+         <af:panelBox id="pb10" text="Other Receivables Details" disclosed="false" rendered="true">
           <f:facet name="toolbar"/>
           <af:panelGroupLayout id="pgl4" >
             <af:table value="#{bindings.SgsOtherReceivablesDetailsVO.collectionModel}" var="row"

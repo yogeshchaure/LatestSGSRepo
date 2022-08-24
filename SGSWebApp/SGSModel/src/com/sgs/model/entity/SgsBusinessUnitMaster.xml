@@ -256,6 +256,30 @@
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="CollBU"
+    Precision="80"
+    ColumnName="COLL_B_U"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_BUSINESS_UNIT_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PayingBU"
+    Precision="80"
+    ColumnName="PAYING_B_U"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_BUSINESS_UNIT_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PKSGSBUSINESSUNITMASTER"
     PrimaryKey="true">

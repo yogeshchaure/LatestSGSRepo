@@ -42,7 +42,9 @@ public class SgsBusinessUnitMasterImpl extends EntityImpl {
         UpdatedBy,
         GstRegNum,
         Opration_Unit,
-        ThresholdApplicability;
+        ThresholdApplicability,
+        CollBU,
+        PayingBU;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -90,6 +92,8 @@ public class SgsBusinessUnitMasterImpl extends EntityImpl {
     public static final int GSTREGNUM = AttributesEnum.GstRegNum.index();
     public static final int OPRATION_UNIT = AttributesEnum.Opration_Unit.index();
     public static final int THRESHOLDAPPLICABILITY = AttributesEnum.ThresholdApplicability.index();
+    public static final int COLLBU = AttributesEnum.CollBU.index();
+    public static final int PAYINGBU = AttributesEnum.PayingBU.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -447,6 +451,38 @@ public class SgsBusinessUnitMasterImpl extends EntityImpl {
      */
     public void setThresholdApplicability(String value) {
         setAttributeInternal(THRESHOLDAPPLICABILITY, value);
+    }
+
+    /**
+     * Gets the attribute value for CollBU, using the alias name CollBU.
+     * @return the value of CollBU
+     */
+    public String getCollBU() {
+        return (String) getAttributeInternal(COLLBU);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CollBU.
+     * @param value value to set the CollBU
+     */
+    public void setCollBU(String value) {
+        setAttributeInternal(COLLBU, value);
+    }
+
+    /**
+     * Gets the attribute value for PayingBU, using the alias name PayingBU.
+     * @return the value of PayingBU
+     */
+    public String getPayingBU() {
+        return (String) getAttributeInternal(PAYINGBU);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PayingBU.
+     * @param value value to set the PayingBU
+     */
+    public void setPayingBU(String value) {
+        setAttributeInternal(PAYINGBU, value);
     }
 
     /**
