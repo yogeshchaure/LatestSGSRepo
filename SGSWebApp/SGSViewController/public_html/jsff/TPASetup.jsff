@@ -7,7 +7,7 @@
         <f:facet name="top"/>
         <f:facet name="bottom"/>
         <f:facet name="center">
-            <af:panelBox text="TPA Master" id="pb1">
+            <af:panelBox text="Transfer Pricing Agreement Setup" id="pb1">
                 <f:facet name="toolbar"/>
                 <af:panelGroupLayout layout="vertical" id="pgl1">
                     <af:panelHeader text=" " id="ph1">
@@ -46,7 +46,9 @@
                             <af:column headerText="TPA ID" id="resId1c1">
                                 <!--<af:outputText value="#{row.TpaId}"
                                                shortDesc="#{bindings.SgsTpaMasterVO1.hints.TpaId.tooltip}" id="ot1"/>-->
-                                <af:link text="#{row.TpaId}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
+                                <af:link text="#{row.TpaId}" id="l1" action="EDIT" inlineStyle="font-weight:bold;">
+                                    <af:setPropertyListener from="#{row.TpamId}" to="#{pageFlowScope.ID}" type="action"/>
+                                </af:link>
                             </af:column>
                             <af:column headerText="Legal Entity (Service Provider)" id="resId1c2">
                                 <af:selectOneChoice value="#{row.bindings.LeServiceProvider.inputValue}"
@@ -68,6 +70,31 @@
                                     <f:validator binding="#{row.bindings.LeServiceReceiver.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
+                             <af:column headerText="Netting Applicability" id="c2">
+                                <af:selectOneChoice value="#{row.bindings.NETTINGAPPLICATIBILITY.inputValue}"
+                                                    label="#{row.bindings.NETTINGAPPLICATIBILITY.label}"
+                                                    required="#{bindings.SgsTpaMasterVO1.hints.NETTINGAPPLICATIBILITY.mandatory}"
+                                                    shortDesc="#{bindings.SgsTpaMasterVO1.hints.NETTINGAPPLICATIBILITY.tooltip}"
+                                                    readOnly="true" id="soc6">
+                                    <f:selectItems value="#{row.bindings.NETTINGAPPLICATIBILITY.items}" id="si6"/>
+                                    <f:validator binding="#{row.bindings.NETTINGAPPLICATIBILITY.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                             <af:column headerText="BD Commision Applicability" id="c3">
+                                <af:selectOneChoice value="#{row.bindings.BDCOMMISSIONAPPLICABILITY.inputValue}"
+                                                    label="#{row.bindings.BDCOMMISSIONAPPLICABILITY.label}"
+                                                    required="#{bindings.SgsTpaMasterVO1.hints.BDCOMMISSIONAPPLICABILITY.mandatory}"
+                                                    shortDesc="#{bindings.SgsTpaMasterVO1.hints.BDCOMMISSIONAPPLICABILITY.tooltip}"
+                                                    readOnly="true" id="soc7">
+                                    <f:selectItems value="#{row.bindings.BDCOMMISSIONAPPLICABILITY.items}" id="si7"/>
+                                    <f:validator binding="#{row.bindings.BDCOMMISSIONAPPLICABILITY.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                             <af:column headerText="BD Commission Rate" id="resId1c5" >
+                                <af:outputText value="#{row.BDCOMMISSIONRATE}"
+                                               shortDesc="#{bindings.SgsTpaMasterVO1.hints.BDCOMMISSIONRATE.tooltip}"
+                                               id="ot3"/>
+                            </af:column>
                             <af:column headerText="Pass-Through" id="resId1c4">
                                 <af:selectOneChoice value="#{row.bindings.PassThrough.inputValue}"
                                                     label="#{row.bindings.PassThrough.label}"
@@ -78,7 +105,7 @@
                                     <f:validator binding="#{row.bindings.PassThrough.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Pass-Through BU" id="resId1c5">
+                            <af:column headerText="Pass-Through BU" id="c4">
                                 <af:selectOneChoice value="#{row.bindings.PassThroughBu.inputValue}"
                                                     label="#{row.bindings.PassThroughBu.label}"
                                                     required="#{bindings.SgsTpaMasterVO1.hints.PassThroughBu.mandatory}"

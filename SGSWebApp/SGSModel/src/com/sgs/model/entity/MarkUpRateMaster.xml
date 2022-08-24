@@ -118,6 +118,24 @@
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="MARKUPRATEID"
+    Precision="100"
+    ColumnName="MARK_UP_RATE_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_MARKUP_RATE_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.entity.MarkUpRateMaster.MARKUPRATEID_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Key
     Name="PKSGSMARKUPRATEMASTER"
     PrimaryKey="true">
@@ -138,4 +156,8 @@
       operation="removeCurrentRow"
       privilege="delete"/>
   </Permission>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sgs.model.SGSModelBundle"/>
+  </ResourceBundle>
 </Entity>

@@ -7,7 +7,7 @@
         <f:facet name="top"/>
         <f:facet name="bottom"/>
         <f:facet name="center">
-            <af:panelBox text="Review of Allocated Data" id="pb1">
+            <af:panelBox text="Intercompany Dashboard" id="pb1">
                 <f:facet name="toolbar"/>
                 <af:panelGroupLayout layout="vertical" id="pgl1">
                     <af:panelHeader text="" id="ph1">
@@ -101,9 +101,14 @@
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceGlAccount.tooltip}"
                                            id="ot3"/>
                         </af:column>
-                        <af:column headerText="Source OU" id="resId1c8">
+                         <af:column headerText="Source BU" id="resId1c8">
+                            <af:outputText value="#{row.SOURCEBU}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SOURCEBU.tooltip}" id="ot4"/>
+                        </af:column>
+                        <af:column headerText="Source OU" id="c1">
                             <af:outputText value="#{row.SourceOu}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceOu.tooltip}" id="ot4"/>
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceOu.tooltip}"
+                                           id="ot26"/>
                         </af:column>
                         <af:column headerText="Source Job Code" id="resId1c9">
                             <af:outputText value="#{row.SourceJobCode}"
@@ -128,16 +133,21 @@
                                                   pattern="#{bindings.SgsRevAllocatedDtVO.hints.SourceAmount.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column headerText="Target GL Account"
+                        <af:column headerText="Target GL Account" rendered="false"
                                    id="resId1c13">
                             <af:outputText value="#{row.TargetGlAccount}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetGlAccount.tooltip}"
                                            id="ot9"/>
                         </af:column>
-                        <af:column headerText="Target OU" id="resId1c14">
+                        <af:column headerText="Target BU" id="resId1c14">
+                            <af:outputText value="#{row.TARGETBU}"
+                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TARGETBU.tooltip}"
+                                           id="ot10"/>
+                        </af:column>
+                        <af:column headerText="Target OU" id="c3">
                             <af:outputText value="#{row.TargetOu}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetOu.tooltip}"
-                                           id="ot10"/>
+                                           id="ot27"/>
                         </af:column>
                         <af:column headerText="Target Job Code"
                                    id="resId1c15">
@@ -185,7 +195,7 @@
                                 <f:validator binding="#{row.bindings.AccountingTreatment.validator}"/>
                             </af:selectOneChoice>
                         </af:column>
-                        <af:column headerText="Market-up rate (%)" id="resId1c21">
+                        <af:column headerText="Mark-up rate (%)" id="resId1c21">
                             <af:outputText value="#{row.MarketUpRate}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpRate.tooltip}"
                                            id="ot15">
@@ -206,7 +216,7 @@
                                                   pattern="#{bindings.SgsRevAllocatedDtVO.hints.Amount.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column headerText="Market-up amount"
+                        <af:column headerText="Mark-up amount"
                                    id="resId1c24">
                             <af:outputText value="#{row.MarketUpAmount}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpAmount.tooltip}"
@@ -224,14 +234,14 @@
                                                   pattern="#{bindings.SgsRevAllocatedDtVO.hints.BaseAmountBeforeTax.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column headerText="GST rate" id="resId1c26">
+                        <af:column headerText="GST / VAT Rate" id="resId1c26">
                             <af:outputText value="#{row.GstRate}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.GstRate.tooltip}" id="ot20">
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.SgsRevAllocatedDtVO.hints.GstRate.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column headerText="GST Amount" id="resId1c27">
+                        <af:column headerText="GST / VAT Amount" id="resId1c27">
                             <af:outputText value="#{row.GstAmount}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.GstAmount.tooltip}"
                                            id="ot21">
@@ -248,14 +258,14 @@
                                                   pattern="#{bindings.SgsRevAllocatedDtVO.hints.TotalAmountAfterTax.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column headerText="WHT rate" id="resId1c29">
+                        <af:column headerText="WHT / TDS Rate" id="resId1c29">
                             <af:outputText value="#{row.WhtRate}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.WhtRate.tooltip}" id="ot23">
                                 <af:convertNumber groupingUsed="false"
                                                   pattern="#{bindings.SgsRevAllocatedDtVO.hints.WhtRate.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column headerText="WHT amount" id="resId1c30">
+                        <af:column headerText="WHT / TDS Amount" id="resId1c30">
                             <af:outputText value="#{row.WhtAmount}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.WhtAmount.tooltip}"
                                            id="ot24">

@@ -73,7 +73,7 @@
     </attributeValues>
     <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="RateOfTax">
       <AttrNames>
-        <Item Value="RateOfTax"/>
+        <Item Value="RATEOFTAX1"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="ServiceProvider">
@@ -96,11 +96,11 @@
         <Item Value="TypeOfservice"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="TypeOfsupply">
+    <!--<attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="TypeOfsupply">
       <AttrNames>
         <Item Value="TypeOfsupply"/>
       </AttrNames>
-    </attributeValues>
+    </attributeValues>-->
     <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="UpdatedBy">
       <AttrNames>
         <Item Value="UpdatedBy"/>
@@ -128,5 +128,21 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_HsnCode" id="HsnCode1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_ItemServiceCategory"
+          id="ItemServiceCategory1" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_IdenticalGstReg" id="IdenticalGstReg1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsGstInquiryVO1Iterator" StaticList="false" Uses="LOV_TypeOfsupply" id="TypeOfsupply"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <button IterBinding="SgsGstInquiryVO1Iterator" id="Recoverable" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="Recoverable"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Y"/>
+        <Item Value="N"/>
+      </ValueList>
+        
+    </button>
   </bindings>
 </pageDefinition>

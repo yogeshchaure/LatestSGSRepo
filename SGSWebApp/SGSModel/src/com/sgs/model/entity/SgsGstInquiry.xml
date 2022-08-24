@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="SGS_GST_INQUIRY"
   AliasName="SgsGstInquiry"
-  BindingStyle="JDBC">
+  BindingStyle="JDBC"
+  RowClass="com.sgs.model.entity.SgsGstInquiryImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="GstNum"
     IsNotNull="true"
@@ -277,13 +282,29 @@
   </Attribute>
   <Attribute
     Name="Recoverable"
-    Precision="80"
-    ColumnName="Recoverable"
+    Precision="1"
+    ColumnName="RECOVERABLE"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
     TableName="SGS_GST_INQUIRY"
     DefaultValue="Y"/>
+  <Attribute
+    Name="RATEOFTAX1"
+    Precision="10"
+    Scale="2"
+    ColumnName="RATE_OF_TAX1"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="SGS_GST_INQUIRY">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.entity.SgsGstInquiry.RATEOFTAX1_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Key
     Name="PKSGSGSTINQUIRY"
     PrimaryKey="true">
@@ -304,4 +325,8 @@
       operation="removeCurrentRow"
       privilege="delete"/>
   </Permission>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sgs.model.SGSModelBundle"/>
+  </ResourceBundle>
 </Entity>

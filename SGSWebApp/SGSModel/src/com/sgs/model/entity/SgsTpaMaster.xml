@@ -166,6 +166,27 @@
       <Attr Name="_DisplaySize" Value="5"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="BDCOMMISSIONAPPLICABILITY"
+    Precision="80"
+    ColumnName="BD_COMMISSION_APPLICABILITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TPA_MASTER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BDCOMMISSIONRATE"
+    Precision="10"
+    Scale="2"
+    ColumnName="BD_COMMISSION_RATE"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="SGS_TPA_MASTER"/>
   <Key
     Name="PKSGSTPAMASTER"
     PrimaryKey="true">

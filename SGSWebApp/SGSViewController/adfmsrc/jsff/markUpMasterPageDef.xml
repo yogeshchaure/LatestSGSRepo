@@ -18,6 +18,9 @@
           <Item Value="MarkupRate"/>
           <Item Value="EffectiveRom"/>
           <Item Value="EffectiveTill"/>
+          <Item Value="MARKUPRATEID"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

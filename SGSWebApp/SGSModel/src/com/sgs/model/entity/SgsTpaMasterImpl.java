@@ -2,6 +2,8 @@ package com.sgs.model.entity;
 
 import com.sgs.model.service.SGSAppModuleImpl;
 
+import java.math.BigDecimal;
+
 import java.sql.Date;
 
 import oracle.adf.share.logging.ADFLogger;
@@ -34,7 +36,9 @@ public class SgsTpaMasterImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         OperationUnit,
-        NETTINGAPPLICATIBILITY;
+        NETTINGAPPLICATIBILITY,
+        BDCOMMISSIONAPPLICABILITY,
+        BDCOMMISSIONRATE;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -74,6 +78,8 @@ public class SgsTpaMasterImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int OPERATIONUNIT = AttributesEnum.OperationUnit.index();
     public static final int NETTINGAPPLICATIBILITY = AttributesEnum.NETTINGAPPLICATIBILITY.index();
+    public static final int BDCOMMISSIONAPPLICABILITY = AttributesEnum.BDCOMMISSIONAPPLICABILITY.index();
+    public static final int BDCOMMISSIONRATE = AttributesEnum.BDCOMMISSIONRATE.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -87,6 +93,7 @@ public class SgsTpaMasterImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTpaMaster");
     }
+
 
     /**
      * Gets the attribute value for TpamId, using the alias name TpamId.
@@ -280,6 +287,38 @@ public class SgsTpaMasterImpl extends EntityImpl {
         setAttributeInternal(NETTINGAPPLICATIBILITY, value);
     }
 
+
+    /**
+     * Gets the attribute value for BDCOMMISSIONAPPLICABILITY, using the alias name BDCOMMISSIONAPPLICABILITY.
+     * @return the value of BDCOMMISSIONAPPLICABILITY
+     */
+    public String getBDCOMMISSIONAPPLICABILITY() {
+        return (String) getAttributeInternal(BDCOMMISSIONAPPLICABILITY);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BDCOMMISSIONAPPLICABILITY.
+     * @param value value to set the BDCOMMISSIONAPPLICABILITY
+     */
+    public void setBDCOMMISSIONAPPLICABILITY(String value) {
+        setAttributeInternal(BDCOMMISSIONAPPLICABILITY, value);
+    }
+
+    /**
+     * Gets the attribute value for BDCOMMISSIONRATE, using the alias name BDCOMMISSIONRATE.
+     * @return the value of BDCOMMISSIONRATE
+     */
+    public BigDecimal getBDCOMMISSIONRATE() {
+        return (BigDecimal) getAttributeInternal(BDCOMMISSIONRATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BDCOMMISSIONRATE.
+     * @param value value to set the BDCOMMISSIONRATE
+     */
+    public void setBDCOMMISSIONRATE(BigDecimal value) {
+        setAttributeInternal(BDCOMMISSIONRATE, value);
+    }
 
     /**
      * @param tpamId key constituent

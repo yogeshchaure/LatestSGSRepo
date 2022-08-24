@@ -7,7 +7,7 @@
         <f:facet name="top"/>
         <f:facet name="bottom"/>
         <f:facet name="center">
-            <af:panelBox text="TPA Master" id="pb1">
+            <af:panelBox text="Transfer Pricing Agreement Setup" id="pb1">
                 <f:facet name="toolbar">
                     <af:toolbar id="t1">
                         <af:button id="b1" action="back" actionListener="#{bindings.Commit.execute}"
@@ -20,7 +20,7 @@
                                    immediate="true" text="Cancel" accessKey="C"/>
                     </af:toolbar>
                 </f:facet>
-                <af:panelFormLayout id="pfl1" rows="6">
+                <af:panelFormLayout id="pfl1" rows="7">
                     <af:inputText value="#{bindings.TpaId.inputValue}" label="TPA ID"
                                   required="#{bindings.TpaId.hints.mandatory}"
                                   columns="#{bindings.TpaId.hints.displayWidth}"
@@ -69,6 +69,27 @@
                         <f:selectItems value="#{bindings.NETTINGAPPLICATIBILITY.items}" id="si6"/>
                         <f:validator binding="#{bindings.NETTINGAPPLICATIBILITY.validator}"/>
                     </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.BDCOMMISSIONAPPLICABILITY.inputValue}"
+                                        label="BD Commission Applicability"
+                                        required="#{bindings.BDCOMMISSIONAPPLICABILITY.hints.mandatory}"
+                                        shortDesc="#{bindings.BDCOMMISSIONAPPLICABILITY.hints.tooltip}" id="soc7">
+                        <f:selectItems value="#{bindings.BDCOMMISSIONAPPLICABILITY.items}" id="si7"/>
+                        <f:validator binding="#{bindings.BDCOMMISSIONAPPLICABILITY.validator}"/>
+                    </af:selectOneChoice>
+                 
+                        <af:panelLabelAndMessage label="BD Commission Rate" id="plam1">
+                         <af:panelGroupLayout id="pgl2" layout="horizontal">
+                        <af:inputText value="#{bindings.BDCOMMISSIONRATE.inputValue}" label="BD Commission Rate"
+                                      required="#{bindings.BDCOMMISSIONRATE.hints.mandatory}" simple="true"
+                                      columns="#{bindings.BDCOMMISSIONRATE.hints.displayWidth}"
+                                      maximumLength="#{bindings.BDCOMMISSIONRATE.hints.precision}"
+                                      shortDesc="#{bindings.BDCOMMISSIONRATE.hints.tooltip}" id="it5">
+                            <f:validator binding="#{bindings.BDCOMMISSIONRATE.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.BDCOMMISSIONRATE.format}"/>
+                        </af:inputText>
+                        <af:outputText value="%" id="ot1"/>
+                        </af:panelGroupLayout>
+                   </af:panelLabelAndMessage>
                     <af:inputDate value="#{bindings.EffectiveStartDate.inputValue}"
                                   label="#{bindings.EffectiveStartDate.hints.label}"
                                   required="#{bindings.EffectiveStartDate.hints.mandatory}"
@@ -86,20 +107,34 @@
                         <af:convertDateTime pattern="#{bindings.EffectiveEndDate.format}"/>
                     </af:inputDate>
                     <af:inputDate value="#{bindings.UpdatedDate.inputValue}" label="Updated Date"
-                                  required="#{bindings.UpdatedDate.hints.mandatory}"
+                                  required="#{bindings.UpdatedDate.hints.mandatory}" rendered="false"
                                   columns="#{bindings.UpdatedDate.hints.displayWidth}"
                                   shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="id3">
                         <f:validator binding="#{bindings.UpdatedDate.validator}"/>
                         <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
                     </af:inputDate>
                     <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="#{bindings.UpdatedBy.hints.label}"
-                                  required="#{bindings.UpdatedBy.hints.mandatory}"
+                                  required="#{bindings.UpdatedBy.hints.mandatory}" rendered="false"
                                   columns="#{bindings.UpdatedBy.hints.displayWidth}"
                                   maximumLength="#{bindings.UpdatedBy.hints.precision}"
                                   shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="it2">
                         <f:validator binding="#{bindings.UpdatedBy.validator}"/>
                     </af:inputText>
-                    
+                    <af:inputText value="#{bindings.CreatedDate.inputValue}" label="Created Date"
+                                  required="#{bindings.CreatedDate.hints.mandatory}"
+                                  columns="#{bindings.CreatedDate.hints.displayWidth}"
+                                  maximumLength="#{bindings.CreatedDate.hints.precision}"
+                                  shortDesc="#{bindings.CreatedDate.hints.tooltip}" id="it3">
+                        <f:validator binding="#{bindings.CreatedDate.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.CreatedBy.inputValue}" label="Created By"
+                                  required="#{bindings.CreatedBy.hints.mandatory}"
+                                  columns="#{bindings.CreatedBy.hints.displayWidth}"
+                                  maximumLength="#{bindings.CreatedBy.hints.precision}"
+                                  shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it4">
+                        <f:validator binding="#{bindings.CreatedBy.validator}"/>
+                    </af:inputText>
                 </af:panelFormLayout>
             </af:panelBox>
         </f:facet>

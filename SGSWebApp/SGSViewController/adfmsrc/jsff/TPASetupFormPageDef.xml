@@ -50,5 +50,22 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsTpaMasterVO1Iterator" StaticList="false" Uses="LOV_NETTINGAPPLICATIBILITY"
           id="NETTINGAPPLICATIBILITY" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsTpaMasterVO1Iterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTpaMasterVO1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsTpaMasterVO1Iterator" StaticList="false" Uses="LOV_BDCOMMISSIONAPPLICABILITY"
+          id="BDCOMMISSIONAPPLICABILITY" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsTpaMasterVO1Iterator" id="BDCOMMISSIONRATE">
+      <AttrNames>
+        <Item Value="BDCOMMISSIONRATE"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

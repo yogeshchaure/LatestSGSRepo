@@ -3,6 +3,8 @@ package com.sgs.model.service;
 
 import com.sgs.model.view.SgsCustomersVOImpl;
 
+import com.sgs.model.view.SgsTpaMasterVOImpl;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -683,8 +685,8 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
      * Container's getter for SgsTpaMasterVO1.
      * @return SgsTpaMasterVO1
      */
-    public ViewObjectImpl getSgsTpaMasterVO1() {
-        return (ViewObjectImpl) findViewObject("SgsTpaMasterVO1");
+    public SgsTpaMasterVOImpl getSgsTpaMasterVO1() {
+        return (SgsTpaMasterVOImpl) findViewObject("SgsTpaMasterVO1");
     }
 
     /**

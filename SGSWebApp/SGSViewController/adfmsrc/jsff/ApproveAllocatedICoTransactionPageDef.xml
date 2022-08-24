@@ -46,6 +46,8 @@
           <Item Value="TransactionStatus"/>
           <Item Value="PaymentStatus"/>
           <Item Value="PaidAmount"/>
+           <Item Value="SOURCEBU"/>
+            <Item Value="TARGETBU"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
