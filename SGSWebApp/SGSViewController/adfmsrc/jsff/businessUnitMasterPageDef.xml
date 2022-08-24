@@ -17,12 +17,15 @@
           <Item Value="BuName"/>
           <Item Value="LeagalEntity"/>
           <Item Value="BuGeography"/>
-          <Item Value="AlternateBu"/>
           <Item Value="NettingApplicability"/>
           <Item Value="SubLedgerApplicability"/>
           <Item Value="EffectiveEndDate"/>
           <Item Value="Opration_Unit"/>
           <Item Value="GstRegNum"/>
+          <Item Value="AlternateBuDepartment"/>
+          <Item Value="BuStatus"/>
+          <Item Value="ThresholdApplicability"/>
+          <Item Value="Currency"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

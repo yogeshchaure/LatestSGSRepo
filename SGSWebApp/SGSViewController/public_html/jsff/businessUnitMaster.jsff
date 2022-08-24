@@ -7,7 +7,7 @@
     <f:facet name="top"/>
     <f:facet name="bottom"/>
     <f:facet name="center">
-      <af:panelBox text="Business Unit Master" id="pb1">
+      <af:panelBox text="Business Unit Setup" id="pb1">
         <f:facet name="toolbar"/>
         <af:panelGroupLayout layout="vertical" id="pgl1">
           <af:panelHeader text=" " id="ph1">
@@ -44,13 +44,13 @@
                       selectedRowKeys="#{bindings.SgsBusinessUnitMasterVO1.collectionModel.selectedRow}"
                       selectionListener="#{bindings.SgsBusinessUnitMasterVO1.collectionModel.makeCurrent}"
                       rowSelection="single" fetchSize="#{bindings.SgsBusinessUnitMasterVO1.rangeSize}" id="resId1"
-                      styleClass="AFStretchWidth" columnStretching="column:resId1c2">
-              <af:column headerText="Business Unit" id="resId1c1">
+                      styleClass="AFStretchWidth">
+              <af:column headerText="Business Unit" id="resId1c1" width="10%">
                 <!--<af:outputText value="#{row.BuName}"
                                shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.BuName.tooltip}" id="ot1"/>-->
                  <af:link text="#{row.BuName}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
               </af:column>
-              <af:column headerText="Operating Unit" id="c1">
+              <af:column headerText="Operating Unit" id="c1" width="10%">
                 <af:selectOneChoice value="#{row.bindings.Opration_Unit.inputValue}"
                                     label="#{row.bindings.Opration_Unit.label}"
                                     required="#{bindings.SgsBusinessUnitMasterVO1.hints.Opration_Unit.mandatory}"
@@ -60,7 +60,17 @@
                   <f:validator binding="#{row.bindings.Opration_Unit.validator}"/>
                 </af:selectOneChoice>
               </af:column>
-              <af:column headerText="Legal Entity" id="resId1c2">
+              <af:column headerText="Department" id="c3" width="10%">
+                <af:selectOneChoice value="#{row.bindings.AlternateBuDepartment.inputValue}"
+                                    label="#{row.bindings.AlternateBuDepartment.label}"
+                                    required="#{bindings.SgsBusinessUnitMasterVO1.hints.AlternateBuDepartment.mandatory}"
+                                    shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.AlternateBuDepartment.tooltip}"
+                                    readOnly="true" id="soc6">
+                  <f:selectItems value="#{row.bindings.AlternateBuDepartment.items}" id="si6"/>
+                  <f:validator binding="#{row.bindings.AlternateBuDepartment.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column headerText="Legal Entity" id="resId1c2" width="10%">
                 <af:selectOneChoice value="#{row.bindings.LeagalEntity.inputValue}"
                                     label="#{row.bindings.LeagalEntity.label}"
                                     required="#{bindings.SgsBusinessUnitMasterVO1.hints.LeagalEntity.mandatory}"
@@ -70,7 +80,7 @@
                   <f:validator binding="#{row.bindings.LeagalEntity.validator}"/>
                 </af:selectOneChoice>
               </af:column>
-              <af:column headerText="Geography" id="resId1c3">
+              <af:column headerText="Geography" id="resId1c3" width="10%">
                 <af:selectOneChoice value="#{row.bindings.BuGeography.inputValue}"
                                     label="#{row.bindings.BuGeography.label}"
                                     required="#{bindings.SgsBusinessUnitMasterVO1.hints.BuGeography.mandatory}"
@@ -80,23 +90,36 @@
                   <f:validator binding="#{row.bindings.BuGeography.validator}"/>
                 </af:selectOneChoice>
               </af:column>
-              <af:column headerText="Alternate BU" id="resId1c4">
-                <af:outputText value="#{row.AlternateBu}"
-                               shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.AlternateBu.tooltip}" id="ot2"/>
+              <af:column headerText="Status" id="c4" width="10%">
+                <af:selectOneChoice value="#{row.bindings.BuStatus.inputValue}" label="#{row.bindings.BuStatus.label}"
+                                    required="#{bindings.SgsBusinessUnitMasterVO1.hints.BuStatus.mandatory}"
+                                    shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.BuStatus.tooltip}"
+                                    readOnly="true" id="soc7">
+                  <f:selectItems value="#{row.bindings.BuStatus.items}" id="si7"/>
+                  <f:validator binding="#{row.bindings.BuStatus.validator}"/>
+                </af:selectOneChoice>
               </af:column>
-              <af:column headerText="Netting Applicable"
-                         id="resId1c5">
-                <af:selectOneChoice value="#{row.bindings.NettingApplicability.inputValue}"
-                                    label="#{row.bindings.NettingApplicability.label}"
-                                    required="#{bindings.SgsBusinessUnitMasterVO1.hints.NettingApplicability.mandatory}"
-                                    shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.NettingApplicability.tooltip}"
-                                    readOnly="true" id="soc3">
-                  <f:selectItems value="#{row.bindings.NettingApplicability.items}" id="si3"/>
-                  <f:validator binding="#{row.bindings.NettingApplicability.validator}"/>
+              <af:column headerText="Threshold Applicability" id="c5" width="10%">
+                <af:selectOneChoice value="#{row.bindings.ThresholdApplicability.inputValue}"
+                                    label="#{row.bindings.ThresholdApplicability.label}"
+                                    required="#{bindings.SgsBusinessUnitMasterVO1.hints.ThresholdApplicability.mandatory}"
+                                    shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.ThresholdApplicability.tooltip}"
+                                    readOnly="true" id="soc8">
+                  <f:selectItems value="#{row.bindings.ThresholdApplicability.items}" id="si8"/>
+                  <f:validator binding="#{row.bindings.ThresholdApplicability.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column headerText="#{bindings.SgsBusinessUnitMasterVO1.hints.Currency.label}" id="c6" width="10%">
+                <af:selectOneChoice value="#{row.bindings.Currency.inputValue}" label="#{row.bindings.Currency.label}"
+                                    required="#{bindings.SgsBusinessUnitMasterVO1.hints.Currency.mandatory}"
+                                    shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.Currency.tooltip}"
+                                    readOnly="true" id="soc9">
+                  <f:selectItems value="#{row.bindings.Currency.items}" id="si9"/>
+                  <f:validator binding="#{row.bindings.Currency.validator}"/>
                 </af:selectOneChoice>
               </af:column>
               <af:column headerText="Sub-Ledger Applicability"
-                         id="resId1c6">
+                         id="resId1c6" width="10%">
                 <af:selectOneChoice value="#{row.bindings.SubLedgerApplicability.inputValue}"
                                     label="#{row.bindings.SubLedgerApplicability.label}"
                                     required="#{bindings.SgsBusinessUnitMasterVO1.hints.SubLedgerApplicability.mandatory}"
@@ -106,15 +129,11 @@
                   <f:validator binding="#{row.bindings.SubLedgerApplicability.validator}"/>
                 </af:selectOneChoice>
               </af:column>
-              <af:column headerText="Effective End Date" id="resId1c7">
+              <af:column headerText="Effective End Date" id="resId1c7" width="10%">
                 <af:outputText value="#{row.EffectiveEndDate}"
                                shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.EffectiveEndDate.tooltip}" id="ot3">
                   <af:convertDateTime pattern="#{bindings.SgsBusinessUnitMasterVO1.hints.EffectiveEndDate.format}"/>
                 </af:outputText>
-              </af:column>
-              <af:column headerText="#{bindings.SgsBusinessUnitMasterVO1.hints.GstRegNum.label}" id="c2">
-                <af:outputText value="#{row.GstRegNum}"
-                               shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.GstRegNum.tooltip}" id="ot1"/>
               </af:column>
             </af:table>
           </af:panelCollection>

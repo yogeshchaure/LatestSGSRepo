@@ -59,17 +59,6 @@
     </Properties>
   </Variable>
   <Variable
-    Name="bNetting"
-    Kind="viewcriteria"
-    Type="java.lang.String">
-    <Properties>
-      <SchemaBasedProperties>
-        <LABEL
-          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.bNetting_LABEL"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </Variable>
-  <Variable
     Name="bEffectiveEndDate"
     Kind="viewcriteria"
     Type="java.sql.Date">
@@ -77,6 +66,17 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.bEffectiveEndDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="bBUStatus"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.bBUStatus_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Variable>
@@ -194,6 +194,38 @@
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="OUList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsBusinessUnitMasterVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="DepartmentList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsBusinessUnitMasterVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="BUList"
     ViewObjectName="com.sgs.model.view.SgsListVO"
     RowLevelBinds="true">
     <ViewCriteriaUsage
@@ -385,6 +417,60 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_AlternateBuDepartment"
+    ListVOName="DepartmentList"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AlternateBuDepartment"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CollBU"
+    ListVOName="BUList"
+    NullValueFlag="start"
+    NullValueId="LOV_CollBU_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CollBU"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PayingBU"
+    ListVOName="BUList"
+    NullValueFlag="start"
+    NullValueId="LOV_PayingBU_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PayingBU"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SgsBusinessUnitMaster"
     Entity="com.sgs.model.entity.SgsBusinessUnitMaster"/>
@@ -516,11 +602,19 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="AlternateBu"
+    Name="AlternateBuDepartment"
     PrecisionRule="true"
     EntityAttrName="AlternateBu"
     EntityUsage="SgsBusinessUnitMaster"
-    AliasName="ALTERNATE_BU"/>
+    AliasName="ALTERNATE_BU"
+    LOVName="LOV_AlternateBuDepartment">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Currency"
     PrecisionRule="true"
@@ -597,6 +691,34 @@
     EntityAttrName="GstRegNum"
     EntityUsage="SgsBusinessUnitMaster"
     AliasName="GST_REG_NUM"/>
+  <ViewAttribute
+    Name="CollBU"
+    PrecisionRule="true"
+    EntityAttrName="CollBU"
+    EntityUsage="SgsBusinessUnitMaster"
+    AliasName="COLL_B_U"
+    LOVName="LOV_CollBU">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PayingBU"
+    PrecisionRule="true"
+    EntityAttrName="PayingBU"
+    EntityUsage="SgsBusinessUnitMaster"
+    AliasName="PAYING_B_U"
+    LOVName="LOV_PayingBU">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
@@ -694,19 +816,19 @@
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem
+        Name="BuStatus"
+        ViewAttribute="BuStatus"
+        Operator="="
+        Conjunction="AND"
+        Value=":bBUStatus"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
         Name="EffectiveEndDate"
         ViewAttribute="EffectiveEndDate"
         Operator="="
         Conjunction="AND"
         Value=":bEffectiveEndDate"
-        IsBindVarValue="true"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="NettingApplicability"
-        ViewAttribute="NettingApplicability"
-        Operator="="
-        Conjunction="AND"
-        Value=":bNetting"
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem

@@ -52,3 +52,17 @@ def pType_OUList_BindVariable_BoundParameter()
 'OPR_UNIT'
 }
 
+
+@AccessorParameterExpression(accessorName="DepartmentList", name="pType")
+def pType_DepartmentList_BindVariable_BoundParameter()
+{
+'DEPT_ID'
+}
+
+
+@AccessorParameterExpression(accessorName="BUList", name="pType")
+def pType_BUList_BindVariable_BoundParameter()
+{
+'bUSINESS_UNIT'
+}
+
