@@ -253,12 +253,11 @@
   </Attribute>
   <Attribute
     Name="MarketUpRate"
-    Precision="10"
-    Scale="2"
+    Precision="50"
     ColumnName="MARKET_UP_RATE"
     SQLType="DECIMAL"
-    Type="java.math.BigDecimal"
-    ColumnType="DECIMAL"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
     TableName="SGS_REV_ALLOCATED_DT"/>
   <Attribute
     Name="TargetCurrency"
@@ -301,12 +300,11 @@
     TableName="SGS_REV_ALLOCATED_DT"/>
   <Attribute
     Name="GstRate"
-    Precision="10"
-    Scale="2"
+    Precision="50"
     ColumnName="GST_RATE"
     SQLType="DECIMAL"
-    Type="java.math.BigDecimal"
-    ColumnType="DECIMAL"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
     TableName="SGS_REV_ALLOCATED_DT"/>
   <Attribute
     Name="GstAmount"
@@ -328,12 +326,11 @@
     TableName="SGS_REV_ALLOCATED_DT"/>
   <Attribute
     Name="WhtRate"
-    Precision="10"
-    Scale="2"
+    Precision="50"
     ColumnName="WHT_RATE"
     SQLType="DECIMAL"
-    Type="java.math.BigDecimal"
-    ColumnType="DECIMAL"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
     TableName="SGS_REV_ALLOCATED_DT"/>
   <Attribute
     Name="WhtAmount"
