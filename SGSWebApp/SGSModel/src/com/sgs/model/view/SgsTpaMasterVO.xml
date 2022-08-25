@@ -209,7 +209,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_LeServiceReceiver"
-    ListVOName="ServiceReceiverLOV"
+    ListVOName="LegalEntityList"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">

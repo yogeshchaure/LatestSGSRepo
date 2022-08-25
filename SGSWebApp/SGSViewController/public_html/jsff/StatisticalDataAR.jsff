@@ -120,10 +120,16 @@
                                shortDesc="#{bindings.SgsARStatisticalDataVO1.hints.Status.tooltip}" id="ot9"/>
               </af:column>
               <af:column headerText="Approved By" id="c6" width="7%">
+                <af:outputText value="#{row.CreatedBy}"
+                               shortDesc="#{bindings.SgsARStatisticalDataVO1.hints.CreatedBy.tooltip}" id="ot1"/>
                 <!--<af:outputText value="#{row.UpdatedBy}"
                          shortDesc="#{bindings.SgsARStatisticalDataVO1.hints.UpdatedBy.tooltip}" id="ot1"/>-->
               </af:column>
               <af:column headerText="Approval Date" id="c7" width="7%">
+                <af:outputText value="#{row.CreatedDate}"
+                               shortDesc="#{bindings.SgsARStatisticalDataVO1.hints.CreatedDate.tooltip}" id="ot6">
+                  <af:convertDateTime pattern="#{bindings.SgsARStatisticalDataVO1.hints.CreatedDate.format}"/>
+                </af:outputText>
                 <!--<af:outputText value="#{row.UpdatedDate}"
                          shortDesc="#{bindings.SgsARStatisticalDataVO1.hints.UpdatedDate.tooltip}" id="ot6">
             <af:convertDateTime pattern="#{bindings.SgsARStatisticalDataVO1.hints.UpdatedDate.format}"/>

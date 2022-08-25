@@ -45,6 +45,11 @@
                     <credentials>{903}u9gDQ1LKxWhF+baMU+rbQMPzU/eAZUWbV0x/O9HFIYI=</credentials>
                     <display-name>TestUser</display-name>
                 </user>
+                <user>
+                    <name>Yogesh</name>
+                    <credentials>{903}EBupoWkQW7i0v0ru9Bm5H/cki+KkiNNNuuvng0L8Knw=</credentials>
+                    <display-name>Yogesh</display-name>
+                </user>
             </users>
             <roles>
                 <role>
@@ -112,6 +117,10 @@
                         <member>
                             <type>user</type>
                             <name>TEST</name>
+                        </member>
+                        <member>
+                            <type>user</type>
+                            <name>Yogesh</name>
                         </member>
                     </members>
                 </role>

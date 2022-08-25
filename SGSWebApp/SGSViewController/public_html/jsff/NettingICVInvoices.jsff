@@ -36,21 +36,17 @@
                                       rowSelection="single" fetchSize="#{bindings.SgsNicviVO.rangeSize}" id="resId1"
                                       styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5"
                                       columnStretching="column:resId1c1">
-                                <af:column headerText="" id="c13"
-                                           width="80" align="center">
-                                    <af:selectBooleanCheckbox  labelStyle="color:#336699"
-                                                              label="" id="sbc2"/>
+                                <af:column headerText="" id="c13" width="80" align="center">
+                                    <af:selectBooleanCheckbox labelStyle="color:#336699" label="" id="sbc2"/>
                                     <f:facet name="header">
-                                     <af:outputText value="Select All" id="ot42"/>
-                                        <af:selectBooleanCheckbox 
-                                                                  label="" id="sbc1"
-                                                                  labelStyle="color:#336699" autoSubmit="true">
-                                          
-                                        </af:selectBooleanCheckbox>
+                                        <af:outputText value="Select All" id="ot42"/>
+                                        <af:selectBooleanCheckbox label="" id="sbc1" labelStyle="color:#336699"
+                                                                  autoSubmit="true"></af:selectBooleanCheckbox>
                                     </f:facet>
                                 </af:column>
                                 <af:column headerText="Netting ID" id="resId1c1">
-                                    <af:link text="#{row.NettingId}" id="l1" action="edit" inlineStyle="font-weight:bold;"/>
+                                    <af:link text="#{row.NettingId}" id="l1" action="edit"
+                                             inlineStyle="font-weight:bold;"/>
                                     <!--<af:outputText value="#{row.NettingId}"
                                                shortDesc="#{bindings.SgsNicviVO.hints.NettingId.tooltip}" id="ot1"/>-->
                                 </af:column>
@@ -96,6 +92,15 @@
                                                               pattern="#{bindings.SgsNicviVO.hints.PAccountsPayable.format}"/>
                                         </af:outputText>
                                     </af:column>
+                                    <af:column headerText="Department ID" id="c3">
+                                        <af:outputText value="#{row.PDept}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.PDept.tooltip}" id="ot1"/>
+                                    </af:column>
+                                    <af:column headerText="Currency" id="c4">
+                                        <af:outputText value="#{row.PCurrency}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.PCurrency.tooltip}"
+                                                       id="ot12"/>
+                                    </af:column>
                                 </af:column>
                                 <af:column id="c2" headerText="Receivables (I/Co Supplier)" align="center">
                                     <af:column headerText="Legal Entity" id="resId1c8">
@@ -118,6 +123,16 @@
                                         <af:outputText value="#{row.ROperatingUnit}"
                                                        shortDesc="#{bindings.SgsNicviVO.hints.ROperatingUnit.tooltip}"
                                                        id="ot8"/>
+                                    </af:column>
+                                    <af:column headerText="Department ID" id="c5">
+                                        <af:outputText value="#{row.RDept}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.RDept.tooltip}"
+                                                       id="ot13"/>
+                                    </af:column>
+                                    <af:column headerText="Currency" id="c6">
+                                        <af:outputText value="#{row.RCurrency}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.RCurrency.tooltip}"
+                                                       id="ot14"/>
                                     </af:column>
                                     <af:column headerText="Accounts Receivable" id="resId1c11">
                                         <af:outputText value="#{row.RAccountsReceivable}"

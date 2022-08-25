@@ -65,6 +65,8 @@
           <Item Value="AmountAvailableForNetting"/>
           <Item Value="AmountNetting"/>
           <Item Value="PartialFullNetting"/>
+          <Item Value="Currency"/>
+          <Item Value="BalancePending"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -78,6 +80,8 @@
           <Item Value="AmountAvailableForNetting"/>
           <Item Value="AmountNetting"/>
           <Item Value="PartialFullNetting"/>
+          <Item Value="Currency"/>
+          <Item Value="BalancePending"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -89,6 +93,26 @@
     <attributeValues IterBinding="SgsNicviVOIterator" id="UpdatedDate">
       <AttrNames>
         <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="PDept">
+      <AttrNames>
+        <Item Value="PDept"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="RDept">
+      <AttrNames>
+        <Item Value="RDept"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsNicviVOIterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
       </AttrNames>
     </attributeValues>
   </bindings>

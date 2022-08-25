@@ -24,3 +24,17 @@ def pType_StatusLOV_BindVariable_BoundParameter()
 'NETTING_STATUS'
 }
 
+
+@AccessorParameterExpression(accessorName="DeptList", name="pType")
+def pType_DeptList_BindVariable_BoundParameter()
+{
+'DEPT_ID'
+}
+
+
+@AccessorParameterExpression(accessorName="CurrencyList", name="pType")
+def pType_CurrencyList_BindVariable_BoundParameter()
+{
+'CURRENCY'
+}
+

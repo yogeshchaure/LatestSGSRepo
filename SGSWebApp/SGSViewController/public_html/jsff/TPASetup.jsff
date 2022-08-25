@@ -42,15 +42,15 @@
                                   rows="#{bindings.SgsTpaMasterVO1.rangeSize}"
                                   emptyText="#{bindings.SgsTpaMasterVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                   rowBandingInterval="0" fetchSize="#{bindings.SgsTpaMasterVO1.rangeSize}" id="resId1"
-                                  styleClass="AFStretchWidth" columnStretching="column:resId1c1">
-                            <af:column headerText="TPA ID" id="resId1c1">
+                                  styleClass="AFStretchWidth">
+                            <af:column headerText="TPA ID" id="resId1c1" width="10%">
                                 <!--<af:outputText value="#{row.TpaId}"
                                                shortDesc="#{bindings.SgsTpaMasterVO1.hints.TpaId.tooltip}" id="ot1"/>-->
                                 <af:link text="#{row.TpaId}" id="l1" action="EDIT" inlineStyle="font-weight:bold;">
                                     <af:setPropertyListener from="#{row.TpamId}" to="#{pageFlowScope.ID}" type="action"/>
                                 </af:link>
                             </af:column>
-                            <af:column headerText="Legal Entity (Service Provider)" id="resId1c2">
+                            <af:column headerText="Legal Entity (Service Provider)" id="resId1c2" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.LeServiceProvider.inputValue}"
                                                     label="#{row.bindings.LeServiceProvider.label}"
                                                     required="#{bindings.SgsTpaMasterVO1.hints.LeServiceProvider.mandatory}"
@@ -60,7 +60,7 @@
                                     <f:validator binding="#{row.bindings.LeServiceProvider.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Legal Entity (Service Receiver)" id="resId1c3">
+                            <af:column headerText="Legal Entity (Service Receiver)" id="resId1c3" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.LeServiceReceiver.inputValue}"
                                                     label="#{row.bindings.LeServiceReceiver.label}"
                                                     required="#{bindings.SgsTpaMasterVO1.hints.LeServiceReceiver.mandatory}"
@@ -70,7 +70,7 @@
                                     <f:validator binding="#{row.bindings.LeServiceReceiver.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                             <af:column headerText="Netting Applicability" id="c2">
+                             <af:column headerText="Netting Applicability" id="c2" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.NETTINGAPPLICATIBILITY.inputValue}"
                                                     label="#{row.bindings.NETTINGAPPLICATIBILITY.label}"
                                                     required="#{bindings.SgsTpaMasterVO1.hints.NETTINGAPPLICATIBILITY.mandatory}"
@@ -80,7 +80,7 @@
                                     <f:validator binding="#{row.bindings.NETTINGAPPLICATIBILITY.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                             <af:column headerText="BD Commision Applicability" id="c3">
+                             <af:column headerText="BD Commision Applicability" id="c3" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.BDCOMMISSIONAPPLICABILITY.inputValue}"
                                                     label="#{row.bindings.BDCOMMISSIONAPPLICABILITY.label}"
                                                     required="#{bindings.SgsTpaMasterVO1.hints.BDCOMMISSIONAPPLICABILITY.mandatory}"
@@ -90,12 +90,12 @@
                                     <f:validator binding="#{row.bindings.BDCOMMISSIONAPPLICABILITY.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                             <af:column headerText="BD Commission Rate" id="resId1c5" >
+                             <af:column headerText="BD Commission Rate" id="resId1c5" width="10%">
                                 <af:outputText value="#{row.BDCOMMISSIONRATE}"
                                                shortDesc="#{bindings.SgsTpaMasterVO1.hints.BDCOMMISSIONRATE.tooltip}"
                                                id="ot3"/>
                             </af:column>
-                            <af:column headerText="Pass-Through" id="resId1c4">
+                            <af:column headerText="Pass-Through" id="resId1c4" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.PassThrough.inputValue}"
                                                     label="#{row.bindings.PassThrough.label}"
                                                     required="#{bindings.SgsTpaMasterVO1.hints.PassThrough.mandatory}"
@@ -105,7 +105,7 @@
                                     <f:validator binding="#{row.bindings.PassThrough.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Pass-Through BU" id="c4">
+                            <af:column headerText="Pass-Through BU" id="c4" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.PassThroughBu.inputValue}"
                                                     label="#{row.bindings.PassThroughBu.label}"
                                                     required="#{bindings.SgsTpaMasterVO1.hints.PassThroughBu.mandatory}"
@@ -115,7 +115,7 @@
                                     <f:validator binding="#{row.bindings.PassThroughBu.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Pass- Through OU" id="c1">
+                            <af:column headerText="Pass- Through OU" id="c1" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.OperationUnit.inputValue}"
                                                     label="#{row.bindings.OperationUnit.label}"
                                                     required="#{bindings.SgsTpaMasterVO1.hints.OperationUnit.mandatory}"
@@ -125,7 +125,7 @@
                                     <f:validator binding="#{row.bindings.OperationUnit.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Effective End Date" id="resId1c6">
+                            <af:column headerText="Effective End Date" id="resId1c6" width="10%">
                                 <af:outputText value="#{row.EffectiveEndDate}"
                                                shortDesc="#{bindings.SgsTpaMasterVO1.hints.EffectiveEndDate.tooltip}"
                                                id="ot2">

@@ -306,7 +306,7 @@
     Name="LOV_HsnCode"
     ListVOName="HSNCodeLOV"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueId="LOV_HsnCode_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="HsnCode"/>
@@ -543,12 +543,12 @@
     LOVName="LOV_HsnCode">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="12.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsGstInquiryVO.HsnCode_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

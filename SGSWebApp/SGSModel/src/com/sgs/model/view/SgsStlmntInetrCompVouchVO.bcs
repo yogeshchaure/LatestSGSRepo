@@ -7,7 +7,7 @@ import oracle.jbo.script.annotation.AccessorParameterExpression;
 @AccessorParameterExpression(accessorName="BusinessUnitLOV", name="pType")
 def pType_BusinessUnitLOV_BindVariable_BoundParameter()
 {
-'BS_UNIT'
+'bUSINESS_UNIT'
 }
 
 

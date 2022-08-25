@@ -11,3 +11,10 @@ def pUsersBuId_VariableScript_Variable()
 adf.context.sessionScope.usersBuId
 }
 
+
+@AccessorParameterExpression(accessorName="BuList", name="pType")
+def pType_BuList_BindVariable_BoundParameter()
+{
+'bUSINESS_UNIT'
+}
+

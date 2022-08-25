@@ -165,6 +165,9 @@
     <AttrArray Name="ListAttrNames">
       <Item Value="Name"/>
     </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
@@ -257,6 +260,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_CBusinessUnit"
+    ListVOName="BusinessUnitLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CBusinessUnit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SgsStlmntInetrCompVouch"
     Entity="com.sgs.model.entity.SgsStlmntInetrCompVouch"/>
@@ -301,12 +322,12 @@
     LOVName="LOV_BusinessUnit">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <LABEL
           ResId="com.sgs.model.view.SgsStlmntInetrCompVouchVO.BusinessUnit_LABEL"/>
         <FIELDORDER
           Value="0.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -315,13 +336,16 @@
     PrecisionRule="true"
     EntityAttrName="CBusinessUnit"
     EntityUsage="SgsStlmntInetrCompVouch"
-    AliasName="C_BUSINESS_UNIT">
+    AliasName="C_BUSINESS_UNIT"
+    LOVName="LOV_CBusinessUnit">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
           ResId="com.sgs.model.view.SgsStlmntInetrCompVouchVO.CBusinessUnit_LABEL"/>
         <FIELDORDER
           Value="7.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
