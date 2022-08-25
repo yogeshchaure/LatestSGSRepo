@@ -263,7 +263,7 @@
     Name="LOV_CostIdentificationId"
     ListVOName="CostIdentificationIDLOV"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueId="LOV_CostIdentificationId_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="CostIdentificationId"/>
@@ -281,7 +281,7 @@
     Name="LOV_ServiceCategory"
     ListVOName="ServiceCategoryLOV"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueId="LOV_ServiceCategory_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="ServiceCategory"/>
@@ -452,10 +452,10 @@
     LOVName="LOV_CostIdentificationId">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="3.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -630,10 +630,10 @@
     LOVName="LOV_ServiceCategory">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="15.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

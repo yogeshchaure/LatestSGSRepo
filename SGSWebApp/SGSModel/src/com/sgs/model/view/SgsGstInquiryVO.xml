@@ -236,7 +236,7 @@
   </ListBinding>
   <ListBinding
     Name="LOV_PlaceOfsupply"
-    ListVOName="PlaceOfSupplyLOV"
+    ListVOName="ServiceProviderLOV"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -310,21 +310,6 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="HsnCode"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_GstId"
-    ListVOName="GSTIDLOV"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="GstId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -507,12 +492,9 @@
     PrecisionRule="true"
     EntityAttrName="GstId"
     EntityUsage="SgsGstInquiry"
-    AliasName="GST_ID"
-    LOVName="LOV_GstId">
+    AliasName="GST_ID">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="0.0"/>
         <LABEL

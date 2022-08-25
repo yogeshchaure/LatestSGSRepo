@@ -21,7 +21,7 @@ def pType_AccountingTreatmentLOV_BindVariable_BoundParameter()
 @AccessorParameterExpression(accessorName="CostIdentificationIDLOV", name="pType")
 def pType_CostIdentificationIDLOV_BindVariable_BoundParameter()
 {
-'COST_IND'
+'COSTRULEID'
 }
 
 
@@ -35,7 +35,7 @@ def pType_StatusLOV_BindVariable_BoundParameter()
 @AccessorParameterExpression(accessorName="TPAapplicabilityLOV", name="pType")
 def pType_TPAapplicabilityLOV_BindVariable_BoundParameter()
 {
-'BU_STATUS'
+'YES_NO'
 }
 
 
