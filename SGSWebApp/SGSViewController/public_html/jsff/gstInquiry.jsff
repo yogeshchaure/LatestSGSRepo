@@ -94,7 +94,7 @@
                            <f:validator binding="#{row.bindings.ExemptSupply.validator}"/>
                         </af:selectOneChoice>
                      </af:column>
-                      <af:column headerText="Rate of Tax"
+                      <af:column headerText="Rate of Tax (%)"
                                    id="resId1c7">
                             <af:outputText value="#{row.RATEOFTAX1}"
                                            shortDesc="#{bindings.SgsGstInquiryVO1.hints.RATEOFTAX1.tooltip}"
