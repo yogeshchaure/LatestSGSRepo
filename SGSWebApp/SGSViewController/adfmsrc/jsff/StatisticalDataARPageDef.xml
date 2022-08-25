@@ -29,6 +29,8 @@
           <Item Value="UpdatedDate"/>
           <Item Value="EmployeeId"/>
           <Item Value="StatisticalData"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="CreatedDate"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

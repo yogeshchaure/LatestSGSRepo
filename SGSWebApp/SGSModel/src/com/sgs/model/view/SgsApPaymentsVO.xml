@@ -64,20 +64,37 @@
     Name="SgsBusinessUnitsVO1"
     ViewObjectName="com.sgs.model.view.SgsBusinessUnitsVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="BuList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsApPaymentsVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_BuId"
-    ListVOName="SgsBusinessUnitsVO1"
-    NullValueFlag="none"
-    MRUCount="0">
+    ListVOName="BuList"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="BuId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="BuId"/>
+      <Item Value="Name"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="BuDesc"/>
+      <Item Value="Discription"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -108,12 +125,12 @@
     LOVName="LOV_BuId">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <LABEL
           ResId="com.sgs.model.view.SgsApPaymentsVO.BuId_LABEL"/>
         <DISPLAYWIDTH
           Value="45"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

@@ -26,6 +26,10 @@
           <Item Value="AllowableNettingLimit"/>
           <Item Value="AmountNettedOff"/>
           <Item Value="Status"/>
+          <Item Value="PDept"/>
+          <Item Value="PCurrency"/>
+          <Item Value="RDept"/>
+          <Item Value="RCurrency"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

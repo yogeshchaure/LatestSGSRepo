@@ -64,13 +64,16 @@
                                 <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
                                                shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot7"/>
                             </af:panelLabelAndMessage>
-                            <af:panelLabelAndMessage label="I/Co Supplier" id="plam8">
-                                <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
-                                               shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot9"/>
-                            </af:panelLabelAndMessage>
                             <af:panelLabelAndMessage label="Operating Unit" id="plam7">
                                 <af:outputText value="#{bindings.POperatingUnit.inputValue}"
                                                shortDesc="#{bindings.POperatingUnit.hints.tooltip}" id="ot8"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Department ID" id="plam18">
+                                <af:outputFormatted value="#{bindings.PDept.inputValue}" id="of1"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="I/Co Supplier" id="plam8">
+                                <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
+                                               shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot9"/>
                             </af:panelLabelAndMessage>
                             <af:spacer id="s11" height="20"/>
                         </af:panelFormLayout>
@@ -103,6 +106,10 @@
                                                    shortDesc="#{bindings.SgsIncVO.hints.PeoplesoftVoucherNo.tooltip}"
                                                    id="ot16"/>
                                 </af:column>
+                                <af:column headerText="#{bindings.SgsIncVO.hints.Currency.label}" id="c17">
+                                    <af:outputText value="#{row.Currency}"
+                                                   shortDesc="#{bindings.SgsIncVO.hints.Currency.tooltip}" id="ot45"/>
+                                </af:column>
                                 <af:column headerText="Vourcher Amount" id="c3" width="200">
                                     <af:outputText value="#{row.VourcherAmount}"
                                                    shortDesc="#{bindings.SgsIncVO.hints.VourcherAmount.tooltip}"
@@ -111,7 +118,7 @@
                                                           pattern="#{bindings.SgsIncVO.hints.VourcherAmount.format}"/>
                                     </af:outputText>
                                     <f:facet name="footer">
-                                        <af:outputText value="10,00,000.00" id="ot22"/>
+                                        <af:outputText value=" 70,891.00 " id="ot22"/>
                                     </f:facet>
                                 </af:column>
                                 <af:column headerText="WHT / TDS" id="c4">
@@ -121,7 +128,7 @@
                                                           pattern="#{bindings.SgsIncVO.hints.WhtTds.format}"/>
                                     </af:outputText>
                                     <f:facet name="footer">
-                                        <af:outputText value="50,000.00" id="ot23"/>
+                                        <af:outputText value=" 3,545.00" id="ot23"/>
                                     </f:facet>
                                 </af:column>
                                 <af:column headerText="Amount available for Netting" id="c5" width="300">
@@ -132,7 +139,7 @@
                                                           pattern="#{bindings.SgsIncVO.hints.AmountAvailableForNetting.format}"/>
                                     </af:outputText>
                                     <f:facet name="footer">
-                                        <af:outputText value="9,50,000.00" id="ot24"/>
+                                        <af:outputText value=" 69,026.00" id="ot24"/>
                                     </f:facet>
                                 </af:column>
                                 <af:column headerText="Amount Netting" id="c6">
@@ -140,7 +147,15 @@
                                                    shortDesc="#{bindings.SgsIncVO.hints.AmountNetting.tooltip}"
                                                    id="ot20"/>
                                     <f:facet name="footer">
-                                        <af:outputText value="0.00" id="ot25"/>
+                                        <af:outputText value=" 38,176.00" id="ot25"/>
+                                    </f:facet>
+                                </af:column>
+                                <af:column headerText="Balance Pending" id="c18">
+                                    <af:outputText value="#{row.BalancePending}"
+                                                   shortDesc="#{bindings.SgsIncVO.hints.BalancePending.tooltip}"
+                                                   id="ot46"/>
+                                    <f:facet name="footer">
+                                        <af:outputText value=" 30,850.00" id="ot49"/>
                                     </f:facet>
                                 </af:column>
                                 <af:column headerText="Partial / Full Netting" id="c7" width="200">
@@ -152,7 +167,7 @@
                             <af:spacer id="s10" height="20"/>
                         </af:panelGroupLayout>
                         <af:panelLabelAndMessage label="Account Payables Balance" id="plam12">
-                            <af:outputText value="-" id="ot26"/>
+                            <af:outputText value=" 30,850.00" id="ot26"/>
                         </af:panelLabelAndMessage>
                     </af:panelBox>
                     <af:panelBox text="" id="pb2" showDisclosure="false">
@@ -168,13 +183,16 @@
                                 <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
                                                shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot12"/>
                             </af:panelLabelAndMessage>
-                            <af:panelLabelAndMessage label="I/Co Customer" id="plam11">
-                                <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
-                                               shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot14"/>
-                            </af:panelLabelAndMessage>
                             <af:panelLabelAndMessage label="Operating Unit" id="plam10">
                                 <af:outputText value="#{bindings.ROperatingUnit.inputValue}"
                                                shortDesc="#{bindings.ROperatingUnit.hints.tooltip}" id="ot13"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="Department ID" id="plam19">
+                                <af:outputFormatted value="#{bindings.RDept.inputValue}" id="of2"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="I/Co Customer" id="plam11">
+                                <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
+                                               shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot14"/>
                             </af:panelLabelAndMessage>
                             <af:spacer id="s7" height="20"/>
                         </af:panelFormLayout>
@@ -208,7 +226,12 @@
                                                    shortDesc="#{bindings.SgsPhilippinesIncVO.hints.PeoplesoftVoucherNo.tooltip}"
                                                    id="ot28"/>
                                 </af:column>
-                                <af:column headerText="Invoice Amount" id="c10" width="200">
+                                <af:column headerText="#{bindings.SgsPhilippinesIncVO.hints.Currency.label}" id="c19">
+                                    <af:outputText value="#{row.Currency}"
+                                                   shortDesc="#{bindings.SgsPhilippinesIncVO.hints.Currency.tooltip}"
+                                                   id="ot47"/>
+                                </af:column>
+                                <af:column headerText="Voucher Amount" id="c10" width="200">
                                     <af:outputText value="#{row.VourcherAmount}"
                                                    shortDesc="#{bindings.SgsPhilippinesIncVO.hints.VourcherAmount.tooltip}"
                                                    id="ot29">
@@ -216,7 +239,7 @@
                                                           pattern="#{bindings.SgsPhilippinesIncVO.hints.VourcherAmount.format}"/>
                                     </af:outputText>
                                     <f:facet name="footer">
-                                        <af:outputText value="8,00,000.00" id="ot34"/>
+                                        <af:outputText value=" 42,418.00" id="ot34"/>
                                     </f:facet>
                                 </af:column>
                                 <af:column headerText="WHT / TDS" id="c11">
@@ -227,7 +250,7 @@
                                                           pattern="#{bindings.SgsPhilippinesIncVO.hints.WhtTds.format}"/>
                                     </af:outputText>
                                     <f:facet name="footer">
-                                        <af:outputText value="40,000.00" id="ot35"/>
+                                        <af:outputText value=" 4,242.00" id="ot35"/>
                                     </f:facet>
                                 </af:column>
                                 <af:column headerText="Amount available for Netting" id="c12" width="300">
@@ -238,7 +261,7 @@
                                                           pattern="#{bindings.SgsPhilippinesIncVO.hints.AmountAvailableForNetting.format}"/>
                                     </af:outputText>
                                     <f:facet name="footer">
-                                        <af:outputText value="7,60,000.00" id="ot36"/>
+                                        <af:outputText value=" 38,176.00" id="ot36"/>
                                     </f:facet>
                                 </af:column>
                                 <af:column headerText="Amount Netting" id="c15">
@@ -246,8 +269,14 @@
                                                    shortDesc="#{bindings.SgsPhilippinesIncVO.hints.AmountNetting.tooltip}"
                                                    id="ot32"/>
                                     <f:facet name="footer">
-                                        <af:outputText value="0.00" id="ot37"/>
+                                        <af:outputText value=" 38,176.00" id="ot37"/>
                                     </f:facet>
+                                </af:column>
+                                <af:column headerText="Balance Pending"
+                                           id="c20">
+                                    <af:outputText value="#{row.BalancePending}"
+                                                   shortDesc="#{bindings.SgsPhilippinesIncVO.hints.BalancePending.tooltip}"
+                                                   id="ot48"/>
                                 </af:column>
                                 <af:column headerText="Partial / Full Netting" id="c14" width="200">
                                     <af:outputText value="#{row.PartialFullNetting}"
@@ -271,8 +300,10 @@
                                            shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="ot43"/>
                         </af:panelLabelAndMessage>
                         <af:panelLabelAndMessage label="Submitted By" id="plam14">
-                            <af:outputText value="#{bindings.UpdatedBy.inputValue}"
-                                           shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="ot39"/>
+                            <af:outputText value="#{bindings.CreatedBy.inputValue}"
+                                           shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="ot39"/>
+                            <!--<af:outputText value="#{bindings.UpdatedBy.inputValue}"
+                                           shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="ot39"/>-->
                         </af:panelLabelAndMessage>
                         <af:panelLabelAndMessage label="Approve Date" id="plam17">
                             <af:outputText value="#{bindings.UpdatedDate.inputValue}"
@@ -281,10 +312,14 @@
                             </af:outputText>
                         </af:panelLabelAndMessage>
                         <af:panelLabelAndMessage label="Submitted Date" id="plam15">
-                            <af:outputText value="#{bindings.UpdatedDate.inputValue}"
+                            <af:outputText value="#{bindings.CreatedDate.inputValue}"
+                                           shortDesc="#{bindings.CreatedDate.hints.tooltip}" id="ot40">
+                                <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>
+                            </af:outputText>
+                            <!--<af:outputText value="#{bindings.UpdatedDate.inputValue}"
                                            shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="ot40">
                                 <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
-                            </af:outputText>
+                            </af:outputText>-->
                         </af:panelLabelAndMessage>
                     </af:panelFormLayout>
                 </af:panelBox>

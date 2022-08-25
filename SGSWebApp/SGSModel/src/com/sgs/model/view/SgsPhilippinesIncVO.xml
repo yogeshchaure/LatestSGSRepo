@@ -12,7 +12,8 @@
   BindingStyle="JDBC"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -132,6 +133,18 @@
     EntityAttrName="WhtTds"
     EntityUsage="SgsPhilippinesInc"
     AliasName="WHT_TDS"/>
+  <ViewAttribute
+    Name="BalancePending"
+    PrecisionRule="true"
+    EntityAttrName="BalancePending"
+    EntityUsage="SgsPhilippinesInc"
+    AliasName="BALANCE_PENDING"/>
+  <ViewAttribute
+    Name="Currency"
+    PrecisionRule="true"
+    EntityAttrName="Currency"
+    EntityUsage="SgsPhilippinesInc"
+    AliasName="CURRENCY"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.sgs.model.SGSModelBundle"/>
