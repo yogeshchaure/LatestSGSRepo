@@ -78,6 +78,34 @@
                       <f:validator binding="#{row.bindings.ServiceReceiver.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                   <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.Rcm.label}" id="c1"
+                             width="25%">
+                    <af:selectOneChoice value="#{row.bindings.Rcm.inputValue}"
+                                        label="#{row.bindings.Rcm.label}"
+                                        required="#{bindings.SgsVatInquiryVO1.hints.Rcm.mandatory}"
+                                        shortDesc="#{bindings.SgsVatInquiryVO1.hints.Rcm.tooltip}"
+                                        readOnly="true" id="soc1">
+                      <f:selectItems value="#{row.bindings.Rcm.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Rcm.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                   <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.ExemptSupply.label}" id="c2"
+                             width="25%">
+                    <af:selectOneChoice value="#{row.bindings.ExemptSupply.inputValue}"
+                                        label="#{row.bindings.ExemptSupply.label}"
+                                        required="#{bindings.SgsVatInquiryVO1.hints.ExemptSupply.mandatory}"
+                                        shortDesc="#{bindings.SgsVatInquiryVO1.hints.ExemptSupply.tooltip}"
+                                        readOnly="true" id="soc4">
+                      <f:selectItems value="#{row.bindings.ExemptSupply.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.ExemptSupply.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.RateOfTax.label}"
+                                   id="resId1c7">
+                            <af:outputText value="#{row.RateOfTax}"
+                                           shortDesc="#{bindings.SgsVatInquiryVO1.hints.RateOfTax.tooltip}"
+                                           id="ot3"/>
+                        </af:column>
                   <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.label}" id="resId1c4"
                              width="25%">
                     <af:outputText value="#{row.EffectiveTo}"

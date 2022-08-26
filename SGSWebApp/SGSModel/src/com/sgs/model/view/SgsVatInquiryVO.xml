@@ -116,9 +116,29 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="ItemServiceCategoryLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsVatInquiryVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="VatLOV"
+    ViewObjectName="com.sgs.model.view.VatLOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_VatId"
-    ListVOName="VATIDLOV"
+    ListVOName="VatLOV"
     NullValueFlag="start"
     NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
@@ -127,10 +147,10 @@
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="Name"/>
+      <Item Value="VATID"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Discription"/>
+      <Item Value="VATID"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -206,6 +226,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_ItemServiceCategory"
+    ListVOName="ItemServiceCategoryLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemServiceCategory"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SgsVatInquiry"
     Entity="com.sgs.model.entity.SgsVatInquiry"/>
@@ -232,12 +270,12 @@
     LOVName="LOV_VatId">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="0.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsVatInquiryVO.VatId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -318,13 +356,16 @@
     PrecisionRule="true"
     EntityAttrName="ItemServiceCategory"
     EntityUsage="SgsVatInquiry"
-    AliasName="ITEM_SERVICE_CATEGORY">
+    AliasName="ITEM_SERVICE_CATEGORY"
+    LOVName="LOV_ItemServiceCategory">
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="7.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsVatInquiryVO.ItemServiceCategory_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

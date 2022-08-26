@@ -17,7 +17,7 @@
           <Item Value="TransactionCategory"/>
           <Item Value="PeoplesoftAssetNo"/>
           <Item Value="AssetDescription"/>
-          <Item Value="PeoplesoftTransactionId"/>
+          <!--<Item Value="PeoplesoftTransactionId"/>-->
           <Item Value="LegalEntity"/>
           <Item Value="BusinessUnit"/>
           <Item Value="OperatingUnit"/>
@@ -35,6 +35,9 @@
           <Item Value="Status"/>
           <Item Value="AccountingEntry"/>
            <Item Value="AffiliateOperatingUnit"/>
+           <Item Value="PeoplesoftTransactionId"/>
+             <Item Value="AFFILIATEDEPARTMENTID"/>
+               <Item Value="DEPARTMENTID"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

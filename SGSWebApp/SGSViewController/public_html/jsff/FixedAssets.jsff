@@ -112,6 +112,12 @@
                                                shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.OperatingUnit.tooltip}"
                                                id="ot6"/>
                             </af:column>
+                             <af:column headerText="Department ID"
+                                       id="c2">
+                                <af:outputText value="#{row.DEPARTMENTID}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.DEPARTMENTID.tooltip}"
+                                               id="ot19"/>
+                            </af:column>
                             <af:column headerText="Affiliate Business Unit"
                                        id="resId1c9">
                                 <af:outputText value="#{row.AffiliateBusinessUnit}"
@@ -123,6 +129,12 @@
                                 <af:outputText value="#{row.AffiliateOperatingUnit}"
                                                shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.AffiliateBusinessUnit.tooltip}"
                                                id="ot18"/>
+                            </af:column>
+                             <af:column headerText="Affiliate Department ID"
+                                       id="c3">
+                                <af:outputText value="#{row.AFFILIATEDEPARTMENTID}"
+                                               shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.AFFILIATEDEPARTMENTID.tooltip}"
+                                               id="ot20"/>
                             </af:column>
                             <af:column headerText="Job Code" id="resId1c10">
                                 <af:outputText value="#{row.JobCode}"
@@ -214,8 +226,8 @@
                                 </af:selectOneChoice>
                             </af:column>
                             <af:column headerText="Accounting Entry"
-                                       id="resId1c21">
-                                  <af:link text="#{row.AccountingEntry}" id="l1" action="edit"/>
+                                       id="resId1c21">                                 
+                                    <af:link text="Review Accounting Entries" id="l1" action="edit"/>
                                 <!--<af:outputText value="#{row.AccountingEntry}"
                                                shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.AccountingEntry.tooltip}"
                                                id="ot18"/>-->
