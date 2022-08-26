@@ -75,9 +75,10 @@
     Name="PeoplesoftTransactionId"
     ColumnName="PEOPLESOFT_TRANSACTION_ID"
     SQLType="INTEGER"
-    Type="java.lang.Integer"
-    ColumnType="INT"
-    TableName="SGS_FIXED_ASSETS_TXN"/>
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_FIXED_ASSETS_TXN"
+    Precision="50"/>
   <Attribute
     Name="LegalEntity"
     Precision="80"
@@ -292,6 +293,30 @@
     Name="AffiliateOperatingUnit"
     Precision="80"
     ColumnName="AFFILIATE_OPERATING_UNIT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_FIXED_ASSETS_TXN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AFFILIATEDEPARTMENTID"
+    Precision="80"
+    ColumnName="AFFILIATE_DEPARTMENT_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_FIXED_ASSETS_TXN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DEPARTMENTID"
+    Precision="80"
+    ColumnName="DEPARTMENT_ID"
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR"

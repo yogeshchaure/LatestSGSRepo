@@ -24,3 +24,10 @@ def pType_BusinessUnitLOV_BindVariable_BoundParameter()
 'bUSINESS_UNIT'
 }
 
+
+@AccessorParameterExpression(accessorName="AffiliateBusinessUnitLOV", name="pType")
+def pType_AffiliateBusinessUnitLOV_BindVariable_BoundParameter()
+{
+'bUSINESS_UNIT'
+}
+

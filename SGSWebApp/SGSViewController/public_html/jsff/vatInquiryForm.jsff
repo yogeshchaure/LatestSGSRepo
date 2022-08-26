@@ -66,13 +66,20 @@
                 <f:selectItems value="#{bindings.ExemptSupply.items}" id="si5"/>
                 <f:validator binding="#{bindings.ExemptSupply.validator}"/>
               </af:selectOneChoice>
-              <af:selectOneChoice value="#{bindings.ItemServiceCategory.inputValue}"
+              <af:selectOneChoice value="#{bindings.ItemServiceCategory1.inputValue}"
+                                  label="#{bindings.ItemServiceCategory1.label}"
+                                  required="#{bindings.ItemServiceCategory1.hints.mandatory}"
+                                  shortDesc="#{bindings.ItemServiceCategory1.hints.tooltip}" id="soc6">
+                <f:selectItems value="#{bindings.ItemServiceCategory1.items}" id="si6"/>
+                <f:validator binding="#{bindings.ItemServiceCategory1.validator}"/>
+              </af:selectOneChoice>
+              <!--<af:selectOneChoice value="#{bindings.ItemServiceCategory.inputValue}"
                                   label="#{bindings.ItemServiceCategory.label}"
                                   required="#{bindings.ItemServiceCategory.hints.mandatory}"
                                   shortDesc="#{bindings.ItemServiceCategory.hints.tooltip}" id="soc1">
                 <f:selectItems value="#{bindings.ItemServiceCategory.items}" id="si1"/>
                 <f:validator binding="#{bindings.ItemServiceCategory.validator}"/>
-              </af:selectOneChoice>
+              </af:selectOneChoice>-->
               <!--<af:selectOneChoice value="#{bindings.ItemServiceCategory.inputValue}"
                                   label="#{bindings.ItemServiceCategory.label}"
                                   required="#{bindings.ItemServiceCategory.hints.mandatory}"
@@ -87,14 +94,14 @@
                             shortDesc="#{bindings.RateOfTax.hints.tooltip}" id="it1">
                 <f:validator binding="#{bindings.RateOfTax.validator}"/>
               </af:inputText>
-              <af:inputText value="#{bindings.GlAccountCodes.inputValue}" label="Input GL Code"
+              <af:inputText value="#{bindings.GlAccountCodes.inputValue}" label="Input VAT GL Account"
                             required="#{bindings.GlAccountCodes.hints.mandatory}"
                             columns="#{bindings.GlAccountCodes.hints.displayWidth}"
                             maximumLength="#{bindings.GlAccountCodes.hints.precision}"
                             shortDesc="#{bindings.GlAccountCodes.hints.tooltip}" id="it2">
                 <f:validator binding="#{bindings.GlAccountCodes.validator}"/>
               </af:inputText>
-               <af:inputText value="#{bindings.GlAccountCodes.inputValue}" label="Output GL Code"
+               <af:inputText value="#{bindings.GlAccountCodes.inputValue}" label="Output VAT GL Account"
                             required="#{bindings.GlAccountCodes.hints.mandatory}"
                             columns="#{bindings.GlAccountCodes.hints.displayWidth}"
                             maximumLength="#{bindings.GlAccountCodes.hints.precision}"
@@ -115,7 +122,7 @@
                 <f:validator binding="#{bindings.EffectiveTo.validator}"/>
                 <af:convertDateTime pattern="#{bindings.EffectiveTo.format}"/>
               </af:inputDate>
-              <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="#{bindings.UpdatedBy.hints.label}"
+              <!--<af:inputText value="#{bindings.UpdatedBy.inputValue}" label="#{bindings.UpdatedBy.hints.label}"
                             required="#{bindings.UpdatedBy.hints.mandatory}" readOnly="true"
                             columns="#{bindings.UpdatedBy.hints.displayWidth}"
                             maximumLength="#{bindings.UpdatedBy.hints.precision}"
@@ -128,7 +135,22 @@
                             shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="id3">
                 <f:validator binding="#{bindings.UpdatedDate.validator}"/>
                 <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
-              </af:inputDate>
+              </af:inputDate>-->
+              <af:inputText value="#{bindings.CreatedBy.inputValue}" label="Created By"
+                            required="#{bindings.CreatedBy.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.CreatedBy.hints.displayWidth}"
+                            maximumLength="#{bindings.CreatedBy.hints.precision}"
+                            shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it6">
+                <f:validator binding="#{bindings.CreatedBy.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.CreatedDate.inputValue}" label="Created Date"
+                            required="#{bindings.CreatedDate.hints.mandatory}" readOnly="true"
+                            columns="#{bindings.CreatedDate.hints.displayWidth}"
+                            maximumLength="#{bindings.CreatedDate.hints.precision}"
+                            shortDesc="#{bindings.CreatedDate.hints.tooltip}" id="it7">
+                <f:validator binding="#{bindings.CreatedDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>
+              </af:inputText>
             </af:panelFormLayout>
           </af:panelGroupLayout>
         </af:panelBox>

@@ -21,14 +21,14 @@ def pType_RcmLOV_BindVariable_BoundParameter()
 @AccessorParameterExpression(accessorName="ServiceProviderLOV", name="pType")
 def pType_ServiceProviderLOV_BindVariable_BoundParameter()
 {
-'SERVICE_P'
+'GEO'
 }
 
 
 @AccessorParameterExpression(accessorName="ServiceReceiverLOV", name="pType")
 def pType_ServiceReceiverLOV_BindVariable_BoundParameter()
 {
-'SERVICE_P'
+'GEO'
 }
 
 
@@ -36,5 +36,12 @@ def pType_ServiceReceiverLOV_BindVariable_BoundParameter()
 def pType_VATIDLOV_BindVariable_BoundParameter()
 {
 'VAT_ID'
+}
+
+
+@AccessorParameterExpression(accessorName="ItemServiceCategoryLOV", name="pType")
+def pType_ItemServiceCategoryLOV_BindVariable_BoundParameter()
+{
+'SERVICE_CATEGORY'
 }
 

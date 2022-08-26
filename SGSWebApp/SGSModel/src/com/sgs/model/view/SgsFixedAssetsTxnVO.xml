@@ -53,6 +53,10 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
+  <Variable
+    Name="bAffilateBusinessUnit"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <ViewAccessor
     Name="BusinessUnitLOV"
     ViewObjectName="com.sgs.model.view.SgsListVO"
@@ -87,6 +91,22 @@
   </ViewAccessor>
   <ViewAccessor
     Name="StatusLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsFixedAssetsTxnVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="AffiliateBusinessUnitLOV"
     ViewObjectName="com.sgs.model.view.SgsListVO"
     RowLevelBinds="true">
     <ViewCriteriaUsage
@@ -155,6 +175,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_AffiliateBusinessUnit"
+    ListVOName="AffiliateBusinessUnitLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AffiliateBusinessUnit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SgsFixedAssetsTxn"
     Entity="com.sgs.model.entity.SgsFixedAssetsTxn"/>
@@ -176,11 +214,16 @@
     PrecisionRule="true"
     EntityAttrName="AffiliateBusinessUnit"
     EntityUsage="SgsFixedAssetsTxn"
-    AliasName="AFFILIATE_BUSINESS_UNIT">
+    AliasName="AFFILIATE_BUSINESS_UNIT"
+    LOVName="LOV_AffiliateBusinessUnit">
     <Properties>
       <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsFixedAssetsTxnVO.AffiliateBusinessUnit_LABEL"/>
         <FIELDORDER
-          Value="1.0"/>
+          Value="3.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -193,7 +236,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="2.0"/>
+          Value="1.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -209,7 +252,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="3.0"/>
+          Value="2.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -515,7 +558,40 @@
     PrecisionRule="true"
     EntityAttrName="AffiliateOperatingUnit"
     EntityUsage="SgsFixedAssetsTxn"
-    AliasName="AFFILIATE_OPERATING_UNIT"/>
+    AliasName="AFFILIATE_OPERATING_UNIT">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="26.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AFFILIATEDEPARTMENTID"
+    PrecisionRule="true"
+    EntityAttrName="AFFILIATEDEPARTMENTID"
+    EntityUsage="SgsFixedAssetsTxn"
+    AliasName="AFFILIATE_DEPARTMENT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsFixedAssetsTxnVO.AFFILIATEDEPARTMENTID_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DEPARTMENTID"
+    PrecisionRule="true"
+    EntityAttrName="DEPARTMENTID"
+    EntityUsage="SgsFixedAssetsTxn"
+    AliasName="DEPARTMENT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsFixedAssetsTxnVO.DEPARTMENTID_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsFixedAssetsTxnVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsFixedAssetsTxnVO"
@@ -542,6 +618,14 @@
     <ViewCriteriaRow
       Name="SgsFixedAssetsTxnVOCriteria_row_0"
       UpperColumns="1">
+      <ViewCriteriaItem
+        Name="AffiliateBusinessUnit"
+        ViewAttribute="AffiliateBusinessUnit"
+        Operator="="
+        Conjunction="AND"
+        Value=":bAffilateBusinessUnit"
+        IsBindVarValue="true"
+        Required="Optional"/>
       <ViewCriteriaItem
         Name="BusinessUnit"
         ViewAttribute="BusinessUnit"

@@ -18,6 +18,9 @@
           <Item Value="ServiceReceiver"/>
           <Item Value="EffectiveTo"/>
           <Item Value="EffectiveFrom"/>
+           <Item Value="Rcm"/>
+            <Item Value="ExemptSupply"/>
+             <Item Value="RateOfTax"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

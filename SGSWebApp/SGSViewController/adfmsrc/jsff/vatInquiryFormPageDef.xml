@@ -64,5 +64,17 @@
         <Item Value="NULL"/>
       </ValueList>
     </list>
+    <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_ItemServiceCategory"
+          id="ItemServiceCategory1" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
