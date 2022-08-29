@@ -152,6 +152,20 @@
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="EffectiveFrom"
+    ColumnName="EFFECTIVE_FROM"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_ISD"/>
+  <Attribute
+    Name="EffectiveTo"
+    ColumnName="EFFECTIVE_TO"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_ISD"/>
   <Key
     Name="PKSGSISD"
     PrimaryKey="true">

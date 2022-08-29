@@ -105,6 +105,9 @@
                                                shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.IcoSupplier.tooltip}"
                                                id="ot10"/>
                             </af:column>
+                            <af:column id="c3" headerText="Currency">
+                                <af:outputText value="USD" id="ot16"/>
+                            </af:column>
                             <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.InvoiceAmount.label}"
                                        id="resId2c6">
                                 <af:outputText value="#{row.InvoiceAmount}"

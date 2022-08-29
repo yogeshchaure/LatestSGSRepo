@@ -176,24 +176,6 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <ListBinding
-    Name="LOV_IsdInvoiceNo"
-    ListVOName="SgsIsdInvoiceNoLOV"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="IsdInvoiceNo"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ISDINVOICENO"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ISDINVOICENO"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
     Name="SgsIsd"
     Entity="com.sgs.model.entity.SgsIsd"/>
@@ -235,15 +217,7 @@
     PrecisionRule="true"
     EntityAttrName="IsdInvoiceNo"
     EntityUsage="SgsIsd"
-    AliasName="ISD_INVOICE_NO"
-    LOVName="LOV_IsdInvoiceNo">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="ISD_INVOICE_NO"/>
   <ViewAttribute
     Name="ServiceProvider"
     PrecisionRule="true"
@@ -306,6 +280,18 @@
     EntityAttrName="UpdatedDate"
     EntityUsage="SgsIsd"
     AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="EffectiveFrom"
+    PrecisionRule="true"
+    EntityAttrName="EffectiveFrom"
+    EntityUsage="SgsIsd"
+    AliasName="EFFECTIVE_FROM"/>
+  <ViewAttribute
+    Name="EffectiveTo"
+    PrecisionRule="true"
+    EntityAttrName="EffectiveTo"
+    EntityUsage="SgsIsd"
+    AliasName="EFFECTIVE_TO"/>
   <ViewCriteria
     Name="SgsIsdVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsIsdVO"
