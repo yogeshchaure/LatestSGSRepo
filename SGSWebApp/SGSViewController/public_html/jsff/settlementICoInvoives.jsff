@@ -89,6 +89,9 @@
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.ICoCustomer.tooltip}"
                                                id="ot5"/>
                             </af:column>
+                            <af:column id="c1" headerText="Currency">
+                                <af:outputText value="USD" id="ot11"/>
+                            </af:column>
                             <af:column headerText="Invoice Amount"
                                        id="resId1c8">
                                 <af:outputText value="#{row.InvoiceAmount}"

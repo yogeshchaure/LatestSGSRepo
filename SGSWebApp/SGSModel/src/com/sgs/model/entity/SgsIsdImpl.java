@@ -39,7 +39,9 @@ public class SgsIsdImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        EffectiveFrom,
+        EffectiveTo;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -63,6 +65,8 @@ public class SgsIsdImpl extends EntityImpl {
         }
     }
     private static final ADFLogger LOG = ADFLogger.createADFLogger(SgsIsdImpl.class);
+
+
     public static final int ISDID = AttributesEnum.IsdId.index();
     public static final int ISDINVOICENO = AttributesEnum.IsdInvoiceNo.index();
     public static final int SERVICEPROVIDER = AttributesEnum.ServiceProvider.index();
@@ -75,18 +79,13 @@ public class SgsIsdImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int EFFECTIVEFROM = AttributesEnum.EffectiveFrom.index();
+    public static final int EFFECTIVETO = AttributesEnum.EffectiveTo.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public SgsIsdImpl() {
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsIsd");
     }
 
     /**
@@ -249,6 +248,37 @@ public class SgsIsdImpl extends EntityImpl {
         return (String) getAttributeInternal(UPDATEDBY);
     }
 
+    /**
+     * Gets the attribute value for EffectiveFrom, using the alias name EffectiveFrom.
+     * @return the value of EffectiveFrom
+     */
+    public Date getEffectiveFrom() {
+        return (Date) getAttributeInternal(EFFECTIVEFROM);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EffectiveFrom.
+     * @param value value to set the EffectiveFrom
+     */
+    public void setEffectiveFrom(Date value) {
+        setAttributeInternal(EFFECTIVEFROM, value);
+    }
+
+    /**
+     * Gets the attribute value for EffectiveTo, using the alias name EffectiveTo.
+     * @return the value of EffectiveTo
+     */
+    public Date getEffectiveTo() {
+        return (Date) getAttributeInternal(EFFECTIVETO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EffectiveTo.
+     * @param value value to set the EffectiveTo
+     */
+    public void setEffectiveTo(Date value) {
+        setAttributeInternal(EFFECTIVETO, value);
+    }
 
     /**
      * @param isdId key constituent
@@ -258,6 +288,14 @@ public class SgsIsdImpl extends EntityImpl {
     public static Key createPrimaryKey(Integer isdId) {
         return new Key(new Object[] { isdId });
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsIsd");
+    }
+
 
     /**
      * Add attribute defaulting logic in this method.
