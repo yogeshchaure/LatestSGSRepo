@@ -100,10 +100,6 @@
                                 <af:outputText value="USD"
                                               
                                                id="ot11"/>
-
-                            <af:column id="c1" headerText="Currency">
-                                <af:outputText value="USD" id="ot11"/>
-
                             </af:column>
                             <af:column headerText="Invoice Amount"
                                        id="resId1c8">
