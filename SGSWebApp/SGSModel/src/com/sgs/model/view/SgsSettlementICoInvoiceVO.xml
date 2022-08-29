@@ -39,7 +39,7 @@
   <Variable
     Name="bPeriod"
     Kind="viewcriteria"
-    Type="java.lang.String">
+    Type="java.sql.Date">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -216,24 +216,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_Period"
-    ListVOName="PeriodLOV"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Period"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Discription"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_SettlementCategory"
     ListVOName="SettlementCatLOV"
     NullValueFlag="start"
@@ -302,15 +284,7 @@
     PrecisionRule="true"
     EntityAttrName="Period"
     EntityUsage="SgsSettlementICoInvoice"
-    AliasName="PERIOD"
-    LOVName="LOV_Period">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="PERIOD"/>
   <ViewAttribute
     Name="AccountingDate"
     PrecisionRule="true"

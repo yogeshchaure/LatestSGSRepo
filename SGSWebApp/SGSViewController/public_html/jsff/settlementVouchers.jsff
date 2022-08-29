@@ -63,15 +63,20 @@
         </af:column>
                             <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.Period.label}"
                                        id="resId2c1">
-                                <af:outputText value="#{row.Period}"
+                                <!--<af:outputText value="#{row.Period}"
                                                shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.Period.tooltip}"
-                                               id="ot2"/>
+                                               id="ot2"/>-->
+                             <af:outputText value="#{row.Period}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.Period.tooltip}"
+                                               id="ot3">
+                                    <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompVouchVO1.hints.Period.format}"/>
+                                </af:outputText>
                             </af:column>
                             <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.AccountingDate.label}"
                                        id="resId2c2">
                                 <af:outputText value="#{row.AccountingDate}"
                                                shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.AccountingDate.tooltip}"
-                                               id="ot3">
+                                               id="ot2">
                                     <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompVouchVO1.hints.AccountingDate.format}"/>
                                 </af:outputText>
                             </af:column>
@@ -105,8 +110,16 @@
                                                shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.IcoSupplier.tooltip}"
                                                id="ot10"/>
                             </af:column>
+
+                             <af:column headerText="Currency"
+                                       id="c1">
+                                <af:outputText value="USD"
+                                              
+                                               id="ot16"/>
+
                             <af:column id="c3" headerText="Currency">
                                 <af:outputText value="USD" id="ot16"/>
+
                             </af:column>
                             <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.InvoiceAmount.label}"
                                        id="resId2c6">
@@ -147,7 +160,7 @@
                                                       pattern="#{bindings.SgsStlmntInetrCompVouchVO1.hints.ChequeRefNumber.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="Reference to AR Invoice" id="c1">
+                            <af:column headerText="Reference to AR Invoice" id="c3">
                                 <af:link text="#{row.RefToAR}" id="l1" inlineStyle="font-weight:bold;"/>
                             </af:column>
                             <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.Status.label}"

@@ -37,20 +37,25 @@
                             </af:column>
                             <af:column headerText="Period"
                                        id="resId1c1">
-                                <af:selectOneChoice value="#{row.bindings.Period.inputValue}"
+                                <!--<af:selectOneChoice value="#{row.bindings.Period.inputValue}"
                                                     label="#{row.bindings.Period.label}"
                                                     required="#{bindings.SgsSettlementICoInvoiceVO1.hints.Period.mandatory}"
                                                     shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.Period.tooltip}"
                                                     readOnly="true" id="soc1">
                                     <f:selectItems value="#{row.bindings.Period.items}" id="si1"/>
                                     <f:validator binding="#{row.bindings.Period.validator}"/>
-                                </af:selectOneChoice>
+                                </af:selectOneChoice>-->
+                                 <af:outputText value="#{row.Period}"
+                                               shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.Period.tooltip}"
+                                               id="ot1">
+                                    <af:convertDateTime pattern="#{bindings.SgsSettlementICoInvoiceVO1.hints.Period.format}"/>
+                                </af:outputText>
                             </af:column>
                             <af:column headerText="Accounting Data"
                                        id="resId1c2">
                                 <af:outputText value="#{row.AccountingDate}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.AccountingDate.tooltip}"
-                                               id="ot1">
+                                               id="ot12">
                                     <af:convertDateTime pattern="#{bindings.SgsSettlementICoInvoiceVO1.hints.AccountingDate.format}"/>
                                 </af:outputText>
                             </af:column>
@@ -89,8 +94,16 @@
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.ICoCustomer.tooltip}"
                                                id="ot5"/>
                             </af:column>
+
+                             <af:column headerText="Currency"
+                                       id="c1">
+                                <af:outputText value="USD"
+                                              
+                                               id="ot11"/>
+
                             <af:column id="c1" headerText="Currency">
                                 <af:outputText value="USD" id="ot11"/>
+
                             </af:column>
                             <af:column headerText="Invoice Amount"
                                        id="resId1c8">
