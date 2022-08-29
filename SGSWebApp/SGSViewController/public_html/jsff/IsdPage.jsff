@@ -78,7 +78,13 @@
                                 <f:validator binding="#{row.bindings.TypeOfSupply.validator}"/>
                             </af:selectOneChoice>
                         </af:column>
-                    </af:table>
+                            <af:column headerText="#{bindings.SgsIsdVO.hints.EffectiveTo.label}" id="c1" width="20%">
+                                <af:outputText value="#{row.EffectiveTo}"
+                                               shortDesc="#{bindings.SgsIsdVO.hints.EffectiveTo.tooltip}" id="ot1">
+                                    <af:convertDateTime pattern="#{bindings.SgsIsdVO.hints.EffectiveTo.format}"/>
+                                </af:outputText>
+                            </af:column>
+                        </af:table>
                     </af:panelCollection>
                 </af:panelGroupLayout>
             </af:panelBox>

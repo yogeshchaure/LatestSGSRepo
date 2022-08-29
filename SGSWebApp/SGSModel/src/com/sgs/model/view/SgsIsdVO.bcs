@@ -7,7 +7,7 @@ import oracle.jbo.script.annotation.AccessorParameterExpression;
 @AccessorParameterExpression(accessorName="TypeOfSupplyLOV", name="pType")
 def pType_TypeOfSupplyLOV_BindVariable_BoundParameter()
 {
-'TYPE_OF_SUPPLY'
+'TYPE_OF_SUPPLY_ISD'
 }
 
 

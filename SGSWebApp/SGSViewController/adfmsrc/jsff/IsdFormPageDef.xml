@@ -47,5 +47,15 @@
         <Item Value="IsdInvoiceNo"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="SgsIsdVOIterator" id="EffectiveFrom">
+      <AttrNames>
+        <Item Value="EffectiveFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsIsdVOIterator" id="EffectiveTo">
+      <AttrNames>
+        <Item Value="EffectiveTo"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
