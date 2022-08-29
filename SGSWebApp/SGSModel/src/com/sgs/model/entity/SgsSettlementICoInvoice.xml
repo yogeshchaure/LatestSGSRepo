@@ -21,11 +21,10 @@
     PrimaryKey="true"/>
   <Attribute
     Name="Period"
-    Precision="80"
     ColumnName="PERIOD"
     SQLType="VARCHAR"
-    Type="java.lang.String"
-    ColumnType="VARCHAR"
+    Type="java.sql.Date"
+    ColumnType="DATE"
     TableName="SGS_STLMNT_INETR_COMP_INV">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="80"/>

@@ -27,7 +27,7 @@
   <Variable
     Name="bPeriod"
     Kind="viewcriteria"
-    Type="java.lang.String"/>
+    Type="java.sql.Date"/>
   <Variable
     Name="bstmtCat"
     Kind="viewcriteria"
@@ -167,21 +167,6 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Discription"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Period"
-    ListVOName="PeriodLOV"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Period"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -539,12 +524,9 @@
     PrecisionRule="true"
     EntityAttrName="Period"
     EntityUsage="SgsStlmntInetrCompVouch"
-    AliasName="PERIOD"
-    LOVName="LOV_Period">
+    AliasName="PERIOD">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="2.0"/>
       </SchemaBasedProperties>
