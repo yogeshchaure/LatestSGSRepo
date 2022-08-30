@@ -38,7 +38,10 @@ public class SgsStandarardRateImpl extends EntityImpl {
         UpdatedBy,
         Currency,
         DepartmentCostCenter,
-        UnitOfMeasure;
+        UnitOfMeasure,
+        CostIdenId,
+        EmployeeId,
+        ProgramName;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -80,6 +83,9 @@ public class SgsStandarardRateImpl extends EntityImpl {
     public static final int CURRENCY = AttributesEnum.Currency.index();
     public static final int DEPARTMENTCOSTCENTER = AttributesEnum.DepartmentCostCenter.index();
     public static final int UNITOFMEASURE = AttributesEnum.UnitOfMeasure.index();
+    public static final int COSTIDENID = AttributesEnum.CostIdenId.index();
+    public static final int EMPLOYEEID = AttributesEnum.EmployeeId.index();
+    public static final int PROGRAMNAME = AttributesEnum.ProgramName.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -309,6 +315,54 @@ public class SgsStandarardRateImpl extends EntityImpl {
      */
     public void setUnitOfMeasure(String value) {
         setAttributeInternal(UNITOFMEASURE, value);
+    }
+
+    /**
+     * Gets the attribute value for CostIdenId, using the alias name CostIdenId.
+     * @return the value of CostIdenId
+     */
+    public String getCostIdenId() {
+        return (String) getAttributeInternal(COSTIDENID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CostIdenId.
+     * @param value value to set the CostIdenId
+     */
+    public void setCostIdenId(String value) {
+        setAttributeInternal(COSTIDENID, value);
+    }
+
+    /**
+     * Gets the attribute value for EmployeeId, using the alias name EmployeeId.
+     * @return the value of EmployeeId
+     */
+    public String getEmployeeId() {
+        return (String) getAttributeInternal(EMPLOYEEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EmployeeId.
+     * @param value value to set the EmployeeId
+     */
+    public void setEmployeeId(String value) {
+        setAttributeInternal(EMPLOYEEID, value);
+    }
+
+    /**
+     * Gets the attribute value for ProgramName, using the alias name ProgramName.
+     * @return the value of ProgramName
+     */
+    public String getProgramName() {
+        return (String) getAttributeInternal(PROGRAMNAME);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ProgramName.
+     * @param value value to set the ProgramName
+     */
+    public void setProgramName(String value) {
+        setAttributeInternal(PROGRAMNAME, value);
     }
 
     /**

@@ -67,15 +67,10 @@
                                     <f:validator binding="#{row.bindings.SubExpenseType.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="GL Account" id="resId1c3" width="10%">
-                                <af:selectOneChoice value="#{row.bindings.GlAccount.inputValue}"
-                                                    label="#{row.bindings.GlAccount.label}"
-                                                    required="#{bindings.SgsStandarardRateVO1.hints.GlAccount.mandatory}"
-                                                    shortDesc="#{bindings.SgsStandarardRateVO1.hints.GlAccount.tooltip}"
-                                                    readOnly="true" id="soc3">
-                                    <f:selectItems value="#{row.bindings.GlAccount.items}" id="si3"/>
-                                    <f:validator binding="#{row.bindings.GlAccount.validator}"/>
-                                </af:selectOneChoice>
+                            <af:column headerText="Cost Identifier ID" id="c4" width="10%">
+                                <af:outputText value="#{row.CostIdenId}"
+                                               shortDesc="#{bindings.SgsStandarardRateVO1.hints.CostIdenId.tooltip}"
+                                               id="ot1"/>
                             </af:column>
                             <af:column headerText="Geography" id="c2" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.SrGeography.inputValue}"
@@ -87,7 +82,7 @@
                                     <f:validator binding="#{row.bindings.SrGeography.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsStandarardRateVO1.hints.DepartmentCostCenter.label}"
+                            <af:column headerText="Department"
                                        id="c1" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.DepartmentCostCenter.inputValue}"
                                                     label="#{row.bindings.DepartmentCostCenter.label}"
@@ -98,7 +93,7 @@
                                     <f:validator binding="#{row.bindings.DepartmentCostCenter.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Organizational Level"
+                            <af:column headerText="Employee Grade Level"
                                        id="c3" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.EmployeeGradeLevel.inputValue}"
                                                     label="#{row.bindings.EmployeeGradeLevel.label}"
@@ -109,6 +104,17 @@
                                     <f:validator binding="#{row.bindings.EmployeeGradeLevel.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
+                            <af:column headerText="#{bindings.SgsStandarardRateVO1.hints.Currency.label}" id="c5"
+                                       width="10%">
+                                <af:selectOneChoice value="#{row.bindings.Currency.inputValue}"
+                                                    label="#{row.bindings.Currency.label}"
+                                                    required="#{bindings.SgsStandarardRateVO1.hints.Currency.mandatory}"
+                                                    shortDesc="#{bindings.SgsStandarardRateVO1.hints.Currency.tooltip}"
+                                                    readOnly="true" id="soc6">
+                                    <f:selectItems value="#{row.bindings.Currency.items}" id="si6"/>
+                                    <f:validator binding="#{row.bindings.Currency.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
                             <af:column headerText="Amount" id="resId1c6" width="10%">
                                 <af:outputText value="#{row.StandardCost}"
                                                shortDesc="#{bindings.SgsStandarardRateVO1.hints.StandardCost.tooltip}"
@@ -117,12 +123,15 @@
                                                       pattern="#{bindings.SgsStandarardRateVO1.hints.StandardCost.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="Effective Start Date" id="resId1c7" width="10%">
-                                <af:outputText value="#{row.EffectiveStartDate}"
-                                               shortDesc="#{bindings.SgsStandarardRateVO1.hints.EffectiveStartDate.tooltip}"
-                                               id="ot4">
-                                    <af:convertDateTime pattern="#{bindings.SgsStandarardRateVO1.hints.EffectiveStartDate.format}"/>
-                                </af:outputText>
+                            <af:column headerText="Unit of Measure" id="c6" width="10%">
+                                <af:selectOneChoice value="#{row.bindings.UnitOfMeasure.inputValue}"
+                                                    label="#{row.bindings.UnitOfMeasure.label}"
+                                                    required="#{bindings.SgsStandarardRateVO1.hints.UnitOfMeasure.mandatory}"
+                                                    shortDesc="#{bindings.SgsStandarardRateVO1.hints.UnitOfMeasure.tooltip}"
+                                                    readOnly="true" id="soc7">
+                                    <f:selectItems value="#{row.bindings.UnitOfMeasure.items}" id="si7"/>
+                                    <f:validator binding="#{row.bindings.UnitOfMeasure.validator}"/>
+                                </af:selectOneChoice>
                             </af:column>
                             <af:column headerText="Effective End Date" id="resId1c8" width="10%">
                                 <af:outputText value="#{row.EffectiveEndDate}"

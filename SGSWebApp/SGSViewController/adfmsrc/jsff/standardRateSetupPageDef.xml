@@ -22,6 +22,9 @@
           <Item Value="EffectiveStartDate"/>
           <Item Value="EffectiveEndDate"/>
           <Item Value="DepartmentCostCenter"/>
+          <Item Value="CostIdenId"/>
+          <Item Value="Currency"/>
+          <Item Value="UnitOfMeasure"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
