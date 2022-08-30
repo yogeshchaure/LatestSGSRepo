@@ -12,8 +12,6 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_SubExpenseType" id="SubExpenseType"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_GlAccount" id="GlAccount"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="StandardCost">
       <AttrNames>
         <Item Value="StandardCost"/>
@@ -55,5 +53,17 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_UnitOfMeasure" id="UnitOfMeasure"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_CostIdenId" id="CostIdenId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="EmployeeId">
+      <AttrNames>
+        <Item Value="EmployeeId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="ProgramName">
+      <AttrNames>
+        <Item Value="ProgramName"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

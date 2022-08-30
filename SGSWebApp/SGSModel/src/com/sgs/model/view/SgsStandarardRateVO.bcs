@@ -59,3 +59,10 @@ def pType_UnitOfMeasureList_BindVariable_BoundParameter()
 'UOM'
 }
 
+
+@AccessorParameterExpression(accessorName="CostIdenIDList", name="pType")
+def pType_CostIdenIDList_BindVariable_BoundParameter()
+{
+'COSTRULEID'
+}
+

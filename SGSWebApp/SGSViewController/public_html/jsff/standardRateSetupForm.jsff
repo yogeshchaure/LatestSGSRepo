@@ -20,7 +20,7 @@
                                    immediate="true" text="Cancel" accessKey="C"/>
                     </af:toolbar>
                 </f:facet>
-                <af:panelFormLayout id="pfl1" rows="7">
+                <af:panelFormLayout id="pfl1" rows="8">
                     <af:selectOneChoice value="#{bindings.ExpenseType.inputValue}" label="Expense Type"
                                         required="#{bindings.ExpenseType.hints.mandatory}"
                                         shortDesc="#{bindings.ExpenseType.hints.tooltip}" id="soc1">
@@ -33,11 +33,11 @@
                         <f:selectItems value="#{bindings.SubExpenseType.items}" id="si2"/>
                         <f:validator binding="#{bindings.SubExpenseType.validator}"/>
                     </af:selectOneChoice>
-                    <af:selectOneChoice value="#{bindings.GlAccount.inputValue}" label="GL Account"
-                                        required="#{bindings.GlAccount.hints.mandatory}"
-                                        shortDesc="#{bindings.GlAccount.hints.tooltip}" id="soc3">
-                        <f:selectItems value="#{bindings.GlAccount.items}" id="si3"/>
-                        <f:validator binding="#{bindings.GlAccount.validator}"/>
+                    <af:selectOneChoice value="#{bindings.CostIdenId.inputValue}" label="Cost Identifier ID"
+                                        required="#{bindings.CostIdenId.hints.mandatory}"
+                                        shortDesc="#{bindings.CostIdenId.hints.tooltip}" id="soc3">
+                        <f:selectItems value="#{bindings.CostIdenId.items}" id="si3"/>
+                        <f:validator binding="#{bindings.CostIdenId.validator}"/>
                     </af:selectOneChoice>
                     <af:selectOneChoice value="#{bindings.SrGeography.inputValue}" label="Geography"
                                         required="#{bindings.SrGeography.hints.mandatory}"
@@ -59,6 +59,20 @@
                         <f:selectItems value="#{bindings.EmployeeGradeLevel.items}" id="si6"/>
                         <f:validator binding="#{bindings.EmployeeGradeLevel.validator}"/>
                     </af:selectOneChoice>
+                    <af:inputText value="#{bindings.EmployeeId.inputValue}" label="Employee ID"
+                                  required="#{bindings.EmployeeId.hints.mandatory}"
+                                  columns="#{bindings.EmployeeId.hints.displayWidth}"
+                                  maximumLength="#{bindings.EmployeeId.hints.precision}"
+                                  shortDesc="#{bindings.EmployeeId.hints.tooltip}" id="it1">
+                        <f:validator binding="#{bindings.EmployeeId.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.ProgramName.inputValue}" label="Program Name"
+                                  required="#{bindings.ProgramName.hints.mandatory}"
+                                  columns="#{bindings.ProgramName.hints.displayWidth}"
+                                  maximumLength="#{bindings.ProgramName.hints.precision}"
+                                  shortDesc="#{bindings.ProgramName.hints.tooltip}" id="it2">
+                        <f:validator binding="#{bindings.ProgramName.validator}"/>
+                    </af:inputText>
                     <af:selectOneChoice value="#{bindings.Currency.inputValue}" label="#{bindings.Currency.label}"
                                         required="#{bindings.Currency.hints.mandatory}"
                                         shortDesc="#{bindings.Currency.hints.tooltip}" id="soc7">
