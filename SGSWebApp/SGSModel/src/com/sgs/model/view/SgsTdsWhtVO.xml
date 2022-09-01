@@ -64,6 +64,17 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
+  <Variable
+    Name="bPointOfDeduction"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsTdsWhtVO.bPointOfDeduction_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <ViewAccessor
     Name="ServiceReceiverLOV"
     ViewObjectName="com.sgs.model.view.SgsListVO"
@@ -311,7 +322,14 @@
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
     EntityUsage="SgsTdsWht"
-    AliasName="CREATED_BY"/>
+    AliasName="CREATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="0.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     IsUpdateable="false"
@@ -325,6 +343,8 @@
           ResId="com.sgs.model.view.SgsTdsWhtVO.CreatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTdsWhtVO.CreatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="2.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -333,7 +353,14 @@
     PrecisionRule="true"
     EntityAttrName="CummulativeThresholdLimit"
     EntityUsage="SgsTdsWht"
-    AliasName="CUMMULATIVE_THRESHOLD_LIMIT"/>
+    AliasName="CUMMULATIVE_THRESHOLD_LIMIT">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="3.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Currency"
     PrecisionRule="true"
@@ -345,6 +372,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="4.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -360,6 +389,8 @@
           ResId="com.sgs.model.view.SgsTdsWhtVO.EffectiveFrom_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTdsWhtVO.EffectiveFrom_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="5.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -375,6 +406,8 @@
           ResId="com.sgs.model.view.SgsTdsWhtVO.EffectiveTo_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTdsWhtVO.EffectiveTo_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="6.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -383,7 +416,14 @@
     PrecisionRule="true"
     EntityAttrName="GlAccounts"
     EntityUsage="SgsTdsWht"
-    AliasName="GL_ACCOUNTS"/>
+    AliasName="GL_ACCOUNTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="7.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="IsPanTrcAvailable"
     PrecisionRule="true"
@@ -395,6 +435,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="8.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -409,6 +451,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="9.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -417,13 +461,27 @@
     PrecisionRule="true"
     EntityAttrName="RateOfTax"
     EntityUsage="SgsTdsWht"
-    AliasName="RATE_OF_TAX"/>
+    AliasName="RATE_OF_TAX">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="10.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RecoveryRate"
     PrecisionRule="true"
     EntityAttrName="RecoveryRate"
     EntityUsage="SgsTdsWht"
-    AliasName="RECOVERY_RATE"/>
+    AliasName="RECOVERY_RATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="11.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SectionApplicability"
     PrecisionRule="true"
@@ -435,6 +493,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="12.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -449,6 +509,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="13.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -463,6 +525,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="14.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -477,6 +541,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="15.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -485,27 +551,55 @@
     PrecisionRule="true"
     EntityAttrName="TaxCode"
     EntityUsage="SgsTdsWht"
-    AliasName="TAX_CODE"/>
+    AliasName="TAX_CODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="1.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TdsWhtId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="TdsWhtId"
     EntityUsage="SgsTdsWht"
-    AliasName="TDS_WHT_ID"/>
+    AliasName="TDS_WHT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="16.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ThresholdLimit"
     PrecisionRule="true"
     EntityAttrName="ThresholdLimit"
     EntityUsage="SgsTdsWht"
-    AliasName="THRESHOLD_LIMIT"/>
+    AliasName="THRESHOLD_LIMIT">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="17.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedBy"
     IsUpdateable="false"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="SgsTdsWht"
-    AliasName="UPDATED_BY"/>
+    AliasName="UPDATED_BY">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="18.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedDate"
     IsUpdateable="false"
@@ -519,6 +613,8 @@
           ResId="com.sgs.model.view.SgsTdsWhtVO.UpdatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTdsWhtVO.UpdatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="19.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -534,6 +630,8 @@
           ResId="com.sgs.model.view.SgsTdsWhtVO.ValidityPeriodFrom_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTdsWhtVO.ValidityPeriodFrom_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="20.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -549,6 +647,8 @@
           ResId="com.sgs.model.view.SgsTdsWhtVO.ValidityPeriodTo_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTdsWhtVO.ValidityPeriodTo_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="21.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -587,11 +687,11 @@
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem
-        Name="SectionApplicability"
-        ViewAttribute="SectionApplicability"
+        Name="PointOfDeduction"
+        ViewAttribute="PointOfDeduction"
         Operator="="
         Conjunction="AND"
-        Value=":bSectionApplicability"
+        Value=":bPointOfDeduction"
         IsBindVarValue="true"
         Required="Optional"/>
       <ViewCriteriaItem
@@ -608,6 +708,14 @@
         Operator="="
         Conjunction="AND"
         Value=":bServiceReceiver"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="TaxCode"
+        ViewAttribute="TaxCode"
+        Operator="="
+        Conjunction="AND"
+        Value=":bSectionApplicability"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>

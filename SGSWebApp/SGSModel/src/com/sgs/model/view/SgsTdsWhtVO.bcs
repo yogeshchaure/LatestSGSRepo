@@ -7,7 +7,7 @@ import oracle.jbo.script.annotation.AccessorParameterExpression;
 @AccessorParameterExpression(accessorName="ServiceProviderLOV", name="pType")
 def pType_ServiceProviderLOV_BindVariable_BoundParameter()
 {
-'SERVICE_PROVIDER'
+'GEO'
 }
 
 
