@@ -29,7 +29,8 @@
           <Item Value="TaxBase"/>
           <Item Value="ThresholdLimit"/>
           <Item Value="ValidityPeriodFrom"/>
-          <Item Value="ValidityPeriodTo"/>
+          <Item Value="ValidityPeriodTo"/> 
+        
         </AttrNames>
       </nodeDefinition>
     </tree>

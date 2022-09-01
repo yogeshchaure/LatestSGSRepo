@@ -89,5 +89,15 @@
     </attributeValues>
     <action id="Rollback" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="false"
             Action="rollbackTransaction"/>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

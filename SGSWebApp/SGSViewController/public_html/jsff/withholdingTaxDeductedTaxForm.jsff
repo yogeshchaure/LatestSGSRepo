@@ -36,7 +36,7 @@
            
           </af:toolbar>
           </f:facet>
-          <af:panelFormLayout id="pfl1" rows="10">
+          <af:panelFormLayout id="pfl1" rows="9">
             <af:inputText value="#{bindings.TdsWhtId.inputValue}" label="#{bindings.TdsWhtId.hints.label}"
                           required="#{bindings.TdsWhtId.hints.mandatory}" visible="false"
                           columns="#{bindings.TdsWhtId.hints.displayWidth}"
@@ -84,16 +84,16 @@
               <f:validator binding="#{bindings.SectionApplicability.validator}"/>
             </af:selectOneChoice>
             <af:selectOneChoice value="#{bindings.IsPanTrcAvailable.inputValue}"
-                                label="Tax Identification Number"
+                                label="Tax Identification Number (TIN)"
                                 required="#{bindings.IsPanTrcAvailable.hints.mandatory}"
                                 shortDesc="#{bindings.IsPanTrcAvailable.hints.tooltip}" id="soc7">
               <f:selectItems value="#{bindings.IsPanTrcAvailable.items}" id="si7"/>
               <f:validator binding="#{bindings.IsPanTrcAvailable.validator}"/>
             </af:selectOneChoice>
-            <af:panelLabelAndMessage label="Validity Period" id="plam1">
+            <af:panelLabelAndMessage label="Validity Period (TIN)" id="plam1">
               <af:panelGroupLayout id="pgl13" layout="horizontal">
-                <af:inputDate value="#{bindings.ValidityPeriodFrom.inputValue}" simple="true"
-                              label="#{bindings.ValidityPeriodFrom.hints.label}" contentStyle="width:126px;"
+                <af:inputDate value="#{bindings.ValidityPeriodFrom.inputValue}" 
+                              label="From " contentStyle="width:100px;"
                               required="#{bindings.ValidityPeriodFrom.hints.mandatory}"
                               columns="#{bindings.ValidityPeriodFrom.hints.displayWidth}"
                               shortDesc="#{bindings.ValidityPeriodFrom.hints.tooltip}" id="id1">
@@ -101,9 +101,9 @@
                   <af:convertDateTime pattern="#{bindings.ValidityPeriodFrom.format}"/>
                 </af:inputDate>
                 <af:spacer id="s3" width="3"/>
-                <af:inputDate value="#{bindings.ValidityPeriodTo.inputValue}" simple="true"
-                              label="#{bindings.ValidityPeriodTo.hints.label}"
-                              required="#{bindings.ValidityPeriodTo.hints.mandatory}" contentStyle="width:126px;"
+                <af:inputDate value="#{bindings.ValidityPeriodTo.inputValue}" 
+                              label="To "
+                              required="#{bindings.ValidityPeriodTo.hints.mandatory}" contentStyle="width:100px;"
                               columns="#{bindings.ValidityPeriodTo.hints.displayWidth}"
                               shortDesc="#{bindings.ValidityPeriodTo.hints.tooltip}" id="id2">
                   <f:validator binding="#{bindings.ValidityPeriodTo.validator}"/>
@@ -146,7 +146,7 @@
                 <af:outputText value="%" id="ot2"/>
             </af:panelGroupLayout>
             </af:panelLabelAndMessage>
-            <af:selectOneChoice value="#{bindings.Currency.inputValue}" label="Currency"
+            <!--<af:selectOneChoice value="#{bindings.Currency.inputValue}" label="Currency"
                                 required="#{bindings.Currency.hints.mandatory}"
                                 shortDesc="#{bindings.Currency.hints.tooltip}" id="soc3">
               <f:selectItems value="#{bindings.Currency.items}" id="si1"/>
@@ -169,7 +169,7 @@
               <f:validator binding="#{bindings.CummulativeThresholdLimit.validator}"/>
               <af:convertNumber groupingUsed="false" pattern="#{bindings.CummulativeThresholdLimit.format}"
                                />
-            </af:inputText>
+            </af:inputText>-->
              <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="Effective From"
                           required="#{bindings.EffectiveFrom.hints.mandatory}"
                           columns="#{bindings.EffectiveFrom.hints.displayWidth}"
@@ -185,7 +185,7 @@
               <af:convertDateTime pattern="#{bindings.EffectiveTo.format}"/>
             </af:inputDate>
            
-            <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="Updated By"
+            <!--<af:inputText value="#{bindings.UpdatedBy.inputValue}" label="Updated By"
                           required="#{bindings.UpdatedBy.hints.mandatory}" readOnly="true"
                           columns="#{bindings.UpdatedBy.hints.displayWidth}"
                           maximumLength="#{bindings.UpdatedBy.hints.precision}"
@@ -198,7 +198,22 @@
                           shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="id5">
               <f:validator binding="#{bindings.UpdatedDate.validator}"/>
               <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
-            </af:inputDate>
+            </af:inputDate>-->
+            <af:inputText value="#{bindings.CreatedBy.inputValue}" label="Created By"
+                          required="#{bindings.CreatedBy.hints.mandatory}"
+                          columns="#{bindings.CreatedBy.hints.displayWidth}"
+                          maximumLength="#{bindings.CreatedBy.hints.precision}"
+                          shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it5">
+              <f:validator binding="#{bindings.CreatedBy.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.CreatedDate.inputValue}" label="Created Date"
+                          required="#{bindings.CreatedDate.hints.mandatory}"
+                          columns="#{bindings.CreatedDate.hints.displayWidth}"
+                          maximumLength="#{bindings.CreatedDate.hints.precision}"
+                          shortDesc="#{bindings.CreatedDate.hints.tooltip}" id="it6">
+              <f:validator binding="#{bindings.CreatedDate.validator}"/>
+              <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>
+            </af:inputText>
           </af:panelFormLayout>
         </af:panelBox>
       </af:panelGroupLayout>

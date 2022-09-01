@@ -47,7 +47,7 @@
                                       selectedRowKeys="#{bindings.SgsTdsWhtVO.collectionModel.selectedRow}"
                                       selectionListener="#{bindings.SgsTdsWhtVO.collectionModel.makeCurrent}"
                                       rowSelection="single" fetchSize="#{bindings.SgsTdsWhtVO.rangeSize}" id="resId1"
-                                      partialTriggers="::b1">
+                                      partialTriggers="::b1" >
                                 <af:column headerText="#{bindings.SgsTdsWhtVO.hints.TdsWhtId.label}" id="c1" visible="false">
                                     <af:inputText value="#{row.bindings.TdsWhtId.inputValue}"
                                                   label="#{bindings.SgsTdsWhtVO.hints.TdsWhtId.label}"
@@ -96,7 +96,7 @@
                                     </af:selectOneChoice>
                                 </af:column>
                                 <af:column headerText="Section Applicability"
-                                           id="resId1c13">
+                                           id="resId1c13" visible="false">
                                     <af:selectOneChoice value="#{row.bindings.SectionApplicability.inputValue}"
                                                         label="#{row.bindings.SectionApplicability.label}"
                                                         required="#{bindings.SgsTdsWhtVO.hints.SectionApplicability.mandatory}"
@@ -106,8 +106,8 @@
                                         <f:validator binding="#{row.bindings.SectionApplicability.validator}"/>
                                     </af:selectOneChoice>
                                 </af:column>
-                                <af:column headerText="Tax Identification Number"
-                                           id="resId1c9">
+                                <af:column headerText="Tax Identification Num (TIN)"
+                                           id="resId1c9" width="150">
                                     <af:selectOneChoice value="#{row.bindings.IsPanTrcAvailable.inputValue}"
                                                         label="#{row.bindings.IsPanTrcAvailable.label}"
                                                         required="#{bindings.SgsTdsWhtVO.hints.IsPanTrcAvailable.mandatory}"
@@ -116,6 +116,24 @@
                                         <f:selectItems value="#{row.bindings.IsPanTrcAvailable.items}" id="si4"/>
                                         <f:validator binding="#{row.bindings.IsPanTrcAvailable.validator}"/>
                                     </af:selectOneChoice>
+                                </af:column>
+                                  <af:column id="c2" headerText="Validity Till Date (TIN)" align="center">
+                                 <af:column headerText="From"
+                                           id="resId1c17" >
+                                    <af:outputText value="#{row.ValidityPeriodFrom}"
+                                                   shortDesc="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodFrom.tooltip}"
+                                                   id="ot10">
+                                        <af:convertDateTime pattern="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodFrom.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="To"
+                                           id="resId1c18">
+                                    <af:outputText value="#{row.ValidityPeriodTo}"
+                                                   shortDesc="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodTo.tooltip}"
+                                                   id="ot11">
+                                        <af:convertDateTime pattern="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodTo.format}"/>
+                                    </af:outputText>
+                                </af:column>
                                 </af:column>
                                 <af:column headerText="GL Accounts" id="resId1c8">
                                     <af:outputText value="#{row.GlAccounts}"
@@ -129,7 +147,7 @@
                                                           pattern="#{bindings.SgsTdsWhtVO.hints.RateOfTax.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="Recovery Rate (Foreign Tax Credit)" id="resId1c12">
+                                <af:column headerText="Recovery Rate (Foreign Tax Credit)" id="resId1c12" width="200">
                                     <af:outputText value="#{row.RecoveryRate}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.RecoveryRate.tooltip}"
                                                    id="ot7">
@@ -137,7 +155,7 @@
                                                           pattern="#{bindings.SgsTdsWhtVO.hints.RecoveryRate.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="Currency" id="resId1c5">
+                                <af:column headerText="Currency" id="resId1c5" visible="false">
                                     <af:selectOneChoice value="#{row.bindings.Currency.inputValue}"
                                                         label="#{row.bindings.Currency.label}"
                                                         required="#{bindings.SgsTdsWhtVO.hints.Currency.mandatory}"
@@ -148,7 +166,7 @@
                                     </af:selectOneChoice>
                                 </af:column>
                                 <af:column headerText="Threshold Limit"
-                                           id="resId1c16">
+                                           id="resId1c16" visible="false">
                                     <af:outputText value="#{row.ThresholdLimit}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.ThresholdLimit.tooltip}"
                                                    id="ot9">
@@ -157,7 +175,7 @@
                                     </af:outputText>
                                 </af:column>
                                 <af:column headerText="Cummulative Threshold Limit"
-                                           id="resId1c4">
+                                           id="resId1c4" visible="false">
                                     <af:outputText value="#{row.CummulativeThresholdLimit}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.CummulativeThresholdLimit.tooltip}"
                                                    id="ot2">
@@ -165,21 +183,7 @@
                                                           pattern="#{bindings.SgsTdsWhtVO.hints.CummulativeThresholdLimit.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="Effective From" id="resId1c6">
-                                    <af:outputText value="#{row.EffectiveFrom}"
-                                                   shortDesc="#{bindings.SgsTdsWhtVO.hints.EffectiveFrom.tooltip}"
-                                                   id="ot3">
-                                        <af:convertDateTime pattern="#{bindings.SgsTdsWhtVO.hints.EffectiveFrom.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="Effective To" id="resId1c7">
-                                    <af:outputText value="#{row.EffectiveTo}"
-                                                   shortDesc="#{bindings.SgsTdsWhtVO.hints.EffectiveTo.tooltip}"
-                                                   id="ot4">
-                                        <af:convertDateTime pattern="#{bindings.SgsTdsWhtVO.hints.EffectiveTo.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.SgsTdsWhtVO.hints.PointOfDeduction.label}"
+                                 <af:column headerText="Point of Deduction"
                                            id="resId1c10" visible="false">
                                     <af:selectOneChoice value="#{row.bindings.PointOfDeduction.inputValue}"
                                                         label="#{row.bindings.PointOfDeduction.label}"
@@ -190,6 +194,21 @@
                                         <f:validator binding="#{row.bindings.PointOfDeduction.validator}"/>
                                     </af:selectOneChoice>
                                 </af:column>
+                                <af:column headerText="Effective From" id="resId1c6"  visible="false">
+                                    <af:outputText value="#{row.EffectiveFrom}"
+                                                   shortDesc="#{bindings.SgsTdsWhtVO.hints.EffectiveFrom.tooltip}"
+                                                   id="ot3">
+                                        <af:convertDateTime pattern="#{bindings.SgsTdsWhtVO.hints.EffectiveFrom.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="Effective To" id="resId1c7" width="150">
+                                    <af:outputText value="#{row.EffectiveTo}"
+                                                   shortDesc="#{bindings.SgsTdsWhtVO.hints.EffectiveTo.tooltip}"
+                                                   id="ot4">
+                                        <af:convertDateTime pattern="#{bindings.SgsTdsWhtVO.hints.EffectiveTo.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                               
                                 <af:column headerText="#{bindings.SgsTdsWhtVO.hints.TdsWhtId.label}" id="resId1c15" visible="false">
                                     <af:outputText value="#{row.TdsWhtId}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.TdsWhtId.tooltip}" id="ot8">
@@ -197,22 +216,7 @@
                                                           pattern="#{bindings.SgsTdsWhtVO.hints.TdsWhtId.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodFrom.label}"
-                                           id="resId1c17" visible="false">
-                                    <af:outputText value="#{row.ValidityPeriodFrom}"
-                                                   shortDesc="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodFrom.tooltip}"
-                                                   id="ot10">
-                                        <af:convertDateTime pattern="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodFrom.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodTo.label}"
-                                           id="resId1c18" visible="false">
-                                    <af:outputText value="#{row.ValidityPeriodTo}"
-                                                   shortDesc="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodTo.tooltip}"
-                                                   id="ot11">
-                                        <af:convertDateTime pattern="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodTo.format}"/>
-                                    </af:outputText>
-                                </af:column>
+                               
                             </af:table>
                         </af:panelCollection>
                     </af:panelGroupLayout>
