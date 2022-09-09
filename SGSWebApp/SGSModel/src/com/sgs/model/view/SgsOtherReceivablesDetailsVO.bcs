@@ -31,3 +31,24 @@ def pType_AffiliateAccountLOV_BindVariable_BoundParameter()
 'CURRENCY'
 }
 
+
+@AccessorParameterExpression(accessorName="LEList", name="pType")
+def pType_LEList_BindVariable_BoundParameter()
+{
+'LEGAL_ENTITY'
+}
+
+
+@AccessorParameterExpression(accessorName="OperatingUnitList", name="pType")
+def pType_OperatingUnitList_BindVariable_BoundParameter()
+{
+'OPR_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="DeptList", name="pType")
+def pType_DeptList_BindVariable_BoundParameter()
+{
+'DEPT_ID'
+}
+

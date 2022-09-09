@@ -57,6 +57,22 @@
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.CostIdentificationId.tooltip}"
                                            id="ot3"/>
                         </af:column>
+                        <af:column headerText="Legal Entity"
+                                   id="c9">
+                            <af:outputText value="#{row.LegalEntity}"
+                                           shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.LegalEntity.tooltip}"
+                                           id="ot12"/>
+                            <f:facet name="footer">
+                                <af:selectOneChoice value="#{bindings.LegalEntity.inputValue}"
+                                                    label="#{bindings.LegalEntity.label}"
+                                                    required="#{bindings.LegalEntity.hints.mandatory}"
+                                                    shortDesc="#{bindings.LegalEntity.hints.tooltip}" id="soc11"
+                                                    simple="true">
+                                    <f:selectItems value="#{bindings.LegalEntity.items}" id="si11"/>
+                                    <f:validator binding="#{bindings.LegalEntity.validator}"/>
+                                </af:selectOneChoice>
+                            </f:facet>
+                        </af:column>
                         <af:column headerText="Business Unit"
                                    id="c4">
                             <af:outputText value="#{row.BusinessUnit}"
@@ -69,6 +85,38 @@
                                                     shortDesc="#{bindings.BusinessUnitList.hints.tooltip}" id="soc1">
                                     <f:selectItems value="#{bindings.BusinessUnitList.items}" id="si1"/>
                                     <f:validator binding="#{bindings.BusinessUnitList.validator}"/>
+                                </af:selectOneChoice>
+                            </f:facet>
+                        </af:column>
+                        <af:column headerText="Operating Unit"
+                                   id="c10">
+                            <af:outputText value="#{row.OPERATINGUNIT}"
+                                           shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.OPERATINGUNIT.tooltip}"
+                                           id="ot10"/>
+                            <f:facet name="footer">
+                                <af:selectOneChoice value="#{bindings.OPERATINGUNIT.inputValue}"
+                                                    label="#{bindings.OPERATINGUNIT.label}"
+                                                    required="#{bindings.OPERATINGUNIT.hints.mandatory}"
+                                                    shortDesc="#{bindings.OPERATINGUNIT.hints.tooltip}" id="soc8"
+                                                    simple="true">
+                                    <f:selectItems value="#{bindings.OPERATINGUNIT.items}" id="si8"/>
+                                    <f:validator binding="#{bindings.OPERATINGUNIT.validator}"/>
+                                </af:selectOneChoice>
+                            </f:facet>
+                        </af:column>
+                        <af:column headerText="Department ID"
+                                   id="c11">
+                            <af:outputText value="#{row.DepartmentId}"
+                                           shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.DepartmentId.tooltip}"
+                                           id="ot9"/>
+                            <f:facet name="footer">
+                                <af:selectOneChoice value="#{bindings.DepartmentId.inputValue}"
+                                                    label="#{bindings.DepartmentId.label}"
+                                                    required="#{bindings.DepartmentId.hints.mandatory}"
+                                                    shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="soc9"
+                                                    simple="true">
+                                    <f:selectItems value="#{bindings.DepartmentId.items}" id="si9"/>
+                                    <f:validator binding="#{bindings.DepartmentId.validator}"/>
                                 </af:selectOneChoice>
                             </f:facet>
                         </af:column>
@@ -130,7 +178,7 @@
                 <af:outputText value="Update values for reclassing above extarcted transactions" id="ot11"
                                inlineStyle="font-weight:bold;font-size:12px;color:red"/>
                 <af:spacer id="s1" width="20"/>
-            </af:panelGroupLayout>
+                </af:panelGroupLayout>
             </af:panelBox>
         </f:facet>
     </af:panelStretchLayout>

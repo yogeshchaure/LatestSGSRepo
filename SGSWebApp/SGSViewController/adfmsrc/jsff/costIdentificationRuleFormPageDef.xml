@@ -10,8 +10,6 @@
               id="SgsIdenCombinationVO1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_RuleId" id="RuleId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_GlId" id="GlId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_JobCode" id="JobCode"
@@ -78,5 +76,10 @@
             Action="removeCurrentRow"/>
     <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_DataSource"
           id="DataSource" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsCostIdentificationRuleView1Iterator" id="RuleId1">
+      <AttrNames>
+        <Item Value="RuleId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

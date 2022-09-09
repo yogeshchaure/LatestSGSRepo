@@ -137,24 +137,6 @@
     ViewObjectName="com.sgs.model.view.VatLOV"
     RowLevelBinds="true"/>
   <ListBinding
-    Name="LOV_VatId"
-    ListVOName="VatLOV"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="VatId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="VATID"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="VATID"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_ServiceProvider"
     ListVOName="ServiceProviderLOV"
     NullValueFlag="start"
@@ -266,16 +248,13 @@
     PrecisionRule="true"
     EntityAttrName="VatId"
     EntityUsage="SgsVatInquiry"
-    AliasName="VAT_ID"
-    LOVName="LOV_VatId">
+    AliasName="VAT_ID">
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="0.0"/>
         <LABEL
           ResId="com.sgs.model.view.SgsVatInquiryVO.VatId_LABEL"/>
-        <CONTROLTYPE
-          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

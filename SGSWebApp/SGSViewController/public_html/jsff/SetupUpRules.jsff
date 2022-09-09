@@ -53,24 +53,24 @@
                                                    inlineStyle="min-height:500px;" icon="/resources/icons/TaxLogo.png">
                                     <af:region value="#{bindings.gstInquiryBTF1.regionModel}" id="r8"/>
                                 </af:showDetailItem>
-                                <af:showDetailItem id="sdi8" text="Value Added Tax (VAT) Set-Up"
+                                <af:showDetailItem id="sdi8" text="Value Added Tax (VAT) Setup"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                                    inlineStyle="min-height:500px;" icon="/resources/icons/VATTAX.png">
                                     <af:region value="#{bindings.vatInquiryBTF1.regionModel}" id="r3"/>
                                 </af:showDetailItem>
-                                <af:showDetailItem id="sdi9" text="Withholding Tax (WHT) / TDS Set-Up"
+                                <af:showDetailItem id="sdi9" text="Withholding Tax (WHT) / TDS Setup"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                                    inlineStyle="min-height:500px;" icon="/resources/icons/WHTtax.png">
                                     <af:region value="#{bindings.withholdingTaxDeductedTaxMainBTF1.regionModel}"
                                                id="r7"/>
                                 </af:showDetailItem>
-                                 <af:showDetailItem id="sdi10" text="Global Settings Set-Up"
+                                 <af:showDetailItem id="sdi10" text="Global Settings Setup"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                                    inlineStyle="min-height:500px;"
                                                    icon="/resources/icons/globalSetting.png"  visible="false">
                           
                         </af:showDetailItem>
-                                <af:showDetailItem id="sdi2" text="ISD Inquiry"
+                                <af:showDetailItem id="sdi2" text="ISD Setup"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                                    inlineStyle="min-height:500px;"
                                                    icon="/resources/icons/globalSetting.png" >

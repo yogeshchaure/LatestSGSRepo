@@ -37,7 +37,7 @@
             <f:validator binding="#{bindings.Opration_Unit.validator}"/>
           </af:selectOneChoice>
           <af:selectOneChoice value="#{bindings.AlternateBuDepartment.inputValue}"
-                              label="Department"
+                              label="Department ID"
                               required="#{bindings.AlternateBuDepartment.hints.mandatory}"
                               shortDesc="#{bindings.AlternateBuDepartment.hints.tooltip}" id="soc10">
             <f:selectItems value="#{bindings.AlternateBuDepartment.items}" id="si10"/>
@@ -81,21 +81,6 @@
             <f:selectItems value="#{bindings.BuStatus.items}" id="si5"/>
             <f:validator binding="#{bindings.BuStatus.validator}"/>
           </af:selectOneChoice>
-          <af:inputDate value="#{bindings.EffectiveStartDate.inputValue}"
-                        label="#{bindings.EffectiveStartDate.hints.label}"
-                        required="#{bindings.EffectiveStartDate.hints.mandatory}"
-                        columns="#{bindings.EffectiveStartDate.hints.displayWidth}"
-                        shortDesc="#{bindings.EffectiveStartDate.hints.tooltip}" id="id1">
-            <f:validator binding="#{bindings.EffectiveStartDate.validator}"/>
-            <af:convertDateTime pattern="#{bindings.EffectiveStartDate.format}"/>
-          </af:inputDate>
-          <af:inputDate value="#{bindings.EffectiveEndDate.inputValue}" label="#{bindings.EffectiveEndDate.hints.label}"
-                        required="#{bindings.EffectiveEndDate.hints.mandatory}"
-                        columns="#{bindings.EffectiveEndDate.hints.displayWidth}"
-                        shortDesc="#{bindings.EffectiveEndDate.hints.tooltip}" id="id2">
-            <f:validator binding="#{bindings.EffectiveEndDate.validator}"/>
-            <af:convertDateTime pattern="#{bindings.EffectiveEndDate.format}"/>
-          </af:inputDate>
           <!--<af:inputText value="#{bindings.AlternateBu.inputValue}" label="Alternate Business Unit"
                         required="#{bindings.AlternateBu.hints.mandatory}"
                         columns="#{bindings.AlternateBu.hints.displayWidth}"
@@ -117,7 +102,7 @@
             <f:validator binding="#{bindings.NettingApplicability.validator}"/>
           </af:selectOneChoice>-->
           <af:selectOneChoice value="#{bindings.SubLedgerApplicability.inputValue}"
-                              label="#{bindings.SubLedgerApplicability.label}"
+                              label="Sub Ledger Applicability"
                               required="#{bindings.SubLedgerApplicability.hints.mandatory}"
                               shortDesc="#{bindings.SubLedgerApplicability.hints.tooltip}" id="soc7">
             <f:selectItems value="#{bindings.SubLedgerApplicability.items}" id="si7"/>
@@ -156,20 +141,34 @@
             <f:selectItems value="#{bindings.PayingBU.items}" id="si12"/>
             <f:validator binding="#{bindings.PayingBU.validator}"/>
           </af:selectOneChoice>
-          <af:inputDate value="#{bindings.UpdatedDate.inputValue}" label="#{bindings.UpdatedDate.hints.label}"
-                        required="#{bindings.UpdatedDate.hints.mandatory}"
-                        columns="#{bindings.UpdatedDate.hints.displayWidth}"
-                        shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="id3" readOnly="true">
-            <f:validator binding="#{bindings.UpdatedDate.validator}"/>
-            <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
+          <af:inputDate value="#{bindings.EffectiveStartDate.inputValue}" label="Effective From"
+                        required="#{bindings.EffectiveStartDate.hints.mandatory}"
+                        columns="#{bindings.EffectiveStartDate.hints.displayWidth}"
+                        shortDesc="#{bindings.EffectiveStartDate.hints.tooltip}" id="id1">
+            <f:validator binding="#{bindings.EffectiveStartDate.validator}"/>
+            <af:convertDateTime pattern="#{bindings.EffectiveStartDate.format}"/>
           </af:inputDate>
-          <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="#{bindings.UpdatedBy.hints.label}"
+          <af:inputDate value="#{bindings.EffectiveEndDate.inputValue}" label="Effective To"
+                        required="#{bindings.EffectiveEndDate.hints.mandatory}"
+                        columns="#{bindings.EffectiveEndDate.hints.displayWidth}"
+                        shortDesc="#{bindings.EffectiveEndDate.hints.tooltip}" id="id2">
+            <f:validator binding="#{bindings.EffectiveEndDate.validator}"/>
+            <af:convertDateTime pattern="#{bindings.EffectiveEndDate.format}"/>
+          </af:inputDate>
+          <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="Created By"
                         required="#{bindings.UpdatedBy.hints.mandatory}"
                         columns="#{bindings.UpdatedBy.hints.displayWidth}"
                         maximumLength="#{bindings.UpdatedBy.hints.precision}"
                         shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="it6" readOnly="true">
             <f:validator binding="#{bindings.UpdatedBy.validator}"/>
           </af:inputText>
+          <af:inputDate value="#{bindings.UpdatedDate.inputValue}" label="Created Date"
+                        required="#{bindings.UpdatedDate.hints.mandatory}"
+                        columns="#{bindings.UpdatedDate.hints.displayWidth}"
+                        shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="id3" readOnly="true">
+            <f:validator binding="#{bindings.UpdatedDate.validator}"/>
+            <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
+          </af:inputDate>
         </af:panelFormLayout>
       </af:panelBox>
     </f:facet>

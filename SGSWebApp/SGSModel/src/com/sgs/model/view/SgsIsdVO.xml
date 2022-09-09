@@ -64,6 +64,17 @@
       </SchemaBasedProperties>
     </Properties>
   </Variable>
+  <Variable
+    Name="bEffTo"
+    Kind="viewcriteria"
+    Type="java.sql.Date">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsIsdVO.bEffTo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <ViewAccessor
     Name="ServiceProviderLOV"
     ViewObjectName="com.sgs.model.view.SgsListVO"
@@ -198,7 +209,16 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="SgsIsd"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsIsdVO.CreatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsIsdVO.CreatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="IgStReceivable"
     PrecisionRule="true"
@@ -279,19 +299,46 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="SgsIsd"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsIsdVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsIsdVO.UpdatedDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EffectiveFrom"
     PrecisionRule="true"
     EntityAttrName="EffectiveFrom"
     EntityUsage="SgsIsd"
-    AliasName="EFFECTIVE_FROM"/>
+    AliasName="EFFECTIVE_FROM">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsIsdVO.EffectiveFrom_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsIsdVO.EffectiveFrom_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EffectiveTo"
     PrecisionRule="true"
     EntityAttrName="EffectiveTo"
     EntityUsage="SgsIsd"
-    AliasName="EFFECTIVE_TO"/>
+    AliasName="EFFECTIVE_TO">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsIsdVO.EffectiveTo_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsIsdVO.EffectiveTo_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsIsdVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsIsdVO"
@@ -349,6 +396,14 @@
         Operator="="
         Conjunction="AND"
         Value=":bTypeOfSupply"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="EffectiveTo"
+        ViewAttribute="EffectiveTo"
+        Operator="="
+        Conjunction="AND"
+        Value=":bEffTo"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>

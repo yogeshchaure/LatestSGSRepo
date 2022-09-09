@@ -28,19 +28,13 @@
           </f:facet>
           <af:panelGroupLayout id="pgl2" layout="horizontal">
             <af:panelFormLayout id="pfl1" rows="4">
-              <af:inputText value="#{bindings.IsdInvoiceNo1.inputValue}" label="ISD ID"
-                            required="#{bindings.IsdInvoiceNo1.hints.mandatory}"
-                            columns="#{bindings.IsdInvoiceNo1.hints.displayWidth}"
-                            maximumLength="#{bindings.IsdInvoiceNo1.hints.precision}"
-                            shortDesc="#{bindings.IsdInvoiceNo1.hints.tooltip}" id="it4">
-                <f:validator binding="#{bindings.IsdInvoiceNo1.validator}"/>
-              </af:inputText>
-              <af:selectOneChoice value="#{bindings.IsdInvoiceNo.inputValue}" label="ISD Invoice No."
-                                  required="#{bindings.IsdInvoiceNo.hints.mandatory}"
-                                  shortDesc="#{bindings.IsdInvoiceNo.hints.tooltip}" id="soc1" rendered="false">
-                <f:selectItems value="#{bindings.IsdInvoiceNo.items}" id="si1"/>
+              <af:inputText value="#{bindings.IsdInvoiceNo.inputValue}" label="ISD ID"
+                            required="#{bindings.IsdInvoiceNo.hints.mandatory}"
+                            columns="#{bindings.IsdInvoiceNo.hints.displayWidth}"
+                            maximumLength="#{bindings.IsdInvoiceNo.hints.precision}"
+                            shortDesc="#{bindings.IsdInvoiceNo.hints.tooltip}" id="it4">
                 <f:validator binding="#{bindings.IsdInvoiceNo.validator}"/>
-              </af:selectOneChoice>
+              </af:inputText>
               <af:selectOneChoice value="#{bindings.ServiceProvider.inputValue}"
                                   label="Service Provider"
                                   required="#{bindings.ServiceProvider.hints.mandatory}"
@@ -61,7 +55,7 @@
                 <f:selectItems value="#{bindings.TypeOfSupply.items}" id="si4"/>
                 <f:validator binding="#{bindings.TypeOfSupply.validator}"/>
               </af:selectOneChoice>
-              <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="#{bindings.EffectiveFrom.hints.label}"
+              <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="Effective From"
                             required="#{bindings.EffectiveFrom.hints.mandatory}"
                             columns="#{bindings.EffectiveFrom.hints.displayWidth}"
                             shortDesc="#{bindings.EffectiveFrom.hints.tooltip}" id="id1">
@@ -79,7 +73,7 @@
                 <af:outputText value="#{bindings.UpdatedBy.inputValue}" shortDesc="#{bindings.UpdatedBy.hints.tooltip}"
                                id="ot2"/>
               </af:panelLabelAndMessage>
-              <af:panelLabelAndMessage label="Creation Date" id="plam2">
+              <af:panelLabelAndMessage label="Created Date" id="plam2">
                 <af:outputText value="#{bindings.UpdatedDate.inputValue}"
                                shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="ot3">
                   <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>

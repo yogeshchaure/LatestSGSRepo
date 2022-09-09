@@ -60,7 +60,7 @@
                   <f:validator binding="#{row.bindings.Opration_Unit.validator}"/>
                 </af:selectOneChoice>
               </af:column>
-              <af:column headerText="Department" id="c3" width="10%">
+              <af:column headerText="Department ID" id="c3" width="10%">
                 <af:selectOneChoice value="#{row.bindings.AlternateBuDepartment.inputValue}"
                                     label="#{row.bindings.AlternateBuDepartment.label}"
                                     required="#{bindings.SgsBusinessUnitMasterVO1.hints.AlternateBuDepartment.mandatory}"
@@ -129,7 +129,7 @@
                   <f:validator binding="#{row.bindings.SubLedgerApplicability.validator}"/>
                 </af:selectOneChoice>
               </af:column>
-              <af:column headerText="Effective End Date" id="resId1c7" width="10%">
+              <af:column headerText="Effective To" id="resId1c7" width="10%">
                 <af:outputText value="#{row.EffectiveEndDate}"
                                shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.EffectiveEndDate.tooltip}" id="ot3">
                   <af:convertDateTime pattern="#{bindings.SgsBusinessUnitMasterVO1.hints.EffectiveEndDate.format}"/>

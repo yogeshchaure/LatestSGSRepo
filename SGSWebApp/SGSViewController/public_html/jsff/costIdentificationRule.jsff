@@ -67,16 +67,6 @@
                                  shortDesc="#{bindings.SgsCostIdentificationRuleView1.hints.RuleId.tooltip}" id="ot9"/>-->
                   <af:link text="#{row.RuleId}" id="l1" action="CIREdit" inlineStyle="font-weight:bold;"/>
                 </af:column>
-                <af:column headerText="Account Treatment" id="c6" width="8%">
-                  <af:selectOneChoice value="#{row.bindings.AccountTratment.inputValue}"
-                                      label="#{row.bindings.AccountTratment.label}"
-                                      required="#{bindings.SgsCostIdentificationRuleView1.hints.AccountTratment.mandatory}"
-                                      shortDesc="#{bindings.SgsCostIdentificationRuleView1.hints.AccountTratment.tooltip}"
-                                       id="soc4" readOnly="true" >
-                    <f:selectItems value="#{row.bindings.AccountTratment.items}" id="si4"/>
-                    <f:validator binding="#{row.bindings.AccountTratment.validator}"/>
-                  </af:selectOneChoice>
-                </af:column>
                  <af:column headerText="#{bindings.SgsCostIdentificationRuleView1.hints.ALLOCATIONBASIS.label}" id="c10"
                             width="8%">
                   <af:selectOneChoice value="#{row.bindings.ALLOCATIONBASIS.inputValue}"
@@ -86,6 +76,15 @@
                                       readOnly="true" id="soc1">
                     <f:selectItems value="#{row.bindings.ALLOCATIONBASIS.items}" id="si1"/>
                     <f:validator binding="#{row.bindings.ALLOCATIONBASIS.validator}"/>
+                  </af:selectOneChoice>
+                </af:column>
+                <af:column headerText="Accounting Treatment" id="c6" width="8%">
+                  <af:selectOneChoice value="#{row.bindings.AccountTratment.inputValue}" label="Accounting Treatment"
+                                      required="#{bindings.SgsCostIdentificationRuleView1.hints.AccountTratment.mandatory}"
+                                      shortDesc="#{bindings.SgsCostIdentificationRuleView1.hints.AccountTratment.tooltip}"
+                                      id="soc4" readOnly="true">
+                    <f:selectItems value="#{row.bindings.AccountTratment.items}" id="si4"/>
+                    <f:validator binding="#{row.bindings.AccountTratment.validator}"/>
                   </af:selectOneChoice>
                 </af:column>
                 <af:column headerText="#{bindings.SgsCostIdentificationRuleView1.hints.DataSource.label}" id="c3"

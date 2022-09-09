@@ -19,6 +19,9 @@
           <Item Value="JobCode"/>
           <Item Value="AffiliateAccount"/>
           <Item Value="Amount"/>
+          <Item Value="LegalEntity"/>
+          <Item Value="OPERATINGUNIT"/>
+          <Item Value="DepartmentId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -30,5 +33,11 @@
           id="JobCodeList" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsOtherReceivablesDetailsVOIterator" StaticList="false" Uses="LOV_AffiliateAccountList"
           id="AffiliateAccountList" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsOtherReceivablesDetailsVOIterator" StaticList="false" Uses="LOV_LegalEntity"
+          id="LegalEntity" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsOtherReceivablesDetailsVOIterator" StaticList="false" Uses="LOV_OPERATINGUNIT"
+          id="OPERATINGUNIT" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsOtherReceivablesDetailsVOIterator" StaticList="false" Uses="LOV_DepartmentId"
+          id="DepartmentId" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
