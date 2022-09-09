@@ -27,19 +27,20 @@
           </f:facet>
           <af:panelGroupLayout id="pgl2" layout="vertical">
             <af:panelFormLayout id="pfl1" rows="4">
-              <af:selectOneChoice value="#{bindings.RuleId.inputValue}" label="Cost Identification ID"
-                                  required="#{bindings.RuleId.hints.mandatory}"
-                                  shortDesc="#{bindings.RuleId.hints.tooltip}" id="soc1">
-                <f:selectItems value="#{bindings.RuleId.items}" id="si1"/>
-                <f:validator binding="#{bindings.RuleId.validator}"/>
-              </af:selectOneChoice>
+              <af:inputText value="#{bindings.RuleId1.inputValue}" label="Cost Identification ID"
+                            required="#{bindings.RuleId1.hints.mandatory}"
+                            columns="#{bindings.RuleId1.hints.displayWidth}"
+                            maximumLength="#{bindings.RuleId1.hints.precision}"
+                            shortDesc="#{bindings.RuleId1.hints.tooltip}" id="it2">
+                <f:validator binding="#{bindings.RuleId1.validator}"/>
+              </af:inputText>
               <!--<af:selectOneChoice value="#{bindings.GlId.inputValue}" label="GL Code"
                                 required="#{bindings.GlId.hints.mandatory}" shortDesc="#{bindings.GlId.hints.tooltip}"
                                 id="soc2">
               <f:selectItems value="#{bindings.GlId.items}" id="si2"/>
               <f:validator binding="#{bindings.GlId.validator}"/>
             </af:selectOneChoice>-->
-              <af:selectOneChoice value="#{bindings.AccountTratment.inputValue}" label="Accont Treatment"
+              <af:selectOneChoice value="#{bindings.AccountTratment.inputValue}" label="Acconting Treatment"
                                   required="#{bindings.AccountTratment.hints.mandatory}"
                                   shortDesc="#{bindings.AccountTratment.hints.tooltip}" id="soc4">
                 <f:selectItems value="#{bindings.AccountTratment.items}" id="si4"/>
@@ -75,7 +76,7 @@
                 <af:outputText value="#{bindings.CreatedBy.inputValue}" shortDesc="#{bindings.CreatedBy.hints.tooltip}"
                                id="ot1"/>
               </af:panelLabelAndMessage>
-              <af:panelLabelAndMessage label="Creation Date" id="plam2">
+              <af:panelLabelAndMessage label="Created Date" id="plam2">
                 <af:outputText value="#{bindings.CreatedDate.inputValue}"
                                shortDesc="#{bindings.CreatedDate.hints.tooltip}" id="ot2">
                   <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>

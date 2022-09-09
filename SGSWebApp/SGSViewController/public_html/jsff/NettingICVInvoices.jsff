@@ -84,14 +84,6 @@
                                                        shortDesc="#{bindings.SgsNicviVO.hints.POperatingUnit.tooltip}"
                                                        id="ot5"/>
                                     </af:column>
-                                    <af:column headerText="Accounts Payable" id="resId1c7">
-                                        <af:outputText value="#{row.PAccountsPayable}"
-                                                       shortDesc="#{bindings.SgsNicviVO.hints.PAccountsPayable.tooltip}"
-                                                       id="ot6">
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.SgsNicviVO.hints.PAccountsPayable.format}"/>
-                                        </af:outputText>
-                                    </af:column>
                                     <af:column headerText="Department ID" id="c3">
                                         <af:outputText value="#{row.PDept}"
                                                        shortDesc="#{bindings.SgsNicviVO.hints.PDept.tooltip}" id="ot1"/>
@@ -100,6 +92,14 @@
                                         <af:outputText value="#{row.PCurrency}"
                                                        shortDesc="#{bindings.SgsNicviVO.hints.PCurrency.tooltip}"
                                                        id="ot12"/>
+                                    </af:column>
+                                    <af:column headerText="Accounts Payable" id="resId1c7">
+                                        <af:outputText value="#{row.PAccountsPayable}"
+                                                       shortDesc="#{bindings.SgsNicviVO.hints.PAccountsPayable.tooltip}"
+                                                       id="ot6">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.SgsNicviVO.hints.PAccountsPayable.format}"/>
+                                        </af:outputText>
                                     </af:column>
                                 </af:column>
                                 <af:column id="c2" headerText="Receivables (I/Co Supplier)" align="center">

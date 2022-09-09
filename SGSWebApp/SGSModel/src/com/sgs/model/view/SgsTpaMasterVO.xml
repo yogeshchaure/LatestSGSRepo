@@ -229,7 +229,7 @@
     Name="LOV_PassThrough"
     ListVOName="YesNoList"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueId="LOV_PassThrough_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="PassThrough"/>
@@ -247,7 +247,7 @@
     Name="LOV_PassThroughBu"
     ListVOName="BUList"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueId="LOV_PassThroughBu_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="PassThroughBu"/>
@@ -283,7 +283,7 @@
     Name="LOV_NETTINGAPPLICATIBILITY"
     ListVOName="nettingApplicatibilityLOV"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    NullValueId="LOV_NETTINGAPPLICATIBILITY_LOVUIHints_NullValueId"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="NETTINGAPPLICATIBILITY"/>
@@ -294,24 +294,6 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Discription"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_TpaId"
-    ListVOName="TpaIdLOV"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="TpaId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="TPAID"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="TPAID"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -355,12 +337,9 @@
     PrecisionRule="true"
     EntityAttrName="TpaId"
     EntityUsage="SgsTpaMaster"
-    AliasName="TPA_ID"
-    LOVName="LOV_TpaId">
+    AliasName="TPA_ID">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="1.0"/>
       </SchemaBasedProperties>
@@ -391,10 +370,10 @@
     LOVName="LOV_LeServiceReceiver">
     <Properties>
       <SchemaBasedProperties>
-        <FIELDORDER
-          Value="3.0"/>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="3.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -407,10 +386,10 @@
     LOVName="LOV_PassThrough">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="4.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -423,10 +402,10 @@
     LOVName="LOV_PassThroughBu">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="5.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -476,7 +455,7 @@
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTpaMasterVO.EffectiveEndDate_FMT_FORMATTER"/>
         <FIELDORDER
-          Value="9.0"/>
+          Value="15.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -494,7 +473,7 @@
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTpaMasterVO.CreatedDate_FMT_FORMATTER"/>
         <FIELDORDER
-          Value="10.0"/>
+          Value="9.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -508,7 +487,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="11.0"/>
+          Value="10.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -526,7 +505,7 @@
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTpaMasterVO.UpdatedDate_FMT_FORMATTER"/>
         <FIELDORDER
-          Value="12.0"/>
+          Value="11.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -540,7 +519,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="13.0"/>
+          Value="12.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -553,10 +532,10 @@
     LOVName="LOV_NETTINGAPPLICATIBILITY">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
         <FIELDORDER
           Value="8.0"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -572,7 +551,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="14.0"/>
+          Value="13.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -585,7 +564,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="15.0"/>
+          Value="14.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

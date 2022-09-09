@@ -35,7 +35,14 @@
   <Variable
     Name="bSrCatg"
     Kind="viewcriteria"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.MarkUpRateMsterVO.bSrCatg_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <Variable
     Name="bEndDate"
     Kind="viewcriteria"
@@ -44,6 +51,17 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.sgs.model.view.MarkUpRateMsterVO.bEndDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <Variable
+    Name="bMarkupID"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.MarkUpRateMsterVO.bMarkupID_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Variable>
@@ -124,7 +142,14 @@
     PrecisionRule="true"
     EntityAttrName="RateId"
     EntityUsage="MarkUpRateMaster"
-    AliasName="RATE_ID"/>
+    AliasName="RATE_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="0.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Geography"
     PrecisionRule="true"
@@ -136,6 +161,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="2.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -152,6 +179,8 @@
           Value="choice"/>
         <LABEL
           ResId="com.sgs.model.view.MarkUpRateMsterVO.ServiceCategory_LABEL"/>
+        <FIELDORDER
+          Value="3.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -165,6 +194,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.sgs.model.view.MarkUpRateMsterVO.MarkupRate_LABEL"/>
+        <FIELDORDER
+          Value="4.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -182,6 +213,8 @@
           ResId="com.sgs.model.view.MarkUpRateMsterVO.EffectiveRom_FMT_FORMATTER"/>
         <FMT_FORMAT
           ResId="com.sgs.model.view.MarkUpRateMsterVO.EffectiveRom_FMT_FORMAT"/>
+        <FIELDORDER
+          Value="5.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -199,6 +232,8 @@
           ResId="com.sgs.model.view.MarkUpRateMsterVO.EffectiveTill_FMT_FORMATTER"/>
         <FMT_FORMAT
           ResId="com.sgs.model.view.MarkUpRateMsterVO.EffectiveTill_FMT_FORMAT"/>
+        <FIELDORDER
+          Value="8.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -215,6 +250,8 @@
           ResId="com.sgs.model.view.MarkUpRateMsterVO.CreatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.MarkUpRateMsterVO.CreatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="6.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -224,7 +261,14 @@
     EntityAttrName="CreatedBy"
     EntityUsage="MarkUpRateMaster"
     AliasName="CREATED_BY"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="7.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
@@ -238,6 +282,8 @@
           ResId="com.sgs.model.view.MarkUpRateMsterVO.UpdatedDate_FMT_FORMATTER"/>
         <FMT_FORMAT
           ResId="com.sgs.model.view.MarkUpRateMsterVO.UpdatedDate_FMT_FORMAT"/>
+        <FIELDORDER
+          Value="9.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -247,13 +293,27 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="MarkUpRateMaster"
     AliasName="UPDATED_BY"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="10.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MARKUPRATEID"
     PrecisionRule="true"
     EntityAttrName="MARKUPRATEID"
     EntityUsage="MarkUpRateMaster"
-    AliasName="MARK_UP_RATE_ID"/>
+    AliasName="MARK_UP_RATE_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="1.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="MarkUpRateMsterVOCriteria"
     ViewObjectName="com.sgs.model.view.MarkUpRateMsterVO"
@@ -302,6 +362,14 @@
         Operator="="
         Conjunction="AND"
         Value=":bEndDate"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="MARKUPRATEID"
+        ViewAttribute="MARKUPRATEID"
+        Operator="="
+        Conjunction="AND"
+        Value=":bMarkupID"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>

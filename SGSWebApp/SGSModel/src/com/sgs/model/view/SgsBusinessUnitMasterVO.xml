@@ -480,13 +480,27 @@
     PrecisionRule="true"
     EntityAttrName="BuId"
     EntityUsage="SgsBusinessUnitMaster"
-    AliasName="BU_ID"/>
+    AliasName="BU_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="0.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BuName"
     PrecisionRule="true"
     EntityAttrName="BuName"
     EntityUsage="SgsBusinessUnitMaster"
-    AliasName="BU_NAME"/>
+    AliasName="BU_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="1.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LeagalEntity"
     PrecisionRule="true"
@@ -498,6 +512,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="2.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -512,6 +528,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="3.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -526,6 +544,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="4.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -540,6 +560,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="5.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -554,6 +576,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="6.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -568,6 +592,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="7.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -583,6 +609,8 @@
           ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.EffectiveStartDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.EffectiveStartDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="8.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -598,6 +626,8 @@
           ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.EffectiveEndDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.EffectiveEndDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="19.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -612,6 +642,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="9.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -626,6 +658,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="10.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -640,6 +674,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="11.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -656,6 +692,8 @@
           Value="choice"/>
         <LABEL
           ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.ThresholdApplicability_LABEL"/>
+        <FIELDORDER
+          Value="12.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -670,6 +708,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="13.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -678,19 +718,40 @@
     PrecisionRule="true"
     EntityAttrName="ICoSupplierName"
     EntityUsage="SgsBusinessUnitMaster"
-    AliasName="I_CO_SUPPLIER_NAME"/>
+    AliasName="I_CO_SUPPLIER_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="14.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ICoCustomerName"
     PrecisionRule="true"
     EntityAttrName="ICoCustomerName"
     EntityUsage="SgsBusinessUnitMaster"
-    AliasName="I_CO_CUSTOMER_NAME"/>
+    AliasName="I_CO_CUSTOMER_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="15.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="GstRegNum"
     PrecisionRule="true"
     EntityAttrName="GstRegNum"
     EntityUsage="SgsBusinessUnitMaster"
-    AliasName="GST_REG_NUM"/>
+    AliasName="GST_REG_NUM">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="16.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CollBU"
     PrecisionRule="true"
@@ -702,6 +763,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="17.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -716,6 +779,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="18.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -732,6 +797,8 @@
           ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.CreatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.CreatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="20.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -741,7 +808,14 @@
     EntityAttrName="CreatedBy"
     EntityUsage="SgsBusinessUnitMaster"
     AliasName="CREATED_BY"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="21.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
@@ -755,6 +829,8 @@
           ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.UpdatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsBusinessUnitMasterVO.UpdatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="22.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -764,7 +840,14 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="SgsBusinessUnitMaster"
     AliasName="UPDATED_BY"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="23.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsBusinessUnitMasterVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsBusinessUnitMasterVO"

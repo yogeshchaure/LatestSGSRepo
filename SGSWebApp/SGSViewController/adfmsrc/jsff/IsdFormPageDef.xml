@@ -6,8 +6,6 @@
     <iterator Binds="SgsIsdVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsIsdVOIterator"/>
   </executables>
   <bindings>
-    <list IterBinding="SgsIsdVOIterator" StaticList="false" Uses="LOV_IsdInvoiceNo" id="IsdInvoiceNo"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsIsdVOIterator" StaticList="false" Uses="LOV_ServiceProvider" id="ServiceProvider"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsIsdVOIterator" StaticList="false" Uses="LOV_ServiceReceiver" id="ServiceReceiver"
@@ -42,7 +40,12 @@
         <Item Value="UpdatedDate"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="SgsIsdVOIterator" id="IsdInvoiceNo1">
+    <attributeValues IterBinding="SgsIsdVOIterator" id="EffectiveTo">
+      <AttrNames>
+        <Item Value="EffectiveTo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsIsdVOIterator" id="IsdInvoiceNo">
       <AttrNames>
         <Item Value="IsdInvoiceNo"/>
       </AttrNames>
@@ -50,11 +53,6 @@
     <attributeValues IterBinding="SgsIsdVOIterator" id="EffectiveFrom">
       <AttrNames>
         <Item Value="EffectiveFrom"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="SgsIsdVOIterator" id="EffectiveTo">
-      <AttrNames>
-        <Item Value="EffectiveTo"/>
       </AttrNames>
     </attributeValues>
   </bindings>

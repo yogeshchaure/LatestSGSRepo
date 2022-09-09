@@ -91,7 +91,7 @@
                         </af:panelGroupLayout>
                    </af:panelLabelAndMessage>
                     <af:inputDate value="#{bindings.EffectiveStartDate.inputValue}"
-                                  label="#{bindings.EffectiveStartDate.hints.label}"
+                                  label="Effective From"
                                   required="#{bindings.EffectiveStartDate.hints.mandatory}"
                                   columns="#{bindings.EffectiveStartDate.hints.displayWidth}"
                                   shortDesc="#{bindings.EffectiveStartDate.hints.tooltip}" id="id1">
@@ -99,7 +99,7 @@
                         <af:convertDateTime pattern="#{bindings.EffectiveStartDate.format}"/>
                     </af:inputDate>
                     <af:inputDate value="#{bindings.EffectiveEndDate.inputValue}"
-                                  label="#{bindings.EffectiveEndDate.hints.label}"
+                                  label="Effective To"
                                   required="#{bindings.EffectiveEndDate.hints.mandatory}"
                                   columns="#{bindings.EffectiveEndDate.hints.displayWidth}"
                                   shortDesc="#{bindings.EffectiveEndDate.hints.tooltip}" id="id2">
@@ -120,6 +120,13 @@
                                   shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="it2">
                         <f:validator binding="#{bindings.UpdatedBy.validator}"/>
                     </af:inputText>
+                    <af:inputText value="#{bindings.CreatedBy.inputValue}" label="Created By"
+                                  required="#{bindings.CreatedBy.hints.mandatory}"
+                                  columns="#{bindings.CreatedBy.hints.displayWidth}"
+                                  maximumLength="#{bindings.CreatedBy.hints.precision}"
+                                  shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it4">
+                        <f:validator binding="#{bindings.CreatedBy.validator}"/>
+                    </af:inputText>
                     <af:inputText value="#{bindings.CreatedDate.inputValue}" label="Created Date"
                                   required="#{bindings.CreatedDate.hints.mandatory}"
                                   columns="#{bindings.CreatedDate.hints.displayWidth}"
@@ -127,13 +134,6 @@
                                   shortDesc="#{bindings.CreatedDate.hints.tooltip}" id="it3">
                         <f:validator binding="#{bindings.CreatedDate.validator}"/>
                         <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>
-                    </af:inputText>
-                    <af:inputText value="#{bindings.CreatedBy.inputValue}" label="Created By"
-                                  required="#{bindings.CreatedBy.hints.mandatory}"
-                                  columns="#{bindings.CreatedBy.hints.displayWidth}"
-                                  maximumLength="#{bindings.CreatedBy.hints.precision}"
-                                  shortDesc="#{bindings.CreatedBy.hints.tooltip}" id="it4">
-                        <f:validator binding="#{bindings.CreatedBy.validator}"/>
                     </af:inputText>
                 </af:panelFormLayout>
             </af:panelBox>

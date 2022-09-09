@@ -407,7 +407,7 @@
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTdsWhtVO.EffectiveTo_FMT_FORMATTER"/>
         <FIELDORDER
-          Value="6.0"/>
+          Value="21.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -420,7 +420,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="7.0"/>
+          Value="6.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -436,7 +436,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="8.0"/>
+          Value="7.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -452,7 +452,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="9.0"/>
+          Value="8.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -465,7 +465,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="10.0"/>
+          Value="9.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -478,7 +478,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="11.0"/>
+          Value="10.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -494,7 +494,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="12.0"/>
+          Value="11.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -510,7 +510,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="13.0"/>
+          Value="12.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -526,7 +526,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="14.0"/>
+          Value="13.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -542,7 +542,7 @@
         <CONTROLTYPE
           Value="choice"/>
         <FIELDORDER
-          Value="15.0"/>
+          Value="14.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -569,7 +569,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="16.0"/>
+          Value="15.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -582,7 +582,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="17.0"/>
+          Value="16.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -596,7 +596,7 @@
     <Properties>
       <SchemaBasedProperties>
         <FIELDORDER
-          Value="18.0"/>
+          Value="17.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -614,7 +614,7 @@
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTdsWhtVO.UpdatedDate_FMT_FORMATTER"/>
         <FIELDORDER
-          Value="19.0"/>
+          Value="18.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -631,7 +631,7 @@
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTdsWhtVO.ValidityPeriodFrom_FMT_FORMATTER"/>
         <FIELDORDER
-          Value="20.0"/>
+          Value="19.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -648,7 +648,7 @@
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsTdsWhtVO.ValidityPeriodTo_FMT_FORMATTER"/>
         <FIELDORDER
-          Value="21.0"/>
+          Value="20.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

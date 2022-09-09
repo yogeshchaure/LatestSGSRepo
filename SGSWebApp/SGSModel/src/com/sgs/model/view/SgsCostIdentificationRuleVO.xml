@@ -24,6 +24,9 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.bCostRuleId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="0"/>
+    </AttrArray>
   </Variable>
   <Variable
     Name="bEffectiveDate"
@@ -35,6 +38,9 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.bEffectiveDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="5"/>
+    </AttrArray>
   </Variable>
   <Variable
     Name="bAllocBasis"
@@ -46,6 +52,9 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.bAllocBasis_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="1"/>
+    </AttrArray>
   </Variable>
   <Variable
     Name="bDataSource"
@@ -57,6 +66,9 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.bDataSource_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <AttrArray Name="ExtendedDataInts">
+      <Item Value="2"/>
+    </AttrArray>
   </Variable>
   <ViewAccessor
     Name="CostRuleList"
@@ -226,24 +238,6 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
-  <ListBinding
-    Name="LOV_RuleId"
-    ListVOName="CostRuleList"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="RuleId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Discription"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <ListBinding
     Name="LOV_JobCode"
     ListVOName="JobCodeList"
@@ -415,19 +409,25 @@
     PrecisionRule="true"
     EntityAttrName="CirId"
     EntityUsage="SgsCostIdentificationRule"
-    AliasName="CIR_ID"/>
+    AliasName="CIR_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="0.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="RuleId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="RuleId"
     EntityUsage="SgsCostIdentificationRule"
-    AliasName="RULE_ID"
-    LOVName="LOV_RuleId">
+    AliasName="RULE_ID">
     <Properties>
       <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
+        <FIELDORDER
+          Value="1.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -442,6 +442,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="2.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -450,7 +452,14 @@
     PrecisionRule="true"
     EntityAttrName="GlCode"
     EntityUsage="SgsCostIdentificationRule"
-    AliasName="GL_CODE"/>
+    AliasName="GL_CODE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="3.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="JobCode"
     PrecisionRule="true"
@@ -462,6 +471,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="4.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -476,6 +487,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="5.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -490,6 +503,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="6.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -506,6 +521,8 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.ALLOCATIONBASIS_LABEL"/>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="7.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -522,6 +539,8 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.OFFSETACCOUNT_LABEL"/>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="8.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -538,6 +557,8 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.TARGETACCOUNT_LABEL"/>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="9.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -554,6 +575,8 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.OFFSETJOBCODE_LABEL"/>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="10.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -569,6 +592,8 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.EffectiveFrom_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.EffectiveFrom_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="11.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -584,6 +609,8 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.EffectiveTo_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.EffectiveTo_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="14.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -598,6 +625,8 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="12.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -614,6 +643,8 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.CreatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.CreatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="13.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -623,7 +654,14 @@
     EntityAttrName="CreatedBy"
     EntityUsage="SgsCostIdentificationRule"
     AliasName="CREATED_BY"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="15.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
@@ -637,6 +675,8 @@
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.UpdatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsCostIdentificationRuleVO.UpdatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="16.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -646,7 +686,14 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="SgsCostIdentificationRule"
     AliasName="UPDATED_BY"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="17.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsCostIdentificationRuleVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsCostIdentificationRuleVO"

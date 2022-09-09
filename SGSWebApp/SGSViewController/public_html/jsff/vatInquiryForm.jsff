@@ -28,7 +28,7 @@
           </f:facet>
           <af:panelGroupLayout id="pgl2" layout="vertical">
             <af:panelFormLayout id="pfl1" rows="7">
-              <af:inputText value="#{bindings.VatId.inputValue}" label="#{bindings.VatId.hints.label}"
+              <af:inputText value="#{bindings.VatId.inputValue}" label="VAT ID"
                             required="#{bindings.VatId.hints.mandatory}" columns="#{bindings.VatId.hints.displayWidth}"
                             maximumLength="#{bindings.VatId.hints.precision}"
                             shortDesc="#{bindings.VatId.hints.tooltip}" id="it4">

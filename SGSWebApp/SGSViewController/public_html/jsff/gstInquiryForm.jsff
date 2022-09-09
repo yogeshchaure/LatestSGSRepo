@@ -167,14 +167,14 @@
               <f:validator binding="#{bindings.EffectiveTo.validator}"/>
               <af:convertDateTime pattern="#{bindings.EffectiveTo.format}"/>
             </af:inputDate>
-            <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="#{bindings.UpdatedBy.hints.label}"
+            <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="Created By"
                           required="#{bindings.UpdatedBy.hints.mandatory}" readOnly="true"
                           columns="#{bindings.UpdatedBy.hints.displayWidth}"
                           maximumLength="#{bindings.UpdatedBy.hints.precision}"
                           shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="it10">
               <f:validator binding="#{bindings.UpdatedBy.validator}"/>
             </af:inputText>
-            <af:inputDate value="#{bindings.UpdatedDate.inputValue}" label="#{bindings.UpdatedDate.hints.label}"
+            <af:inputDate value="#{bindings.UpdatedDate.inputValue}" label="Created Date"
                           required="#{bindings.UpdatedDate.hints.mandatory}" readOnly="true"
                           columns="#{bindings.UpdatedDate.hints.displayWidth}"
                           shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="id3">
@@ -182,7 +182,7 @@
               <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
             </af:inputDate>
           </af:panelFormLayout>
-          <af:panelGroupLayout id="pgl2" layout="horizontal">
+          <af:panelGroupLayout id="pgl3" layout="horizontal">
             <af:spacer id="s1" height="30" width="30"/>
             <af:panelBox text="Output GST GL Accounts" id="pb3" showDisclosure="false">
               <f:facet name="toolbar"/>
