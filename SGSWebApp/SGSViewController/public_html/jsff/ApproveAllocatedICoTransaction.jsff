@@ -126,7 +126,7 @@
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.Currency.tooltip}" id="ot7"/>
                         </af:column>
                         <af:column headerText="Source amount" id="resId1c12">
-                            <af:outputText value="#{row.SourceAmount}"
+                            <af:outputText value="#{row.SourceAmount!=null?row.SourceAmount:'-'}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceAmount.tooltip}"
                                            id="ot8">
                                 <af:convertNumber groupingUsed="false"
@@ -218,7 +218,7 @@
                         </af:column>
                         <af:column headerText="Mark-up amount"
                                    id="resId1c24">
-                            <af:outputText value="#{row.MarketUpAmount}"
+                            <af:outputText value="#{row.MarketUpAmount!=null?row.MarketUpAmount:'-'}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpAmount.tooltip}"
                                            id="ot18">
                                 <af:convertNumber groupingUsed="false"
@@ -242,7 +242,7 @@
                             </af:outputText>
                         </af:column>
                         <af:column headerText="GST / VAT Amount" id="resId1c27">
-                            <af:outputText value="#{row.GstAmount}"
+                            <af:outputText value="#{row.GstAmount !=null?row.GstAmount:'-'}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.GstAmount.tooltip}"
                                            id="ot21">
                                 <af:convertNumber groupingUsed="false"
@@ -266,7 +266,7 @@
                             </af:outputText>
                         </af:column>
                         <af:column headerText="WHT / TDS Amount" id="resId1c30">
-                            <af:outputText value="#{row.WhtAmount}"
+                            <af:outputText value="#{row.WhtAmount!=null?row.WhtAmount:'-'}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.WhtAmount.tooltip}"
                                            id="ot24">
                                 <af:convertNumber groupingUsed="false"
@@ -296,7 +296,7 @@
                             </af:selectOneChoice>
                         </af:column>
                         <af:column headerText="Paid Amount" id="resId1c33">
-                            <af:outputText value="#{row.PaidAmount}"
+                            <af:outputText value="#{row.PaidAmount!=null?row.PaidAmount:'-'}"
                                            shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.PaidAmount.tooltip}"
                                            id="ot25">
                                 <af:convertNumber groupingUsed="false"
