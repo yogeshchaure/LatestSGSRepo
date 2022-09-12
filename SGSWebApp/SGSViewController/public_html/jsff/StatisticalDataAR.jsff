@@ -61,7 +61,7 @@
                   <f:validator binding="#{row.bindings.StatisticalDataCategory.validator}"/>
                 </af:selectOneChoice>
               </af:column>
-              <af:column headerText="#{bindings.SgsARStatisticalDataVO1.hints.EmployeeId.label}" id="c1" width="7%">
+              <af:column headerText="Employee ID" id="c1" width="7%">
                 <af:inputText value="#{row.bindings.EmployeeId.inputValue}"
                               label="#{bindings.SgsARStatisticalDataVO1.hints.EmployeeId.label}"
                               required="#{bindings.SgsARStatisticalDataVO1.hints.EmployeeId.mandatory}"
@@ -91,16 +91,23 @@
                 <af:outputText value="#{row.JobCode}"
                                shortDesc="#{bindings.SgsARStatisticalDataVO1.hints.JobCode.tooltip}" id="ot3"/>
               </af:column>
-              <af:column headerText="#{bindings.SgsARStatisticalDataVO1.hints.DepartmentId.label}" id="resId1c7"
+              <af:column headerText="Department ID" id="resId1c7"
                          width="7%">
                 <af:outputText value="#{row.DepartmentId}"
                                shortDesc="#{bindings.SgsARStatisticalDataVO1.hints.DepartmentId.tooltip}" id="ot5"/>
               </af:column>
               <af:column headerText="#{bindings.SgsARStatisticalDataVO1.hints.Currency.label}" id="c5" width="7%">
-                <af:outputText value="#{row.Currency}"
-                               shortDesc="#{bindings.SgsARStatisticalDataVO1.hints.Currency.tooltip}" id="ot2"/>
+                <af:selectOneChoice value="#{row.bindings.Currency.inputValue}" label="#{row.bindings.Currency.label}"
+                                    required="#{bindings.SgsARStatisticalDataVO1.hints.Currency.mandatory}"
+                                    shortDesc="#{bindings.SgsARStatisticalDataVO1.hints.Currency.tooltip}" id="soc3"
+                                    readOnly="true">
+                  <f:selectItems value="#{row.bindings.Currency.items}" id="si3"/>
+                  <f:validator binding="#{row.bindings.Currency.validator}"/>
+                </af:selectOneChoice>
+                <!--<af:outputText value="#{row.Currency}"
+                               shortDesc="#{bindings.SgsARStatisticalDataVO1.hints.Currency.tooltip}" id="ot2"/>-->
               </af:column>
-              <af:column headerText="#{bindings.SgsARStatisticalDataVO1.hints.StatisticalData.label}" id="c4"
+              <af:column headerText="Statistical Data" id="c4"
                          width="7%">
                 <af:inputText value="#{row.bindings.StatisticalData.inputValue}"
                               label="#{bindings.SgsARStatisticalDataVO1.hints.StatisticalData.label}"

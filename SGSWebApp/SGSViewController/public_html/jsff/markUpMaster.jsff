@@ -35,9 +35,10 @@
                                   selectedRowKeys="#{bindings.MarkUpRateMsterVO1.collectionModel.selectedRow}"
                                   selectionListener="#{bindings.MarkUpRateMsterVO1.collectionModel.makeCurrent}"
                                   rowSelection="single" fetchSize="#{bindings.MarkUpRateMsterVO1.rangeSize}" id="t1"
-                                  partialTriggers="::b1 ::b2" columnStretching="column:c2">
+                                  partialTriggers="::b1 ::b2">
                            
-                            <af:column headerText="#{bindings.MarkUpRateMsterVO1.hints.MARKUPRATEID.label}" id="c3">
+                            <af:column headerText="#{bindings.MarkUpRateMsterVO1.hints.MARKUPRATEID.label}" id="c3"
+                                       width="10%">
                                 <af:inputText value="#{row.bindings.MARKUPRATEID.inputValue}"
                                               label="#{bindings.MarkUpRateMsterVO1.hints.MARKUPRATEID.label}"
                                               required="#{bindings.MarkUpRateMsterVO1.hints.MARKUPRATEID.mandatory}"
@@ -48,7 +49,8 @@
                                     <f:validator binding="#{row.bindings.MARKUPRATEID.validator}"/>
                                 </af:inputText>
                             </af:column>
-                            <af:column headerText="#{bindings.MarkUpRateMsterVO1.hints.Geography.label}" id="c1">
+                            <af:column headerText="#{bindings.MarkUpRateMsterVO1.hints.Geography.label}" id="c1"
+                                       width="10%">
                                 <af:selectOneChoice value="#{row.bindings.Geography.inputValue}"
                                                     label="#{row.bindings.Geography.label}"
                                                     required="#{bindings.MarkUpRateMsterVO1.hints.Geography.mandatory}"
@@ -58,7 +60,7 @@
                                     <f:validator binding="#{row.bindings.Geography.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Service Category" id="c2">
+                            <af:column headerText="Service Category" id="c2" width="20%">
                                 <af:selectOneChoice value="#{row.bindings.ServiceCategory.inputValue}"
                                                     label="#{row.bindings.ServiceCategory.label}"
                                                     required="#{bindings.MarkUpRateMsterVO1.hints.ServiceCategory.mandatory}"
@@ -68,7 +70,7 @@
                                     <f:validator binding="#{row.bindings.ServiceCategory.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Mark-Up Rate (%)" id="c7">
+                            <af:column headerText="Mark-Up Rate (%)" id="c7" width="10%">
                                 <af:inputText value="#{row.bindings.MarkupRate.inputValue}"
                                               label="#{bindings.MarkUpRateMsterVO1.hints.MarkupRate.label}"
                                               required="#{bindings.MarkUpRateMsterVO1.hints.MarkupRate.mandatory}"
@@ -79,7 +81,7 @@
                                     <f:validator binding="#{row.bindings.MarkupRate.validator}"/>
                                 </af:inputText>
                             </af:column>
-                            <af:column headerText="Effective From" id="c4">
+                            <af:column headerText="Effective From" id="c4" width="10%">
                                 <af:inputDate value="#{row.bindings.EffectiveRom.inputValue}"
                                               label="#{bindings.MarkUpRateMsterVO1.hints.EffectiveRom.label}"
                                               required="#{bindings.MarkUpRateMsterVO1.hints.EffectiveRom.mandatory}"
@@ -90,7 +92,7 @@
                                     <af:convertDateTime pattern="#{bindings.MarkUpRateMsterVO1.hints.EffectiveRom.format}"/>
                                 </af:inputDate>
                             </af:column>
-                            <af:column headerText="Effective To" id="c5">
+                            <af:column headerText="Effective To" id="c5" width="10%">
                                 <af:inputDate value="#{row.bindings.EffectiveTill.inputValue}"
                                               label="#{bindings.MarkUpRateMsterVO1.hints.EffectiveTill.label}"
                                               required="#{bindings.MarkUpRateMsterVO1.hints.EffectiveTill.mandatory}"
@@ -101,14 +103,14 @@
                                     <af:convertDateTime pattern="#{bindings.MarkUpRateMsterVO1.hints.EffectiveTill.format}"/>
                                 </af:inputDate>
                             </af:column>
-                            <af:column headerText="Created By" id="resId1c6">
+                            <af:column headerText="Created By" id="resId1c6" width="10%">
                                 <af:outputText value="#{row.CreatedBy}"
                                                shortDesc="#{bindings.MarkUpRateMsterVO1.hints.CreatedBy.tooltip}"
                                                id="ot2">
                                     <af:convertDateTime pattern="#{bindings.MarkUpRateMsterVO1.hints.CreatedBy.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="Created Date" id="c6">
+                            <af:column headerText="Created Date" id="c6" width="10%">
                                 <af:outputText value="#{row.CreatedDate}"
                                                shortDesc="#{bindings.MarkUpRateMsterVO1.hints.CreatedDate.tooltip}"
                                                id="ot1">

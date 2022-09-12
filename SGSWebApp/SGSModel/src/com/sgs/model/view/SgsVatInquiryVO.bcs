@@ -42,6 +42,6 @@ def pType_VATIDLOV_BindVariable_BoundParameter()
 @AccessorParameterExpression(accessorName="ItemServiceCategoryLOV", name="pType")
 def pType_ItemServiceCategoryLOV_BindVariable_BoundParameter()
 {
-'SERVICE_CATEGORY'
+'ITEM_SERVICE_CATEGORY'
 }
 

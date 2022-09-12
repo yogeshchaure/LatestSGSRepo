@@ -148,11 +148,11 @@
                   <f:validator binding="#{row.bindings.Status.validator}"/>
                 </af:selectOneChoice>
               </af:column>
-              <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.UpdatedBy.label}" id="c9" width="6%">
+              <af:column headerText="Updated By" id="c9" width="6%">
                 <af:outputText value="#{row.UpdatedBy}"
                                shortDesc="#{bindings.SgsStatisticalDataVO1.hints.UpdatedBy.tooltip}" id="ot1"/>
               </af:column>
-              <af:column headerText="#{bindings.SgsStatisticalDataVO1.hints.UpdatedDate.label}" id="c10" width="6%">
+              <af:column headerText="Updated Date" id="c10" width="6%">
                 <af:outputText value="#{row.UpdatedDate}"
                                shortDesc="#{bindings.SgsStatisticalDataVO1.hints.UpdatedDate.tooltip}" id="ot2">
                   <af:convertDateTime pattern="#{bindings.SgsStatisticalDataVO1.hints.UpdatedDate.format}"/>

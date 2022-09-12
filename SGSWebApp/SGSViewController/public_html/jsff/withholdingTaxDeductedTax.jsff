@@ -58,13 +58,13 @@
                                         <f:validator binding="#{row.bindings.TdsWhtId.validator}"/>
                                     </af:inputText>
                                 </af:column>
-                                <af:column headerText="Tax Code" id="resId1c1">
+                                <af:column headerText="Tax Code" id="resId1c1" width="10%">
                                     <!--<af:outputText value="#{row.TaxCode}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.TaxCode.tooltip}" id="ot1"/>-->
                                     <af:link text="#{row.TaxCode}" id="l1" action="Edit" inlineStyle="font-weight:bold;"/>
                                 </af:column>
                                 <af:column headerText="Service Receiver"
-                                           id="resId1c2">
+                                           id="resId1c2" width="10%">
                                     <af:selectOneChoice value="#{row.bindings.ServiceReceiver.inputValue}"
                                                         label="#{row.bindings.ServiceReceiver.label}"
                                                         required="#{bindings.SgsTdsWhtVO.hints.ServiceReceiver.mandatory}"
@@ -75,7 +75,7 @@
                                     </af:selectOneChoice>
                                 </af:column>
                                 <af:column headerText="Service Provider"
-                                           id="resId1c3">
+                                           id="resId1c3" width="10%">
                                     <af:selectOneChoice value="#{row.bindings.ServiceProvider.inputValue}"
                                                         label="#{row.bindings.ServiceProvider.label}"
                                                         required="#{bindings.SgsTdsWhtVO.hints.ServiceProvider.mandatory}"
@@ -85,7 +85,7 @@
                                         <f:validator binding="#{row.bindings.ServiceProvider.validator}"/>
                                     </af:selectOneChoice>
                                 </af:column>
-                                <af:column headerText="Tax Base" id="resId1c14">
+                                <af:column headerText="Tax Base" id="resId1c14" width="10%">
                                     <af:selectOneChoice value="#{row.bindings.TaxBase.inputValue}"
                                                         label="#{row.bindings.TaxBase.label}"
                                                         required="#{bindings.SgsTdsWhtVO.hints.TaxBase.mandatory}"
@@ -107,7 +107,7 @@
                                     </af:selectOneChoice>
                                 </af:column>
                                 <af:column headerText="Tax Identification Num (TIN)"
-                                           id="resId1c9" width="150">
+                                           id="resId1c9" width="10%">
                                     <af:selectOneChoice value="#{row.bindings.IsPanTrcAvailable.inputValue}"
                                                         label="#{row.bindings.IsPanTrcAvailable.label}"
                                                         required="#{bindings.SgsTdsWhtVO.hints.IsPanTrcAvailable.mandatory}"
@@ -117,9 +117,9 @@
                                         <f:validator binding="#{row.bindings.IsPanTrcAvailable.validator}"/>
                                     </af:selectOneChoice>
                                 </af:column>
-                                  <af:column id="c2" headerText="Validity Till Date (TIN)" align="center">
+                                  <af:column id="c2" headerText="Validity Till Date (TIN)" align="center" width="10%">
                                  <af:column headerText="From"
-                                           id="resId1c17" >
+                                           id="resId1c17" width="10%">
                                     <af:outputText value="#{row.ValidityPeriodFrom}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodFrom.tooltip}"
                                                    id="ot10">
@@ -127,7 +127,7 @@
                                     </af:outputText>
                                 </af:column>
                                 <af:column headerText="To"
-                                           id="resId1c18">
+                                           id="resId1c18" width="10%">
                                     <af:outputText value="#{row.ValidityPeriodTo}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.ValidityPeriodTo.tooltip}"
                                                    id="ot11">
@@ -135,19 +135,19 @@
                                     </af:outputText>
                                 </af:column>
                                 </af:column>
-                                <af:column headerText="GL Accounts" id="resId1c8">
+                                <af:column headerText="GL Accounts" id="resId1c8" width="10%">
                                     <af:outputText value="#{row.GlAccounts}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.GlAccounts.tooltip}"
                                                    id="ot5"/>
                                 </af:column>
-                                <af:column headerText="Rate of Tax" id="resId1c11">
+                                <af:column headerText="Rate of Tax" id="resId1c11" width="10%">
                                     <af:outputText value="#{row.RateOfTax}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.RateOfTax.tooltip}" id="ot6">
                                         <af:convertNumber groupingUsed="false"
                                                           pattern="#{bindings.SgsTdsWhtVO.hints.RateOfTax.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="Recovery Rate (Foreign Tax Credit)" id="resId1c12" width="200">
+                                <af:column headerText="Recovery Rate (Foreign Tax Credit)" id="resId1c12" width="10%">
                                     <af:outputText value="#{row.RecoveryRate}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.RecoveryRate.tooltip}"
                                                    id="ot7">
@@ -201,7 +201,7 @@
                                         <af:convertDateTime pattern="#{bindings.SgsTdsWhtVO.hints.EffectiveFrom.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="Effective To" id="resId1c7" width="150">
+                                <af:column headerText="Effective To" id="resId1c7" width="10%">
                                     <af:outputText value="#{row.EffectiveTo}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.EffectiveTo.tooltip}"
                                                    id="ot4">
