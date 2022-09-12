@@ -7,12 +7,30 @@
   Version="12.2.1.22.48"
   InheritPersonalization="merge"
   BindingStyle="JDBC"
-  CustomQuery="true"
+  CustomQuery="false"
   PageIterMode="Full"
-  AccessMode="DEFAULT">
-  <DesignTime>
-    <Attr Name="_isExpertMode" Value="true"/>
-  </DesignTime>
+  AccessMode="DEFAULT"
+  SelectList="SgsStatisticalData.BUSINESS_UNIT, 
+       SgsStatisticalData.CREATED_BY, 
+       SgsStatisticalData.CREATED_DATE, 
+       SgsStatisticalData.DATA_STATUS, 
+       SgsStatisticalData.DEPARTMENT_ID, 
+       SgsStatisticalData.JOB_CODE, 
+       SgsStatisticalData.LINE_ID, 
+       SgsStatisticalData.MONTH, 
+       SgsStatisticalData.OPERATIONAL_UNIT, 
+       SgsStatisticalData.SGS_STAT_ID, 
+       SgsStatisticalData.STATISTICAL_DATA_CATEGORY, 
+       SgsStatisticalData.STATUS, 
+       SgsStatisticalData.UNIT_OF_MEASURE, 
+       SgsStatisticalData.UPDATED_BY, 
+       SgsStatisticalData.UPDATED_DATE, 
+       SgsStatisticalData.STATISTICAL_DATA, 
+       SgsStatisticalData.EMPLOYEE_ID, 
+       SgsStatisticalData.DEPARTMENT, 
+       SgsStatisticalData.CURRENCY"
+  FromList="SGS_STATISTICAL_DATA SgsStatisticalData"
+  Where="SgsStatisticalData.STATUS = 'Submitted for Approval'">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -95,6 +113,22 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="CurrencyList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsARStatisticalDataVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_StatisticalDataCategory"
     ListVOName="SgsStatisticalDataLOV"
@@ -149,27 +183,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
-  <SQLQuery><![CDATA[SELECT SgsStatisticalData.BUSINESS_UNIT,         
-       SgsStatisticalData.CREATED_BY,         
-       SgsStatisticalData.CREATED_DATE,         
-       SgsStatisticalData.DATA_STATUS,         
-       SgsStatisticalData.DEPARTMENT_ID,         
-       SgsStatisticalData.JOB_CODE,         
-       SgsStatisticalData.LINE_ID,         
-       SgsStatisticalData.MONTH,         
-       SgsStatisticalData.OPERATIONAL_UNIT,         
-       SgsStatisticalData.SGS_STAT_ID,              
-       SgsStatisticalData.STATISTICAL_DATA_CATEGORY,         
-       SgsStatisticalData.STATUS,         
-       SgsStatisticalData.UNIT_OF_MEASURE,         
-       SgsStatisticalData.UPDATED_BY,         
-       SgsStatisticalData.UPDATED_DATE   ,   
-       SgsStatisticalData.STATISTICAL_DATA, 
-       SgsStatisticalData.EMPLOYEE_ID,   
-       SgsStatisticalData.DEPARTMENT,   
-       SgsStatisticalData.CURRENCY   
-FROM  SGS_STATISTICAL_DATA SgsStatisticalData      
-where SgsStatisticalData.STATUS = 'Submitted for Approval']]></SQLQuery>
+  <ListBinding
+    Name="LOV_Currency"
+    ListVOName="CurrencyList"
+    NullValueFlag="start"
+    NullValueId="LOV_Currency_LOVUIHints_NullValueId"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Currency"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="SgsStatisticalData"
     Entity="com.sgs.model.entity.SgsStatisticalData"/>
@@ -214,6 +245,10 @@ where SgsStatisticalData.STATUS = 'Submitted for Approval']]></SQLQuery>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="4.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsARStatisticalDataVO.CreatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsARStatisticalDataVO.CreatedDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -287,6 +322,10 @@ where SgsStatisticalData.STATUS = 'Submitted for Approval']]></SQLQuery>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="2.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsARStatisticalDataVO.Month_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsARStatisticalDataVO.Month_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -391,9 +430,19 @@ where SgsStatisticalData.STATUS = 'Submitted for Approval']]></SQLQuery>
       <SchemaBasedProperties>
         <FIELDORDER
           Value="15.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsARStatisticalDataVO.UpdatedDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsARStatisticalDataVO.UpdatedDate_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="StatisticalData"
+    PrecisionRule="true"
+    EntityAttrName="StatisticalData"
+    EntityUsage="SgsStatisticalData"
+    AliasName="STATISTICAL_DATA"/>
   <ViewAttribute
     Name="EmployeeId"
     PrecisionRule="true"
@@ -411,13 +460,15 @@ where SgsStatisticalData.STATUS = 'Submitted for Approval']]></SQLQuery>
     PrecisionRule="true"
     EntityAttrName="Currency"
     EntityUsage="SgsStatisticalData"
-    AliasName="CURRENCY"/>
-  <ViewAttribute
-    Name="StatisticalData"
-    PrecisionRule="true"
-    EntityAttrName="StatisticalData"
-    EntityUsage="SgsStatisticalData"
-    AliasName="STATISTICAL_DATA"/>
+    AliasName="CURRENCY"
+    LOVName="LOV_Currency">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsARStatisticalDataVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsARStatisticalDataVO"

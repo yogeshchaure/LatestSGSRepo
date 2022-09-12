@@ -31,3 +31,10 @@ def pType_OUList_BindVariable_BoundParameter()
 'OPR_UNIT'
 }
 
+
+@AccessorParameterExpression(accessorName="CurrencyList", name="pType")
+def pType_CurrencyList_BindVariable_BoundParameter()
+{
+'CURRENCY'
+}
+

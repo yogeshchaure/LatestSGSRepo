@@ -47,7 +47,7 @@
                           selectedRowKeys="#{bindings.SgsVatInquiryVO1.collectionModel.selectedRow}"
                           selectionListener="#{bindings.SgsVatInquiryVO1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.SgsVatInquiryVO1.rangeSize}" id="resId1">
-                  <af:column headerText="VAT ID" id="resId1c1" width="25%">
+                  <af:column headerText="VAT ID" id="resId1c1" width="15%">
                   <af:link text="#{row.VatId}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
                     <!--<af:selectOneChoice value="#{row.bindings.VatId.inputValue}" label="#{row.bindings.VatId.label}"
                                         required="#{bindings.SgsVatInquiryVO1.hints.VatId.mandatory}"
@@ -57,7 +57,7 @@
                       <f:validator binding="#{row.bindings.VatId.validator}"/>
                     </af:selectOneChoice>-->
                   </af:column>
-                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.ServiceProvider.label}" width="25%" id="resId1c2">
+                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.ServiceProvider.label}" width="15%" id="resId1c2">
                     <af:selectOneChoice value="#{row.bindings.ServiceProvider.inputValue}"
                                         label="#{row.bindings.ServiceProvider.label}"
                                         required="#{bindings.SgsVatInquiryVO1.hints.ServiceProvider.mandatory}"
@@ -68,7 +68,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.ServiceReceiver.label}" id="resId1c3"
-                             width="25%">
+                             width="15%">
                     <af:selectOneChoice value="#{row.bindings.ServiceReceiver.inputValue}"
                                         label="#{row.bindings.ServiceReceiver.label}"
                                         required="#{bindings.SgsVatInquiryVO1.hints.ServiceReceiver.mandatory}"
@@ -79,7 +79,7 @@
                     </af:selectOneChoice>
                   </af:column>
                    <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.Rcm.label}" id="c1"
-                             width="25%">
+                             width="15%">
                     <af:selectOneChoice value="#{row.bindings.Rcm.inputValue}"
                                         label="#{row.bindings.Rcm.label}"
                                         required="#{bindings.SgsVatInquiryVO1.hints.Rcm.mandatory}"
@@ -90,7 +90,7 @@
                     </af:selectOneChoice>
                   </af:column>
                    <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.ExemptSupply.label}" id="c2"
-                             width="25%">
+                             width="15%">
                     <af:selectOneChoice value="#{row.bindings.ExemptSupply.inputValue}"
                                         label="#{row.bindings.ExemptSupply.label}"
                                         required="#{bindings.SgsVatInquiryVO1.hints.ExemptSupply.mandatory}"
@@ -101,13 +101,13 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.RateOfTax.label}"
-                                   id="resId1c7">
+                                   id="resId1c7" width="15%">
                             <af:outputText value="#{row.RateOfTax}"
                                            shortDesc="#{bindings.SgsVatInquiryVO1.hints.RateOfTax.tooltip}"
                                            id="ot3"/>
                         </af:column>
                   <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.label}" id="resId1c4"
-                             width="25%">
+                             width="15%">
                     <af:outputText value="#{row.EffectiveTo}"
                                    shortDesc="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.tooltip}" id="ot1">
                       <af:convertDateTime pattern="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.format}"/>
