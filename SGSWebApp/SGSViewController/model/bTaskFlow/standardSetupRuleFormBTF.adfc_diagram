@@ -15,7 +15,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>standardRateSetupForm&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">380.09766</property>
+         name="y">379.39648</property>
       <property
          name="page">/jsff/standardRateSetupForm.jsff</property>
       <property
@@ -44,6 +44,6 @@
       <property
          name="fromOutcome">back</property>
       <property
-         name="sdm:polyPoints">R50,332.70117,379.74707,540.0,348.5459,L50</property>
+         name="sdm:polyPoints">R50,332.70117,379.0459,540.0,348.5459,L50</property>
    </ControlFlowCase>
 </SDM>

@@ -8,8 +8,6 @@
               id="SgsStandarardRateVO1Iterator"/>
   </executables>
   <bindings>
-    <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_ExpenseType" id="ExpenseType"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_SubExpenseType" id="SubExpenseType"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="StandardCost">
@@ -63,6 +61,16 @@
     <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="ProgramName">
       <AttrNames>
         <Item Value="ProgramName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="ExpenseType">
+      <AttrNames>
+        <Item Value="ExpenseType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsStandarardRateVO1Iterator" id="StandardRateId">
+      <AttrNames>
+        <Item Value="StandardRateId"/>
       </AttrNames>
     </attributeValues>
   </bindings>

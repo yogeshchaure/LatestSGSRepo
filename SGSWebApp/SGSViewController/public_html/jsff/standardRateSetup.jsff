@@ -43,6 +43,20 @@
                                   emptyText="#{bindings.SgsStandarardRateVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                   rowBandingInterval="0" fetchSize="#{bindings.SgsStandarardRateVO1.rangeSize}"
                                   id="resId1" styleClass="AFStretchWidth">
+                            <af:column headerText="#{bindings.SgsStandarardRateVO1.hints.StandardRateId.label}" id="c7"
+                                       visible="false">
+                                <af:inputText value="#{row.bindings.StandardRateId.inputValue}"
+                                              label="#{bindings.SgsStandarardRateVO1.hints.StandardRateId.label}"
+                                              required="#{bindings.SgsStandarardRateVO1.hints.StandardRateId.mandatory}"
+                                              columns="#{bindings.SgsStandarardRateVO1.hints.StandardRateId.displayWidth}"
+                                              maximumLength="#{bindings.SgsStandarardRateVO1.hints.StandardRateId.precision}"
+                                              shortDesc="#{bindings.SgsStandarardRateVO1.hints.StandardRateId.tooltip}"
+                                              id="it1">
+                                    <f:validator binding="#{row.bindings.StandardRateId.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsStandarardRateVO1.hints.StandardRateId.format}"/>
+                                </af:inputText>
+                            </af:column>
                             <af:column headerText="Expense Type" id="resId1c1" width="10%">
                                 <!--<af:selectOneChoice value="#{row.bindings.ExpenseType.inputValue}"
                                                     label="#{row.bindings.ExpenseType.label}"
@@ -82,7 +96,7 @@
                                     <f:validator binding="#{row.bindings.SrGeography.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Department"
+                            <af:column headerText="Department ID"
                                        id="c1" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.DepartmentCostCenter.inputValue}"
                                                     label="#{row.bindings.DepartmentCostCenter.label}"

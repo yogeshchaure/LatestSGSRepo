@@ -30,7 +30,10 @@ public class SgsIdenCombinationImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        BusinessUnit,
+        DepartmentId,
+        OperatingUnit;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -53,6 +56,9 @@ public class SgsIdenCombinationImpl extends EntityImpl {
             return vals;
         }
     }
+    private static final ADFLogger LOG = ADFLogger.createADFLogger(SgsIdenCombinationImpl.class);
+
+
     public static final int IDENCOMBID = AttributesEnum.IdenCombId.index();
     public static final int GLCODE = AttributesEnum.GlCode.index();
     public static final int JOBCODE = AttributesEnum.JobCode.index();
@@ -63,7 +69,9 @@ public class SgsIdenCombinationImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
-    private static final ADFLogger LOG = ADFLogger.createADFLogger(SgsIdenCombinationImpl.class);
+    public static final int BUSINESSUNIT = AttributesEnum.BusinessUnit.index();
+    public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
+    public static final int OPERATINGUNIT = AttributesEnum.OperatingUnit.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -200,6 +208,54 @@ public class SgsIdenCombinationImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for BusinessUnit, using the alias name BusinessUnit.
+     * @return the value of BusinessUnit
+     */
+    public String getBusinessUnit() {
+        return (String) getAttributeInternal(BUSINESSUNIT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for BusinessUnit.
+     * @param value value to set the BusinessUnit
+     */
+    public void setBusinessUnit(String value) {
+        setAttributeInternal(BUSINESSUNIT, value);
+    }
+
+    /**
+     * Gets the attribute value for DepartmentId, using the alias name DepartmentId.
+     * @return the value of DepartmentId
+     */
+    public String getDepartmentId() {
+        return (String) getAttributeInternal(DEPARTMENTID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for DepartmentId.
+     * @param value value to set the DepartmentId
+     */
+    public void setDepartmentId(String value) {
+        setAttributeInternal(DEPARTMENTID, value);
+    }
+
+    /**
+     * Gets the attribute value for OperatingUnit, using the alias name OperatingUnit.
+     * @return the value of OperatingUnit
+     */
+    public String getOperatingUnit() {
+        return (String) getAttributeInternal(OPERATINGUNIT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for OperatingUnit.
+     * @param value value to set the OperatingUnit
+     */
+    public void setOperatingUnit(String value) {
+        setAttributeInternal(OPERATINGUNIT, value);
+    }
+
+    /**
      * @param idenCombId key constituent
 
      * @return a Key object based on given key constituents.
@@ -214,6 +270,7 @@ public class SgsIdenCombinationImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsIdenCombination");
     }
+
 
     /**
      * Add attribute defaulting logic in this method.

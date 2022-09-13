@@ -17,3 +17,24 @@ def pType_JobCodeList_BindVariable_BoundParameter()
 'JOB_CODE'
 }
 
+
+@AccessorParameterExpression(accessorName="BusinessUnitList", name="pType")
+def pType_BusinessUnitList_BindVariable_BoundParameter()
+{
+'bUSINESS_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="OperatingUnitList", name="pType")
+def pType_OperatingUnitList_BindVariable_BoundParameter()
+{
+'OPR_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="DepartmentList", name="pType")
+def pType_DepartmentList_BindVariable_BoundParameter()
+{
+'DEPT_ID'
+}
+

@@ -8,7 +8,7 @@
     <f:facet name="bottom"/>
     <f:facet name="center">
       <af:panelGroupLayout id="pgl1" layout="vertical">
-        <af:panelBox text="Goods and Service Tax" id="pb1">
+        <af:panelBox text="Goods and Service Tax (GST) Setup Form" id="pb1">
           <f:facet name="toolbar">
           <af:toolbar id="t1"> 
               <af:button actionListener="#{bindings.Commit.execute}"

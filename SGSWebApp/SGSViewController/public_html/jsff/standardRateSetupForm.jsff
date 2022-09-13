@@ -21,12 +21,13 @@
                     </af:toolbar>
                 </f:facet>
                 <af:panelFormLayout id="pfl1" rows="8">
-                    <af:selectOneChoice value="#{bindings.ExpenseType.inputValue}" label="Expense Type"
-                                        required="#{bindings.ExpenseType.hints.mandatory}"
-                                        shortDesc="#{bindings.ExpenseType.hints.tooltip}" id="soc1">
-                        <f:selectItems value="#{bindings.ExpenseType.items}" id="si1"/>
+                    <af:inputText value="#{bindings.ExpenseType.inputValue}" label="Expense Type"
+                                  required="#{bindings.ExpenseType.hints.mandatory}"
+                                  columns="#{bindings.ExpenseType.hints.displayWidth}"
+                                  maximumLength="#{bindings.ExpenseType.hints.precision}"
+                                  shortDesc="#{bindings.ExpenseType.hints.tooltip}" id="it5">
                         <f:validator binding="#{bindings.ExpenseType.validator}"/>
-                    </af:selectOneChoice>
+                    </af:inputText>
                     <af:selectOneChoice value="#{bindings.SubExpenseType.inputValue}" label="Sub-Expense Type"
                                         required="#{bindings.SubExpenseType.hints.mandatory}"
                                         shortDesc="#{bindings.SubExpenseType.hints.tooltip}" id="soc2">
@@ -108,20 +109,24 @@
                         <f:validator binding="#{bindings.EffectiveEndDate.validator}"/>
                         <af:convertDateTime pattern="#{bindings.EffectiveEndDate.format}"/>
                     </af:inputDate>
-                    <af:inputDate value="#{bindings.UpdatedDate.inputValue}" label="Updated Date"
-                                  required="#{bindings.UpdatedDate.hints.mandatory}"
-                                  columns="#{bindings.UpdatedDate.hints.displayWidth}"
-                                  shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="id3" readOnly="true">
-                        <f:validator binding="#{bindings.UpdatedDate.validator}"/>
-                        <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
-                    </af:inputDate>
-                    <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="Updated By"
+                    <af:inputText value="#{bindings.UpdatedBy.inputValue}" label="Created By"
                                   required="#{bindings.UpdatedBy.hints.mandatory}"
                                   columns="#{bindings.UpdatedBy.hints.displayWidth}"
                                   maximumLength="#{bindings.UpdatedBy.hints.precision}"
                                   shortDesc="#{bindings.UpdatedBy.hints.tooltip}" id="it4" readOnly="true">
                         <f:validator binding="#{bindings.UpdatedBy.validator}"/>
                     </af:inputText>
+                    <af:inputDate value="#{bindings.UpdatedDate.inputValue}" label="Created Date"
+                                  required="#{bindings.UpdatedDate.hints.mandatory}"
+                                  columns="#{bindings.UpdatedDate.hints.displayWidth}"
+                                  shortDesc="#{bindings.UpdatedDate.hints.tooltip}" id="id3" readOnly="true">
+                        <f:validator binding="#{bindings.UpdatedDate.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
+                    </af:inputDate>
+                    <af:outputText value="#{bindings.StandardRateId.inputValue}"
+                                   shortDesc="#{bindings.StandardRateId.hints.tooltip}" id="ot1">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.StandardRateId.format}"/>
+                    </af:outputText>
                 </af:panelFormLayout>
             </af:panelBox>
         </f:facet>
