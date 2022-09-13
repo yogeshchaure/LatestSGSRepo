@@ -91,6 +91,8 @@
         <page path="/jsff/IsdForm.jsff" usageId="com_sgs_view_IsdFormPageDef"/>
         <page path="/bTaskFlow/TPASetupBTF.xml#TPASetupBTF@SetCurrentRowWithKeyValue"
               usageId="com_sgs_view_TPASetupBTF_TPASetupBTF_SetCurrentRowWithKeyValuePageDef"/>
+        <page path="/bTaskFlow/standardRateSetupBTF.xml#standardRateSetupBTF@SetCurrentRowWithKeyValue"
+              usageId="com_sgs_view_standardRateSetupBTF_standardRateSetupBTF_SetCurrentRowWithKeyValuePageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -178,6 +180,8 @@
         <page id="com_sgs_view_IsdFormPageDef" path="jsff.IsdFormPageDef"/>
         <page id="com_sgs_view_TPASetupBTF_TPASetupBTF_SetCurrentRowWithKeyValuePageDef"
               path="bTaskFlow.TPASetupBTF_TPASetupBTF_SetCurrentRowWithKeyValuePageDef"/>
+        <page id="com_sgs_view_standardRateSetupBTF_standardRateSetupBTF_SetCurrentRowWithKeyValuePageDef"
+              path="bTaskFlow.standardRateSetupBTF_standardRateSetupBTF_SetCurrentRowWithKeyValuePageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

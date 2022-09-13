@@ -69,7 +69,9 @@
                                 <!--<af:outputText value="#{row.ExpenseType}"
                                                shortDesc="#{bindings.SgsStandarardRateVO1.hints.ExpenseType.tooltip}"
                                                id="ot6"/>-->
-                                <af:link text="#{row.ExpenseType}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>
+                                <af:link text="#{row.ExpenseType}" id="l1" action="EDIT" inlineStyle="font-weight:bold;">
+                                  <af:setPropertyListener from="#{row.StandardRateId}" to="#{pageFlowScope.ID}" type="action"/>
+                                </af:link>
                             </af:column>
                             <af:column headerText="Sub-ExpenseType" id="resId1c2" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.SubExpenseType.inputValue}"
