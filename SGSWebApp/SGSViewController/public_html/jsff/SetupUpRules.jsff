@@ -48,7 +48,7 @@
                                                    icon="/resources/icons/transafer_pricing.png">
                                     <af:region value="#{bindings.MarkupMasterBTF1.regionModel}" id="r6"/>
                                 </af:showDetailItem>
-                                <af:showDetailItem id="sdi3" text="GST Setup"
+                                <af:showDetailItem id="sdi3" text="Goods and Service Tax (GST) Setup"
                                                    rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                                    inlineStyle="min-height:500px;" icon="/resources/icons/TaxLogo.png">
                                     <af:region value="#{bindings.gstInquiryBTF1.regionModel}" id="r8"/>

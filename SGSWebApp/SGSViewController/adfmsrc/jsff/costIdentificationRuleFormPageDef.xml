@@ -67,6 +67,9 @@
         <AttrNames>
           <Item Value="GlCode"/>
           <Item Value="JobCode"/>
+          <Item Value="BusinessUnit"/>
+          <Item Value="OperatingUnit"/>
+          <Item Value="DepartmentId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

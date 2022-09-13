@@ -15,7 +15,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>standardRateSetup&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">338.5918</property>
+         name="y">337.89062</property>
       <property
          name="page">/jsff/standardRateSetup.jsff</property>
       <property
@@ -63,7 +63,7 @@
       <property
          name="fromOutcome">ADD</property>
       <property
-         name="sdm:polyPoints">R46,362.70312,334.7412,616.6992,240.09766,L50</property>
+         name="sdm:polyPoints">R46,362.70312,334.04004,616.6992,240.09766,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -73,6 +73,6 @@
       <property
          name="fromOutcome">EDIT</property>
       <property
-         name="sdm:polyPoints">R54,362.70312,341.7412,696.03613,444.09766,L50</property>
+         name="sdm:polyPoints">R54,362.70312,341.04004,696.03613,444.09766,L50</property>
    </ControlFlowCase>
 </SDM>

@@ -128,7 +128,37 @@
                           emptyText="#{bindings.SgsIdenCombinationVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" fetchSize="#{bindings.SgsIdenCombinationVO1.rangeSize}" id="t2"
                           styleClass="AFStretchWidth" partialTriggers="::b8 ::b9">
-                  <af:column headerText="GL Code" id="c1" width="50%">
+                  <af:column headerText="Business Unit" id="c3" width="20%">
+                    <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
+                                        label="#{row.bindings.BusinessUnit.label}"
+                                        required="#{bindings.SgsIdenCombinationVO1.hints.BusinessUnit.mandatory}"
+                                        shortDesc="#{bindings.SgsIdenCombinationVO1.hints.BusinessUnit.tooltip}"
+                                        id="soc1">
+                      <f:selectItems value="#{row.bindings.BusinessUnit.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.BusinessUnit.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Operating Unit" id="c4" width="20%">
+                    <af:selectOneChoice value="#{row.bindings.OperatingUnit.inputValue}"
+                                        label="#{row.bindings.OperatingUnit.label}"
+                                        required="#{bindings.SgsIdenCombinationVO1.hints.OperatingUnit.mandatory}"
+                                        shortDesc="#{bindings.SgsIdenCombinationVO1.hints.OperatingUnit.tooltip}"
+                                        id="soc13">
+                      <f:selectItems value="#{row.bindings.OperatingUnit.items}" id="si13"/>
+                      <f:validator binding="#{row.bindings.OperatingUnit.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Department ID" id="c5" width="20%">
+                    <af:selectOneChoice value="#{row.bindings.DepartmentId.inputValue}"
+                                        label="#{row.bindings.DepartmentId.label}"
+                                        required="#{bindings.SgsIdenCombinationVO1.hints.DepartmentId.mandatory}"
+                                        shortDesc="#{bindings.SgsIdenCombinationVO1.hints.DepartmentId.tooltip}"
+                                        id="soc14">
+                      <f:selectItems value="#{row.bindings.DepartmentId.items}" id="si14"/>
+                      <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="GL Code" id="c1" width="20%">
                     <af:selectOneChoice value="#{row.bindings.GlCode.inputValue}" label="#{row.bindings.GlCode.label}"
                                         required="#{bindings.SgsIdenCombinationVO1.hints.GlCode.mandatory}"
                                         shortDesc="#{bindings.SgsIdenCombinationVO1.hints.GlCode.tooltip}" id="soc10">
@@ -136,7 +166,7 @@
                       <f:validator binding="#{row.bindings.GlCode.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Job Code" id="c2" width="50%">
+                  <af:column headerText="Job Code" id="c2" width="20%">
                     <af:selectOneChoice value="#{row.bindings.JobCode.inputValue}" label="#{row.bindings.JobCode.label}"
                                         required="#{bindings.SgsIdenCombinationVO1.hints.JobCode.mandatory}"
                                         shortDesc="#{bindings.SgsIdenCombinationVO1.hints.JobCode.tooltip}" id="soc11">
@@ -171,7 +201,7 @@
                   <f:selectItems value="#{bindings.TARGETACCOUNT.items}" id="si8"/>
                   <f:validator binding="#{bindings.TARGETACCOUNT.validator}"/>
                 </af:selectOneChoice>
-                <af:selectOneChoice value="#{bindings.OFFSETJOBCODE.inputValue}" label="#{bindings.OFFSETJOBCODE.label}"
+                <af:selectOneChoice value="#{bindings.OFFSETJOBCODE.inputValue}" label="Offset Job Code"
                                     required="#{bindings.OFFSETJOBCODE.hints.mandatory}"
                                     shortDesc="#{bindings.OFFSETJOBCODE.hints.tooltip}" id="soc9">
                   <f:selectItems value="#{bindings.OFFSETJOBCODE.items}" id="si9"/>

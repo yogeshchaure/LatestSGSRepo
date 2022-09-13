@@ -7,7 +7,7 @@
       <f:facet name="top"/>
       <f:facet name="bottom"/>
       <f:facet name="center">
-         <af:panelBox id="pb1" text="GST Inquiry">
+         <af:panelBox id="pb1" text="Goods and Service Tax (GST) Setup">
             <f:facet name="toolbar"/>
             <af:panelGroupLayout layout="vertical" id="pgl1">
                <af:panelHeader text=" " id="ph1">

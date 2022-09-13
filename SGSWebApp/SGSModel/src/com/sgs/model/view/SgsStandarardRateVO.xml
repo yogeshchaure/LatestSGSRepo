@@ -195,24 +195,6 @@
     </ParameterMap>
   </ViewAccessor>
   <ListBinding
-    Name="LOV_ExpenseType"
-    ListVOName="ExpenseTypeList"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ExpenseType"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Discription"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_SubExpenseType"
     ListVOName="SubExpenseTypeList"
     NullValueFlag="start"
@@ -392,16 +374,7 @@ order by STANDARD_RATE_ID]]></SQLQuery>
     PrecisionRule="true"
     EntityAttrName="ExpenseType"
     EntityUsage="SgsStandarardRate"
-    AliasName="EXPENSE_TYPE"
-    LOVName="LOV_ExpenseType"
-    PrimaryKey="true">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="choice"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="EXPENSE_TYPE"/>
   <ViewAttribute
     Name="SubExpenseType"
     PrecisionRule="true"
@@ -669,10 +642,6 @@ order by STANDARD_RATE_ID]]></SQLQuery>
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
-  <AttrArray Name="KeyAttributes">
-    <Item Value="StandardRateId"/>
-    <Item Value="ExpenseType"/>
-  </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.sgs.model.SGSModelBundle"/>

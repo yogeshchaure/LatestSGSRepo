@@ -25,6 +25,7 @@
           <Item Value="CostIdenId"/>
           <Item Value="Currency"/>
           <Item Value="UnitOfMeasure"/>
+          <Item Value="StandardRateId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
