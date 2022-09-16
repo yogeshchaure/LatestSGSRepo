@@ -872,5 +872,13 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsRevAllocatedDtVO() {
         return (ViewObjectImpl) findViewObject("SgsRevAllocatedDtVO");
     }
+
+    /**
+     * Container's getter for SgsCrossChargeIdenVO1.
+     * @return SgsCrossChargeIdenVO1
+     */
+    public ViewObjectImpl getSgsCrossChargeIdenVO1() {
+        return (ViewObjectImpl) findViewObject("SgsCrossChargeIdenVO1");
+    }
 }
 

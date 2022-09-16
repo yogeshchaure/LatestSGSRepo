@@ -223,6 +223,9 @@
   <ViewUsage
     Name="SgsRevAllocatedDtVO"
     ViewObjectName="com.sgs.model.view.SgsRevAllocatedDtVO"/>
+  <ViewUsage
+    Name="SgsCrossChargeIdenVO1"
+    ViewObjectName="com.sgs.model.view.SgsCrossChargeIdenVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

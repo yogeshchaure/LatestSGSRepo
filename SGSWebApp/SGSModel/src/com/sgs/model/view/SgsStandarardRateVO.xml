@@ -38,7 +38,14 @@
   <Variable
     Name="bEffEndDate"
     Kind="viewcriteria"
-    Type="java.sql.Date"/>
+    Type="java.sql.Date">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsStandarardRateVO.bEffEndDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <Variable
     Name="bCostIdenID"
     Kind="viewcriteria"
@@ -234,7 +241,7 @@
     Name="LOV_SrGeography"
     ListVOName="GeoList"
     NullValueFlag="start"
-    NullValueId="LOV_SrGeography_LOVUIHints_NullValueId"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="SrGeography"/>
@@ -252,7 +259,7 @@
     Name="LOV_EmployeeGradeLevel"
     ListVOName="EmpGradeList"
     NullValueFlag="start"
-    NullValueId="LOV_EmployeeGradeLevel_LOVUIHints_NullValueId"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="EmployeeGradeLevel"/>
@@ -288,7 +295,7 @@
     Name="LOV_DepartmentCostCenter"
     ListVOName="DepartmentList"
     NullValueFlag="start"
-    NullValueId="LOV_DepartmentCostCenter_LOVUIHints_NullValueId"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="DepartmentCostCenter"/>
@@ -368,13 +375,27 @@ order by STANDARD_RATE_ID]]></SQLQuery>
     PrecisionRule="true"
     EntityAttrName="StandardRateId"
     EntityUsage="SgsStandarardRate"
-    AliasName="STANDARD_RATE_ID"/>
+    AliasName="STANDARD_RATE_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="0.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ExpenseType"
     PrecisionRule="true"
     EntityAttrName="ExpenseType"
     EntityUsage="SgsStandarardRate"
-    AliasName="EXPENSE_TYPE"/>
+    AliasName="EXPENSE_TYPE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="1.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SubExpenseType"
     PrecisionRule="true"
@@ -386,6 +407,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="2.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -400,6 +423,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="3.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -414,6 +439,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="4.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -428,6 +455,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="5.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -436,7 +465,14 @@ order by STANDARD_RATE_ID]]></SQLQuery>
     PrecisionRule="true"
     EntityAttrName="StandardCost"
     EntityUsage="SgsStandarardRate"
-    AliasName="STANDARD_COST"/>
+    AliasName="STANDARD_COST">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="6.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="EffectiveStartDate"
     PrecisionRule="true"
@@ -449,6 +485,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
           ResId="com.sgs.model.view.SgsStandarardRateVO.EffectiveStartDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsStandarardRateVO.EffectiveStartDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="7.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -464,6 +502,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
           ResId="com.sgs.model.view.SgsStandarardRateVO.EffectiveEndDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsStandarardRateVO.EffectiveEndDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="18.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -480,6 +520,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
           ResId="com.sgs.model.view.SgsStandarardRateVO.CreatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsStandarardRateVO.CreatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="8.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -489,7 +531,14 @@ order by STANDARD_RATE_ID]]></SQLQuery>
     EntityAttrName="CreatedBy"
     EntityUsage="SgsStandarardRate"
     AliasName="CREATED_BY"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="9.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
@@ -503,6 +552,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
           ResId="com.sgs.model.view.SgsStandarardRateVO.UpdatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsStandarardRateVO.UpdatedDate_FMT_FORMATTER"/>
+        <FIELDORDER
+          Value="10.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -512,7 +563,14 @@ order by STANDARD_RATE_ID]]></SQLQuery>
     EntityAttrName="UpdatedBy"
     EntityUsage="SgsStandarardRate"
     AliasName="UPDATED_BY"
-    IsUpdateable="false"/>
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="11.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DepartmentCostCenter"
     PrecisionRule="true"
@@ -524,6 +582,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="12.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -538,6 +598,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="13.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -552,6 +614,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="14.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -566,6 +630,8 @@ order by STANDARD_RATE_ID]]></SQLQuery>
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="choice"/>
+        <FIELDORDER
+          Value="15.0"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -574,13 +640,27 @@ order by STANDARD_RATE_ID]]></SQLQuery>
     PrecisionRule="true"
     EntityAttrName="EmployeeId"
     EntityUsage="SgsStandarardRate"
-    AliasName="EMPLOYEE_ID"/>
+    AliasName="EMPLOYEE_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="16.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ProgramName"
     PrecisionRule="true"
     EntityAttrName="ProgramName"
     EntityUsage="SgsStandarardRate"
-    AliasName="PROGRAM_NAME"/>
+    AliasName="PROGRAM_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <FIELDORDER
+          Value="17.0"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsStandarardRateVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsStandarardRateVO"

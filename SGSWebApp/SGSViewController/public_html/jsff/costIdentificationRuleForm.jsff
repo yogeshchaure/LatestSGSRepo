@@ -127,7 +127,7 @@
                           rows="#{bindings.SgsIdenCombinationVO1.rangeSize}"
                           emptyText="#{bindings.SgsIdenCombinationVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" fetchSize="#{bindings.SgsIdenCombinationVO1.rangeSize}" id="t2"
-                          styleClass="AFStretchWidth" partialTriggers="::b8 ::b9">
+                          styleClass="AFStretchWidth" partialTriggers="::b8 ::b9 :::pc2:b4 :::pc2:b5">
                   <af:column headerText="Business Unit" id="c3" width="20%">
                     <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
                                         label="#{row.bindings.BusinessUnit.label}"
@@ -208,6 +208,90 @@
                   <f:validator binding="#{bindings.OFFSETJOBCODE.validator}"/>
                 </af:selectOneChoice>
               </af:panelFormLayout>
+            </af:panelBox>
+            
+            <af:panelBox text="Cross Charge Combination" id="pb4">
+              <f:facet name="toolbar"/>
+              <af:panelCollection id="pc2" styleClass="AFStretchWidth">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar">
+                  <af:toolbar id="t4">
+                    <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                           id="b4" icon="/resources/icons/plus.png" action="ADD"/>
+                <af:button id="b5" icon="/resources/icons/delete.png" actionListener="#{bindings.Delete2.execute}"/>
+                  </af:toolbar>
+                </f:facet>
+                <f:facet name="statusbar"/>
+                <af:table value="#{bindings.SgsCrossChargeIdenVO1.collectionModel}" var="row"
+                          rows="#{bindings.SgsCrossChargeIdenVO1.rangeSize}"
+                          emptyText="#{bindings.SgsCrossChargeIdenVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.SgsCrossChargeIdenVO1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.SgsCrossChargeIdenVO1.collectionModel.makeCurrent}" fetchSize="#{bindings.SgsCrossChargeIdenVO1.rangeSize}" id="t5"
+                          partialTriggers="::b4 ::b5" styleClass="AFStretchWidth">
+                  <af:column headerText="Business Unit" id="c6"
+                             width="20%">
+                    <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
+                                        label="#{row.bindings.BusinessUnit.label}"
+                                        required="#{bindings.SgsCrossChargeIdenVO1.hints.BusinessUnit.mandatory}"
+                                        shortDesc="#{bindings.SgsCrossChargeIdenVO1.hints.BusinessUnit.tooltip}"
+                                        id="soc15">
+                      <f:selectItems value="#{row.bindings.BusinessUnit.items}" id="si15"/>
+                      <f:validator binding="#{row.bindings.BusinessUnit.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Operating Unit" id="c8" width="20%">
+                    <af:selectOneChoice value="#{row.bindings.OperatingUnit.inputValue}"
+                                        label="#{row.bindings.OperatingUnit.label}"
+                                        required="#{bindings.SgsCrossChargeIdenVO1.hints.OperatingUnit.mandatory}"
+                                        shortDesc="#{bindings.SgsCrossChargeIdenVO1.hints.OperatingUnit.tooltip}"
+                                        id="soc17">
+                      <f:selectItems value="#{row.bindings.OperatingUnit.items}" id="si17"/>
+                      <f:validator binding="#{row.bindings.OperatingUnit.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Department ID" id="c7"
+                             width="20%">
+                    <af:selectOneChoice value="#{row.bindings.DepartmentId.inputValue}"
+                                        label="#{row.bindings.DepartmentId.label}"
+                                        required="#{bindings.SgsCrossChargeIdenVO1.hints.DepartmentId.mandatory}"
+                                        shortDesc="#{bindings.SgsCrossChargeIdenVO1.hints.DepartmentId.tooltip}"
+                                        id="soc16">
+                      <f:selectItems value="#{row.bindings.DepartmentId.items}" id="si16"/>
+                      <f:validator binding="#{row.bindings.DepartmentId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="GL Code" id="c9" width="20%">
+                    <af:selectOneChoice value="#{row.bindings.GlCode.inputValue}" label="#{row.bindings.GlCode.label}"
+                                        required="#{bindings.SgsCrossChargeIdenVO1.hints.GlCode.mandatory}"
+                                        shortDesc="#{bindings.SgsCrossChargeIdenVO1.hints.GlCode.tooltip}" id="soc18">
+                      <f:selectItems value="#{row.bindings.GlCode.items}" id="si18"/>
+                      <f:validator binding="#{row.bindings.GlCode.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Job Code" id="c10" width="20%">
+                    <af:selectOneChoice value="#{row.bindings.JobCode.inputValue}" label="#{row.bindings.JobCode.label}"
+                                        required="#{bindings.SgsCrossChargeIdenVO1.hints.JobCode.mandatory}"
+                                        shortDesc="#{bindings.SgsCrossChargeIdenVO1.hints.JobCode.tooltip}" id="soc19">
+                      <f:selectItems value="#{row.bindings.JobCode.items}" id="si19"/>
+                      <f:validator binding="#{row.bindings.JobCode.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.SgsCrossChargeIdenVO1.hints.CrossCIdenId.label}" id="c11"
+                             width="100" visible="false">
+                    <af:inputText value="#{row.bindings.CrossCIdenId.inputValue}"
+                                  label="#{bindings.SgsCrossChargeIdenVO1.hints.CrossCIdenId.label}"
+                                  required="#{bindings.SgsCrossChargeIdenVO1.hints.CrossCIdenId.mandatory}"
+                                  columns="#{bindings.SgsCrossChargeIdenVO1.hints.CrossCIdenId.displayWidth}"
+                                  maximumLength="#{bindings.SgsCrossChargeIdenVO1.hints.CrossCIdenId.precision}"
+                                  shortDesc="#{bindings.SgsCrossChargeIdenVO1.hints.CrossCIdenId.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.CrossCIdenId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.SgsCrossChargeIdenVO1.hints.CrossCIdenId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:panelCollection>
             </af:panelBox>
           </af:panelGroupLayout>
         </af:panelBox>
