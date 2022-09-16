@@ -31,8 +31,9 @@
          <af:button  id="b3"  immediate="true" text="Submit for Allocation" accessKey="C"/>       
           <af:spacer id="s4" width="10"/>
             <af:button id="b2" action="back" immediate="true" text="Cancel" accessKey="C"/>
-          <!--<af:button actionListener="#{bindings.Commit.execute}" text="Commit"
-                     id="b10"/>-->
+          <af:spacer id="s10" width="10"/>
+          <af:button actionListener="#{bindings.Commit.execute}" text="Save"
+                     id="b10"/>
         </af:panelGroupLayout>
       <af:panelBox text="Transaction Entries" id="pb1">
         <f:facet name="toolbar">

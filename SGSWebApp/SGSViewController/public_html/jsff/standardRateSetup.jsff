@@ -73,7 +73,7 @@
                                   <af:setPropertyListener from="#{row.StandardRateId}" to="#{pageFlowScope.ID}" type="action"/>
                                 </af:link>
                             </af:column>
-                            <af:column headerText="Sub-ExpenseType" id="resId1c2" width="10%">
+                            <af:column headerText="Sub-Expense Type" id="resId1c2" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.SubExpenseType.inputValue}"
                                                     label="#{row.bindings.SubExpenseType.label}"
                                                     required="#{bindings.SgsStandarardRateVO1.hints.SubExpenseType.mandatory}"
@@ -149,7 +149,7 @@
                                     <f:validator binding="#{row.bindings.UnitOfMeasure.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Effective End Date" id="resId1c8" width="10%">
+                            <af:column headerText="Effective To" id="resId1c8" width="10%">
                                 <af:outputText value="#{row.EffectiveEndDate}"
                                                shortDesc="#{bindings.SgsStandarardRateVO1.hints.EffectiveEndDate.tooltip}"
                                                id="ot5">

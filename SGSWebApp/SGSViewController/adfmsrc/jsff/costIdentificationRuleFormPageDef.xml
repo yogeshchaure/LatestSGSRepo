@@ -8,6 +8,8 @@
               id="SgsCostIdentificationRuleView1Iterator"/>
     <iterator Binds="SgsIdenCombinationVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsIdenCombinationVO1Iterator"/>
+    <iterator Binds="SgsCrossChargeIdenVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsCrossChargeIdenVO1Iterator"/>
   </executables>
   <bindings>
     <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_GlId" id="GlId"
@@ -84,5 +86,21 @@
         <Item Value="RuleId"/>
       </AttrNames>
     </attributeValues>
+    <action IterBinding="SgsCrossChargeIdenVO1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="SgsCrossChargeIdenVO1Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="SgsCrossChargeIdenVO1Iterator" id="SgsCrossChargeIdenVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsCrossChargeIdenVO" Name="SgsCrossChargeIdenVO10">
+        <AttrNames>
+          <Item Value="BusinessUnit"/>
+          <Item Value="DepartmentId"/>
+          <Item Value="OperatingUnit"/>
+          <Item Value="GlCode"/>
+          <Item Value="JobCode"/>
+          <Item Value="CrossCIdenId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

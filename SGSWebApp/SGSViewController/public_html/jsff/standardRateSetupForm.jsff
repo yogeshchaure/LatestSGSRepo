@@ -47,7 +47,7 @@
                         <f:validator binding="#{bindings.SrGeography.validator}"/>
                     </af:selectOneChoice>
                     <af:selectOneChoice value="#{bindings.DepartmentCostCenter.inputValue}"
-                                        label="Department"
+                                        label="Department ID"
                                         required="#{bindings.DepartmentCostCenter.hints.mandatory}"
                                         shortDesc="#{bindings.DepartmentCostCenter.hints.tooltip}" id="soc5">
                         <f:selectItems value="#{bindings.DepartmentCostCenter.items}" id="si5"/>
@@ -95,14 +95,14 @@
                         <f:validator binding="#{bindings.StandardCost.validator}"/>
                         <af:convertNumber groupingUsed="false" pattern="#{bindings.StandardCost.format}"/>
                     </af:inputText>
-                    <af:inputDate value="#{bindings.EffectiveStartDate.inputValue}" label="Effective Start Date"
+                    <af:inputDate value="#{bindings.EffectiveStartDate.inputValue}" label="Effective From"
                                   required="#{bindings.EffectiveStartDate.hints.mandatory}"
                                   columns="#{bindings.EffectiveStartDate.hints.displayWidth}"
                                   shortDesc="#{bindings.EffectiveStartDate.hints.tooltip}" id="id1">
                         <f:validator binding="#{bindings.EffectiveStartDate.validator}"/>
                         <af:convertDateTime pattern="#{bindings.EffectiveStartDate.format}"/>
                     </af:inputDate>
-                    <af:inputDate value="#{bindings.EffectiveEndDate.inputValue}" label="Effective End Date"
+                    <af:inputDate value="#{bindings.EffectiveEndDate.inputValue}" label="Effective To"
                                   required="#{bindings.EffectiveEndDate.hints.mandatory}"
                                   columns="#{bindings.EffectiveEndDate.hints.displayWidth}"
                                   shortDesc="#{bindings.EffectiveEndDate.hints.tooltip}" id="id2">
@@ -124,7 +124,7 @@
                         <af:convertDateTime pattern="#{bindings.UpdatedDate.format}"/>
                     </af:inputDate>
                     <af:outputText value="#{bindings.StandardRateId.inputValue}"
-                                   shortDesc="#{bindings.StandardRateId.hints.tooltip}" id="ot1">
+                                   shortDesc="#{bindings.StandardRateId.hints.tooltip}" id="ot1" visible="false">
                         <af:convertNumber groupingUsed="false" pattern="#{bindings.StandardRateId.format}"/>
                     </af:outputText>
                 </af:panelFormLayout>
