@@ -998,6 +998,19 @@
     EntityAttrName="ALLOCATIONBASIS"
     EntityUsage="SgsTransBCostAllocation"
     AliasName="ALLOCATION_BASIS"/>
+  <ViewAttribute
+    Name="PEOPLESOFTTRANSACTIONID"
+    PrecisionRule="true"
+    EntityAttrName="PEOPLESOFTTRANSACTIONID"
+    EntityUsage="SgsTransBCostAllocation"
+    AliasName="PEOPLESOFT_TRANSACTION_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.PEOPLESOFTTRANSACTIONID_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsTransBCostAllocationVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsTransBCostAllocationVO"

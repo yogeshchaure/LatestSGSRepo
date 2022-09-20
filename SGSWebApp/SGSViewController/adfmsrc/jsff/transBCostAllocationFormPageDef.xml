@@ -20,6 +20,8 @@
     <taskFlow id="otherReceivablesDetailsBTF1"
               taskFlowId="/bTaskFlow/otherReceivablesDetailsBTF.xml#otherReceivablesDetailsBTF" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="SgsOtherReceivablesVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsOtherReceivablesVOIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="ApprovalRequestType">
@@ -299,5 +301,34 @@
         <Item Value="UpdatedDate"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="PEOPLESOFTTRANSACTIONID">
+      <AttrNames>
+        <Item Value="PEOPLESOFTTRANSACTIONID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsOtherReceivablesVOIterator" id="UpdatedBy4">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsOtherReceivablesVOIterator" id="UpdatedDate4">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SgsOtherReceivablesVOIterator" id="SgsOtherReceivablesVO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsOtherReceivablesVO" Name="SgsOtherReceivablesVO0">
+        <AttrNames>
+          <Item Value="ReclassBusinessUnit"/>
+          <Item Value="ReclassOperatingUnit"/>
+          <Item Value="ReclassDepartmentId"/>
+          <Item Value="ReclassGlAccount"/>
+          <Item Value="ReclassJobCode"/>
+          <Item Value="BaseCurrency"/>
+          <Item Value="TransactionCurrency"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

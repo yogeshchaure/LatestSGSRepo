@@ -62,7 +62,8 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
         UpdatedDate,
         UpdatedBy,
         OperationUnit,
-        ALLOCATIONBASIS;
+        ALLOCATIONBASIS,
+        PEOPLESOFTTRANSACTIONID;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -129,11 +130,19 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int OPERATIONUNIT = AttributesEnum.OperationUnit.index();
     public static final int ALLOCATIONBASIS = AttributesEnum.ALLOCATIONBASIS.index();
+    public static final int PEOPLESOFTTRANSACTIONID = AttributesEnum.PEOPLESOFTTRANSACTIONID.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public SgsTransBCostAllocationImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTransBCostAllocation");
     }
 
     /**
@@ -729,6 +738,23 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for PEOPLESOFTTRANSACTIONID, using the alias name PEOPLESOFTTRANSACTIONID.
+     * @return the value of PEOPLESOFTTRANSACTIONID
+     */
+    public String getPEOPLESOFTTRANSACTIONID() {
+        return (String) getAttributeInternal(PEOPLESOFTTRANSACTIONID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PEOPLESOFTTRANSACTIONID.
+     * @param value value to set the PEOPLESOFTTRANSACTIONID
+     */
+    public void setPEOPLESOFTTRANSACTIONID(String value) {
+        setAttributeInternal(PEOPLESOFTTRANSACTIONID, value);
+    }
+
+
+    /**
      * @param tbcaId key constituent
 
      * @return a Key object based on given key constituents.
@@ -736,14 +762,6 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
     public static Key createPrimaryKey(Integer tbcaId) {
         return new Key(new Object[] { tbcaId });
     }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTransBCostAllocation");
-    }
-
 
     /**
      * Add attribute defaulting logic in this method.

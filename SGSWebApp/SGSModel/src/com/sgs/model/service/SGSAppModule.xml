@@ -226,6 +226,9 @@
   <ViewUsage
     Name="SgsCrossChargeIdenVO1"
     ViewObjectName="com.sgs.model.view.SgsCrossChargeIdenVO"/>
+  <ViewUsage
+    Name="SgsOtherReceivablesVO"
+    ViewObjectName="com.sgs.model.view.SgsOtherReceivablesVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

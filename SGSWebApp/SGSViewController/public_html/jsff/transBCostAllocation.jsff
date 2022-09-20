@@ -24,17 +24,23 @@
                 </af:popup>
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p2"
                           binding="#{pageFlowScope.TransBCostAllocationBean.otherReceivablePopup}">
-                    <af:dialog id="d3" contentWidth="900" contentHeight="300" type="none">
+                    <af:dialog id="d3" contentWidth="400" contentHeight="80" type="none"
+                               title="Upload Other Receivables">
                         <f:facet name="buttonBar">
-                            <af:button text="Reclass" id="b5"
+                            <af:button text="Submit" id="b5"
                                        actionListener="#{pageFlowScope.TransBCostAllocationBean.saveOtherReceivableDetails}"/>
                             <af:button text="Close" id="b7"
                                        actionListener="#{pageFlowScope.TransBCostAllocationBean.closeOtherReceivableDetails}"/>
                         </f:facet>
-                        <af:spacer id="s9" width="300"/>
-                        <af:outputText value="Action on Other Receivables" id="ot18"
-                                       inlineStyle="font-weight:bold;font-size:15px;"/>
-                        <af:region value="#{bindings.otherReceivablesDetailsBTF1.regionModel}" id="r2"/>
+                        <!--<af:spacer id="s9" width="30"/>-->
+                        <!--<af:outputText value="Upload Other Receivables" id="ot18"
+                                       inlineStyle="font-weight:bold;font-size:10px;"/>-->
+                                         <af:panelGroupLayout id="pgl01" layout="horizontal" valign="middle">
+                                    <af:inputFile label="Select your file" id="if1"
+                                        autoSubmit="true" 
+                                       valueChangeListener="#{pageFlowScope.TransBCostAllocationBean.fileUploaded}"/>
+                                </af:panelGroupLayout>     
+                        <!--<af:region value="#{bindings.otherReceivablesDetailsBTF1.regionModel}" id="r2"/>-->
                     </af:dialog>
                 </af:popup>
             </af:panelGroupLayout>
@@ -74,7 +80,7 @@
                                 <af:button text="Action On Other Receivables" id="b3">
                                     <af:showPopupBehavior popupId="::p2"/>
                                 </af:button>
-                                <af:button text="Submit for Allocation" id="b6"/>
+                                <af:button text="Confirm for Processing" id="b6"/>
                                 <af:button text="Approval" id="b11" disabled="true"/>
                             </af:toolbar>
                         </f:facet>
@@ -103,6 +109,11 @@
                                     <af:setPropertyListener from="#{row.TrasactionStatus}" to="#{pageFlowScope.status}"
                                                             type="action"/>
                                 </af:link>
+                            </af:column>
+                             <af:column headerText="PeopleSoft Transaction ID" id="c8" width="8%">
+                                <af:outputText value="#{row.PEOPLESOFTTRANSACTIONID}"
+                               shortDesc="#{bindings.SgsTransBCostAllocationView1.hints.PEOPLESOFTTRANSACTIONID.tooltip}" id="ot9"/>
+                               
                             </af:column>
                             <af:column headerText="Cost Identification ID" id="c1" width="12%">
                                 <af:selectOneChoice value="#{row.bindings.CirId.inputValue}"
@@ -232,6 +243,211 @@
                             </af:column>
                         </af:table>
                     </af:panelCollection>
+                    <af:table value="#{bindings.SgsOtherReceivablesVO.collectionModel}" var="row"
+                              rows="#{bindings.SgsOtherReceivablesVO.rangeSize}"
+                              emptyText="#{bindings.SgsOtherReceivablesVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0" visible="false"
+                              selectedRowKeys="#{bindings.SgsOtherReceivablesVO.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.SgsOtherReceivablesVO.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.SgsOtherReceivablesVO.rangeSize}" id="t2"
+                              binding="#{pageFlowScope.TransBCostAllocationBean.staffTable}">
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.OrId.label}" id="c9">
+                            <af:inputText value="#{row.bindings.OrId.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.OrId.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.OrId.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.OrId.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.OrId.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.OrId.tooltip}" id="it1">
+                                <f:validator binding="#{row.bindings.OrId.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsOtherReceivablesVO.hints.OrId.format}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.Period.label}" id="c10">
+                            <af:inputDate value="#{row.bindings.Period.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.Period.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.Period.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.Period.displayWidth}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.Period.tooltip}" id="id1">
+                                <f:validator binding="#{row.bindings.Period.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.SgsOtherReceivablesVO.hints.Period.format}"/>
+                            </af:inputDate>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.PeoplesoftTransactionId.label}"
+                                   id="c11">
+                            <af:inputText value="#{row.bindings.PeoplesoftTransactionId.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.PeoplesoftTransactionId.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.PeoplesoftTransactionId.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.PeoplesoftTransactionId.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.PeoplesoftTransactionId.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.PeoplesoftTransactionId.tooltip}"
+                                          id="it2">
+                                <f:validator binding="#{row.bindings.PeoplesoftTransactionId.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.ExtractionId.label}" id="c12">
+                            <af:inputText value="#{row.bindings.ExtractionId.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.ExtractionId.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.ExtractionId.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.ExtractionId.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.ExtractionId.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ExtractionId.tooltip}"
+                                          id="it3">
+                                <f:validator binding="#{row.bindings.ExtractionId.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.SourceBusinessUnit.label}"
+                                   id="c13">
+                            <af:inputText value="#{row.bindings.SourceBusinessUnit.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.SourceBusinessUnit.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.SourceBusinessUnit.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.SourceBusinessUnit.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.SourceBusinessUnit.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.SourceBusinessUnit.tooltip}"
+                                          id="it4">
+                                <f:validator binding="#{row.bindings.SourceBusinessUnit.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.SourceOperatingUnit.label}"
+                                   id="c14">
+                            <af:inputText value="#{row.bindings.SourceOperatingUnit.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.SourceOperatingUnit.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.SourceOperatingUnit.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.SourceOperatingUnit.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.SourceOperatingUnit.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.SourceOperatingUnit.tooltip}"
+                                          id="it5">
+                                <f:validator binding="#{row.bindings.SourceOperatingUnit.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.SourceDepartmentId.label}"
+                                   id="c15">
+                            <af:inputText value="#{row.bindings.SourceDepartmentId.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.SourceDepartmentId.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.SourceDepartmentId.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.SourceDepartmentId.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.SourceDepartmentId.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.SourceDepartmentId.tooltip}"
+                                          id="it6">
+                                <f:validator binding="#{row.bindings.SourceDepartmentId.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.SourceGlAccount.label}" id="c16">
+                            <af:inputText value="#{row.bindings.SourceGlAccount.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.SourceGlAccount.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.SourceGlAccount.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.SourceGlAccount.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.SourceGlAccount.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.SourceGlAccount.tooltip}"
+                                          id="it7">
+                                <f:validator binding="#{row.bindings.SourceGlAccount.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.SourceJobCode.label}" id="c17">
+                            <af:inputText value="#{row.bindings.SourceJobCode.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.SourceJobCode.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.SourceJobCode.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.SourceJobCode.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.SourceJobCode.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.SourceJobCode.tooltip}"
+                                          id="it8">
+                                <f:validator binding="#{row.bindings.SourceJobCode.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.ReclassBusinessUnit.label}"
+                                   id="c18">
+                            <af:inputText value="#{row.bindings.ReclassBusinessUnit.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.ReclassBusinessUnit.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.ReclassBusinessUnit.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.ReclassBusinessUnit.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.ReclassBusinessUnit.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassBusinessUnit.tooltip}"
+                                          id="it9">
+                                <f:validator binding="#{row.bindings.ReclassBusinessUnit.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.ReclassOperatingUnit.label}"
+                                   id="c19">
+                            <af:inputText value="#{row.bindings.ReclassOperatingUnit.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.ReclassOperatingUnit.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.ReclassOperatingUnit.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.ReclassOperatingUnit.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.ReclassOperatingUnit.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassOperatingUnit.tooltip}"
+                                          id="it10">
+                                <f:validator binding="#{row.bindings.ReclassOperatingUnit.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.ReclassDepartmentId.label}"
+                                   id="c20">
+                            <af:inputText value="#{row.bindings.ReclassDepartmentId.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.ReclassDepartmentId.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.ReclassDepartmentId.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.ReclassDepartmentId.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.ReclassDepartmentId.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassDepartmentId.tooltip}"
+                                          id="it11">
+                                <f:validator binding="#{row.bindings.ReclassDepartmentId.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.ReclassGlAccount.label}" id="c21">
+                            <af:inputText value="#{row.bindings.ReclassGlAccount.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.ReclassGlAccount.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.ReclassGlAccount.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.ReclassGlAccount.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.ReclassGlAccount.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassGlAccount.tooltip}"
+                                          id="it12">
+                                <f:validator binding="#{row.bindings.ReclassGlAccount.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.ReclassJobCode.label}" id="c22">
+                            <af:inputText value="#{row.bindings.ReclassJobCode.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.ReclassJobCode.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.ReclassJobCode.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.ReclassJobCode.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.ReclassJobCode.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassJobCode.tooltip}"
+                                          id="it13">
+                                <f:validator binding="#{row.bindings.ReclassJobCode.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.BaseCurrency.label}" id="c23">
+                            <af:inputText value="#{row.bindings.BaseCurrency.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.BaseCurrency.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.BaseCurrency.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.BaseCurrency.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.BaseCurrency.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.BaseCurrency.tooltip}"
+                                          id="it14">
+                                <f:validator binding="#{row.bindings.BaseCurrency.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.TransactionCurrency.label}"
+                                   id="c24">
+                            <af:inputText value="#{row.bindings.TransactionCurrency.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.TransactionCurrency.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.TransactionCurrency.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.TransactionCurrency.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.TransactionCurrency.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.TransactionCurrency.tooltip}"
+                                          id="it15">
+                                <f:validator binding="#{row.bindings.TransactionCurrency.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="#{bindings.SgsOtherReceivablesVO.hints.Amount.label}" id="c25">
+                            <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                          label="#{bindings.SgsOtherReceivablesVO.hints.Amount.label}"
+                                          required="#{bindings.SgsOtherReceivablesVO.hints.Amount.mandatory}"
+                                          columns="#{bindings.SgsOtherReceivablesVO.hints.Amount.displayWidth}"
+                                          maximumLength="#{bindings.SgsOtherReceivablesVO.hints.Amount.precision}"
+                                          shortDesc="#{bindings.SgsOtherReceivablesVO.hints.Amount.tooltip}" id="it16">
+                                <f:validator binding="#{row.bindings.Amount.validator}"/>
+                                <af:convertNumber groupingUsed="false"
+                                                  pattern="#{bindings.SgsOtherReceivablesVO.hints.Amount.format}"/>
+                            </af:inputText>
+                        </af:column>
+                    </af:table>
                 </af:panelGroupLayout>
             </af:panelBox>
         </f:facet>

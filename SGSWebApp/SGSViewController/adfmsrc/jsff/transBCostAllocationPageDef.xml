@@ -14,6 +14,8 @@
     <taskFlow id="otherReceivablesDetailsBTF1"
               taskFlowId="/bTaskFlow/otherReceivablesDetailsBTF.xml#otherReceivablesDetailsBTF" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="SgsOtherReceivablesVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsOtherReceivablesVOIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="SgsTransBCostAllocationView1Iterator" id="SgsTransBCostAllocationView1">
@@ -35,15 +37,39 @@
           <Item Value="ExtractId"/>
           <Item Value="OprationalUnit"/>
           <Item Value="TransactionCurrency"/>
+           <Item Value="PEOPLESOFTTRANSACTIONID"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action id="Commit" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
     <action IterBinding="SgsTransBCostAllocationView1Iterator" id="CreateInsert"
             InstanceName="SGSAppModuleDataControl.SgsTransBCostAllocationView1" DataControl="SGSAppModuleDataControl"
             RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="SgsTransBCostAllocationView1Iterator" id="Delete"
             InstanceName="SGSAppModuleDataControl.SgsTransBCostAllocationView1" DataControl="SGSAppModuleDataControl"
             RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="SgsOtherReceivablesVOIterator" id="SgsOtherReceivablesVO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsOtherReceivablesVO" Name="SgsOtherReceivablesVO0">
+        <AttrNames>
+          <Item Value="OrId"/>
+          <Item Value="Period"/>
+          <Item Value="PeoplesoftTransactionId"/>
+          <Item Value="ExtractionId"/>
+          <Item Value="SourceBusinessUnit"/>
+          <Item Value="SourceOperatingUnit"/>
+          <Item Value="SourceDepartmentId"/>
+          <Item Value="SourceGlAccount"/>
+          <Item Value="SourceJobCode"/>
+          <Item Value="ReclassBusinessUnit"/>
+          <Item Value="ReclassOperatingUnit"/>
+          <Item Value="ReclassDepartmentId"/>
+          <Item Value="ReclassGlAccount"/>
+          <Item Value="ReclassJobCode"/>
+          <Item Value="BaseCurrency"/>
+          <Item Value="TransactionCurrency"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
   </bindings>
 </pageDefinition>

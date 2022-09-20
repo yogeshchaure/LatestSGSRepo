@@ -880,5 +880,13 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsCrossChargeIdenVO1() {
         return (ViewObjectImpl) findViewObject("SgsCrossChargeIdenVO1");
     }
+
+    /**
+     * Container's getter for SgsOtherReceivablesVO1.
+     * @return SgsOtherReceivablesVO1
+     */
+    public ViewObjectImpl getSgsOtherReceivablesVO() {
+        return (ViewObjectImpl) findViewObject("SgsOtherReceivablesVO");
+    }
 }
 

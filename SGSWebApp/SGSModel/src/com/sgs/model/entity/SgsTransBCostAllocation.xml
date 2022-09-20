@@ -450,6 +450,18 @@
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="PEOPLESOFTTRANSACTIONID"
+    Precision="100"
+    ColumnName="PEOPLESOFT_TRANSACTION_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PKSGSTRANSBCOSTALLOCATION"
     PrimaryKey="true">
@@ -470,4 +482,8 @@
       operation="removeCurrentRow"
       privilege="delete"/>
   </Permission>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sgs.model.SGSModelBundle"/>
+  </ResourceBundle>
 </Entity>
