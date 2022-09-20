@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="newWelcomePage.jsf" id="d1">
-        <af:form id="f1" inlineStyle="background-color:white">
+        <af:form id="f1" inlineStyle="background-color:white" usesUpload="true">
             <af:panelStretchLayout id="psl1" topHeight="110px" inlineStyle="background-color:white;min-height: 700px;">
                 <f:facet name="start"/>
                 <f:facet name="end"/>

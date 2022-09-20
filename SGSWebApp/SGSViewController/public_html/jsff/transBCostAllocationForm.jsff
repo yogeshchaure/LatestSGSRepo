@@ -49,6 +49,14 @@
                           shortDesc="#{bindings.ExtractId.hints.tooltip}" id="it3">
               <f:validator binding="#{bindings.ExtractId.validator}"/>
             </af:inputText>
+            <af:inputText value="#{bindings.PEOPLESOFTTRANSACTIONID.inputValue}" readOnly="true"
+                          label="#{bindings.PEOPLESOFTTRANSACTIONID.hints.label}"
+                          required="#{bindings.PEOPLESOFTTRANSACTIONID.hints.mandatory}"
+                          columns="#{bindings.PEOPLESOFTTRANSACTIONID.hints.displayWidth}"
+                          maximumLength="#{bindings.PEOPLESOFTTRANSACTIONID.hints.precision}"
+                          shortDesc="#{bindings.PEOPLESOFTTRANSACTIONID.hints.tooltip}" id="it17">
+              <f:validator binding="#{bindings.PEOPLESOFTTRANSACTIONID.validator}"/>
+            </af:inputText>
             <af:selectOneChoice value="#{bindings.CirId.inputValue}" label="Cost Identification ID"
                               required="#{bindings.CirId.hints.mandatory}" shortDesc="#{bindings.CirId.hints.tooltip}"
                               id="soc1">
@@ -550,10 +558,10 @@
           </af:panelGroupLayout>
          
         </af:panelBox>
-         <af:panelBox id="pb10" text="Other Receivables Details" disclosed="false" rendered="true">
+         <af:panelBox id="pb10" text="Other Receivable Reclass Details" disclosed="false" rendered="true">
           <f:facet name="toolbar"/>
           <af:panelGroupLayout id="pgl4" >
-            <af:table value="#{bindings.SgsOtherReceivablesDetailsVO.collectionModel}" var="row"
+            <!--<af:table value="#{bindings.SgsOtherReceivablesDetailsVO.collectionModel}" var="row"
                       rows="#{bindings.SgsOtherReceivablesDetailsVO.rangeSize}"
                       emptyText="#{bindings.SgsOtherReceivablesDetailsVO.viewable ? 'No data to display.' : 'Access Denied.'}"
                       rowBandingInterval="0"
@@ -564,9 +572,9 @@
                       columnSelection="multiple">
               <af:column headerText="Extraction ID" id="c10" width="10%">
                 <af:link text="#{row.ExtractionId}" id="l3" inlineStyle="font-weight:bold;"/>
-                <!--<af:outputText value="#{row.ExtractionId}"
+                --><!--<af:outputText value="#{row.ExtractionId}"
                                shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.ExtractionId.tooltip}"
-                               id="ot18"/>-->
+                               id="ot18"/>--><!--
               </af:column>
               <af:column headerText="Legal Entity" id="c11" width="10%">
                 <af:outputText value="#{row.LegalEntity}"
@@ -608,19 +616,79 @@
                                     pattern="#{bindings.SgsOtherReceivablesDetailsVO.hints.Amount.format}"/>
                 </af:outputText>
               </af:column>
+            </af:table>-->
+            <af:table value="#{bindings.SgsOtherReceivablesVO.collectionModel}" var="row"
+                      rows="#{bindings.SgsOtherReceivablesVO.rangeSize}"
+                      emptyText="#{bindings.SgsOtherReceivablesVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.SgsOtherReceivablesVO.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.SgsOtherReceivablesVO.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.SgsOtherReceivablesVO.rangeSize}" id="t3"
+                      styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="5"
+                      columnSelection="multiple" binding="#{pageFlowScope.transBCostAllocationFormBean.staffTable}">
+              <af:column headerText="Reclass Business Unit" id="c10" width="100%">
+                <af:outputText value="#{row.ReclassBusinessUnit}"
+                               shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassBusinessUnit.tooltip}"
+                               id="ot19"/>
+              </af:column>
+              <af:column headerText="Reclass Operating Unit" id="c11">
+                <af:outputText value="#{row.ReclassOperatingUnit}"
+                               shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassOperatingUnit.tooltip}"
+                               id="ot20"/>
+              </af:column>
+              <af:column headerText="Reclass Department ID" id="c12">
+                <af:outputText value="#{row.ReclassDepartmentId}"
+                               shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassDepartmentId.tooltip}"
+                               id="ot21"/>
+              </af:column>
+              <af:column headerText="Reclass GL Account" id="c13">
+                <af:outputText value="#{row.ReclassGlAccount}"
+                               shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassGlAccount.tooltip}" id="ot22"/>
+              </af:column>
+              <af:column headerText="Reclass Job Code" id="c14">
+                <af:outputText value="#{row.ReclassJobCode}"
+                               shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassJobCode.tooltip}" id="ot23"/>
+              </af:column>
+              <af:column headerText="Base Currency" id="c15">
+                <af:outputText value="#{row.BaseCurrency}"
+                               shortDesc="#{bindings.SgsOtherReceivablesVO.hints.BaseCurrency.tooltip}" id="ot25"/>
+              </af:column>
+              <af:column headerText="Transaction Currency" id="c16">
+                <af:outputText value="#{row.TransactionCurrency}"
+                               shortDesc="#{bindings.SgsOtherReceivablesVO.hints.TransactionCurrency.tooltip}"
+                               id="ot26"/>
+              </af:column>
+              <af:column headerText="Amount" id="c17">
+                <af:outputText value="#{row.Amount}" shortDesc="#{bindings.SgsOtherReceivablesVO.hints.Amount.tooltip}"
+                               id="ot27">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.SgsOtherReceivablesVO.hints.Amount.format}"/>
+                </af:outputText>
+              </af:column>
             </af:table>
           </af:panelGroupLayout>
           <af:panelFormLayout id="pfl10">
             <f:facet name="footer"/>
           <!-- data-->
-          <af:panelLabelAndMessage label="Reclassed By" id="plam16">
+         
+            <af:panelLabelAndMessage label="Reclassed By" id="plam18">
+              <af:outputText value="#{bindings.UpdatedBy4.inputValue}" shortDesc="#{bindings.UpdatedBy4.hints.tooltip}"
+                             id="ot18"/>
+            </af:panelLabelAndMessage>
+            <af:panelLabelAndMessage label="Reclass Date" id="plam19">
+              <af:outputText value="#{bindings.UpdatedDate4.inputValue}"
+                             shortDesc="#{bindings.UpdatedDate4.hints.tooltip}" id="ot24">
+                <af:convertDateTime pattern="#{bindings.UpdatedDate4.format}"/>
+              </af:outputText>
+            </af:panelLabelAndMessage>
+             <!--<af:panelLabelAndMessage label="Reclassed By" id="plam16">
                 <af:outputText value="#{bindings.UpdatedBy3.inputValue}"
                                shortDesc="#{bindings.UpdatedBy3.hints.tooltip}" id="ot27"/>
               </af:panelLabelAndMessage>
-              <af:panelLabelAndMessage label="Reclass Date" id="plam17">
+            <af:panelLabelAndMessage label="Reclass Date" id="plam17">
                 <af:outputText value="#{bindings.UpdatedDate3.inputValue}"
                                shortDesc="#{bindings.UpdatedDate3.hints.tooltip}" id="ot28"/>
-              </af:panelLabelAndMessage>
+              </af:panelLabelAndMessage>-->
           </af:panelFormLayout>
         </af:panelBox>
         <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
@@ -651,18 +719,21 @@
         </af:popup>
          <af:popup childCreation="deferred" autoCancel="disabled" id="p3"
                binding="#{pageFlowScope.transBCostAllocationFormBean.otherReceivablePopup}">
-          <af:dialog id="d3" contentWidth="900" contentHeight="300" type="none">
+          <af:dialog id="d3" contentWidth="400" contentHeight="80" type="none" title="Upload Other Receivables">
             <f:facet name="buttonBar">
-              <af:button text="Reclass" id="b5"
+              <af:button text="Submit" id="b5"
                         actionListener="#{pageFlowScope.transBCostAllocationFormBean.saveOtherReceivableDetails}"/>
             <af:button text="Close" id="b7"
                          actionListener="#{pageFlowScope.transBCostAllocationFormBean.closeOtherReceivableDetails}"/>
             </f:facet>
-             <af:spacer id="s9" width="300"/>
-                <af:outputText value="Action on Other Receivables" id="ot18" inlineStyle="font-weight:bold;font-size:15px;"/>
-            <af:region value="#{bindings.otherReceivablesDetailsBTF1.regionModel}" id="r3"/>
+              <af:panelGroupLayout id="pgl01" layout="horizontal" valign="middle">
+                      <af:inputFile label="Select your file" id="if1"
+                                        autoSubmit="true"
+                                    valueChangeListener="#{pageFlowScope.transBCostAllocationFormBean.fileUploaded}"/>
+                                </af:panelGroupLayout>    
           </af:dialog>
         </af:popup>
+        
       </af:panelGroupLayout>
     </f:facet>
   </af:panelStretchLayout>

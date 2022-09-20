@@ -3,7 +3,7 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
         xmlns:h="http://java.sun.com/jsf/html">
     <af:document title="welcomeSGSPage.jsf" id="d1">
-        <af:form id="f1">
+        <af:form id="f1" usesUpload="true">
             <af:pageTemplate viewId="/template/templateSGS.jsf" id="pt1"/>
             <af:panelStretchLayout id="psl1" inlineStyle="background-color:white;">
                 <f:facet name="start"/>
