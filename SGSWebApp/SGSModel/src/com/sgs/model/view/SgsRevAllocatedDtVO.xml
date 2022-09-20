@@ -604,6 +604,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="13.0"/>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsRevAllocatedDtVO.Period_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsRevAllocatedDtVO.Period_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -923,6 +927,12 @@
     EntityAttrName="TARGETBU"
     EntityUsage="SgsRevAllocatedDt"
     AliasName="TARGET_BU"/>
+  <ViewAttribute
+    Name="SourceTransactionId"
+    PrecisionRule="true"
+    EntityAttrName="SourceTransactionId"
+    EntityUsage="SgsRevAllocatedDt"
+    AliasName="SOURCE_TRASACTION_ID"/>
   <ViewCriteria
     Name="SgsRevAllocatedDtVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsRevAllocatedDtVO"
