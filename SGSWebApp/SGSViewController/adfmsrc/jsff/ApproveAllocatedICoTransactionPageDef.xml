@@ -48,6 +48,7 @@
           <Item Value="PaidAmount"/>
            <Item Value="SOURCEBU"/>
             <Item Value="TARGETBU"/>
+          <Item Value="SourceTransactionId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
