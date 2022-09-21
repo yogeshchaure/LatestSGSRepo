@@ -77,7 +77,7 @@
                                 <af:button text="Hold/Release" id="b4">
                                     <af:showPopupBehavior popupId="::p1"/>
                                 </af:button>
-                                <af:button text="Action On Other Receivables" id="b3">
+                                <af:button text="Upload Other Receivables" id="b3">
                                     <af:showPopupBehavior popupId="::p2"/>
                                 </af:button>
                                 <af:button text="Confirm for Processing" id="b6"/>

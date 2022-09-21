@@ -23,7 +23,7 @@
            <af:showPopupBehavior popupId="p2"/>
            </af:button>
             <af:spacer id="s34" width="10"/>
-                <af:button text="Action On Other Receivables" id="b13" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}">
+                <af:button text="Upload Other Receivables" id="b13" rendered="#{pageFlowScope.pStatus eq 'Unprocessed'}">
                  <af:showPopupBehavior popupId="p3"/>
                 </af:button>
         <af:button id="b12" action="back" immediate="true" text="Approve" accessKey="C" rendered="#{pageFlowScope.pStatus eq 'Pending Approval for Rectification'}"/>
