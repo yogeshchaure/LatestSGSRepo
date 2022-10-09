@@ -1,0 +1,33 @@
+//Groovy Scripts for com.sgs.model.view.SgsCreateSettlementFVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="PaymentCurrencyLOV", name="pType")
+def pType_PaymentCurrencyLOV_BindVariable_BoundParameter()
+{
+'PAYMENT_CUR'
+}
+
+
+@AccessorParameterExpression(accessorName="PaymentMethodLOV", name="pType")
+def pType_PaymentMethodLOV_BindVariable_BoundParameter()
+{
+'PAYMENT_METHOD'
+}
+
+
+@AccessorParameterExpression(accessorName="ICoSupplierLOV", name="pType")
+def pType_ICoSupplierLOV_BindVariable_BoundParameter()
+{
+'bUSINESS_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="BusinessUnitLOV", name="pType")
+def pType_BusinessUnitLOV_BindVariable_BoundParameter()
+{
+'bUSINESS_UNIT'
+}
+

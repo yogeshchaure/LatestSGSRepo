@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelStretchLayout id="psl1">
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top"/>
+        <f:facet name="bottom"/>
+        <f:facet name="center">
+            <af:panelBox text="Settlement of Inter-Company Invoices" id="pb1">
+                <f:facet name="toolbar"/>
+                <af:panelGroupLayout layout="vertical" id="pgl1">
+                    <af:panelTabbed position="above" id="pt1">
+                        <af:showDetailItem id="tab1" text="Settlement of Inter-Company Vouchers"/>
+                        <af:showDetailItem id="tab2" text="Settlement of Inter-Company Invoices"/>
+                    </af:panelTabbed>
+                </af:panelGroupLayout>
+               
+            </af:panelBox>
+        </f:facet>
+    </af:panelStretchLayout>
+</ui:composition>

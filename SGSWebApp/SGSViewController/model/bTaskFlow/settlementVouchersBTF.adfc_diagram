@@ -11,13 +11,32 @@
       <property
          name="x">341.02734</property>
       <property
-         name="start">true</property>
+         name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>settlementVouchers&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>settlementVouchers&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">285.39648</property>
+         name="y">280.48828</property>
       <property
          name="page">/jsff/settlementVouchers.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">settlementVoucherNew</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">639.0303</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>settlementVoucherNew&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">265.79883</property>
+      <property
+         name="page">/jsff/settlementVoucherNew.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1252" ?>
 <adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
   <task-flow-definition id="settlementVouchersBTF">
-    <default-activity>settlementVouchers</default-activity>
+    <default-activity>settlementVoucherNew</default-activity>
     <data-control-scope>
       <shared/>
     </data-control-scope>
@@ -12,6 +12,9 @@
     </managed-bean>
     <view id="settlementVouchers">
       <page>/jsff/settlementVouchers.jsff</page>
+    </view>
+    <view id="settlementVoucherNew">
+      <page>/jsff/settlementVoucherNew.jsff</page>
     </view>
     <use-page-fragments/>
   </task-flow-definition>

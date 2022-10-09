@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsCreateSettlementFVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.sgs.model.view.SgsCreateSettlementFVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="PaymentCurrencyLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsCreateSettlementFVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="PaymentMethodLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsCreateSettlementFVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="ICoSupplierLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsCreateSettlementFVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="BusinessUnitLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsCreateSettlementFVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_BusinessUnit"
+    ListVOName="BusinessUnitLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BusinessUnit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IcoSupplier"
+    ListVOName="ICoSupplierLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IcoSupplier"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PaymentMethod"
+    ListVOName="PaymentMethodLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PaymentMethod"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PaymentCurrency"
+    ListVOName="PaymentCurrencyLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PaymentCurrency"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SgsCreateSettlementF"
+    Entity="com.sgs.model.entity.SgsCreateSettlementF"/>
+  <ViewAttribute
+    Name="Amount"
+    PrecisionRule="true"
+    EntityAttrName="Amount"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="AMOUNT"/>
+  <ViewAttribute
+    Name="BusinessUnit"
+    PrecisionRule="true"
+    EntityAttrName="BusinessUnit"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="BUSINESS_UNIT"
+    LOVName="LOV_BusinessUnit">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="DisbusementBankAccount"
+    PrecisionRule="true"
+    EntityAttrName="DisbusementBankAccount"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="DISBUSEMENT_BANK_ACCOUNT"/>
+  <ViewAttribute
+    Name="IcoSupplier"
+    PrecisionRule="true"
+    EntityAttrName="IcoSupplier"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="ICO_SUPPLIER"
+    LOVName="LOV_IcoSupplier">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PaymentCurrency"
+    PrecisionRule="true"
+    EntityAttrName="PaymentCurrency"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="PAYMENT_CURRENCY"
+    LOVName="LOV_PaymentCurrency">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PaymentDate"
+    PrecisionRule="true"
+    EntityAttrName="PaymentDate"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="PAYMENT_DATE"/>
+  <ViewAttribute
+    Name="PaymentId"
+    PrecisionRule="true"
+    EntityAttrName="PaymentId"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="PAYMENT_ID"/>
+  <ViewAttribute
+    Name="PaymentMethod"
+    PrecisionRule="true"
+    EntityAttrName="PaymentMethod"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="PAYMENT_METHOD"
+    LOVName="LOV_PaymentMethod">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReceiverBankAccount"
+    PrecisionRule="true"
+    EntityAttrName="ReceiverBankAccount"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="RECEIVER_BANK_ACCOUNT"/>
+  <ViewAttribute
+    Name="SettlementId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SettlementId"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="SETTLEMENT_ID"/>
+  <ViewAttribute
+    Name="TransactionReferenceNo"
+    PrecisionRule="true"
+    EntityAttrName="TransactionReferenceNo"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="TRANSACTION_REFERENCE_NO"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="UPDATED_DATE"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sgs.model.SGSModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
