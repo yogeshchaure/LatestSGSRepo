@@ -1,0 +1,33 @@
+//Groovy Scripts for com.sgs.model.view.SgsStlmntInetrCompInvoice1VO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="BusinessUnitLOV", name="pType")
+def pType_BusinessUnitLOV_BindVariable_BoundParameter()
+{
+'bUSINESS_UNIT'
+}
+
+
+@AccessorParameterExpression(accessorName="SettlementCatLOV", name="pType")
+def pType_SettlementCatLOV_BindVariable_BoundParameter()
+{
+'STLMNT_CAT'
+}
+
+
+@AccessorParameterExpression(accessorName="ReceiptStatusLOV", name="pType")
+def pType_ReceiptStatusLOV_BindVariable_BoundParameter()
+{
+'INTERCOMPANY_RECEIPT_STATUS'
+}
+
+
+@AccessorParameterExpression(accessorName="SettlementStatusLOV", name="pType")
+def pType_SettlementStatusLOV_BindVariable_BoundParameter()
+{
+'INTERCOMPANY_SETTLEMENT_STATUS'
+}
+

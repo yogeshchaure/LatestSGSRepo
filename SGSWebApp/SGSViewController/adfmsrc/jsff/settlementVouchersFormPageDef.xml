@@ -6,6 +6,10 @@
     <variableIterator id="variables"/>
     <iterator Binds="SgsStlmntInetrCompVouchVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsStlmntInetrCompVouchVO1Iterator"/>
+    <iterator Binds="SgsCreateSettlementFVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsCreateSettlementFVO1Iterator"/>
+    <iterator Binds="SgsCreateSettlementTVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsCreateSettlementTVO1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsStlmntInetrCompVouchVO1Iterator" id="PaymentId">
@@ -65,5 +69,58 @@
     <action id="Commit" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
     <action id="Rollback" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="false"
             Action="rollbackTransaction"/>
+    <attributeValues IterBinding="SgsCreateSettlementFVO1Iterator" id="PaymentId1">
+      <AttrNames>
+        <Item Value="PaymentId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsCreateSettlementFVO1Iterator" StaticList="false" Uses="LOV_BusinessUnit" id="BusinessUnit2"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="SgsCreateSettlementFVO1Iterator" StaticList="false" Uses="LOV_IcoSupplier" id="IcoSupplier1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsCreateSettlementFVO1Iterator" id="PaymentDate">
+      <AttrNames>
+        <Item Value="PaymentDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsCreateSettlementFVO1Iterator" id="DisbusementBankAccount">
+      <AttrNames>
+        <Item Value="DisbusementBankAccount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsCreateSettlementFVO1Iterator" id="ReceiverBankAccount">
+      <AttrNames>
+        <Item Value="ReceiverBankAccount"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsCreateSettlementFVO1Iterator" StaticList="false" Uses="LOV_PaymentMethod"
+          id="PaymentMethod1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsCreateSettlementFVO1Iterator" id="TransactionReferenceNo">
+      <AttrNames>
+        <Item Value="TransactionReferenceNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SgsCreateSettlementFVO1Iterator" StaticList="false" Uses="LOV_PaymentCurrency"
+          id="PaymentCurrency" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsCreateSettlementFVO1Iterator" id="Amount">
+      <AttrNames>
+        <Item Value="Amount"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SgsCreateSettlementTVO1Iterator" id="SgsCreateSettlementTVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsCreateSettlementTVO" Name="SgsCreateSettlementTVO10">
+        <AttrNames>
+          <Item Value="SettlementDate"/>
+          <Item Value="PeoplesoftVoucherNo"/>
+          <Item Value="PeoplesoftInvoiceNo"/>
+          <Item Value="TransactionCurrency"/>
+          <Item Value="NetAmountPayable"/>
+          <Item Value="OutstandingAmount"/>
+          <Item Value="SettlementAmount"/>
+          <Item Value="PaymentStatus"/>
+          <Item Value="SettlementStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

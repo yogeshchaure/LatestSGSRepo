@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="settlementVoucherNewPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsStlmntInetrCompVoucher1VO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsStlmntInetrCompVoucher1VO1Iterator"/>
+    <searchRegion Criteria="SgsStlmntInetrCompVoucher1VOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SgsStlmntInetrCompVoucher1VO1Iterator" id="SgsStlmntInetrCompVoucher1VOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SgsStlmntInetrCompVoucher1VO1Iterator" id="SgsStlmntInetrCompVoucher1VO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsStlmntInetrCompVoucher1VO" Name="SgsStlmntInetrCompVoucher1VO10">
+        <AttrNames>
+          <Item Value="Period"/>
+          <Item Value="AccountingDate"/>
+          <Item Value="PeoplesoftVoucherNo"/>
+          <Item Value="LegalEntity"/>
+          <Item Value="BusinessUnit"/>
+          <Item Value="OperatingUnit1"/>
+          <Item Value="IcoSupplier"/>
+          <Item Value="OperatingUnit2"/>
+          <Item Value="TransactionCurrency"/>
+          <Item Value="VoucherAmount"/>
+          <Item Value="WhtTds"/>
+          <Item Value="NetAmountPayable"/>
+          <Item Value="AmountSettledTillDate"/>
+          <Item Value="SettlementAmount"/>
+          <Item Value="AmountWrittenBank"/>
+          <Item Value="OutstandingAmountPayable"/>
+          <Item Value="PaymentStatus"/>
+          <Item Value="SettlementCategory"/>
+          <Item Value="PaymentId"/>
+          <Item Value="TransactionEferenceNo"/>
+          <Item Value="ReferenceToArInvoice"/>
+          <Item Value="SettlementTatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -888,5 +888,37 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsOtherReceivablesVO() {
         return (ViewObjectImpl) findViewObject("SgsOtherReceivablesVO");
     }
+
+    /**
+     * Container's getter for SgsCreateSettlementFVO1.
+     * @return SgsCreateSettlementFVO1
+     */
+    public ViewObjectImpl getSgsCreateSettlementFVO1() {
+        return (ViewObjectImpl) findViewObject("SgsCreateSettlementFVO1");
+    }
+
+    /**
+     * Container's getter for SgsCreateSettlementTVO1.
+     * @return SgsCreateSettlementTVO1
+     */
+    public ViewObjectImpl getSgsCreateSettlementTVO1() {
+        return (ViewObjectImpl) findViewObject("SgsCreateSettlementTVO1");
+    }
+
+    /**
+     * Container's getter for SgsStlmntInetrCompInvoice1VO1.
+     * @return SgsStlmntInetrCompInvoice1VO1
+     */
+    public ViewObjectImpl getSgsStlmntInetrCompInvoice1VO1() {
+        return (ViewObjectImpl) findViewObject("SgsStlmntInetrCompInvoice1VO1");
+    }
+
+    /**
+     * Container's getter for SgsStlmntInetrCompVoucher1VO1.
+     * @return SgsStlmntInetrCompVoucher1VO1
+     */
+    public ViewObjectImpl getSgsStlmntInetrCompVoucher1VO1() {
+        return (ViewObjectImpl) findViewObject("SgsStlmntInetrCompVoucher1VO1");
+    }
 }
 

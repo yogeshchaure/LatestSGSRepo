@@ -93,6 +93,8 @@
               usageId="com_sgs_view_TPASetupBTF_TPASetupBTF_SetCurrentRowWithKeyValuePageDef"/>
         <page path="/bTaskFlow/standardRateSetupBTF.xml#standardRateSetupBTF@SetCurrentRowWithKeyValue"
               usageId="com_sgs_view_standardRateSetupBTF_standardRateSetupBTF_SetCurrentRowWithKeyValuePageDef"/>
+        <page path="/jsff/settlementVoucherNew.jsff" usageId="com_sgs_view_settlementVoucherNewPageDef"/>
+        <page path="/jsff/settlementICoInvoivesNew.jsff" usageId="com_sgs_view_settlementICoInvoivesNewPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -182,6 +184,8 @@
               path="bTaskFlow.TPASetupBTF_TPASetupBTF_SetCurrentRowWithKeyValuePageDef"/>
         <page id="com_sgs_view_standardRateSetupBTF_standardRateSetupBTF_SetCurrentRowWithKeyValuePageDef"
               path="bTaskFlow.standardRateSetupBTF_standardRateSetupBTF_SetCurrentRowWithKeyValuePageDef"/>
+        <page id="com_sgs_view_settlementVoucherNewPageDef" path="jsff.settlementVoucherNewPageDef"/>
+        <page id="com_sgs_view_settlementICoInvoivesNewPageDef" path="jsff.settlementICoInvoivesNewPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

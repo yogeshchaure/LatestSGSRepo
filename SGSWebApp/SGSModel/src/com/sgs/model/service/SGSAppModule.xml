@@ -229,6 +229,18 @@
   <ViewUsage
     Name="SgsOtherReceivablesVO"
     ViewObjectName="com.sgs.model.view.SgsOtherReceivablesVO"/>
+  <ViewUsage
+    Name="SgsCreateSettlementFVO1"
+    ViewObjectName="com.sgs.model.view.SgsCreateSettlementFVO"/>
+  <ViewUsage
+    Name="SgsCreateSettlementTVO1"
+    ViewObjectName="com.sgs.model.view.SgsCreateSettlementTVO"/>
+  <ViewUsage
+    Name="SgsStlmntInetrCompInvoice1VO1"
+    ViewObjectName="com.sgs.model.view.SgsStlmntInetrCompInvoice1VO"/>
+  <ViewUsage
+    Name="SgsStlmntInetrCompVoucher1VO1"
+    ViewObjectName="com.sgs.model.view.SgsStlmntInetrCompVoucher1VO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

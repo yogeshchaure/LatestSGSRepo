@@ -15,7 +15,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>settlementVouchersForm&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">316.09766</property>
+         name="y">315.39648</property>
       <property
          name="page">/jsff/settlementVouchersForm.jsff</property>
       <property
@@ -36,14 +36,4 @@
       <property
          name="exceptionHandler">false</property>
    </TaskFlowReturn>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase4"
-      from="View2"
-      to="TaskFlowReturn3">
-      <property
-         name="fromOutcome">back</property>
-      <property
-         name="sdm:polyPoints">R12,L83</property>
-   </ControlFlowCase>
 </SDM>

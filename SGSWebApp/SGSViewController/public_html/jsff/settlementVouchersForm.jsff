@@ -24,12 +24,83 @@
     </f:facet>
     <f:facet name="center">
       <af:panelGroupLayout id="pgl1" layout="vertical">
-        <af:panelBox text="Create Payment" id="pb1">
+        <af:panelBox text="Create Settlement" id="pb1">
           <f:facet name="toolbar">
           
           </f:facet>
           <af:panelGroupLayout id="pgl2" layout="vertical">
             <af:panelFormLayout id="pfl1">
+              <af:panelLabelAndMessage label="Payment ID" id="plam1">
+                <af:outputText value="#{bindings.PaymentId1.inputValue}"
+                               shortDesc="#{bindings.PaymentId1.hints.tooltip}" id="ot1"/>
+              </af:panelLabelAndMessage>
+              <af:selectOneChoice value="#{bindings.BusinessUnit2.inputValue}" label="Business Unit"
+                                  required="#{bindings.BusinessUnit2.hints.mandatory}"
+                                  shortDesc="#{bindings.BusinessUnit2.hints.tooltip}" id="soc1">
+                <f:selectItems value="#{bindings.BusinessUnit2.items}" id="si1"/>
+                <f:validator binding="#{bindings.BusinessUnit2.validator}"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.IcoSupplier1.inputValue}" label="I/Co Supplier"
+                                  required="#{bindings.IcoSupplier1.hints.mandatory}"
+                                  shortDesc="#{bindings.IcoSupplier1.hints.tooltip}" id="soc2">
+                <f:selectItems value="#{bindings.IcoSupplier1.items}" id="si2"/>
+                <f:validator binding="#{bindings.IcoSupplier1.validator}"/>
+              </af:selectOneChoice>
+              <af:inputDate value="#{bindings.PaymentDate.inputValue}" label="Payment Date"
+                            required="#{bindings.PaymentDate.hints.mandatory}"
+                            columns="#{bindings.PaymentDate.hints.displayWidth}"
+                            shortDesc="#{bindings.PaymentDate.hints.tooltip}" id="id1">
+                <f:validator binding="#{bindings.PaymentDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.PaymentDate.format}"/>
+              </af:inputDate>
+              <af:inputText value="#{bindings.DisbusementBankAccount.inputValue}"
+                            label="Disbusement Bank Account"
+                            required="#{bindings.DisbusementBankAccount.hints.mandatory}"
+                            columns="#{bindings.DisbusementBankAccount.hints.displayWidth}"
+                            maximumLength="#{bindings.DisbusementBankAccount.hints.precision}"
+                            shortDesc="#{bindings.DisbusementBankAccount.hints.tooltip}" id="it1">
+                <f:validator binding="#{bindings.DisbusementBankAccount.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.ReceiverBankAccount.inputValue}"
+                            label="Receiver Bank Account"
+                            required="#{bindings.ReceiverBankAccount.hints.mandatory}"
+                            columns="#{bindings.ReceiverBankAccount.hints.displayWidth}"
+                            maximumLength="#{bindings.ReceiverBankAccount.hints.precision}"
+                            shortDesc="#{bindings.ReceiverBankAccount.hints.tooltip}" id="it2">
+                <f:validator binding="#{bindings.ReceiverBankAccount.validator}"/>
+              </af:inputText>
+              <af:selectOneChoice value="#{bindings.PaymentMethod1.inputValue}" label="Payment Method"
+                                  required="#{bindings.PaymentMethod1.hints.mandatory}"
+                                  shortDesc="#{bindings.PaymentMethod1.hints.tooltip}" id="soc3">
+                <f:selectItems value="#{bindings.PaymentMethod1.items}" id="si3"/>
+                <f:validator binding="#{bindings.PaymentMethod1.validator}"/>
+              </af:selectOneChoice>
+              <af:inputText value="#{bindings.TransactionReferenceNo.inputValue}"
+                            label="Transaction Reference No(Cheque/EFT)"
+                            required="#{bindings.TransactionReferenceNo.hints.mandatory}"
+                            columns="#{bindings.TransactionReferenceNo.hints.displayWidth}"
+                            maximumLength="#{bindings.TransactionReferenceNo.hints.precision}"
+                            shortDesc="#{bindings.TransactionReferenceNo.hints.tooltip}" id="it3">
+                <f:validator binding="#{bindings.TransactionReferenceNo.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.TransactionReferenceNo.format}"/>
+              </af:inputText>
+              <af:selectOneChoice value="#{bindings.PaymentCurrency.inputValue}"
+                                  label="Payment Currency"
+                                  required="#{bindings.PaymentCurrency.hints.mandatory}"
+                                  shortDesc="#{bindings.PaymentCurrency.hints.tooltip}" id="soc4">
+                <f:selectItems value="#{bindings.PaymentCurrency.items}" id="si4"/>
+                <f:validator binding="#{bindings.PaymentCurrency.validator}"/>
+              </af:selectOneChoice>
+              <af:inputText value="#{bindings.Amount.inputValue}" label="Amount"
+                            required="#{bindings.Amount.hints.mandatory}"
+                            columns="#{bindings.Amount.hints.displayWidth}"
+                            maximumLength="#{bindings.Amount.hints.precision}"
+                            shortDesc="#{bindings.Amount.hints.tooltip}" id="it4">
+                <f:validator binding="#{bindings.Amount.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.Amount.format}"/>
+              </af:inputText>
+            </af:panelFormLayout>
+            <!--<af:panelFormLayout id="pfl1">
               <af:panelLabelAndMessage label="#{bindings.PaymentId.hints.label}" id="plam1">
                 <af:outputText value="#{bindings.PaymentId.inputValue}" shortDesc="#{bindings.PaymentId.hints.tooltip}"
                                id="ot1"/>
@@ -90,41 +161,103 @@
                             shortDesc="#{bindings.InvoiceNum.hints.tooltip}" id="it2">
                 <f:validator binding="#{bindings.InvoiceNum.validator}"/>
               </af:inputText>
-            </af:panelFormLayout>
+            </af:panelFormLayout>-->
+             <af:spacer id="s4"  height="20"/>
+            <af:panelGroupLayout id="pgl4">
+              <af:spacer id="s8"  width="280"/>
+              <af:button text="Generate Settlement" id="b3"/>
+            </af:panelGroupLayout>
+            <af:spacer id="s3" height="10"/>
+            <af:panelGroupLayout id="pgl3" halign="left">
+              <af:outputText value="Voucher and Invoices to be Settled" id="ot11" inlineStyle="font-weight:bold;font-size:14px;"/>
+              <af:spacer id="s1" width="880"/>
+              <af:button text="Hold Settlement" id="b1"/>
+              <af:spacer id="s2" width="2"/>
+              <af:button text="Release Settlement" id="b2"/>
+            </af:panelGroupLayout>
+             <af:spacer id="s9"  height="10"/>
+            <af:table value="#{bindings.SgsCreateSettlementTVO1.collectionModel}" var="row"
+                    rows="#{bindings.SgsCreateSettlementTVO1.rangeSize}"
+                    emptyText="#{bindings.SgsCreateSettlementTVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    rowBandingInterval="0"
+                    selectedRowKeys="#{bindings.SgsCreateSettlementTVO1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.SgsCreateSettlementTVO1.collectionModel.makeCurrent}"
+                    rowSelection="single" fetchSize="#{bindings.SgsCreateSettlementTVO1.rangeSize}" id="t1"
+                    columnStretching="last">
+             <af:column headerText="" id="c13"
+                                           width="80" align="center">
+                                    <af:selectBooleanCheckbox  labelStyle="color:#336699"
+                                                              label="" id="sbc2"/>
+                                    <f:facet name="header">
+                                     <af:outputText value="Select All" id="ot42"/>
+                                        <af:selectBooleanCheckbox 
+                                                                  label="" id="sbc1"
+                                                                  labelStyle="color:#336699" autoSubmit="true">
+                                          
+                                        </af:selectBooleanCheckbox>
+                                    </f:facet>
+                                </af:column>
+            <af:column headerText="Date" id="c1">
+              <af:outputText value="#{row.SettlementDate}"
+                             shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.SettlementDate.tooltip}" id="ot2">
+                <af:convertDateTime pattern="#{bindings.SgsCreateSettlementTVO1.hints.SettlementDate.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="PeopleSoft Voucher No" id="c2" width="200">
+              <af:outputText value="#{row.PeoplesoftVoucherNo}"
+                             shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.PeoplesoftVoucherNo.tooltip}"
+                             id="ot3"/>
+            </af:column>
+            <af:column headerText="PeopleSoft Invoice No" id="c3" width="200">
+              <af:outputText value="#{row.PeoplesoftInvoiceNo}"
+                             shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.PeoplesoftInvoiceNo.tooltip}"
+                             id="ot4"/>
+            </af:column>
+            <af:column headerText="Transaction Currency" id="c4">
+              <af:outputText value="#{row.TransactionCurrency}"
+                             shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.TransactionCurrency.tooltip}"
+                             id="ot5"/>
+            </af:column>
+            <af:column headerText="Net Amount Payable" id="c5">
+              <af:outputText value="#{row.NetAmountPayable}"
+                             shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.NetAmountPayable.tooltip}" id="ot6">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.SgsCreateSettlementTVO1.hints.NetAmountPayable.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="Outstanding Amount" id="c6">
+              <af:outputText value="#{row.OutstandingAmount}"
+                             shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.OutstandingAmount.tooltip}" id="ot7">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.SgsCreateSettlementTVO1.hints.OutstandingAmount.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="Settlement Amount" id="c7">
+              <af:outputText value="#{row.SettlementAmount!=null?row.SettlementAmount:'-'}"
+                             shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.SettlementAmount.tooltip}" id="ot8">
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.SgsCreateSettlementTVO1.hints.SettlementAmount.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column headerText="Payment Status" id="c8">
+              <af:outputText value="#{row.PaymentStatus}"
+                             shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.PaymentStatus.tooltip}" id="ot9"/>
+            </af:column>
+            <af:column headerText="Settlement Status" id="c9">
+              <af:outputText value="#{row.SettlementStatus}"
+                             shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.SettlementStatus.tooltip}" id="ot10"/>
+            </af:column>
+          </af:table>
           </af:panelGroupLayout>
         </af:panelBox>
-          <af:panelBox text="Voucher and Invoices to be Settled" id="pb2">
-          <f:facet name="toolbar">
-          
-          </f:facet>
-        <af:table value="#{bindings.SgsStlmntInetrCompVouchVO1.collectionModel}" var="row"
-                  rows="#{bindings.SgsStlmntInetrCompVouchVO1.rangeSize}"
-                  emptyText="#{bindings.SgsStlmntInetrCompVouchVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                  rowBandingInterval="0"
-                  selectedRowKeys="#{bindings.SgsStlmntInetrCompVouchVO1.collectionModel.selectedRow}"
-                  selectionListener="#{bindings.SgsStlmntInetrCompVouchVO1.collectionModel.makeCurrent}"
-                  rowSelection="single" fetchSize="#{bindings.SgsStlmntInetrCompVouchVO1.rangeSize}" id="t2">
-          <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherId.label}" id="c1">
-            <af:outputText value="#{row.VoucherId}"
-                           shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherId.tooltip}" id="ot6">
-              <af:convertNumber groupingUsed="false"
-                                pattern="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherId.format}"/>
-            </af:outputText>
-          </af:column>
-          <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherNum.label}" id="c2">
-            <af:outputText value="#{row.VoucherNum}"
-                           shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.VoucherNum.tooltip}" id="ot7"/>
-          </af:column>
-          <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.InvoiceNum.label}" id="c3">
-            <af:outputText value="#{row.InvoiceNum}"
-                           shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.InvoiceNum.tooltip}" id="ot8"/>
-          </af:column>
-          <af:column headerText="#{bindings.SgsStlmntInetrCompVouchVO1.hints.PaymentAmount.label}" id="c4">
-            <af:outputText value="#{row.PaymentAmount}"
-                           shortDesc="#{bindings.SgsStlmntInetrCompVouchVO1.hints.PaymentAmount.tooltip}" id="ot9"/>
-          </af:column>
-        </af:table>
-        </af:panelBox>
+         <af:spacer id="s5" height="5"/>
+           <af:panelGroupLayout id="pgl5" halign="left">
+            
+              <af:spacer id="s7" width="1200"/>
+              <af:button text="Submit for Approval" id="b4"/>
+              <af:spacer id="s6" width="2"/>
+              <af:button text="Close" id="b5"/>
+            </af:panelGroupLayout>
       </af:panelGroupLayout>
     </f:facet>
   </af:panelStretchLayout>

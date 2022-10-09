@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="settlementICoInvoivesNewPageDef" Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SgsStlmntInetrCompInvoice1VO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsStlmntInetrCompInvoice1VO1Iterator"/>
+    <searchRegion Criteria="SgsStlmntInetrCompInvoice1VOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="SgsStlmntInetrCompInvoice1VO1Iterator" id="SgsStlmntInetrCompInvoice1VOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SgsStlmntInetrCompInvoice1VO1Iterator" id="SgsStlmntInetrCompInvoice1VO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsStlmntInetrCompInvoice1VO" Name="SgsStlmntInetrCompInvoice1VO10">
+        <AttrNames>
+          <Item Value="Period"/>
+          <Item Value="AccountingDate"/>
+          <Item Value="PeoplesoftVoucherNo"/>
+          <Item Value="LegalEntity"/>
+          <Item Value="BusinessUnit"/>
+          <Item Value="OperatingUnit1"/>
+          <Item Value="IcoCustomer"/>
+          <Item Value="OperatingUnit2"/>
+          <Item Value="TransactionCurrency"/>
+          <Item Value="InvoiceAmount"/>
+          <Item Value="WhtTds"/>
+          <Item Value="NetAmountReceivable"/>
+          <Item Value="AmountSettledTillDate"/>
+          <Item Value="SettlementAmount"/>
+          <Item Value="AmountWrittenOff"/>
+          <Item Value="OutstandingAmountReceivable"/>
+          <Item Value="ReceiptStatus"/>
+          <Item Value="TaxCreditClaim"/>
+          <Item Value="SettlementCategory"/>
+          <Item Value="DepositId"/>
+          <Item Value="TransactionReferenceNo"/>
+          <Item Value="ReferenceToApVoucher"/>
+          <Item Value="SettlementStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
