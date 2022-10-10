@@ -22,6 +22,8 @@
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <iterator Binds="SgsOtherReceivablesVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsOtherReceivablesVOIterator"/>
+    <iterator Binds="SgsOtherReceivables1VO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsOtherReceivables1VOIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="ApprovalRequestType">
@@ -330,5 +332,54 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="PONUMBER">
+      <AttrNames>
+        <Item Value="PONUMBER"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="SOURCEMODULE1">
+      <AttrNames>
+        <Item Value="SOURCEMODULE1"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="VENDORID">
+      <AttrNames>
+        <Item Value="VENDORID"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="VID">
+      <AttrNames>
+        <Item Value="VID"/>
+      </AttrNames>
+    </attributeValues>
+     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="VOUCHERNO">
+      <AttrNames>
+        <Item Value="VOUCHERNO"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SgsOtherReceivables1VOIterator" id="SgsOtherReceivables1VO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsOtherReceivables1VO" Name="SgsOtherReceivables1VO0">
+        <AttrNames>
+          <Item Value="ToBusinessUnit"/>
+          <Item Value="ToOperatingUnit"/>
+          <Item Value="ToJobCode"/>
+          <Item Value="ToDepartmentId"/>
+          <Item Value="DrGlAccount"/>
+          <Item Value="BaseCurrency"/>
+          <Item Value="TransactionCurrency"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="SgsOtherReceivables1VOIterator" id="UpdatedBy5">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsOtherReceivables1VOIterator" id="UpdatedDate5">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

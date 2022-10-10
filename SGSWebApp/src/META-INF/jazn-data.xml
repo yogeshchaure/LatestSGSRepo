@@ -1537,6 +1537,11 @@
                                 <name>com.sgs.model.entity.SgsStlmntInetrCompVoucher1</name>
                                 <actions>delete,update</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsOtherReceivables1</name>
+                                <actions>delete,update</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -2088,6 +2093,11 @@
                             <permission>
                                 <class>oracle.adf.share.security.authorization.EntityPermission</class>
                                 <name>com.sgs.model.entity.SgsStlmntInetrCompVoucher1</name>
+                                <actions>delete,update</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.EntityPermission</class>
+                                <name>com.sgs.model.entity.SgsOtherReceivables1</name>
                                 <actions>delete,update</actions>
                             </permission>
                         </permissions>
