@@ -60,7 +60,7 @@
                                 <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AccountingDate.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column headerText="PeopleSoft Voucher No"
+                        <af:column headerText="PeopleSoft Invoice No"
                                    id="resId1c3">
                             <af:outputText value="#{row.PeoplesoftVoucherNo}"
                                            shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.PeoplesoftVoucherNo.tooltip}"
@@ -143,7 +143,7 @@
                                                   pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AmountSettledTillDate.format}"/>
                             </af:outputText>
                         </af:column>
-                        <af:column headerText="Settlement Amount"
+                        <af:column headerText="Amount Selected for Settlement"
                                    id="resId1c14">
                             <af:outputText value="#{row.SettlementAmount!=null?row.SettlementAmount:'-'}"
                                            shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementAmount.tooltip}"
@@ -181,7 +181,7 @@
                                 <f:validator binding="#{row.bindings.ReceiptStatus.validator}"/>
                             </af:selectOneChoice>
                         </af:column>
-                        <af:column headerText="Tax Credit Claim"
+                        <af:column headerText="Tax Recoverable"
                                    id="resId1c18">
                             <af:outputText value="#{row.TaxCreditClaim}"
                                            shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.TaxCreditClaim.tooltip}"
