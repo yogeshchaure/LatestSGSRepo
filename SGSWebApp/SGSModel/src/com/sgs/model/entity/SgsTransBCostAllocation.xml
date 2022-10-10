@@ -462,6 +462,66 @@
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="PONUMBER"
+    Precision="100"
+    ColumnName="PO_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SOURCEMODULE1"
+    Precision="100"
+    ColumnName="SOURCE_MODULE1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VENDORID"
+    Precision="100"
+    ColumnName="VENDOR_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VID"
+    Precision="100"
+    ColumnName="VID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VOUCHERNO"
+    Precision="100"
+    ColumnName="VOUCHER_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PKSGSTRANSBCOSTALLOCATION"
     PrimaryKey="true">

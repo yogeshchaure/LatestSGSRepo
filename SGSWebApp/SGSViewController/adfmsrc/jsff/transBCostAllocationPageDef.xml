@@ -16,6 +16,8 @@
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
     <iterator Binds="SgsOtherReceivablesVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsOtherReceivablesVOIterator"/>
+    <iterator Binds="SgsOtherReceivables1VO" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsOtherReceivables1VOIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="SgsTransBCostAllocationView1Iterator" id="SgsTransBCostAllocationView1">
@@ -71,5 +73,27 @@
       </nodeDefinition>
     </tree>
     <action id="Commit" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <tree IterBinding="SgsOtherReceivables1VOIterator" id="SgsOtherReceivables1VO">
+      <nodeDefinition DefName="com.sgs.model.view.SgsOtherReceivables1VO" Name="SgsOtherReceivables1VO0">
+        <AttrNames>
+          <Item Value="OrId"/>
+          <Item Value="Period"/>
+          <Item Value="VoucherId"/>
+          <Item Value="FromBusinessUnit"/>
+          <Item Value="FromOperatingUnit"/>
+          <Item Value="ToBusinessUnit"/>
+          <Item Value="ToOperatingUnit"/>
+          <Item Value="FromJobCode"/>
+          <Item Value="FromDepartmentId"/>
+          <Item Value="ToJobCode"/>
+          <Item Value="ToDepartmentId"/>
+          <Item Value="CrGlAccount"/>
+          <Item Value="DrGlAccount"/>
+          <Item Value="BaseCurrency"/>
+          <Item Value="TransactionCurrency"/>
+          <Item Value="Amount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

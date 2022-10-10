@@ -144,23 +144,37 @@ public class TransBCostAllocationFormBean {
            
               switch (tokenNumber) {
                        
+//              case 1: rw.setAttribute("Period", theToken);
+//              case 2: rw.setAttribute("PeoplesoftTransactionId", theToken);
+//              case 3: rw.setAttribute("ExtractionId", theToken);   
+//              case 4: rw.setAttribute("SourceBusinessUnit", theToken);
+//              case 5: rw.setAttribute("SourceOperatingUnit", theToken);
+//                case 6: rw.setAttribute("SourceDepartmentId", theToken);
+//                case 7: rw.setAttribute("SourceGlAccount", theToken);
+//                case 8: rw.setAttribute("SourceJobCode", theToken);
+//                case 9: rw.setAttribute("ReclassBusinessUnit", theToken);
+//                case 10: rw.setAttribute("ReclassOperatingUnit", theToken);
+//                case 11: rw.setAttribute("ReclassDepartmentId", theToken);
+//                case 12: rw.setAttribute("ReclassGlAccount", theToken);
+//                case 13: rw.setAttribute("ReclassJobCode", theToken);
+//                case 14: rw.setAttribute("BaseCurrency", theToken);
+//                case 15: rw.setAttribute("TransactionCurrency", theToken);
+//                case 16: rw.setAttribute("Amount", theToken);
               case 1: rw.setAttribute("Period", theToken);
-              case 2: rw.setAttribute("PeoplesoftTransactionId", theToken);
-              case 3: rw.setAttribute("ExtractionId", theToken);   
-              case 4: rw.setAttribute("SourceBusinessUnit", theToken);
-              case 5: rw.setAttribute("SourceOperatingUnit", theToken);
-                case 6: rw.setAttribute("SourceDepartmentId", theToken);
-                case 7: rw.setAttribute("SourceGlAccount", theToken);
-                case 8: rw.setAttribute("SourceJobCode", theToken);
-                case 9: rw.setAttribute("ReclassBusinessUnit", theToken);
-                case 10: rw.setAttribute("ReclassOperatingUnit", theToken);
-                case 11: rw.setAttribute("ReclassDepartmentId", theToken);
-                case 12: rw.setAttribute("ReclassGlAccount", theToken);
-                case 13: rw.setAttribute("ReclassJobCode", theToken);
-                case 14: rw.setAttribute("BaseCurrency", theToken);
-                case 15: rw.setAttribute("TransactionCurrency", theToken);
-                case 16: rw.setAttribute("Amount", theToken);
-                
+              case 2: rw.setAttribute("VoucherId", theToken);
+              case 3: rw.setAttribute("FromBusinessUnit", theToken);   
+              case 4: rw.setAttribute("FromOperatingUnit", theToken);
+              case 5: rw.setAttribute("ToBusinessUnit", theToken);
+                case 6: rw.setAttribute("ToOperatingUnit", theToken);
+                case 7: rw.setAttribute("FromJobCode", theToken);
+                case 8: rw.setAttribute("FromDepartmentId", theToken);
+                case 9: rw.setAttribute("ToJobCode", theToken);
+                case 10: rw.setAttribute("ToDepartmentId", theToken);
+                case 11: rw.setAttribute("CrGlAccount", theToken);
+                case 12: rw.setAttribute("DrGlAccount", theToken);
+                case 13: rw.setAttribute("BaseCurrency", theToken);
+                case 14: rw.setAttribute("TransactionCurrency", theToken);
+                case 15: rw.setAttribute("Amount", theToken); 
             }
           }
         }

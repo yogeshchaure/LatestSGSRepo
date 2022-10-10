@@ -63,7 +63,12 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
         UpdatedBy,
         OperationUnit,
         ALLOCATIONBASIS,
-        PEOPLESOFTTRANSACTIONID;
+        PEOPLESOFTTRANSACTIONID,
+        PONUMBER,
+        SOURCEMODULE1,
+        VENDORID,
+        VID,
+        VOUCHERNO;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -131,6 +136,11 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
     public static final int OPERATIONUNIT = AttributesEnum.OperationUnit.index();
     public static final int ALLOCATIONBASIS = AttributesEnum.ALLOCATIONBASIS.index();
     public static final int PEOPLESOFTTRANSACTIONID = AttributesEnum.PEOPLESOFTTRANSACTIONID.index();
+    public static final int PONUMBER = AttributesEnum.PONUMBER.index();
+    public static final int SOURCEMODULE1 = AttributesEnum.SOURCEMODULE1.index();
+    public static final int VENDORID = AttributesEnum.VENDORID.index();
+    public static final int VID = AttributesEnum.VID.index();
+    public static final int VOUCHERNO = AttributesEnum.VOUCHERNO.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -144,6 +154,7 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTransBCostAllocation");
     }
+
 
     /**
      * Gets the attribute value for TbcaId, using the alias name TbcaId.
@@ -753,6 +764,86 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
         setAttributeInternal(PEOPLESOFTTRANSACTIONID, value);
     }
 
+
+    /**
+     * Gets the attribute value for PONUMBER, using the alias name PONUMBER.
+     * @return the value of PONUMBER
+     */
+    public String getPONUMBER() {
+        return (String) getAttributeInternal(PONUMBER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for PONUMBER.
+     * @param value value to set the PONUMBER
+     */
+    public void setPONUMBER(String value) {
+        setAttributeInternal(PONUMBER, value);
+    }
+
+    /**
+     * Gets the attribute value for SOURCEMODULE1, using the alias name SOURCEMODULE1.
+     * @return the value of SOURCEMODULE1
+     */
+    public String getSOURCEMODULE1() {
+        return (String) getAttributeInternal(SOURCEMODULE1);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SOURCEMODULE1.
+     * @param value value to set the SOURCEMODULE1
+     */
+    public void setSOURCEMODULE1(String value) {
+        setAttributeInternal(SOURCEMODULE1, value);
+    }
+
+    /**
+     * Gets the attribute value for VENDORID, using the alias name VENDORID.
+     * @return the value of VENDORID
+     */
+    public String getVENDORID() {
+        return (String) getAttributeInternal(VENDORID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for VENDORID.
+     * @param value value to set the VENDORID
+     */
+    public void setVENDORID(String value) {
+        setAttributeInternal(VENDORID, value);
+    }
+
+    /**
+     * Gets the attribute value for VID, using the alias name VID.
+     * @return the value of VID
+     */
+    public String getVID() {
+        return (String) getAttributeInternal(VID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for VID.
+     * @param value value to set the VID
+     */
+    public void setVID(String value) {
+        setAttributeInternal(VID, value);
+    }
+
+    /**
+     * Gets the attribute value for VOUCHERNO, using the alias name VOUCHERNO.
+     * @return the value of VOUCHERNO
+     */
+    public String getVOUCHERNO() {
+        return (String) getAttributeInternal(VOUCHERNO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for VOUCHERNO.
+     * @param value value to set the VOUCHERNO
+     */
+    public void setVOUCHERNO(String value) {
+        setAttributeInternal(VOUCHERNO, value);
+    }
 
     /**
      * @param tbcaId key constituent
