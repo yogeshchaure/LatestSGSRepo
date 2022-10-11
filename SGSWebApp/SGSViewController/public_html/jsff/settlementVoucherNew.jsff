@@ -83,7 +83,7 @@
                                     <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompVoucher1VO1.hints.AccountingDate.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="PeopleSoft Voucher No"
+                            <af:column headerText="PeopleSoft Invoice No"
                                        id="resId1c3">
                                 <af:outputText value="#{row.PeoplesoftVoucherNo}"
                                                shortDesc="#{bindings.SgsStlmntInetrCompVoucher1VO1.hints.PeoplesoftVoucherNo.tooltip}"
@@ -166,7 +166,7 @@
                                                       pattern="#{bindings.SgsStlmntInetrCompVoucher1VO1.hints.AmountSettledTillDate.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="Settlement Amount"
+                            <af:column headerText="Amount Selected for Settlement"
                                        id="resId1c14">
                                 <af:outputText value="#{row.SettlementAmount!=null?row.SettlementAmount:'-'}"
                                                shortDesc="#{bindings.SgsStlmntInetrCompVoucher1VO1.hints.SettlementAmount.tooltip}"
@@ -175,7 +175,7 @@
                                                       pattern="#{bindings.SgsStlmntInetrCompVoucher1VO1.hints.SettlementAmount.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="Amount Written Bank"
+                            <af:column headerText="Amount Written Back"
                                        id="resId1c15">
                                 <af:outputText value="#{row.AmountWrittenBank!=null?row.AmountWrittenBank:'-'}"
                                                shortDesc="#{bindings.SgsStlmntInetrCompVoucher1VO1.hints.AmountWrittenBank.tooltip}"

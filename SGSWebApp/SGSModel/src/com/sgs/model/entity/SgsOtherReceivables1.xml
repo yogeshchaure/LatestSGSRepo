@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsOtherReceivables1"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="SGS_OTHER_RECEIVABLES1"
+  AliasName="SgsOtherReceivables1"
+  BindingStyle="JDBC"
+  RowClass="com.sgs.model.entity.SgsOtherReceivables1Impl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="OrId"
+    IsNotNull="true"
+    ColumnName="OR_ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="SGS_OTHER_RECEIVABLES1"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Period"
+    Precision="80"
+    ColumnName="PERIOD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VoucherId"
+    Precision="80"
+    ColumnName="VOUCHER_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FromBusinessUnit"
+    Precision="80"
+    ColumnName="FROM_BUSINESS_UNIT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FromOperatingUnit"
+    Precision="80"
+    ColumnName="FROM_OPERATING_UNIT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ToBusinessUnit"
+    Precision="80"
+    ColumnName="TO_BUSINESS_UNIT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ToOperatingUnit"
+    Precision="80"
+    ColumnName="TO_OPERATING_UNIT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FromJobCode"
+    Precision="80"
+    ColumnName="FROM_JOB_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FromDepartmentId"
+    Precision="80"
+    ColumnName="FROM_DEPARTMENT_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ToJobCode"
+    Precision="80"
+    ColumnName="TO_JOB_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ToDepartmentId"
+    Precision="80"
+    ColumnName="TO_DEPARTMENT_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CrGlAccount"
+    Precision="80"
+    ColumnName="CR_GL_ACCOUNT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DrGlAccount"
+    Precision="80"
+    ColumnName="DR_GL_ACCOUNT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BaseCurrency"
+    Precision="80"
+    ColumnName="BASE_CURRENCY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TransactionCurrency"
+    Precision="80"
+    ColumnName="TRANSACTION_CURRENCY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Amount"
+    Precision="10"
+    Scale="2"
+    ColumnName="AMOUNT"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="SGS_OTHER_RECEIVABLES1"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_OTHER_RECEIVABLES1"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="80"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1"
+    IsUpdateable="while_insert"
+    HistoryColumn="UserHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_OTHER_RECEIVABLES1"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="UpdatedBy"
+    Precision="80"
+    ColumnName="UPDATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_OTHER_RECEIVABLES1"
+    HistoryColumn="UserHistory">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="PKSGSOTHERRECEIVABLES1"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_SGS_OTHER_RECEIVABLES1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sgs.model.entity.SgsOtherReceivables1.OrId"/>
+    </AttrArray>
+  </Key>
+  <Permission
+    target="com.sgs.model.entity.SgsOtherReceivables1"
+    permissionClass="oracle.adf.share.security.authorization.EntityPermission">
+    <privilege-map
+      operation="update"
+      privilege="update"/>
+    <privilege-map
+      operation="removeCurrentRow"
+      privilege="delete"/>
+  </Permission>
+</Entity>

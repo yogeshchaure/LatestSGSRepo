@@ -1011,6 +1011,36 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="VENDORID"
+    PrecisionRule="true"
+    EntityAttrName="VENDORID"
+    EntityUsage="SgsTransBCostAllocation"
+    AliasName="VENDOR_ID"/>
+  <ViewAttribute
+    Name="VID"
+    PrecisionRule="true"
+    EntityAttrName="VID"
+    EntityUsage="SgsTransBCostAllocation"
+    AliasName="VID"/>
+  <ViewAttribute
+    Name="VOUCHERNO"
+    PrecisionRule="true"
+    EntityAttrName="VOUCHERNO"
+    EntityUsage="SgsTransBCostAllocation"
+    AliasName="VOUCHER_NO"/>
+  <ViewAttribute
+    Name="SOURCEMODULE1"
+    PrecisionRule="true"
+    EntityAttrName="SOURCEMODULE1"
+    EntityUsage="SgsTransBCostAllocation"
+    AliasName="SOURCE_MODULE1"/>
+  <ViewAttribute
+    Name="PONUMBER"
+    PrecisionRule="true"
+    EntityAttrName="PONUMBER"
+    EntityUsage="SgsTransBCostAllocation"
+    AliasName="PO_NUMBER"/>
   <ViewCriteria
     Name="SgsTransBCostAllocationVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsTransBCostAllocationVO"
