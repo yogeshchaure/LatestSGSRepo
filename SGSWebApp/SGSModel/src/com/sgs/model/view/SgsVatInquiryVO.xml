@@ -476,6 +476,12 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="CostIdenId"
+    PrecisionRule="true"
+    EntityAttrName="CostIdenId"
+    EntityUsage="SgsVatInquiry"
+    AliasName="COST_IDEN_ID"/>
   <ViewCriteria
     Name="SgsVatInquiryVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsVatInquiryVO"

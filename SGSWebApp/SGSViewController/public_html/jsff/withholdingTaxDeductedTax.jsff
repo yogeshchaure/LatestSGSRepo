@@ -135,7 +135,7 @@
                                     </af:outputText>
                                 </af:column>
                                 </af:column>
-                                <af:column headerText="GL Accounts" id="resId1c8" width="10%">
+                                <af:column headerText="GL Accounts" id="resId1c8" width="10%" rendered="false">
                                     <af:outputText value="#{row.GlAccounts}"
                                                    shortDesc="#{bindings.SgsTdsWhtVO.hints.GlAccounts.tooltip}"
                                                    id="ot5"/>

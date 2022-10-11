@@ -35,7 +35,8 @@ public class SgsVatInquiryImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        CostIdenId;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -59,6 +60,8 @@ public class SgsVatInquiryImpl extends EntityImpl {
         }
     }
     private static final ADFLogger LOG = ADFLogger.createADFLogger(SgsAccPayInvoicesImpl.class);
+
+
     public static final int VATNUM = AttributesEnum.VatNum.index();
     public static final int VATID = AttributesEnum.VatId.index();
     public static final int SERVICEPROVIDER = AttributesEnum.ServiceProvider.index();
@@ -74,6 +77,7 @@ public class SgsVatInquiryImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int COSTIDENID = AttributesEnum.CostIdenId.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -322,6 +326,22 @@ public class SgsVatInquiryImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CostIdenId, using the alias name CostIdenId.
+     * @return the value of CostIdenId
+     */
+    public String getCostIdenId() {
+        return (String) getAttributeInternal(COSTIDENID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CostIdenId.
+     * @param value value to set the CostIdenId
+     */
+    public void setCostIdenId(String value) {
+        setAttributeInternal(COSTIDENID, value);
+    }
+
+    /**
      * @param vatNum key constituent
 
      * @return a Key object based on given key constituents.
@@ -336,6 +356,7 @@ public class SgsVatInquiryImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsVatInquiry");
     }
+
 
     /**
      * Add attribute defaulting logic in this method.

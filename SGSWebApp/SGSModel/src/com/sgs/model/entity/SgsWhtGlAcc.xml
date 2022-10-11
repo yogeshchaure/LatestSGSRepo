@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsWhtGlAcc"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="SGS_WHT_GL_ACC"
+  AliasName="SgsWhtGlAcc"
+  BindingStyle="JDBC"
+  RowClass="com.sgs.model.entity.SgsWhtGlAccImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="WhtGlId"
+    IsNotNull="true"
+    ColumnName="WHT_GL_ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="SGS_WHT_GL_ACC"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="SrNum"
+    ColumnName="SR_NUM"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="SGS_WHT_GL_ACC"/>
+  <Attribute
+    Name="GlAccount"
+    Precision="80"
+    ColumnName="GL_ACCOUNT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_WHT_GL_ACC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Text1"
+    Precision="80"
+    ColumnName="TEXT_1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_WHT_GL_ACC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="PKSGSWHTGLACC"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_SGS_WHT_GL_ACC"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sgs.model.entity.SgsWhtGlAcc.WhtGlId"/>
+    </AttrArray>
+  </Key>
+</Entity>

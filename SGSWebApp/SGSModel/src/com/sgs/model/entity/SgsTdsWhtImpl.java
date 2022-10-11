@@ -44,7 +44,11 @@ public class SgsTdsWhtImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        RotTim,
+        WhtCreditAcc,
+        WhtExpenseAcc,
+        WhtLibilityAcc;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -68,6 +72,8 @@ public class SgsTdsWhtImpl extends EntityImpl {
         }
     }
     private static final ADFLogger LOG = ADFLogger.createADFLogger(SgsTdsWhtImpl.class);
+
+
     public static final int TDSWHTID = AttributesEnum.TdsWhtId.index();
     public static final int TAXCODE = AttributesEnum.TaxCode.index();
     public static final int SERVICERECEIVER = AttributesEnum.ServiceReceiver.index();
@@ -90,6 +96,10 @@ public class SgsTdsWhtImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int ROTTIM = AttributesEnum.RotTim.index();
+    public static final int WHTCREDITACC = AttributesEnum.WhtCreditAcc.index();
+    public static final int WHTEXPENSEACC = AttributesEnum.WhtExpenseAcc.index();
+    public static final int WHTLIBILITYACC = AttributesEnum.WhtLibilityAcc.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -418,6 +428,70 @@ public class SgsTdsWhtImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for RotTim, using the alias name RotTim.
+     * @return the value of RotTim
+     */
+    public String getRotTim() {
+        return (String) getAttributeInternal(ROTTIM);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for RotTim.
+     * @param value value to set the RotTim
+     */
+    public void setRotTim(String value) {
+        setAttributeInternal(ROTTIM, value);
+    }
+
+    /**
+     * Gets the attribute value for WhtCreditAcc, using the alias name WhtCreditAcc.
+     * @return the value of WhtCreditAcc
+     */
+    public String getWhtCreditAcc() {
+        return (String) getAttributeInternal(WHTCREDITACC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for WhtCreditAcc.
+     * @param value value to set the WhtCreditAcc
+     */
+    public void setWhtCreditAcc(String value) {
+        setAttributeInternal(WHTCREDITACC, value);
+    }
+
+    /**
+     * Gets the attribute value for WhtExpenseAcc, using the alias name WhtExpenseAcc.
+     * @return the value of WhtExpenseAcc
+     */
+    public String getWhtExpenseAcc() {
+        return (String) getAttributeInternal(WHTEXPENSEACC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for WhtExpenseAcc.
+     * @param value value to set the WhtExpenseAcc
+     */
+    public void setWhtExpenseAcc(String value) {
+        setAttributeInternal(WHTEXPENSEACC, value);
+    }
+
+    /**
+     * Gets the attribute value for WhtLibilityAcc, using the alias name WhtLibilityAcc.
+     * @return the value of WhtLibilityAcc
+     */
+    public String getWhtLibilityAcc() {
+        return (String) getAttributeInternal(WHTLIBILITYACC);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for WhtLibilityAcc.
+     * @param value value to set the WhtLibilityAcc
+     */
+    public void setWhtLibilityAcc(String value) {
+        setAttributeInternal(WHTLIBILITYACC, value);
+    }
+
+    /**
      * @param tdsWhtId key constituent
 
      * @return a Key object based on given key constituents.
@@ -432,6 +506,7 @@ public class SgsTdsWhtImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTdsWht");
     }
+
 
     /**
      * Add attribute defaulting logic in this method.

@@ -10,7 +10,7 @@
       <af:panelGroupLayout id="pgl1" layout="vertical">
        <af:panelGroupLayout id="pgl2" >
          <af:spacer id="s5" width="20"/>
-        <af:outputText value="Add: Withholding Tax (WHT) / Tax Deducted at Source (TDS) Tax Rule" id="ot1" inlineStyle="font-weight:bold;font-size:15px;"/>
+        <af:outputText value="Withholding Tax (WHT) / Tax Deducted at Source (TDS) Tax Rule" id="ot1" inlineStyle="font-weight:bold;font-size:15px;"/>
          <af:spacer id="s1" width="800" />
            
            <!--<af:button actionListener="#{bindings.Commit.execute}"
@@ -24,19 +24,15 @@
         </af:panelGroupLayout>
         <af:panelBox text="Withholding Tax (WHT) / Tax Deducted at Source (TDS)" id="pb1">
           <f:facet name="toolbar">
-          <af:toolbar id="t1">
-            <af:button actionListener="#{bindings.Commit.execute}"
-                       id="b1" action="back"
-                   disabled="#{(!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=Update'])}"
-                       text="Save" accessKey="S"/>
-            <af:button actionListener="#{bindings.Rollback.execute}" immediate="true" id="b2" action="back"
-                        text="Cancel" accessKey="C">
-            
-            </af:button>
-           
-          </af:toolbar>
+            <af:toolbar id="t1">
+              <af:button actionListener="#{bindings.Commit.execute}" id="b1" action="back"
+                         disabled="#{(!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=Update'])}"
+                         text="Save" accessKey="S"/>
+              <af:button actionListener="#{bindings.Rollback.execute}" immediate="true" id="b2" action="back"
+                         text="Cancel" accessKey="C"/>
+            </af:toolbar>
           </f:facet>
-          <af:panelFormLayout id="pfl1" rows="9">
+          <af:panelFormLayout id="pfl1" rows="10">
             <af:inputText value="#{bindings.TdsWhtId.inputValue}" label="#{bindings.TdsWhtId.hints.label}"
                           required="#{bindings.TdsWhtId.hints.mandatory}" visible="false"
                           columns="#{bindings.TdsWhtId.hints.displayWidth}"
@@ -63,8 +59,7 @@
               <f:selectItems value="#{bindings.ServiceProvider.items}" id="si6"/>
               <f:validator binding="#{bindings.ServiceProvider.validator}"/>
             </af:selectOneChoice>
-            <af:selectOneChoice value="#{bindings.PointOfDeduction.inputValue}"
-                                label="Point of Deduction"
+            <af:selectOneChoice value="#{bindings.PointOfDeduction.inputValue}" label="Point of Deduction"
                                 required="#{bindings.PointOfDeduction.hints.mandatory}"
                                 shortDesc="#{bindings.PointOfDeduction.hints.tooltip}" id="soc1">
               <f:selectItems value="#{bindings.PointOfDeduction.items}" id="si4"/>
@@ -76,15 +71,13 @@
               <f:selectItems value="#{bindings.TaxBase.items}" id="si5"/>
               <f:validator binding="#{bindings.TaxBase.validator}"/>
             </af:selectOneChoice>
-            <af:selectOneChoice value="#{bindings.SectionApplicability.inputValue}"
-                                label="Section Applicability"
+            <af:selectOneChoice value="#{bindings.SectionApplicability.inputValue}" label="Section Applicability"
                                 required="#{bindings.SectionApplicability.hints.mandatory}"
                                 shortDesc="#{bindings.SectionApplicability.hints.tooltip}" id="soc2">
               <f:selectItems value="#{bindings.SectionApplicability.items}" id="si2"/>
               <f:validator binding="#{bindings.SectionApplicability.validator}"/>
             </af:selectOneChoice>
-            <af:selectOneChoice value="#{bindings.IsPanTrcAvailable.inputValue}"
-                                label="Tax Identification Number (TIN)"
+            <af:selectOneChoice value="#{bindings.IsPanTrcAvailable.inputValue}" label="Tax Identification Number (TIN)"
                                 required="#{bindings.IsPanTrcAvailable.hints.mandatory}"
                                 shortDesc="#{bindings.IsPanTrcAvailable.hints.tooltip}" id="soc7">
               <f:selectItems value="#{bindings.IsPanTrcAvailable.items}" id="si7"/>
@@ -92,17 +85,15 @@
             </af:selectOneChoice>
             <af:panelLabelAndMessage label="Validity Period (TIN)" id="plam1">
               <af:panelGroupLayout id="pgl13" layout="horizontal">
-                <af:inputDate value="#{bindings.ValidityPeriodFrom.inputValue}" 
-                              label="From " contentStyle="width:100px;"
-                              required="#{bindings.ValidityPeriodFrom.hints.mandatory}"
+                <af:inputDate value="#{bindings.ValidityPeriodFrom.inputValue}" label="From "
+                              contentStyle="width:100px;" required="#{bindings.ValidityPeriodFrom.hints.mandatory}"
                               columns="#{bindings.ValidityPeriodFrom.hints.displayWidth}"
                               shortDesc="#{bindings.ValidityPeriodFrom.hints.tooltip}" id="id1">
                   <f:validator binding="#{bindings.ValidityPeriodFrom.validator}"/>
                   <af:convertDateTime pattern="#{bindings.ValidityPeriodFrom.format}"/>
                 </af:inputDate>
                 <af:spacer id="s3" width="3"/>
-                <af:inputDate value="#{bindings.ValidityPeriodTo.inputValue}" 
-                              label="To "
+                <af:inputDate value="#{bindings.ValidityPeriodTo.inputValue}" label="To "
                               required="#{bindings.ValidityPeriodTo.hints.mandatory}" contentStyle="width:100px;"
                               columns="#{bindings.ValidityPeriodTo.hints.displayWidth}"
                               shortDesc="#{bindings.ValidityPeriodTo.hints.tooltip}" id="id2">
@@ -115,37 +106,64 @@
                           required="#{bindings.GlAccounts.hints.mandatory}"
                           columns="#{bindings.GlAccounts.hints.displayWidth}"
                           maximumLength="#{bindings.GlAccounts.hints.precision}"
-                          shortDesc="#{bindings.GlAccounts.hints.tooltip}" id="it2">
+                          shortDesc="#{bindings.GlAccounts.hints.tooltip}" id="it2" rendered="false">
               <f:validator binding="#{bindings.GlAccounts.validator}"/>
             </af:inputText>
-             <af:panelLabelAndMessage label="Rate of Tax" id="plam12">
+            <af:panelLabelAndMessage label="Rate of Tax" id="plam12">
               <af:panelGroupLayout id="pgl4" layout="horizontal">
-              <af:inputText value="#{bindings.RateOfTax.inputValue}" label="Rate of Tax"
-                          required="#{bindings.RateOfTax.hints.mandatory}" simple="true"
-                          columns="#{bindings.RateOfTax.hints.displayWidth}"
-                          maximumLength="#{bindings.RateOfTax.hints.precision}"
-                          shortDesc="#{bindings.RateOfTax.hints.tooltip}" id="it3">
-              <f:validator binding="#{bindings.RateOfTax.validator}"/>
-              <af:convertNumber groupingUsed="false" pattern="#{bindings.RateOfTax.format}"/>
-            </af:inputText>
+                <af:inputText value="#{bindings.RateOfTax.inputValue}" label="Rate of Tax"
+                              required="#{bindings.RateOfTax.hints.mandatory}" simple="true"
+                              columns="#{bindings.RateOfTax.hints.displayWidth}"
+                              maximumLength="#{bindings.RateOfTax.hints.precision}"
+                              shortDesc="#{bindings.RateOfTax.hints.tooltip}" id="it3">
+                  <f:validator binding="#{bindings.RateOfTax.validator}"/>
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.RateOfTax.format}"/>
+                </af:inputText>
                 <af:spacer id="s111" width="2"/>
                 <af:outputText value="%" id="ot3"/>
               </af:panelGroupLayout>
             </af:panelLabelAndMessage>
+            <af:inputText value="#{bindings.RotTim.inputValue}" label="Rate of Tax (In case TIN not available)"
+                          required="#{bindings.RotTim.hints.mandatory}" columns="#{bindings.RotTim.hints.displayWidth}"
+                          maximumLength="#{bindings.RotTim.hints.precision}"
+                          shortDesc="#{bindings.RotTim.hints.tooltip}" id="it10">
+              <f:validator binding="#{bindings.RotTim.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.WhtLibilityAcc.inputValue}" label="WHT / TDS Liability Account"
+                          required="#{bindings.WhtLibilityAcc.hints.mandatory}"
+                          columns="#{bindings.WhtLibilityAcc.hints.displayWidth}"
+                          maximumLength="#{bindings.WhtLibilityAcc.hints.precision}"
+                          shortDesc="#{bindings.WhtLibilityAcc.hints.tooltip}" id="it11">
+              <f:validator binding="#{bindings.WhtLibilityAcc.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.WhtCreditAcc.inputValue}" label="WHT / TDS Credit Account"
+                          required="#{bindings.WhtCreditAcc.hints.mandatory}"
+                          columns="#{bindings.WhtCreditAcc.hints.displayWidth}"
+                          maximumLength="#{bindings.WhtCreditAcc.hints.precision}"
+                          shortDesc="#{bindings.WhtCreditAcc.hints.tooltip}" id="it12">
+              <f:validator binding="#{bindings.WhtCreditAcc.validator}"/>
+            </af:inputText>
             <af:panelLabelAndMessage label="Recovery Rate (Foreign Tax Credit)" id="plam2">
               <af:panelGroupLayout id="pgl3" layout="horizontal">
-            <af:inputText value="#{bindings.RecoveryRate.inputValue}" label="Recovery Rate (Foreign Tax Credit)"
-                          required="#{bindings.RecoveryRate.hints.mandatory}" simple="true"
-                          columns="#{bindings.RecoveryRate.hints.displayWidth}"
-                          maximumLength="#{bindings.RecoveryRate.hints.precision}"
-                          shortDesc="#{bindings.RecoveryRate.hints.tooltip}" id="it4">
-              <f:validator binding="#{bindings.RecoveryRate.validator}"/>
-              <af:convertNumber groupingUsed="false" pattern="#{bindings.RecoveryRate.format}"/>
-            </af:inputText>
-             <af:spacer id="s2" width="2"/>
+                <af:inputText value="#{bindings.RecoveryRate.inputValue}" label="Recovery Rate (Foreign Tax Credit)"
+                              required="#{bindings.RecoveryRate.hints.mandatory}" simple="true"
+                              columns="#{bindings.RecoveryRate.hints.displayWidth}"
+                              maximumLength="#{bindings.RecoveryRate.hints.precision}"
+                              shortDesc="#{bindings.RecoveryRate.hints.tooltip}" id="it4">
+                  <f:validator binding="#{bindings.RecoveryRate.validator}"/>
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.RecoveryRate.format}"/>
+                </af:inputText>
+                <af:spacer id="s2" width="2"/>
                 <af:outputText value="%" id="ot2"/>
-            </af:panelGroupLayout>
+              </af:panelGroupLayout>
             </af:panelLabelAndMessage>
+            <af:inputText value="#{bindings.WhtExpenseAcc.inputValue}" label="Foreign WHT / TDS Expense Account"
+                          required="#{bindings.WhtExpenseAcc.hints.mandatory}"
+                          columns="#{bindings.WhtExpenseAcc.hints.displayWidth}"
+                          maximumLength="#{bindings.WhtExpenseAcc.hints.precision}"
+                          shortDesc="#{bindings.WhtExpenseAcc.hints.tooltip}" id="it13">
+              <f:validator binding="#{bindings.WhtExpenseAcc.validator}"/>
+            </af:inputText>
             <!--<af:selectOneChoice value="#{bindings.Currency.inputValue}" label="Currency"
                                 required="#{bindings.Currency.hints.mandatory}"
                                 shortDesc="#{bindings.Currency.hints.tooltip}" id="soc3">
@@ -170,7 +188,7 @@
               <af:convertNumber groupingUsed="false" pattern="#{bindings.CummulativeThresholdLimit.format}"
                                />
             </af:inputText>-->
-             <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="Effective From"
+            <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="Effective From"
                           required="#{bindings.EffectiveFrom.hints.mandatory}"
                           columns="#{bindings.EffectiveFrom.hints.displayWidth}"
                           shortDesc="#{bindings.EffectiveFrom.hints.tooltip}" id="id4">
@@ -184,7 +202,6 @@
               <f:validator binding="#{bindings.EffectiveTo.validator}"/>
               <af:convertDateTime pattern="#{bindings.EffectiveTo.format}"/>
             </af:inputDate>
-           
             <!--<af:inputText value="#{bindings.UpdatedBy.inputValue}" label="Updated By"
                           required="#{bindings.UpdatedBy.hints.mandatory}" readOnly="true"
                           columns="#{bindings.UpdatedBy.hints.displayWidth}"
@@ -215,6 +232,50 @@
               <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>
             </af:inputText>
           </af:panelFormLayout>
+        </af:panelBox>
+        <af:panelBox text="GL Account Details" id="pb2">
+          <f:facet name="toolbar"/>
+          <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar">
+              <af:toolbar id="t3">
+                <af:button actionListener="#{bindings.CreateInsert.execute}"
+                           disabled="#{!bindings.CreateInsert.enabled}" id="b3" icon="/resources/icons/plus.png"/>
+                <af:button actionListener="#{bindings.Delete.execute}"
+                           disabled="#{!bindings.Delete.enabled}" id="b4" icon="/resources/icons/delete.png"/>
+              </af:toolbar>
+            </f:facet>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.SgsWhtGlAccVO1.collectionModel}" var="row"
+                      rows="#{bindings.SgsWhtGlAccVO1.rangeSize}"
+                      emptyText="#{bindings.SgsWhtGlAccVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.SgsWhtGlAccVO1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.SgsWhtGlAccVO1.collectionModel.makeCurrent}" rowSelection="single"
+                      fetchSize="#{bindings.SgsWhtGlAccVO1.rangeSize}" id="t2" styleClass="AFStretchWidth"
+                      partialTriggers="::b3 ::b4">
+              <af:column headerText="Sr Num" id="c1" width="50%" rendered="false">
+                <af:inputText value="#{row.bindings.SrNum.inputValue}"
+                              label="#{bindings.SgsWhtGlAccVO1.hints.SrNum.label}"
+                              required="#{bindings.SgsWhtGlAccVO1.hints.SrNum.mandatory}"
+                              columns="#{bindings.SgsWhtGlAccVO1.hints.SrNum.displayWidth}"
+                              maximumLength="#{bindings.SgsWhtGlAccVO1.hints.SrNum.precision}"
+                              shortDesc="#{bindings.SgsWhtGlAccVO1.hints.SrNum.tooltip}" id="it7">
+                  <f:validator binding="#{row.bindings.SrNum.validator}"/>
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.SgsWhtGlAccVO1.hints.SrNum.format}"/>
+                </af:inputText>
+              </af:column>
+              <af:column headerText="GL Account" id="c2" width="50%">
+                <af:inputText value="#{row.bindings.GlAccount.inputValue}"
+                              label="#{bindings.SgsWhtGlAccVO1.hints.GlAccount.label}"
+                              required="#{bindings.SgsWhtGlAccVO1.hints.GlAccount.mandatory}"
+                              columns="#{bindings.SgsWhtGlAccVO1.hints.GlAccount.displayWidth}"
+                              maximumLength="#{bindings.SgsWhtGlAccVO1.hints.GlAccount.precision}"
+                              shortDesc="#{bindings.SgsWhtGlAccVO1.hints.GlAccount.tooltip}" id="it9">
+                  <f:validator binding="#{row.bindings.GlAccount.validator}"/>
+                </af:inputText>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
         </af:panelBox>
       </af:panelGroupLayout>
     </f:facet>

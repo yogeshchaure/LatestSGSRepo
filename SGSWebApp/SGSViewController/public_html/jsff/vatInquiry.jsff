@@ -106,7 +106,11 @@
                                            shortDesc="#{bindings.SgsVatInquiryVO1.hints.RateOfTax.tooltip}"
                                            id="ot3"/>
                         </af:column>
-                  <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.label}" id="resId1c4"
+                <af:column headerText="Cost Identification ID" id="c3" width="10%">
+                  <af:outputText value="#{row.CostIdenId}"
+                                 shortDesc="#{bindings.SgsVatInquiryVO1.hints.CostIdenId.tooltip}" id="ot2"/>
+                </af:column>
+                <af:column headerText="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.label}" id="resId1c4"
                              width="15%">
                     <af:outputText value="#{row.EffectiveTo}"
                                    shortDesc="#{bindings.SgsVatInquiryVO1.hints.EffectiveTo.tooltip}" id="ot1">

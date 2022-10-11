@@ -782,6 +782,12 @@
     EntityAttrName="RATEOFTAX1"
     EntityUsage="SgsGstInquiry"
     AliasName="RATE_OF_TAX1"/>
+  <ViewAttribute
+    Name="CostIdenId"
+    PrecisionRule="true"
+    EntityAttrName="CostIdenId"
+    EntityUsage="SgsGstInquiry"
+    AliasName="COST_IDEN_ID"/>
   <ViewCriteria
     Name="SgsGstInquiryVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsGstInquiryVO"

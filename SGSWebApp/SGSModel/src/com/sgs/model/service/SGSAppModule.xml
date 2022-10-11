@@ -244,6 +244,9 @@
   <ViewUsage
     Name="SgsOtherReceivables1VO"
     ViewObjectName="com.sgs.model.view.SgsOtherReceivables1VO"/>
+  <ViewUsage
+    Name="SgsWhtGlAccVO1"
+    ViewObjectName="com.sgs.model.view.SgsWhtGlAccVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

@@ -94,6 +94,13 @@
                             shortDesc="#{bindings.RateOfTax.hints.tooltip}" id="it1">
                 <f:validator binding="#{bindings.RateOfTax.validator}"/>
               </af:inputText>
+              <af:inputText value="#{bindings.CostIdenId.inputValue}" label="Cost Identification ID"
+                            required="#{bindings.CostIdenId.hints.mandatory}"
+                            columns="#{bindings.CostIdenId.hints.displayWidth}"
+                            maximumLength="#{bindings.CostIdenId.hints.precision}"
+                            shortDesc="#{bindings.CostIdenId.hints.tooltip}" id="it3">
+                <f:validator binding="#{bindings.CostIdenId.validator}"/>
+              </af:inputText>
               <af:inputText value="#{bindings.GlAccountCodes.inputValue}" label="Input VAT GL Account"
                             required="#{bindings.GlAccountCodes.hints.mandatory}"
                             columns="#{bindings.GlAccountCodes.hints.displayWidth}"

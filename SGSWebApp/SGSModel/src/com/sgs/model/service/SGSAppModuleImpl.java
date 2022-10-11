@@ -928,5 +928,13 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsOtherReceivables1VO() {
         return (ViewObjectImpl) findViewObject("SgsOtherReceivables1VO");
     }
+
+    /**
+     * Container's getter for SgsWhtGlAccVO1.
+     * @return SgsWhtGlAccVO1
+     */
+    public ViewObjectImpl getSgsWhtGlAccVO1() {
+        return (ViewObjectImpl) findViewObject("SgsWhtGlAccVO1");
+    }
 }
 

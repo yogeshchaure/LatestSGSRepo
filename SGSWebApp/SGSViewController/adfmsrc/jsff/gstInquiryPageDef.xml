@@ -20,7 +20,8 @@
           <Item Value="EffectiveTo"/>
            <Item Value="ExemptSupply"/>
             <Item Value="RATEOFTAX1"/> 
-             <Item Value="TypeOfservice"/> 
+             <Item Value="TypeOfservice"/>
+          <Item Value="CostIdenId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

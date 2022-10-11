@@ -652,6 +652,30 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="RotTim"
+    PrecisionRule="true"
+    EntityAttrName="RotTim"
+    EntityUsage="SgsTdsWht"
+    AliasName="ROT_TIM"/>
+  <ViewAttribute
+    Name="WhtExpenseAcc"
+    PrecisionRule="true"
+    EntityAttrName="WhtExpenseAcc"
+    EntityUsage="SgsTdsWht"
+    AliasName="WHT_EXPENSE_ACC"/>
+  <ViewAttribute
+    Name="WhtLibilityAcc"
+    PrecisionRule="true"
+    EntityAttrName="WhtLibilityAcc"
+    EntityUsage="SgsTdsWht"
+    AliasName="WHT_LIBILITY_ACC"/>
+  <ViewAttribute
+    Name="WhtCreditAcc"
+    PrecisionRule="true"
+    EntityAttrName="WhtCreditAcc"
+    EntityUsage="SgsTdsWht"
+    AliasName="WHT_CREDIT_ACC"/>
   <ViewCriteria
     Name="SgsTdsWhtVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsTdsWhtVO"
