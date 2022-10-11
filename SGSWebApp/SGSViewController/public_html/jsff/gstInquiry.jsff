@@ -100,6 +100,10 @@
                                            shortDesc="#{bindings.SgsGstInquiryVO1.hints.RATEOFTAX1.tooltip}"
                                            id="ot3"/>
                         </af:column>
+                     <af:column headerText="Cost Identification ID" id="c2" width="100">
+                        <af:outputText value="#{row.CostIdenId}"
+                                       shortDesc="#{bindings.SgsGstInquiryVO1.hints.CostIdenId.tooltip}" id="ot1"/>
+                     </af:column>
                      <af:column headerText="#{bindings.SgsGstInquiryVO1.hints.EffectiveTo.label}" id="resId1c5">
                         <af:outputText value="#{row.EffectiveTo}"
                                        shortDesc="#{bindings.SgsGstInquiryVO1.hints.EffectiveTo.tooltip}" id="ot2">

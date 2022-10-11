@@ -144,5 +144,10 @@
       </ValueList>
         
     </button>
+    <attributeValues IterBinding="SgsGstInquiryVO1Iterator" id="CostIdenId">
+      <AttrNames>
+        <Item Value="CostIdenId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -76,5 +76,10 @@
     </attributeValues>
     <list IterBinding="SgsVatInquiryVO1Iterator" StaticList="false" Uses="LOV_ItemServiceCategory"
           id="ItemServiceCategory1" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="SgsVatInquiryVO1Iterator" id="CostIdenId">
+      <AttrNames>
+        <Item Value="CostIdenId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

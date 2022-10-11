@@ -5,6 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="SgsTdsWhtVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsTdsWhtVOIterator"/>
+    <iterator Binds="SgsWhtGlAccVO1" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsWhtGlAccVO1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsTdsWhtVOIterator" id="TaxCode">
@@ -97,6 +98,36 @@
     <attributeValues IterBinding="SgsTdsWhtVOIterator" id="CreatedDate">
       <AttrNames>
         <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SgsWhtGlAccVO1Iterator" id="SgsWhtGlAccVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsWhtGlAccVO" Name="SgsWhtGlAccVO10">
+        <AttrNames>
+          <Item Value="SrNum"/>
+          <Item Value="GlAccount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsWhtGlAccVO1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SgsWhtGlAccVO1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="RotTim">
+      <AttrNames>
+        <Item Value="RotTim"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="WhtLibilityAcc">
+      <AttrNames>
+        <Item Value="WhtLibilityAcc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="WhtCreditAcc">
+      <AttrNames>
+        <Item Value="WhtCreditAcc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTdsWhtVOIterator" id="WhtExpenseAcc">
+      <AttrNames>
+        <Item Value="WhtExpenseAcc"/>
       </AttrNames>
     </attributeValues>
   </bindings>

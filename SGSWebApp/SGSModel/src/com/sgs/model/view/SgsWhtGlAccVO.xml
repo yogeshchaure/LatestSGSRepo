@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsWhtGlAccVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="SgsWhtGlAcc"
+    Entity="com.sgs.model.entity.SgsWhtGlAcc"/>
+  <ViewAttribute
+    Name="WhtGlId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="WhtGlId"
+    EntityUsage="SgsWhtGlAcc"
+    AliasName="WHT_GL_ID"/>
+  <ViewAttribute
+    Name="SrNum"
+    PrecisionRule="true"
+    EntityAttrName="SrNum"
+    EntityUsage="SgsWhtGlAcc"
+    AliasName="SR_NUM"/>
+  <ViewAttribute
+    Name="GlAccount"
+    PrecisionRule="true"
+    EntityAttrName="GlAccount"
+    EntityUsage="SgsWhtGlAcc"
+    AliasName="GL_ACCOUNT"/>
+  <ViewAttribute
+    Name="Text1"
+    PrecisionRule="true"
+    EntityAttrName="Text1"
+    EntityUsage="SgsWhtGlAcc"
+    AliasName="TEXT_1"/>
+  <SortCriteria>
+    <Sort
+      Attribute="WhtGlId"/>
+  </SortCriteria>
+</ViewObject>

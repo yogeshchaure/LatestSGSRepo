@@ -21,6 +21,7 @@
            <Item Value="Rcm"/>
             <Item Value="ExemptSupply"/>
              <Item Value="RateOfTax"/>
+          <Item Value="CostIdenId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
