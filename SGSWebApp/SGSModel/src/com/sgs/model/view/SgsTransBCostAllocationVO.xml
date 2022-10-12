@@ -1041,6 +1041,45 @@
     EntityAttrName="PONUMBER"
     EntityUsage="SgsTransBCostAllocation"
     AliasName="PO_NUMBER"/>
+  <ViewAttribute
+    Name="IGSTAmount"
+    PrecisionRule="true"
+    EntityAttrName="IGSTAmount"
+    EntityUsage="SgsTransBCostAllocation"
+    AliasName="IGST_Amount">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.IGSTAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SGSTAmount"
+    PrecisionRule="true"
+    EntityAttrName="SGSTAmount"
+    EntityUsage="SgsTransBCostAllocation"
+    AliasName="SGST_Amount">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.SGSTAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CGSTAmount"
+    PrecisionRule="true"
+    EntityAttrName="CGSTAmount"
+    EntityUsage="SgsTransBCostAllocation"
+    AliasName="CGST_Amount">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsTransBCostAllocationVO.CGSTAmount_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="SgsTransBCostAllocationVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsTransBCostAllocationVO"

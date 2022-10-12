@@ -166,6 +166,18 @@
     Type="java.sql.Date"
     ColumnType="DATE"
     TableName="SGS_ISD"/>
+  <Attribute
+    Name="CostIdenId"
+    Precision="100"
+    ColumnName="COST_IDEN_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_ISD">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PKSGSISD"
     PrimaryKey="true">

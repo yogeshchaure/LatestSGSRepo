@@ -133,6 +133,12 @@
     Name="SgsIsdInvoiceNoLOV"
     ViewObjectName="com.sgs.model.view.SgsIsdInvoiceNoLOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="SGSAppModule_SgsCostIdentificationRuleView1_1"
+    ViewObjectName="com.sgs.model.view.SgsCostIdentificationRuleVO"
+    AMUsageName="SGSAppModule"
+    ViewInstanceName="SgsCostIdentificationRuleView1"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ServiceProvider"
     ListVOName="ServiceProviderLOV"
@@ -184,6 +190,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CostIdenId"
+    ListVOName="SGSAppModule_SgsCostIdentificationRuleView1_1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CostIdenId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RuleId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="RuleId"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -336,6 +360,22 @@
           ResId="com.sgs.model.view.SgsIsdVO.EffectiveTo_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.sgs.model.view.SgsIsdVO.EffectiveTo_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CostIdenId"
+    PrecisionRule="true"
+    EntityAttrName="CostIdenId"
+    EntityUsage="SgsIsd"
+    AliasName="COST_IDEN_ID"
+    LOVName="LOV_CostIdenId">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsIsdVO.CostIdenId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

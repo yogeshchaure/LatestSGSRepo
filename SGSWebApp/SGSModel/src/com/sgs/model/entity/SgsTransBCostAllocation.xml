@@ -522,6 +522,42 @@
       <Attr Name="_DisplaySize" Value="100"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="CGSTAmount"
+    Precision="100"
+    ColumnName="CGST_Amount"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IGSTAmount"
+    Precision="100"
+    ColumnName="IGST_Amount"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SGSTAmount"
+    Precision="100"
+    ColumnName="SGST_Amount"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_TRANS_B_COST_ALLOCATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PKSGSTRANSBCOSTALLOCATION"
     PrimaryKey="true">

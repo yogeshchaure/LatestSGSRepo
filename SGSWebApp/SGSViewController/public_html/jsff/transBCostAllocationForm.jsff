@@ -303,6 +303,30 @@
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.TransactionAmount.format}"
                                                   type="currency"/>
                             </af:inputText>
+                            <af:inputText value="#{bindings.IGSTAmount.inputValue}"
+                                          label="#{bindings.IGSTAmount.hints.label}"
+                                          required="#{bindings.IGSTAmount.hints.mandatory}"
+                                          columns="#{bindings.IGSTAmount.hints.displayWidth}"
+                                          maximumLength="#{bindings.IGSTAmount.hints.precision}"
+                                          shortDesc="#{bindings.IGSTAmount.hints.tooltip}" id="it22">
+                                <f:validator binding="#{bindings.IGSTAmount.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.CGSTAmount.inputValue}"
+                                          label="#{bindings.CGSTAmount.hints.label}"
+                                          required="#{bindings.CGSTAmount.hints.mandatory}"
+                                          columns="#{bindings.CGSTAmount.hints.displayWidth}"
+                                          maximumLength="#{bindings.CGSTAmount.hints.precision}"
+                                          shortDesc="#{bindings.CGSTAmount.hints.tooltip}" id="it27">
+                                <f:validator binding="#{bindings.CGSTAmount.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.SGSTAmount.inputValue}"
+                                          label="#{bindings.SGSTAmount.hints.label}"
+                                          required="#{bindings.SGSTAmount.hints.mandatory}"
+                                          columns="#{bindings.SGSTAmount.hints.displayWidth}"
+                                          maximumLength="#{bindings.SGSTAmount.hints.precision}"
+                                          shortDesc="#{bindings.SGSTAmount.hints.tooltip}" id="it28">
+                                <f:validator binding="#{bindings.SGSTAmount.validator}"/>
+                            </af:inputText>
                             <af:inputText value="#{bindings.FunctionalCurrency.inputValue}" label="Functional Currency"
                                           required="#{bindings.FunctionalCurrency.hints.mandatory}"
                                           columns="#{bindings.FunctionalCurrency.hints.displayWidth}"
