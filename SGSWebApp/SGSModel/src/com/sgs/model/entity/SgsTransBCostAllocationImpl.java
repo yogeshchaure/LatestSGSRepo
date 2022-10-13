@@ -68,7 +68,10 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
         SOURCEMODULE1,
         VENDORID,
         VID,
-        VOUCHERNO;
+        VOUCHERNO,
+        CGSTAmount,
+        IGSTAmount,
+        SGSTAmount;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -141,20 +144,15 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
     public static final int VENDORID = AttributesEnum.VENDORID.index();
     public static final int VID = AttributesEnum.VID.index();
     public static final int VOUCHERNO = AttributesEnum.VOUCHERNO.index();
+    public static final int CGSTAMOUNT = AttributesEnum.CGSTAmount.index();
+    public static final int IGSTAMOUNT = AttributesEnum.IGSTAmount.index();
+    public static final int SGSTAMOUNT = AttributesEnum.SGSTAmount.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public SgsTransBCostAllocationImpl() {
     }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTransBCostAllocation");
-    }
-
 
     /**
      * Gets the attribute value for TbcaId, using the alias name TbcaId.
@@ -764,7 +762,6 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
         setAttributeInternal(PEOPLESOFTTRANSACTIONID, value);
     }
 
-
     /**
      * Gets the attribute value for PONUMBER, using the alias name PONUMBER.
      * @return the value of PONUMBER
@@ -846,6 +843,54 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for CGSTAmount, using the alias name CGSTAmount.
+     * @return the value of CGSTAmount
+     */
+    public String getCGSTAmount() {
+        return (String) getAttributeInternal(CGSTAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for CGSTAmount.
+     * @param value value to set the CGSTAmount
+     */
+    public void setCGSTAmount(String value) {
+        setAttributeInternal(CGSTAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for IGSTAmount, using the alias name IGSTAmount.
+     * @return the value of IGSTAmount
+     */
+    public String getIGSTAmount() {
+        return (String) getAttributeInternal(IGSTAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for IGSTAmount.
+     * @param value value to set the IGSTAmount
+     */
+    public void setIGSTAmount(String value) {
+        setAttributeInternal(IGSTAMOUNT, value);
+    }
+
+    /**
+     * Gets the attribute value for SGSTAmount, using the alias name SGSTAmount.
+     * @return the value of SGSTAmount
+     */
+    public String getSGSTAmount() {
+        return (String) getAttributeInternal(SGSTAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for SGSTAmount.
+     * @param value value to set the SGSTAmount
+     */
+    public void setSGSTAmount(String value) {
+        setAttributeInternal(SGSTAMOUNT, value);
+    }
+
+    /**
      * @param tbcaId key constituent
 
      * @return a Key object based on given key constituents.
@@ -853,6 +898,14 @@ public class SgsTransBCostAllocationImpl extends EntityImpl {
     public static Key createPrimaryKey(Integer tbcaId) {
         return new Key(new Object[] { tbcaId });
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsTransBCostAllocation");
+    }
+
 
     /**
      * Add attribute defaulting logic in this method.

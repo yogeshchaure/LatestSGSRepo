@@ -381,5 +381,20 @@
         <Item Value="UpdatedDate"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="IGSTAmount">
+      <AttrNames>
+        <Item Value="IGSTAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="CGSTAmount">
+      <AttrNames>
+        <Item Value="CGSTAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="SGSTAmount">
+      <AttrNames>
+        <Item Value="SGSTAmount"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

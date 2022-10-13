@@ -27,7 +27,7 @@
           </af:toolbar>
           </f:facet>
           <af:panelGroupLayout id="pgl2" layout="horizontal">
-            <af:panelFormLayout id="pfl1" rows="4">
+            <af:panelFormLayout id="pfl1" rows="5">
               <af:inputText value="#{bindings.IsdInvoiceNo.inputValue}" label="ISD ID"
                             required="#{bindings.IsdInvoiceNo.hints.mandatory}"
                             columns="#{bindings.IsdInvoiceNo.hints.displayWidth}"
@@ -54,6 +54,12 @@
                                   shortDesc="#{bindings.TypeOfSupply.hints.tooltip}" id="soc4">
                 <f:selectItems value="#{bindings.TypeOfSupply.items}" id="si4"/>
                 <f:validator binding="#{bindings.TypeOfSupply.validator}"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.CostIdenId.inputValue}" label="#{bindings.CostIdenId.label}"
+                                  required="#{bindings.CostIdenId.hints.mandatory}"
+                                  shortDesc="#{bindings.CostIdenId.hints.tooltip}" id="soc1">
+                <f:selectItems value="#{bindings.CostIdenId.items}" id="si1"/>
+                <f:validator binding="#{bindings.CostIdenId.validator}"/>
               </af:selectOneChoice>
               <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="Effective From"
                             required="#{bindings.EffectiveFrom.hints.mandatory}"

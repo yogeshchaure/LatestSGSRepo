@@ -55,5 +55,7 @@
         <Item Value="EffectiveFrom"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="SgsIsdVOIterator" StaticList="false" Uses="LOV_CostIdenId" id="CostIdenId" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
