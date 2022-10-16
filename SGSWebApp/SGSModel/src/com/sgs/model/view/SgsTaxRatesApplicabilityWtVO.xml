@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsTaxRatesApplicabilityWtVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.sgs.model.view.SgsTaxRatesApplicabilityWtVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="CostIdentificationLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsTaxRatesApplicabilityWtVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_CostIdentificationId"
+    ListVOName="CostIdentificationLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CostIdentificationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SgsTaxRatesApplicabilityWt"
+    Entity="com.sgs.model.entity.SgsTaxRatesApplicabilityWt"/>
+  <ViewAttribute
+    Name="AccountingTreatment"
+    PrecisionRule="true"
+    EntityAttrName="AccountingTreatment"
+    EntityUsage="SgsTaxRatesApplicabilityWt"
+    AliasName="ACCOUNTING_TREATMENT"/>
+  <ViewAttribute
+    Name="CostIdentificationId"
+    PrecisionRule="true"
+    EntityAttrName="CostIdentificationId"
+    EntityUsage="SgsTaxRatesApplicabilityWt"
+    AliasName="COST_IDENTIFICATION_ID"
+    LOVName="LOV_CostIdentificationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="SgsTaxRatesApplicabilityWt"
+    AliasName="CREATED_BY"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="SgsTaxRatesApplicabilityWt"
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="Rate"
+    PrecisionRule="true"
+    EntityAttrName="Rate"
+    EntityUsage="SgsTaxRatesApplicabilityWt"
+    AliasName="RATE"/>
+  <ViewAttribute
+    Name="SectionTaxCode"
+    PrecisionRule="true"
+    EntityAttrName="SectionTaxCode"
+    EntityUsage="SgsTaxRatesApplicabilityWt"
+    AliasName="SECTION_TAX_CODE"/>
+  <ViewAttribute
+    Name="TraId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TraId"
+    EntityUsage="SgsTaxRatesApplicabilityWt"
+    AliasName="TRA_ID"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="SgsTaxRatesApplicabilityWt"
+    AliasName="UPDATED_BY"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="SgsTaxRatesApplicabilityWt"
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sgs.model.SGSModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

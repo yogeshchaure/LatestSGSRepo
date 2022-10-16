@@ -247,6 +247,15 @@
   <ViewUsage
     Name="SgsWhtGlAccVO1"
     ViewObjectName="com.sgs.model.view.SgsWhtGlAccVO"/>
+  <ViewUsage
+    Name="SgsTaxIdentificationDocVO1"
+    ViewObjectName="com.sgs.model.view.SgsTaxIdentificationDocVO"/>
+  <ViewUsage
+    Name="SgsTaxRatesApplicabilityWtVO1"
+    ViewObjectName="com.sgs.model.view.SgsTaxRatesApplicabilityWtVO"/>
+  <ViewUsage
+    Name="SgsTaxRatesAppGstVO1"
+    ViewObjectName="com.sgs.model.view.SgsTaxRatesAppGstVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
