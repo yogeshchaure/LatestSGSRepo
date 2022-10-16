@@ -936,5 +936,29 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsWhtGlAccVO1() {
         return (ViewObjectImpl) findViewObject("SgsWhtGlAccVO1");
     }
+
+    /**
+     * Container's getter for SgsTaxIdentificationDocVO1.
+     * @return SgsTaxIdentificationDocVO1
+     */
+    public ViewObjectImpl getSgsTaxIdentificationDocVO1() {
+        return (ViewObjectImpl) findViewObject("SgsTaxIdentificationDocVO1");
+    }
+
+    /**
+     * Container's getter for SgsTaxRatesApplicabilityWtVO1.
+     * @return SgsTaxRatesApplicabilityWtVO1
+     */
+    public ViewObjectImpl getSgsTaxRatesApplicabilityWtVO1() {
+        return (ViewObjectImpl) findViewObject("SgsTaxRatesApplicabilityWtVO1");
+    }
+
+    /**
+     * Container's getter for SgsTaxRatesAppGstVO1.
+     * @return SgsTaxRatesAppGstVO1
+     */
+    public ViewObjectImpl getSgsTaxRatesAppGstVO1() {
+        return (ViewObjectImpl) findViewObject("SgsTaxRatesAppGstVO1");
+    }
 }
 

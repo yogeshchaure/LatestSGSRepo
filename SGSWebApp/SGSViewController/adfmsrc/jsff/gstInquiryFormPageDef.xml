@@ -6,6 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="SgsGstInquiryVO1" RangeSize="10" DataControl="SGSAppModuleDataControl"
               id="SgsGstInquiryVO1Iterator"/>
+    <iterator Binds="SgsTaxRatesAppGstVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsTaxRatesAppGstVO1Iterator"/>
   </executables>
   <bindings>
     <action id="Commit" DataControl="SGSAppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
@@ -149,5 +151,20 @@
         <Item Value="CostIdenId"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="SgsTaxRatesAppGstVO1Iterator" id="SgsTaxRatesAppGstVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsTaxRatesAppGstVO" Name="SgsTaxRatesAppGstVO10">
+        <AttrNames>
+          <Item Value="CostIdentificationId"/>
+          <Item Value="HsnCode"/>
+          <Item Value="Rate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsTaxRatesAppGstVO1Iterator" id="CreateInsert"
+            InstanceName="SGSAppModuleDataControl.SgsTaxRatesAppGstVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SgsTaxRatesAppGstVO1Iterator" id="Delete"
+            InstanceName="SGSAppModuleDataControl.SgsTaxRatesAppGstVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

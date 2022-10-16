@@ -6,6 +6,10 @@
     <variableIterator id="variables"/>
     <iterator Binds="SgsTdsWhtVO" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsTdsWhtVOIterator"/>
     <iterator Binds="SgsWhtGlAccVO1" RangeSize="25" DataControl="SGSAppModuleDataControl" id="SgsWhtGlAccVO1Iterator"/>
+    <iterator Binds="SgsTaxIdentificationDocVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsTaxIdentificationDocVO1Iterator"/>
+    <iterator Binds="SgsTaxRatesApplicabilityWtVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsTaxRatesApplicabilityWtVO1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsTdsWhtVOIterator" id="TaxCode">
@@ -130,5 +134,41 @@
         <Item Value="WhtExpenseAcc"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="SgsTaxIdentificationDocVO1Iterator" id="SgsTaxIdentificationDocVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsTaxIdentificationDocVO" Name="SgsTaxIdentificationDocVO10">
+        <AttrNames>
+          <Item Value="LegalEntity"/>
+          <Item Value="DocumentType"/>
+          <Item Value="TaxIdentificationNumber"/>
+          <Item Value="ValidFrom"/>
+          <Item Value="ValidTo"/>
+          <Item Value="Attachment"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="UpdatedDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsTaxIdentificationDocVO1Iterator" id="CreateInsert1"
+            InstanceName="SGSAppModuleDataControl.SgsTaxIdentificationDocVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SgsTaxIdentificationDocVO1Iterator" id="Delete1"
+            InstanceName="SGSAppModuleDataControl.SgsTaxIdentificationDocVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="SgsTaxRatesApplicabilityWtVO1Iterator" id="SgsTaxRatesApplicabilityWtVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsTaxRatesApplicabilityWtVO" Name="SgsTaxRatesApplicabilityWtVO10">
+        <AttrNames>
+          <Item Value="CostIdentificationId"/>
+          <Item Value="AccountingTreatment"/>
+          <Item Value="SectionTaxCode"/>
+          <Item Value="Rate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsTaxRatesApplicabilityWtVO1Iterator" id="CreateInsert2"
+            InstanceName="SGSAppModuleDataControl.SgsTaxRatesApplicabilityWtVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SgsTaxRatesApplicabilityWtVO1Iterator" id="Delete2"
+            InstanceName="SGSAppModuleDataControl.SgsTaxRatesApplicabilityWtVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

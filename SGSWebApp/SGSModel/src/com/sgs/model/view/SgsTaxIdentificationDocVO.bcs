@@ -1,0 +1,19 @@
+//Groovy Scripts for com.sgs.model.view.SgsTaxIdentificationDocVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="LegalEntityLOV", name="pType")
+def pType_LegalEntityLOV_BindVariable_BoundParameter()
+{
+'LEGAL_ENTITY'
+}
+
+
+@AccessorParameterExpression(accessorName="DocumenttypeLOV", name="pType")
+def pType_DocumenttypeLOV_BindVariable_BoundParameter()
+{
+'PAN_TRC'
+}
+
