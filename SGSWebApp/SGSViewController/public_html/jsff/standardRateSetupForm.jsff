@@ -7,6 +7,7 @@
         <f:facet name="top"/>
         <f:facet name="bottom"/>
         <f:facet name="center">
+          <af:panelGroupLayout id="pgl1" layout="vertical">
             <af:panelBox text="Standard Rate Setup" id="pb1">
                 <f:facet name="toolbar">
                     <af:toolbar id="t1">
@@ -128,7 +129,125 @@
                         <af:convertNumber groupingUsed="false" pattern="#{bindings.StandardRateId.format}"/>
                     </af:outputText>
                 </af:panelFormLayout>
+      
             </af:panelBox>
+              <af:panelBox text="Supporting Documents" id="pb4">
+              <f:facet name="toolbar"/>
+              <af:panelCollection id="pc2" styleClass="AFStretchWidth">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar">
+                  <af:toolbar id="t6">
+                <af:button actionListener="#{bindings.CreateInsert.execute}"
+                           id="b6" icon="/resources/icons/plus.png" action="ADD"/>
+                <af:button id="b5" icon="/resources/icons/delete.png" actionListener="#{bindings.Delete1.execute}"/>
+                  </af:toolbar>
+                </f:facet>
+              <!-- table -->
+                        <af:table value="#{bindings.SgsSupportingDocVO1.collectionModel}" var="row"
+                                  rows="#{bindings.SgsSupportingDocVO1.rangeSize}"
+                                  emptyText="#{bindings.SgsSupportingDocVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.SgsSupportingDocVO1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.SgsSupportingDocVO1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.SgsSupportingDocVO1.rangeSize}" id="t3"
+                                  styleClass="AFStretchWidth" columnStretching="last">
+                            <af:column headerText="Document Type" id="c1" width="350">
+                                <af:selectOneChoice value="#{row.bindings.DocumentType.inputValue}"
+                                                    label="#{row.bindings.DocumentType.label}"
+                                                    required="#{bindings.SgsSupportingDocVO1.hints.DocumentType.mandatory}"
+                                                    shortDesc="#{bindings.SgsSupportingDocVO1.hints.DocumentType.tooltip}"
+                                                    id="soc1">
+                                    <f:selectItems value="#{row.bindings.DocumentType.items}" id="si1"/>
+                                    <f:validator binding="#{row.bindings.DocumentType.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Attachment" id="c2" width="350">
+                                <!--<af:inputText value="#{row.bindings.Attachment.inputValue}"
+                                              label="#{bindings.SgsSupportingDocVO1.hints.Attachment.label}"
+                                              required="#{bindings.SgsSupportingDocVO1.hints.Attachment.mandatory}"
+                                              columns="#{bindings.SgsSupportingDocVO1.hints.Attachment.displayWidth}"
+                                              maximumLength="#{bindings.SgsSupportingDocVO1.hints.Attachment.precision}"
+                                              shortDesc="#{bindings.SgsSupportingDocVO1.hints.Attachment.tooltip}"
+                                              id="it6">
+                                    <f:validator binding="#{row.bindings.Attachment.validator}"/>
+                                </af:inputText>-->
+                             <af:link text="#{row.Attachment}" id="l1" inlineStyle="font-weight:bold;"/>
+                            </af:column>
+                            <af:column headerText="Uploaded by" id="c3" width="300">
+                                <af:inputText value="#{row.bindings.UpdatedBy.inputValue}" readOnly="true"
+                                              label="#{bindings.SgsSupportingDocVO1.hints.UpdatedBy.label}"
+                                              required="#{bindings.SgsSupportingDocVO1.hints.UpdatedBy.mandatory}"
+                                              columns="#{bindings.SgsSupportingDocVO1.hints.UpdatedBy.displayWidth}"
+                                              maximumLength="#{bindings.SgsSupportingDocVO1.hints.UpdatedBy.precision}"
+                                              shortDesc="#{bindings.SgsSupportingDocVO1.hints.UpdatedBy.tooltip}"
+                                              id="it7">
+                                    <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column headerText="Upload Date" id="c4">
+                                <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}" readOnly="true"
+                                              label="#{bindings.SgsSupportingDocVO1.hints.UpdatedDate.label}"
+                                              required="#{bindings.SgsSupportingDocVO1.hints.UpdatedDate.mandatory}"
+                                              columns="#{bindings.SgsSupportingDocVO1.hints.UpdatedDate.displayWidth}"
+                                              shortDesc="#{bindings.SgsSupportingDocVO1.hints.UpdatedDate.tooltip}"
+                                              id="id4">
+                                    <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.SgsSupportingDocVO1.hints.UpdatedDate.format}"/>
+                                </af:inputDate>
+                            </af:column>
+                        </af:table>
+                        <f:facet name="statusbar"/>
+              </af:panelCollection>
+            </af:panelBox>
+            <af:panelBox text="I/Co before allocation" id="pb2">
+              <f:facet name="toolbar"/>
+              <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar">
+                  <af:toolbar id="t2">
+                <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                           id="b7" icon="/resources/icons/plus.png" action="ADD"/>
+                <af:button id="b4" icon="/resources/icons/delete.png" actionListener="#{bindings.Delete2.execute}"/>
+                  </af:toolbar>
+                </f:facet>
+              <!-- table -->
+                        <af:table value="#{bindings.SgsIcoBeforeAllocationVO1.collectionModel}" var="row"
+                                  rows="#{bindings.SgsIcoBeforeAllocationVO1.rangeSize}"
+                                  emptyText="#{bindings.SgsIcoBeforeAllocationVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.SgsIcoBeforeAllocationVO1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.SgsIcoBeforeAllocationVO1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.SgsIcoBeforeAllocationVO1.rangeSize}"
+                                  id="t4"  styleClass="AFStretchWidth" columnStretching="last">
+                            <af:column headerText="Document Type"
+                                       id="c5" width="350">
+                                <af:selectOneChoice value="#{row.bindings.DocumentType.inputValue}"
+                                                    label="#{row.bindings.DocumentType.label}"
+                                                    required="#{bindings.SgsIcoBeforeAllocationVO1.hints.DocumentType.mandatory}"
+                                                    shortDesc="#{bindings.SgsIcoBeforeAllocationVO1.hints.DocumentType.tooltip}"
+                                                    id="soc9">
+                                    <f:selectItems value="#{row.bindings.DocumentType.items}" id="si9"/>
+                                    <f:validator binding="#{row.bindings.DocumentType.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                          <af:column headerText="Attachment"
+                                       id="c6">
+                                 <!-- <af:inputText value="#{row.bindings.Attachment.inputValue}"
+                                              label="#{bindings.SgsIcoBeforeAllocationVO1.hints.Attachment.label}"
+                                              required="#{bindings.SgsIcoBeforeAllocationVO1.hints.Attachment.mandatory}"
+                                              columns="#{bindings.SgsIcoBeforeAllocationVO1.hints.Attachment.displayWidth}"
+                                              maximumLength="#{bindings.SgsIcoBeforeAllocationVO1.hints.Attachment.precision}"
+                                              shortDesc="#{bindings.SgsIcoBeforeAllocationVO1.hints.Attachment.tooltip}"
+                                              id="it8">
+                                    <f:validator binding="#{row.bindings.Attachment.validator}"/>
+                                </af:inputText>-->
+                                 <af:link text="#{row.Attachment}" id="l2" inlineStyle="font-weight:bold;"/>
+                            </af:column>
+                        </af:table>
+                        <f:facet name="statusbar"/>
+              </af:panelCollection>
+            </af:panelBox>
+       </af:panelGroupLayout>
         </f:facet>
     </af:panelStretchLayout>
 </ui:composition>

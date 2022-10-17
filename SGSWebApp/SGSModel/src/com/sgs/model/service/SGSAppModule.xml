@@ -253,7 +253,23 @@
   <ViewUsage
     Name="SgsIcoDocAttachmentsViewVO1"
     ViewObjectName="com.sgs.model.view.SgsIcoDocAttachmentsViewVO"/>
-  <ViewLinkUsage
+  <ViewUsage
+    Name="SgsTaxIdentificationDocVO1"
+    ViewObjectName="com.sgs.model.view.SgsTaxIdentificationDocVO"/>
+  <ViewUsage
+    Name="SgsTaxRatesApplicabilityWtVO1"
+    ViewObjectName="com.sgs.model.view.SgsTaxRatesApplicabilityWtVO"/>
+  <ViewUsage
+    Name="SgsTaxRatesAppGstVO1"
+    ViewObjectName="com.sgs.model.view.SgsTaxRatesAppGstVO"/>
+  <ViewUsage
+    Name="SgsSupportingDocVO1"
+    ViewObjectName="com.sgs.model.view.SgsSupportingDocVO"/>
+  <ViewUsage
+    Name="SgsIcoBeforeAllocationVO1"
+    ViewObjectName="com.sgs.model.view.SgsIcoBeforeAllocationVO"/>
+
+<ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
     SrcViewUsageName="com.sgs.model.service.SGSAppModule.SgsBusinessUnitsVO1"

@@ -236,6 +236,191 @@
             </af:inputText>
           </af:panelFormLayout>
         </af:panelBox>
+           <af:panelBox text="Tax Identification documents " id="pb3">
+              <f:facet name="toolbar"/>
+              <af:panelCollection id="pc12" styleClass="AFStretchWidth">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar">
+                  <af:toolbar id="t4">
+                <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                           id="b8" icon="/resources/icons/plus.png" action="ADD"/>
+                <af:button id="b9" icon="/resources/icons/delete.png" actionListener="#{bindings.Delete1.execute}"/>
+                  </af:toolbar>
+                </f:facet>
+              <!-- table -->
+            <af:table value="#{bindings.SgsTaxIdentificationDocVO1.collectionModel}" var="row"
+                      rows="#{bindings.SgsTaxIdentificationDocVO1.rangeSize}"
+                      emptyText="#{bindings.SgsTaxIdentificationDocVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.SgsTaxIdentificationDocVO1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.SgsTaxIdentificationDocVO1.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.SgsTaxIdentificationDocVO1.rangeSize}" id="t5"
+                      styleClass="AFStretchWidth" columnStretching="last" partialTriggers=":::pc2:b5">
+              <af:column headerText="Legal Entity" id="c3" width="300">
+                <af:selectOneChoice value="#{row.bindings.LegalEntity.inputValue}"
+                                    label="#{row.bindings.LegalEntity.label}"
+                                    required="#{bindings.SgsTaxIdentificationDocVO1.hints.LegalEntity.mandatory}"
+                                    shortDesc="#{bindings.SgsTaxIdentificationDocVO1.hints.LegalEntity.tooltip}"
+                                    id="soc3">
+                  <f:selectItems value="#{row.bindings.LegalEntity.items}" id="si1"/>
+                  <f:validator binding="#{row.bindings.LegalEntity.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column headerText="Document type" id="c4" width="200">
+                <af:selectOneChoice value="#{row.bindings.DocumentType.inputValue}"
+                                    label="#{row.bindings.DocumentType.label}"
+                                    required="#{bindings.SgsTaxIdentificationDocVO1.hints.DocumentType.mandatory}"
+                                    shortDesc="#{bindings.SgsTaxIdentificationDocVO1.hints.DocumentType.tooltip}"
+                                    id="soc8">
+                  <f:selectItems value="#{row.bindings.DocumentType.items}" id="si8"/>
+                  <f:validator binding="#{row.bindings.DocumentType.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column headerText="Tax Identification Number"
+                         id="c5" width="200">
+                <af:inputText value="#{row.bindings.TaxIdentificationNumber.inputValue}" readOnly="true"
+                              label="#{bindings.SgsTaxIdentificationDocVO1.hints.TaxIdentificationNumber.label}"
+                              required="#{bindings.SgsTaxIdentificationDocVO1.hints.TaxIdentificationNumber.mandatory}"
+                              columns="#{bindings.SgsTaxIdentificationDocVO1.hints.TaxIdentificationNumber.displayWidth}"
+                              maximumLength="#{bindings.SgsTaxIdentificationDocVO1.hints.TaxIdentificationNumber.precision}"
+                              shortDesc="#{bindings.SgsTaxIdentificationDocVO1.hints.TaxIdentificationNumber.tooltip}"
+                              id="it14">
+                  <f:validator binding="#{row.bindings.TaxIdentificationNumber.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column headerText="Valid From" id="c6">
+                <af:inputDate value="#{row.bindings.ValidFrom.inputValue}" readOnly="true"
+                              label="#{bindings.SgsTaxIdentificationDocVO1.hints.ValidFrom.label}"
+                              required="#{bindings.SgsTaxIdentificationDocVO1.hints.ValidFrom.mandatory}"
+                              columns="#{bindings.SgsTaxIdentificationDocVO1.hints.ValidFrom.displayWidth}"
+                              shortDesc="#{bindings.SgsTaxIdentificationDocVO1.hints.ValidFrom.tooltip}" id="id5">
+                  <f:validator binding="#{row.bindings.ValidFrom.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.SgsTaxIdentificationDocVO1.hints.ValidFrom.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column headerText="Valid To" id="c7">
+                <af:inputDate value="#{row.bindings.ValidTo.inputValue}" readOnly="true"
+                              label="#{bindings.SgsTaxIdentificationDocVO1.hints.ValidTo.label}"
+                              required="#{bindings.SgsTaxIdentificationDocVO1.hints.ValidTo.mandatory}"
+                              columns="#{bindings.SgsTaxIdentificationDocVO1.hints.ValidTo.displayWidth}"
+                              shortDesc="#{bindings.SgsTaxIdentificationDocVO1.hints.ValidTo.tooltip}" id="id6">
+                  <f:validator binding="#{row.bindings.ValidTo.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.SgsTaxIdentificationDocVO1.hints.ValidTo.format}"/>
+                </af:inputDate>
+              </af:column>
+              <af:column headerText="Attachment" id="c8">
+                <!--<af:inputText value="#{row.bindings.Attachment.inputValue}"
+                              label="#{bindings.SgsTaxIdentificationDocVO1.hints.Attachment.label}"
+                              required="#{bindings.SgsTaxIdentificationDocVO1.hints.Attachment.mandatory}"
+                              columns="#{bindings.SgsTaxIdentificationDocVO1.hints.Attachment.displayWidth}"
+                              maximumLength="#{bindings.SgsTaxIdentificationDocVO1.hints.Attachment.precision}"
+                              shortDesc="#{bindings.SgsTaxIdentificationDocVO1.hints.Attachment.tooltip}" id="it15">
+                  <f:validator binding="#{row.bindings.Attachment.validator}"/>
+                </af:inputText>-->
+                 <af:link text="#{row.Attachment}" id="l1"  inlineStyle="font-weight:bold;"/>
+              </af:column>
+              <af:column headerText="Uploaded by" id="c9">
+                <af:inputText value="#{row.bindings.UpdatedBy.inputValue}" readOnly="true"
+                              label="#{bindings.SgsTaxIdentificationDocVO1.hints.UpdatedBy.label}"
+                              required="#{bindings.SgsTaxIdentificationDocVO1.hints.UpdatedBy.mandatory}"
+                              columns="#{bindings.SgsTaxIdentificationDocVO1.hints.UpdatedBy.displayWidth}"
+                              maximumLength="#{bindings.SgsTaxIdentificationDocVO1.hints.UpdatedBy.precision}"
+                              shortDesc="#{bindings.SgsTaxIdentificationDocVO1.hints.UpdatedBy.tooltip}" id="it16">
+                  <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column headerText="Upload Date" id="c10">
+                <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}" readOnly="true"
+                              label="#{bindings.SgsTaxIdentificationDocVO1.hints.UpdatedDate.label}"
+                              required="#{bindings.SgsTaxIdentificationDocVO1.hints.UpdatedDate.mandatory}"
+                              columns="#{bindings.SgsTaxIdentificationDocVO1.hints.UpdatedDate.displayWidth}"
+                              shortDesc="#{bindings.SgsTaxIdentificationDocVO1.hints.UpdatedDate.tooltip}" id="id7">
+                  <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
+                  <af:convertDateTime pattern="#{bindings.SgsTaxIdentificationDocVO1.hints.UpdatedDate.format}"/>
+                </af:inputDate>
+              </af:column>
+            </af:table>
+            <f:facet name="statusbar"/>
+              </af:panelCollection>
+            </af:panelBox>
+          <af:panelBox text="Tax Rates Applicability " id="pb4">
+              <f:facet name="toolbar"/>
+              <af:panelCollection id="pc2" styleClass="AFStretchWidth">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar">
+                  <af:toolbar id="t6">
+                <af:button actionListener="#{bindings.CreateInsert2.execute}"
+                           id="b6" icon="/resources/icons/plus.png" action="ADD"/>
+                <af:button id="b5" icon="/resources/icons/delete.png" actionListener="#{bindings.Delete2.execute}"/>
+                  </af:toolbar>
+                </f:facet>
+              <!-- table -->
+            <af:table value="#{bindings.SgsTaxRatesApplicabilityWtVO1.collectionModel}" var="row"
+                      rows="#{bindings.SgsTaxRatesApplicabilityWtVO1.rangeSize}"
+                      emptyText="#{bindings.SgsTaxRatesApplicabilityWtVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.SgsTaxRatesApplicabilityWtVO1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.SgsTaxRatesApplicabilityWtVO1.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.SgsTaxRatesApplicabilityWtVO1.rangeSize}" id="t7"
+                      styleClass="AFStretchWidth" columnStretching="last">
+              <af:column headerText="Cost Identification ID"
+                         id="c11" width="300">
+                <!--<af:inputText value="#{row.bindings.CostIdentificationId.inputValue}"
+                              label="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.CostIdentificationId.label}"
+                              required="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.CostIdentificationId.mandatory}"
+                              columns="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.CostIdentificationId.displayWidth}"
+                              maximumLength="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.CostIdentificationId.precision}"
+                              shortDesc="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.CostIdentificationId.tooltip}"
+                              id="it15">
+                  <f:validator binding="#{row.bindings.CostIdentificationId.validator}"/>
+                </af:inputText>-->
+                  <af:selectOneChoice value="#{row.bindings.CostIdentificationId.inputValue}"
+                                    label="#{row.bindings.CostIdentificationId.label}"
+                                    required="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.CostIdentificationId.mandatory}"
+                                    shortDesc="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.CostIdentificationId.tooltip}"
+                                    id="soc9">
+                  <f:selectItems value="#{row.bindings.CostIdentificationId.items}" id="si9"/>
+                  <f:validator binding="#{row.bindings.CostIdentificationId.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column headerText="Accounting Treatment"
+                         id="c12" width="300">
+                <af:inputText value="#{row.bindings.AccountingTreatment.inputValue}" readOnly="true"
+                              label="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.AccountingTreatment.label}"
+                              required="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.AccountingTreatment.mandatory}"
+                              columns="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.AccountingTreatment.displayWidth}"
+                              maximumLength="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.AccountingTreatment.precision}"
+                              shortDesc="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.AccountingTreatment.tooltip}"
+                              id="it17">
+                  <f:validator binding="#{row.bindings.AccountingTreatment.validator}"/>
+                </af:inputText>
+              
+              </af:column>
+              <af:column headerText="Section / Tax Code" id="c13" width="300">
+                <af:inputText value="#{row.bindings.SectionTaxCode.inputValue}"
+                              label="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.SectionTaxCode.label}"
+                              required="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.SectionTaxCode.mandatory}"
+                              columns="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.SectionTaxCode.displayWidth}"
+                              maximumLength="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.SectionTaxCode.precision}"
+                              shortDesc="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.SectionTaxCode.tooltip}"
+                              id="it18">
+                  <f:validator binding="#{row.bindings.SectionTaxCode.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column headerText="Rate" id="c14">
+                <af:inputText value="#{row.bindings.Rate.inputValue}"
+                              label="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.Rate.label}"
+                              required="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.Rate.mandatory}"
+                              columns="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.Rate.displayWidth}"
+                              maximumLength="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.Rate.precision}"
+                              shortDesc="#{bindings.SgsTaxRatesApplicabilityWtVO1.hints.Rate.tooltip}" id="it19">
+                  <f:validator binding="#{row.bindings.Rate.validator}"/>
+                </af:inputText>
+              </af:column>
+            </af:table>
+            <f:facet name="statusbar"/>
+              </af:panelCollection>
+            </af:panelBox>
         <af:panelBox text="GL Account Details" id="pb2">
           <f:facet name="toolbar"/>
           <af:panelCollection id="pc1" styleClass="AFStretchWidth">

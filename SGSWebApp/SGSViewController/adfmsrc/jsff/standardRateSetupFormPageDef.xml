@@ -6,6 +6,10 @@
     <variableIterator id="variables"/>
     <iterator Binds="SgsStandarardRateVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsStandarardRateVO1Iterator"/>
+    <iterator Binds="SgsSupportingDocVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsSupportingDocVO1Iterator"/>
+    <iterator Binds="SgsIcoBeforeAllocationVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsIcoBeforeAllocationVO1Iterator"/>
   </executables>
   <bindings>
     <list IterBinding="SgsStandarardRateVO1Iterator" StaticList="false" Uses="LOV_SubExpenseType" id="SubExpenseType"
@@ -73,5 +77,35 @@
         <Item Value="StandardRateId"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="SgsSupportingDocVO1Iterator" id="SgsSupportingDocVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsSupportingDocVO" Name="SgsSupportingDocVO10">
+        <AttrNames>
+          <Item Value="DocumentType"/>
+          <Item Value="Attachment"/>
+          <Item Value="UpdatedBy"/>
+          <Item Value="UpdatedDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsSupportingDocVO1Iterator" id="CreateInsert"
+            InstanceName="SGSAppModuleDataControl.SgsSupportingDocVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SgsSupportingDocVO1Iterator" id="Delete1"
+            InstanceName="SGSAppModuleDataControl.SgsSupportingDocVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="SgsIcoBeforeAllocationVO1Iterator" id="SgsIcoBeforeAllocationVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsIcoBeforeAllocationVO" Name="SgsIcoBeforeAllocationVO10">
+        <AttrNames>
+          <Item Value="DocumentType"/>
+          <Item Value="Attachment"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsIcoBeforeAllocationVO1Iterator" id="CreateInsert1"
+            InstanceName="SGSAppModuleDataControl.SgsIcoBeforeAllocationVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="SgsIcoBeforeAllocationVO1Iterator" id="Delete2"
+            InstanceName="SGSAppModuleDataControl.SgsIcoBeforeAllocationVO1" DataControl="SGSAppModuleDataControl"
+            RequiresUpdateModel="false" Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

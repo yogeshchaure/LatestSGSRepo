@@ -254,6 +254,60 @@
             </af:panelBox>
           </af:panelGroupLayout>
         </af:panelBox>
+      <af:panelBox text="Tax Rates Applicability " id="pb4">
+              <f:facet name="toolbar"/>
+              <af:panelCollection id="pc2" styleClass="AFStretchWidth">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar">
+                  <af:toolbar id="t6">
+                <af:button actionListener="#{bindings.CreateInsert.execute}"
+                           id="b6" icon="/resources/icons/plus.png" action="ADD"/>
+                <af:button id="b5" icon="/resources/icons/delete.png" actionListener="#{bindings.Delete.execute}"/>
+                  </af:toolbar>
+                </f:facet>
+              <!-- table -->
+            <af:table value="#{bindings.SgsTaxRatesAppGstVO1.collectionModel}" var="row"
+                      rows="#{bindings.SgsTaxRatesAppGstVO1.rangeSize}"
+                      emptyText="#{bindings.SgsTaxRatesAppGstVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      selectedRowKeys="#{bindings.SgsTaxRatesAppGstVO1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.SgsTaxRatesAppGstVO1.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.SgsTaxRatesAppGstVO1.rangeSize}" id="t2"
+                      styleClass="AFStretchWidth" columnStretching="last">
+              <af:column headerText="Cost Identification ID" id="c1" width="350">
+                <af:selectOneChoice value="#{row.bindings.CostIdentificationId.inputValue}"
+                                    label="#{row.bindings.CostIdentificationId.label}"
+                                    required="#{bindings.SgsTaxRatesAppGstVO1.hints.CostIdentificationId.mandatory}"
+                                    shortDesc="#{bindings.SgsTaxRatesAppGstVO1.hints.CostIdentificationId.tooltip}"
+                                    id="soc9">
+                  <f:selectItems value="#{row.bindings.CostIdentificationId.items}" id="si9"/>
+                  <f:validator binding="#{row.bindings.CostIdentificationId.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column headerText="HSN Code" id="c2"  width="350">
+                <af:inputText value="#{row.bindings.HsnCode.inputValue}"
+                              label="#{bindings.SgsTaxRatesAppGstVO1.hints.HsnCode.label}"
+                              required="#{bindings.SgsTaxRatesAppGstVO1.hints.HsnCode.mandatory}"
+                              columns="#{bindings.SgsTaxRatesAppGstVO1.hints.HsnCode.displayWidth}"
+                              maximumLength="#{bindings.SgsTaxRatesAppGstVO1.hints.HsnCode.precision}"
+                              shortDesc="#{bindings.SgsTaxRatesAppGstVO1.hints.HsnCode.tooltip}" id="it3">
+                  <f:validator binding="#{row.bindings.HsnCode.validator}"/>
+                </af:inputText>
+              </af:column>
+              <af:column headerText="Rate" id="c3">
+                <af:inputText value="#{row.bindings.Rate.inputValue}"
+                              label="#{bindings.SgsTaxRatesAppGstVO1.hints.Rate.label}"
+                              required="#{bindings.SgsTaxRatesAppGstVO1.hints.Rate.mandatory}"
+                              columns="#{bindings.SgsTaxRatesAppGstVO1.hints.Rate.displayWidth}"
+                              maximumLength="#{bindings.SgsTaxRatesAppGstVO1.hints.Rate.precision}"
+                              shortDesc="#{bindings.SgsTaxRatesAppGstVO1.hints.Rate.tooltip}" id="it12">
+                  <f:validator binding="#{row.bindings.Rate.validator}"/>
+                </af:inputText>
+              </af:column>
+            </af:table>
+            <f:facet name="statusbar"/>
+              </af:panelCollection>
+            </af:panelBox>
       </af:panelGroupLayout>
     </f:facet>
   </af:panelStretchLayout>

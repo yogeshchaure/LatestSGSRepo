@@ -951,6 +951,46 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
      */
     public ViewObjectImpl getSgsIcoDocAttachmentsViewVO1() {
         return (ViewObjectImpl) findViewObject("SgsIcoDocAttachmentsViewVO1");
+        }
+
+   /**
+     * Container's getter for SgsTaxIdentificationDocVO1.
+     * @return SgsTaxIdentificationDocVO1
+     */
+    public ViewObjectImpl getSgsTaxIdentificationDocVO1() {
+        return (ViewObjectImpl) findViewObject("SgsTaxIdentificationDocVO1");
+    }
+
+    /**
+     * Container's getter for SgsTaxRatesApplicabilityWtVO1.
+     * @return SgsTaxRatesApplicabilityWtVO1
+     */
+    public ViewObjectImpl getSgsTaxRatesApplicabilityWtVO1() {
+        return (ViewObjectImpl) findViewObject("SgsTaxRatesApplicabilityWtVO1");
+    }
+
+    /**
+     * Container's getter for SgsTaxRatesAppGstVO1.
+     * @return SgsTaxRatesAppGstVO1
+     */
+    public ViewObjectImpl getSgsTaxRatesAppGstVO1() {
+        return (ViewObjectImpl) findViewObject("SgsTaxRatesAppGstVO1");
+    }
+
+    /**
+     * Container's getter for SgsSupportingDocVO1.
+     * @return SgsSupportingDocVO1
+     */
+    public ViewObjectImpl getSgsSupportingDocVO1() {
+        return (ViewObjectImpl) findViewObject("SgsSupportingDocVO1");
+    }
+
+    /**
+     * Container's getter for SgsIcoBeforeAllocationVO1.
+     * @return SgsIcoBeforeAllocationVO1
+     */
+    public ViewObjectImpl getSgsIcoBeforeAllocationVO1() {
+        return (ViewObjectImpl) findViewObject("SgsIcoBeforeAllocationVO1");
     }
 }
 
