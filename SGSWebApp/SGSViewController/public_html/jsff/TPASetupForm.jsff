@@ -136,6 +136,74 @@
                         <af:convertDateTime pattern="#{bindings.CreatedDate.format}"/>
                     </af:inputText>
                 </af:panelFormLayout>
+                <af:panelBox text="Transfer Pricing Supporting Documents" id="pb2">
+                    <f:facet name="toolbar"/>
+                    <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar">
+                            <af:toolbar id="t3">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b4"
+                                           icon="/resources/icons/plus.png"/>
+                                <af:button actionListener="#{bindings.Delete1.execute}"
+                                           disabled="#{!bindings.Delete1.enabled}" id="b5"
+                                           icon="/resources/icons/delete.png"/>
+                            </af:toolbar>
+                        </f:facet>
+                        <f:facet name="statusbar"/>
+                        <af:table value="#{bindings.SgsTpsDocTypeView1.collectionModel}" var="row"
+                                  rows="#{bindings.SgsTpsDocTypeView1.rangeSize}"
+                                  emptyText="#{bindings.SgsTpsDocTypeView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.SgsTpsDocTypeView1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.SgsTpsDocTypeView1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.SgsTpsDocTypeView1.rangeSize}" id="t2"
+                                  partialTriggers="::b4 ::b5" columnStretching="last">
+                            <af:column headerText="Document Type" id="c1"
+                                       width="250">
+                                <af:selectOneChoice value="#{row.bindings.DocumentTypeValue.inputValue}"
+                                                    label="#{row.bindings.DocumentTypeValue.label}"
+                                                    required="#{bindings.SgsTpsDocTypeView1.hints.DocumentTypeValue.mandatory}"
+                                                    shortDesc="#{bindings.SgsTpsDocTypeView1.hints.DocumentTypeValue.tooltip}"
+                                                    id="soc8">
+                                    <f:selectItems value="#{row.bindings.DocumentTypeValue.items}" id="si8"/>
+                                    <f:validator binding="#{row.bindings.DocumentTypeValue.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsTpsDocTypeView1.hints.Attachment.label}" id="c2">
+                                <af:link shortDesc="#{bindings.SgsTpsDocTypeView1.hints.Attachment.tooltip}" id="ot2"
+                                         text="Attachments"/>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsTpsDocTypeView1.hints.UploadDate.label}" id="c3">
+                                <af:inputDate value="17-10-2022"
+                                              label="#{bindings.SgsTpsDocTypeView1.hints.UploadDate.label}"
+                                              required="#{bindings.SgsTpsDocTypeView1.hints.UploadDate.mandatory}"
+                                              columns="#{bindings.SgsTpsDocTypeView1.hints.UploadDate.displayWidth}"
+                                              shortDesc="#{bindings.SgsTpsDocTypeView1.hints.UploadDate.tooltip}"
+                                              id="id4" defaultValue="17-10-2022" readOnly="true">
+                                    <f:validator binding="#{row.bindings.UploadDate.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.SgsTpsDocTypeView1.hints.UploadDate.format}"/>
+                                </af:inputDate>
+                            </af:column>
+                            <af:column headerText="Uploaded By" id="c6">
+                                <af:inputText value="#{securityContext.userName}"
+                                              label="#{bindings.SgsTpsDocTypeView1.hints.UploadedBy.label}"
+                                              required="#{bindings.SgsTpsDocTypeView1.hints.UploadedBy.mandatory}"
+                                              columns="#{bindings.SgsTpsDocTypeView1.hints.UploadedBy.displayWidth}"
+                                              maximumLength="#{bindings.SgsTpsDocTypeView1.hints.UploadedBy.precision}"
+                                              shortDesc="#{bindings.SgsTpsDocTypeView1.hints.UploadedBy.tooltip}"
+                                              id="it7" readOnly="true">
+                                    <f:validator binding="#{row.bindings.UploadedBy.validator}"/>
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsTpsDocTypeView1.hints.UploadedBy.format}"/>
+                                </af:inputText>
+                            </af:column>
+                            <af:column id="c5" headerText="Upload Document">
+                                <af:inputFile id="if1"/>
+                            </af:column>
+                        </af:table>
+                    </af:panelCollection>
+                </af:panelBox>
             </af:panelBox>
         </f:facet>
     </af:panelStretchLayout>

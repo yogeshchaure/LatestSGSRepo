@@ -247,6 +247,12 @@
   <ViewUsage
     Name="SgsWhtGlAccVO1"
     ViewObjectName="com.sgs.model.view.SgsWhtGlAccVO"/>
+  <ViewUsage
+    Name="SgsTpsDocTypeView1"
+    ViewObjectName="com.sgs.model.view.SgsTpsDocTypeView"/>
+  <ViewUsage
+    Name="SgsIcoDocAttachmentsViewVO1"
+    ViewObjectName="com.sgs.model.view.SgsIcoDocAttachmentsViewVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

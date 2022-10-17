@@ -32,7 +32,7 @@
                          text="Cancel" accessKey="C"/>
             </af:toolbar>
           </f:facet>
-          <af:panelFormLayout id="pfl1" rows="10">
+          <af:panelFormLayout id="pfl1" rows="7">
             <af:inputText value="#{bindings.TdsWhtId.inputValue}" label="#{bindings.TdsWhtId.hints.label}"
                           required="#{bindings.TdsWhtId.hints.mandatory}" visible="false"
                           columns="#{bindings.TdsWhtId.hints.displayWidth}"
@@ -71,19 +71,21 @@
               <f:selectItems value="#{bindings.TaxBase.items}" id="si5"/>
               <f:validator binding="#{bindings.TaxBase.validator}"/>
             </af:selectOneChoice>
-            <af:selectOneChoice value="#{bindings.SectionApplicability.inputValue}" label="Section Applicability"
+            <!--Date 15-10-22 Commenting attribute SectionApplicability , It may need later-->
+            <!--<af:selectOneChoice value="#{bindings.SectionApplicability.inputValue}" label="Section Applicability"
                                 required="#{bindings.SectionApplicability.hints.mandatory}"
                                 shortDesc="#{bindings.SectionApplicability.hints.tooltip}" id="soc2">
               <f:selectItems value="#{bindings.SectionApplicability.items}" id="si2"/>
               <f:validator binding="#{bindings.SectionApplicability.validator}"/>
-            </af:selectOneChoice>
-            <af:selectOneChoice value="#{bindings.IsPanTrcAvailable.inputValue}" label="Tax Identification Number (TIN)"
+            </af:selectOneChoice>-->
+            <!--<af:selectOneChoice value="#{bindings.IsPanTrcAvailable.inputValue}" label="Tax Identification Number (TIN)"
                                 required="#{bindings.IsPanTrcAvailable.hints.mandatory}"
                                 shortDesc="#{bindings.IsPanTrcAvailable.hints.tooltip}" id="soc7">
               <f:selectItems value="#{bindings.IsPanTrcAvailable.items}" id="si7"/>
               <f:validator binding="#{bindings.IsPanTrcAvailable.validator}"/>
-            </af:selectOneChoice>
-            <af:panelLabelAndMessage label="Validity Period (TIN)" id="plam1">
+            </af:selectOneChoice>-->
+             <!--Date 15-10-22 Commenting attribute related to TIN , It may need later-->
+            <!--<af:panelLabelAndMessage label="Validity Period (TIN)" id="plam1">
               <af:panelGroupLayout id="pgl13" layout="horizontal">
                 <af:inputDate value="#{bindings.ValidityPeriodFrom.inputValue}" label="From "
                               contentStyle="width:100px;" required="#{bindings.ValidityPeriodFrom.hints.mandatory}"
@@ -101,7 +103,7 @@
                   <af:convertDateTime pattern="#{bindings.ValidityPeriodTo.format}"/>
                 </af:inputDate>
               </af:panelGroupLayout>
-            </af:panelLabelAndMessage>
+            </af:panelLabelAndMessage>-->
             <af:inputText value="#{bindings.GlAccounts.inputValue}" label="GL Accounts"
                           required="#{bindings.GlAccounts.hints.mandatory}"
                           columns="#{bindings.GlAccounts.hints.displayWidth}"
@@ -109,7 +111,8 @@
                           shortDesc="#{bindings.GlAccounts.hints.tooltip}" id="it2" rendered="false">
               <f:validator binding="#{bindings.GlAccounts.validator}"/>
             </af:inputText>
-            <af:panelLabelAndMessage label="Rate of Tax" id="plam12">
+            <!--Date 15-10-22 Commenting attribute Rate of Tax , It may need later-->
+            <!--<af:panelLabelAndMessage label="Rate of Tax" id="plam12">
               <af:panelGroupLayout id="pgl4" layout="horizontal">
                 <af:inputText value="#{bindings.RateOfTax.inputValue}" label="Rate of Tax"
                               required="#{bindings.RateOfTax.hints.mandatory}" simple="true"
@@ -122,13 +125,13 @@
                 <af:spacer id="s111" width="2"/>
                 <af:outputText value="%" id="ot3"/>
               </af:panelGroupLayout>
-            </af:panelLabelAndMessage>
-            <af:inputText value="#{bindings.RotTim.inputValue}" label="Rate of Tax (In case TIN not available)"
+            </af:panelLabelAndMessage>-->
+            <!--<af:inputText value="#{bindings.RotTim.inputValue}" label="Rate of Tax (In case TIN not available)"
                           required="#{bindings.RotTim.hints.mandatory}" columns="#{bindings.RotTim.hints.displayWidth}"
                           maximumLength="#{bindings.RotTim.hints.precision}"
                           shortDesc="#{bindings.RotTim.hints.tooltip}" id="it10">
               <f:validator binding="#{bindings.RotTim.validator}"/>
-            </af:inputText>
+            </af:inputText>-->
             <af:inputText value="#{bindings.WhtLibilityAcc.inputValue}" label="WHT / TDS Liability Account"
                           required="#{bindings.WhtLibilityAcc.hints.mandatory}"
                           columns="#{bindings.WhtLibilityAcc.hints.displayWidth}"

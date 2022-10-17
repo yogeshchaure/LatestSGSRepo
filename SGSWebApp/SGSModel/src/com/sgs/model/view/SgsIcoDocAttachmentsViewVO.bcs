@@ -1,0 +1,12 @@
+//Groovy Scripts for com.sgs.model.view.SgsIcoDocAttachmentsViewVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="IcoDocAttachments", name="pType")
+def pType_IcoDocAttachments_BindVariable_BoundParameter()
+{
+'ICO_DOC_TYPE'
+}
+

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsIcoDocAttachmentsViewVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="JDBC"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  RowClass="com.sgs.model.view.SgsIcoDocAttachmentsViewVORowImpl"
+  FetchMode="FETCH_AS_NEEDED"
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewAccessor
+    Name="IcoDocAttachments"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsIcoDocAttachmentsViewVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ListBinding
+    Name="LOV_SupportingDocTypeValue"
+    ListVOName="IcoDocAttachments"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SupportingDocTypeValue"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="SgsIcoDocAttachments"
+    Entity="com.sgs.model.entity.SgsIcoDocAttachments"/>
+  <ViewAttribute
+    Name="SupportingDocTypeId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SupportingDocTypeId"
+    EntityUsage="SgsIcoDocAttachments"
+    AliasName="SUPPORTING_DOC_TYPE_ID"/>
+  <ViewAttribute
+    Name="SupportingDocTypeValue"
+    PrecisionRule="true"
+    EntityAttrName="SupportingDocTypeValue"
+    EntityUsage="SgsIcoDocAttachments"
+    AliasName="SUPPORTING_DOC_TYPE_VALUE"
+    LOVName="LOV_SupportingDocTypeValue">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Attachment"
+    PrecisionRule="true"
+    EntityAttrName="Attachment"
+    EntityUsage="SgsIcoDocAttachments"
+    AliasName="ATTACHMENT"/>
+  <ViewAttribute
+    Name="UploadDate"
+    PrecisionRule="true"
+    EntityAttrName="UploadDate"
+    EntityUsage="SgsIcoDocAttachments"
+    AliasName="UPLOAD_DATE"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="SgsIcoDocAttachments"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="SgsIcoDocAttachments"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="SgsIcoDocAttachments"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="SgsIcoDocAttachments"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="UploadedBy"
+    PrecisionRule="true"
+    EntityAttrName="UploadedBy"
+    EntityUsage="SgsIcoDocAttachments"
+    AliasName="UPLOADED_BY"/>
+</ViewObject>

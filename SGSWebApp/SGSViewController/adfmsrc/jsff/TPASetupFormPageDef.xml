@@ -6,6 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="SgsTpaMasterVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsTpaMasterVO1Iterator"/>
+    <iterator Binds="SgsTpsDocTypeView1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsTpsDocTypeView1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsTpaMasterVO1Iterator" id="TpaId">
@@ -67,5 +69,18 @@
         <Item Value="BDCOMMISSIONRATE"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="SgsTpsDocTypeView1Iterator" id="SgsTpsDocTypeView1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsTpsDocTypeView" Name="SgsTpsDocTypeView10">
+        <AttrNames>
+          <Item Value="DocumentTypeValue"/>
+          <Item Value="UploadDate"/>
+          <Item Value="Attachment"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="SgsTpsDocTypeView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="SgsTpsDocTypeView1Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

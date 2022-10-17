@@ -24,6 +24,8 @@
               id="SgsOtherReceivablesVOIterator"/>
     <iterator Binds="SgsOtherReceivables1VO" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsOtherReceivables1VOIterator"/>
+    <iterator Binds="SgsIcoDocAttachmentsViewVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsIcoDocAttachmentsViewVO1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsTransBCostAllocationView1Iterator" id="ApprovalRequestType">
@@ -396,5 +398,13 @@
         <Item Value="SGSTAmount"/>
       </AttrNames>
     </attributeValues>
+    <tree IterBinding="SgsIcoDocAttachmentsViewVO1Iterator" id="SgsIcoDocAttachmentsViewVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsIcoDocAttachmentsViewVO" Name="SgsIcoDocAttachmentsViewVO10">
+        <AttrNames>
+          <Item Value="SupportingDocTypeValue"/>
+          <Item Value="Attachment"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>
