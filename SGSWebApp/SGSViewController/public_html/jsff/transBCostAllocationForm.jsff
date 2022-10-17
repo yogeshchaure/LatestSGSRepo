@@ -433,6 +433,44 @@
                         </af:panelFormLayout>
                     </af:panelBox>
                 </af:panelBox>
+                <af:panelBox text="Supporting Documents" id="pb11">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout id="pgl5" styleClass="AFStretchWidth">
+                        <af:table value="#{bindings.SgsIcoDocAttachmentsViewVO1.collectionModel}" var="row"
+                                  rows="#{bindings.SgsIcoDocAttachmentsViewVO1.rangeSize}"
+                                  emptyText="#{bindings.SgsIcoDocAttachmentsViewVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                  rowBandingInterval="0"
+                                  selectedRowKeys="#{bindings.SgsIcoDocAttachmentsViewVO1.collectionModel.selectedRow}"
+                                  selectionListener="#{bindings.SgsIcoDocAttachmentsViewVO1.collectionModel.makeCurrent}"
+                                  rowSelection="single" fetchSize="#{bindings.SgsIcoDocAttachmentsViewVO1.rangeSize}"
+                                  id="t3" styleClass="AFStretchWidth"
+                                  columnStretching="last">
+                            <af:column headerText="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.SupportingDocTypeValue.label}"
+                                       id="c10" width="300">
+                                <af:selectOneChoice value="#{row.bindings.SupportingDocTypeValue.inputValue}"
+                                                    label="#{row.bindings.SupportingDocTypeValue.label}"
+                                                    required="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.SupportingDocTypeValue.mandatory}"
+                                                    shortDesc="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.SupportingDocTypeValue.tooltip}"
+                                                    id="soc13" readOnly="true">
+                                    <f:selectItems value="#{row.bindings.SupportingDocTypeValue.items}" id="si13"/>
+                                    <f:validator binding="#{row.bindings.SupportingDocTypeValue.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.label}"
+                                       id="c11">
+                                <af:inputText value="#{row.bindings.Attachment.inputValue}"
+                                              label="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.label}"
+                                              required="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.mandatory}"
+                                              columns="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.displayWidth}"
+                                              maximumLength="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.precision}"
+                                              shortDesc="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.tooltip}"
+                                              id="it29" readOnly="true">
+                                    <f:validator binding="#{row.bindings.Attachment.validator}"/>
+                                </af:inputText>
+                            </af:column>
+                        </af:table>
+                    </af:panelGroupLayout>
+                </af:panelBox>
                 <af:panelBox id="pb15" text="Rectification Entry Details" disclosed="false" rendered="true">
                     <f:facet name="toolbar"/>
                     <af:panelGroupLayout id="pf1l5">

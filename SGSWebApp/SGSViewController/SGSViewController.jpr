@@ -71,6 +71,7 @@
       <string v="oracle.toplink.workbench.addin/toplinkContentSet"/>
    </list>
    <value n="defaultPackage" v="com.sgs.view"/>
+   <value n="jbo.NoAttrEnumClasses" v="true"/>
    <hash n="oracle.adfdtinternal.model.ide.security.SecurityPolicies">
       <value n="grantOption" v="none"/>
    </hash>
@@ -88,6 +89,7 @@
    <hash n="oracle.ide.model.TechnologyScopeConfiguration">
       <list n="technologyScope">
          <string v="ADF_FACES"/>
+         <string v="ADFbc"/>
          <string v="ADFc"/>
          <string v="ADFm"/>
          <string v="HTML"/>
@@ -100,6 +102,30 @@
       </list>
    </hash>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
+      <list n="copyRes">
+         <string v=".cpx"/>
+         <string v=".dcx"/>
+         <string v=".ejx"/>
+         <string v=".gif"/>
+         <string v=".ini"/>
+         <string v=".jpeg"/>
+         <string v=".jpg"/>
+         <string v=".png"/>
+         <string v=".properties"/>
+         <string v=".sva"/>
+         <string v=".tag"/>
+         <string v=".tld"/>
+         <string v=".wsdl"/>
+         <string v=".xcfg"/>
+         <string v=".xlf"/>
+         <string v=".xml"/>
+         <string v=".xsd"/>
+         <string v=".xsl"/>
+         <string v=".jpx"/>
+         <string v=".rpx"/>
+         <string v=".json"/>
+         <string v=".bcs"/>
+      </list>
       <value n="webIANAEncoding" v="UTF-8"/>
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
@@ -292,6 +318,14 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <url n="id" path="../../../../../Users/VN458DT/AppData/Roaming/JDeveloper/system12.2.1.4.42.190911.2248/o.jdeveloper/Sqljdbc41.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Generic Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="Oracle XML Parser v2"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -418,6 +452,14 @@
          </hash>
          <hash>
             <value n="id" v="JPS Designtime"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <url n="id" path="../../../../../Users/VN458DT/AppData/Roaming/JDeveloper/system12.2.1.4.42.190911.2248/o.jdeveloper/Sqljdbc41.library"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Generic Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>

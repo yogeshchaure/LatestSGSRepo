@@ -5,6 +5,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="SgsRevAllocatedDataVO" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsRevAllocatedDataVOIterator"/>
+    <iterator Binds="SgsTpsDocTypeView1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsTpsDocTypeView1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="SgsRevAllocatedDataVOIterator" id="SgsRevAllocatedDataVO">
@@ -46,5 +48,25 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="SgsTpsDocTypeView1Iterator" id="CreatedDate">
+      <AttrNames>
+        <Item Value="CreatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTpsDocTypeView1Iterator" id="CreatedBy">
+      <AttrNames>
+        <Item Value="CreatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTpsDocTypeView1Iterator" id="UpdatedDate">
+      <AttrNames>
+        <Item Value="UpdatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsTpsDocTypeView1Iterator" id="UpdatedBy">
+      <AttrNames>
+        <Item Value="UpdatedBy"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

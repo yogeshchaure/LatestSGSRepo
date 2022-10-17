@@ -497,7 +497,7 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
         PreparedStatement pst = null;
         try {
             String connectionUrl =
-                "jdbc:sqlserver://localhost;instanceName=MSSQLSERVER;databasename=SGS;integratedSecurity=true;";
+                "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databasename=SGS;integratedSecurity=true;";
             conn = DriverManager.getConnection(connectionUrl);
             String sqlIdentifier = "select next value for " + seqName;
             pst = conn.prepareStatement(sqlIdentifier);
@@ -938,6 +938,22 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     }
 
     /**
+     * Container's getter for SgsTpsDocTypeView1.
+     * @return SgsTpsDocTypeView1
+     */
+    public ViewObjectImpl getSgsTpsDocTypeView1() {
+        return (ViewObjectImpl) findViewObject("SgsTpsDocTypeView1");
+    }
+
+    /**
+     * Container's getter for SgsIcoDocAttachmentsViewVO1.
+     * @return SgsIcoDocAttachmentsViewVO1
+     */
+    public ViewObjectImpl getSgsIcoDocAttachmentsViewVO1() {
+        return (ViewObjectImpl) findViewObject("SgsIcoDocAttachmentsViewVO1");
+        }
+
+   /**
      * Container's getter for SgsTaxIdentificationDocVO1.
      * @return SgsTaxIdentificationDocVO1
      */

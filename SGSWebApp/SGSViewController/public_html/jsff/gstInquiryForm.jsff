@@ -26,7 +26,7 @@
                        accessKey="C"/>-->
           </af:toolbar>
           </f:facet>
-          <af:panelFormLayout id="pfl1" rows="8">
+          <af:panelFormLayout id="pfl1" rows="7">
             <af:inputText value="#{bindings.GstId.inputValue}" label="#{bindings.GstId.hints.label}"
                           required="#{bindings.GstId.hints.mandatory}" columns="#{bindings.GstId.hints.displayWidth}"
                           maximumLength="#{bindings.GstId.hints.precision}" shortDesc="#{bindings.GstId.hints.tooltip}"
@@ -114,14 +114,16 @@
               <f:selectItems value="#{bindings.IdenticalGstReg1.items}" id="si8"/>
               <f:validator binding="#{bindings.IdenticalGstReg1.validator}"/>
             </af:selectOneChoice>
-            <af:inputText value="#{bindings.CostIdenId.inputValue}" label="Cost Identification ID"
+            <!--Date: 15-10-22 Hiding the Attribute CostIdenId , It may need later point-->
+            <!--<af:inputText value="#{bindings.CostIdenId.inputValue}" label="Cost Identification ID"
                           required="#{bindings.CostIdenId.hints.mandatory}"
                           columns="#{bindings.CostIdenId.hints.displayWidth}"
                           maximumLength="#{bindings.CostIdenId.hints.precision}"
                           shortDesc="#{bindings.CostIdenId.hints.tooltip}" id="it1">
               <f:validator binding="#{bindings.CostIdenId.validator}"/>
-            </af:inputText>
-            <af:panelLabelAndMessage label="Rate of Tax" id="plam1">
+            </af:inputText>-->
+            <!--Date: 15-10-22 Hiding the Attribute Rate of Tax , It may need later point-->
+            <!--<af:panelLabelAndMessage label="Rate of Tax" id="plam1"> 
                     <af:panelGroupLayout id="pgl2" layout="horizontal">
             <af:inputText value="#{bindings.RateOfTax.inputValue}" label="#{bindings.RateOfTax.hints.label}"
                           required="#{bindings.RateOfTax.hints.mandatory}" simple="true"
@@ -132,7 +134,7 @@
             </af:inputText>
              <af:outputText value="%" id="ot1"/>
                 </af:panelGroupLayout>
-            </af:panelLabelAndMessage>
+            </af:panelLabelAndMessage>-->
             <!--<af:selectOneChoice value="#{bindings.HsnCode.inputValue}" label="#{bindings.HsnCode.label}"
                                   required="#{bindings.HsnCode.hints.mandatory}"
                                   shortDesc="#{bindings.HsnCode.hints.tooltip}" id="soc7">
@@ -153,13 +155,14 @@
                           shortDesc="#{bindings.ItemServiceCategory.hints.tooltip}" id="it3">
               <f:validator binding="#{bindings.ItemServiceCategory.validator}"/>
             </af:inputText>-->
-            <af:selectOneChoice value="#{bindings.ItemServiceCategory1.inputValue}"
+            <!--Date: 15-10-22 Hiding the Attribute ItemServiceCategory , It may need later point-->
+            <!--<af:selectOneChoice value="#{bindings.ItemServiceCategory1.inputValue}"
                                 label="#{bindings.ItemServiceCategory1.label}"
                                 required="#{bindings.ItemServiceCategory1.hints.mandatory}"
                                 shortDesc="#{bindings.ItemServiceCategory1.hints.tooltip}" id="soc7">
               <f:selectItems value="#{bindings.ItemServiceCategory1.items}" id="si7"/>
               <f:validator binding="#{bindings.ItemServiceCategory1.validator}"/>
-            </af:selectOneChoice>
+            </af:selectOneChoice>-->
             <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="#{bindings.EffectiveFrom.hints.label}"
                           required="#{bindings.EffectiveFrom.hints.mandatory}"
                           columns="#{bindings.EffectiveFrom.hints.displayWidth}"
