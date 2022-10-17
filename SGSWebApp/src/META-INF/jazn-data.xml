@@ -50,6 +50,10 @@
                     <credentials>{903}EBupoWkQW7i0v0ru9Bm5H/cki+KkiNNNuuvng0L8Knw=</credentials>
                     <display-name>Yogesh</display-name>
                 </user>
+                <user>
+                    <name>Manjunath</name>
+                    <credentials>{903}ZHPfy1SvmoENLoabRiFQ7xhl8ljnZ7kJznnDjsh3X2Y=</credentials>
+                </user>
             </users>
             <roles>
                 <role>
@@ -121,6 +125,10 @@
                         <member>
                             <type>user</type>
                             <name>Yogesh</name>
+                        </member>
+                        <member>
+                            <type>user</type>
+                            <name>Manjunath</name>
                         </member>
                     </members>
                 </role>
