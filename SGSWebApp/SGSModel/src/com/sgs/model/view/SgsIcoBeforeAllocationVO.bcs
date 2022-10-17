@@ -1,0 +1,12 @@
+//Groovy Scripts for com.sgs.model.view.SgsIcoBeforeAllocationVO
+
+package com.sgs.model.view
+
+import oracle.jbo.script.annotation.AccessorParameterExpression;
+
+@AccessorParameterExpression(accessorName="DocumentTypeLOV", name="pType")
+def pType_DocumentTypeLOV_BindVariable_BoundParameter()
+{
+'DOCUMENT_TYPE'
+}
+

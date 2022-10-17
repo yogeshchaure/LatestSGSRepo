@@ -256,6 +256,12 @@
   <ViewUsage
     Name="SgsTaxRatesAppGstVO1"
     ViewObjectName="com.sgs.model.view.SgsTaxRatesAppGstVO"/>
+  <ViewUsage
+    Name="SgsSupportingDocVO1"
+    ViewObjectName="com.sgs.model.view.SgsSupportingDocVO"/>
+  <ViewUsage
+    Name="SgsIcoBeforeAllocationVO1"
+    ViewObjectName="com.sgs.model.view.SgsIcoBeforeAllocationVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
