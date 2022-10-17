@@ -960,5 +960,21 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsTaxRatesAppGstVO1() {
         return (ViewObjectImpl) findViewObject("SgsTaxRatesAppGstVO1");
     }
+
+    /**
+     * Container's getter for SgsSupportingDocVO1.
+     * @return SgsSupportingDocVO1
+     */
+    public ViewObjectImpl getSgsSupportingDocVO1() {
+        return (ViewObjectImpl) findViewObject("SgsSupportingDocVO1");
+    }
+
+    /**
+     * Container's getter for SgsIcoBeforeAllocationVO1.
+     * @return SgsIcoBeforeAllocationVO1
+     */
+    public ViewObjectImpl getSgsIcoBeforeAllocationVO1() {
+        return (ViewObjectImpl) findViewObject("SgsIcoBeforeAllocationVO1");
+    }
 }
 
