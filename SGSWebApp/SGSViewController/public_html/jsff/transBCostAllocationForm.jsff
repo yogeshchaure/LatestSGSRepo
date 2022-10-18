@@ -445,7 +445,7 @@
                                   rowSelection="single" fetchSize="#{bindings.SgsIcoDocAttachmentsViewVO1.rangeSize}"
                                   id="t3" styleClass="AFStretchWidth"
                                   columnStretching="last">
-                            <af:column headerText="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.SupportingDocTypeValue.label}"
+                            <af:column headerText="Supporting Document"
                                        id="c10" width="300">
                                 <af:selectOneChoice value="#{row.bindings.SupportingDocTypeValue.inputValue}"
                                                     label="#{row.bindings.SupportingDocTypeValue.label}"
@@ -458,7 +458,8 @@
                             </af:column>
                             <af:column headerText="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.label}"
                                        id="c11">
-                                <af:inputText value="#{row.bindings.Attachment.inputValue}"
+                                       <af:link text="#{row.Attachment}" id="l11" inlineStyle="font-weight:bold;"/>
+                                <!--<af:inputText value="#{row.bindings.Attachment.inputValue}"
                                               label="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.label}"
                                               required="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.mandatory}"
                                               columns="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.displayWidth}"
@@ -466,7 +467,8 @@
                                               shortDesc="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.tooltip}"
                                               id="it29" readOnly="true">
                                     <f:validator binding="#{row.bindings.Attachment.validator}"/>
-                                </af:inputText>
+                                </af:inputText>-->
+                                
                             </af:column>
                         </af:table>
                     </af:panelGroupLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsCreateCreditMemosF"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="SGS_CREATE_CREDIT_MEMOS_F"
+  AliasName="SgsCreateCreditMemosF"
+  BindingStyle="JDBC"
+  RowClass="com.sgs.model.entity.SgsCreateCreditMemosFImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="CreditMemosId"
+    IsNotNull="true"
+    ColumnName="CREDIT_MEMOS_ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="CreditDate"
+    ColumnName="CREDIT_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F"/>
+  <Attribute
+    Name="PeoplesoftVoucherNum"
+    Precision="100"
+    ColumnName="PEOPLESOFT_VOUCHER_NUM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PeoplesoftInvoiceNum"
+    Precision="100"
+    ColumnName="PEOPLESOFT_INVOICE_NUM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReversalAmount"
+    Precision="10"
+    Scale="2"
+    ColumnName="REVERSAL_AMOUNT"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F"/>
+  <Attribute
+    Name="ReversalPercenatge"
+    Precision="100"
+    ColumnName="REVERSAL_PERCENATGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReversalReasons"
+    Precision="100"
+    ColumnName="REVERSAL_REASONS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CompleteReversal"
+    Precision="100"
+    ColumnName="COMPLETE_REVERSAL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F"/>
+  <Attribute
+    Name="CreatedBy"
+    Precision="30"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F"/>
+  <Attribute
+    Name="UpdatedBy"
+    Precision="30"
+    ColumnName="UPDATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="PKSGSCREATECREDITMEMOSF"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_SGS_CREATE_CREDIT_MEMOS_F"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sgs.model.entity.SgsCreateCreditMemosF.CreditMemosId"/>
+    </AttrArray>
+  </Key>
+</Entity>

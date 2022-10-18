@@ -992,5 +992,21 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsIcoBeforeAllocationVO1() {
         return (ViewObjectImpl) findViewObject("SgsIcoBeforeAllocationVO1");
     }
+
+    /**
+     * Container's getter for SgsCreateCreditMemosFVO1.
+     * @return SgsCreateCreditMemosFVO1
+     */
+    public ViewObjectImpl getSgsCreateCreditMemosFVO1() {
+        return (ViewObjectImpl) findViewObject("SgsCreateCreditMemosFVO1");
+    }
+
+    /**
+     * Container's getter for SgsCreateCreditMemosTVO1.
+     * @return SgsCreateCreditMemosTVO1
+     */
+    public ViewObjectImpl getSgsCreateCreditMemosTVO1() {
+        return (ViewObjectImpl) findViewObject("SgsCreateCreditMemosTVO1");
+    }
 }
 

@@ -8,6 +8,10 @@
               id="SgsRevAllocatedDtVOIterator"/>
     <searchRegion Criteria="SgsRevAllocatedDtVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="SgsRevAllocatedDtVOIterator" id="SgsRevAllocatedDtVOCriteriaQuery"/>
+    <iterator Binds="SgsCreateCreditMemosFVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsCreateCreditMemosFVO1Iterator"/>
+    <iterator Binds="SgsCreateCreditMemosTVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsCreateCreditMemosTVO1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="SgsRevAllocatedDtVOIterator" id="SgsRevAllocatedDtVO">
@@ -52,6 +56,67 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="SgsCreateCreditMemosFVO1Iterator" id="CreditDate">
+      <AttrNames>
+        <Item Value="CreditDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsCreateCreditMemosFVO1Iterator" id="ReversalAmount">
+      <AttrNames>
+        <Item Value="ReversalAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="SgsCreateCreditMemosTVO1Iterator" id="SgsCreateCreditMemosTVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsCreateCreditMemosTVO" Name="SgsCreateCreditMemosTVO10">
+        <AttrNames>
+          <Item Value="CreditMemosId"/>
+          <Item Value="CreditDate"/>
+          <Item Value="AllocationId"/>
+          <Item Value="FromBu"/>
+          <Item Value="FromOu"/>
+          <Item Value="FromDeptId"/>
+          <Item Value="FromJobCode"/>
+          <Item Value="ToBu"/>
+          <Item Value="ToOu"/>
+          <Item Value="ToDeptId"/>
+          <Item Value="ToJobCode"/>
+          <Item Value="OffsetGlAccountCr"/>
+          <Item Value="ToGlAccountDr"/>
+          <Item Value="TransactionCurrency"/>
+          <Item Value="Amount"/>
+          <Item Value="GstVatRate"/>
+          <Item Value="GstVatAmount"/>
+          <Item Value="InvoiceAmount"/>
+          <Item Value="ReversalAmount"/>
+          <Item Value="RevsersalGstVatAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="SgsCreateCreditMemosFVO1Iterator" id="PeoplesoftVoucherNum">
+      <AttrNames>
+        <Item Value="PeoplesoftVoucherNum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsCreateCreditMemosFVO1Iterator" id="PeoplesoftInvoiceNum">
+      <AttrNames>
+        <Item Value="PeoplesoftInvoiceNum"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsCreateCreditMemosFVO1Iterator" id="ReversalPercenatge">
+      <AttrNames>
+        <Item Value="ReversalPercenatge"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsCreateCreditMemosFVO1Iterator" id="ReversalReasons">
+      <AttrNames>
+        <Item Value="ReversalReasons"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsCreateCreditMemosFVO1Iterator" id="CompleteReversal">
+      <AttrNames>
+        <Item Value="CompleteReversal"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
 
