@@ -268,8 +268,13 @@
   <ViewUsage
     Name="SgsIcoBeforeAllocationVO1"
     ViewObjectName="com.sgs.model.view.SgsIcoBeforeAllocationVO"/>
-
-<ViewLinkUsage
+  <ViewUsage
+    Name="SgsCreateCreditMemosFVO1"
+    ViewObjectName="com.sgs.model.view.SgsCreateCreditMemosFVO"/>
+  <ViewUsage
+    Name="SgsCreateCreditMemosTVO1"
+    ViewObjectName="com.sgs.model.view.SgsCreateCreditMemosTVO"/>
+  <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
     SrcViewUsageName="com.sgs.model.service.SGSAppModule.SgsBusinessUnitsVO1"

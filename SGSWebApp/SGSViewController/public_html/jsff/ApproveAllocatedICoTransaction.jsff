@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
     <af:panelStretchLayout id="psl1">
         <f:facet name="start"/>
         <f:facet name="end"/>
@@ -26,7 +26,13 @@
                                 <af:button text="Approve" id="b3"/>
                                 <af:button text="Reject/Reverse" id="b4"/>
                                   <!--<af:button text="Reverse" id="b1"/>-->
-                               </af:toolbar>
+                                <af:button text="Upload Adjustment Entries" id="b1">
+                                    <af:showPopupBehavior popupId="::p2"/>
+                                </af:button>
+                                <af:button text="Credit Transaction" id="b2">
+                                    <af:showPopupBehavior popupId="::p1"/>
+                                </af:button>
+                            </af:toolbar>
                         </f:facet>
                         <f:facet name="statusbar"/>
                     <af:table value="#{bindings.SgsRevAllocatedDtVO.collectionModel}" var="row"
@@ -338,6 +344,352 @@
                     </af:table>
                     </af:panelCollection>
                 </af:panelGroupLayout>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                    <af:dialog id="d1" type="none">
+                        <f:facet name="buttonBar">
+                            <af:button text="Submit For Approval" id="b8"/>
+                            <af:button text="Close" id="b9"/>
+                        </f:facet>
+                        <af:panelBox text="Create Credit Memos" id="pb2">
+                            <f:facet name="toolbar"/>
+                            <af:panelFormLayout id="pfl1">
+                                <f:facet name="footer"/>
+                                <af:panelFormLayout id="pfl2">
+                                    <af:inputDate value="#{bindings.CreditDate.inputValue}"
+                                                  label="#{bindings.CreditDate.hints.label}"
+                                                  required="#{bindings.CreditDate.hints.mandatory}"
+                                                  columns="#{bindings.CreditDate.hints.displayWidth}"
+                                                  shortDesc="#{bindings.CreditDate.hints.tooltip}" id="id1">
+                                        <f:validator binding="#{bindings.CreditDate.validator}"/>
+                                        <af:convertDateTime pattern="#{bindings.CreditDate.format}"/>
+                                    </af:inputDate>
+                                    <af:inputText value="#{bindings.PeoplesoftVoucherNum.inputValue}"
+                                                  label="#{bindings.PeoplesoftVoucherNum.hints.label}"
+                                                  required="#{bindings.PeoplesoftVoucherNum.hints.mandatory}"
+                                                  columns="#{bindings.PeoplesoftVoucherNum.hints.displayWidth}"
+                                                  maximumLength="#{bindings.PeoplesoftVoucherNum.hints.precision}"
+                                                  shortDesc="#{bindings.PeoplesoftVoucherNum.hints.tooltip}" id="it1">
+                                        <f:validator binding="#{bindings.PeoplesoftVoucherNum.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.PeoplesoftInvoiceNum.inputValue}"
+                                                  label="#{bindings.PeoplesoftInvoiceNum.hints.label}"
+                                                  required="#{bindings.PeoplesoftInvoiceNum.hints.mandatory}"
+                                                  columns="#{bindings.PeoplesoftInvoiceNum.hints.displayWidth}"
+                                                  maximumLength="#{bindings.PeoplesoftInvoiceNum.hints.precision}"
+                                                  shortDesc="#{bindings.PeoplesoftInvoiceNum.hints.tooltip}" id="it2">
+                                        <f:validator binding="#{bindings.PeoplesoftInvoiceNum.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.ReversalAmount.inputValue}"
+                                                  label="#{bindings.ReversalAmount.hints.label}"
+                                                  required="#{bindings.ReversalAmount.hints.mandatory}"
+                                                  columns="#{bindings.ReversalAmount.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ReversalAmount.hints.precision}"
+                                                  shortDesc="#{bindings.ReversalAmount.hints.tooltip}" id="it3">
+                                        <f:validator binding="#{bindings.ReversalAmount.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.ReversalAmount.format}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.ReversalPercenatge.inputValue}"
+                                                  label="#{bindings.ReversalPercenatge.hints.label}"
+                                                  required="#{bindings.ReversalPercenatge.hints.mandatory}"
+                                                  columns="#{bindings.ReversalPercenatge.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ReversalPercenatge.hints.precision}"
+                                                  shortDesc="#{bindings.ReversalPercenatge.hints.tooltip}" id="it4">
+                                        <f:validator binding="#{bindings.ReversalPercenatge.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.ReversalReasons.inputValue}"
+                                                  label="#{bindings.ReversalReasons.hints.label}"
+                                                  required="#{bindings.ReversalReasons.hints.mandatory}"
+                                                  columns="#{bindings.ReversalReasons.hints.displayWidth}"
+                                                  maximumLength="#{bindings.ReversalReasons.hints.precision}"
+                                                  shortDesc="#{bindings.ReversalReasons.hints.tooltip}" id="it5">
+                                        <f:validator binding="#{bindings.ReversalReasons.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.CompleteReversal.inputValue}"
+                                                  label="#{bindings.CompleteReversal.hints.label}"
+                                                  required="#{bindings.CompleteReversal.hints.mandatory}"
+                                                  columns="#{bindings.CompleteReversal.hints.displayWidth}"
+                                                  maximumLength="#{bindings.CompleteReversal.hints.precision}"
+                                                  shortDesc="#{bindings.CompleteReversal.hints.tooltip}" id="it6">
+                                        <f:validator binding="#{bindings.CompleteReversal.validator}"/>
+                                    </af:inputText>
+                                    <f:facet name="footer">
+                                        <af:button text="Submit" id="b7"/>
+                                    </f:facet>
+                                </af:panelFormLayout>
+                            </af:panelFormLayout>
+                            <af:panelGroupLayout id="pgl2">
+                                <af:table value="#{bindings.SgsCreateCreditMemosTVO1.collectionModel}" var="row"
+                                          rows="#{bindings.SgsCreateCreditMemosTVO1.rangeSize}"
+                                          emptyText="#{bindings.SgsCreateCreditMemosTVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.SgsCreateCreditMemosTVO1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.SgsCreateCreditMemosTVO1.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.SgsCreateCreditMemosTVO1.rangeSize}" id="t2"
+                                          width="1100px">
+                                    <af:column id="c26" headerText="Select All">
+                                        <af:selectBooleanCheckbox text="selectBooleanCheckbox 1"
+                                                                  id="sbc2"/>
+                                        <f:facet name="header">
+                                            <af:selectBooleanCheckbox text="Select All"
+                                                                      id="sbc3"/>
+                                        </f:facet>
+                                    </af:column>
+                                    <af:column headerText="Credit Date"
+                                               id="c6">
+                                        <af:inputDate value="#{row.bindings.CreditDate.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.CreditDate.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.CreditDate.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.CreditDate.displayWidth}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.CreditDate.tooltip}"
+                                                      id="id2">
+                                            <f:validator binding="#{row.bindings.CreditDate.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.CreditDate.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column headerText="Allocation ID "
+                                               id="c7">
+                                        <af:inputText value="#{row.bindings.AllocationId.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.AllocationId.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.AllocationId.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.AllocationId.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.AllocationId.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.AllocationId.tooltip}"
+                                                      id="it8">
+                                            <f:validator binding="#{row.bindings.AllocationId.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="From BU"
+                                               id="c8">
+                                        <af:inputText value="#{row.bindings.FromBu.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.FromBu.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.FromBu.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.FromBu.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.FromBu.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.FromBu.tooltip}"
+                                                      id="it9">
+                                            <f:validator binding="#{row.bindings.FromBu.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="From OU"
+                                               id="c9">
+                                        <af:inputText value="#{row.bindings.FromOu.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.FromOu.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.FromOu.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.FromOu.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.FromOu.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.FromOu.tooltip}"
+                                                      id="it10">
+                                            <f:validator binding="#{row.bindings.FromOu.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="From Dept Id"
+                                               id="c11">
+                                        <af:inputText value="#{row.bindings.FromDeptId.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.FromDeptId.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.FromDeptId.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.FromDeptId.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.FromDeptId.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.FromDeptId.tooltip}"
+                                                      id="it11">
+                                            <f:validator binding="#{row.bindings.FromDeptId.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="From Job Code"
+                                               id="c12">
+                                        <af:inputText value="#{row.bindings.FromJobCode.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.FromJobCode.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.FromJobCode.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.FromJobCode.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.FromJobCode.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.FromJobCode.tooltip}"
+                                                      id="it12">
+                                            <f:validator binding="#{row.bindings.FromJobCode.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="To BU"
+                                               id="c13">
+                                        <af:inputText value="#{row.bindings.ToBu.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ToBu.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ToBu.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ToBu.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ToBu.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ToBu.tooltip}"
+                                                      id="it13">
+                                            <f:validator binding="#{row.bindings.ToBu.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.label}"
+                                               id="c14">
+                                        <af:inputText value="#{row.bindings.ToOu.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.tooltip}"
+                                                      id="it14">
+                                            <f:validator binding="#{row.bindings.ToOu.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.label}"
+                                               id="c15">
+                                        <af:inputText value="#{row.bindings.ToDeptId.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.tooltip}"
+                                                      id="it15">
+                                            <f:validator binding="#{row.bindings.ToDeptId.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.label}"
+                                               id="c16">
+                                        <af:inputText value="#{row.bindings.ToJobCode.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.tooltip}"
+                                                      id="it16">
+                                            <f:validator binding="#{row.bindings.ToJobCode.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.label}"
+                                               id="c17">
+                                        <af:inputText value="#{row.bindings.OffsetGlAccountCr.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.tooltip}"
+                                                      id="it17">
+                                            <f:validator binding="#{row.bindings.OffsetGlAccountCr.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.label}"
+                                               id="c18">
+                                        <af:inputText value="#{row.bindings.ToGlAccountDr.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.tooltip}"
+                                                      id="it18">
+                                            <f:validator binding="#{row.bindings.ToGlAccountDr.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.label}"
+                                               id="c19">
+                                        <af:inputText value="#{row.bindings.TransactionCurrency.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.tooltip}"
+                                                      id="it19">
+                                            <f:validator binding="#{row.bindings.TransactionCurrency.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.label}"
+                                               id="c20">
+                                        <af:inputText value="#{row.bindings.Amount.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.tooltip}"
+                                                      id="it20">
+                                            <f:validator binding="#{row.bindings.Amount.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.label}"
+                                               id="c21">
+                                        <af:inputText value="#{row.bindings.GstVatRate.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.tooltip}"
+                                                      id="it21">
+                                            <f:validator binding="#{row.bindings.GstVatRate.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.label}"
+                                               id="c22">
+                                        <af:inputText value="#{row.bindings.GstVatAmount.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.tooltip}"
+                                                      id="it22">
+                                            <f:validator binding="#{row.bindings.GstVatAmount.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.label}"
+                                               id="c23">
+                                        <af:inputText value="#{row.bindings.InvoiceAmount.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.tooltip}"
+                                                      id="it23">
+                                            <f:validator binding="#{row.bindings.InvoiceAmount.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.label}"
+                                               id="c24">
+                                        <af:inputText value="#{row.bindings.ReversalAmount.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.tooltip}"
+                                                      id="it24">
+                                            <f:validator binding="#{row.bindings.ReversalAmount.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.label}"
+                                               id="c25">
+                                        <af:inputText value="#{row.bindings.RevsersalGstVatAmount.inputValue}"
+                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.label}"
+                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.mandatory}"
+                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.displayWidth}"
+                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.precision}"
+                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.tooltip}"
+                                                      id="it25">
+                                            <f:validator binding="#{row.bindings.RevsersalGstVatAmount.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:panelGroupLayout>
+                        </af:panelBox>
+                    </af:dialog>
+                </af:popup>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p2">
+                    <af:dialog id="d2" type="none">
+                        <f:facet name="buttonBar">
+                            <af:button text="Upload" id="b5"/>
+                            <af:button text="Cancel" id="b6"/>
+                        </f:facet>
+                        <af:panelGroupLayout id="pgl3">
+                            <af:inputFile id="if1" displayMode="default" maximumFiles="5"/>
+                        </af:panelGroupLayout>
+                    </af:dialog>
+                </af:popup>
             </af:panelBox>
         </f:facet>
     </af:panelStretchLayout>
