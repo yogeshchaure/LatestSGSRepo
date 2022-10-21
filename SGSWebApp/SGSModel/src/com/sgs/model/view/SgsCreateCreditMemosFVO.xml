@@ -14,7 +14,8 @@
   SelectAllAttributes="false"
   RowClass="com.sgs.model.view.SgsCreateCreditMemosFVORowImpl"
   FetchMode="FETCH_AS_NEEDED"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -34,7 +35,16 @@
     PrecisionRule="true"
     EntityAttrName="CreditDate"
     EntityUsage="SgsCreateCreditMemosF"
-    AliasName="CREDIT_DATE"/>
+    AliasName="CREDIT_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.sgs.model.view.SgsCreateCreditMemosFVO.CreditDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sgs.model.view.SgsCreateCreditMemosFVO.CreditDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PeoplesoftVoucherNum"
     PrecisionRule="true"
@@ -95,4 +105,14 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="SgsCreateCreditMemosF"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="InvoiceAmount"
+    PrecisionRule="true"
+    EntityAttrName="INVOICEAMOUNT"
+    EntityUsage="SgsCreateCreditMemosF"
+    AliasName="INVOICE_AMOUNT"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sgs.model.SGSModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

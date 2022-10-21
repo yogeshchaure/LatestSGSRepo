@@ -14,6 +14,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class SgsCreateCreditMemosFVORowImpl extends ViewRowImpl {
+
     public static final int ENTITY_SGSCREATECREDITMEMOSF = 0;
 
     /**
@@ -31,8 +32,10 @@ public class SgsCreateCreditMemosFVORowImpl extends ViewRowImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        InvoiceAmount;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -54,6 +57,7 @@ public class SgsCreateCreditMemosFVORowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
     public static final int CREDITMEMOSID = AttributesEnum.CreditMemosId.index();
     public static final int CREDITDATE = AttributesEnum.CreditDate.index();
     public static final int PEOPLESOFTVOUCHERNUM = AttributesEnum.PeoplesoftVoucherNum.index();
@@ -66,6 +70,7 @@ public class SgsCreateCreditMemosFVORowImpl extends ViewRowImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int INVOICEAMOUNT = AttributesEnum.InvoiceAmount.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -271,6 +276,22 @@ public class SgsCreateCreditMemosFVORowImpl extends ViewRowImpl {
      */
     public void setUpdatedBy(String value) {
         setAttributeInternal(UPDATEDBY, value);
+    }
+
+    /**
+     * Gets the attribute value for INVOICE_AMOUNT using the alias name INVOICEAMOUNT.
+     * @return the INVOICE_AMOUNT
+     */
+    public BigDecimal getInvoiceAmount() {
+        return (BigDecimal) getAttributeInternal(INVOICEAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as attribute value for INVOICE_AMOUNT using the alias name INVOICEAMOUNT.
+     * @param value value to set the INVOICE_AMOUNT
+     */
+    public void setInvoiceAmount(BigDecimal value) {
+        setAttributeInternal(INVOICEAMOUNT, value);
     }
 }
 

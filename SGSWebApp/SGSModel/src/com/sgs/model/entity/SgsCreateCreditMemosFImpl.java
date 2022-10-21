@@ -30,7 +30,8 @@ public class SgsCreateCreditMemosFImpl extends EntityImpl {
         CreatedDate,
         CreatedBy,
         UpdatedDate,
-        UpdatedBy;
+        UpdatedBy,
+        INVOICEAMOUNT;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -53,6 +54,7 @@ public class SgsCreateCreditMemosFImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int CREDITMEMOSID = AttributesEnum.CreditMemosId.index();
     public static final int CREDITDATE = AttributesEnum.CreditDate.index();
     public static final int PEOPLESOFTVOUCHERNUM = AttributesEnum.PeoplesoftVoucherNum.index();
@@ -65,11 +67,19 @@ public class SgsCreateCreditMemosFImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int INVOICEAMOUNT = AttributesEnum.INVOICEAMOUNT.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public SgsCreateCreditMemosFImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsCreateCreditMemosF");
     }
 
     /**
@@ -265,19 +275,29 @@ public class SgsCreateCreditMemosFImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for INVOICEAMOUNT, using the alias name INVOICEAMOUNT.
+     * @return the value of INVOICEAMOUNT
+     */
+    public BigDecimal getINVOICEAMOUNT() {
+        return (BigDecimal) getAttributeInternal(INVOICEAMOUNT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for INVOICEAMOUNT.
+     * @param value value to set the INVOICEAMOUNT
+     */
+    public void setINVOICEAMOUNT(BigDecimal value) {
+        setAttributeInternal(INVOICEAMOUNT, value);
+    }
+
+
+    /**
      * @param creditMemosId key constituent
 
      * @return a Key object based on given key constituents.
      */
     public static Key createPrimaryKey(Integer creditMemosId) {
         return new Key(new Object[] { creditMemosId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsCreateCreditMemosF");
     }
 
     /**

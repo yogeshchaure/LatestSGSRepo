@@ -10,8 +10,6 @@
                   Binds="SgsRevAllocatedDtVOIterator" id="SgsRevAllocatedDtVOCriteriaQuery"/>
     <iterator Binds="SgsCreateCreditMemosFVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsCreateCreditMemosFVO1Iterator"/>
-    <iterator Binds="SgsCreateCreditMemosTVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
-              id="SgsCreateCreditMemosTVO1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="SgsRevAllocatedDtVOIterator" id="SgsRevAllocatedDtVO">
@@ -24,12 +22,14 @@
           <Item Value="TransactionCategory"/>
           <Item Value="TransactionType"/>
           <Item Value="SourceGlAccount"/>
+          <Item Value="SOURCEBU"/>
           <Item Value="SourceOu"/>
           <Item Value="SourceJobCode"/>
           <Item Value="SourceDepartmentId"/>
           <Item Value="Currency"/>
           <Item Value="SourceAmount"/>
           <Item Value="TargetGlAccount"/>
+          <Item Value="TARGETBU"/>
           <Item Value="TargetOu"/>
           <Item Value="TargetJobCode"/>
           <Item Value="TargetDepartmentId"/>
@@ -50,9 +50,9 @@
           <Item Value="TransactionStatus"/>
           <Item Value="PaymentStatus"/>
           <Item Value="PaidAmount"/>
-           <Item Value="SOURCEBU"/>
-            <Item Value="TARGETBU"/>
           <Item Value="SourceTransactionId"/>
+          <Item Value="ReferenceInvoiceNumber"/>
+          <Item Value="ReferenceVoucherNumber"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -66,32 +66,6 @@
         <Item Value="ReversalAmount"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="SgsCreateCreditMemosTVO1Iterator" id="SgsCreateCreditMemosTVO1">
-      <nodeDefinition DefName="com.sgs.model.view.SgsCreateCreditMemosTVO" Name="SgsCreateCreditMemosTVO10">
-        <AttrNames>
-          <Item Value="CreditMemosId"/>
-          <Item Value="CreditDate"/>
-          <Item Value="AllocationId"/>
-          <Item Value="FromBu"/>
-          <Item Value="FromOu"/>
-          <Item Value="FromDeptId"/>
-          <Item Value="FromJobCode"/>
-          <Item Value="ToBu"/>
-          <Item Value="ToOu"/>
-          <Item Value="ToDeptId"/>
-          <Item Value="ToJobCode"/>
-          <Item Value="OffsetGlAccountCr"/>
-          <Item Value="ToGlAccountDr"/>
-          <Item Value="TransactionCurrency"/>
-          <Item Value="Amount"/>
-          <Item Value="GstVatRate"/>
-          <Item Value="GstVatAmount"/>
-          <Item Value="InvoiceAmount"/>
-          <Item Value="ReversalAmount"/>
-          <Item Value="RevsersalGstVatAmount"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <attributeValues IterBinding="SgsCreateCreditMemosFVO1Iterator" id="PeoplesoftVoucherNum">
       <AttrNames>
         <Item Value="PeoplesoftVoucherNum"/>
@@ -115,6 +89,11 @@
     <attributeValues IterBinding="SgsCreateCreditMemosFVO1Iterator" id="CompleteReversal">
       <AttrNames>
         <Item Value="CompleteReversal"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsCreateCreditMemosFVO1Iterator" id="InvoiceAmount">
+      <AttrNames>
+        <Item Value="InvoiceAmount"/>
       </AttrNames>
     </attributeValues>
   </bindings>

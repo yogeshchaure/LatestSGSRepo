@@ -454,6 +454,30 @@
       <Attr Name="_DisplaySize" Value="80"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="ReferenceInvoiceNumber"
+    Precision="100"
+    ColumnName="REFERENCE_INVOICE_NUM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_REV_ALLOCATED_DT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ReferenceVoucherNumber"
+    Precision="100"
+    ColumnName="REFERENCE_VOUCHER_NUM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_REV_ALLOCATED_DT">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
   <Key
     Name="PKSGSREVALLOCATEDDT"
     PrimaryKey="true">

@@ -42,23 +42,23 @@
                               selectedRowKeys="#{bindings.SgsRevAllocatedDtVO.collectionModel.selectedRow}"
                               selectionListener="#{bindings.SgsRevAllocatedDtVO.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.SgsRevAllocatedDtVO.rangeSize}" id="resId1"
-                              styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="20">
-                       <af:column id="c2" align="center" headerText="Select">
-                <af:selectBooleanCheckbox id="sbc1"/>
-              </af:column>
-                        <af:column headerText="Period" id="resId1c1">
-                            <af:outputText value="#{row.Period}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.Period.tooltip}" id="ot1">
-                                <af:convertDateTime pattern="#{bindings.SgsRevAllocatedDtVO.hints.Period.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Allocation ID" id="resId1c2">
-                            <af:outputText value="#{row.AllocationId}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.AllocationId.tooltip}"
-                                           id="ot2"/>
-                        </af:column>
-                        <af:column headerText="Cost Identification ID"
-                                   id="resId1c3">
+                              styleClass="AFStretchWidth" allDetailsEnabled="true" autoHeightRows="10">
+                            <af:column id="c2" align="center" headerText="Select">
+                                <af:selectBooleanCheckbox id="sbc1"/>
+                            </af:column>
+                            <af:column headerText="Period" id="resId1c1">
+                                <af:outputText value="#{row.Period}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.Period.tooltip}"
+                                               id="ot1">
+                                    <af:convertDateTime pattern="#{bindings.SgsRevAllocatedDtVO.hints.Period.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Allocation ID" id="resId1c2">
+                                <af:outputText value="#{row.AllocationId}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.AllocationId.tooltip}"
+                                               id="ot2"/>
+                            </af:column>
+                            <af:column headerText="Cost Identification ID" id="resId1c3">
                                 <af:outputText value="#{row.CostIdentificationId}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.CostIdentificationId.tooltip}"
                                                id="ot34"/>
@@ -70,9 +70,8 @@
                                 <f:selectItems value="#{row.bindings.CostIdentificationId.items}" id="si1"/>
                                 <f:validator binding="#{row.bindings.CostIdentificationId.validator}"/>
                             </af:selectOneChoice>-->
-                        </af:column>
-                        <af:column headerText="TPA Applicability"
-                                   id="resId1c4">
+                            </af:column>
+                            <af:column headerText="TPA Applicability" id="resId1c4">
                                 <af:outputText value="#{row.TpaApplicability}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TpaApplicability.tooltip}"
                                                id="ot33"/>
@@ -84,9 +83,8 @@
                                 <f:selectItems value="#{row.bindings.TpaApplicability.items}" id="si2"/>
                                 <f:validator binding="#{row.bindings.TpaApplicability.validator}"/>
                             </af:selectOneChoice>-->
-                        </af:column>
-                        <af:column headerText="Transaction Category"
-                                   id="resId1c5">
+                            </af:column>
+                            <af:column headerText="Transaction Category" id="resId1c5">
                                 <af:outputText value="#{row.TransactionCategory}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TransactionCategory.tooltip}"
                                                id="ot32"/>
@@ -98,9 +96,8 @@
                                 <f:selectItems value="#{row.bindings.TransactionCategory.items}" id="si3"/>
                                 <f:validator binding="#{row.bindings.TransactionCategory.validator}"/>
                             </af:selectOneChoice>-->
-                        </af:column>
-                        <af:column headerText="Transaction Type"
-                                   id="resId1c6">
+                            </af:column>
+                            <af:column headerText="Transaction Type" id="resId1c6">
                                 <af:outputText value="#{row.TransactionType}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TransactionType.tooltip}"
                                                id="ot31"/>
@@ -112,98 +109,91 @@
                                 <f:selectItems value="#{row.bindings.TransactionType.items}" id="si4"/>
                                 <f:validator binding="#{row.bindings.TransactionType.validator}"/>
                             </af:selectOneChoice>-->
-                        </af:column>
-                        <af:column headerText="From GL Account"
-                                   id="resId1c7">
-                            <af:outputText value="#{row.SourceGlAccount}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceGlAccount.tooltip}"
-                                           id="ot3"/>
-                        </af:column>
-                         <af:column headerText="From BU" id="resId1c8">
-                            <af:outputText value="#{row.SOURCEBU}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SOURCEBU.tooltip}" id="ot4"/>
-                        </af:column>
-                        <af:column headerText="From OU" id="c1">
-                            <af:outputText value="#{row.SourceOu}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceOu.tooltip}"
-                                           id="ot26"/>
-                        </af:column>
-                        <af:column headerText="From Job Code" id="resId1c9">
-                            <af:outputText value="#{row.SourceJobCode}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceJobCode.tooltip}"
-                                           id="ot5"/>
-                        </af:column>
-                        <af:column headerText="From Department ID"
-                                   id="resId1c10">
-                            <af:outputText value="#{row.SourceDepartmentId}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceDepartmentId.tooltip}"
-                                           id="ot6"/>
-                        </af:column>
-                        <af:column headerText="Currency" id="resId1c11">
-                            <af:outputText value="#{row.Currency}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.Currency.tooltip}" id="ot7"/>
-                        </af:column>
-                        <af:column headerText="From Amount" id="resId1c12">
-                            <af:outputText value="#{row.SourceAmount!=null?row.SourceAmount:'-'}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceAmount.tooltip}"
-                                           id="ot8">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.SourceAmount.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="To GL Account" rendered="false"
-                                   id="resId1c13">
-                            <af:outputText value="#{row.TargetGlAccount}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetGlAccount.tooltip}"
-                                           id="ot9"/>
-                        </af:column>
-                        <af:column headerText="To BU" id="resId1c14">
-                            <af:outputText value="#{row.TARGETBU}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TARGETBU.tooltip}"
-                                           id="ot10"/>
-                        </af:column>
-                        <af:column headerText="To OU" id="c3">
-                            <af:outputText value="#{row.TargetOu}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetOu.tooltip}"
-                                           id="ot27"/>
-                        </af:column>
-                        <af:column headerText="To Job Code"
-                                   id="resId1c15">
-                            <af:outputText value="#{row.TargetJobCode}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetJobCode.tooltip}"
-                                           id="ot11"/>
-                        </af:column>
-                        <af:column headerText="To Department ID"
-                                   id="resId1c16">
-                            <af:outputText value="#{row.TargetDepartmentId}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetDepartmentId.tooltip}"
-                                           id="ot12"/>
-                        </af:column>
-                        <af:column headerText="To GL Account (Dr.)"
-                                   id="resId1c17">
-                            <af:outputText value="#{row.TargetGlAccountDr}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetGlAccountDr.tooltip}"
-                                           id="ot13"/>
-                        </af:column>
-                        <af:column headerText="Offset GL Account (Cr.)"
-                                   id="resId1c18">
-                            <af:outputText value="#{row.OffsetGlAccountCr}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.OffsetGlAccountCr.tooltip}"
-                                           id="ot14"/>
-                        </af:column>
-                        <af:column headerText="Service Category"
-                                   id="resId1c19">
-                            <af:selectOneChoice value="#{row.bindings.ServiceCategory.inputValue}"
-                                                label="#{row.bindings.ServiceCategory.label}"
-                                                required="#{bindings.SgsRevAllocatedDtVO.hints.ServiceCategory.mandatory}"
-                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.ServiceCategory.tooltip}"
-                                                readOnly="true" id="soc5">
-                                <f:selectItems value="#{row.bindings.ServiceCategory.items}" id="si5"/>
-                                <f:validator binding="#{row.bindings.ServiceCategory.validator}"/>
-                            </af:selectOneChoice>
-                        </af:column>
-                        <af:column headerText="Accounting Treatment"
-                                   id="resId1c20">
+                            </af:column>
+                            <af:column headerText="From GL Account" id="resId1c7">
+                                <af:outputText value="#{row.SourceGlAccount}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceGlAccount.tooltip}"
+                                               id="ot3"/>
+                            </af:column>
+                            <af:column headerText="From BU" id="resId1c8">
+                                <af:outputText value="#{row.SOURCEBU}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SOURCEBU.tooltip}"
+                                               id="ot4"/>
+                            </af:column>
+                            <af:column headerText="From OU" id="c1">
+                                <af:outputText value="#{row.SourceOu}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceOu.tooltip}"
+                                               id="ot26"/>
+                            </af:column>
+                            <af:column headerText="From Job Code" id="resId1c9">
+                                <af:outputText value="#{row.SourceJobCode}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceJobCode.tooltip}"
+                                               id="ot5"/>
+                            </af:column>
+                            <af:column headerText="From Department ID" id="resId1c10">
+                                <af:outputText value="#{row.SourceDepartmentId}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceDepartmentId.tooltip}"
+                                               id="ot6"/>
+                            </af:column>
+                            <af:column headerText="Currency" id="resId1c11">
+                                <af:outputText value="#{row.Currency}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.Currency.tooltip}"
+                                               id="ot7"/>
+                            </af:column>
+                            <af:column headerText="From Amount" id="resId1c12">
+                                <af:outputText value="#{row.SourceAmount!=null?row.SourceAmount:'-'}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceAmount.tooltip}"
+                                               id="ot8">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.SourceAmount.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="To GL Account" rendered="false" id="resId1c13">
+                                <af:outputText value="#{row.TargetGlAccount}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetGlAccount.tooltip}"
+                                               id="ot9"/>
+                            </af:column>
+                            <af:column headerText="To BU" id="resId1c14">
+                                <af:outputText value="#{row.TARGETBU}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TARGETBU.tooltip}"
+                                               id="ot10"/>
+                            </af:column>
+                            <af:column headerText="To OU" id="c3">
+                                <af:outputText value="#{row.TargetOu}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetOu.tooltip}"
+                                               id="ot27"/>
+                            </af:column>
+                            <af:column headerText="To Job Code" id="resId1c15">
+                                <af:outputText value="#{row.TargetJobCode}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetJobCode.tooltip}"
+                                               id="ot11"/>
+                            </af:column>
+                            <af:column headerText="To Department ID" id="resId1c16">
+                                <af:outputText value="#{row.TargetDepartmentId}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetDepartmentId.tooltip}"
+                                               id="ot12"/>
+                            </af:column>
+                            <af:column headerText="To GL Account (Dr.)" id="resId1c17">
+                                <af:outputText value="#{row.TargetGlAccountDr}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetGlAccountDr.tooltip}"
+                                               id="ot13"/>
+                            </af:column>
+                            <af:column headerText="Offset GL Account (Cr.)" id="resId1c18">
+                                <af:outputText value="#{row.OffsetGlAccountCr}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.OffsetGlAccountCr.tooltip}"
+                                               id="ot14"/>
+                            </af:column>
+                            <af:column headerText="Service Category" id="resId1c19">
+                                <af:selectOneChoice value="#{row.bindings.ServiceCategory.inputValue}"
+                                                    label="#{row.bindings.ServiceCategory.label}"
+                                                    required="#{bindings.SgsRevAllocatedDtVO.hints.ServiceCategory.mandatory}"
+                                                    shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.ServiceCategory.tooltip}"
+                                                    readOnly="true" id="soc5">
+                                    <f:selectItems value="#{row.bindings.ServiceCategory.items}" id="si5"/>
+                                    <f:validator binding="#{row.bindings.ServiceCategory.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="Accounting Treatment" id="resId1c20">
                                 <af:outputText value="#{row.AccountingTreatment}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.AccountingTreatment.tooltip}"
                                                id="ot28"/>
@@ -215,87 +205,85 @@
                                 <f:selectItems value="#{row.bindings.AccountingTreatment.items}" id="si6"/>
                                 <f:validator binding="#{row.bindings.AccountingTreatment.validator}"/>
                             </af:selectOneChoice>-->
-                        </af:column>
-                        <af:column headerText="Mark-up rate (%)" id="resId1c21">
-                            <af:outputText value="#{row.MarketUpRate}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpRate.tooltip}"
-                                           id="ot15">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpRate.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="To Currency"
-                                   id="resId1c22">
-                            <af:outputText value="#{row.TargetCurrency}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetCurrency.tooltip}"
-                                           id="ot16"/>
-                        </af:column>
-                        <af:column headerText="Amount" id="resId1c23">
-                            <af:outputText value="#{row.Amount}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.Amount.tooltip}" id="ot17">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.Amount.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Mark-up Amount"
-                                   id="resId1c24">
-                            <af:outputText value="#{row.MarketUpAmount!=null?row.MarketUpAmount:'-'}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpAmount.tooltip}"
-                                           id="ot18">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpAmount.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Base Amount (before tax)"
-                                   id="resId1c25">
-                            <af:outputText value="#{row.BaseAmountBeforeTax}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.BaseAmountBeforeTax.tooltip}"
-                                           id="ot19">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.BaseAmountBeforeTax.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="GST / VAT Rate" id="resId1c26">
-                            <af:outputText value="#{row.GstRate}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.GstRate.tooltip}" id="ot20">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.GstRate.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="GST / VAT Amount" id="resId1c27">
-                            <af:outputText value="#{row.GstAmount !=null?row.GstAmount:'-'}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.GstAmount.tooltip}"
-                                           id="ot21">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.GstAmount.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Total Amount (after tax)"
-                                   id="resId1c28">
-                            <af:outputText value="#{row.TotalAmountAfterTax}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TotalAmountAfterTax.tooltip}"
-                                           id="ot22">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.TotalAmountAfterTax.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="WHT / TDS Rate" id="resId1c29">
-                            <af:outputText value="#{row.WhtRate}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.WhtRate.tooltip}" id="ot23">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.WhtRate.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="WHT / TDS Amount" id="resId1c30">
-                            <af:outputText value="#{row.WhtAmount!=null?row.WhtAmount:'-'}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.WhtAmount.tooltip}"
-                                           id="ot24">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.WhtAmount.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Transaction Status"
-                                   id="resId1c31">
+                            </af:column>
+                            <af:column headerText="Mark-up rate (%)" id="resId1c21">
+                                <af:outputText value="#{row.MarketUpRate}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpRate.tooltip}"
+                                               id="ot15">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpRate.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="To Currency" id="resId1c22">
+                                <af:outputText value="#{row.TargetCurrency}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetCurrency.tooltip}"
+                                               id="ot16"/>
+                            </af:column>
+                            <af:column headerText="Amount" id="resId1c23">
+                                <af:outputText value="#{row.Amount}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.Amount.tooltip}"
+                                               id="ot17">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.Amount.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Mark-up Amount" id="resId1c24">
+                                <af:outputText value="#{row.MarketUpAmount!=null?row.MarketUpAmount:'-'}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpAmount.tooltip}"
+                                               id="ot18">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.MarketUpAmount.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Base Amount (before tax)" id="resId1c25">
+                                <af:outputText value="#{row.BaseAmountBeforeTax}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.BaseAmountBeforeTax.tooltip}"
+                                               id="ot19">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.BaseAmountBeforeTax.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="GST / VAT Rate" id="resId1c26">
+                                <af:outputText value="#{row.GstRate}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.GstRate.tooltip}"
+                                               id="ot20">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.GstRate.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="GST / VAT Amount" id="resId1c27">
+                                <af:outputText value="#{row.GstAmount !=null?row.GstAmount:'-'}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.GstAmount.tooltip}"
+                                               id="ot21">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.GstAmount.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Total Amount (after tax)" id="resId1c28">
+                                <af:outputText value="#{row.TotalAmountAfterTax}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TotalAmountAfterTax.tooltip}"
+                                               id="ot22">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.TotalAmountAfterTax.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="WHT / TDS Rate" id="resId1c29">
+                                <af:outputText value="#{row.WhtRate}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.WhtRate.tooltip}"
+                                               id="ot23">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.WhtRate.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="WHT / TDS Amount" id="resId1c30">
+                                <af:outputText value="#{row.WhtAmount!=null?row.WhtAmount:'-'}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.WhtAmount.tooltip}"
+                                               id="ot24">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.WhtAmount.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Transaction Status" id="resId1c31">
                                 <af:outputText value="#{row.TransactionStatus}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TransactionStatus.tooltip}"
                                                id="ot29"/>
@@ -307,9 +295,8 @@
                                 <f:selectItems value="#{row.bindings.TransactionStatus.items}" id="si7"/>
                                 <f:validator binding="#{row.bindings.TransactionStatus.validator}"/>
                             </af:selectOneChoice>-->
-                        </af:column>
-                        <af:column headerText="Payment Status"
-                                   id="resId1c32">
+                            </af:column>
+                            <af:column headerText="Payment Status" id="resId1c32">
                                 <af:outputText value="#{row.PaymentStatus}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.PaymentStatus.tooltip}"
                                                id="ot30"/>
@@ -321,42 +308,55 @@
                                 <f:selectItems value="#{row.bindings.PaymentStatus.items}" id="si8"/>
                                 <f:validator binding="#{row.bindings.PaymentStatus.validator}"/>
                             </af:selectOneChoice>-->
-                        </af:column>
-                        <af:column headerText="Paid Amount" id="resId1c33">
-                            <af:outputText value="#{row.PaidAmount!=null?row.PaidAmount:'-'}"
-                                           shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.PaidAmount.tooltip}"
-                                           id="ot25">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsRevAllocatedDtVO.hints.PaidAmount.format}"/>
-                            </af:outputText>
-                        </af:column>
-                            <af:column headerText="Source Transaction ID"
-                                       id="c4">
+                            </af:column>
+                            <af:column headerText="Paid Amount" id="resId1c33">
+                                <af:outputText value="#{row.PaidAmount!=null?row.PaidAmount:'-'}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.PaidAmount.tooltip}"
+                                               id="ot25">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsRevAllocatedDtVO.hints.PaidAmount.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Reference Invoice Number" id="c27">
+                                <!--<af:outputText value="#{row.ReferenceInvoiceNumber}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.ReferenceInvoiceNumber.tooltip}"
+                                               id="ot36"/>-->
+                                                <af:link text="#{row.ReferenceInvoiceNumber}" id="l5" inlineStyle="font-weight:bold;"/>
+                            </af:column>
+                            <af:column headerText="Reference Voucher Number" id="c5">
+                                <!--<af:outputText value="#{row.ReferenceVoucherNumber}"
+                                               shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.ReferenceVoucherNumber.tooltip}"
+                                               id="ot35"/>-->
+                                                <af:link text="#{row.ReferenceVoucherNumber}" id="l6" inlineStyle="font-weight:bold;"/>
+                            </af:column>
+                            <af:column headerText="Source Transaction / Standard Rate" id="c4">
                                 <!--<af:outputText value="#{row.SourceTransactionId}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceTransactionId.tooltip}"
                                                id="ot28"/>-->
-                        <af:link text="#{row.SourceTransactionId}" id="l4" inlineStyle="font-weight:bold;"/>
-
+                                <af:link text="#{row.SourceTransactionId}" id="l4" inlineStyle="font-weight:bold;"/>
                             </af:column>
                             <af:column id="c10" headerText="Accounting Entries">
-                                 <af:link text="Review Accounting Entry" id="l1" inlineStyle="font-weight:bold;"/>
-                                </af:column>
-                    </af:table>
+                                <af:link text="Review Accounting Entry" id="l1" inlineStyle="font-weight:bold;"/>
+                            </af:column>
+                        </af:table>
                     </af:panelCollection>
                 </af:panelGroupLayout>
-                <af:popup childCreation="deferred" autoCancel="disabled" id="p1">
+                <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
+                          binding="#{pageFlowScope.ApproveAllocationCoTransBean.creditMemoPopUp}">
                     <af:dialog id="d1" type="none">
                         <f:facet name="buttonBar">
                             <af:button text="Submit For Approval" id="b8"/>
-                            <af:button text="Close" id="b9"/>
+                            <af:button text="Close" id="b9"
+                                       actionListener="#{pageFlowScope.ApproveAllocationCoTransBean.CreateCrediteMemoPopupClose}"
+                                       binding="#{pageFlowScope.ApproveAllocationCoTransBean.creditMemoPopupClose}"/>
                         </f:facet>
                         <af:panelBox text="Create Credit Memos" id="pb2">
                             <f:facet name="toolbar"/>
                             <af:panelFormLayout id="pfl1">
                                 <f:facet name="footer"/>
-                                <af:panelFormLayout id="pfl2">
-                                    <af:inputDate value="#{bindings.CreditDate.inputValue}"
-                                                  label="#{bindings.CreditDate.hints.label}"
+                                <af:panelFormLayout id="pfl2" labelAlignment="start">
+                                    <af:inputDate value="18-OCT-2022"
+                                                  label="Credit Date"
                                                   required="#{bindings.CreditDate.hints.mandatory}"
                                                   columns="#{bindings.CreditDate.hints.displayWidth}"
                                                   shortDesc="#{bindings.CreditDate.hints.tooltip}" id="id1">
@@ -364,23 +364,35 @@
                                         <af:convertDateTime pattern="#{bindings.CreditDate.format}"/>
                                     </af:inputDate>
                                     <af:inputText value="#{bindings.PeoplesoftVoucherNum.inputValue}"
-                                                  label="#{bindings.PeoplesoftVoucherNum.hints.label}"
+                                                  label="Peoplesoft Voucher Number"
                                                   required="#{bindings.PeoplesoftVoucherNum.hints.mandatory}"
                                                   columns="#{bindings.PeoplesoftVoucherNum.hints.displayWidth}"
                                                   maximumLength="#{bindings.PeoplesoftVoucherNum.hints.precision}"
-                                                  shortDesc="#{bindings.PeoplesoftVoucherNum.hints.tooltip}" id="it1">
+                                                  shortDesc="#{bindings.PeoplesoftVoucherNum.hints.tooltip}" id="it1"
+                                                  readOnly="true">
                                         <f:validator binding="#{bindings.PeoplesoftVoucherNum.validator}"/>
                                     </af:inputText>
                                     <af:inputText value="#{bindings.PeoplesoftInvoiceNum.inputValue}"
-                                                  label="#{bindings.PeoplesoftInvoiceNum.hints.label}"
+                                                  label="Peoplesoft Invoice Number"
                                                   required="#{bindings.PeoplesoftInvoiceNum.hints.mandatory}"
                                                   columns="#{bindings.PeoplesoftInvoiceNum.hints.displayWidth}"
                                                   maximumLength="#{bindings.PeoplesoftInvoiceNum.hints.precision}"
-                                                  shortDesc="#{bindings.PeoplesoftInvoiceNum.hints.tooltip}" id="it2">
+                                                  shortDesc="#{bindings.PeoplesoftInvoiceNum.hints.tooltip}" id="it2"
+                                                  readOnly="true">
                                         <f:validator binding="#{bindings.PeoplesoftInvoiceNum.validator}"/>
                                     </af:inputText>
+                                    <af:inputText value="#{bindings.InvoiceAmount.inputValue}" label="Invoice Amount"
+                                                  required="#{bindings.InvoiceAmount.hints.mandatory}"
+                                                  columns="#{bindings.InvoiceAmount.hints.displayWidth}"
+                                                  maximumLength="#{bindings.InvoiceAmount.hints.precision}"
+                                                  shortDesc="#{bindings.InvoiceAmount.hints.tooltip}" id="it7"
+                                                  readOnly="true">
+                                        <f:validator binding="#{bindings.InvoiceAmount.validator}"/>
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.InvoiceAmount.format}"/>
+                                    </af:inputText>
                                     <af:inputText value="#{bindings.ReversalAmount.inputValue}"
-                                                  label="#{bindings.ReversalAmount.hints.label}"
+                                                  label="Reversal Amount"
                                                   required="#{bindings.ReversalAmount.hints.mandatory}"
                                                   columns="#{bindings.ReversalAmount.hints.displayWidth}"
                                                   maximumLength="#{bindings.ReversalAmount.hints.precision}"
@@ -389,8 +401,19 @@
                                         <af:convertNumber groupingUsed="false"
                                                           pattern="#{bindings.ReversalAmount.format}"/>
                                     </af:inputText>
+                                    <af:noteWindow id="nw1">
+                                        <af:outputText value="(Reversal amount cannot exceed Invoice Amount)"
+                                                       id="ot37"/>
+                                    </af:noteWindow>
+                                    <af:selectBooleanCheckbox value="#{bindings.CompleteReversal.inputValue}"
+                                                              label="Complete Reversal"
+                                                              required="#{bindings.CompleteReversal.hints.mandatory}"
+                                                              shortDesc="#{bindings.CompleteReversal.hints.tooltip}"
+                                                              id="it6">
+                                        <f:validator binding="#{bindings.CompleteReversal.validator}"/>
+                                    </af:selectBooleanCheckbox>
                                     <af:inputText value="#{bindings.ReversalPercenatge.inputValue}"
-                                                  label="#{bindings.ReversalPercenatge.hints.label}"
+                                                  label="Reversal Percenatge"
                                                   required="#{bindings.ReversalPercenatge.hints.mandatory}"
                                                   columns="#{bindings.ReversalPercenatge.hints.displayWidth}"
                                                   maximumLength="#{bindings.ReversalPercenatge.hints.precision}"
@@ -398,284 +421,16 @@
                                         <f:validator binding="#{bindings.ReversalPercenatge.validator}"/>
                                     </af:inputText>
                                     <af:inputText value="#{bindings.ReversalReasons.inputValue}"
-                                                  label="#{bindings.ReversalReasons.hints.label}"
+                                                  label="Reversal Reasons"
                                                   required="#{bindings.ReversalReasons.hints.mandatory}"
                                                   columns="#{bindings.ReversalReasons.hints.displayWidth}"
                                                   maximumLength="#{bindings.ReversalReasons.hints.precision}"
                                                   shortDesc="#{bindings.ReversalReasons.hints.tooltip}" id="it5">
                                         <f:validator binding="#{bindings.ReversalReasons.validator}"/>
                                     </af:inputText>
-                                    <af:inputText value="#{bindings.CompleteReversal.inputValue}"
-                                                  label="#{bindings.CompleteReversal.hints.label}"
-                                                  required="#{bindings.CompleteReversal.hints.mandatory}"
-                                                  columns="#{bindings.CompleteReversal.hints.displayWidth}"
-                                                  maximumLength="#{bindings.CompleteReversal.hints.precision}"
-                                                  shortDesc="#{bindings.CompleteReversal.hints.tooltip}" id="it6">
-                                        <f:validator binding="#{bindings.CompleteReversal.validator}"/>
-                                    </af:inputText>
-                                    <f:facet name="footer">
-                                        <af:button text="Submit" id="b7"/>
-                                    </f:facet>
+                                    <f:facet name="footer"/>
                                 </af:panelFormLayout>
                             </af:panelFormLayout>
-                            <af:panelGroupLayout id="pgl2">
-                                <af:table value="#{bindings.SgsCreateCreditMemosTVO1.collectionModel}" var="row"
-                                          rows="#{bindings.SgsCreateCreditMemosTVO1.rangeSize}"
-                                          emptyText="#{bindings.SgsCreateCreditMemosTVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                          rowBandingInterval="0"
-                                          selectedRowKeys="#{bindings.SgsCreateCreditMemosTVO1.collectionModel.selectedRow}"
-                                          selectionListener="#{bindings.SgsCreateCreditMemosTVO1.collectionModel.makeCurrent}"
-                                          rowSelection="single"
-                                          fetchSize="#{bindings.SgsCreateCreditMemosTVO1.rangeSize}" id="t2"
-                                          width="1100px">
-                                    <af:column id="c26" headerText="Select All">
-                                        <af:selectBooleanCheckbox text="selectBooleanCheckbox 1"
-                                                                  id="sbc2"/>
-                                        <f:facet name="header">
-                                            <af:selectBooleanCheckbox text="Select All"
-                                                                      id="sbc3"/>
-                                        </f:facet>
-                                    </af:column>
-                                    <af:column headerText="Credit Date"
-                                               id="c6">
-                                        <af:inputDate value="#{row.bindings.CreditDate.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.CreditDate.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.CreditDate.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.CreditDate.displayWidth}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.CreditDate.tooltip}"
-                                                      id="id2">
-                                            <f:validator binding="#{row.bindings.CreditDate.validator}"/>
-                                            <af:convertDateTime pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.CreditDate.format}"/>
-                                        </af:inputDate>
-                                    </af:column>
-                                    <af:column headerText="Allocation ID "
-                                               id="c7">
-                                        <af:inputText value="#{row.bindings.AllocationId.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.AllocationId.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.AllocationId.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.AllocationId.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.AllocationId.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.AllocationId.tooltip}"
-                                                      id="it8">
-                                            <f:validator binding="#{row.bindings.AllocationId.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="From BU"
-                                               id="c8">
-                                        <af:inputText value="#{row.bindings.FromBu.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.FromBu.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.FromBu.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.FromBu.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.FromBu.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.FromBu.tooltip}"
-                                                      id="it9">
-                                            <f:validator binding="#{row.bindings.FromBu.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="From OU"
-                                               id="c9">
-                                        <af:inputText value="#{row.bindings.FromOu.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.FromOu.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.FromOu.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.FromOu.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.FromOu.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.FromOu.tooltip}"
-                                                      id="it10">
-                                            <f:validator binding="#{row.bindings.FromOu.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="From Dept Id"
-                                               id="c11">
-                                        <af:inputText value="#{row.bindings.FromDeptId.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.FromDeptId.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.FromDeptId.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.FromDeptId.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.FromDeptId.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.FromDeptId.tooltip}"
-                                                      id="it11">
-                                            <f:validator binding="#{row.bindings.FromDeptId.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="From Job Code"
-                                               id="c12">
-                                        <af:inputText value="#{row.bindings.FromJobCode.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.FromJobCode.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.FromJobCode.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.FromJobCode.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.FromJobCode.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.FromJobCode.tooltip}"
-                                                      id="it12">
-                                            <f:validator binding="#{row.bindings.FromJobCode.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="To BU"
-                                               id="c13">
-                                        <af:inputText value="#{row.bindings.ToBu.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ToBu.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ToBu.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ToBu.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ToBu.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ToBu.tooltip}"
-                                                      id="it13">
-                                            <f:validator binding="#{row.bindings.ToBu.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.label}"
-                                               id="c14">
-                                        <af:inputText value="#{row.bindings.ToOu.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ToOu.tooltip}"
-                                                      id="it14">
-                                            <f:validator binding="#{row.bindings.ToOu.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.label}"
-                                               id="c15">
-                                        <af:inputText value="#{row.bindings.ToDeptId.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ToDeptId.tooltip}"
-                                                      id="it15">
-                                            <f:validator binding="#{row.bindings.ToDeptId.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.label}"
-                                               id="c16">
-                                        <af:inputText value="#{row.bindings.ToJobCode.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ToJobCode.tooltip}"
-                                                      id="it16">
-                                            <f:validator binding="#{row.bindings.ToJobCode.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.label}"
-                                               id="c17">
-                                        <af:inputText value="#{row.bindings.OffsetGlAccountCr.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.OffsetGlAccountCr.tooltip}"
-                                                      id="it17">
-                                            <f:validator binding="#{row.bindings.OffsetGlAccountCr.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.label}"
-                                               id="c18">
-                                        <af:inputText value="#{row.bindings.ToGlAccountDr.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ToGlAccountDr.tooltip}"
-                                                      id="it18">
-                                            <f:validator binding="#{row.bindings.ToGlAccountDr.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.label}"
-                                               id="c19">
-                                        <af:inputText value="#{row.bindings.TransactionCurrency.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.TransactionCurrency.tooltip}"
-                                                      id="it19">
-                                            <f:validator binding="#{row.bindings.TransactionCurrency.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.label}"
-                                               id="c20">
-                                        <af:inputText value="#{row.bindings.Amount.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.tooltip}"
-                                                      id="it20">
-                                            <f:validator binding="#{row.bindings.Amount.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.Amount.format}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.label}"
-                                               id="c21">
-                                        <af:inputText value="#{row.bindings.GstVatRate.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatRate.tooltip}"
-                                                      id="it21">
-                                            <f:validator binding="#{row.bindings.GstVatRate.validator}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.label}"
-                                               id="c22">
-                                        <af:inputText value="#{row.bindings.GstVatAmount.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.tooltip}"
-                                                      id="it22">
-                                            <f:validator binding="#{row.bindings.GstVatAmount.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.GstVatAmount.format}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.label}"
-                                               id="c23">
-                                        <af:inputText value="#{row.bindings.InvoiceAmount.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.tooltip}"
-                                                      id="it23">
-                                            <f:validator binding="#{row.bindings.InvoiceAmount.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.InvoiceAmount.format}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.label}"
-                                               id="c24">
-                                        <af:inputText value="#{row.bindings.ReversalAmount.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.tooltip}"
-                                                      id="it24">
-                                            <f:validator binding="#{row.bindings.ReversalAmount.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.ReversalAmount.format}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.label}"
-                                               id="c25">
-                                        <af:inputText value="#{row.bindings.RevsersalGstVatAmount.inputValue}"
-                                                      label="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.label}"
-                                                      required="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.mandatory}"
-                                                      columns="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.displayWidth}"
-                                                      maximumLength="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.precision}"
-                                                      shortDesc="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.tooltip}"
-                                                      id="it25">
-                                            <f:validator binding="#{row.bindings.RevsersalGstVatAmount.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.SgsCreateCreditMemosTVO1.hints.RevsersalGstVatAmount.format}"/>
-                                        </af:inputText>
-                                    </af:column>
-                                </af:table>
-                            </af:panelGroupLayout>
                         </af:panelBox>
                     </af:dialog>
                 </af:popup>
