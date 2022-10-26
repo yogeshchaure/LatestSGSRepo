@@ -36,15 +36,21 @@
               </af:panelLabelAndMessage>
               <af:selectOneChoice value="#{bindings.BusinessUnit2.inputValue}" label="Business Unit"
                                   required="#{bindings.BusinessUnit2.hints.mandatory}"
-                                  shortDesc="#{bindings.BusinessUnit2.hints.tooltip}" id="soc1">
-                <f:selectItems value="#{bindings.BusinessUnit2.items}" id="si1"/>
+                                  shortDesc="#{bindings.BusinessUnit2.hints.tooltip}" id="soc4">
+                <f:selectItems value="#{bindings.BusinessUnit2.items}" id="si5"/>
                 <f:validator binding="#{bindings.BusinessUnit2.validator}"/>
               </af:selectOneChoice>
-              <af:selectOneChoice value="#{bindings.IcoSupplier1.inputValue}" label="I/Co Supplier"
+              <af:selectOneChoice value="#{bindings.IcoSupplier1.inputValue}" label="Ico Supplier"
                                   required="#{bindings.IcoSupplier1.hints.mandatory}"
-                                  shortDesc="#{bindings.IcoSupplier1.hints.tooltip}" id="soc2">
-                <f:selectItems value="#{bindings.IcoSupplier1.items}" id="si2"/>
+                                  shortDesc="#{bindings.IcoSupplier1.hints.tooltip}" id="soc1">
+                <f:selectItems value="#{bindings.IcoSupplier1.items}" id="si1"/>
                 <f:validator binding="#{bindings.IcoSupplier1.validator}"/>
+              </af:selectOneChoice>
+              <af:selectOneChoice value="#{bindings.RbiPurposeCode.inputValue}" label="RBI Purpose Code"
+                                  required="#{bindings.RbiPurposeCode.hints.mandatory}"
+                                  shortDesc="#{bindings.RbiPurposeCode.hints.tooltip}" id="soc5">
+                <f:selectItems value="#{bindings.RbiPurposeCode.items}" id="si3"/>
+                <f:validator binding="#{bindings.RbiPurposeCode.validator}"/>
               </af:selectOneChoice>
               <af:inputDate value="#{bindings.PaymentDate.inputValue}" label="Payment Date"
                             required="#{bindings.PaymentDate.hints.mandatory}"
@@ -62,7 +68,7 @@
                 <f:validator binding="#{bindings.DisbusementBankAccount.validator}"/>
               </af:inputText>
               <af:inputText value="#{bindings.ReceiverBankAccount.inputValue}"
-                            label="Receiver Bank Account"
+                            label="Receiver BankAccount"
                             required="#{bindings.ReceiverBankAccount.hints.mandatory}"
                             columns="#{bindings.ReceiverBankAccount.hints.displayWidth}"
                             maximumLength="#{bindings.ReceiverBankAccount.hints.precision}"
@@ -72,11 +78,11 @@
               <af:selectOneChoice value="#{bindings.PaymentMethod1.inputValue}" label="Payment Method"
                                   required="#{bindings.PaymentMethod1.hints.mandatory}"
                                   shortDesc="#{bindings.PaymentMethod1.hints.tooltip}" id="soc3">
-                <f:selectItems value="#{bindings.PaymentMethod1.items}" id="si3"/>
+                <f:selectItems value="#{bindings.PaymentMethod1.items}" id="si2"/>
                 <f:validator binding="#{bindings.PaymentMethod1.validator}"/>
               </af:selectOneChoice>
               <af:inputText value="#{bindings.TransactionReferenceNo.inputValue}"
-                            label="Transaction Reference No(Cheque/EFT)"
+                            label="Transaction Reference Number"
                             required="#{bindings.TransactionReferenceNo.hints.mandatory}"
                             columns="#{bindings.TransactionReferenceNo.hints.displayWidth}"
                             maximumLength="#{bindings.TransactionReferenceNo.hints.precision}"
@@ -87,7 +93,7 @@
               <af:selectOneChoice value="#{bindings.PaymentCurrency.inputValue}"
                                   label="Payment Currency"
                                   required="#{bindings.PaymentCurrency.hints.mandatory}"
-                                  shortDesc="#{bindings.PaymentCurrency.hints.tooltip}" id="soc4">
+                                  shortDesc="#{bindings.PaymentCurrency.hints.tooltip}" id="soc2">
                 <f:selectItems value="#{bindings.PaymentCurrency.items}" id="si4"/>
                 <f:validator binding="#{bindings.PaymentCurrency.validator}"/>
               </af:selectOneChoice>
@@ -243,11 +249,12 @@
               <af:outputText value="#{row.PaymentStatus}"
                              shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.PaymentStatus.tooltip}" id="ot9"/>
             </af:column>
-            <af:column headerText="Settlement Status" id="c9">
+              <af:column id="c10" headerText="Purpose Code"/>
+              <af:column headerText="Settlement Status" id="c9">
               <af:outputText value="#{row.SettlementStatus}"
                              shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.SettlementStatus.tooltip}" id="ot10"/>
             </af:column>
-          </af:table>
+            </af:table>
           </af:panelGroupLayout>
         </af:panelBox>
          <af:spacer id="s5" height="5"/>

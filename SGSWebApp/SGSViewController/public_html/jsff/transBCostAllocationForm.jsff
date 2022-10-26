@@ -435,7 +435,19 @@
                 </af:panelBox>
                 <af:panelBox text="Supporting Documents" id="pb11">
                     <f:facet name="toolbar"/>
-                    <af:panelGroupLayout id="pgl5" styleClass="AFStretchWidth">
+                    <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+                        <f:facet name="menus"/>
+                        <f:facet name="toolbar">
+                            <af:toolbar id="t5">
+                                <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                           disabled="#{!bindings.CreateInsert.enabled}" id="b11"
+                                           icon="/resources/icons/plus.png"/>
+                                <af:button actionListener="#{bindings.Delete1.execute}"
+                                           disabled="#{!bindings.Delete1.enabled}" id="b15"
+                                           icon="/resources/icons/delete.png"/>
+                            </af:toolbar>
+                        </f:facet>
+                        <f:facet name="statusbar"/>
                         <af:table value="#{bindings.SgsIcoDocAttachmentsViewVO1.collectionModel}" var="row"
                                   rows="#{bindings.SgsIcoDocAttachmentsViewVO1.rangeSize}"
                                   emptyText="#{bindings.SgsIcoDocAttachmentsViewVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -443,35 +455,45 @@
                                   selectedRowKeys="#{bindings.SgsIcoDocAttachmentsViewVO1.collectionModel.selectedRow}"
                                   selectionListener="#{bindings.SgsIcoDocAttachmentsViewVO1.collectionModel.makeCurrent}"
                                   rowSelection="single" fetchSize="#{bindings.SgsIcoDocAttachmentsViewVO1.rangeSize}"
-                                  id="t3" styleClass="AFStretchWidth"
-                                  columnStretching="last">
-                            <af:column headerText="Supporting Document"
-                                       id="c10" width="300">
+                                  id="t3" styleClass="AFStretchWidth" columnStretching="last"
+                                  partialTriggers="::b11 ::b15">
+                            <af:column headerText="Supporting Document" id="c10" width="300">
                                 <af:selectOneChoice value="#{row.bindings.SupportingDocTypeValue.inputValue}"
                                                     label="#{row.bindings.SupportingDocTypeValue.label}"
                                                     required="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.SupportingDocTypeValue.mandatory}"
                                                     shortDesc="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.SupportingDocTypeValue.tooltip}"
-                                                    id="soc13" readOnly="true">
+                                                    id="soc13" readOnly="false">
                                     <f:selectItems value="#{row.bindings.SupportingDocTypeValue.items}" id="si13"/>
                                     <f:validator binding="#{row.bindings.SupportingDocTypeValue.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.label}"
-                                       id="c11">
-                                       <af:link text="#{row.Attachment}" id="l11" inlineStyle="font-weight:bold;"/>
-                                <!--<af:inputText value="#{row.bindings.Attachment.inputValue}"
-                                              label="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.label}"
-                                              required="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.mandatory}"
-                                              columns="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.displayWidth}"
-                                              maximumLength="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.precision}"
-                                              shortDesc="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.Attachment.tooltip}"
+                            <af:column headerText="Attachments" id="c11" width="300">
+                                <af:link text="#{row.Attachment}" id="l11" inlineStyle="font-weight:bold;"/>
+                            </af:column>
+                            <af:column headerText="Upload Date" id="c12" width="300">
+                                <af:inputDate value="#{row.bindings.UploadDate.inputValue}"
+                                              label="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.UploadDate.label}"
+                                              required="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.UploadDate.mandatory}"
+                                              columns="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.UploadDate.displayWidth}"
+                                              shortDesc="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.UploadDate.tooltip}"
+                                              id="id6" readOnly="true">
+                                    <f:validator binding="#{row.bindings.UploadDate.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.UploadDate.format}"/>
+                                </af:inputDate>
+                            </af:column>
+                            <af:column headerText="Updated By" id="c13">
+                                <af:inputText value="#{securityContext.userName}"
+                                              label="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.UpdatedBy.label}"
+                                              required="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.UpdatedBy.mandatory}"
+                                              columns="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.UpdatedBy.displayWidth}"
+                                              maximumLength="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.UpdatedBy.precision}"
+                                              shortDesc="#{bindings.SgsIcoDocAttachmentsViewVO1.hints.UpdatedBy.tooltip}"
                                               id="it29" readOnly="true">
-                                    <f:validator binding="#{row.bindings.Attachment.validator}"/>
-                                </af:inputText>-->
-                                
+                                    <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                                </af:inputText>
                             </af:column>
                         </af:table>
-                    </af:panelGroupLayout>
+                    </af:panelCollection>
                 </af:panelBox>
                 <af:panelBox id="pb15" text="Rectification Entry Details" disclosed="false" rendered="true">
                     <f:facet name="toolbar"/>

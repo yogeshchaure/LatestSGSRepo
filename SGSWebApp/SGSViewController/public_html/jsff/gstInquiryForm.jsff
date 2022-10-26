@@ -141,12 +141,12 @@
                 <f:selectItems value="#{bindings.HsnCode.items}" id="si7"/>
                 <f:validator binding="#{bindings.HsnCode.validator}"/>
               </af:selectOneChoice>-->
-            <af:selectOneChoice value="#{bindings.HsnCode1.inputValue}" label="SAC / HSN Code"
+            <!--<af:selectOneChoice value="#{bindings.HsnCode1.inputValue}" label="SAC / HSN Code"
                                 required="#{bindings.HsnCode1.hints.mandatory}"
                                 shortDesc="#{bindings.HsnCode1.hints.tooltip}" id="soc6">
               <f:selectItems value="#{bindings.HsnCode1.items}" id="si6"/>
               <f:validator binding="#{bindings.HsnCode1.validator}"/>
-            </af:selectOneChoice>
+            </af:selectOneChoice>-->
             <!--<af:inputText value="#{bindings.ItemServiceCategory.inputValue}"
                           label="#{bindings.ItemServiceCategory.hints.label}"
                           required="#{bindings.ItemServiceCategory.hints.mandatory}"

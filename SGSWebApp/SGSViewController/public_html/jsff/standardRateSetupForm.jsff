@@ -199,7 +199,7 @@
                         <f:facet name="statusbar"/>
               </af:panelCollection>
             </af:panelBox>
-            <af:panelBox text="I/Co before allocation" id="pb2">
+            <!--<af:panelBox text="I/Co before allocation" id="pb2">
               <f:facet name="toolbar"/>
               <af:panelCollection id="pc1" styleClass="AFStretchWidth">
                 <f:facet name="menus"/>
@@ -210,7 +210,7 @@
                 <af:button id="b4" icon="/resources/icons/delete.png" actionListener="#{bindings.Delete2.execute}"/>
                   </af:toolbar>
                 </f:facet>
-              <!-- table -->
+              --><!-- table --><!--
                         <af:table value="#{bindings.SgsIcoBeforeAllocationVO1.collectionModel}" var="row"
                                   rows="#{bindings.SgsIcoBeforeAllocationVO1.rangeSize}"
                                   emptyText="#{bindings.SgsIcoBeforeAllocationVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -232,7 +232,7 @@
                             </af:column>
                           <af:column headerText="Attachment"
                                        id="c6">
-                                 <!-- <af:inputText value="#{row.bindings.Attachment.inputValue}"
+                                 --><!-- <af:inputText value="#{row.bindings.Attachment.inputValue}"
                                               label="#{bindings.SgsIcoBeforeAllocationVO1.hints.Attachment.label}"
                                               required="#{bindings.SgsIcoBeforeAllocationVO1.hints.Attachment.mandatory}"
                                               columns="#{bindings.SgsIcoBeforeAllocationVO1.hints.Attachment.displayWidth}"
@@ -240,13 +240,13 @@
                                               shortDesc="#{bindings.SgsIcoBeforeAllocationVO1.hints.Attachment.tooltip}"
                                               id="it8">
                                     <f:validator binding="#{row.bindings.Attachment.validator}"/>
-                                </af:inputText>-->
+                                </af:inputText>--><!--
                                  <af:link text="#{row.Attachment}" id="l2" inlineStyle="font-weight:bold;"/>
                             </af:column>
                         </af:table>
                         <f:facet name="statusbar"/>
               </af:panelCollection>
-            </af:panelBox>
+            </af:panelBox>-->
        </af:panelGroupLayout>
         </f:facet>
     </af:panelStretchLayout>

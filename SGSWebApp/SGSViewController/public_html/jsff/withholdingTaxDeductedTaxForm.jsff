@@ -421,7 +421,7 @@
             <f:facet name="statusbar"/>
               </af:panelCollection>
             </af:panelBox>
-        <af:panelBox text="GL Account Details" id="pb2">
+        <!--<af:panelBox text="GL Account Details" id="pb2">
           <f:facet name="toolbar"/>
           <af:panelCollection id="pc1" styleClass="AFStretchWidth">
             <f:facet name="menus"/>
@@ -464,7 +464,7 @@
               </af:column>
             </af:table>
           </af:panelCollection>
-        </af:panelBox>
+        </af:panelBox>-->
       </af:panelGroupLayout>
     </f:facet>
   </af:panelStretchLayout>

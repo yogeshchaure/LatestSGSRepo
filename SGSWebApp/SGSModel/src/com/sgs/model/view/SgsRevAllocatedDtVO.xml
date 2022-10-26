@@ -933,6 +933,18 @@
     EntityAttrName="SourceTransactionId"
     EntityUsage="SgsRevAllocatedDt"
     AliasName="SOURCE_TRASACTION_ID"/>
+  <ViewAttribute
+    Name="ReferenceInvoiceNumber"
+    PrecisionRule="true"
+    EntityAttrName="ReferenceInvoiceNumber"
+    EntityUsage="SgsRevAllocatedDt"
+    AliasName="REFERENCE_INVOICE_NUM"/>
+  <ViewAttribute
+    Name="ReferenceVoucherNumber"
+    PrecisionRule="true"
+    EntityAttrName="ReferenceVoucherNumber"
+    EntityUsage="SgsRevAllocatedDt"
+    AliasName="REFERENCE_VOUCHER_NUM"/>
   <ViewCriteria
     Name="SgsRevAllocatedDtVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsRevAllocatedDtVO"

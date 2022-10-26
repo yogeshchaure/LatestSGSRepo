@@ -138,6 +138,15 @@
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="INVOICEAMOUNT"
+    Precision="10"
+    Scale="2"
+    ColumnName="INVOICE_AMOUNT"
+    SQLType="DECIMAL"
+    Type="java.math.BigDecimal"
+    ColumnType="DECIMAL"
+    TableName="SGS_CREATE_CREDIT_MEMOS_F"/>
   <Key
     Name="PKSGSCREATECREDITMEMOSF"
     PrimaryKey="true">

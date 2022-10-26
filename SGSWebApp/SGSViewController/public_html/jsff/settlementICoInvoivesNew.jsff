@@ -181,7 +181,8 @@
                                 <f:validator binding="#{row.bindings.ReceiptStatus.validator}"/>
                             </af:selectOneChoice>
                         </af:column>
-                        <af:column headerText="Tax Recoverable"
+                            <af:column id="c1" headerText="Purpose Code"/>
+                            <af:column headerText="Tax Recoverable"
                                    id="resId1c18">
                             <af:outputText value="#{row.TaxCreditClaim}"
                                            shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.TaxCreditClaim.tooltip}"
@@ -228,7 +229,7 @@
                                 <f:validator binding="#{row.bindings.SettlementStatus.validator}"/>
                             </af:selectOneChoice>
                         </af:column>
-                    </af:table>
+                        </af:table>
                     </af:panelCollection>
                 </af:panelGroupLayout>
                
