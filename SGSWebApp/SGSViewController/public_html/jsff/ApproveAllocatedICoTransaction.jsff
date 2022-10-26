@@ -71,7 +71,7 @@
                                 <f:validator binding="#{row.bindings.CostIdentificationId.validator}"/>
                             </af:selectOneChoice>-->
                             </af:column>
-                            <af:column headerText="TPA Applicability" id="resId1c4">
+                            <af:column headerText="TPA ID" id="resId1c4">
                                 <af:outputText value="#{row.TpaApplicability}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TpaApplicability.tooltip}"
                                                id="ot33"/>

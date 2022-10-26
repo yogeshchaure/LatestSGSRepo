@@ -31,3 +31,10 @@ def pType_BusinessUnitLOV_BindVariable_BoundParameter()
 'bUSINESS_UNIT'
 }
 
+
+@AccessorParameterExpression(accessorName="RbiPurposeCodeList", name="pType")
+def pType_RbiPurposeCodeList_BindVariable_BoundParameter()
+{
+'RBI_PURPOSE_CODE'
+}
+

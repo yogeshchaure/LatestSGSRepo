@@ -84,6 +84,22 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="RbiPurposeCodeList"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsCreateSettlementFVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_BusinessUnit"
     ListVOName="BusinessUnitLOV"
@@ -146,6 +162,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="PaymentCurrency"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_RbiPurposeCode"
+    ListVOName="RbiPurposeCodeList"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="RbiPurposeCode"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -282,6 +316,20 @@
     EntityAttrName="UpdatedDate"
     EntityUsage="SgsCreateSettlementF"
     AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="RbiPurposeCode"
+    PrecisionRule="true"
+    EntityAttrName="RbiPurposeCode"
+    EntityUsage="SgsCreateSettlementF"
+    AliasName="PURPOSE_CODE"
+    LOVName="LOV_RbiPurposeCode">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.sgs.model.SGSModelBundle"/>

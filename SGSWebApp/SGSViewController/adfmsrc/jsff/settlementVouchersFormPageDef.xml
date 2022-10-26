@@ -122,5 +122,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="SgsCreateSettlementFVO1Iterator" StaticList="false" Uses="LOV_RbiPurposeCode"
+          id="RbiPurposeCode" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

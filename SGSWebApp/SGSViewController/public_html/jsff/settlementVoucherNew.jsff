@@ -204,6 +204,7 @@
                                     <f:validator binding="#{row.bindings.PaymentStatus.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
+                            <af:column id="c1" headerText="Purpose Code"/>
                             <af:column headerText="Settlement Category"
                                        id="resId1c18">
                                 <af:selectOneChoice value="#{row.bindings.SettlementCategory.inputValue}"
