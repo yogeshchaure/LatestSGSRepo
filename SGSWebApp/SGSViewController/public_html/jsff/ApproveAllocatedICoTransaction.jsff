@@ -72,9 +72,10 @@
                             </af:selectOneChoice>-->
                             </af:column>
                             <af:column headerText="TPA ID" id="resId1c4">
-                                <af:outputText value="#{row.TpaApplicability}"
+                                <!--<af:outputText value="#{row.TpaApplicability}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TpaApplicability.tooltip}"
-                                               id="ot33"/>
+                                               id="ot33"/>-->
+                                <af:link text="#{row.TpaApplicability}" id="l5" inlineStyle="font-weight:bold;"/>
                                 <!--<af:selectOneChoice value="#{row.bindings.TpaApplicability.inputValue}"
                                                 label="#{row.bindings.TpaApplicability.label}"
                                                 required="#{bindings.SgsRevAllocatedDtVO.hints.TpaApplicability.mandatory}"

@@ -46,7 +46,7 @@
             </af:panelGroupLayout>
         </f:facet>
         <f:facet name="center">
-            <af:panelBox text="Review I/Co Transaction before Cost Allocation" id="pb1">
+            <af:panelBox text="Review Imported Transactions from PeopleSoft" id="pb1">
                 <f:facet name="toolbar"/>
                 <af:panelGroupLayout id="pgl1" layout="vertical">
                     <af:panelHeader text=" " id="ph1">
