@@ -834,6 +834,159 @@
               </af:panelLabelAndMessage>-->
                     </af:panelFormLayout>
                 </af:panelBox>
+                <!--<af:panelBox text="True Up and True Down Detail" id="pb12" disclosed="false">
+                    <f:facet name="toolbar"/>
+                    <af:button text="Apply True Up / Down" id="b16"/>
+                    <af:panelFormLayout id="pfl11">
+                        <af:inputText value="#{bindings.StrandardRate.inputValue}"
+                                      label="Strandard Rate"
+                                      required="#{bindings.StrandardRate.hints.mandatory}"
+                                      columns="#{bindings.StrandardRate.hints.displayWidth}"
+                                      maximumLength="#{bindings.StrandardRate.hints.precision}"
+                                      shortDesc="#{bindings.StrandardRate.hints.tooltip}" id="it30">
+                            <f:validator binding="#{bindings.StrandardRate.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.TotalAllocatedAmt.inputValue}"
+                                      label="Total Allocated Amount"
+                                      required="#{bindings.TotalAllocatedAmt.hints.mandatory}"
+                                      columns="#{bindings.TotalAllocatedAmt.hints.displayWidth}"
+                                      maximumLength="#{bindings.TotalAllocatedAmt.hints.precision}"
+                                      shortDesc="#{bindings.TotalAllocatedAmt.hints.tooltip}" id="it31">
+                            <f:validator binding="#{bindings.TotalAllocatedAmt.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.OriginalCostExtct.inputValue}"
+                                      label="Original Cost Extract"
+                                      required="#{bindings.OriginalCostExtct.hints.mandatory}"
+                                      columns="#{bindings.OriginalCostExtct.hints.displayWidth}"
+                                      maximumLength="#{bindings.OriginalCostExtct.hints.precision}"
+                                      shortDesc="#{bindings.OriginalCostExtct.hints.tooltip}" id="it32">
+                            <f:validator binding="#{bindings.OriginalCostExtct.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Variance.inputValue}" label="Variance"
+                                      required="#{bindings.Variance.hints.mandatory}"
+                                      columns="#{bindings.Variance.hints.displayWidth}"
+                                      maximumLength="#{bindings.Variance.hints.precision}"
+                                      shortDesc="#{bindings.Variance.hints.tooltip}" id="it33">
+                            <f:validator binding="#{bindings.Variance.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Frequency.inputValue}" label="Frequency"
+                                      required="#{bindings.Frequency.hints.mandatory}"
+                                      columns="#{bindings.Frequency.hints.displayWidth}"
+                                      maximumLength="#{bindings.Frequency.hints.precision}"
+                                      shortDesc="#{bindings.Frequency.hints.tooltip}" id="it34">
+                            <f:validator binding="#{bindings.Frequency.validator}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.NextTrueUd.inputValue}"
+                                      label="Next True Up/Down"
+                                      required="#{bindings.NextTrueUd.hints.mandatory}"
+                                      columns="#{bindings.NextTrueUd.hints.displayWidth}"
+                                      shortDesc="#{bindings.NextTrueUd.hints.tooltip}" id="id7">
+                            <f:validator binding="#{bindings.NextTrueUd.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.NextTrueUd.format}"/>
+                        </af:inputDate>
+                    </af:panelFormLayout>
+                    <af:table value="#{bindings.TreeUpDownDetailView1.collectionModel}" var="row"
+                              rows="#{bindings.TreeUpDownDetailView1.rangeSize}"
+                              emptyText="#{bindings.TreeUpDownDetailView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                              rowBandingInterval="0"
+                              selectedRowKeys="#{bindings.TreeUpDownDetailView1.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.TreeUpDownDetailView1.collectionModel.makeCurrent}"
+                              rowSelection="single" fetchSize="#{bindings.TreeUpDownDetailView1.rangeSize}" id="t6"
+                              columnStretching="last">
+                        <af:column id="c31" headerText="Month" width="150">
+                            <af:outputText value="Nov 2022" id="ot18"/>
+                        </af:column>
+                        <af:column headerText="Allocation ID" id="c14" width="150">
+                            <af:inputText value="#{row.bindings.AllocationId.inputValue}"
+                                          label="#{bindings.TreeUpDownDetailView1.hints.AllocationId.label}"
+                                          required="#{bindings.TreeUpDownDetailView1.hints.AllocationId.mandatory}"
+                                          columns="#{bindings.TreeUpDownDetailView1.hints.AllocationId.displayWidth}"
+                                          maximumLength="#{bindings.TreeUpDownDetailView1.hints.AllocationId.precision}"
+                                          shortDesc="#{bindings.TreeUpDownDetailView1.hints.AllocationId.tooltip}"
+                                          id="it36">
+                                <f:validator binding="#{row.bindings.AllocationId.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="PeopleSoft Invoice No" id="c15" width="200">
+                            <af:inputText value="#{row.bindings.PsInvoiceNo.inputValue}"
+                                          label="#{bindings.TreeUpDownDetailView1.hints.PsInvoiceNo.label}"
+                                          required="#{bindings.TreeUpDownDetailView1.hints.PsInvoiceNo.mandatory}"
+                                          columns="#{bindings.TreeUpDownDetailView1.hints.PsInvoiceNo.displayWidth}"
+                                          maximumLength="#{bindings.TreeUpDownDetailView1.hints.PsInvoiceNo.precision}"
+                                          shortDesc="#{bindings.TreeUpDownDetailView1.hints.PsInvoiceNo.tooltip}"
+                                          id="it37">
+                                <f:validator binding="#{row.bindings.PsInvoiceNo.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="From BU" id="c16" width="200">
+                            <af:inputText value="#{row.bindings.FromBu.inputValue}"
+                                          label="#{bindings.TreeUpDownDetailView1.hints.FromBu.label}"
+                                          required="#{bindings.TreeUpDownDetailView1.hints.FromBu.mandatory}"
+                                          columns="#{bindings.TreeUpDownDetailView1.hints.FromBu.displayWidth}"
+                                          maximumLength="#{bindings.TreeUpDownDetailView1.hints.FromBu.precision}"
+                                          shortDesc="#{bindings.TreeUpDownDetailView1.hints.FromBu.tooltip}" id="it38">
+                                <f:validator binding="#{row.bindings.FromBu.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="To BU" id="c17" width="200">
+                            <af:inputText value="#{row.bindings.ToBu.inputValue}"
+                                          label="#{bindings.TreeUpDownDetailView1.hints.ToBu.label}"
+                                          required="#{bindings.TreeUpDownDetailView1.hints.ToBu.mandatory}"
+                                          columns="#{bindings.TreeUpDownDetailView1.hints.ToBu.displayWidth}"
+                                          maximumLength="#{bindings.TreeUpDownDetailView1.hints.ToBu.precision}"
+                                          shortDesc="#{bindings.TreeUpDownDetailView1.hints.ToBu.tooltip}" id="it39">
+                                <f:validator binding="#{row.bindings.ToBu.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="Allocated Amount" id="c26">
+                            <af:inputText value="#{row.bindings.AllocatedAmount.inputValue}"
+                                          label="#{bindings.TreeUpDownDetailView1.hints.AllocatedAmount.label}"
+                                          required="#{bindings.TreeUpDownDetailView1.hints.AllocatedAmount.mandatory}"
+                                          columns="#{bindings.TreeUpDownDetailView1.hints.AllocatedAmount.displayWidth}"
+                                          maximumLength="#{bindings.TreeUpDownDetailView1.hints.AllocatedAmount.precision}"
+                                          shortDesc="#{bindings.TreeUpDownDetailView1.hints.AllocatedAmount.tooltip}"
+                                          id="it40">
+                                <f:validator binding="#{row.bindings.AllocatedAmount.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                        <af:column headerText="Variance" id="c27">
+                            <af:inputText value="#{row.bindings.Variance.inputValue}"
+                                          label="#{bindings.TreeUpDownDetailView1.hints.Variance.label}"
+                                          required="#{bindings.TreeUpDownDetailView1.hints.Variance.mandatory}"
+                                          columns="#{bindings.TreeUpDownDetailView1.hints.Variance.displayWidth}"
+                                          maximumLength="#{bindings.TreeUpDownDetailView1.hints.Variance.precision}"
+                                          shortDesc="#{bindings.TreeUpDownDetailView1.hints.Variance.tooltip}"
+                                          id="it41">
+                                <f:validator binding="#{row.bindings.Variance.validator}"/>
+                            </af:inputText>
+                        </af:column>
+                    </af:table>
+                    <af:panelFormLayout id="pfl12">
+                        <af:inputText label="Total" required="#{bindings.TreeUpDownId.hints.mandatory}" readOnly="true"
+                                      columns="#{bindings.TreeUpDownId.hints.displayWidth}"
+                                      maximumLength="#{bindings.TreeUpDownId.hints.precision}"
+                                      shortDesc="#{bindings.TreeUpDownId.hints.tooltip}" id="it43">
+                            <f:validator binding="#{bindings.TreeUpDownId.validator}"/>
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.TreeUpDownId.format}"/>
+                        </af:inputText>
+                        <af:inputDate value="#{bindings.CreatedDate3.inputValue}"
+                                      label="#{bindings.CreatedDate3.hints.label}"
+                                      required="#{bindings.CreatedDate3.hints.mandatory}"
+                                      columns="#{bindings.CreatedDate3.hints.displayWidth}"
+                                      shortDesc="#{bindings.CreatedDate3.hints.tooltip}" id="id9" readOnly="true">
+                            <f:validator binding="#{bindings.CreatedDate3.validator}"/>
+                            <af:convertDateTime pattern="#{bindings.CreatedDate3.format}"/>
+                        </af:inputDate>
+                        <af:inputText value="#{bindings.CreatedBy3.inputValue}"
+                                      label="#{bindings.CreatedBy3.hints.label}"
+                                      required="#{bindings.CreatedBy3.hints.mandatory}"
+                                      columns="#{bindings.CreatedBy3.hints.displayWidth}"
+                                      maximumLength="#{bindings.CreatedBy3.hints.precision}"
+                                      shortDesc="#{bindings.CreatedBy3.hints.tooltip}" id="it35" readOnly="true">
+                            <f:validator binding="#{bindings.CreatedBy3.validator}"/>
+                        </af:inputText>
+                    </af:panelFormLayout>
+                </af:panelBox>-->
                 <af:popup childCreation="deferred" autoCancel="disabled" id="p1"
                           binding="#{pageFlowScope.transBCostAllocationFormBean.revRecDetailPopup}">
                     <af:dialog id="d1" contentWidth="1000" contentHeight="300" type="none">
