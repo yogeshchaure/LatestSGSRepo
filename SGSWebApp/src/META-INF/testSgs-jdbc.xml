@@ -4,7 +4,7 @@
                   xmlns="http://xmlns.oracle.com/weblogic/jdbc-data-source">
     <name>testSgs</name>
     <jdbc-driver-params>
-        <url>jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databasename=SGS;integratedSecurity=true;</url>
+        <url>jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databasename=INTERCO;integratedSecurity=true;</url>
         <driver-name>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-name>
         <properties>
             <property>

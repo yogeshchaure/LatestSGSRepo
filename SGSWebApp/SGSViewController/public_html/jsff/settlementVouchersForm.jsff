@@ -209,12 +209,12 @@
                 <af:convertDateTime pattern="#{bindings.SgsCreateSettlementTVO1.hints.SettlementDate.format}"/>
               </af:outputText>
             </af:column>
-            <af:column headerText="PeopleSoft Voucher No" id="c2" width="200">
+            <af:column headerText="Voucher No" id="c2" width="200">
               <af:outputText value="#{row.PeoplesoftVoucherNo}"
                              shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.PeoplesoftVoucherNo.tooltip}"
                              id="ot3"/>
             </af:column>
-            <af:column headerText="PeopleSoft Invoice No" id="c3" width="200">
+            <af:column headerText="Invoice No" id="c3" width="200">
               <af:outputText value="#{row.PeoplesoftInvoiceNo}"
                              shortDesc="#{bindings.SgsCreateSettlementTVO1.hints.PeoplesoftInvoiceNo.tooltip}"
                              id="ot4"/>

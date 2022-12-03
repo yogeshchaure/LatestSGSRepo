@@ -35,7 +35,6 @@
           <Item Value="SettlementCategory"/>
           <Item Value="DepositId"/>
           <Item Value="TransactionReferenceNo"/>
-          <Item Value="ReferenceToApVoucher"/>
           <Item Value="SettlementStatus"/>
         </AttrNames>
       </nodeDefinition>

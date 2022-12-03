@@ -31,204 +31,156 @@
                               selectionListener="#{bindings.SgsStlmntInetrCompInvoice1VO1.collectionModel.makeCurrent}"
                               rowSelection="single" fetchSize="#{bindings.SgsStlmntInetrCompInvoice1VO1.rangeSize}"
                               id="resId1">
-                         <af:column headerText="" id="c13"
-                                           width="80" align="center">
-                                    <af:selectBooleanCheckbox  labelStyle="color:#336699"
-                                                              label="" id="sbc2"/>
-                                    <f:facet name="header">
-                                     <af:outputText value="Select All" id="ot42"/>
-                                        <af:selectBooleanCheckbox 
-                                                                  label="" id="sbc1"
-                                                                  labelStyle="color:#336699" autoSubmit="true">
-                                          
-                                        </af:selectBooleanCheckbox>
-                                    </f:facet>
-                                </af:column>
-                        <af:column headerText="Period"
-                                   id="resId1c1">
-                            <af:outputText value="#{row.Period}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.Period.tooltip}"
-                                           id="ot1">
-                                <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.Period.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Accounting Date"
-                                   id="resId1c2">
-                            <af:outputText value="#{row.AccountingDate}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AccountingDate.tooltip}"
-                                           id="ot2">
-                                <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AccountingDate.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="PeopleSoft Invoice No"
-                                   id="resId1c3">
-                            <af:outputText value="#{row.PeoplesoftVoucherNo}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.PeoplesoftVoucherNo.tooltip}"
-                                           id="ot3"/>
-                        </af:column>
-                        <af:column headerText="Legal Entity"
-                                   id="resId1c4">
-                            <af:outputText value="#{row.LegalEntity}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.LegalEntity.tooltip}"
-                                           id="ot4"/>
-                        </af:column>
-                        <af:column headerText="Business Unit"
-                                   id="resId1c5">
-                            <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
-                                                label="#{row.bindings.BusinessUnit.label}"
-                                                required="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.BusinessUnit.mandatory}"
-                                                shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.BusinessUnit.tooltip}"
-                                                readOnly="true" id="soc1">
-                                <f:selectItems value="#{row.bindings.BusinessUnit.items}" id="si1"/>
-                                <f:validator binding="#{row.bindings.BusinessUnit.validator}"/>
-                            </af:selectOneChoice>
-                        </af:column>
-                        <af:column headerText="Operating Unit"
-                                   id="resId1c6">
-                            <af:outputText value="#{row.OperatingUnit1}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.OperatingUnit1.tooltip}"
-                                           id="ot5"/>
-                        </af:column>
-                        <af:column headerText="I/Co Customer"
-                                   id="resId1c7">
-                            <af:outputText value="#{row.IcoCustomer}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.IcoCustomer.tooltip}"
-                                           id="ot6"/>
-                        </af:column>
-                        <af:column headerText="Operating Unit"
-                                   id="resId1c8">
-                            <af:outputText value="#{row.OperatingUnit2}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.OperatingUnit2.tooltip}"
-                                           id="ot7"/>
-                        </af:column>
-                        <af:column headerText="Transaction Currency"
-                                   id="resId1c9">
-                            <af:outputText value="#{row.TransactionCurrency}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.TransactionCurrency.tooltip}"
-                                           id="ot8"/>
-                        </af:column>
-                        <af:column headerText="Invoice Amount"
-                                   id="resId1c10">
-                            <af:outputText value="#{row.InvoiceAmount}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.InvoiceAmount.tooltip}"
-                                           id="ot9">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.InvoiceAmount.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="WHT/TDS"
-                                   id="resId1c11">
-                            <af:outputText value="#{row.WhtTds}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.WhtTds.tooltip}"
-                                           id="ot10">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.WhtTds.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Net Amount Receivable"
-                                   id="resId1c12">
-                            <af:outputText value="#{row.NetAmountReceivable!=null?row.NetAmountReceivable:'-'}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.NetAmountReceivable.tooltip}"
-                                           id="ot11">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.NetAmountReceivable.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Amount Settled Till Date"
-                                   id="resId1c13">
-                            <af:outputText value="#{row.AmountSettledTillDate!=null?row.AmountSettledTillDate:'-'}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AmountSettledTillDate.tooltip}"
-                                           id="ot12">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AmountSettledTillDate.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Amount Selected for Settlement"
-                                   id="resId1c14">
-                            <af:outputText value="#{row.SettlementAmount!=null?row.SettlementAmount:'-'}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementAmount.tooltip}"
-                                           id="ot13">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementAmount.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Amount Written Off"
-                                   id="resId1c15">
-                            <af:outputText value="#{row.AmountWrittenOff!=null?row.AmountWrittenOff:'-'}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AmountWrittenOff.tooltip}"
-                                           id="ot14">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AmountWrittenOff.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Outstanding Amount Receivable"
-                                   id="resId1c16">
-                            <af:outputText value="#{row.OutstandingAmountReceivable!=null?row.OutstandingAmountReceivable:'-'}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.OutstandingAmountReceivable.tooltip}"
-                                           id="ot15">
-                                <af:convertNumber groupingUsed="false"
-                                                  pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.OutstandingAmountReceivable.format}"/>
-                            </af:outputText>
-                        </af:column>
-                        <af:column headerText="Receipt Status"
-                                   id="resId1c17">
-                            <af:selectOneChoice value="#{row.bindings.ReceiptStatus.inputValue}"
-                                                label="#{row.bindings.ReceiptStatus.label}"
-                                                required="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.ReceiptStatus.mandatory}"
-                                                shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.ReceiptStatus.tooltip}"
-                                                readOnly="true" id="soc2">
-                                <f:selectItems value="#{row.bindings.ReceiptStatus.items}" id="si2"/>
-                                <f:validator binding="#{row.bindings.ReceiptStatus.validator}"/>
-                            </af:selectOneChoice>
-                        </af:column>
+                            <af:column headerText="" id="c13" width="80" align="center">
+                                <af:selectBooleanCheckbox labelStyle="color:#336699" label="" id="sbc2"/>
+                                <f:facet name="header">
+                                    <af:outputText value="Select All" id="ot42"/>
+                                    <af:selectBooleanCheckbox label="" id="sbc1" labelStyle="color:#336699"
+                                                              autoSubmit="true"/>
+                                </f:facet>
+                            </af:column>
+                            <af:column headerText="Period" id="resId1c1">
+                                <af:outputText value="#{row.Period}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.Period.tooltip}"
+                                               id="ot1">
+                                    <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.Period.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Accounting Date" id="resId1c2">
+                                <af:outputText value="#{row.AccountingDate}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AccountingDate.tooltip}"
+                                               id="ot2">
+                                    <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AccountingDate.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Invoice No" id="resId1c3">
+                                <af:outputText value="#{row.PeoplesoftVoucherNo}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.PeoplesoftVoucherNo.tooltip}"
+                                               id="ot3"/>
+                            </af:column>
+                            <af:column headerText="Legal Entity" id="resId1c4">
+                                <af:outputText value="#{row.LegalEntity}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.LegalEntity.tooltip}"
+                                               id="ot4"/>
+                            </af:column>
+                            <af:column headerText="Business Unit" id="resId1c5">
+                                <af:outputText value="#{row.BusinessUnit}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.BusinessUnit.tooltip}"
+                                               id="ot21"/>
+                            </af:column>
+                            <af:column headerText="Operating Unit" id="resId1c6">
+                                <af:outputText value="#{row.OperatingUnit1}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.OperatingUnit1.tooltip}"
+                                               id="ot5"/>
+                            </af:column>
+                            <af:column headerText="I/Co Customer" id="resId1c7">
+                                <af:outputText value="#{row.IcoCustomer}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.IcoCustomer.tooltip}"
+                                               id="ot6"/>
+                            </af:column>
+                            <af:column headerText="Operating Unit" id="resId1c8">
+                                <af:outputText value="#{row.OperatingUnit2}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.OperatingUnit2.tooltip}"
+                                               id="ot7"/>
+                            </af:column>
+                            <af:column headerText="Transaction Currency" id="resId1c9">
+                                <af:outputText value="#{row.TransactionCurrency}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.TransactionCurrency.tooltip}"
+                                               id="ot8"/>
+                            </af:column>
+                            <af:column headerText="Invoice Amount" id="resId1c10">
+                                <af:outputText value="#{row.InvoiceAmount}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.InvoiceAmount.tooltip}"
+                                               id="ot9">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.InvoiceAmount.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="WHT/TDS" id="resId1c11">
+                                <af:outputText value="#{row.WhtTds}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.WhtTds.tooltip}"
+                                               id="ot10">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.WhtTds.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Net Amount Receivable" id="resId1c12">
+                                <af:outputText value="#{row.NetAmountReceivable!=null?row.NetAmountReceivable:'-'}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.NetAmountReceivable.tooltip}"
+                                               id="ot11">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.NetAmountReceivable.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Amount Settled Till Date" id="resId1c13">
+                                <af:outputText value="#{row.AmountSettledTillDate!=null?row.AmountSettledTillDate:'-'}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AmountSettledTillDate.tooltip}"
+                                               id="ot12">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AmountSettledTillDate.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Amount Selected for Settlement" id="resId1c14">
+                                <af:outputText value="#{row.SettlementAmount!=null?row.SettlementAmount:'-'}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementAmount.tooltip}"
+                                               id="ot13">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementAmount.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Amount Written Off" id="resId1c15">
+                                <af:outputText value="#{row.AmountWrittenOff!=null?row.AmountWrittenOff:'-'}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AmountWrittenOff.tooltip}"
+                                               id="ot14">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.AmountWrittenOff.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Outstanding Amount Receivable" id="resId1c16">
+                                <af:outputText value="#{row.OutstandingAmountReceivable!=null?row.OutstandingAmountReceivable:'-'}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.OutstandingAmountReceivable.tooltip}"
+                                               id="ot15">
+                                    <af:convertNumber groupingUsed="false"
+                                                      pattern="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.OutstandingAmountReceivable.format}"/>
+                                </af:outputText>
+                            </af:column>
+                            <af:column headerText="Receipt Status" id="resId1c17">
+                                <af:outputText value="#{row.ReceiptStatus}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.ReceiptStatus.tooltip}"
+                                               id="ot20"/>
+                            </af:column>
                             <af:column id="c1" headerText="Purpose Code"/>
-                            <af:column headerText="Tax Recoverable"
-                                   id="resId1c18">
-                            <af:outputText value="#{row.TaxCreditClaim}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.TaxCreditClaim.tooltip}"
-                                           id="ot16"/>
-                        </af:column>
-                        <af:column headerText="Settlement Category"
-                                   id="resId1c19">
-                            <af:selectOneChoice value="#{row.bindings.SettlementCategory.inputValue}"
-                                                label="#{row.bindings.SettlementCategory.label}"
-                                                required="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementCategory.mandatory}"
-                                                shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementCategory.tooltip}"
-                                                readOnly="true" id="soc3">
-                                <f:selectItems value="#{row.bindings.SettlementCategory.items}" id="si3"/>
-                                <f:validator binding="#{row.bindings.SettlementCategory.validator}"/>
-                            </af:selectOneChoice>
-                        </af:column>
-                        <af:column headerText="Deposit ID"
-                                   id="resId1c20">
-                            <af:outputText value="#{row.DepositId!=null?row.DepositId:'-'}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.DepositId.tooltip}"
-                                           id="ot17"/>
-                        </af:column>
-                        <af:column headerText="Transaction Reference No.(Cheque/EFT)"
-                                   id="resId1c21">
-                            <af:outputText value="#{row.TransactionReferenceNo!=null?row.TransactionReferenceNo:'-'}"
-                                           shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.TransactionReferenceNo.tooltip}"
-                                           id="ot18"/>
-                        </af:column>
-                        <af:column headerText="Reference to AP Voucher"
-                                   id="resId1c22">
-                            <!--<af:outputText value="#{row.ReferenceToApVoucher}"
+                            <af:column headerText="Tax Recoverable" id="resId1c18">
+                                <af:outputText value="#{row.TaxCreditClaim}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.TaxCreditClaim.tooltip}"
+                                               id="ot16"/>
+                            </af:column>
+                            <af:column headerText="Settlement Category" id="resId1c19">
+                                <af:outputText value="#{row.SettlementCategory}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementCategory.tooltip}"
+                                               id="ot19"/>
+                            </af:column>
+                            <af:column headerText="Deposit ID" id="resId1c20">
+                                <af:outputText value="#{row.DepositId!=null?row.DepositId:'-'}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.DepositId.tooltip}"
+                                               id="ot17"/>
+                            </af:column>
+                            <af:column headerText="Transaction Reference No.(Cheque/EFT)" id="resId1c21">
+                                <af:outputText value="#{row.TransactionReferenceNo!=null?row.TransactionReferenceNo:'-'}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.TransactionReferenceNo.tooltip}"
+                                               id="ot18"/>
+                            </af:column>
+                            <af:column headerText="Reference to AP Voucher" id="resId1c22">
+                                <!--<af:outputText value="#{row.ReferenceToApVoucher}"
                                            shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.ReferenceToApVoucher.tooltip}"
                                            id="ot19"/>-->
-                         <af:link text="#{row.ReferenceToApVoucher}" id="l1" inlineStyle="font-weight:bold;"/>
-                        </af:column>
-                        <af:column headerText="Settlement Status"
-                                   id="resId1c23">
-                            <af:selectOneChoice value="#{row.bindings.SettlementStatus.inputValue}"
-                                                label="#{row.bindings.SettlementStatus.label}"
-                                                required="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementStatus.mandatory}"
-                                                shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementStatus.tooltip}"
-                                                readOnly="true" id="soc4">
-                                <f:selectItems value="#{row.bindings.SettlementStatus.items}" id="si4"/>
-                                <f:validator binding="#{row.bindings.SettlementStatus.validator}"/>
-                            </af:selectOneChoice>
-                        </af:column>
+                                <af:link text="#{row.ReferenceToApVoucher}" id="l1" inlineStyle="font-weight:bold;"/>
+                            </af:column>
+                            <af:column headerText="Settlement Status" id="resId1c23">
+                                <af:outputText value="#{row.SettlementStatus}"
+                                               shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.SettlementStatus.tooltip}"
+                                               id="ot22"/>
+                            </af:column>
                         </af:table>
                     </af:panelCollection>
                 </af:panelGroupLayout>

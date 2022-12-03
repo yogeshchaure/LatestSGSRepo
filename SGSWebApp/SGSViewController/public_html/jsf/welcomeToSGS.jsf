@@ -13,8 +13,8 @@
                             <af:gridCell marginStart="5px" width="25%" id="gc1">
                                 <af:panelGroupLayout id="pgl1" layout="horizontal"
                                                      inlineStyle="background-color:white;">
-                                    <af:image source="/resources/images/SGSLogo.jpg" id="i1" styleClass="width:40%"
-                                              inlineStyle="height:87px; width:255px;"/>
+                                    <!--<af:image source="/resources/images/SGSLogo.jpg" id="i1" styleClass="width:40%"
+                                              inlineStyle="height:87px; width:255px;"/>-->
                                 </af:panelGroupLayout>
                             </af:gridCell>
                             <af:gridCell marginStart="5px" width="25%" id="gc2"/>

@@ -12,12 +12,12 @@
                             <af:panelGridLayout id="pgl2">
                                 <af:gridRow id="gr3" marginTop="5px" marginBottom="5px">
                                     <af:gridCell marginStart="5px" width="25%" id="gc1" halign="start" valign="top">
-                                        <af:image source="/resources/images/logoSutherland.png" id="i1"
-                                                   rendered="true" inlineStyle="background-color:White;"/>
+                                        <!--<af:image source="/resources/images/logoSutherland.png" id="i1"
+                                                   rendered="true" inlineStyle="background-color:White;"/>-->
                                     </af:gridCell>
                                 <af:gridCell marginStart="5px" width="50%" id="gc4" valign="middle" halign="center">
                                     <af:panelGroupLayout id="pgl4" valign="middle" halign="center">
-                                        <af:outputText value="Sutherland Global Services – Intercompany Workbench Application"
+                                        <af:outputText value="Intercompany Workbench Application"
                                                        id="ot3"
                                                        inlineStyle="flex-align:center; text-align:center; font-weight:900; font-size:large; color:white;"/>
                                     </af:panelGroupLayout>
@@ -36,7 +36,7 @@
                                 <f:facet name="toolbar"/>
                                 <af:panelGroupLayout id="pgl3" halign="center" valign="middle" layout="vertical"
                                                      inlineStyle="background-color:transparent;">
-                                    <af:image source="/resources/images/sutherlandLogo.jpg" id="iiii2"/>
+                                    <!--<af:image source="/resources/images/sutherlandLogo.jpg" id="iiii2"/>-->
                                     <af:outputFormatted value="Login" id="of1"
                                                         inlineStyle="font-size:x-large; font-weight:bolder;"/>
                                     <af:panelGroupLayout id="pgl6" valign="bottom" halign="start" layout="vertical"

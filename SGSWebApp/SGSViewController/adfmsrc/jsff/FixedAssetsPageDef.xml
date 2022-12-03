@@ -17,11 +17,14 @@
           <Item Value="TransactionCategory"/>
           <Item Value="PeoplesoftAssetNo"/>
           <Item Value="AssetDescription"/>
-          <!--<Item Value="PeoplesoftTransactionId"/>-->
+          <Item Value="PeoplesoftTransactionId"/>
           <Item Value="LegalEntity"/>
           <Item Value="BusinessUnit"/>
           <Item Value="OperatingUnit"/>
+          <Item Value="DEPARTMENTID"/>
           <Item Value="AffiliateBusinessUnit"/>
+          <Item Value="AffiliateOperatingUnit"/>
+          <Item Value="AFFILIATEDEPARTMENTID"/>
           <Item Value="JobCode"/>
           <Item Value="TransactionCurrency"/>
           <Item Value="OriginalCost"/>
@@ -33,11 +36,6 @@
           <Item Value="InvoicingCurrency"/>
           <Item Value="InvoiceValue"/>
           <Item Value="Status"/>
-          <Item Value="AccountingEntry"/>
-           <Item Value="AffiliateOperatingUnit"/>
-           <Item Value="PeoplesoftTransactionId"/>
-             <Item Value="AFFILIATEDEPARTMENTID"/>
-               <Item Value="DEPARTMENTID"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

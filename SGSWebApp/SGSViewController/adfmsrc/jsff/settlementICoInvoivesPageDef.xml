@@ -28,7 +28,6 @@
           <Item Value="SettlementCategory"/>
           <Item Value="DepositeId"/>
           <Item Value="ChequeRefNumber"/>
-          <Item Value="RefToAP"/>
           <Item Value="Status"/>
         </AttrNames>
       </nodeDefinition>

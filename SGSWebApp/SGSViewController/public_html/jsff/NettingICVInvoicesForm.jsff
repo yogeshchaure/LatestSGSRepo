@@ -56,8 +56,8 @@
                             <af:toolbar id="t2"></af:toolbar>
                         </f:facet>
                         <af:spacer id="s2" width="550"/>
-                        <af:outputText value="Sutherland Global Services Inc" id="ot10"
-                                       inlineStyle="font-weight:bold;font-size:14px;"/>
+                        <!--<af:outputText value="Sutherland Global Services Inc" id="ot10"
+                                       inlineStyle="font-weight:bold;font-size:14px;"/>-->
                         <af:separator id="s3"/>
                         <af:panelFormLayout id="pfl3" rows="2">
                             <af:panelLabelAndMessage label="Business Unit" id="plam6">
@@ -175,8 +175,8 @@
                             <af:toolbar id="t3"></af:toolbar>
                         </f:facet>
                         <af:spacer id="s4" width="550"/>
-                        <af:outputText value="Sutherland Global Services Philippines Inc" id="ot11"
-                                       inlineStyle="font-weight:bold;font-size:14px;"/>
+                        <!--<af:outputText value="Sutherland Global Services Philippines Inc" id="ot11"
+                                       inlineStyle="font-weight:bold;font-size:14px;"/>-->
                         <af:separator id="s6"/>
                         <af:panelFormLayout id="pfl2" rows="2">
                             <af:panelLabelAndMessage label="Business Unit" id="plam9">
