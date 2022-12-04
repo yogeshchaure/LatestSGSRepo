@@ -72,6 +72,7 @@
           <Item Value="BusinessUnit"/>
           <Item Value="OperatingUnit"/>
           <Item Value="DepartmentId"/>
+          <Item Value="NATUREOFEXPENSE"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

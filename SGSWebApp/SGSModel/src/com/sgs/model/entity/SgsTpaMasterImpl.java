@@ -10,6 +10,7 @@ import oracle.adf.share.logging.ADFLogger;
 
 import oracle.jbo.AttributeList;
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
 // ---------------------------------------------------------------------
@@ -38,7 +39,10 @@ public class SgsTpaMasterImpl extends EntityImpl {
         OperationUnit,
         NETTINGAPPLICATIBILITY,
         BDCOMMISSIONAPPLICABILITY,
-        BDCOMMISSIONRATE;
+        BDCOMMISSIONRATE,
+        TRANSFERPRICINGMODEL,
+        MARKUPRATE,
+        SgsPreRequisiteForTP;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -80,6 +84,9 @@ public class SgsTpaMasterImpl extends EntityImpl {
     public static final int NETTINGAPPLICATIBILITY = AttributesEnum.NETTINGAPPLICATIBILITY.index();
     public static final int BDCOMMISSIONAPPLICABILITY = AttributesEnum.BDCOMMISSIONAPPLICABILITY.index();
     public static final int BDCOMMISSIONRATE = AttributesEnum.BDCOMMISSIONRATE.index();
+    public static final int TRANSFERPRICINGMODEL = AttributesEnum.TRANSFERPRICINGMODEL.index();
+    public static final int MARKUPRATE = AttributesEnum.MARKUPRATE.index();
+    public static final int SGSPREREQUISITEFORTP = AttributesEnum.SgsPreRequisiteForTP.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -319,6 +326,46 @@ public class SgsTpaMasterImpl extends EntityImpl {
     public void setBDCOMMISSIONRATE(BigDecimal value) {
         setAttributeInternal(BDCOMMISSIONRATE, value);
     }
+
+    /**
+     * Gets the attribute value for TRANSFERPRICINGMODEL, using the alias name TRANSFERPRICINGMODEL.
+     * @return the value of TRANSFERPRICINGMODEL
+     */
+    public String getTRANSFERPRICINGMODEL() {
+        return (String) getAttributeInternal(TRANSFERPRICINGMODEL);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TRANSFERPRICINGMODEL.
+     * @param value value to set the TRANSFERPRICINGMODEL
+     */
+    public void setTRANSFERPRICINGMODEL(String value) {
+        setAttributeInternal(TRANSFERPRICINGMODEL, value);
+    }
+
+    /**
+     * Gets the attribute value for MARKUPRATE, using the alias name MARKUPRATE.
+     * @return the value of MARKUPRATE
+     */
+    public BigDecimal getMARKUPRATE() {
+        return (BigDecimal) getAttributeInternal(MARKUPRATE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MARKUPRATE.
+     * @param value value to set the MARKUPRATE
+     */
+    public void setMARKUPRATE(BigDecimal value) {
+        setAttributeInternal(MARKUPRATE, value);
+    }
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getSgsPreRequisiteForTP() {
+        return (RowIterator) getAttributeInternal(SGSPREREQUISITEFORTP);
+    }
+
 
     /**
      * @param tpamId key constituent

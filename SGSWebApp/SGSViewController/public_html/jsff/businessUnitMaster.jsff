@@ -7,7 +7,7 @@
     <f:facet name="top"/>
     <f:facet name="bottom"/>
     <f:facet name="center">
-      <af:panelBox text="Business Unit Setup" id="pb1">
+      <af:panelBox text="Company Code Setup" id="pb1">
         <f:facet name="toolbar"/>
         <af:panelGroupLayout layout="vertical" id="pgl1">
           <af:panelHeader text=" " id="ph1">
@@ -45,7 +45,7 @@
                       selectionListener="#{bindings.SgsBusinessUnitMasterVO1.collectionModel.makeCurrent}"
                       rowSelection="single" fetchSize="#{bindings.SgsBusinessUnitMasterVO1.rangeSize}" id="resId1"
                       styleClass="AFStretchWidth">
-              <af:column headerText="Business Unit" id="resId1c1" width="10%">
+              <af:column headerText="Company Code" id="resId1c1" width="10%">
                 <!--<af:outputText value="#{row.BuName}"
                                shortDesc="#{bindings.SgsBusinessUnitMasterVO1.hints.BuName.tooltip}" id="ot1"/>-->
                  <af:link text="#{row.BuName}" id="l1" action="EDIT" inlineStyle="font-weight:bold;"/>

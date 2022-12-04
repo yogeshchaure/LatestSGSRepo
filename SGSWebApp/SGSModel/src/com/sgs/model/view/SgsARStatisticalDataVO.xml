@@ -48,7 +48,14 @@
   <Variable
     Name="bBunit"
     Kind="viewcriteria"
-    Type="java.lang.String"/>
+    Type="java.lang.String">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsARStatisticalDataVO.bBunit_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
   <ViewAccessor
     Name="SgsStatisticalDataLOV"
     ViewObjectName="com.sgs.model.view.SgsListVO"
@@ -215,10 +222,10 @@
       <SchemaBasedProperties>
         <FIELDORDER
           Value="1.0"/>
-        <LABEL
-          ResId="com.sgs.model.view.SgsARStatisticalDataVO.BusinessUnit_LABEL"/>
         <CONTROLTYPE
           Value="choice"/>
+        <LABEL
+          ResId="com.sgs.model.view.SgsARStatisticalDataVO.BusinessUnit_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

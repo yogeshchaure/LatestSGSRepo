@@ -19,7 +19,7 @@
                         <af:showDetailItem id="sdi7" text="Access for Set-Up Screens"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;" icon="/resources/icons/checked.png"/>
-                        <af:showDetailItem id="sdi1" text="Data Access for BU's"
+                        <af:showDetailItem id="sdi1" text="Data Access for Company Code"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;" icon="/resources/icons/BU.png"/>
                         <af:showDetailItem id="sdi11" text="User Access Masters"

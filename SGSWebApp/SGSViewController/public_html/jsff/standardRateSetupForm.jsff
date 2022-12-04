@@ -35,7 +35,7 @@
                         <f:selectItems value="#{bindings.SubExpenseType.items}" id="si2"/>
                         <f:validator binding="#{bindings.SubExpenseType.validator}"/>
                     </af:selectOneChoice>
-                    <af:selectOneChoice value="#{bindings.CostIdenId.inputValue}" label="Cost Identifier ID"
+                    <af:selectOneChoice value="#{bindings.CostIdenId.inputValue}" label="Transaction Identifier Setup ID"
                                         required="#{bindings.CostIdenId.hints.mandatory}"
                                         shortDesc="#{bindings.CostIdenId.hints.tooltip}" id="soc3">
                         <f:selectItems value="#{bindings.CostIdenId.items}" id="si3"/>

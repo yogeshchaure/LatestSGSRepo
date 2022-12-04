@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FKSGSMARKUPRATETBLLink"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  EntityAssociation="com.sgs.model.assoc.FKSGSMARKUPRATETBLAssoc">
+  <ViewLinkDefEnd
+    Name="SgsTpaMasterVO"
+    Cardinality="1"
+    Source="true"
+    Owner="com.sgs.model.view.SgsTpaMasterVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="SgsTpaMasterVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sgs.model.view.SgsTpaMasterVO.TpamId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="SgsPreRequisiteForTPVO"
+    Cardinality="-1"
+    Owner="com.sgs.model.view.SgsMarkupRateVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="SgsPreRequisiteForTPVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sgs.model.view.SgsMarkupRateVO.TpamId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

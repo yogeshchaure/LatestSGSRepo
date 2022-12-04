@@ -95,7 +95,7 @@
                   <f:validator binding="#{row.bindings.OperationalUnit.validator}"/>
                 </af:selectOneChoice>
               </af:column>
-              <af:column headerText="Job Code" id="c5" width="6%">
+              <af:column headerText="Project Code" id="c5" width="6%">
                 <af:selectOneChoice value="#{row.bindings.JobCode.inputValue}" label="#{row.bindings.JobCode.label}"
                                     required="#{bindings.SgsStatisticalDataVO1.hints.JobCode.mandatory}"
                                     shortDesc="#{bindings.SgsStatisticalDataVO1.hints.JobCode.tooltip}" id="soc5">

@@ -38,3 +38,10 @@ def pType_DepartmentList_BindVariable_BoundParameter()
 'DEPT_ID'
 }
 
+
+@AccessorParameterExpression(accessorName="NatureOfExpenseLOV", name="pType")
+def pType_NatureOfExpenseLOV_BindVariable_BoundParameter()
+{
+'NATURE_OF_EXPENSE_CODE'
+}
+

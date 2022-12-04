@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SgsPreRequisiteForTPEO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="SGS_PRE_REQUISITE_TPP"
+  AliasName="SgsPreRequisiteForTPEO"
+  BindingStyle="JDBC">
+  <Attribute
+    Name="PreRequisiteTppId"
+    IsNotNull="true"
+    ColumnName="PRE_REQUISITE_TPP_ID"
+    SQLType="INTEGER"
+    Type="java.lang.Integer"
+    ColumnType="INT"
+    TableName="SGS_PRE_REQUISITE_TPP"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Geography"
+    Precision="80"
+    ColumnName="GEOGRAPHY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_PRE_REQUISITE_TPP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MarkupRate"
+    IsNotNull="true"
+    Precision="10"
+    Scale="5"
+    ColumnName="MARKUP_RATE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMERIC"
+    TableName="SGS_PRE_REQUISITE_TPP"/>
+  <Attribute
+    Name="PreRequisiteTpProcessing"
+    Precision="80"
+    ColumnName='"PRE_REQUISITE_TP_PROCESSING "'
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_PRE_REQUISITE_TPP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Priority"
+    Precision="80"
+    ColumnName="PRIORITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_PRE_REQUISITE_TPP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dependency"
+    Precision="80"
+    ColumnName="DEPENDENCY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_PRE_REQUISITE_TPP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    IsNotNull="true"
+    ColumnName="CREATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_PRE_REQUISITE_TPP"/>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="80"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_PRE_REQUISITE_TPP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Date"
+    ColumnType="DATE"
+    TableName="SGS_PRE_REQUISITE_TPP"/>
+  <Attribute
+    Name="UpdatedBy"
+    Precision="80"
+    ColumnName="UPDATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR"
+    TableName="SGS_PRE_REQUISITE_TPP">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="80"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="PKPREREQUISITETPP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_PRE_REQUISITE_TPP"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sgs.model.entity.SgsPreRequisiteForTPEO.PreRequisiteTppId"/>
+    </AttrArray>
+  </Key>
+</Entity>

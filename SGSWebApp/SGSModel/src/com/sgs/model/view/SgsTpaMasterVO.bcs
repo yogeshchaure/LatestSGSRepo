@@ -52,3 +52,10 @@ def pType_ServiceReceiverLOV_BindVariable_BoundParameter()
 'SERVICE_RECIEVER'
 }
 
+
+@AccessorParameterExpression(accessorName="TransferPricingModelLOV", name="pType")
+def pType_TransferPricingModelLOV_BindVariable_BoundParameter()
+{
+'TRANSFER_PRICING_MODEL_CODE'
+}
+

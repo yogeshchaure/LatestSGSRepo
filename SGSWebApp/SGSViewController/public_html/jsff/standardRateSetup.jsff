@@ -83,7 +83,7 @@
                                     <f:validator binding="#{row.bindings.SubExpenseType.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Cost Identifier ID" id="c4" width="10%">
+                            <af:column headerText="Transaction Identifier Setup ID" id="c4" width="10%">
                                 <af:outputText value="#{row.CostIdenId}"
                                                shortDesc="#{bindings.SgsStandarardRateVO1.hints.CostIdenId.tooltip}"
                                                id="ot1"/>

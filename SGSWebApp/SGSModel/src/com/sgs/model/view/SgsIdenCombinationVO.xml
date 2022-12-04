@@ -94,6 +94,22 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="NatureOfExpenseLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsIdenCombinationVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_GlCode"
     ListVOName="GLCodeList"
@@ -174,6 +190,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="OperatingUnit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_NATUREOFEXPENSE"
+    ListVOName="NatureOfExpenseLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="NATUREOFEXPENSE"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -305,6 +339,24 @@
     LOVName="LOV_BusinessUnit">
     <Properties>
       <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NATUREOFEXPENSE"
+    PrecisionRule="true"
+    EntityAttrName="NATUREOFEXPENSE"
+    EntityUsage="SgsIdenCombination"
+    AliasName="NATURE_OF_EXPENSE"
+    LOVName="LOV_NATUREOFEXPENSE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsIdenCombinationVO.NATUREOFEXPENSE_LABEL"/>
+        <DISPLAYWIDTH
+          Value="50"/>
         <CONTROLTYPE
           Value="choice"/>
       </SchemaBasedProperties>

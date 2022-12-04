@@ -41,6 +41,7 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
         UpdatedBy,
         DataSource;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -89,6 +90,14 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
      */
     public SgsCostIdentificationRuleImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsCostIdentificationRule");
+    }
+
 
     /**
      * Gets the attribute value for CirId, using the alias name CirId.
@@ -346,6 +355,7 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
         setAttributeInternal(DATASOURCE, value);
     }
 
+
     /**
      * @param cirId key constituent
 
@@ -354,14 +364,6 @@ public class SgsCostIdentificationRuleImpl extends EntityImpl {
     public static Key createPrimaryKey(Integer cirId) {
         return new Key(new Object[] { cirId });
     }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsCostIdentificationRule");
-    }
-
 
     /**
      * Add attribute defaulting logic in this method.

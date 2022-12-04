@@ -189,6 +189,22 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="TransferPricingModelLOV"
+    ViewObjectName="com.sgs.model.view.SgsListVO"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="SgsListVOCriteria"
+      FullName="com.sgs.model.view.SgsListVO.SgsListVOCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="pType">
+        <TransientExpression
+          Name="ExpressionScript"
+          trustMode="untrusted"
+          CodeSourceName="SgsTpaMasterVO"/>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_LeServiceProvider"
     ListVOName="LegalEntityList"
@@ -305,6 +321,24 @@
     MRUCount="0">
     <AttrArray Name="AttrNames">
       <Item Value="BDCOMMISSIONAPPLICABILITY"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Discription"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TRANSFERPRICINGMODEL"
+    ListVOName="TransferPricingModelLOV"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TRANSFERPRICINGMODEL"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
@@ -568,6 +602,30 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="TRANSFERPRICINGMODEL"
+    PrecisionRule="true"
+    EntityAttrName="TRANSFERPRICINGMODEL"
+    EntityUsage="SgsTpaMaster"
+    AliasName="TRANSFER_PRICING_MODEL"
+    LOVName="LOV_TRANSFERPRICINGMODEL">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.SgsTpaMasterVO.TRANSFERPRICINGMODEL_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+        <DISPLAYWIDTH
+          Value="50"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MARKUPRATE"
+    PrecisionRule="true"
+    EntityAttrName="MARKUPRATE"
+    EntityUsage="SgsTpaMaster"
+    AliasName="MARKUP_RATE"/>
   <ViewCriteria
     Name="SgsTpaMasterVOCriteria"
     ViewObjectName="com.sgs.model.view.SgsTpaMasterVO"
@@ -637,6 +695,11 @@
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ViewLinkAccessor
+    Name="SgsPreRequisiteForTPVO"
+    ViewLink="com.sgs.model.viewLink.FKSGSMARKUPRATETBLLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.sgs.model.SGSModelBundle"/>

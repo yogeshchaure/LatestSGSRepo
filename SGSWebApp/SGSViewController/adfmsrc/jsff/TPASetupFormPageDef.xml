@@ -8,6 +8,10 @@
               id="SgsTpaMasterVO1Iterator"/>
     <iterator Binds="SgsTpsDocTypeView1" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsTpsDocTypeView1Iterator"/>
+    <iterator Binds="SgsPreRequisiteForTPVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsPreRequisiteForTPVO1Iterator"/>
+    <iterator Binds="SgsMarkupRateVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="SgsMarkupRateVO1Iterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="SgsTpaMasterVO1Iterator" id="TpaId">
@@ -82,5 +86,57 @@
             Action="createInsertRow"/>
     <action IterBinding="SgsTpsDocTypeView1Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <list IterBinding="SgsTpaMasterVO1Iterator" StaticList="false" Uses="LOV_TRANSFERPRICINGMODEL"
+          id="TRANSFERPRICINGMODEL" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="SgsPreRequisiteForTPVO1Iterator" id="SgsPreRequisiteForTPVO1">
+      <nodeDefinition DefName="com.sgs.model.view.SgsPreRequisiteForTPVO" Name="SgsPreRequisiteForTPVO10">
+        <AttrNames>
+          <Item Value="Geography"/>
+          <Item Value="MarkupRate"/>
+          <Item Value="PreRequisiteTpProcessing"/>
+          <Item Value="Priority"/>
+          <Item Value="Dependency"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="SgsMarkupRateVO1Iterator" id="TpamId">
+      <AttrNames>
+        <Item Value="TpamId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsMarkupRateVO1Iterator" id="TpaId1">
+      <AttrNames>
+        <Item Value="TpaId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsMarkupRateVO1Iterator" id="ServiceCategory">
+      <AttrNames>
+        <Item Value="ServiceCategory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsMarkupRateVO1Iterator" id="MarkupRate">
+      <AttrNames>
+        <Item Value="MarkupRate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsMarkupRateVO1Iterator" id="EffectiveFrom">
+      <AttrNames>
+        <Item Value="EffectiveFrom"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SgsMarkupRateVO1Iterator" id="EffectiveTo">
+      <AttrNames>
+        <Item Value="EffectiveTo"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="SgsPreRequisiteForTPVO1Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="SgsPreRequisiteForTPVO1Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <attributeValues IterBinding="SgsTpaMasterVO1Iterator" id="MARKUPRATE">
+      <AttrNames>
+        <Item Value="MARKUPRATE"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

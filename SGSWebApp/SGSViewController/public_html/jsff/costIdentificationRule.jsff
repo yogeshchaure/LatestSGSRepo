@@ -8,7 +8,7 @@
     <f:facet name="bottom"/>
     <f:facet name="center">
       <af:panelGroupLayout id="pgl1" layout="vertical">
-        <af:panelBox text="Cost Identifier Rule" id="pb1">
+        <af:panelBox text="Transaction Identifier Setup Rule" id="pb1">
           <f:facet name="toolbar"/>
           <af:panelGroupLayout id="pgl2" layout="vertical">
             <af:panelHeader text=" " id="ph2">
@@ -31,10 +31,10 @@
                             <af:button actionListener="#{bindings.CreateInsert.execute}"
                                        disabled="#{!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=Update']}"
                                        id="b1" action="CIRAdd" icon="/resources/icons/plus.png"
-                                       shortDesc="Create/Add Cost Identification Rule"/>
+                                       shortDesc="Create/Add Transaction Identifier Setup Rule"/>
                   <af:button
                                        disabled="#{(!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=Update']) ? true : (!bindings.Delete.enabled)}"
-                                       id="b2" shortDesc="Delete Cost Identification Rule" icon="/resources/icons/delete.png"
+                                       id="b2" shortDesc="Delete Transaction Identifier Setup Rule" icon="/resources/icons/delete.png"
                                        action="#{pageFlowScope.CostIdentificationRuleBean.deleteCostIdentificationRule}"/>
                 </af:toolbar>
               </f:facet>
@@ -55,7 +55,7 @@
                                       pattern="#{bindings.SgsCostIdentificationRuleView1.hints.CirId.format}"/>
                   </af:outputText>
                 </af:column>
-                <af:column headerText="Cost Identification ID" id="c2" width="8%">
+                <af:column headerText="Transaction Identifier Setup ID" id="c2" width="8%">
                   <!--<af:selectOneChoice value="#{row.bindings.RuleId.inputValue}" label="#{row.bindings.RuleId.label}"
                                       required="#{bindings.SgsCostIdentificationRuleView1.hints.RuleId.mandatory}"
                                       shortDesc="#{bindings.SgsCostIdentificationRuleView1.hints.RuleId.tooltip}"

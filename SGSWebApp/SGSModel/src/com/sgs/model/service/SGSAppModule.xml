@@ -274,6 +274,12 @@
   <ViewUsage
     Name="SgsCreateCreditMemosTVO1"
     ViewObjectName="com.sgs.model.view.SgsCreateCreditMemosTVO"/>
+  <ViewUsage
+    Name="SgsMarkupRateVO1"
+    ViewObjectName="com.sgs.model.view.SgsMarkupRateVO"/>
+  <ViewUsage
+    Name="SgsPreRequisiteForTPVO1"
+    ViewObjectName="com.sgs.model.view.SgsPreRequisiteForTPVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
@@ -453,6 +459,12 @@
     ViewLinkObjectName="com.sgs.model.viewLink.SgsArReceiptHdrDtlVL"
     SrcViewUsageName="com.sgs.model.service.SGSAppModule.SgsArReceiptVO1"
     DstViewUsageName="com.sgs.model.service.SGSAppModule.SgsArReceiptDtlVO2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKSGSMARKUPRATETBLLink1"
+    ViewLinkObjectName="com.sgs.model.viewLink.FKSGSMARKUPRATETBLLink"
+    SrcViewUsageName="com.sgs.model.service.SGSAppModule.SgsTpaMasterVO1"
+    DstViewUsageName="com.sgs.model.service.SGSAppModule.SgsMarkupRateVO1"
     Reversed="false"/>
   <ResourceBundle>
     <PropertiesBundle

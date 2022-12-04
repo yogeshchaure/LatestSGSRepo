@@ -8,7 +8,7 @@
     <f:facet name="bottom"/>
     <f:facet name="center">
       <af:panelGroupLayout id="pgl1" layout="vertical">
-        <af:panelBox text="Cost Identification Rule Details" id="pb1">
+        <af:panelBox text="Transaction Identifier Setup Rule Details" id="pb1">
           <f:facet name="toolbar">
           <af:toolbar id="t1">
             <af:button actionListener="#{bindings.Commit.execute}"
@@ -27,7 +27,7 @@
           </f:facet>
           <af:panelGroupLayout id="pgl2" layout="vertical">
             <af:panelFormLayout id="pfl1" rows="4">
-              <af:inputText value="#{bindings.RuleId1.inputValue}" label="Cost Identification ID"
+              <af:inputText value="#{bindings.RuleId1.inputValue}" label="Transaction Identifier Setup ID"
                             required="#{bindings.RuleId1.hints.mandatory}"
                             columns="#{bindings.RuleId1.hints.displayWidth}"
                             maximumLength="#{bindings.RuleId1.hints.precision}"
@@ -98,7 +98,7 @@
                             rendered="false">
                 <f:validator binding="#{bindings.UpdatedBy.validator}"/>
               </af:inputText>
-              <af:selectOneChoice value="#{bindings.JobCode.inputValue}" label="Job Code"
+              <af:selectOneChoice value="#{bindings.JobCode.inputValue}" label="Project Code"
                                   required="#{bindings.JobCode.hints.mandatory}"
                                   shortDesc="#{bindings.JobCode.hints.tooltip}" id="soc3" visible="false"
                                   rendered="false">
@@ -128,7 +128,7 @@
                           emptyText="#{bindings.SgsIdenCombinationVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" fetchSize="#{bindings.SgsIdenCombinationVO1.rangeSize}" id="t2"
                           styleClass="AFStretchWidth" partialTriggers="::b8 ::b9 :::pc2:b4 :::pc2:b5">
-                  <af:column headerText="Business Unit" id="c3" width="20%">
+                  <af:column headerText="Company Code" id="c3" width="20%">
                     <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
                                         label="#{row.bindings.BusinessUnit.label}"
                                         required="#{bindings.SgsIdenCombinationVO1.hints.BusinessUnit.mandatory}"
@@ -166,12 +166,22 @@
                       <f:validator binding="#{row.bindings.GlCode.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Job Code" id="c2" width="20%">
+                  <af:column headerText="Project Code" id="c2" width="20%">
                     <af:selectOneChoice value="#{row.bindings.JobCode.inputValue}" label="#{row.bindings.JobCode.label}"
                                         required="#{bindings.SgsIdenCombinationVO1.hints.JobCode.mandatory}"
                                         shortDesc="#{bindings.SgsIdenCombinationVO1.hints.JobCode.tooltip}" id="soc11">
                       <f:selectItems value="#{row.bindings.JobCode.items}" id="si11"/>
                       <f:validator binding="#{row.bindings.JobCode.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.SgsIdenCombinationVO1.hints.NATUREOFEXPENSE.label}" id="c12">
+                    <af:selectOneChoice value="#{row.bindings.NATUREOFEXPENSE.inputValue}"
+                                        label="#{row.bindings.NATUREOFEXPENSE.label}"
+                                        required="#{bindings.SgsIdenCombinationVO1.hints.NATUREOFEXPENSE.mandatory}"
+                                        shortDesc="#{bindings.SgsIdenCombinationVO1.hints.NATUREOFEXPENSE.tooltip}"
+                                        id="soc20">
+                      <f:selectItems value="#{row.bindings.NATUREOFEXPENSE.items}" id="si20"/>
+                      <f:validator binding="#{row.bindings.NATUREOFEXPENSE.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                 </af:table>
@@ -201,7 +211,7 @@
                   <f:selectItems value="#{bindings.TARGETACCOUNT.items}" id="si8"/>
                   <f:validator binding="#{bindings.TARGETACCOUNT.validator}"/>
                 </af:selectOneChoice>
-                <af:selectOneChoice value="#{bindings.OFFSETJOBCODE.inputValue}" label="Offset Job Code"
+                <af:selectOneChoice value="#{bindings.OFFSETJOBCODE.inputValue}" label="Offset Project Code"
                                     required="#{bindings.OFFSETJOBCODE.hints.mandatory}"
                                     shortDesc="#{bindings.OFFSETJOBCODE.hints.tooltip}" id="soc9">
                   <f:selectItems value="#{bindings.OFFSETJOBCODE.items}" id="si9"/>
@@ -210,7 +220,7 @@
               </af:panelFormLayout>
             </af:panelBox>
             
-            <af:panelBox text="Cross Charge Combination" id="pb4">
+            <af:panelBox text="Exclusion Combination" id="pb4">
               <f:facet name="toolbar"/>
               <af:panelCollection id="pc2" styleClass="AFStretchWidth">
                 <f:facet name="menus"/>
@@ -229,7 +239,7 @@
                           selectedRowKeys="#{bindings.SgsCrossChargeIdenVO1.collectionModel.selectedRow}"
                           selectionListener="#{bindings.SgsCrossChargeIdenVO1.collectionModel.makeCurrent}" fetchSize="#{bindings.SgsCrossChargeIdenVO1.rangeSize}" id="t5"
                           partialTriggers="::b4 ::b5" styleClass="AFStretchWidth">
-                  <af:column headerText="Business Unit" id="c6"
+                  <af:column headerText="Company Code" id="c6"
                              width="20%">
                     <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
                                         label="#{row.bindings.BusinessUnit.label}"
@@ -269,7 +279,7 @@
                       <f:validator binding="#{row.bindings.GlCode.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Job Code" id="c10" width="20%">
+                  <af:column headerText="Project Code" id="c10" width="20%">
                     <af:selectOneChoice value="#{row.bindings.JobCode.inputValue}" label="#{row.bindings.JobCode.label}"
                                         required="#{bindings.SgsCrossChargeIdenVO1.hints.JobCode.mandatory}"
                                         shortDesc="#{bindings.SgsCrossChargeIdenVO1.hints.JobCode.tooltip}" id="soc19">

@@ -105,7 +105,7 @@
                                     <f:validator binding="#{row.bindings.PassThrough.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Pass-Through BU" id="c4" width="10%">
+                            <af:column headerText="Pass-Through Company Code" id="c4" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.PassThroughBu.inputValue}"
                                                     label="#{row.bindings.PassThroughBu.label}"
                                                     required="#{bindings.SgsTpaMasterVO1.hints.PassThroughBu.mandatory}"
@@ -123,6 +123,17 @@
                                                     id="soc5" readOnly="true">
                                     <f:selectItems value="#{row.bindings.OperationUnit.items}" id="si5"/>
                                     <f:validator binding="#{row.bindings.OperationUnit.validator}"/>
+                                </af:selectOneChoice>
+                            </af:column>
+                            <af:column headerText="#{bindings.SgsTpaMasterVO1.hints.TRANSFERPRICINGMODEL.label}"
+                                       id="c5">
+                                <af:selectOneChoice value="#{row.bindings.TRANSFERPRICINGMODEL.inputValue}"
+                                                    label="#{row.bindings.TRANSFERPRICINGMODEL.label}"
+                                                    required="#{bindings.SgsTpaMasterVO1.hints.TRANSFERPRICINGMODEL.mandatory}"
+                                                    shortDesc="#{bindings.SgsTpaMasterVO1.hints.TRANSFERPRICINGMODEL.tooltip}"
+                                                    readOnly="true" id="soc8">
+                                    <f:selectItems value="#{row.bindings.TRANSFERPRICINGMODEL.items}" id="si8"/>
+                                    <f:validator binding="#{row.bindings.TRANSFERPRICINGMODEL.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
                             <af:column headerText="Effective To" id="resId1c6" width="10%">

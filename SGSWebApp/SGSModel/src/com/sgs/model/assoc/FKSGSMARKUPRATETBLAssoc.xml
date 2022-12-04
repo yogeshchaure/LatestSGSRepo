@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FKSGSMARKUPRATETBLAssoc"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="SgsTpaMaster"
+    Cardinality="1"
+    Source="true"
+    Owner="com.sgs.model.entity.SgsTpaMaster">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SgsTpaMaster"/>
+      <Attr Name="_foreignKey" Value="com.sgs.model.entity.SgsTpaMaster.PKSGSTPAMASTER"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sgs.model.entity.SgsTpaMaster.TpamId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="SgsPreRequisiteForTP"
+    Cardinality="-1"
+    Owner="com.sgs.model.entity.SgsMarkupRateEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="SgsPreRequisiteForTP"/>
+      <Attr Name="_foreignKey" Value="com.sgs.model.entity.SgsMarkupRateEO.FKSGSMARKUPRATETBL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sgs.model.entity.SgsMarkupRateEO.TpamId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

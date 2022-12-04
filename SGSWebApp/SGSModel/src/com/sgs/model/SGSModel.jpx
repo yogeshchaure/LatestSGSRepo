@@ -17,6 +17,14 @@
     <Attr Name="_appModuleNames0" Value="com.sgs.model.service.SGSAppModule"/>
   </DesignTime>
   <Containee
+    Name="assoc"
+    PackageName="com.sgs.model.assoc"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="entity"
     PackageName="com.sgs.model.entity"
     ObjectType="JboPackage">

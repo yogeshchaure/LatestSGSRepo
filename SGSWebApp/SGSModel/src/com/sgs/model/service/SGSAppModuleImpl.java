@@ -1008,5 +1008,29 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsCreateCreditMemosTVO1() {
         return (ViewObjectImpl) findViewObject("SgsCreateCreditMemosTVO1");
     }
+
+    /**
+     * Container's getter for SgsMarkupRateVO1.
+     * @return SgsMarkupRateVO1
+     */
+    public ViewObjectImpl getSgsMarkupRateVO1() {
+        return (ViewObjectImpl) findViewObject("SgsMarkupRateVO1");
+    }
+
+    /**
+     * Container's getter for FKSGSMARKUPRATETBLLink1.
+     * @return FKSGSMARKUPRATETBLLink1
+     */
+    public ViewLinkImpl getFKSGSMARKUPRATETBLLink1() {
+        return (ViewLinkImpl) findViewLink("FKSGSMARKUPRATETBLLink1");
+    }
+
+    /**
+     * Container's getter for SgsPreRequisiteForTPVO1.
+     * @return SgsPreRequisiteForTPVO1
+     */
+    public ViewObjectImpl getSgsPreRequisiteForTPVO1() {
+        return (ViewObjectImpl) findViewObject("SgsPreRequisiteForTPVO1");
+    }
 }
 

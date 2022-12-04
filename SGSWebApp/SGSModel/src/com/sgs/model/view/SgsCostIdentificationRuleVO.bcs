@@ -102,3 +102,17 @@ def pType_ServiceCategoryList_BindVariable_BoundParameter()
 
 
 
+
+@AccessorParameterExpression(accessorName="SgsListVO2", name="pType")
+def pType_SgsListVO2_BindVariable_BoundParameter()
+{
+'NATURE_OF_EXPENSE_CODE'
+}
+
+
+@AccessorParameterExpression(accessorName="NatureOfExpenseLOV", name="pType")
+def pType_NatureOfExpenseLOV_BindVariable_BoundParameter()
+{
+'NATURE_OF_EXPENSE_CODE'
+}
+

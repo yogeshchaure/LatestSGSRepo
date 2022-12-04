@@ -918,7 +918,7 @@
                                 <f:validator binding="#{row.bindings.PsInvoiceNo.validator}"/>
                             </af:inputText>
                         </af:column>
-                        <af:column headerText="From BU" id="c16" width="200">
+                        <af:column headerText="From Company Code" id="c16" width="200">
                             <af:inputText value="#{row.bindings.FromBu.inputValue}"
                                           label="#{bindings.TreeUpDownDetailView1.hints.FromBu.label}"
                                           required="#{bindings.TreeUpDownDetailView1.hints.FromBu.mandatory}"
@@ -928,7 +928,7 @@
                                 <f:validator binding="#{row.bindings.FromBu.validator}"/>
                             </af:inputText>
                         </af:column>
-                        <af:column headerText="To BU" id="c17" width="200">
+                        <af:column headerText="To Company Code" id="c17" width="200">
                             <af:inputText value="#{row.bindings.ToBu.inputValue}"
                                           label="#{bindings.TreeUpDownDetailView1.hints.ToBu.label}"
                                           required="#{bindings.TreeUpDownDetailView1.hints.ToBu.mandatory}"

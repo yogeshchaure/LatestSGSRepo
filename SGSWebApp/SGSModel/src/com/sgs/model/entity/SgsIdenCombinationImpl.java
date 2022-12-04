@@ -33,7 +33,8 @@ public class SgsIdenCombinationImpl extends EntityImpl {
         UpdatedBy,
         BusinessUnit,
         DepartmentId,
-        OperatingUnit;
+        OperatingUnit,
+        NATUREOFEXPENSE;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -72,11 +73,19 @@ public class SgsIdenCombinationImpl extends EntityImpl {
     public static final int BUSINESSUNIT = AttributesEnum.BusinessUnit.index();
     public static final int DEPARTMENTID = AttributesEnum.DepartmentId.index();
     public static final int OPERATINGUNIT = AttributesEnum.OperatingUnit.index();
+    public static final int NATUREOFEXPENSE = AttributesEnum.NATUREOFEXPENSE.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public SgsIdenCombinationImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsIdenCombination");
     }
 
     /**
@@ -256,6 +265,23 @@ public class SgsIdenCombinationImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for NATUREOFEXPENSE, using the alias name NATUREOFEXPENSE.
+     * @return the value of NATUREOFEXPENSE
+     */
+    public String getNATUREOFEXPENSE() {
+        return (String) getAttributeInternal(NATUREOFEXPENSE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for NATUREOFEXPENSE.
+     * @param value value to set the NATUREOFEXPENSE
+     */
+    public void setNATUREOFEXPENSE(String value) {
+        setAttributeInternal(NATUREOFEXPENSE, value);
+    }
+
+
+    /**
      * @param idenCombId key constituent
 
      * @return a Key object based on given key constituents.
@@ -263,14 +289,6 @@ public class SgsIdenCombinationImpl extends EntityImpl {
     public static Key createPrimaryKey(Integer idenCombId) {
         return new Key(new Object[] { idenCombId });
     }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.sgs.model.entity.SgsIdenCombination");
-    }
-
 
     /**
      * Add attribute defaulting logic in this method.

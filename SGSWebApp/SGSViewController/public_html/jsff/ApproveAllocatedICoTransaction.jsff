@@ -116,7 +116,7 @@
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceGlAccount.tooltip}"
                                                id="ot3"/>
                             </af:column>
-                            <af:column headerText="From BU" id="resId1c8">
+                            <af:column headerText="From Company Code" id="resId1c8">
                                 <af:outputText value="#{row.SOURCEBU}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SOURCEBU.tooltip}"
                                                id="ot4"/>
@@ -154,7 +154,7 @@
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetGlAccount.tooltip}"
                                                id="ot9"/>
                             </af:column>
-                            <af:column headerText="To BU" id="resId1c14">
+                            <af:column headerText="To Company Code" id="resId1c14">
                                 <af:outputText value="#{row.TARGETBU}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TARGETBU.tooltip}"
                                                id="ot10"/>

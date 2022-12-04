@@ -23,6 +23,7 @@
             <Item Value="BDCOMMISSIONAPPLICABILITY"/>
              <Item Value="BDCOMMISSIONRATE"/> 
               <Item Value="TpamId"/>
+          <Item Value="TRANSFERPRICINGMODEL"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
