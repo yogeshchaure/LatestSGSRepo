@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="tpSummaryPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="WnsTPDashBoardVO1" RangeSize="-1" DataControl="SGSAppModuleDataControl"
+              id="WnsTPDashBoardVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="WnsTPDashBoardVO1Iterator" id="WnsTPDashBoardVO11">
+      <nodeDefinition DefName="com.sgs.model.view.WnsTPDashBoardVO" Name="WnsTPDashBoardVO110">
+        <AttrNames>
+          <Item Value="Month"/>
+          <Item Value="FrontOfficeName"/>
+          <Item Value="FoTpaModel"/>
+          <Item Value="FoTpaStatus"/>
+          <Item Value="BackOffice"/>
+          <Item Value="BoTpaModel"/>
+          <Item Value="DependencyCompletion"/>
+          <Item Value="IdcAllocationStatus"/>
+          <Item Value="InvoicedToFo"/>
+          <Item Value="BoTpaStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <pivotTable IterBinding="WnsTPDashBoardVO1Iterator" id="WnsTPDashBoardVO1"
+                xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <pivotTableDataMap convert="false">
+        <columns>
+          <data>
+            <item value="BoTpaStatus"/>
+          </data>
+        </columns>
+        <rows>
+          <item value="Month"/>
+          <item value="FrontOfficeName"/>
+          <item value="FoTpaModel"/>
+          <item value="FoTpaStatus"/>
+          <item value="BackOffice"/>
+          <item value="BoTpaModel"/>
+          <item value="DependencyCompletion"/>
+          <item value="IdcAllocationStatus"/>
+          <item value="InvoicedToFo"/>
+        </rows>
+        <pages/>
+      </pivotTableDataMap>
+    </pivotTable>
+    <pivotTable IterBinding="WnsTPDashBoardVO1Iterator" id="WnsTPDashBoardVO12"
+                xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <pivotTableDataMap convert="false">
+        <columns>
+          <data>
+            <item value="BoTpaStatus"/>
+          </data>
+          <item value="Month"/>
+          <item value="FrontOfficeName"/>
+        </columns>
+        <rows/>
+        <pages/>
+      </pivotTableDataMap>
+    </pivotTable>
+  </bindings>
+</pageDefinition>

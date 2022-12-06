@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition  xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+   <af:panelStretchLayout id="psl1" >
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelBox text="Transfer Processing Summary" id="pb1">
+        <f:facet name="toolbar"/>
+        <dvt:pivotTable id="pt1" value="#{bindings.WnsTPDashBoardVO1.pivotTableModel}" var="cellData"
+                        varStatus="cellStatus" styleClass="AFStretchWidth" 
+                        layerLabelMode="rendered" sizing="auto" scrollPolicy="auto" pivotLabelVisible="true"
+                        indentEnabled="true" columnFetchSize="500" splitMode="enabled">
+          <dvt:headerCell inlineStyle="text-align:center;">
+            <af:switcher facetName="#{cellData.layerName}" defaultFacet="Default" id="s1">
+              <f:facet name="DataLayer">
+                <af:outputText value="#{cellData.label}" id="ot1" />
+              </f:facet>
+              <f:facet name="Month">
+                <af:outputText value="#{cellData.dataValue}" id="ot2"/>
+              </f:facet>
+              <f:facet name="FrontOfficeName">
+               <af:link id="l2" action="backoffice">
+                <af:outputText value="#{cellData.dataValue}" id="ot3"/>
+                <!--<af:link value="#{cellData.dataValue}" id="l1"/>-->
+                </af:link>
+              </f:facet>
+              <f:facet name="FoTpaModel">
+                <af:outputText value="#{cellData.dataValue}" id="ot4"/>
+              </f:facet>
+              <f:facet name="FoTpaStatus">
+                <af:outputText value="#{cellData.dataValue}" id="ot5"/>
+              </f:facet>
+              <f:facet name="BackOffice">
+                <af:link id="l1" action="backoffice">
+                  <af:outputText value="#{cellData.dataValue}"   id="ot6"
+                                 inlineStyle="display:inline-block;word-wrap:break-word;"/>
+                </af:link>
+              </f:facet>
+              <f:facet name="BoTpaModel">
+                <af:outputText value="#{cellData.dataValue}" id="ot7"/>
+              </f:facet>
+              <f:facet name="DependencyCompletion">
+                  <af:outputText value="#{cellData.dataValue}"  inlineStyle="color:#{(cellData.dataValue == 'Yes' ? 
+                       'green' : 'red')}; width:200px;word-wrap:break-word;" id="ot8"/>
+              </f:facet>
+              <f:facet name="IdcAllocationStatus">
+                <af:outputText value="#{cellData.dataValue}"  inlineStyle="color:#{(cellData.dataValue == 'Yes' ? 
+                       'green' : 'red')};" id="ot9"/>
+              </f:facet>
+              <f:facet name="InvoicedToFo">
+                <af:outputText value="#{cellData.dataValue}"  inlineStyle="color:#{(cellData.dataValue == 'Yes' ? 
+                       'green' : 'red')};" id="ot10"/>
+              </f:facet>
+              <f:facet name="Default">
+                <af:outputText value="#{cellData.dataValue}" id="ot11"/>
+              </f:facet>
+              <f:facet name="BoTpaStatus">
+                <af:outputText value="#{cellData.dataValue}" id="ot12"/>
+              </f:facet>
+              <!--<f:facet name="HeaderLayer">
+               <af:outputText value="#{cellData.label}" id="ot14"/>
+              </f:facet>-->
+            </af:switcher>
+          </dvt:headerCell>
+          <dvt:dataCell id="dc1" inlineStyle="text-align:center; background-color: #F2F4F7;">
+            <af:switcher facetName="#{cellStatus.members.DataLayer.value}" defaultFacet="Default" id="s2">
+              <f:facet name="Default">
+                <af:outputText value="#{cellData.dataValue}" id="ot13"
+                               inlineStyle="text-align:center; font-weight:bold;"/>
+              </f:facet>
+            </af:switcher>
+          </dvt:dataCell>
+        </dvt:pivotTable>
+        <af:panelGroupLayout id="pgl1" styleClass="AFStretchWidth">
+          <!--<af:table value="#{bindings.WnsTPDashBoardVO11.collectionModel}" var="row"
+              rows="#{bindings.WnsTPDashBoardVO11.rangeSize}"
+              emptyText="#{bindings.WnsTPDashBoardVO11.viewable ? 'No data to display.' : 'Access Denied.'}"
+              rowBandingInterval="0" selectedRowKeys="#{bindings.WnsTPDashBoardVO11.collectionModel.selectedRow}"
+              selectionListener="#{bindings.WnsTPDashBoardVO11.collectionModel.makeCurrent}" rowSelection="single"
+              fetchSize="#{bindings.WnsTPDashBoardVO11.rangeSize}" id="t1">
+     <af:column headerText="#{bindings.WnsTPDashBoardVO11.hints.Month.label}" id="c1">
+      <af:outputText value="#{row.Month}" shortDesc="#{bindings.WnsTPDashBoardVO11.hints.Month.tooltip}" id="ot1"/>
+     </af:column>
+     <af:column headerText="#{bindings.WnsTPDashBoardVO11.hints.FrontOfficeName.label}" id="c2">
+      <af:outputText value="#{row.FrontOfficeName}"
+                     shortDesc="#{bindings.WnsTPDashBoardVO11.hints.FrontOfficeName.tooltip}" id="ot2"/>
+     </af:column>
+     <af:column headerText="#{bindings.WnsTPDashBoardVO11.hints.FoTpaModel.label}" id="c3">
+      <af:outputText value="#{row.FoTpaModel}" shortDesc="#{bindings.WnsTPDashBoardVO11.hints.FoTpaModel.tooltip}"
+                     id="ot3"/>
+     </af:column>
+     <af:column headerText="#{bindings.WnsTPDashBoardVO11.hints.FoTpaStatus.label}" id="c4">
+      <af:outputText value="#{row.FoTpaStatus}" shortDesc="#{bindings.WnsTPDashBoardVO11.hints.FoTpaStatus.tooltip}"
+                     id="ot4"/>
+     </af:column>
+     <af:column headerText="#{bindings.WnsTPDashBoardVO11.hints.BackOffice.label}" id="c5">
+      <af:outputText value="#{row.BackOffice}" shortDesc="#{bindings.WnsTPDashBoardVO11.hints.BackOffice.tooltip}"
+                     id="ot5"/>
+     </af:column>
+     <af:column headerText="#{bindings.WnsTPDashBoardVO11.hints.BoTpaModel.label}" id="c6">
+      <af:outputText value="#{row.BoTpaModel}" shortDesc="#{bindings.WnsTPDashBoardVO11.hints.BoTpaModel.tooltip}"
+                     id="ot6"/>
+     </af:column>
+     <af:column headerText="#{bindings.WnsTPDashBoardVO11.hints.DependencyCompletion.label}" id="c7">
+      <af:outputText value="#{row.DependencyCompletion}"
+                     shortDesc="#{bindings.WnsTPDashBoardVO11.hints.DependencyCompletion.tooltip}" id="ot7"/>
+     </af:column>
+     <af:column headerText="#{bindings.WnsTPDashBoardVO11.hints.IdcAllocationStatus.label}" id="c8">
+      <af:outputText value="#{row.IdcAllocationStatus}"
+                     shortDesc="#{bindings.WnsTPDashBoardVO11.hints.IdcAllocationStatus.tooltip}" id="ot8"/>
+     </af:column>
+     <af:column headerText="#{bindings.WnsTPDashBoardVO11.hints.InvoicedToFo.label}" id="c9">
+      <af:outputText value="#{row.InvoicedToFo}" shortDesc="#{bindings.WnsTPDashBoardVO11.hints.InvoicedToFo.tooltip}"
+                     id="ot9"/>
+     </af:column>
+     <af:column headerText="#{bindings.WnsTPDashBoardVO11.hints.BoTpaStatus.label}" id="c10">
+      <af:outputText value="#{row.BoTpaStatus}" shortDesc="#{bindings.WnsTPDashBoardVO11.hints.BoTpaStatus.tooltip}"
+                     id="ot10"/>
+     </af:column>
+    </af:table>-->
+     <!--<dvt:pivotTable id="pt1" value="#{bindings.WnsTPDashBoardVO12.pivotTableModel}" var="cellData"
+                     varStatus="cellStatus" splitMode="enabled">
+      <dvt:headerCell>
+       <af:switcher facetName="#{cellData.layerName}" defaultFacet="Default" id="s1">
+        <f:facet name="DataLayer">
+         <af:outputText value="#{cellData.label}" id="ot1"/>
+        </f:facet>
+        <f:facet name="Month">
+         <af:outputText value="#{cellData.dataValue}" id="ot2"/>
+        </f:facet>
+        <f:facet name="FrontOfficeName">
+         <af:outputText value="#{cellData.dataValue}" id="ot3"/>
+        </f:facet>
+        <f:facet name="Default">
+         <af:outputText value="#{cellData.dataValue}" id="ot4"/>
+        </f:facet>
+       </af:switcher>
+      </dvt:headerCell>
+      <dvt:dataCell id="dc1">
+       <af:switcher facetName="#{cellStatus.members.DataLayer.value}" defaultFacet="Default" id="s2">
+        <f:facet name="BoTpaStatus">
+         <af:outputText value="#{cellData.dataValue}" id="ot5"/>
+        </f:facet>
+        <f:facet name="Default">
+         <af:outputText value="#{cellData.dataValue}" id="ot6"/>
+        </f:facet>
+       </af:switcher>
+      </dvt:dataCell>
+     </dvt:pivotTable>-->
+    </af:panelGroupLayout>
+      </af:panelBox>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

@@ -5,6 +5,8 @@
         <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
                  className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
         <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+        <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+                 className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
     </definitionFactories>
     <pageMap>
         <page path="/jsf/welcomePage.jsf" usageId="com_sgs_view_welcomePagePageDef"/>
@@ -95,6 +97,8 @@
               usageId="com_sgs_view_standardRateSetupBTF_standardRateSetupBTF_SetCurrentRowWithKeyValuePageDef"/>
         <page path="/jsff/settlementVoucherNew.jsff" usageId="com_sgs_view_settlementVoucherNewPageDef"/>
         <page path="/jsff/settlementICoInvoivesNew.jsff" usageId="com_sgs_view_settlementICoInvoivesNewPageDef"/>
+        <page path="/jsff/tpSummary.jsff" usageId="com_sgs_view_tpSummaryPageDef"/>
+        <page path="/jsff/tpaBackOffice.jsff" usageId="com_sgs_view_tpaBackOfficePageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -186,6 +190,8 @@
               path="bTaskFlow.standardRateSetupBTF_standardRateSetupBTF_SetCurrentRowWithKeyValuePageDef"/>
         <page id="com_sgs_view_settlementVoucherNewPageDef" path="jsff.settlementVoucherNewPageDef"/>
         <page id="com_sgs_view_settlementICoInvoivesNewPageDef" path="jsff.settlementICoInvoivesNewPageDef"/>
+        <page id="com_sgs_view_tpSummaryPageDef" path="jsff.tpSummaryPageDef"/>
+        <page id="com_sgs_view_tpaBackOfficePageDef" path="com.sgs.view.pageDefs.tpaBackOfficePageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

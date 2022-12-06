@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1" styleClass="AFStretchWidth">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom">
+      <af:panelGroupLayout id="pgl4" halign="center" valign="middle" layout="horizontal">
+        <af:button text="Confirm Invoicing" id="b2"/>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="center">
+      <af:panelBox text="Transfer Processing Back Office" id="pb1">
+        <f:facet name="toolbar">
+          <af:panelGroupLayout id="pgl3" layout="horizontal">
+            <af:button text="Back" id="b1" action="back"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <af:panelGroupLayout layout="vertical" id="pgl2">
+          <af:panelGroupLayout layout="vertical" id="pgl1">
+         
+              <af:query id="qryId1" headerText="Search" disclosed="true"
+                        value="#{bindings.WnsTpaBackOfficeVOCriteriaQuery.queryDescriptor}"
+                        model="#{bindings.WnsTpaBackOfficeVOCriteriaQuery.queryModel}"
+                        queryListener="#{bindings.WnsTpaBackOfficeVOCriteriaQuery.processQuery}"
+                        queryOperationListener="#{bindings.WnsTpaBackOfficeVOCriteriaQuery.processQueryOperation}"
+                        saveQueryMode="hidden"/>
+    
+          </af:panelGroupLayout>
+          <!--<af:panelHeader text="Search" id="ph1">
+            <af:quickQuery label="Search" searchDesc="Search" id="qryId1"
+                           value="#{bindings.ImplicitViewCriteriaQuery.quickQueryDescriptor}"
+                           model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                           queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}">
+              <f:facet name="end">
+                <af:commandLink text="Advanced" rendered="false" id="cl1"/>
+              </f:facet>
+            </af:quickQuery>
+          </af:panelHeader>-->
+          <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.WnsTpaBackOfficeVO1.collectionModel}" var="row"
+                      rows="#{bindings.WnsTpaBackOfficeVO1.rangeSize}"
+                      emptyText="#{bindings.WnsTpaBackOfficeVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0"
+                      
+                      selectionListener="#{bindings.WnsTpaBackOfficeVO1.collectionModel.makeCurrent}"
+                      rowSelection="single" fetchSize="#{bindings.WnsTpaBackOfficeVO1.rangeSize}" id="t1"
+                      filterModel="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}" filterVisible="true"
+                      queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}" varStatus="vs">
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyCode.label}" id="c1"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyCode.name}" filterable="true"
+                         inlineStyle="background-color: skyblue;">
+                <af:outputText value="#{row.CompanyCode}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyCode.tooltip}" id="ot1"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyDesc.label}" id="c2"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyDesc.name}" filterable="true"
+                         inlineStyle="background-color: skyblue;">
+                <af:outputText value="#{row.CompanyDesc}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyDesc.tooltip}" id="ot2"/>
+              </af:column>
+              <!--<af:column id="c12" inlineStyle="width:10px">
+                <af:panelGroupLayout id="pgl4" inlineStyle="width:10px"/>
+              </af:column>-->
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.DirectCostWork.label}" id="c3"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.DirectCostWork.name}" filterable="true">
+                <af:outputText value="#{row.DirectCostWork}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.DirectCostWork.tooltip}" id="ot3">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.WnsTpaBackOfficeVO1.hints.DirectCostWork.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.IndirectCostAllocation.label}" id="c4"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.IndirectCostAllocation.name}"
+                         filterable="true">
+                <af:outputText value="#{row.IndirectCostAllocation}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.IndirectCostAllocation.tooltip}"
+                               id="ot4">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.WnsTpaBackOfficeVO1.hints.IndirectCostAllocation.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.TransactionCurrency.label}" id="c5"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.TransactionCurrency.name}"
+                         filterable="true">
+                <af:outputText value="#{row.TransactionCurrency}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.TransactionCurrency.tooltip}" id="ot5"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.TotalCost.label}" id="c6"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.TotalCost.name}" filterable="true">
+                <af:outputText value="#{row.TotalCost}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.TotalCost.tooltip}" id="ot6">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.WnsTpaBackOfficeVO1.hints.TotalCost.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.CostMarkup.label}" id="c7"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.CostMarkup.name}" filterable="true">
+                <af:outputText value="#{row.CostMarkup}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.CostMarkup.tooltip}" id="ot7"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.ActualBillingBeforeTp.label}" id="c8"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.ActualBillingBeforeTp.name}"
+                         filterable="true">
+                <af:outputText value="#{row.ActualBillingBeforeTp}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.ActualBillingBeforeTp.tooltip}" id="ot8">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.WnsTpaBackOfficeVO1.hints.ActualBillingBeforeTp.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.AmountFy.label}" id="c9"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.AmountFy.name}" filterable="true">
+                <af:outputText value="#{row.AmountFy}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.AmountFy.tooltip}" id="ot9">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.WnsTpaBackOfficeVO1.hints.AmountFy.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.ActualBillingBeforeTpPrior.label}" id="c10"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.ActualBillingBeforeTpPrior.name}"
+                         filterable="true">
+                <af:outputText value="#{row.ActualBillingBeforeTpPrior}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.ActualBillingBeforeTpPrior.tooltip}"
+                               id="ot10">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.WnsTpaBackOfficeVO1.hints.ActualBillingBeforeTpPrior.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.InvoicingCurrency.label}" id="c11"
+                         sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.InvoicingCurrency.name}" filterable="true">
+                <af:outputText value="#{row.InvoicingCurrency}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.InvoicingCurrency.tooltip}" id="ot11"/>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
+        </af:panelGroupLayout>
+        <!--<af:panelBox text="PanelBox1" id="pb2">
+          <f:facet name="toolbar"/>
+        </af:panelBox>-->
+      </af:panelBox>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

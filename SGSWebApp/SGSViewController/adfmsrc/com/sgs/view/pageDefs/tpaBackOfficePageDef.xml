@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="tpaBackOfficePageDef"
+                Package="com.sgs.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="WnsTpaBackOfficeVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="WnsTpaBackOfficeVO1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="WnsTpaBackOfficeVO1Iterator" id="ImplicitViewCriteriaQuery"/>
+    <searchRegion Criteria="WnsTpaBackOfficeVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="WnsTpaBackOfficeVO1Iterator" id="WnsTpaBackOfficeVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="WnsTpaBackOfficeVO1Iterator" id="WnsTpaBackOfficeVO1">
+      <nodeDefinition DefName="com.sgs.model.view.WnsTpaBackOfficeVO" Name="WnsTpaBackOfficeVO10">
+        <AttrNames>
+          <Item Value="CompanyCode"/>
+          <Item Value="CompanyDesc"/>
+          <Item Value="DirectCostWork"/>
+          <Item Value="IndirectCostAllocation"/>
+          <Item Value="TransactionCurrency"/>
+          <Item Value="TotalCost"/>
+          <Item Value="CostMarkup"/>
+          <Item Value="ActualBillingBeforeTp"/>
+          <Item Value="AmountFy"/>
+          <Item Value="ActualBillingBeforeTpPrior"/>
+          <Item Value="InvoicingCurrency"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

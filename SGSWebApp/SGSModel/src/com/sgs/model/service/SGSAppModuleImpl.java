@@ -1032,5 +1032,29 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getSgsPreRequisiteForTPVO1() {
         return (ViewObjectImpl) findViewObject("SgsPreRequisiteForTPVO1");
     }
+
+    /**
+     * Container's getter for TPSummaryVO1.
+     * @return TPSummaryVO1
+     */
+    public ViewObjectImpl getTPSummaryVO1() {
+        return (ViewObjectImpl) findViewObject("TPSummaryVO1");
+    }
+
+    /**
+     * Container's getter for WnsTPDashBoardVO1.
+     * @return WnsTPDashBoardVO1
+     */
+    public ViewObjectImpl getWnsTPDashBoardVO1() {
+        return (ViewObjectImpl) findViewObject("WnsTPDashBoardVO1");
+    }
+
+    /**
+     * Container's getter for WnsTpaBackOfficeVO1.
+     * @return WnsTpaBackOfficeVO1
+     */
+    public ViewObjectImpl getWnsTpaBackOfficeVO1() {
+        return (ViewObjectImpl) findViewObject("WnsTpaBackOfficeVO1");
+    }
 }
 

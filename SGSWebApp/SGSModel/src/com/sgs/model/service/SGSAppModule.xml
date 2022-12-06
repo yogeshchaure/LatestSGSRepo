@@ -280,6 +280,15 @@
   <ViewUsage
     Name="SgsPreRequisiteForTPVO1"
     ViewObjectName="com.sgs.model.view.SgsPreRequisiteForTPVO"/>
+  <ViewUsage
+    Name="TPSummaryVO1"
+    ViewObjectName="com.sgs.model.view.TPSummaryVO"/>
+  <ViewUsage
+    Name="WnsTPDashBoardVO1"
+    ViewObjectName="com.sgs.model.view.WnsTPDashBoardVO"/>
+  <ViewUsage
+    Name="WnsTpaBackOfficeVO1"
+    ViewObjectName="com.sgs.model.view.WnsTpaBackOfficeVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"
