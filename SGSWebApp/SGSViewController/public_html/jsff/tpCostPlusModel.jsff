@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1" styleClass="AFStretchWidth">
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelBox text="Customers with Delivery Centers having Cost Plus Model" id="pb1">
+        <f:facet name="toolbar"/>
+        <af:panelCollection id="pc1" styleClass="AFStretchWidth">
+          <f:facet name="menus"/>
+          <f:facet name="toolbar"/>
+          <f:facet name="statusbar"/>
+          <af:table value="#{bindings.WnsCostPlusModelVO1.collectionModel}" var="row"
+                    rows="#{bindings.WnsCostPlusModelVO1.rangeSize}"
+                    emptyText="#{bindings.WnsCostPlusModelVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    rowBandingInterval="0" selectedRowKeys="#{bindings.WnsCostPlusModelVO1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.WnsCostPlusModelVO1.collectionModel.makeCurrent}"
+                    rowSelection="single" fetchSize="#{bindings.WnsCostPlusModelVO1.rangeSize}"
+                    filterModel="#{bindings.WnsCostPlusModelVO1Query.queryDescriptor}" filterVisible="true"
+                    queryListener="#{bindings.WnsCostPlusModelVO1Query.processQuery}" varStatus="vs" id="t1">
+            <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.Customer.name}" filterable="true"
+                       headerText="#{bindings.WnsCostPlusModelVO1.hints.Customer.label}" id="c1">
+              <af:outputText value="#{row.Customer}" shortDesc="#{bindings.WnsCostPlusModelVO1.hints.Customer.tooltip}"
+                             id="ot1"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.Entitycode.name}" filterable="true"
+                       headerText="#{bindings.WnsCostPlusModelVO1.hints.Entitycode.label}" id="c2">
+              <af:outputText value="#{row.Entitycode}"
+                             shortDesc="#{bindings.WnsCostPlusModelVO1.hints.Entitycode.tooltip}" id="ot2"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.Location.name}" filterable="true"
+                       headerText="#{bindings.WnsCostPlusModelVO1.hints.Location.label}" id="c3">
+              <af:outputText value="#{row.Location}" shortDesc="#{bindings.WnsCostPlusModelVO1.hints.Location.tooltip}"
+                             id="ot3"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.BillingEntity.name}" filterable="true"
+                       headerText="#{bindings.WnsCostPlusModelVO1.hints.BillingEntity.label}" id="c4">
+              <af:outputText value="#{row.BillingEntity}"
+                             shortDesc="#{bindings.WnsCostPlusModelVO1.hints.BillingEntity.tooltip}" id="ot4"/>
+            </af:column>
+            <af:column id="c26" headerText='BU Revenue Details (for allocation basis)				' align="center">
+              <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.IncomeFromServicesBu.name}"
+                         filterable="true" headerText="#{bindings.WnsCostPlusModelVO1.hints.IncomeFromServicesBu.label}"
+                         id="c5">
+                <af:outputText value="#{row.IncomeFromServicesBu}"
+                               shortDesc="#{bindings.WnsCostPlusModelVO1.hints.IncomeFromServicesBu.tooltip}" id="ot5">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.WnsCostPlusModelVO1.hints.IncomeFromServicesBu.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.RechargeIncomeBu.name}" filterable="true"
+                         headerText="#{bindings.WnsCostPlusModelVO1.hints.RechargeIncomeBu.label}" id="c6">
+                <af:outputText value="#{row.RechargeIncomeBu}"
+                               shortDesc="#{bindings.WnsCostPlusModelVO1.hints.RechargeIncomeBu.tooltip}" id="ot6">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.WnsCostPlusModelVO1.hints.RechargeIncomeBu.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.Total.name}" filterable="true"
+                         headerText="#{bindings.WnsCostPlusModelVO1.hints.Total.label}" id="c7">
+                <af:outputText value="#{row.Total}" shortDesc="#{bindings.WnsCostPlusModelVO1.hints.Total.tooltip}"
+                               id="ot7">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.WnsCostPlusModelVO1.hints.Total.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.PercentageOfAllocation.name}"
+                         filterable="true"
+                         headerText="#{bindings.WnsCostPlusModelVO1.hints.PercentageOfAllocation.label}" id="c8">
+                <af:outputText value="#{row.PercentageOfAllocation}"
+                               shortDesc="#{bindings.WnsCostPlusModelVO1.hints.PercentageOfAllocation.tooltip}"
+                               id="ot8"/>
+              </af:column>
+            </af:column>
+            <af:column id="c28" headerText="Revenue" align="center">
+              <af:column id="c27" headerText="UK Revenue Allocation" align="center">
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.IncomeFromServicesRev.name}"
+                           filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.IncomeFromServicesRev.label}" id="c9">
+                  <af:outputText value="#{row.IncomeFromServicesRev}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.IncomeFromServicesRev.tooltip}"
+                                 id="ot9">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.IncomeFromServicesRev.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.RechargeIncomeRev.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.RechargeIncomeRev.label}" id="c10">
+                  <af:outputText value="#{row.RechargeIncomeRev}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.RechargeIncomeRev.tooltip}" id="ot10">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.RechargeIncomeRev.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.OtherIncome.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.OtherIncome.label}" id="c11">
+                  <af:outputText value="#{row.OtherIncome}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.OtherIncome.tooltip}" id="ot11">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.OtherIncome.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.TotalIncomeA.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.TotalIncomeA.label}" id="c12">
+                  <af:outputText value="#{row.TotalIncomeA}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.TotalIncomeA.tooltip}" id="ot12">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.TotalIncomeA.format}"/>
+                  </af:outputText>
+                </af:column>
+              </af:column>
+            </af:column>
+            <af:column id="c31" headerText="Expenses" displayIndex="-1" align="center">
+              <af:column id="c29" headerText="SGS">
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.SgA.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.SgA.label}" id="c13">
+                  <af:outputText value="#{row.SgA}" shortDesc="#{bindings.WnsCostPlusModelVO1.hints.SgA.tooltip}"
+                                 id="ot13"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.MarkUpRate.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.MarkUpRate.label}" id="c14">
+                  <af:outputText value="#{row.MarkUpRate}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.MarkUpRate.tooltip}" id="ot14"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.MarkUpAmount.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.MarkUpAmount.label}" id="c15">
+                  <af:outputText value="#{row.MarkUpAmount}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.MarkUpAmount.tooltip}" id="ot15">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.MarkUpAmount.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.TotalSgaB.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.TotalSgaB.label}" id="c16">
+                  <af:outputText value="#{row.TotalSgaB}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.TotalSgaB.tooltip}" id="ot16">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.TotalSgaB.format}"/>
+                  </af:outputText>
+                </af:column>
+              </af:column>
+              <af:column id="c30" headerText="Costs to be excluded">
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.SgaWithoutMarkup.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.SgaWithoutMarkup.label}" id="c18">
+                  <af:outputText value="#{row.SgaWithoutMarkup}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.SgaWithoutMarkup.tooltip}" id="ot18"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.RechargeCost.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.RechargeCost.label}" id="c17">
+                  <af:outputText value="#{row.RechargeCost}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.RechargeCost.tooltip}" id="ot17">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.RechargeCost.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.AgentErrorCost.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.AgentErrorCost.label}" id="c19">
+                  <af:outputText value="#{row.AgentErrorCost}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.AgentErrorCost.tooltip}" id="ot19">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.AgentErrorCost.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.LeaseLineCharges.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.LeaseLineCharges.label}" id="c20">
+                  <af:outputText value="#{row.LeaseLineCharges}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.LeaseLineCharges.tooltip}" id="ot20">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.LeaseLineCharges.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.OnshoreSubContractingCharges.name}"
+                           filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.OnshoreSubContractingCharges.label}"
+                           id="c21">
+                  <af:outputText value="#{row.OnshoreSubContractingCharges}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.OnshoreSubContractingCharges.tooltip}"
+                                 id="ot21">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.OnshoreSubContractingCharges.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.ForexGainLoss.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.ForexGainLoss.label}" id="c22">
+                  <af:outputText value="#{row.ForexGainLoss}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.ForexGainLoss.tooltip}" id="ot22">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.ForexGainLoss.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.TotalCostTobeExcluded.name}"
+                           filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.TotalCostTobeExcluded.label}" id="c23">
+                  <af:outputText value="#{row.TotalCostTobeExcluded}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.TotalCostTobeExcluded.tooltip}"
+                                 id="ot23">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.TotalCostTobeExcluded.format}"/>
+                  </af:outputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.TotalCost.name}" filterable="true"
+                           headerText="#{bindings.WnsCostPlusModelVO1.hints.TotalCost.label}" id="c24">
+                  <af:outputText value="#{row.TotalCost}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.TotalCost.tooltip}" id="ot24">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.TotalCost.format}"/>
+                  </af:outputText>
+                </af:column>
+              </af:column>
+            </af:column>
+            <af:column id="c32" headerText="Profit">
+              <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.name}" filterable="true"
+                         headerText="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.label}" id="c25">
+                <af:outputText value="#{row.ProfitAllocated}"
+                               shortDesc="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.tooltip}" id="ot25">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.format}"/>
+                </af:outputText>
+              </af:column>
+            </af:column>
+          </af:table>
+        </af:panelCollection>
+      </af:panelBox>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

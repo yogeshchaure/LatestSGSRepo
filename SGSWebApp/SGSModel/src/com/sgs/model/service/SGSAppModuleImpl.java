@@ -1056,5 +1056,45 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
     public ViewObjectImpl getWnsTpaBackOfficeVO1() {
         return (ViewObjectImpl) findViewObject("WnsTpaBackOfficeVO1");
     }
+
+    /**
+     * Container's getter for WnsFoAllocationSplitVO1.
+     * @return WnsFoAllocationSplitVO1
+     */
+    public ViewObjectImpl getWnsFoAllocationSplitVO1() {
+        return (ViewObjectImpl) findViewObject("WnsFoAllocationSplitVO1");
+    }
+
+    /**
+     * Container's getter for WnsTPDashBoardVO2.
+     * @return WnsTPDashBoardVO2
+     */
+    public ViewObjectImpl getWnsTPDashBoardVO2() {
+        return (ViewObjectImpl) findViewObject("WnsTPDashBoardVO2");
+    }
+
+    /**
+     * Container's getter for WnsCostPlusModelVO1.
+     * @return WnsCostPlusModelVO1
+     */
+    public ViewObjectImpl getWnsCostPlusModelVO1() {
+        return (ViewObjectImpl) findViewObject("WnsCostPlusModelVO1");
+    }
+
+    /**
+     * Container's getter for MonthsLOVVO1.
+     * @return MonthsLOVVO1
+     */
+    public ViewObjectImpl getMonthsLOVVO1() {
+        return (ViewObjectImpl) findViewObject("MonthsLOVVO1");
+    }
+
+    /**
+     * Container's getter for WnsProfitAllocationVO1.
+     * @return WnsProfitAllocationVO1
+     */
+    public ViewObjectImpl getWnsProfitAllocationVO1() {
+        return (ViewObjectImpl) findViewObject("WnsProfitAllocationVO1");
+    }
 }
 

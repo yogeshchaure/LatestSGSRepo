@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="tpSplitBackOfficePageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="WnsFoAllocationSplitVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="WnsFoAllocationSplitVO1Iterator"/>
+    <searchRegion Binds="WnsFoAllocationSplitVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="WnsFoAllocationSplitVO1Query"/>
+    <searchRegion Criteria="WnsFoAllocationSplitVOCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="WnsFoAllocationSplitVO1Iterator" id="WnsFoAllocationSplitVOCriteriaQuery"/>
+    <taskFlow id="tpCostPlusModelBTF1" taskFlowId="/bTaskFlow/tpCostPlusModelBTF.xml#tpCostPlusModelBTF"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+    <iterator Binds="WnsProfitAllocationVO1" RangeSize="-1" DataControl="SGSAppModuleDataControl"
+              id="WnsProfitAllocationVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="WnsFoAllocationSplitVO1Iterator" id="WnsFoAllocationSplitVO1">
+      <nodeDefinition DefName="com.sgs.model.view.WnsFoAllocationSplitVO" Name="WnsFoAllocationSplitVO10">
+        <AttrNames>
+          <Item Value="Entitycode"/>
+          <Item Value="Location"/>
+          <Item Value="BillingEntity"/>
+          <Item Value="IncomeFromServicesBu"/>
+          <Item Value="RechargeIncomeBu"/>
+          <Item Value="Total"/>
+          <Item Value="PercentageOfAllocation"/>
+          <Item Value="IncomeFromServicesRev"/>
+          <Item Value="RechargeIncomeRev"/>
+          <Item Value="OtherIncome"/>
+          <Item Value="TotalIncomeA"/>
+          <Item Value="SgA"/>
+          <Item Value="MarkUpRate"/>
+          <Item Value="MarkUpAmount"/>
+          <Item Value="TotalSgaB"/>
+          <Item Value="SgaWithoutMarkup"/>
+          <Item Value="RechargeCost"/>
+          <Item Value="AgentErrorCost"/>
+          <Item Value="LeaseLineCharges"/>
+          <Item Value="OnshoreSubContractingCharges"/>
+          <Item Value="ForexGainLoss"/>
+          <Item Value="TotalCostTobeExcluded"/>
+          <Item Value="TotalCost"/>
+          <Item Value="ProfitAllocated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <pivotTable IterBinding="WnsProfitAllocationVO1Iterator" id="WnsProfitAllocationVO1"
+                xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <pivotTableDataMap convert="false">
+        <columns>
+          <data aggregateDuplicates="true" defaultAggregateType="SUM">
+            <item value="Amount" aggregateType="SUM"/>
+            <item value="Details"/>
+          </data>
+        </columns>
+        <rows>
+          <item value="Profit"/>
+        </rows>
+        <pages/>
+        <drills type="INSERT"/>
+        <hierarchies>
+          <item value="Profit" location="BEFORE">
+            <child value="Total"/>
+          </item>
+          <item value="Total" location="BEFORE">
+            <child value="Particulars"/>
+          </item>
+        </hierarchies>
+      </pivotTableDataMap>
+    </pivotTable>
+    <pivotTable IterBinding="WnsProfitAllocationVO1Iterator" id="WnsProfitAllocationVO"
+                xmlns="http://xmlns.oracle.com/adfm/dvt"/>
+    <pivotTable IterBinding="WnsProfitAllocationVO1Iterator" id="WnsProfitAllocationVO2"
+                xmlns="http://xmlns.oracle.com/adfm/dvt"/>
+    <pivotTable IterBinding="WnsProfitAllocationVO1Iterator" id="WnsProfitAllocationVO3"
+                xmlns="http://xmlns.oracle.com/adfm/dvt"/>
+    <pivotTable IterBinding="WnsProfitAllocationVO1Iterator" id="WnsProfitAllocationVO4"
+                xmlns="http://xmlns.oracle.com/adfm/dvt"/>
+    <pivotTable IterBinding="WnsProfitAllocationVO1Iterator" id="WnsProfitAllocationVO5"
+                xmlns="http://xmlns.oracle.com/adfm/dvt"/>
+    <pivotTable IterBinding="WnsProfitAllocationVO1Iterator" id="WnsProfitAllocationVO6"
+                xmlns="http://xmlns.oracle.com/adfm/dvt"/>
+  </bindings>
+</pageDefinition>

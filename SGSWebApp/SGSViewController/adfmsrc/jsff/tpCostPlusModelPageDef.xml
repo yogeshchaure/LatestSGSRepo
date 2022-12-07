@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="tpCostPlusModelPageDef"
+                Package="jsff">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="WnsCostPlusModelVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="WnsCostPlusModelVO1Iterator"/>
+    <searchRegion Binds="WnsCostPlusModelVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="WnsCostPlusModelVO1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="WnsCostPlusModelVO1Iterator" id="WnsCostPlusModelVO1">
+      <nodeDefinition DefName="com.sgs.model.view.WnsCostPlusModelVO" Name="WnsCostPlusModelVO10">
+        <AttrNames>
+          <Item Value="Customer"/>
+          <Item Value="Entitycode"/>
+          <Item Value="Location"/>
+          <Item Value="BillingEntity"/>
+          <Item Value="IncomeFromServicesBu"/>
+          <Item Value="RechargeIncomeBu"/>
+          <Item Value="Total"/>
+          <Item Value="PercentageOfAllocation"/>
+          <Item Value="IncomeFromServicesRev"/>
+          <Item Value="RechargeIncomeRev"/>
+          <Item Value="OtherIncome"/>
+          <Item Value="TotalIncomeA"/>
+          <Item Value="SgA"/>
+          <Item Value="MarkUpRate"/>
+          <Item Value="MarkUpAmount"/>
+          <Item Value="TotalSgaB"/>
+          <Item Value="RechargeCost"/>
+          <Item Value="SgaWithoutMarkup"/>
+          <Item Value="AgentErrorCost"/>
+          <Item Value="LeaseLineCharges"/>
+          <Item Value="OnshoreSubContractingCharges"/>
+          <Item Value="ForexGainLoss"/>
+          <Item Value="TotalCostTobeExcluded"/>
+          <Item Value="TotalCost"/>
+          <Item Value="ProfitAllocated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

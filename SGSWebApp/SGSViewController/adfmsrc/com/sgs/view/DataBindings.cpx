@@ -99,6 +99,8 @@
         <page path="/jsff/settlementICoInvoivesNew.jsff" usageId="com_sgs_view_settlementICoInvoivesNewPageDef"/>
         <page path="/jsff/tpSummary.jsff" usageId="com_sgs_view_tpSummaryPageDef"/>
         <page path="/jsff/tpaBackOffice.jsff" usageId="com_sgs_view_tpaBackOfficePageDef"/>
+        <page path="/jsff/tpSplitBackOffice.jsff" usageId="com_sgs_view_tpSplitBackOfficePageDef"/>
+        <page path="/jsff/tpCostPlusModel.jsff" usageId="com_sgs_view_tpCostPlusModelPageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -192,6 +194,8 @@
         <page id="com_sgs_view_settlementICoInvoivesNewPageDef" path="jsff.settlementICoInvoivesNewPageDef"/>
         <page id="com_sgs_view_tpSummaryPageDef" path="jsff.tpSummaryPageDef"/>
         <page id="com_sgs_view_tpaBackOfficePageDef" path="com.sgs.view.pageDefs.tpaBackOfficePageDef"/>
+        <page id="com_sgs_view_tpSplitBackOfficePageDef" path="jsff.tpSplitBackOfficePageDef"/>
+        <page id="com_sgs_view_tpCostPlusModelPageDef" path="jsff.tpCostPlusModelPageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

@@ -31,7 +31,8 @@
                                            inlineStyle="min-height:500px;" icon="/resources/icons/reportChecked.png">
                             <af:region value="#{bindings.statisticalARDataBTF1.regionModel}" id="r4"/>
                         </af:showDetailItem>
-                        <af:showDetailItem text="TPA DashBoard" id="sdi10"  icon="/resources/icons/Review.png">
+                        <af:showDetailItem text="TPA DashBoard"  rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
+                                           inlineStyle="min-height:500px;"  id="sdi10"  icon="/resources/icons/Review.png">
                             <af:region value="#{bindings.tpSummaryBTF1.regionModel}" id="r11"/>
                         </af:showDetailItem>
                         <af:showDetailItem text="Imported Transactions from ERP" id="sdi6"

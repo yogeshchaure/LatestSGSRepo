@@ -5,6 +5,11 @@
     <data-control-scope>
       <shared/>
     </data-control-scope>
+    <managed-bean id="__2">
+      <managed-bean-name>ValueChangeListener</managed-bean-name>
+      <managed-bean-class>com.sgs.view.ValueChangeListener</managed-bean-class>
+      <managed-bean-scope>view</managed-bean-scope>
+    </managed-bean>
     <view id="tpDashBoard">
       <page>/jsff/tpSummary.jsff</page>
     </view>
@@ -14,11 +19,31 @@
         <id>tpBackOfficeBTF</id>
       </task-flow-reference>
     </task-flow-call>
+    <task-flow-call id="tpSplitBackOfficeBTF">
+      <task-flow-reference>
+        <document>/bTaskFlow/tpSplitBackOfficeBTF.xml</document>
+        <id>tpSplitBackOfficeBTF</id>
+      </task-flow-reference>
+    </task-flow-call>
+    <task-flow-call id="tpCostPlusModelBTF">
+      <task-flow-reference>
+        <document>/bTaskFlow/tpCostPlusModelBTF.xml</document>
+        <id>tpCostPlusModelBTF</id>
+      </task-flow-reference>
+    </task-flow-call>
     <control-flow-rule id="__6">
       <from-activity-id>tpDashBoard</from-activity-id>
       <control-flow-case id="__7">
         <from-outcome>backoffice</from-outcome>
         <to-activity-id>tpBackOfficeBTF</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__1">
+        <from-outcome>splitbo</from-outcome>
+        <to-activity-id>tpSplitBackOfficeBTF</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__3">
+        <from-outcome>costplus</from-outcome>
+        <to-activity-id>tpCostPlusModelBTF</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <use-page-fragments/>

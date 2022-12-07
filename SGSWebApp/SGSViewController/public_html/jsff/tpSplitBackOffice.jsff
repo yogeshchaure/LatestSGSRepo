@@ -1,0 +1,461 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:panelStretchLayout id="psl1" styleClass="AFStretchWidth">
+    <f:facet name="start">
+    
+    </f:facet>
+    <f:facet name="end"/>
+    <f:facet name="top"/>
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:panelGroupLayout id="pgl2">
+        <af:panelBox id="pb1" styleClass="AFStretchWidth" showDisclosure="false"
+                     text="Front Office Profit Allocation Details">
+          <f:facet name="toolbar">
+            <af:button text="Back" id="b1" action="returnSplitBO"/>
+          </f:facet>
+          <af:panelBox text="Front Office Profit Allocation Details" id="pb2" showDisclosure="false" rendered="false">
+            <f:facet name="toolbar"/>
+            <!--<af:inputSearch label="RMM ID" popupTitle="Search and Result Dialog" id="is1" valueAttribute=""/>-->
+            <af:panelGroupLayout id="pgl5" layout="vertical" styleClass="AFStretchWidth" halign="center"
+                                 valign="middle" rendered="false">
+              <af:inputText label="RMM ID" id="it1" inlineStyle="width:50px"/>
+              <af:spacer id="s2" height="5"/>
+              <af:selectManyChoice label="Month" id="smc1">
+                <f:selectItems value="Dec-22" id="si1"/>
+                <af:selectItem id="si2" value="Nov-22"/>
+              </af:selectManyChoice>
+            </af:panelGroupLayout>
+          </af:panelBox>
+          <af:panelBox text="Computation of Profit Allocation Pool" id="pb4">
+            <f:facet name="toolbar"/>
+            <af:outputText value="(Excludes customers (Aviva) having delivery center with Cost Plus Model tracked in a separate section)"
+                           id="ot63"/>
+            <af:spacer id="s5" height="10"/>
+            <dvt:pivotTable id="pt1" value="#{bindings.WnsProfitAllocationVO1.pivotTableModel}" var="cellData"
+                            varStatus="cellStatus" splitMode="enabled" styleClass="AFStretchWidth"
+                            layerLabelMode="rendered">
+              <dvt:headerCell inlineStyle="background-color:white">
+                <af:switcher facetName="#{cellData.layerName}" defaultFacet="Default" id="s3">
+                  <f:facet name="DataLayer">
+                    <af:outputText value="#{cellData.label}" id="ot55"/>
+                  </f:facet>
+                  <f:facet name="Profit">
+                    <af:outputText value="#{cellData.dataValue}" id="ot56"/>
+                  </f:facet>
+                  <f:facet name="Total">
+                    <af:outputText value="#{cellData.dataValue}" id="ot57"/>
+                  </f:facet>
+                  <f:facet name="Particulars">
+                    <af:outputText value="#{cellData.dataValue}" id="ot58"/>
+                  </f:facet>
+                  <f:facet name="Default">
+                    <af:outputText value="#{cellData.dataValue}" id="ot59"/>
+                  </f:facet>
+                </af:switcher>
+              </dvt:headerCell>
+              <dvt:dataCell id="dc1" inlineStyle="background-color:white">
+                <af:switcher facetName="#{cellStatus.members.DataLayer.value}" defaultFacet="Default" id="s4">
+                  <f:facet name="Amount">
+                    <af:outputText value="#{cellData.dataValue}" id="ot60">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.WnsProfitAllocationVO1.hints.Amount.format}"/>
+                    </af:outputText>
+                  </f:facet>
+                  <f:facet name="Details">
+                    <af:link  id="l1">
+                      <af:outputText value="#{cellData.dataValue}" id="ot61"/>
+                    </af:link>
+                  </f:facet>
+                  <f:facet name="Default">
+                    <af:outputText value="#{cellData.dataValue}" id="ot62"/>
+                  </f:facet>
+                </af:switcher>
+              </dvt:dataCell>
+            </dvt:pivotTable>
+            <af:panelGroupLayout id="pgl3" layout="horizontal" styleClass="AFStretchWidth" valign="middle"
+                                 halign="center" rendered="false">
+              <!--<h:dataTable id="dt1">
+            <h:column id="c32"/>
+            <h:column id="c33"/>
+            <h:column id="c34"/>
+          </h:dataTable>-->
+              <af:panelGridLayout id="pgl4" styleClass="AFStretchWidth"
+                                  inlineStyle="width:300px; border-right-color:#520029;">
+                <af:gridRow height="auto" id="gr1">
+                  <af:gridCell width="60%" id="gc1"
+                               inlineStyle="padding-top:5px; padding-bottom:5px; padding-right:20px; padding-left:20px; border-right:thin solid currentColor; border-left:thin solid currentColor; border-top:thin solid currentColor; border-bottom:thin solid currentColor; border-color:Silver; border-bottom-left-radius:2px 2px; border-bottom-right-radius:2px 2px; border-top-left-radius:2px 2px; border-top-right-radius:2px 2px; border-top-width:thick;">
+                    <af:outputText value="Particular" id="ot25" inlineStyle="font-weight:bold;"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc2">
+                    <af:outputText value="Amount" id="ot26" inlineStyle="font-weight:bold;"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc3">
+                    <af:outputText value="Details" id="ot27"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="auto" id="gr2">
+                  <af:gridCell width="60%" id="gc4"
+                               inlineStyle="padding-top:5px; padding-bottom:5px; padding-right:20px; padding-left:20px; border-right:solid thin; border-left:solid thin; border-top:solid thin; border-bottom:solid thin; border-color:Silver;">
+                    <af:outputText value="UK Revenue from Services" id="ot28"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc5">
+                    <af:outputText value="10" id="ot29"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc6">
+                    <af:outputText value="outputText6" id="ot30"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="auto" id="gr3">
+                  <af:gridCell width="60%" id="gc7">
+                    <af:outputText value="Less: UK Delivery Revenue" id="ot31"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc8">
+                    <af:outputText value="outputText8" id="ot32"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc9">
+                    <af:outputText value="outputText9" id="ot33"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="auto" id="gr4">
+                  <af:gridCell width="60%" id="gc10">
+                    <af:outputText value="Total Revenue (A)" id="ot34"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc11">
+                    <af:outputText value="outputText11" id="ot35"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc12">
+                    <af:outputText value="outputText12" id="ot36"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="auto" id="gr5">
+                  <af:gridCell width="60%" id="gc13">
+                    <af:outputText value="SGA (with Mark-Up)" id="ot37"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc14">
+                    <af:outputText value="outputText14" id="ot38"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc15">
+                    <af:outputText value="outputText15" id="ot39"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="auto" id="gr6">
+                  <af:gridCell width="60%" id="gc16">
+                    <af:outputText value="SGA Without Mark-Up" id="ot40"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc17">
+                    <af:outputText value="outputText17" id="ot41"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc18">
+                    <af:outputText value="outputText18" id="ot42"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="auto" id="gr7">
+                  <af:gridCell width="60%" id="gc19">
+                    <af:outputText value="Recharge Cost" id="ot43"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc20">
+                    <af:outputText value="outputText20" id="ot44"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc21">
+                    <af:outputText value="outputText21" id="ot45"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="auto" id="gr8">
+                  <af:gridCell width="60%" id="gc22">
+                    <af:outputText value="Less: UK Delivery Expenses" id="ot54"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc23">
+                    <af:outputText value="outputText22" id="ot46"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc24">
+                    <af:outputText value="outputText23" id="ot47"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="auto" id="gr9">
+                  <af:gridCell width="60%" id="gc25">
+                    <af:outputText value="Total Expenses (B)" id="ot48"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc26">
+                    <af:outputText value="outputText25" id="ot49"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc27">
+                    <af:outputText value="outputText26" id="ot50"/>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="auto" marginBottom="5px" id="gr10">
+                  <af:gridCell width="60%" id="gc28">
+                    <af:outputText value="Profit to be Allocated (C)" id="ot51"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc29">
+                    <af:outputText value="outputText28" id="ot52"/>
+                  </af:gridCell>
+                  <af:gridCell width="20%" id="gc30">
+                    <af:outputText value="outputText29" id="ot53"/>
+                  </af:gridCell>
+                </af:gridRow>
+              </af:panelGridLayout>
+            </af:panelGroupLayout>
+          </af:panelBox>
+          <af:panelBox text="Profit Split among Back Offices" id="pb3">
+            <f:facet name="toolbar"/>
+            <af:panelGroupLayout layout="vertical" id="pgl1" rendered="false">
+              <af:query id="qryId1" headerText="Search" disclosed="true"
+                        value="#{bindings.WnsFoAllocationSplitVOCriteriaQuery.queryDescriptor}"
+                        model="#{bindings.WnsFoAllocationSplitVOCriteriaQuery.queryModel}"
+                        queryListener="#{bindings.WnsFoAllocationSplitVOCriteriaQuery.processQuery}"
+                        queryOperationListener="#{bindings.WnsFoAllocationSplitVOCriteriaQuery.processQueryOperation}"
+                        saveQueryMode="hidden"/>
+            </af:panelGroupLayout>
+            <af:panelCollection id="pc1" styleClass="AFStretchWidth" inlineStyle="height:500px">
+              <f:facet name="menus"/>
+              <f:facet name="toolbar"/>
+              <f:facet name="statusbar"/>
+              <af:table value="#{bindings.WnsFoAllocationSplitVO1.collectionModel}" var="row"
+                        rows="#{bindings.WnsFoAllocationSplitVO1.rangeSize}"
+                        emptyText="#{bindings.WnsFoAllocationSplitVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        rowBandingInterval="0"
+                        selectedRowKeys="#{bindings.WnsFoAllocationSplitVO1.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.WnsFoAllocationSplitVO1.collectionModel.makeCurrent}"
+                        rowSelection="single" fetchSize="#{bindings.WnsFoAllocationSplitVO1.rangeSize}"
+                        filterModel="#{bindings.WnsFoAllocationSplitVO1Query.queryDescriptor}" filterVisible="true"
+                        queryListener="#{bindings.WnsFoAllocationSplitVO1Query.processQuery}" varStatus="vs" id="t1"
+                        styleClass="AFStretchWidth" inlineStyle="height:500px">
+                <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.Entitycode.name}" filterable="true"
+                           headerText="#{bindings.WnsFoAllocationSplitVO1.hints.Entitycode.label}" id="c1"
+                           align="center">
+                  <af:outputText value="#{row.Entitycode}"
+                                 shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.Entitycode.tooltip}" id="ot1"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.Location.name}" filterable="true"
+                           headerText="#{bindings.WnsFoAllocationSplitVO1.hints.Location.label}" id="c2">
+                  <af:outputText value="#{row.Location}"
+                                 shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.Location.tooltip}" id="ot2"/>
+                </af:column>
+                <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.BillingEntity.name}" filterable="true"
+                           headerText="#{bindings.WnsFoAllocationSplitVO1.hints.BillingEntity.label}" id="c3">
+                  <af:outputText value="#{row.BillingEntity}"
+                                 shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.BillingEntity.tooltip}" id="ot3"/>
+                </af:column>
+                <af:column id="c25" headerText="BU Revenue Details (for allocation basis)" align="center">
+                  <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.IncomeFromServicesBu.name}"
+                             filterable="true"
+                             headerText="#{bindings.WnsFoAllocationSplitVO1.hints.IncomeFromServicesBu.label}" id="c4">
+                    <af:outputText value="#{row.IncomeFromServicesBu}"
+                                   shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.IncomeFromServicesBu.tooltip}"
+                                   id="ot4">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.WnsFoAllocationSplitVO1.hints.IncomeFromServicesBu.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeIncomeBu.name}"
+                             filterable="true"
+                             headerText="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeIncomeBu.label}" id="c5">
+                    <af:outputText value="#{row.RechargeIncomeBu}"
+                                   shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeIncomeBu.tooltip}"
+                                   id="ot5">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeIncomeBu.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.Total.name}" filterable="true"
+                             headerText="#{bindings.WnsFoAllocationSplitVO1.hints.Total.label}" id="c6">
+                    <af:outputText value="#{row.Total}"
+                                   shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.Total.tooltip}" id="ot6">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.WnsFoAllocationSplitVO1.hints.Total.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.PercentageOfAllocation.name}"
+                             filterable="true"
+                             headerText="#{bindings.WnsFoAllocationSplitVO1.hints.PercentageOfAllocation.label}"
+                             id="c7">
+                    <af:outputText value="#{row.PercentageOfAllocation}"
+                                   shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.PercentageOfAllocation.tooltip}"
+                                   id="ot7"/>
+                    <f:facet name="header"/>
+                  </af:column>
+                </af:column>
+                <af:column id="c27" headerText="Revenue" align="center">
+                  <af:column id="c26" headerText="UK Revenue Allocation" align="center">
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.IncomeFromServicesRev.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.IncomeFromServicesRev.label}"
+                               id="c8">
+                      <af:outputText value="#{row.IncomeFromServicesRev}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.IncomeFromServicesRev.tooltip}"
+                                     id="ot8">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.IncomeFromServicesRev.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeIncomeRev.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeIncomeRev.label}" id="c9">
+                      <af:outputText value="#{row.RechargeIncomeRev}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeIncomeRev.tooltip}"
+                                     id="ot9">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeIncomeRev.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.OtherIncome.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.OtherIncome.label}" id="c10">
+                      <af:outputText value="#{row.OtherIncome}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.OtherIncome.tooltip}"
+                                     id="ot10">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.OtherIncome.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.TotalIncomeA.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.TotalIncomeA.label}" id="c11">
+                      <af:outputText value="#{row.TotalIncomeA}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.TotalIncomeA.tooltip}"
+                                     id="ot11">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.TotalIncomeA.format}"/>
+                      </af:outputText>
+                    </af:column>
+                  </af:column>
+                </af:column>
+                <af:column id="c31" headerText="Expenses" align="center">
+                  <af:column id="c28" headerText="SGA" align="center">
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.SgA.name}" filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.SgA.label}" id="c12">
+                      <af:outputText value="#{row.SgA}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.SgA.tooltip}" id="ot12"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.MarkUpRate.name}"
+                               filterable="true" headerText="#{bindings.WnsFoAllocationSplitVO1.hints.MarkUpRate.label}"
+                               id="c13">
+                      <af:outputText value="#{row.MarkUpRate}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.MarkUpRate.tooltip}"
+                                     id="ot13"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.MarkUpAmount.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.MarkUpAmount.label}" id="c14">
+                      <af:outputText value="#{row.MarkUpAmount}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.MarkUpAmount.tooltip}"
+                                     id="ot14">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.MarkUpAmount.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.TotalSgaB.name}" filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.TotalSgaB.label}" id="c15">
+                      <af:outputText value="#{row.TotalSgaB}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.TotalSgaB.tooltip}" id="ot15">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.TotalSgaB.format}"/>
+                      </af:outputText>
+                    </af:column>
+                  </af:column>
+                  <af:column id="c29" headerText="Costs to be excluded" align="center">
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.SgaWithoutMarkup.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.SgaWithoutMarkup.label}" id="c16">
+                      <af:outputText value="#{row.SgaWithoutMarkup}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.SgaWithoutMarkup.tooltip}"
+                                     id="ot16"/>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeCost.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeCost.label}" id="c17">
+                      <af:outputText value="#{row.RechargeCost}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeCost.tooltip}"
+                                     id="ot17">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.RechargeCost.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.AgentErrorCost.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.AgentErrorCost.label}" id="c18">
+                      <af:outputText value="#{row.AgentErrorCost}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.AgentErrorCost.tooltip}"
+                                     id="ot18">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.AgentErrorCost.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.LeaseLineCharges.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.LeaseLineCharges.label}" id="c19">
+                      <af:outputText value="#{row.LeaseLineCharges}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.LeaseLineCharges.tooltip}"
+                                     id="ot19">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.LeaseLineCharges.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.OnshoreSubContractingCharges.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.OnshoreSubContractingCharges.label}"
+                               id="c20">
+                      <af:outputText value="#{row.OnshoreSubContractingCharges}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.OnshoreSubContractingCharges.tooltip}"
+                                     id="ot20">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.OnshoreSubContractingCharges.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.ForexGainLoss.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.ForexGainLoss.label}" id="c21">
+                      <af:outputText value="#{row.ForexGainLoss}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.ForexGainLoss.tooltip}"
+                                     id="ot21">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.ForexGainLoss.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCostTobeExcluded.name}"
+                               filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCostTobeExcluded.label}"
+                               id="c22">
+                      <af:outputText value="#{row.TotalCostTobeExcluded}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCostTobeExcluded.tooltip}"
+                                     id="ot22">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCostTobeExcluded.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCost.name}" filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCost.label}" id="c23">
+                      <af:outputText value="#{row.TotalCost}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCost.tooltip}" id="ot23">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCost.format}"/>
+                      </af:outputText>
+                    </af:column>
+                  </af:column>
+                </af:column>
+                <af:column id="c30" headerText="Profit" align="center">
+                  <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.ProfitAllocated.name}"
+                             filterable="true"
+                             headerText="#{bindings.WnsFoAllocationSplitVO1.hints.ProfitAllocated.label}" id="c24">
+                    <af:outputText value="#{row.ProfitAllocated}"
+                                   shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.ProfitAllocated.tooltip}"
+                                   id="ot24">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.WnsFoAllocationSplitVO1.hints.ProfitAllocated.format}"/>
+                    </af:outputText>
+                  </af:column>
+                </af:column>
+              </af:table>
+            </af:panelCollection>
+          </af:panelBox>
+          <af:spacer id="s1" height="50"/>
+          <af:region value="#{bindings.tpCostPlusModelBTF1.regionModel}" id="r1"/>
+          <!--<af:panelGroupLayout id="pgl2" layout="scroll"/>-->
+        </af:panelBox>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</ui:composition>

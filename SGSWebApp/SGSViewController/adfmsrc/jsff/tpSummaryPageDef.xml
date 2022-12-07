@@ -6,6 +6,9 @@
     <variableIterator id="variables"/>
     <iterator Binds="WnsTPDashBoardVO1" RangeSize="-1" DataControl="SGSAppModuleDataControl"
               id="WnsTPDashBoardVO1Iterator"/>
+    <iterator Binds="WnsTPDashBoardVO2" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="WnsTPDashBoardVO2Iterator"/>
+    <iterator Binds="MonthsLOVVO1" RangeSize="25" DataControl="SGSAppModuleDataControl" id="MonthsLOVVO1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="WnsTPDashBoardVO1Iterator" id="WnsTPDashBoardVO11">
@@ -33,7 +36,7 @@
           </data>
         </columns>
         <rows>
-          <item value="Month"/>
+          <!--<item value="Month"/>-->
           <item value="FrontOfficeName"/>
           <item value="FoTpaModel"/>
           <item value="FoTpaStatus"/>
@@ -60,5 +63,17 @@
         <pages/>
       </pivotTableDataMap>
     </pivotTable>
+    <list IterBinding="WnsTPDashBoardVO2Iterator" ListOperMode="navigation" ListIter="WnsTPDashBoardVO2Iterator"
+          id="WnsTPDashBoardVO2" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="Month"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="MonthsLOVVO1Iterator" ListOperMode="navigation" ListIter="MonthsLOVVO1Iterator"
+          id="MonthsLOVVO1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="MONTH"/>
+      </AttrNames>
+    </list>
   </bindings>
 </pageDefinition>

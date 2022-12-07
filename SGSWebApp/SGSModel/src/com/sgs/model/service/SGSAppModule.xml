@@ -289,6 +289,21 @@
   <ViewUsage
     Name="WnsTpaBackOfficeVO1"
     ViewObjectName="com.sgs.model.view.WnsTpaBackOfficeVO"/>
+  <ViewUsage
+    Name="WnsFoAllocationSplitVO1"
+    ViewObjectName="com.sgs.model.view.WnsFoAllocationSplitVO"/>
+  <ViewUsage
+    Name="WnsTPDashBoardVO2"
+    ViewObjectName="com.sgs.model.view.WnsTPDashBoardVO"/>
+  <ViewUsage
+    Name="WnsCostPlusModelVO1"
+    ViewObjectName="com.sgs.model.view.WnsCostPlusModelVO"/>
+  <ViewUsage
+    Name="MonthsLOVVO1"
+    ViewObjectName="com.sgs.model.view.MonthsLOVVO"/>
+  <ViewUsage
+    Name="WnsProfitAllocationVO1"
+    ViewObjectName="com.sgs.model.view.WnsProfitAllocationVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

@@ -1749,6 +1749,169 @@ INT START WITH 1
 INCREMENT BY 1;
 GO
 
+CREATE TABLE [dbo].[WNS_TPA_BACKOFFICE](
+
+              [WNS_TPA_BACKOFFICE_ID] [int] NOT NULL,
+
+              [COMPANY_CODE] [varchar](30) NULL,
+
+              [COMPANY_DESC] [varchar](80) NULL,
+
+              [DIRECT_COST_WORK] [numeric](20, 5) NULL,
+
+              [INDIRECT_COST_ALLOCATION]  [numeric](20, 5) NULL,
+
+              [TRANSACTION_CURRENCY] [varchar](80) NULL,
+
+              [TOTAL_COST]  [numeric](20, 5) NULL,
+
+              [COST_MARKUP] [varchar](80) NULL,
+
+              [ACTUAL_BILLING_BEFORE_TP]  [numeric](20, 5) NULL,
+
+              [AMOUNT_FY]  [numeric](20, 5) NULL,
+
+              [ACTUAL_BILLING_BEFORE_TP_PRIOR] [numeric](20, 5) NULL,
+
+              [INVOICING_CURRENCY] [varchar](80) NULL,
+
+              [EFFECTIVE_FROM] [date] NULL,
+
+              [EFFECTIVE_TO] [date] NULL,
+
+              [CREATED_DATE] [date] NULL,
+
+              [CREATED_BY] [varchar](80) NULL,
+
+              [UPDATED_DATE] [date] NULL,
+
+              [UPDATED_BY] [varchar](80) NULL,
+
+              [ATTRIBUTE1] [varchar](80) NULL,
+
+              [ATTRIBUTE2] [varchar](80) NULL,
+
+              [ATTRIBUTE3] [varchar](80) NULL,
+
+              [ATTRIBUTE4] [varchar](80) NULL,
+
+              [ATTRIBUTE5] [varchar](80) NULL,
+
+              [ATTRIBUTE6] [date] NULL,
+
+              [ATTRIBUTE7] [date] NULL,
+
+              [ATTRIBUTE8] [date] NULL,
+
+              [ATTRIBUTE9] [date] NULL,
+
+              [ATTRIBUTE10] [date] NULL,
+
+              [ATTRIBUTE11] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE12] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE13] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE14] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE15] [numeric](10, 5) NULL,
+
+CONSTRAINT [PK_WNS_TPA_BACKOFFICE] PRIMARY KEY CLUSTERED
+
+(
+
+              [WNS_TPA_BACKOFFICE_ID] ASC
+
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+) ON [PRIMARY]
+
+GO
+
+ 
+
+ 
+
+CREATE TABLE [dbo].[WNS_TRANSFER_PRICING_DASHBOARD](
+
+              [WNS_TPAD_ID] [int] NOT NULL,
+
+              [MONTH] [varchar](30) NULL,
+
+              [FRONT_OFFICE_NAME] [varchar](80) NULL,
+
+              [FO_TPA_MODEL] [varchar](80) NULL,
+
+              [FO_TPA_Status] [varchar](80) NULL,
+
+              [BACK_OFFICE] [varchar](80) NOT NULL,
+
+              [BO_TPA_MODEL] [varchar](80) NULL,
+
+              [DEPENDENCY_COMPLETION] [varchar](80) NULL,
+
+              [IDC_ALLOCATION_STATUS] [varchar](80) NULL,
+
+              [INVOICED_TO_FO] [varchar](80) NULL,
+
+              [BO_TPA_STATUS] [varchar](80) NULL,
+
+              [EFFECTIVE_FROM] [date] NULL,
+
+              [EFFECTIVE_TO] [date] NULL,
+
+              [CREATED_DATE] [date] NULL,
+
+              [CREATED_BY] [varchar](80) NULL,
+
+              [UPDATED_DATE] [date] NULL,
+
+              [UPDATED_BY] [varchar](80) NULL,
+
+              [ATTRIBUTE1] [varchar](80) NULL,
+
+              [ATTRIBUTE2] [varchar](80) NULL,
+
+              [ATTRIBUTE3] [varchar](80) NULL,
+
+              [ATTRIBUTE4] [varchar](80) NULL,
+
+              [ATTRIBUTE5] [varchar](80) NULL,
+
+              [ATTRIBUTE6] [date] NULL,
+
+              [ATTRIBUTE7] [date] NULL,
+
+              [ATTRIBUTE8] [date] NULL,
+
+              [ATTRIBUTE9] [date] NULL,
+
+              [ATTRIBUTE10] [date] NULL,
+
+              [ATTRIBUTE11] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE12] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE13] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE14] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE15] [numeric](10, 5) NULL,
+
+CONSTRAINT [PK_WNS_TRANSFER_PRICING_DASHBOARD] PRIMARY KEY CLUSTERED
+
+(
+
+              [WNS_TPAD_ID] ASC
+
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+) ON [PRIMARY]
+
+GO
+
+
 
 
 

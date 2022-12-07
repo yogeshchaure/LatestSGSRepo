@@ -141,6 +141,7 @@
             <hash n="archiveOptions">
                <value n="hasManifest" v="false"/>
             </hash>
+            <value n="contextRoot"/>
             <value n="enterpriseAppName" v="SGSWebApp_SGSViewController_webapp"/>
             <hash n="fileGroups">
                <list n="groups">

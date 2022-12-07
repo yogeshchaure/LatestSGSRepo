@@ -5,32 +5,32 @@
    <View
       id="View2">
       <property
-         name="activityId">tpaBackOffice</property>
+         name="activityId">tpSplitBackOffice</property>
       <property
          name="pageFragment">true</property>
       <property
-         name="x">559.3506</property>
+         name="x">502.0</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>tpaBackOffice&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>tpSplitBackOffice&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">279.34473</property>
+         name="y">194.84473</property>
       <property
-         name="page">/jsff/tpaBackOffice.jsff</property>
+         name="page">/jsff/tpSplitBackOffice.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>
    <TaskFlowReturn
       id="TaskFlowReturn3">
       <property
-         name="activityId">returnTOTPDashboard</property>
+         name="activityId">tpReturnSplitBackOffice</property>
       <property
-         name="x">774.0</property>
+         name="x">772.0</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>returnTOTPDashboard&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  returnTOTPDashboard&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>tpReturnSplitBackOffice&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  tpReturnSplitBackOffice&lt;/p></property>
       <property
-         name="y">276.89648</property>
+         name="y">199.89648</property>
       <property
          name="finish">true</property>
       <property
@@ -42,8 +42,8 @@
       from="View2"
       to="TaskFlowReturn3">
       <property
-         name="fromOutcome">back</property>
+         name="fromOutcome">returnSplitBO</property>
       <property
-         name="sdm:polyPoints">R50,600.3506,278.99414,733.0,276.5459,L50</property>
+         name="sdm:polyPoints">R50,543.0,194.49414,731.0,199.5459,L50</property>
    </ControlFlowCase>
 </SDM>

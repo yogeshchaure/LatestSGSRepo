@@ -57,6 +57,7 @@
                 <af:outputText value="#{row.CompanyCode}"
                                shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyCode.tooltip}" id="ot1"/>
               </af:column>
+          
               <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyDesc.label}" id="c2"
                          sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyDesc.name}" filterable="true"
                          inlineStyle="background-color: skyblue;">
@@ -66,7 +67,7 @@
               <!--<af:column id="c12" inlineStyle="width:10px">
                 <af:panelGroupLayout id="pgl4" inlineStyle="width:10px"/>
               </af:column>-->
-              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.DirectCostWork.label}" id="c3"
+                  <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.DirectCostWork.label}" id="c3"
                          sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.DirectCostWork.name}" filterable="true">
                 <af:outputText value="#{row.DirectCostWork}"
                                shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.DirectCostWork.tooltip}" id="ot3">
@@ -136,6 +137,17 @@
                                shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.InvoicingCurrency.tooltip}" id="ot11"/>
               </af:column>
             </af:table>
+            <f:facet name="afterToolbar">
+              <af:toolbar id="t2">
+                <af:panelGroupLayout id="pgl5" layout="horizontal" inlineStyle="margin-left: 220px;">
+                  <af:button text="View Details" id="b4" inlineStyle="width:100px">
+                  
+                  </af:button>
+                  <af:spacer id="s1" width="10"/>
+                  <af:button text="View Details" id="b3" inlineStyle="width:100px"/>
+                </af:panelGroupLayout>
+              </af:toolbar>
+            </f:facet>
           </af:panelCollection>
         </af:panelGroupLayout>
         <!--<af:panelBox text="PanelBox1" id="pb2">

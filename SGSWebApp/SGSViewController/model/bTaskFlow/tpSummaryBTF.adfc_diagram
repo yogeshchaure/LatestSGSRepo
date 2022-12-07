@@ -46,6 +46,60 @@
       <property
          name="fromOutcome">backoffice</property>
       <property
-         name="sdm:polyPoints">R50,363.0,252.79297,518.3457,280.79883,L50</property>
+         name="sdm:polyPoints">R54,363.0,256.29297,518.3457,280.79883,L50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall5">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>tpSplitBackOfficeBTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">tpSplitBackOfficeBTF</property>
+      <property
+         name="x">548.0176</property>
+      <property
+         name="y">136.44824</property>
+      <property
+         name="documentReference">/bTaskFlow/tpSplitBackOfficeBTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">tpSplitBackOfficeBTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="View2"
+      to="TaskFlowCall5">
+      <property
+         name="fromOutcome">splitbo</property>
+      <property
+         name="sdm:polyPoints">R46,363.0,249.29297,507.01758,136.09766,L50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall8">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>tpCostPlusModelBTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">tpCostPlusModelBTF</property>
+      <property
+         name="x">576.6865</property>
+      <property
+         name="y">418.1494</property>
+      <property
+         name="documentReference">/bTaskFlow/tpCostPlusModelBTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">tpCostPlusModelBTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View2"
+      to="TaskFlowCall8">
+      <property
+         name="fromOutcome">costplus</property>
+      <property
+         name="sdm:polyPoints">R58,363.0,259.79297,535.6865,417.79883,L50</property>
    </ControlFlowCase>
 </SDM>
