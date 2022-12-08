@@ -46,7 +46,7 @@
       <property
          name="fromOutcome">backoffice</property>
       <property
-         name="sdm:polyPoints">R54,363.0,256.29297,518.3457,280.79883,L50</property>
+         name="sdm:polyPoints">R50,364.67258,252.79297,518.3457,280.79883,L50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall5">

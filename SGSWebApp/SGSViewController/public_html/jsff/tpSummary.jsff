@@ -8,7 +8,9 @@
     <f:facet name="bottom"/>
     <f:facet name="center">
       <af:panelBox text="Transfer Processing Summary" id="pb1">
-        <f:facet name="toolbar"/>
+        <f:facet name="toolbar">
+          <af:button text="Consolidated Profitability Report" id="b1"/>
+        </f:facet>
         <af:spacer id="s3" height="10"/>
         <af:panelGroupLayout id="pgl1" styleClass="AFStretchWidth">
           <!--<af:selectOneChoice value="#{bindings.WnsTPDashBoardVO2.inputValue}"
@@ -30,11 +32,10 @@
         </af:panelGroupLayout>
         <af:spacer id="s4" height="10"/>
         <dvt:pivotTable id="pt1" value="#{bindings.WnsTPDashBoardVO1.pivotTableModel}" var="cellData"
-                        varStatus="cellStatus" styleClass="AFStretchWidth" 
-                        layerLabelMode="rendered" sizing="auto" scrollPolicy="auto" pivotLabelVisible="true"
-                        indentEnabled="true" columnFetchSize="500" splitMode="enabled">
-          <dvt:headerCell inlineStyle="background-color:#{(cellData.dataValue == 'Yes' ? 
-                       'green' : 'white')}; width:200px;word-wrap:break-word;text-align:center;">
+                        varStatus="cellStatus" styleClass="AFStretchWidth"  modelName="pt2Model"
+                        layerLabelMode="rendered" sizing="auto"  pivotLabelVisible="true"
+                        indentEnabled="true" columnFetchSize="500" inlineStyle="height:800px">
+          <dvt:headerCell inlineStyle="background-color:white;width:200px;word-wrap:break-word;text-align:center;">
             <af:switcher facetName="#{cellData.layerName}" defaultFacet="Default" id="s1">
               <f:facet name="DataLayer">
                 <af:outputText value="#{cellData.label}" id="ot1" />
@@ -54,6 +55,9 @@
               <f:facet name="FoTpaStatus">
                 <af:outputText value="#{cellData.dataValue}" id="ot5"/>
               </f:facet>
+                <f:facet name="Attribute1">
+                <af:outputText value="#{cellData.dataValue}" id="ot2"/>
+              </f:facet>
               <f:facet name="BackOffice">
                 <af:link id="l1" action="backoffice">
                   <af:outputText value="#{cellData.dataValue}"   id="ot6"
@@ -64,19 +68,25 @@
                 <af:outputText value="#{cellData.dataValue}" id="ot7"/>
               </f:facet>
               <f:facet name="DependencyCompletion">
-                  <af:outputText value="#{cellData.dataValue}"   id="ot8"/>
+                  <af:outputText value="#{cellData.dataValue}" inlineStyle="color:#{(cellData.dataValue == 'Yes' ? 
+                       'green' : 'red')};"   id="ot8"/>
               </f:facet>
               <f:facet name="IdcAllocationStatus">
-                <af:outputText value="#{cellData.dataValue}"  id="ot9"/>
+                <af:outputText value="#{cellData.dataValue}" inlineStyle="color:#{(cellData.dataValue == 'Yes' ? 
+                       'green' : 'red')};"  id="ot9"/>
               </f:facet>
               <f:facet name="InvoicedToFo">
-                <af:outputText value="#{cellData.dataValue}"   id="ot10"/>
+                <af:outputText value="#{cellData.dataValue}"  inlineStyle="color:#{(cellData.dataValue == 'Yes' ? 
+                       'green' : 'red')};"  id="ot10"/>
               </f:facet>
               <f:facet name="Default">
                 <af:outputText value="#{cellData.dataValue}" id="ot11"/>
               </f:facet>
               <f:facet name="BoTpaStatus">
                 <af:outputText value="#{cellData.dataValue}" id="ot12"/>
+              </f:facet>
+                <f:facet name="Attribute2">
+                <af:outputText value="#{cellData.dataValue}" id="ot14"/>
               </f:facet>
               <!--<f:facet name="HeaderLayer">
                <af:outputText value="#{cellData.label}" id="ot14"/>

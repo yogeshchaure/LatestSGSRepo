@@ -249,35 +249,35 @@
     Name="Attribute6"
     ColumnName="ATTRIBUTE6"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.lang.String"
     ColumnType="DATE"
     TableName="WNS_TPA_BACKOFFICE"/>
   <Attribute
     Name="Attribute7"
     ColumnName="ATTRIBUTE7"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.lang.String"
     ColumnType="DATE"
     TableName="WNS_TPA_BACKOFFICE"/>
   <Attribute
     Name="Attribute8"
     ColumnName="ATTRIBUTE8"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.lang.String"
     ColumnType="DATE"
     TableName="WNS_TPA_BACKOFFICE"/>
   <Attribute
     Name="Attribute9"
     ColumnName="ATTRIBUTE9"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.lang.String"
     ColumnType="DATE"
     TableName="WNS_TPA_BACKOFFICE"/>
   <Attribute
     Name="Attribute10"
     ColumnName="ATTRIBUTE10"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.lang.String"
     ColumnType="DATE"
     TableName="WNS_TPA_BACKOFFICE"/>
   <Attribute
@@ -286,7 +286,7 @@
     Scale="5"
     ColumnName="ATTRIBUTE11"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.String"
     ColumnType="NUMERIC"
     TableName="WNS_TPA_BACKOFFICE"/>
   <Attribute
@@ -295,7 +295,7 @@
     Scale="5"
     ColumnName="ATTRIBUTE12"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.String"
     ColumnType="NUMERIC"
     TableName="WNS_TPA_BACKOFFICE"/>
   <Attribute
@@ -304,7 +304,7 @@
     Scale="5"
     ColumnName="ATTRIBUTE13"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="java.lang.String"
     ColumnType="NUMERIC"
     TableName="WNS_TPA_BACKOFFICE"/>
   <Attribute

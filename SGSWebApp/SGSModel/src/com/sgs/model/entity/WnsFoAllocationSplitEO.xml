@@ -352,35 +352,35 @@
     Name="Attribute6"
     ColumnName="ATTRIBUTE6"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.lang.String"
     ColumnType="DATE"
     TableName="WNS_FO_ALLOCATION_SPLIT_BO"/>
   <Attribute
     Name="Attribute7"
     ColumnName="ATTRIBUTE7"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.lang.String"
     ColumnType="DATE"
     TableName="WNS_FO_ALLOCATION_SPLIT_BO"/>
   <Attribute
     Name="Attribute8"
     ColumnName="ATTRIBUTE8"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.lang.String"
     ColumnType="DATE"
     TableName="WNS_FO_ALLOCATION_SPLIT_BO"/>
   <Attribute
     Name="Attribute9"
     ColumnName="ATTRIBUTE9"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.lang.String"
     ColumnType="DATE"
     TableName="WNS_FO_ALLOCATION_SPLIT_BO"/>
   <Attribute
     Name="Attribute10"
     ColumnName="ATTRIBUTE10"
     SQLType="DATE"
-    Type="java.sql.Date"
+    Type="java.lang.String"
     ColumnType="DATE"
     TableName="WNS_FO_ALLOCATION_SPLIT_BO"/>
   <Attribute

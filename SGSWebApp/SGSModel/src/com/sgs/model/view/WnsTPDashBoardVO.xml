@@ -188,13 +188,27 @@
     PrecisionRule="true"
     EntityAttrName="Attribute1"
     EntityUsage="WnsTPDashBoardEO"
-    AliasName="ATTRIBUTE1"/>
+    AliasName="ATTRIBUTE1">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsTPDashBoardVO.Attribute1_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute2"
     PrecisionRule="true"
     EntityAttrName="Attribute2"
     EntityUsage="WnsTPDashBoardEO"
-    AliasName="ATTRIBUTE2"/>
+    AliasName="ATTRIBUTE2">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsTPDashBoardVO.Attribute2_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute3"
     PrecisionRule="true"

@@ -139,3 +139,36 @@ af|panelGridLayout.headerbgcolor {
   background-image: linear-gradient(120deg,#2980b9,#8e44ad);
 }
 
+.tableHeder{
+background-color: #6b9dc7;
+}
+
+
+/*af_dvt-pivotTable_row-header-layer-label-cell{
+background-color: #895b94;
+}*/
+
+/*af|dvt-pivotTable::column-header-cell {
+    background-color: #895b94; 
+}*/
+
+/*af|dvt-pivotTable::header-cell-content {
+    color: #FFFFFF; 
+}*/
+
+/*af|dvt-pivotTable::row-header-cell {
+   background-color: #895b94; 
+}*/
+
+/*af|dvt-pivotTable::row-header-layer-label-cell {
+   background-color: #895b94; 
+}*/
+
+/*row-header-layer-label-cell*/
+
+/*af|dvt-pivotTable::row-header-layer-label-cell::content {
+   color: white; 
+}*/
+
+/*af_dvt-pivotTable_layer-label-cell-content*/
+

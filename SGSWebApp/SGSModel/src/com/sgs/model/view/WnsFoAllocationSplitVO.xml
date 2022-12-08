@@ -371,61 +371,131 @@
     PrecisionRule="true"
     EntityAttrName="Attribute1"
     EntityUsage="WnsFoAllocationSplitEO"
-    AliasName="ATTRIBUTE1"/>
+    AliasName="ATTRIBUTE1">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsFoAllocationSplitVO.Attribute1_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute2"
     PrecisionRule="true"
     EntityAttrName="Attribute2"
     EntityUsage="WnsFoAllocationSplitEO"
-    AliasName="ATTRIBUTE2"/>
+    AliasName="ATTRIBUTE2">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsFoAllocationSplitVO.Attribute2_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute3"
     PrecisionRule="true"
     EntityAttrName="Attribute3"
     EntityUsage="WnsFoAllocationSplitEO"
-    AliasName="ATTRIBUTE3"/>
+    AliasName="ATTRIBUTE3">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsFoAllocationSplitVO.Attribute3_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute4"
     PrecisionRule="true"
     EntityAttrName="Attribute4"
     EntityUsage="WnsFoAllocationSplitEO"
-    AliasName="ATTRIBUTE4"/>
+    AliasName="ATTRIBUTE4">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsFoAllocationSplitVO.Attribute4_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute5"
     PrecisionRule="true"
     EntityAttrName="Attribute5"
     EntityUsage="WnsFoAllocationSplitEO"
-    AliasName="ATTRIBUTE5"/>
+    AliasName="ATTRIBUTE5">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsFoAllocationSplitVO.Attribute5_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute6"
     PrecisionRule="true"
     EntityAttrName="Attribute6"
     EntityUsage="WnsFoAllocationSplitEO"
-    AliasName="ATTRIBUTE6"/>
+    AliasName="ATTRIBUTE6">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsFoAllocationSplitVO.Attribute6_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute7"
     PrecisionRule="true"
     EntityAttrName="Attribute7"
     EntityUsage="WnsFoAllocationSplitEO"
-    AliasName="ATTRIBUTE7"/>
+    AliasName="ATTRIBUTE7">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsFoAllocationSplitVO.Attribute7_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute8"
     PrecisionRule="true"
     EntityAttrName="Attribute8"
     EntityUsage="WnsFoAllocationSplitEO"
-    AliasName="ATTRIBUTE8"/>
+    AliasName="ATTRIBUTE8">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsFoAllocationSplitVO.Attribute8_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute9"
     PrecisionRule="true"
     EntityAttrName="Attribute9"
     EntityUsage="WnsFoAllocationSplitEO"
-    AliasName="ATTRIBUTE9"/>
+    AliasName="ATTRIBUTE9">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsFoAllocationSplitVO.Attribute9_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute10"
     PrecisionRule="true"
     EntityAttrName="Attribute10"
     EntityUsage="WnsFoAllocationSplitEO"
-    AliasName="ATTRIBUTE10"/>
+    AliasName="ATTRIBUTE10">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sgs.model.view.WnsFoAllocationSplitVO.Attribute10_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Attribute11"
     PrecisionRule="true"

@@ -5,11 +5,7 @@
     <f:facet name="start"/>
     <f:facet name="end"/>
     <f:facet name="top"/>
-    <f:facet name="bottom">
-      <af:panelGroupLayout id="pgl4" halign="center" valign="middle" layout="horizontal">
-        <af:button text="Confirm Invoicing" id="b2"/>
-      </af:panelGroupLayout>
-    </f:facet>
+    <f:facet name="bottom"/>
     <f:facet name="center">
       <af:panelBox text="Transfer Processing Back Office" id="pb1">
         <f:facet name="toolbar">
@@ -40,17 +36,35 @@
           </af:panelHeader>-->
           <af:panelCollection id="pc1" styleClass="AFStretchWidth">
             <f:facet name="menus"/>
-            <f:facet name="toolbar"/>
-            <f:facet name="statusbar"/>
+            <f:facet name="toolbar">
+              <af:toolbar id="t3">
+                  <af:button id="b7" icon="/resources/icons/microsoft-excel.png"
+                                           shortDesc="Export to Excel"
+                                           disabled="#{bindings.WnsTpaBackOfficeVO1.estimatedRowCount &lt;= 0}">
+                                    <af:exportCollectionActionListener type="excelHTML" exportedId="bkt1"
+                                                                       filename="TPBackOffice.xls"/>
+                                </af:button>
+                <af:panelGroupLayout id="pgl4" halign="center" valign="middle" layout="horizontal">
+                  <af:button text="Confirm Invoicing" id="b2"/>
+                </af:panelGroupLayout>
+              </af:toolbar>
+            </f:facet>
+            <f:facet name="statusbar">
+              <af:toolbar id="t1"/>
+            </f:facet>
             <af:table value="#{bindings.WnsTpaBackOfficeVO1.collectionModel}" var="row"
                       rows="#{bindings.WnsTpaBackOfficeVO1.rangeSize}"
                       emptyText="#{bindings.WnsTpaBackOfficeVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                       rowBandingInterval="0"
                       
                       selectionListener="#{bindings.WnsTpaBackOfficeVO1.collectionModel.makeCurrent}"
-                      rowSelection="single" fetchSize="#{bindings.WnsTpaBackOfficeVO1.rangeSize}" id="t1"
-                      filterModel="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}" filterVisible="true"
+                      rowSelection="single" fetchSize="#{bindings.WnsTpaBackOfficeVO1.rangeSize}" id="bkt1"
+                      filterModel="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}" filterVisible="false"
                       queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}" varStatus="vs">
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute1.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute1.name}" filterable="true" id="c12">
+                <af:outputText value="#{row.Attribute1}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute1.tooltip}" id="ot12"/>
+              </af:column>
               <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyCode.label}" id="c1"
                          sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.CompanyCode.name}" filterable="true"
                          inlineStyle="background-color: skyblue;">
@@ -99,6 +113,54 @@
                                     pattern="#{bindings.WnsTpaBackOfficeVO1.hints.TotalCost.format}"/>
                 </af:outputText>
               </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute2.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute2.name}" filterable="true" id="c13">
+                <af:outputText value="#{row.Attribute2}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute2.tooltip}" id="ot13"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute3.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute3.name}" filterable="true" id="c14">
+                <af:outputText value="#{row.Attribute3}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute3.tooltip}" id="ot14"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute4.label}"  sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute4.name}" filterable="true" id="c15">
+                <af:outputText value="#{row.Attribute4}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute4.tooltip}" id="ot15"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute5.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute5.name}" filterable="true" id="c16">
+                <af:outputText value="#{row.Attribute5}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute5.tooltip}" id="ot16"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute6.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute6.name}" filterable="true" id="c17">
+                <af:outputText value="#{row.Attribute6}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute6.tooltip}" id="ot17"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute7.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute7.name}" filterable="true" id="c18">
+                <af:outputText value="#{row.Attribute7}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute7.tooltip}" id="ot18"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute8.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute8.name}" filterable="true" id="c19">
+                <af:outputText value="#{row.Attribute8}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute8.tooltip}" id="ot19"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute9.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute9.name}" filterable="true" id="c20">
+                <af:outputText value="#{row.Attribute9}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute9.tooltip}" id="ot20"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute10.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute10.name}" filterable="true" id="c21">
+                <af:outputText value="#{row.Attribute10}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute10.tooltip}" id="ot21"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute11.label}"  sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute11.name}" filterable="true" id="c22">
+                <af:outputText value="#{row.Attribute11}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute11.tooltip}" id="ot22"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute12.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute12.name}" filterable="true" id="c23">
+                <af:outputText value="#{row.Attribute12}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute12.tooltip}" id="ot23"/>
+              </af:column>
+              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute13.label}"   sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute13.name}" filterable="true" id="c24">
+                <af:outputText value="#{row.Attribute13}"
+                               shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute13.tooltip}" id="ot24"/>
+              </af:column>
               <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.CostMarkup.label}" id="c7"
                          sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.CostMarkup.name}" filterable="true">
                 <af:outputText value="#{row.CostMarkup}"
@@ -137,7 +199,7 @@
                                shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.InvoicingCurrency.tooltip}" id="ot11"/>
               </af:column>
             </af:table>
-            <f:facet name="afterToolbar">
+            <!--<f:facet name="afterToolbar">
               <af:toolbar id="t2">
                 <af:panelGroupLayout id="pgl5" layout="horizontal" inlineStyle="margin-left: 220px;">
                   <af:button text="View Details" id="b4" inlineStyle="width:100px">
@@ -147,7 +209,7 @@
                   <af:button text="View Details" id="b3" inlineStyle="width:100px"/>
                 </af:panelGroupLayout>
               </af:toolbar>
-            </f:facet>
+            </f:facet>-->
           </af:panelCollection>
         </af:panelGroupLayout>
         <!--<af:panelBox text="PanelBox1" id="pb2">
