@@ -497,7 +497,7 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
         PreparedStatement pst = null;
         try {
             String connectionUrl =
-                "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databasename=INTERCO;integratedSecurity=true;";
+                "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databasename=WNS;integratedSecurity=true;";
             conn = DriverManager.getConnection(connectionUrl);
             String sqlIdentifier = "select next value for " + seqName;
             pst = conn.prepareStatement(sqlIdentifier);

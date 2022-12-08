@@ -69,7 +69,7 @@ public class AuthenticationBean {
                 request.login(_username, _password); // Servlet 3.0 login
 
                 HttpSession session = request.getSession();
-                session.setAttribute("success_url", "/faces/jsf/welcomePage.jsf");
+                session.setAttribute("success_url", "/faces/jsf/MainPage.jsf");
                 ViewObject sgsUsersByBuVO = sgsAppModule.findViewObject("SgsUsersByBuVO");
                 sgsUsersByBuVO.setWhereClause("Username = '" + _username + "'");
                 sgsUsersByBuVO.executeQuery();
