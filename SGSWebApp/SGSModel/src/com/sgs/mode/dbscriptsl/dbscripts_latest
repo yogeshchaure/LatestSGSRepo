@@ -1830,9 +1830,6 @@ CONSTRAINT [PK_WNS_TPA_BACKOFFICE] PRIMARY KEY CLUSTERED
 GO
 
  
-
- 
-
 CREATE TABLE [dbo].[WNS_TRANSFER_PRICING_DASHBOARD](
 
               [WNS_TPAD_ID] [int] NOT NULL,
@@ -1902,8 +1899,130 @@ CREATE TABLE [dbo].[WNS_TRANSFER_PRICING_DASHBOARD](
 CONSTRAINT [PK_WNS_TRANSFER_PRICING_DASHBOARD] PRIMARY KEY CLUSTERED
 
 (
-
               [WNS_TPAD_ID] ASC
+
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+) ON [PRIMARY]
+
+GO
+
+
+
+CREATE TABLE [dbo].[WNS_PROFIT_ALLOCATION_POOL](
+
+              [FO_PROFIT_ID] [int] NOT NULL,    
+              [PROFIT] [varchar](80) NOT NULL,			  
+
+              [TOTAL] [varchar](80) NOT NULL,                                             
+
+              [PARTICULARS] [varchar](100) NULL,                                       
+
+              [Details] [varchar](80) NULL,                                  
+
+              [AMOUNT] [numeric](20, 5) NULL,                                    
+
+              [CREATED_BY] [varchar](80) NULL,                                     
+
+              [UPDATED_DATE] [date] NULL,                           
+
+              [UPDATED_BY] [varchar](80) NULL,                     
+
+              [ATTRIBUTE1] [varchar](80) NULL,                     
+
+              [ATTRIBUTE2] [varchar](80) NULL,                     
+
+              [ATTRIBUTE3] [varchar](80) NULL,                     
+
+              [ATTRIBUTE4] [varchar](80) NULL,                     
+
+              [ATTRIBUTE5] [varchar](80) NULL,                     
+
+              [ATTRIBUTE6] [date] NULL,
+
+              [ATTRIBUTE7] [date] NULL,
+
+              [ATTRIBUTE8] [date] NULL,
+
+              [ATTRIBUTE9] [date] NULL,
+
+              [ATTRIBUTE10] [date] NULL,
+
+              [ATTRIBUTE11] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE12] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE13] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE14] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE15] [numeric](10, 5) NULL,
+
+CONSTRAINT [PK_WNS_PROFIT_ALLOCATION_POOL] PRIMARY KEY CLUSTERED
+(
+
+              [FO_PROFIT_ID] ASC
+
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+
+) ON [PRIMARY]
+
+GO
+
+
+CREATE TABLE [dbo].[WNS_PROFIT_ALLOCATION_POOL](
+
+              [FO_PROFIT_ID] [int] NOT NULL,    
+				[PROFIT] [varchar](80) NOT NULL,			  
+
+              [TOTAL] [varchar](80) NOT NULL,                                             
+
+              [PARTICULARS] [varchar](100) NULL,                                       
+
+              [Details] [varchar](80) NULL,                                  
+
+              [AMOUNT] [numeric](20, 5) NULL,                                    
+
+              [CREATED_BY] [varchar](80) NULL,                                     
+
+              [UPDATED_DATE] [date] NULL,                           
+
+              [UPDATED_BY] [varchar](80) NULL,                     
+
+              [ATTRIBUTE1] [varchar](80) NULL,                     
+
+              [ATTRIBUTE2] [varchar](80) NULL,                     
+
+              [ATTRIBUTE3] [varchar](80) NULL,                     
+
+              [ATTRIBUTE4] [varchar](80) NULL,                     
+
+              [ATTRIBUTE5] [varchar](80) NULL,                     
+
+              [ATTRIBUTE6] [date] NULL,
+
+              [ATTRIBUTE7] [date] NULL,
+
+              [ATTRIBUTE8] [date] NULL,
+
+              [ATTRIBUTE9] [date] NULL,
+
+              [ATTRIBUTE10] [date] NULL,
+
+              [ATTRIBUTE11] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE12] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE13] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE14] [numeric](10, 5) NULL,
+
+              [ATTRIBUTE15] [numeric](10, 5) NULL,
+
+CONSTRAINT [PK_WNS_PROFIT_ALLOCATION_POOL] PRIMARY KEY CLUSTERED
+(
+
+              [FO_PROFIT_ID] ASC
 
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 

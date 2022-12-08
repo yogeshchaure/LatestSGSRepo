@@ -3,9 +3,9 @@
           xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <jsp:directive.page contentType="text/html;charset=UTF-8"/>
     <f:view>
-        <af:document title="customLogin.jspx" id="d1" inlineStyle="background-color:transparent;">
-            <af:form id="f1" inlineStyle="background-color:transparent;" usesUpload="true">
-                <af:panelGridLayout id="pgl1" inlineStyle="background-color:#d3eaff;">
+        <af:document title="customLogin.jspx" id="d1">
+            <af:form id="f1"  usesUpload="true">
+                <af:panelGridLayout id="pgl1" >
                     <af:gridRow height="60px" id="gr1">
                         <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2"
                                      inlineStyle="background-color:#0000a5;">
@@ -28,14 +28,13 @@
                         </af:gridCell>
                     </af:gridRow>
                     <af:gridRow height="100%" id="gr2">
-                        <af:gridCell width="100%" halign="center" id="gc3"
-                                     inlineStyle="background-color:#d3eaff;">
+                        <af:gridCell width="100%" halign="center" id="gc3">
                             <af:panelBox id="pb2" showDisclosure="false"
-                                         inlineStyle="text-align:center; margin:70px; border-bottom-left-radius:5px 5px; border-bottom-right-radius:5px;"
+                                         
                                          titleHalign="center">
                                 <f:facet name="toolbar"/>
                                 <af:panelGroupLayout id="pgl3" halign="center" valign="middle" layout="vertical"
-                                                     inlineStyle="background-color:transparent;">
+                                                     >
                                     <!--<af:image source="/resources/images/sutherlandLogo.jpg" id="iiii2"/>-->
                                     <af:outputFormatted value="Login" id="of1"
                                                         inlineStyle="font-size:x-large; font-weight:bolder;"/>

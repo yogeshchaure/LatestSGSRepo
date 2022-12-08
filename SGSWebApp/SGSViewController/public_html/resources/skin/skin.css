@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-/**ADFFaces_Skin_File / DO NOT REMOVE**/
+*ADFFaces_Skin_File / DO NOT REMOVE*
 @namespace af "http://xmlns.oracle.com/adf/faces/rich";
 @namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
 
@@ -10,12 +10,12 @@ af|query::criterion-label {
 
 af|inputListOfValues::content {
     width: 251px;
-    /*min-width: 266px;*/
+    min-width: 266px;
 }
 
 af|selectOneChoice::content {
     width: 251px;
-    /*min-width: 266px;*/
+    min-width: 266px;
 }
 
 af|inputText::content {
@@ -71,16 +71,13 @@ af|panelBox::content {
     border: none;
 }
 
-
 af|commandButton {
     border-radius: 20px;
     padding: 10px;
 }
-
 .af_panelSpringboard_item-text {
     height: 60px;
-    font-size: 11px;
-    
+    font-size: 11px;   
 }
 
 .qLetPartSearch af|query::info{
@@ -93,13 +90,10 @@ af|commandButton {
   font-weight: 900;
 }
 
-
 .af_panelSpringboard.p_AFStrip .af_panelSpringboard_item-text.p_AFSelected {
    background-color:transparent;
    font-size: 11px;
 }
-
-
 
 .af_panelSpringboard_items {
     height: 127px;
@@ -107,7 +101,7 @@ af|commandButton {
 
 .listSize af|selectOneChoice::content {
     width: 70px;
-    /*min-width: 266px;*/
+    min-width: 266px;
 }
 
 .af_panelSpringboard.p_AFStrip .af_panelSpringboard_item.p_AFSelected {
@@ -121,5 +115,27 @@ background-color: White;
 .af_decorativeBox_frame {
 background-color: #f2f9ff;
 border: 1px solid #D6DFE6;
+}
+
+af|outputLabel {
+  color: rgba(146, 151, 166, 1);
+}
+
+af|column::column-header-cell{
+color:white;
+background-color: #2980b9;
+}
+
+af|query::content1 {
+    background-color: #f7f7f6;
+}
+
+af|panelHeader::content0 {
+    
+    background-color:  #2980b9;
+}
+
+af|panelGridLayout.headerbgcolor {
+  background-image: linear-gradient(120deg,#2980b9,#8e44ad);
 }
 
