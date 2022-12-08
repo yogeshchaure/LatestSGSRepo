@@ -101,6 +101,8 @@
         <page path="/jsff/tpaBackOffice.jsff" usageId="com_sgs_view_tpaBackOfficePageDef"/>
         <page path="/jsff/tpSplitBackOffice.jsff" usageId="com_sgs_view_tpSplitBackOfficePageDef"/>
         <page path="/jsff/tpCostPlusModel.jsff" usageId="com_sgs_view_tpCostPlusModelPageDef"/>
+        <page path="/jsf/MainPage.jsf" usageId="com_sgs_view_MainPagePageDef"/>
+        <page path="/jsff/NavigatePage.jsff" usageId="com_sgs_view_NavigatePagePageDef"/>
     </pageMap>
     <pageDefinitionUsages>
         <page id="com_sgs_view_welcomePagePageDef" path="jsf.welcomePagePageDef"/>
@@ -196,6 +198,8 @@
         <page id="com_sgs_view_tpaBackOfficePageDef" path="com.sgs.view.pageDefs.tpaBackOfficePageDef"/>
         <page id="com_sgs_view_tpSplitBackOfficePageDef" path="jsff.tpSplitBackOfficePageDef"/>
         <page id="com_sgs_view_tpCostPlusModelPageDef" path="jsff.tpCostPlusModelPageDef"/>
+        <page id="com_sgs_view_MainPagePageDef" path="jsf.MainPagePageDef"/>
+        <page id="com_sgs_view_NavigatePagePageDef" path="com.sgs.view.pageDefs.NavigatePagePageDef"/>
     </pageDefinitionUsages>
     <dataControlUsages>
         <BC4JDataControl id="SGSAppModuleDataControl" Package="com.sgs.model.service"

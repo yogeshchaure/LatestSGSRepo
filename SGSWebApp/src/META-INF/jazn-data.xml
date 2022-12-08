@@ -734,6 +734,16 @@
                                 <name>/bTaskFlow/tpCostPlusModelBTF.xml#tpCostPlusModelBTF</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>jsf.MainPagePageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/navigate-task-flow.xml#navigate-task-flow</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -1625,6 +1635,16 @@
                                 <name>/bTaskFlow/tpCostPlusModelBTF.xml#tpCostPlusModelBTF</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>jsf.MainPagePageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/navigate-task-flow.xml#navigate-task-flow</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -2231,6 +2251,16 @@
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/bTaskFlow/tpCostPlusModelBTF.xml#tpCostPlusModelBTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>jsf.MainPagePageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/bTaskFlow/navigate-task-flow.xml#navigate-task-flow</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>
