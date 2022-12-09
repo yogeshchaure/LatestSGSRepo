@@ -60,7 +60,7 @@
                                        inlineStyle="font-weight:bold;font-size:14px;"/>-->
                         <af:separator id="s3"/>
                         <af:panelFormLayout id="pfl3" rows="2">
-                            <af:panelLabelAndMessage label="Business Unit" id="plam6">
+                            <af:panelLabelAndMessage label="Company Code" id="plam6">
                                 <af:outputText value="#{bindings.PBusinessUnit.inputValue}"
                                                shortDesc="#{bindings.PBusinessUnit.hints.tooltip}" id="ot7"/>
                             </af:panelLabelAndMessage>
@@ -101,7 +101,7 @@
                                         <af:convertDateTime pattern="#{bindings.SgsIncVO.hints.Period.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="PeopleSoft Voucher Num" id="c2" width="10%">
+                                <af:column headerText="EBS Voucher Num" id="c2" width="10%">
                                     <af:outputText value="#{row.PeoplesoftVoucherNo}"
                                                    shortDesc="#{bindings.SgsIncVO.hints.PeoplesoftVoucherNo.tooltip}"
                                                    id="ot16"/>
@@ -179,7 +179,7 @@
                                        inlineStyle="font-weight:bold;font-size:14px;"/>-->
                         <af:separator id="s6"/>
                         <af:panelFormLayout id="pfl2" rows="2">
-                            <af:panelLabelAndMessage label="Business Unit" id="plam9">
+                            <af:panelLabelAndMessage label="Company Code" id="plam9">
                                 <af:outputText value="#{bindings.RAffiliateBusinessUnit.inputValue}"
                                                shortDesc="#{bindings.RAffiliateBusinessUnit.hints.tooltip}" id="ot12"/>
                             </af:panelLabelAndMessage>
@@ -221,7 +221,7 @@
                                        <af:convertDateTime pattern="#{bindings.SgsPhilippinesIncVO.hints.Period.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="PeopleSoft Voucher Num" id="c9" width="10%">
+                                <af:column headerText="EBS Voucher Num" id="c9" width="10%">
                                     <af:outputText value="#{row.PeoplesoftVoucherNo}"
                                                    shortDesc="#{bindings.SgsPhilippinesIncVO.hints.PeoplesoftVoucherNo.tooltip}"
                                                    id="ot28"/>

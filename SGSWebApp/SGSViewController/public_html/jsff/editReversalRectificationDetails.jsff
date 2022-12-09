@@ -51,7 +51,7 @@
                                            shortDesc="#{bindings.RectificationEntryDetailsVO.hints.LegalEntity.tooltip}"
                                            id="ot3"/>
                         </af:column>
-                        <af:column headerText="Business Unit" id="c3">
+                        <af:column headerText="Company Code" id="c3">
                             <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
                                                 label="#{row.bindings.BusinessUnit.label}"
                                                 required="#{bindings.RectificationEntryDetailsVO.hints.BusinessUnit.mandatory}"
@@ -91,7 +91,7 @@
                                 <f:validator binding="#{row.bindings.GlAccount.validator}"/>
                             </af:selectOneChoice>
                         </af:column>
-                        <af:column headerText="Job Code" id="c7">
+                        <af:column headerText="Project" id="c7">
                             <af:selectOneChoice value="#{row.bindings.JobCode.inputValue}"
                                                 label="#{row.bindings.JobCode.label}"
                                                 required="#{bindings.RectificationEntryDetailsVO.hints.JobCode.mandatory}"

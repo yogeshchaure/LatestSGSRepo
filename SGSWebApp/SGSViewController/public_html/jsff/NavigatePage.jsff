@@ -85,13 +85,13 @@
                             </af:showDetailItem>
                             <af:showDetailItem id="Process" text="Process">
                                 <af:panelList id="pl3">
-                                    <af:link text="Import I/Co Transactions From PeopleSoft"
+                                    <af:link text="Import Trial Balance extract"
                                              action="#{pageFlowScope.NavigationBean.runIntercompanyExtractionBTF}"
                                              id="l19"/>
                                     <af:link text="Run Allocation Engine"
                                              action="#{pageFlowScope.NavigationBean.runAllocationEngineBTF}" id="l20"/>
-                                    <af:link text="Submit Allocated Data to PeopleSoft" id="l29"/>
-                                    <!--<af:outputText value="Submit Allocated Data to PeopleSoft" id="ot1"/>-->
+                                    <af:link text="Submit Allocated Data to EBS" id="l29"/>
+                                   
                                 </af:panelList>
                             </af:showDetailItem>
                             <af:showDetailItem id="Reports" text="Reports">
@@ -100,6 +100,7 @@
                                     <af:link text="Draft Supplier Invoices Report" id="l22"/>
                                     <af:link text="Draft Customer Invoices Report" id="l23"/>
                                     <af:link text="Draft Journal Report" id="l24"/>
+                                    <af:link text="Segment Reports" id="l30"/>
                                 </af:panelList>
                             </af:showDetailItem>
                             <af:showDetailItem id="Security" text="Security" disclosed="true">

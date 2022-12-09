@@ -69,7 +69,7 @@
                                                        shortDesc="#{bindings.SgsNicviVO.hints.PLegalEntity.tooltip}"
                                                        id="ot4"/>
                                     </af:column>
-                                    <af:column headerText="Business Unit" id="resId1c5">
+                                    <af:column headerText="Company Code" id="resId1c5">
                                         <af:selectOneChoice value="#{row.bindings.PBusinessUnit.inputValue}"
                                                             label="#{row.bindings.PBusinessUnit.label}"
                                                             required="#{bindings.SgsNicviVO.hints.PBusinessUnit.mandatory}"
@@ -108,7 +108,7 @@
                                                        shortDesc="#{bindings.SgsNicviVO.hints.RLegalEntity.tooltip}"
                                                        id="ot7"/>
                                     </af:column>
-                                    <af:column headerText="Affiliate Business Unit" id="resId1c9">
+                                    <af:column headerText="Affiliate Company Code" id="resId1c9">
                                         <af:selectOneChoice value="#{row.bindings.RAffiliateBusinessUnit.inputValue}"
                                                             label="#{row.bindings.RAffiliateBusinessUnit.label}"
                                                             required="#{bindings.SgsNicviVO.hints.RAffiliateBusinessUnit.mandatory}"

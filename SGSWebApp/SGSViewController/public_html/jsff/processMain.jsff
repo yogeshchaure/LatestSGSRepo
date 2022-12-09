@@ -13,7 +13,7 @@
                 <f:facet name="center">
                     <af:panelSpringboard id="ps1" displayMode="grid"
                                         inlineStyle="background-color:#f2f9ff; min-height:100%;">
-                        <af:showDetailItem text="Import I/Co Transactions From PeopleSoft" id="sdi6"
+                        <af:showDetailItem text="Import Trial Balance Extract" id="sdi6"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;" icon="/resources/icons/ProcessEngin.png">
                             <af:region value="#{bindings.runIntercompanyExtractionBTF1.regionModel}" id="r2"/>
@@ -24,7 +24,7 @@
                                            icon="/resources/icons/processAllocation.png">
                             <af:region value="#{bindings.runAllocationEngineBTF1.regionModel}" id="r1"/>
                         </af:showDetailItem>
-                        <af:showDetailItem id="sdi1" text="Submit Allocated Data to PeopleSoft"
+                        <af:showDetailItem id="sdi1" text="Submit Allocated Data to EBS"
                                            rendered="#{securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonTest;action=View']}"
                                            inlineStyle="min-height:500px;" icon="/resources/icons/Upload.png"/>
                     </af:panelSpringboard>

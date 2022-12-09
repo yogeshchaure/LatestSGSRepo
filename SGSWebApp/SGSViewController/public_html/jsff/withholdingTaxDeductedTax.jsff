@@ -34,7 +34,7 @@
                                                id="b1" action="Add" icon="/resources/icons/plus.png"
                                                shortDesc="Create/Add Cost Identification Rule"/>
                                     <af:button disabled="true"
-                                               id="b2" shortDesc="Delete Business Unit"
+                                               id="b2" shortDesc="Delete Company Code"
                                                icon="/resources/icons/delete.png"/>
                                                
                                 </af:toolbar>

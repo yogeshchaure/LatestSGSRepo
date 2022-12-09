@@ -78,7 +78,7 @@
                                                    shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.LegalEntity.tooltip}"
                                                    id="ot5"/>
                                 </af:column>
-                                <af:column headerText="Business Unit" id="resId1c7">
+                                <af:column headerText="Company Code" id="resId1c7">
                                     <af:outputText value="#{row.BusinessUnit}"
                                                    shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.BusinessUnit.tooltip}"
                                                    id="ot22"/>
@@ -93,7 +93,7 @@
                                                    shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.DEPARTMENTID.tooltip}"
                                                    id="ot19"/>
                                 </af:column>
-                                <af:column headerText="Affiliate Business Unit" id="resId1c9">
+                                <af:column headerText="Affiliate Company Code" id="resId1c9">
                                     <af:outputText value="#{row.AffiliateBusinessUnit}"
                                                    shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.AffiliateBusinessUnit.tooltip}"
                                                    id="ot7"/>
@@ -108,7 +108,7 @@
                                                    shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.AFFILIATEDEPARTMENTID.tooltip}"
                                                    id="ot20"/>
                                 </af:column>
-                                <af:column headerText="Job Code" id="resId1c10">
+                                <af:column headerText="Project" id="resId1c10">
                                     <af:outputText value="#{row.JobCode}"
                                                    shortDesc="#{bindings.SgsFixedAssetsTxnVO.hints.JobCode.tooltip}"
                                                    id="ot8">

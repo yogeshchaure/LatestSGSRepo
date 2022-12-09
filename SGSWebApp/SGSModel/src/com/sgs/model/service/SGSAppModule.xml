@@ -304,6 +304,15 @@
   <ViewUsage
     Name="WnsProfitAllocationVO1"
     ViewObjectName="com.sgs.model.view.WnsProfitAllocationVO"/>
+  <ViewUsage
+    Name="WnsDeliveryLocVO1"
+    ViewObjectName="com.sgs.model.view.WnsDeliveryLocVO"/>
+  <ViewUsage
+    Name="WnsCustomerDeliveryVO1"
+    ViewObjectName="com.sgs.model.view.WnsCustomerDeliveryVO"/>
+  <ViewUsage
+    Name="WnsIdenCombinationVO1"
+    ViewObjectName="com.sgs.model.view.WnsIdenCombinationVO"/>
   <ViewLinkUsage
     Name="SgsBUCustomersVL1"
     ViewLinkObjectName="com.sgs.model.viewLink.SgsBUCustomersVL"

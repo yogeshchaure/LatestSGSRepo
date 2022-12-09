@@ -46,6 +46,8 @@
                                 </af:button>
                 <af:panelGroupLayout id="pgl4" halign="center" valign="middle" layout="horizontal">
                   <af:button text="Confirm Invoicing" id="b2"/>
+                  <af:button text="Indirect Cost Allocation Report" id="b3"/>
+                  <af:button text="Direct Cost Allocation Report" id="b4"/>
                 </af:panelGroupLayout>
               </af:toolbar>
             </f:facet>
@@ -161,7 +163,7 @@
                 <af:outputText value="#{row.Attribute13}"
                                shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.Attribute13.tooltip}" id="ot24"/>
               </af:column>
-              <af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.CostMarkup.label}" id="c7"
+              <!--<af:column headerText="#{bindings.WnsTpaBackOfficeVO1.hints.CostMarkup.label}" id="c7"
                          sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.CostMarkup.name}" filterable="true">
                 <af:outputText value="#{row.CostMarkup}"
                                shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.CostMarkup.tooltip}" id="ot7"/>
@@ -197,7 +199,7 @@
                          sortProperty="#{bindings.WnsTpaBackOfficeVO1.hints.InvoicingCurrency.name}" filterable="true">
                 <af:outputText value="#{row.InvoicingCurrency}"
                                shortDesc="#{bindings.WnsTpaBackOfficeVO1.hints.InvoicingCurrency.tooltip}" id="ot11"/>
-              </af:column>
+              </af:column>-->
             </af:table>
             <!--<f:facet name="afterToolbar">
               <af:toolbar id="t2">

@@ -7,7 +7,7 @@
         <f:facet name="top"/>
         <f:facet name="bottom"/>
         <f:facet name="center">
-            <af:panelBox text="Run Intercompany Allocation" id="pb1">
+            <af:panelBox text="Run Transfer Pricing Engine" id="pb1">
                 <f:facet name="toolbar">
                     <af:toolbar id="t1">
                         <af:button id="b1"  text="Schedule" accessKey="S"/>
@@ -35,7 +35,7 @@
                         <f:validator binding="#{bindings.AllocationRange.validator}"/>
                     </af:selectOneChoice>
                     <af:selectOneChoice value="#{bindings.BusinessUnit.inputValue}"
-                                        label="Business Unit"
+                                        label="Company Code"
                                         required="#{bindings.BusinessUnit.hints.mandatory}"
                                         shortDesc="#{bindings.BusinessUnit.hints.tooltip}" id="soc3">
                         <f:selectItems value="#{bindings.BusinessUnit.items}" id="si3"/>

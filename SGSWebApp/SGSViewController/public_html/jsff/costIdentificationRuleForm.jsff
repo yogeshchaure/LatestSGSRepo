@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
   <af:panelStretchLayout id="psl1">
     <f:facet name="start"/>
     <f:facet name="end"/>
@@ -46,18 +46,51 @@
                 <f:selectItems value="#{bindings.AccountTratment.items}" id="si4"/>
                 <f:validator binding="#{bindings.AccountTratment.validator}"/>
               </af:selectOneChoice>
-              <af:selectOneChoice value="#{bindings.ServiceCategory.inputValue}" label="Service Category"
+   <af:selectOneChoice value="#{bindings.DataSource.inputValue}" label="DataSource"
+                                    required="#{bindings.DataSource.hints.mandatory}"
+                                    shortDesc="#{bindings.DataSource.hints.tooltip}" id="soc7">
+                  <f:selectItems value="#{bindings.DataSource.items}" id="si7"/>
+                  <f:validator binding="#{bindings.DataSource.validator}"/>
+                </af:selectOneChoice>
+                <!--<af:selectOneChoice value="#{bindings.TARGETACCOUNT.inputValue}" label="Local GAAP Trial Balance"
+                                    required="#{bindings.TARGETACCOUNT.hints.mandatory}"
+                                    shortDesc="#{bindings.TARGETACCOUNT.hints.tooltip}" id="soc8">
+                  <f:selectItems value="#{bindings.TARGETACCOUNT.items}" id="si8"/>
+                  <f:validator binding="#{bindings.TARGETACCOUNT.validator}"/>
+                </af:selectOneChoice>-->
+              <!--<af:selectOneChoice value="#{bindings.ServiceCategory.inputValue}" label="Service Category"
                                   required="#{bindings.ServiceCategory.hints.mandatory}"
                                   shortDesc="#{bindings.ServiceCategory.hints.tooltip}" id="soc5" readOnly="false">
                 <f:selectItems value="#{bindings.ServiceCategory.items}" id="si5"/>
                 <f:validator binding="#{bindings.ServiceCategory.validator}"/>
-              </af:selectOneChoice>
-              <af:selectOneChoice value="#{bindings.DataSource.inputValue}" label="Data Source"
+              </af:selectOneChoice>-->
+               <af:selectOneChoice value="#{bindings.ALLOCATIONBASIS.inputValue}"
+                                    label="#{bindings.ALLOCATIONBASIS.label}"
+                                    required="#{bindings.ALLOCATIONBASIS.hints.mandatory}"
+                                    shortDesc="#{bindings.ALLOCATIONBASIS.hints.tooltip}" id="soc6">
+                  <f:selectItems value="#{bindings.ALLOCATIONBASIS.items}" id="si6"/>
+                  <f:validator binding="#{bindings.ALLOCATIONBASIS.validator}"/>
+                </af:selectOneChoice>
+              <!--<af:selectOneChoice value="#{bindings.DataSource.inputValue}" label="Data Source"
                                   required="#{bindings.DataSource.hints.mandatory}"
                                   shortDesc="#{bindings.DataSource.hints.tooltip}" id="soc12">
                 <f:selectItems value="#{bindings.DataSource.items}" id="si12"/>
                 <f:validator binding="#{bindings.DataSource.validator}"/>
-              </af:selectOneChoice>
+              </af:selectOneChoice>-->
+              <!--<af:inputDate value="#{bindings.DataSource.inputValue}" label="DataSource"
+                            required="#{bindings.DataSource.hints.mandatory}"
+                            columns="#{bindings.DataSource.hints.displayWidth}"
+                            shortDesc="#{bindings.DataSource.hints.tooltip}" id="id1">
+                <f:validator binding="#{bindings.DataSource.validator}"/>
+                <af:convertDateTime pattern="#{bindings.DataSource.format}"/>
+              </af:inputDate>-->
+                <!--<af:inputText value="#{bindings.DataSource.inputValue}" label="DataSource"
+                            required="#{bindings.DataSource.hints.mandatory}"
+                            columns="#{bindings.DataSource.hints.displayWidth}"
+                            maximumLength="#{bindings.DataSource.hints.precision}"
+                            shortDesc="#{bindings.DataSource.hints.tooltip}" id="it278">
+                
+                </af:inputText>-->
               <af:inputDate value="#{bindings.EffectiveFrom.inputValue}" label="Effective From"
                             required="#{bindings.EffectiveFrom.hints.mandatory}"
                             columns="#{bindings.EffectiveFrom.hints.displayWidth}"
@@ -123,7 +156,7 @@
                 <af:button id="b9" icon="/resources/icons/delete.png" actionListener="#{bindings.Delete1.execute}"/>
                   </af:toolbar>
                 </f:facet>
-                <af:table value="#{bindings.SgsIdenCombinationVO1.collectionModel}" var="row"
+                <!--<af:table value="#{bindings.SgsIdenCombinationVO1.collectionModel}" var="row"
                           rows="#{bindings.SgsIdenCombinationVO1.rangeSize}"
                           emptyText="#{bindings.SgsIdenCombinationVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" fetchSize="#{bindings.SgsIdenCombinationVO1.rangeSize}" id="t2"
@@ -184,13 +217,86 @@
                       <f:validator binding="#{row.bindings.NATUREOFEXPENSE.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                </af:table>
+                </af:table>-->
                 <f:facet name="statusbar"/>
+                <af:table value="#{bindings.WnsIdenCombinationVO1.collectionModel}" var="row" styleClass="AFStretchWidth"
+                          rows="#{bindings.WnsIdenCombinationVO1.rangeSize}"
+                          emptyText="#{bindings.WnsIdenCombinationVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" fetchSize="#{bindings.WnsIdenCombinationVO1.rangeSize}" id="t2"
+                          inlineStyle="width:900px;" columnStretching="last">
+                  <af:column headerText="#{bindings.WnsIdenCombinationVO1.hints.CompanyCode.label}" id="c1">
+                    <af:inputText value="#{row.bindings.CompanyCode.inputValue}"
+                                  label="#{bindings.WnsIdenCombinationVO1.hints.CompanyCode.label}"
+                                  required="#{bindings.WnsIdenCombinationVO1.hints.CompanyCode.mandatory}"
+                                  columns="#{bindings.WnsIdenCombinationVO1.hints.CompanyCode.displayWidth}"
+                                  maximumLength="#{bindings.WnsIdenCombinationVO1.hints.CompanyCode.precision}"
+                                  shortDesc="#{bindings.WnsIdenCombinationVO1.hints.CompanyCode.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.CompanyCode.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsIdenCombinationVO1.hints.CompanyDesc.label}" id="c2">
+                    <af:inputText value="#{row.bindings.CompanyDesc.inputValue}"
+                                  label="#{bindings.WnsIdenCombinationVO1.hints.CompanyDesc.label}"
+                                  required="#{bindings.WnsIdenCombinationVO1.hints.CompanyDesc.mandatory}"
+                                  columns="#{bindings.WnsIdenCombinationVO1.hints.CompanyDesc.displayWidth}"
+                                  maximumLength="#{bindings.WnsIdenCombinationVO1.hints.CompanyDesc.precision}"
+                                  shortDesc="#{bindings.WnsIdenCombinationVO1.hints.CompanyDesc.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.CompanyDesc.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsIdenCombinationVO1.hints.Zone.label}" id="c3">
+                    <af:inputText value="#{row.bindings.Zone.inputValue}"
+                                  label="#{bindings.WnsIdenCombinationVO1.hints.Zone.label}"
+                                  required="#{bindings.WnsIdenCombinationVO1.hints.Zone.mandatory}"
+                                  columns="#{bindings.WnsIdenCombinationVO1.hints.Zone.displayWidth}"
+                                  maximumLength="#{bindings.WnsIdenCombinationVO1.hints.Zone.precision}"
+                                  shortDesc="#{bindings.WnsIdenCombinationVO1.hints.Zone.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.Zone.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsIdenCombinationVO1.hints.GlAccount.label}" id="c4">
+                    <af:inputText value="#{row.bindings.GlAccount.inputValue}"
+                                  label="#{bindings.WnsIdenCombinationVO1.hints.GlAccount.label}"
+                                  required="#{bindings.WnsIdenCombinationVO1.hints.GlAccount.mandatory}"
+                                  columns="#{bindings.WnsIdenCombinationVO1.hints.GlAccount.displayWidth}"
+                                  maximumLength="#{bindings.WnsIdenCombinationVO1.hints.GlAccount.precision}"
+                                  shortDesc="#{bindings.WnsIdenCombinationVO1.hints.GlAccount.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.GlAccount.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsIdenCombinationVO1.hints.ProjectId.label}" id="c5">
+                    <af:inputText value="#{row.bindings.ProjectId.inputValue}"
+                                  label="#{bindings.WnsIdenCombinationVO1.hints.ProjectId.label}"
+                                  required="#{bindings.WnsIdenCombinationVO1.hints.ProjectId.mandatory}"
+                                  columns="#{bindings.WnsIdenCombinationVO1.hints.ProjectId.displayWidth}"
+                                  maximumLength="#{bindings.WnsIdenCombinationVO1.hints.ProjectId.precision}"
+                                  shortDesc="#{bindings.WnsIdenCombinationVO1.hints.ProjectId.tooltip}" id="it7">
+                      <f:validator binding="#{row.bindings.ProjectId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsIdenCombinationVO1.hints.NatureOfExpense.label}" id="c6">
+                    <af:inputText value="#{row.bindings.NatureOfExpense.inputValue}"
+                                  label="#{bindings.WnsIdenCombinationVO1.hints.NatureOfExpense.label}"
+                                  required="#{bindings.WnsIdenCombinationVO1.hints.NatureOfExpense.mandatory}"
+                                  columns="#{bindings.WnsIdenCombinationVO1.hints.NatureOfExpense.displayWidth}"
+                                  maximumLength="#{bindings.WnsIdenCombinationVO1.hints.NatureOfExpense.precision}"
+                                  shortDesc="#{bindings.WnsIdenCombinationVO1.hints.NatureOfExpense.tooltip}" id="it8">
+                      <f:validator binding="#{row.bindings.NatureOfExpense.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
               </af:panelCollection>
             </af:panelBox>
-            <af:panelBox text="Allocation Rule" id="pb2">
+            <af:panelBox text="Delivery Location" id="pb2">
               <f:facet name="toolbar"/>
-              <af:panelFormLayout id="pfl2" rows="2">
+              <af:panelGroupLayout id="pgl4" layout="horizontal">
+                <af:outputText value="Exception" id="ot3"/>
+                <h:selectOneRadio label="Exception" id="sor1">
+                  <f:selectItem itemLabel="Yes" itemValue="Yes" id="si1"/>
+                  <f:selectItem itemLabel="No" itemValue="No" id="si66"/>
+                </h:selectOneRadio>
+              </af:panelGroupLayout>
+              <!--<af:panelFormLayout id="pfl2" rows="2">
                 <f:facet name="footer"/>
                 <af:selectOneChoice value="#{bindings.ALLOCATIONBASIS.inputValue}"
                                     label="#{bindings.ALLOCATIONBASIS.label}"
@@ -217,11 +323,95 @@
                   <f:selectItems value="#{bindings.OFFSETJOBCODE.items}" id="si9"/>
                   <f:validator binding="#{bindings.OFFSETJOBCODE.validator}"/>
                 </af:selectOneChoice>
-              </af:panelFormLayout>
+              </af:panelFormLayout>-->
+              <af:panelCollection id="pc3" styleClass="AFStretchWidth">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar">
+                  <af:toolbar id="t41">
+                    <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                           id="b42" icon="/resources/icons/plus.png" action="ADD"/>
+                <af:button id="b53" icon="/resources/icons/delete.png" actionListener="#{bindings.Delete2.execute}"/>
+                  </af:toolbar>
+                  </f:facet>
+                <f:facet name="statusbar"/>
+                <af:table value="#{bindings.WnsDeliveryLocVO1.collectionModel}" var="row" styleClass="AFStretchWidth"
+                          rows="#{bindings.WnsDeliveryLocVO1.rangeSize}"
+                          emptyText="#{bindings.WnsDeliveryLocVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" fetchSize="#{bindings.WnsDeliveryLocVO1.rangeSize}" id="t5"
+                          inlineStyle="width:900px;" columnStretching="last">
+                  <af:column headerText="#{bindings.WnsDeliveryLocVO1.hints.CompanyCode.label}" id="c7">
+                    <af:inputText value="#{row.bindings.CompanyCode.inputValue}"
+                                  label="#{bindings.WnsDeliveryLocVO1.hints.CompanyCode.label}"
+                                  required="#{bindings.WnsDeliveryLocVO1.hints.CompanyCode.mandatory}"
+                                  columns="#{bindings.WnsDeliveryLocVO1.hints.CompanyCode.displayWidth}"
+                                  maximumLength="#{bindings.WnsDeliveryLocVO1.hints.CompanyCode.precision}"
+                                  shortDesc="#{bindings.WnsDeliveryLocVO1.hints.CompanyCode.tooltip}" id="it9">
+                      <f:validator binding="#{row.bindings.CompanyCode.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsDeliveryLocVO1.hints.CompanyDesc.label}" id="c8">
+                    <af:inputText value="#{row.bindings.CompanyDesc.inputValue}"
+                                  label="#{bindings.WnsDeliveryLocVO1.hints.CompanyDesc.label}"
+                                  required="#{bindings.WnsDeliveryLocVO1.hints.CompanyDesc.mandatory}"
+                                  columns="#{bindings.WnsDeliveryLocVO1.hints.CompanyDesc.displayWidth}"
+                                  maximumLength="#{bindings.WnsDeliveryLocVO1.hints.CompanyDesc.precision}"
+                                  shortDesc="#{bindings.WnsDeliveryLocVO1.hints.CompanyDesc.tooltip}" id="it10">
+                      <f:validator binding="#{row.bindings.CompanyDesc.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsDeliveryLocVO1.hints.Zone.label}" id="c9">
+                    <af:inputText value="#{row.bindings.Zone.inputValue}"
+                                  label="#{bindings.WnsDeliveryLocVO1.hints.Zone.label}"
+                                  required="#{bindings.WnsDeliveryLocVO1.hints.Zone.mandatory}"
+                                  columns="#{bindings.WnsDeliveryLocVO1.hints.Zone.displayWidth}"
+                                  maximumLength="#{bindings.WnsDeliveryLocVO1.hints.Zone.precision}"
+                                  shortDesc="#{bindings.WnsDeliveryLocVO1.hints.Zone.tooltip}" id="it11">
+                      <f:validator binding="#{row.bindings.Zone.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsDeliveryLocVO1.hints.GlAccount.label}" id="c10">
+                    <af:inputText value="#{row.bindings.GlAccount.inputValue}"
+                                  label="#{bindings.WnsDeliveryLocVO1.hints.GlAccount.label}"
+                                  required="#{bindings.WnsDeliveryLocVO1.hints.GlAccount.mandatory}"
+                                  columns="#{bindings.WnsDeliveryLocVO1.hints.GlAccount.displayWidth}"
+                                  maximumLength="#{bindings.WnsDeliveryLocVO1.hints.GlAccount.precision}"
+                                  shortDesc="#{bindings.WnsDeliveryLocVO1.hints.GlAccount.tooltip}" id="it12">
+                      <f:validator binding="#{row.bindings.GlAccount.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsDeliveryLocVO1.hints.ProjectId.label}" id="c11">
+                    <af:inputText value="#{row.bindings.ProjectId.inputValue}"
+                                  label="#{bindings.WnsDeliveryLocVO1.hints.ProjectId.label}"
+                                  required="#{bindings.WnsDeliveryLocVO1.hints.ProjectId.mandatory}"
+                                  columns="#{bindings.WnsDeliveryLocVO1.hints.ProjectId.displayWidth}"
+                                  maximumLength="#{bindings.WnsDeliveryLocVO1.hints.ProjectId.precision}"
+                                  shortDesc="#{bindings.WnsDeliveryLocVO1.hints.ProjectId.tooltip}" id="it13">
+                      <f:validator binding="#{row.bindings.ProjectId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsDeliveryLocVO1.hints.NatureOfExpense.label}" id="c12">
+                    <af:inputText value="#{row.bindings.NatureOfExpense.inputValue}"
+                                  label="#{bindings.WnsDeliveryLocVO1.hints.NatureOfExpense.label}"
+                                  required="#{bindings.WnsDeliveryLocVO1.hints.NatureOfExpense.mandatory}"
+                                  columns="#{bindings.WnsDeliveryLocVO1.hints.NatureOfExpense.displayWidth}"
+                                  maximumLength="#{bindings.WnsDeliveryLocVO1.hints.NatureOfExpense.precision}"
+                                  shortDesc="#{bindings.WnsDeliveryLocVO1.hints.NatureOfExpense.tooltip}" id="it14">
+                      <f:validator binding="#{row.bindings.NatureOfExpense.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:panelCollection>
             </af:panelBox>
             
-            <af:panelBox text="Exclusion Combination" id="pb4">
+            <af:panelBox text="Customer Delivery(Separate Tracking)" id="pb4">
               <f:facet name="toolbar"/>
+              <af:panelGroupLayout id="pgl3" layout="horizontal">
+                <af:outputText value="Customer Delivery" id="ot4"/>
+                <h:selectOneRadio label="Customer Delivery" id="sor2">
+                  <f:selectItem itemLabel="Yes" itemValue="Yes" id="si79"/>
+                  <f:selectItem itemLabel="No" itemValue="No" id="si8"/>
+                </h:selectOneRadio>
+              </af:panelGroupLayout>
               <af:panelCollection id="pc2" styleClass="AFStretchWidth">
                 <f:facet name="menus"/>
                 <f:facet name="toolbar">
@@ -232,7 +422,7 @@
                   </af:toolbar>
                 </f:facet>
                 <f:facet name="statusbar"/>
-                <af:table value="#{bindings.SgsCrossChargeIdenVO1.collectionModel}" var="row"
+                <!--<af:table value="#{bindings.SgsCrossChargeIdenVO1.collectionModel}" var="row"
                           rows="#{bindings.SgsCrossChargeIdenVO1.rangeSize}"
                           emptyText="#{bindings.SgsCrossChargeIdenVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0"
@@ -298,6 +488,73 @@
                       <f:validator binding="#{row.bindings.CrossCIdenId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.SgsCrossChargeIdenVO1.hints.CrossCIdenId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>-->
+                <af:table value="#{bindings.WnsCustomerDeliveryVO1.collectionModel}" var="row" styleClass="AFStretchWidth"
+                          rows="#{bindings.WnsCustomerDeliveryVO1.rangeSize}"
+                          emptyText="#{bindings.WnsCustomerDeliveryVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" fetchSize="#{bindings.WnsCustomerDeliveryVO1.rangeSize}" id="t6"
+                          inlineStyle="width:900px;" columnStretching="last">
+                  <af:column headerText="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyCode.label}" id="c13">
+                    <af:inputText value="#{row.bindings.CompanyCode.inputValue}"
+                                  label="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyCode.label}"
+                                  required="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyCode.mandatory}"
+                                  columns="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyCode.displayWidth}"
+                                  maximumLength="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyCode.precision}"
+                                  shortDesc="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyCode.tooltip}" id="it15">
+                      <f:validator binding="#{row.bindings.CompanyCode.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyDesc.label}" id="c14">
+                    <af:inputText value="#{row.bindings.CompanyDesc.inputValue}"
+                                  label="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyDesc.label}"
+                                  required="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyDesc.mandatory}"
+                                  columns="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyDesc.displayWidth}"
+                                  maximumLength="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyDesc.precision}"
+                                  shortDesc="#{bindings.WnsCustomerDeliveryVO1.hints.CompanyDesc.tooltip}" id="it16">
+                      <f:validator binding="#{row.bindings.CompanyDesc.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsCustomerDeliveryVO1.hints.Zone.label}" id="c15">
+                    <af:inputText value="#{row.bindings.Zone.inputValue}"
+                                  label="#{bindings.WnsCustomerDeliveryVO1.hints.Zone.label}"
+                                  required="#{bindings.WnsCustomerDeliveryVO1.hints.Zone.mandatory}"
+                                  columns="#{bindings.WnsCustomerDeliveryVO1.hints.Zone.displayWidth}"
+                                  maximumLength="#{bindings.WnsCustomerDeliveryVO1.hints.Zone.precision}"
+                                  shortDesc="#{bindings.WnsCustomerDeliveryVO1.hints.Zone.tooltip}" id="it17">
+                      <f:validator binding="#{row.bindings.Zone.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsCustomerDeliveryVO1.hints.GlAccount.label}" id="c16">
+                    <af:inputText value="#{row.bindings.GlAccount.inputValue}"
+                                  label="#{bindings.WnsCustomerDeliveryVO1.hints.GlAccount.label}"
+                                  required="#{bindings.WnsCustomerDeliveryVO1.hints.GlAccount.mandatory}"
+                                  columns="#{bindings.WnsCustomerDeliveryVO1.hints.GlAccount.displayWidth}"
+                                  maximumLength="#{bindings.WnsCustomerDeliveryVO1.hints.GlAccount.precision}"
+                                  shortDesc="#{bindings.WnsCustomerDeliveryVO1.hints.GlAccount.tooltip}" id="it18">
+                      <f:validator binding="#{row.bindings.GlAccount.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsCustomerDeliveryVO1.hints.ProjectId.label}" id="c17">
+                    <af:inputText value="#{row.bindings.ProjectId.inputValue}"
+                                  label="#{bindings.WnsCustomerDeliveryVO1.hints.ProjectId.label}"
+                                  required="#{bindings.WnsCustomerDeliveryVO1.hints.ProjectId.mandatory}"
+                                  columns="#{bindings.WnsCustomerDeliveryVO1.hints.ProjectId.displayWidth}"
+                                  maximumLength="#{bindings.WnsCustomerDeliveryVO1.hints.ProjectId.precision}"
+                                  shortDesc="#{bindings.WnsCustomerDeliveryVO1.hints.ProjectId.tooltip}" id="it19">
+                      <f:validator binding="#{row.bindings.ProjectId.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.WnsCustomerDeliveryVO1.hints.NatureOfExpense.label}" id="c18">
+                    <af:inputText value="#{row.bindings.NatureOfExpense.inputValue}"
+                                  label="#{bindings.WnsCustomerDeliveryVO1.hints.NatureOfExpense.label}"
+                                  required="#{bindings.WnsCustomerDeliveryVO1.hints.NatureOfExpense.mandatory}"
+                                  columns="#{bindings.WnsCustomerDeliveryVO1.hints.NatureOfExpense.displayWidth}"
+                                  maximumLength="#{bindings.WnsCustomerDeliveryVO1.hints.NatureOfExpense.precision}"
+                                  shortDesc="#{bindings.WnsCustomerDeliveryVO1.hints.NatureOfExpense.tooltip}"
+                                  id="it20">
+                      <f:validator binding="#{row.bindings.NatureOfExpense.validator}"/>
                     </af:inputText>
                   </af:column>
                 </af:table>

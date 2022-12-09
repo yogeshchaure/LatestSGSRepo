@@ -83,7 +83,7 @@
                                     <af:convertDateTime pattern="#{bindings.SgsStlmntInetrCompVoucher1VO1.hints.AccountingDate.format}"/>
                                 </af:outputText>
                             </af:column>
-                            <af:column headerText="PeopleSoft Invoice No"
+                            <af:column headerText="EBS Invoice No"
                                        id="resId1c3">
                                 <af:outputText value="#{row.PeoplesoftVoucherNo}"
                                                shortDesc="#{bindings.SgsStlmntInetrCompVoucher1VO1.hints.PeoplesoftVoucherNo.tooltip}"
@@ -95,7 +95,7 @@
                                                shortDesc="#{bindings.SgsStlmntInetrCompVoucher1VO1.hints.LegalEntity.tooltip}"
                                                id="ot4"/>
                             </af:column>
-                            <af:column headerText="Business Unit"
+                            <af:column headerText="Company Code"
                                        id="resId1c5">
                                 <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
                                                     label="#{row.bindings.BusinessUnit.label}"

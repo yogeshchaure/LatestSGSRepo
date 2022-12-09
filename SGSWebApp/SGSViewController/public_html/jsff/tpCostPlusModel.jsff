@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
-                xmlns:f="http://java.sun.com/jsf/core">
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html">
   <af:panelStretchLayout id="psl1" styleClass="AFStretchWidth">
     <f:facet name="start"/>
     <f:facet name="end"/>
@@ -55,7 +55,7 @@
               <af:outputText value="#{row.Attribute1}"
                              shortDesc="#{bindings.WnsCostPlusModelVO1.hints.Attribute1.tooltip}" id="ot26"/>
             </af:column>
-            <af:column id="c26" headerText='BU Revenue Details (for allocation basis)				' align="center">
+            <af:column id="c26" headerText='Back Office Revenue Ratio (for allocation basis)' align="center">
               <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.IncomeFromServicesBu.name}"
                          filterable="true" headerText="#{bindings.WnsCostPlusModelVO1.hints.IncomeFromServicesBu.label}"
                          id="c5" headerClass="tableHeder">
@@ -248,11 +248,29 @@
               </af:column>
             </af:column>
             <af:column id="c32" headerText="Profit">
-              <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.name}" filterable="true"
-                         headerText="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.label}" id="c25"
+          <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.TotalIncomeA.name}" filterable="true"
+                           headerText="Total Revenue" id="c122"
+                           headerClass="tableHeder">
+                  <af:outputText value="#{row.TotalIncomeA}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.TotalIncomeA.tooltip}" id="ot125">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.TotalIncomeA.format}"/>
+                  </af:outputText>
+                </af:column>
+                  <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.TotalCost.name}" filterable="true"
+                           headerText="Total Cost" id="c244"
+                           headerClass="tableHeder">
+                  <af:outputText value="#{row.TotalCost}"
+                                 shortDesc="#{bindings.WnsCostPlusModelVO1.hints.TotalCost.tooltip}" id="ot247">
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.WnsCostPlusModelVO1.hints.TotalCost.format}"/>
+                  </af:outputText>
+                </af:column>
+                 <af:column sortProperty="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.name}" filterable="true"
+                         headerText="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.label}" id="c257"
                          headerClass="tableHeder">
                 <af:outputText value="#{row.ProfitAllocated}"
-                               shortDesc="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.tooltip}" id="ot25">
+                               shortDesc="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.tooltip}" id="ot253">
                   <af:convertNumber groupingUsed="false"
                                     pattern="#{bindings.WnsCostPlusModelVO1.hints.ProfitAllocated.format}"/>
                 </af:outputText>
@@ -296,7 +314,15 @@
             </af:column>
           </af:table>
         </af:panelCollection>
+         <af:panelBox text="True Up and True Down Variance" id="pb5" disclosed="false">
+        <f:facet name="toolbar"/>
+          <af:panelGroupLayout id="pgl1" layout="horizontal">
+            <af:inputText label="Discounting Percentage" id="it2" value="%"/>
+            <af:button text="Compute" id="b1"/>
+          </af:panelGroupLayout>
+        </af:panelBox>
       </af:panelBox>
+     
     </f:facet>
   </af:panelStretchLayout>
 </ui:composition>

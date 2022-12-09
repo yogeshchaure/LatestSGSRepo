@@ -9,9 +9,15 @@
     <f:facet name="center">
       <af:panelBox text="Transfer Processing Summary" id="pb1">
         <f:facet name="toolbar">
-          <af:button text="Consolidated Profitability Report" id="b1"/>
+         
         </f:facet>
         <af:spacer id="s3" height="10"/>
+        <af:panelGroupLayout id="pgl2" halign="end" layout="horizontal">
+          <af:button text="Consolidated Profitability Report" id="b1"/>
+          <af:button text="True-up/True-down Calculation Report" id="b11"/>
+          <af:button text="Exception/Checklist Report" id="b12"/>
+          
+        </af:panelGroupLayout>
         <af:panelGroupLayout id="pgl1" styleClass="AFStretchWidth">
           <!--<af:selectOneChoice value="#{bindings.WnsTPDashBoardVO2.inputValue}"
                               label="#{bindings.WnsTPDashBoardVO2.label}"
@@ -34,7 +40,7 @@
         <dvt:pivotTable id="pt1" value="#{bindings.WnsTPDashBoardVO1.pivotTableModel}" var="cellData"
                         varStatus="cellStatus" styleClass="AFStretchWidth"  modelName="pt2Model"
                         layerLabelMode="rendered" sizing="auto"  pivotLabelVisible="true"
-                        indentEnabled="true" columnFetchSize="500" inlineStyle="height:800px">
+                        indentEnabled="true" columnFetchSize="500" inlineStyle="height:400px">
           <dvt:headerCell inlineStyle="background-color:white;width:200px;word-wrap:break-word;text-align:center;">
             <af:switcher facetName="#{cellData.layerName}" defaultFacet="Default" id="s1">
               <f:facet name="DataLayer">
@@ -71,10 +77,10 @@
                   <af:outputText value="#{cellData.dataValue}" inlineStyle="color:#{(cellData.dataValue == 'Yes' ? 
                        'green' : 'red')};"   id="ot8"/>
               </f:facet>
-              <f:facet name="IdcAllocationStatus">
+              <!--<f:facet name="IdcAllocationStatus">
                 <af:outputText value="#{cellData.dataValue}" inlineStyle="color:#{(cellData.dataValue == 'Yes' ? 
                        'green' : 'red')};"  id="ot9"/>
-              </f:facet>
+              </f:facet>-->
               <f:facet name="InvoicedToFo">
                 <af:outputText value="#{cellData.dataValue}"  inlineStyle="color:#{(cellData.dataValue == 'Yes' ? 
                        'green' : 'red')};"  id="ot10"/>
@@ -85,9 +91,9 @@
               <f:facet name="BoTpaStatus">
                 <af:outputText value="#{cellData.dataValue}" id="ot12"/>
               </f:facet>
-                <f:facet name="Attribute2">
+                <!--<f:facet name="Attribute2">
                 <af:outputText value="#{cellData.dataValue}" id="ot14"/>
-              </f:facet>
+              </f:facet>-->
               <!--<f:facet name="HeaderLayer">
                <af:outputText value="#{cellData.label}" id="ot14"/>
               </f:facet>-->

@@ -52,7 +52,7 @@
                             <f:validator binding="#{bindings.ExtractId.validator}"/>
                         </af:inputText>
                         <af:inputText value="#{bindings.PEOPLESOFTTRANSACTIONID.inputValue}" readOnly="true"
-                                      label="#{bindings.PEOPLESOFTTRANSACTIONID.hints.label}"
+                                      label="EBS Transaction ID"
                                       required="#{bindings.PEOPLESOFTTRANSACTIONID.hints.mandatory}"
                                       columns="#{bindings.PEOPLESOFTTRANSACTIONID.hints.displayWidth}"
                                       maximumLength="#{bindings.PEOPLESOFTTRANSACTIONID.hints.precision}"
@@ -108,7 +108,7 @@
                                           shortDesc="#{bindings.LeagalEntity.hints.tooltip}" id="it5">
                                 <f:validator binding="#{bindings.LeagalEntity.validator}"/>
                             </af:inputText>
-                            <af:selectOneChoice value="#{bindings.BuId.inputValue}" label="Business Unit"
+                            <af:selectOneChoice value="#{bindings.BuId.inputValue}" label="Company Code"
                                                 required="#{bindings.BuId.hints.mandatory}"
                                                 shortDesc="#{bindings.BuId.hints.tooltip}" id="soc2">
                                 <f:selectItems value="#{bindings.BuId.items}" id="si2"/>
@@ -128,7 +128,7 @@
                                           shortDesc="#{bindings.GlAccount.hints.tooltip}" id="it6">
                                 <f:validator binding="#{bindings.GlAccount.validator}"/>
                             </af:inputText>
-                            <af:selectOneChoice value="#{bindings.JobCode.inputValue}" label="Job Code"
+                            <af:selectOneChoice value="#{bindings.JobCode.inputValue}" label="Project"
                                                 required="#{bindings.JobCode.hints.mandatory}"
                                                 shortDesc="#{bindings.JobCode.hints.tooltip}" id="soc3">
                                 <f:selectItems value="#{bindings.JobCode.items}" id="si3"/>
@@ -521,7 +521,7 @@
                                                shortDesc="#{bindings.RectificationEntryDetailsVO.hints.LegalEntity.tooltip}"
                                                id="ot3"/>
                             </af:column>
-                            <af:column headerText="Business Unit" id="c3" width="10%">
+                            <af:column headerText="Company Code" id="c3" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.BusinessUnit.inputValue}"
                                                     label="#{row.bindings.BusinessUnit.label}"
                                                     required="#{bindings.RectificationEntryDetailsVO.hints.BusinessUnit.mandatory}"
@@ -561,7 +561,7 @@
                                     <f:validator binding="#{row.bindings.GlAccount.validator}"/>
                                 </af:selectOneChoice>
                             </af:column>
-                            <af:column headerText="Job Code" id="c8" width="10%">
+                            <af:column headerText="Project" id="c8" width="10%">
                                 <af:selectOneChoice value="#{row.bindings.JobCode.inputValue}"
                                                     label="#{row.bindings.JobCode.label}"
                                                     required="#{bindings.RectificationEntryDetailsVO.hints.JobCode.mandatory}"
@@ -697,7 +697,7 @@
                                   id="t4" styleClass="AFStretchWidth"  autoHeightRows="5"
                                   columnSelection="multiple"
                                   binding="#{pageFlowScope.transBCostAllocationFormBean.staffTable}">
-                            <af:column headerText="To Business Unit"
+                            <af:column headerText="To Company Code"
                                        id="c18" width="100%">
                                 <af:outputText value="#{row.ToBusinessUnit}"
                                                shortDesc="#{bindings.SgsOtherReceivables1VO.hints.ToBusinessUnit.tooltip}"
@@ -709,7 +709,7 @@
                                                shortDesc="#{bindings.SgsOtherReceivables1VO.hints.ToOperatingUnit.tooltip}"
                                                id="ot30"/>
                             </af:column>
-                            <af:column headerText="To Job Code" id="c20">
+                            <af:column headerText="To Project" id="c20">
                                 <af:outputText value="#{row.ToJobCode}"
                                                shortDesc="#{bindings.SgsOtherReceivables1VO.hints.ToJobCode.tooltip}"
                                                id="ot31"/>
@@ -776,7 +776,7 @@
                                                shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassGlAccount.tooltip}"
                                                id="ot22"/>
                             </af:column>
-                            <af:column headerText="Reclass Job Code" id="c14">
+                            <af:column headerText="Reclass Project" id="c14">
                                 <af:outputText value="#{row.ReclassJobCode}"
                                                shortDesc="#{bindings.SgsOtherReceivablesVO.hints.ReclassJobCode.tooltip}"
                                                id="ot23"/>

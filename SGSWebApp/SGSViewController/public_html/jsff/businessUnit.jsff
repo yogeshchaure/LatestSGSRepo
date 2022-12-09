@@ -7,7 +7,7 @@
         <f:facet name="top"/>
         <f:facet name="bottom"/>
         <f:facet name="center">
-            <af:panelBox id="pb1" text="Business Units">
+            <af:panelBox id="pb1" text="Company Codes">
                 <f:facet name="toolbar"/>
                 <af:panelGroupLayout layout="vertical" id="pgl1">
                     <af:panelGroupLayout layout="vertical" id="pgl2">
@@ -33,10 +33,10 @@
                             <af:button actionListener="#{bindings.CreateInsert.execute}"
                                        disabled="#{!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonBU;action=Update']}"
                                        id="b1" action="buFormAdd" icon="/resources/icons/plus.png"
-                                       shortDesc="Create/Add Business Unit"/>
+                                       shortDesc="Create/Add Company Code"/>
                             <af:button
                                        disabled="#{(!securityContext.userGrantedResource['resourceType=UIViewUpdateSecurity;resourceName=ButtonBU;action=Update']) ? true : (!bindings.Delete.enabled)}"
-                                       id="b2" shortDesc="Delete Business Unit" icon="/resources/icons/delete.png"
+                                       id="b2" shortDesc="Delete Company Code" icon="/resources/icons/delete.png"
                                        action="#{pageFlowScope.BusinessUnitBean.deleteBUAction}"/>
                             <!--<af:button id="b3" shortDesc="filter" icon="/resources/icons/filter-icon.png"
                                        disabled="#{!(bindings.SgsBusinessUnitsVO1Iterator.estimatedRowCount >0)}"

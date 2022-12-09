@@ -33,7 +33,7 @@
         <columns>
           <data>
             <item value="BoTpaStatus"/>
-            <item value="Attribute2"/>
+            <!--<item value="Attribute2"/>-->
           </data>
         </columns>
         <rows>
@@ -45,7 +45,7 @@
           <item value="BackOffice"/>
           <item value="BoTpaModel"/>
           <item value="DependencyCompletion"/>
-          <item value="IdcAllocationStatus"/>
+          <!--<item value="IdcAllocationStatus"/>-->
           <!--<item value="InvoicedToFo"/>-->
         </rows>
         <pages/>

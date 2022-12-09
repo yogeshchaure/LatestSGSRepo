@@ -67,12 +67,12 @@
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.LegalEntity.tooltip}"
                                                id="ot3"/>
                             </af:column>
-                            <af:column headerText="Business Unit" id="resId1c5">
+                            <af:column headerText="Company Code" id="resId1c5">
                                 <af:outputText value="#{row.BusinessUnit}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.BusinessUnit.tooltip}"
                                                id="ot13"/>
                             </af:column>
-                            <af:column headerText="Collection Business Unit" id="resId1c6">
+                            <af:column headerText="Collection Company Code" id="resId1c6">
                                 <af:outputText value="#{row.CBusinessUnit}"
                                                shortDesc="#{bindings.SgsSettlementICoInvoiceVO1.hints.CBusinessUnit.tooltip}"
                                                id="ot4"/>

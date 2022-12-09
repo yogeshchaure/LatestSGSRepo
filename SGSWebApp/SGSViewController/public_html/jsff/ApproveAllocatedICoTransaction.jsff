@@ -126,7 +126,7 @@
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceOu.tooltip}"
                                                id="ot26"/>
                             </af:column>
-                            <af:column headerText="From Job Code" id="resId1c9">
+                            <af:column headerText="From Project" id="resId1c9">
                                 <af:outputText value="#{row.SourceJobCode}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.SourceJobCode.tooltip}"
                                                id="ot5"/>
@@ -164,7 +164,7 @@
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetOu.tooltip}"
                                                id="ot27"/>
                             </af:column>
-                            <af:column headerText="To Job Code" id="resId1c15">
+                            <af:column headerText="To Project" id="resId1c15">
                                 <af:outputText value="#{row.TargetJobCode}"
                                                shortDesc="#{bindings.SgsRevAllocatedDtVO.hints.TargetJobCode.tooltip}"
                                                id="ot11"/>

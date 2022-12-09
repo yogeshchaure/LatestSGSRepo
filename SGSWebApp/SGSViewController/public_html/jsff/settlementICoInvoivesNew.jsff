@@ -63,7 +63,7 @@
                                                shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.LegalEntity.tooltip}"
                                                id="ot4"/>
                             </af:column>
-                            <af:column headerText="Business Unit" id="resId1c5">
+                            <af:column headerText="Company Code" id="resId1c5">
                                 <af:outputText value="#{row.BusinessUnit}"
                                                shortDesc="#{bindings.SgsStlmntInetrCompInvoice1VO1.hints.BusinessUnit.tooltip}"
                                                id="ot21"/>

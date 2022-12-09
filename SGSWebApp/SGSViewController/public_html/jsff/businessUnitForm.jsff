@@ -7,7 +7,7 @@
     <f:facet name="top"/>
     <f:facet name="bottom"/>
     <f:facet name="center">
-      <af:panelBox text="Business Units" id="pb1">
+      <af:panelBox text="Company Code" id="pb1">
         <f:facet name="toolbar">
           <af:toolbar id="t1">
             <af:button id="b1"
@@ -22,13 +22,13 @@
           </af:toolbar>
         </f:facet>
         <af:panelFormLayout id="pfl1" rows="1">
-          <af:inputText value="#{bindings.BuName.inputValue}" label="Business Unit Name"
+          <af:inputText value="#{bindings.BuName.inputValue}" label="Company Code"
                         required="#{bindings.BuName.hints.mandatory}" columns="#{bindings.BuName.hints.displayWidth}"
                         maximumLength="#{bindings.BuName.hints.precision}" shortDesc="#{bindings.BuName.hints.tooltip}"
                         id="it1" >
             <f:validator binding="#{bindings.BuName.validator}"/>
           </af:inputText>
-          <af:inputText value="#{bindings.BuDesc.inputValue}" label="Business Unit Description"
+          <af:inputText value="#{bindings.BuDesc.inputValue}" label="Company Description"
                         required="#{bindings.BuDesc.hints.mandatory}" columns="#{bindings.BuDesc.hints.displayWidth}"
                         maximumLength="#{bindings.BuDesc.hints.precision}" shortDesc="#{bindings.BuDesc.hints.tooltip}"
                         id="it2" >

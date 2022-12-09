@@ -497,7 +497,7 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
         PreparedStatement pst = null;
         try {
             String connectionUrl =
-                "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databasename=WNS;integratedSecurity=true;";
+                "jdbc:sqlserver://localhost;instanceName=SQLEXPRESS;databasename=INTERCO;integratedSecurity=true;";
             conn = DriverManager.getConnection(connectionUrl);
             String sqlIdentifier = "select next value for " + seqName;
             pst = conn.prepareStatement(sqlIdentifier);
@@ -1095,6 +1095,30 @@ public class SGSAppModuleImpl extends ApplicationModuleImpl {
      */
     public ViewObjectImpl getWnsProfitAllocationVO1() {
         return (ViewObjectImpl) findViewObject("WnsProfitAllocationVO1");
+    }
+
+    /**
+     * Container's getter for WnsDeliveryLocVO1.
+     * @return WnsDeliveryLocVO1
+     */
+    public ViewObjectImpl getWnsDeliveryLocVO1() {
+        return (ViewObjectImpl) findViewObject("WnsDeliveryLocVO1");
+    }
+
+    /**
+     * Container's getter for WnsCustomerDeliveryVO1.
+     * @return WnsCustomerDeliveryVO1
+     */
+    public ViewObjectImpl getWnsCustomerDeliveryVO1() {
+        return (ViewObjectImpl) findViewObject("WnsCustomerDeliveryVO1");
+    }
+
+    /**
+     * Container's getter for WnsIdenCombinationVO1.
+     * @return WnsIdenCombinationVO1
+     */
+    public ViewObjectImpl getWnsIdenCombinationVO1() {
+        return (ViewObjectImpl) findViewObject("WnsIdenCombinationVO1");
     }
 }
 

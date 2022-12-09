@@ -17,7 +17,10 @@
             <af:panelGroupLayout id="pgl6" layout="horizontal">
               <af:button text="Back" id="b1" action="returnSplitBO"/>
               <af:spacer id="s6" width="5"/>
-              <af:button text="Consolidated Profitability Report" id="b2"/>
+               <af:button text="Approve Working" id="b2"/>
+                <af:button text="Approve for Invoicing" id="b27"/>
+              <af:button text="Front Office Profitability Report" id="b29"/>
+              <af:button text="Exception/Checklist Report" id="b12"/>
             </af:panelGroupLayout>
           </f:facet>
           <af:panelBox text="Front Office Profit Allocation Details" id="pb2" showDisclosure="false" rendered="false">
@@ -68,6 +71,12 @@
 			<td style="width:139px;">$37,439,702.00&nbsp;</td>
 			<td style="width:93px;"><a href="">View Details</a></td>
 		</tr>
+                <tr>
+			<td style="text-align:center; width:225px;"><strong></strong></td>
+			<td style="width:139px"><strong></strong></td>
+			<td style="width:93px">&nbsp;</td>
+		</tr>
+                
 		<tr>
 			<td style="text-align:center; width:225px;background-color: lightblue;"><strong>Total Revenue (A)</strong></td>
 			<td style="width:139px"><strong>$137,438,469.00</strong></td>
@@ -127,6 +136,27 @@
 			<td style="text-align:center; width:225px;background-color: lightblue;"><strong>Total Expenses (B)</strong></td>
 			<td style="width:139px"><strong>$21,803,837.00</strong></td>
 			<td style="width:93px"></td>
+		</tr>
+                <tr>
+			<td style="text-align:center; width:225px;"><strong></strong></td>
+			<td style="width:139px"><strong></strong></td>
+			<td style="width:93px">&nbsp;</td>
+		</tr>
+                <tr>
+			<td style="width:225px;">Profit to be retained by F.O</td>
+			<td style="width:139px;"></td>
+			<td style="width:93px;"><a href="">View Details</a></td>
+		</tr>
+                <tr>
+			<td style="width:225px;">Profit to be retained by F.O for Customer segment</td>
+			<td style="width:139px;"></td>
+			<td style="width:93px;"><a href="">View Details</a></td>
+		</tr>
+                
+                <tr>
+			<td style="text-align:center; width:225px;"><strong></strong></td>
+			<td style="width:139px"><strong></strong></td>
+			<td style="width:93px">&nbsp;</td>
 		</tr>
 		<tr>
 			<td style="text-align:center; width:225px;background-color: lightblue;"><strong>Profit to be Allocated (C)</strong></td>
@@ -308,7 +338,7 @@
               </af:panelGridLayout>
             </af:panelGroupLayout>
           </af:panelBox>
-          <af:panelBox text="Profit Split Among Back Offices" id="pb3">
+          <af:panelBox text="Allocation of profit to Back Offices And Invoice details" id="pb3">
             <f:facet name="toolbar"/>
             <af:panelGroupLayout layout="vertical" id="pgl1" rendered="false">
               <af:query id="qryId1" headerText="Search" disclosed="true"
@@ -358,7 +388,7 @@
                   <af:outputText value="#{row.BillingEntity}"
                                  shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.BillingEntity.tooltip}" id="ot3"/>
                 </af:column>
-                <af:column id="c25" headerText="BU Revenue Details (for allocation basis)" align="center">
+                <af:column id="c25" headerText="Back Office Revenue Ratio (for allocation basis)" align="center">
                   <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.IncomeFromServicesBu.name}"
                              filterable="true"
                              headerText="#{bindings.WnsFoAllocationSplitVO1.hints.IncomeFromServicesBu.label}" id="c4"
@@ -577,6 +607,26 @@
                   </af:column>
                 </af:column>
                 <af:column id="c30" headerText="Profit" align="center">
+               <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.TotalIncomeA.name}"
+                               filterable="true"
+                               headerText="Total Revenue" id="c11"
+                               headerClass="tableHeder">
+                      <af:outputText value="#{row.TotalIncomeA}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.TotalIncomeA.tooltip}"
+                                     id="ot11">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.TotalIncomeA.format}"/>
+                      </af:outputText>
+                    </af:column>
+                   <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCost.name}" filterable="true"
+                               headerText="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCost.label}" id="c231"
+                               headerClass="tableHeder">
+                      <af:outputText value="#{row.TotalCost}"
+                                     shortDesc="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCost.tooltip}" id="ot232">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.WnsFoAllocationSplitVO1.hints.TotalCost.format}"/>
+                      </af:outputText>
+                    </af:column>
                   <af:column sortProperty="#{bindings.WnsFoAllocationSplitVO1.hints.ProfitAllocated.name}"
                              filterable="true"
                              headerText="#{bindings.WnsFoAllocationSplitVO1.hints.ProfitAllocated.label}" id="c24"

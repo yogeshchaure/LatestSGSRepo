@@ -7,7 +7,7 @@
     <f:facet name="top"/>
     <f:facet name="bottom"/>
     <f:facet name="center">
-      <af:panelBox text="Business Unit Details" id="pb1">
+      <af:panelBox text="Company Code Details" id="pb1">
         <f:facet name="toolbar">
          <af:toolbar id="t1">
             <af:button id="b1" action="back"
@@ -24,7 +24,7 @@
           </af:toolbar>
         </f:facet>
         <af:panelFormLayout id="pfl1" rows="10">
-          <af:inputText value="#{bindings.BuName.inputValue}" label="Business Unit"
+          <af:inputText value="#{bindings.BuName.inputValue}" label="Company Code"
                         required="#{bindings.BuName.hints.mandatory}" columns="#{bindings.BuName.hints.displayWidth}"
                         maximumLength="#{bindings.BuName.hints.precision}" shortDesc="#{bindings.BuName.hints.tooltip}"
                         id="it1">
@@ -129,13 +129,13 @@
                         shortDesc="#{bindings.ICoCustomerName.hints.tooltip}" id="it5">
             <f:validator binding="#{bindings.ICoCustomerName.validator}"/>
           </af:inputText>
-          <af:selectOneChoice value="#{bindings.CollBU.inputValue}" label="Collection Business Unit"
+          <af:selectOneChoice value="#{bindings.CollBU.inputValue}" label="Collection Company Code"
                               required="#{bindings.CollBU.hints.mandatory}" shortDesc="#{bindings.CollBU.hints.tooltip}"
                               id="soc11">
             <f:selectItems value="#{bindings.CollBU.items}" id="si11"/>
             <f:validator binding="#{bindings.CollBU.validator}"/>
           </af:selectOneChoice>
-          <af:selectOneChoice value="#{bindings.PayingBU.inputValue}" label="Paying Business Unit"
+          <af:selectOneChoice value="#{bindings.PayingBU.inputValue}" label="Paying Company Code"
                               required="#{bindings.PayingBU.hints.mandatory}"
                               shortDesc="#{bindings.PayingBU.hints.tooltip}" id="soc12">
             <f:selectItems value="#{bindings.PayingBU.items}" id="si12"/>

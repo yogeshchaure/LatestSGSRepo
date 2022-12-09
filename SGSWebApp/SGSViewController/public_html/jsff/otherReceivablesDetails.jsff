@@ -73,7 +73,7 @@
                                 </af:selectOneChoice>
                             </f:facet>
                         </af:column>
-                        <af:column headerText="Business Unit"
+                        <af:column headerText="Company Code"
                                    id="c4">
                             <af:outputText value="#{row.BusinessUnit}"
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.BusinessUnit.tooltip}"
@@ -134,7 +134,7 @@
                                 </af:selectOneChoice>
                             </f:facet>
                         </af:column>
-                        <af:column headerText="Job Code" id="c6">
+                        <af:column headerText="Project" id="c6">
                             <af:outputText value="#{row.JobCode}"
                                            shortDesc="#{bindings.SgsOtherReceivablesDetailsVO.hints.JobCode.tooltip}"
                                            id="ot6"/>

@@ -10,6 +10,12 @@
               id="SgsIdenCombinationVO1Iterator"/>
     <iterator Binds="SgsCrossChargeIdenVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
               id="SgsCrossChargeIdenVO1Iterator"/>
+    <iterator Binds="WnsIdenCombinationVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="WnsIdenCombinationVO1Iterator"/>
+    <iterator Binds="WnsDeliveryLocVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="WnsDeliveryLocVO1Iterator"/>
+    <iterator Binds="WnsCustomerDeliveryVO1" RangeSize="25" DataControl="SGSAppModuleDataControl"
+              id="WnsCustomerDeliveryVO1Iterator"/>
   </executables>
   <bindings>
     <list IterBinding="SgsCostIdentificationRuleView1Iterator" StaticList="false" Uses="LOV_GlId" id="GlId"
@@ -100,6 +106,42 @@
           <Item Value="GlCode"/>
           <Item Value="JobCode"/>
           <Item Value="CrossCIdenId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="WnsIdenCombinationVO1Iterator" id="WnsIdenCombinationVO1">
+      <nodeDefinition DefName="com.sgs.model.view.WnsIdenCombinationVO" Name="WnsIdenCombinationVO10">
+        <AttrNames>
+          <Item Value="CompanyCode"/>
+          <Item Value="CompanyDesc"/>
+          <Item Value="Zone"/>
+          <Item Value="GlAccount"/>
+          <Item Value="ProjectId"/>
+          <Item Value="NatureOfExpense"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="WnsDeliveryLocVO1Iterator" id="WnsDeliveryLocVO1">
+      <nodeDefinition DefName="com.sgs.model.view.WnsDeliveryLocVO" Name="WnsDeliveryLocVO10">
+        <AttrNames>
+          <Item Value="CompanyCode"/>
+          <Item Value="CompanyDesc"/>
+          <Item Value="Zone"/>
+          <Item Value="GlAccount"/>
+          <Item Value="ProjectId"/>
+          <Item Value="NatureOfExpense"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="WnsCustomerDeliveryVO1Iterator" id="WnsCustomerDeliveryVO1">
+      <nodeDefinition DefName="com.sgs.model.view.WnsCustomerDeliveryVO" Name="WnsCustomerDeliveryVO10">
+        <AttrNames>
+          <Item Value="CompanyCode"/>
+          <Item Value="CompanyDesc"/>
+          <Item Value="Zone"/>
+          <Item Value="GlAccount"/>
+          <Item Value="ProjectId"/>
+          <Item Value="NatureOfExpense"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

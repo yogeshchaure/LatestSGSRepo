@@ -51,7 +51,7 @@
                         <f:selectItems value="#{bindings.OperationUnit.items}" id="si8"/>
                         <f:validator binding="#{bindings.OperationUnit.validator}"/>
                     </af:selectOneChoice>
-                    <af:selectOneChoice value="#{bindings.JobCode.inputValue}" label="Job Code"
+                    <af:selectOneChoice value="#{bindings.JobCode.inputValue}" label="Project"
                                         required="#{bindings.JobCode.hints.mandatory}"
                                         shortDesc="#{bindings.JobCode.hints.tooltip}" id="soc5">
                         <f:selectItems value="#{bindings.JobCode.items}" id="si5"/>
